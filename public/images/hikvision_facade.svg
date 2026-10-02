@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="twilightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#311042"/>
+    </linearGradient>
+    <linearGradient id="charredWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#171717"/>
+      <stop offset="50%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1f1f1f"/>
+    </linearGradient>
+    <linearGradient id="lensReflect" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Twilight Sky Background -->
+  <rect width="800" height="600" fill="url(#twilightSky)"/>
+
+  <!-- Modern Barnhouse Roof Overhang and Facade (Charred Yakisugi Wood) -->
+  <polygon points="0,0 800,0 800,220 0,380" fill="#090d16" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Facade Siding Lines (Vertical Charred Wood Battens) -->
+  <g stroke="#171717" stroke-width="3">
+    <line x1="60" y1="0" x2="60" y2="400"/>
+    <line x1="120" y1="0" x2="120" y2="400"/>
+    <line x1="180" y1="0" x2="180" y2="400"/>
+    <line x1="240" y1="0" x2="240" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="360" y1="0" x2="360" y2="400"/>
+    <line x1="420" y1="0" x2="420" y2="400"/>
+    <line x1="480" y1="0" x2="480" y2="400"/>
+    <line x1="540" y1="0" x2="540" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="660" y1="0" x2="660" y2="400"/>
+    <line x1="720" y1="0" x2="720" y2="400"/>
+  </g>
+
+  <!-- Warm LED Strip Under Soffit -->
+  <line x1="0" y1="210" x2="800" y2="100" stroke="#f59e0b" stroke-width="4" stroke-opacity="0.8"/>
+
+  <!-- Hikvision ColorVu Mini-Turret Camera (Matte Black) -->
+  <g transform="translate(360, 160)">
+    <!-- Base Mounting Junction Box -->
+    <rect x="-40" y="-30" width="80" height="35" rx="8" fill="#171717" stroke="#334155" stroke-width="2"/>
+    <!-- Metal Arm -->
+    <path d="M -15 5 L -10 40 L 10 40 L 15 5 Z" fill="#262626"/>
+    <!-- Turret Ball Body -->
+    <circle cx="0" cy="75" r="55" fill="#141414" stroke="#262626" stroke-width="3"/>
+    <circle cx="0" cy="75" r="48" fill="#0a0a0a"/>
+    <!-- Lens Bezel -->
+    <circle cx="0" cy="75" r="32" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- F1.0 Super Aperture Lens Glass -->
+    <circle cx="0" cy="75" r="24" fill="url(#lensReflect)"/>
+    <circle cx="0" cy="75" r="16" fill="#020617"/>
+    <circle cx="-6" cy="69" r="4" fill="#ffffff" fill-opacity="0.8"/>
+    <!-- ColorVu Soft White LED Illuminator Window -->
+    <rect x="-14" y="112" width="28" height="8" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <!-- Camera Label -->
+    <text x="-32" y="55" fill="#64748b" font-family="sans-serif" font-size="7" font-weight="bold">HIKVISION</text>
+  </g>
+
+  <!-- Ambient Light Cone on Terrace -->
+  <polygon points="360,260 0,600 720,600" fill="#f59e0b" fill-opacity="0.04"/>
+
+  <!-- Annotations / Viewfinder Overlay -->
+  <rect x="30" y="25" width="740" height="550" rx="16" fill="none" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="16 8"/>
+  <g fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">
+    <text x="45" y="48">● ELEWACJA MODERN BARN [COLORVU 3.0]</text>
+    <text x="45" y="558">HASSELBLAD X2D 100C • 45mm f/4.0 • ISO 64</text>
+    <text x="470" y="48">KAMERA 4K ACUSENSE BEZ WIDOCZNYCH KABLI</text>
+    <text x="560" y="558">PEŁEN KOLOR W NOCY (F1.0)</text>
+  </g>
+</svg>

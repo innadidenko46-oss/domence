@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Architectural Graphite & Anthracite Scale (Never Pure Pitch Black) */
+  --color-anthracite-950: #121214;
+  --color-anthracite-900: #18181B;
+  --color-anthracite-850: #1F1F23;
+  --color-anthracite-800: #27272A;
+  --color-anthracite-750: #2E2E33;
+  --color-anthracite-700: #3F3F46;
+
+  /* Architectural Off-White & Concrete Grays */
+  --color-offwhite-50: #F9FAFB;
+  --color-offwhite-100: #F3F4F6;
+  --color-offwhite-200: #E5E7EB;
+
+  /* Engineering Accent Tones: Copper (Wiring & Luxury) + Steel Blue + Slate */
+  --color-copper-500: #B87333;
+  --color-copper-400: #C27A4E;
+  --color-copper-600: #A36034;
+  
+  --color-steelblue-500: #334E68;
+  --color-steelblue-400: #486581;
+  --color-steelblue-600: #243B53;
+
+  --color-forest-600: #234E3E;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    color-scheme: dark light;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Architectural Clean Cards - Max 4px corner radius */
+.arch-card {
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(39, 39, 42, 0.65);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.theme-day .arch-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Solid Flat Engineering Buttons - No glowing neon */
+.btn-engineering-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background-color: #B87333;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.75rem;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid rgba(194, 122, 78, 0.4);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-engineering-primary:hover {
+  background-color: #A36034;
+  border-color: rgba(194, 122, 78, 0.7);
+}
+
+.btn-engineering-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background-color: #27272A;
+  color: #F4F4F5;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.75rem;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-engineering-secondary:hover {
+  background-color: #3F3F46;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-day .btn-engineering-secondary {
+  background-color: #F3F4F6;
+  color: #111827;
+  border: 1px solid #D1D5DB;
+}
+
+.theme-day .btn-engineering-secondary:hover {
+  background-color: #E5E7EB;
+}
+
+/* Micro badges & labels - strict 2px radius */
+.badge-arch {
+  border-radius: 2px;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-width: 1px;
+}
