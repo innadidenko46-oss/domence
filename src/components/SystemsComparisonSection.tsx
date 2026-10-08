@@ -1,198 +1,91 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { SYSTEM_COMPARISONS } from '../data/content.ts';
-import {
-  Layers,
-  Check,
-  X,
-  ShieldCheck,
-  HelpCircle,
-  Cable,
-  ArrowRight,
-  Info,
-} from 'lucide-react';
+import { Layers, Check, Minus, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const OUR_WAY: string[] = [
+  'Światło, rolety i zamek działają też bez internetu',
+  'Brak abonamentu za zapis i podgląd — nagrania zostają w domu',
+  'Montaż z odciągiem pyłu, bez kucia na gotowo',
+  'Pisemna wycena przed startem — wiesz, za co płacisz',
+  'Dokumentacja i protokoły pomiarów po montażu',
+  'Gwarancja 24 miesiące + opieka po montażu',
+  'Jeden kontakt do człowieka, nie infolinia',
+];
+
+const ELSEWHERE: string[] = [
+  'Światło czy rolety potrafią stanąć, gdy padnie internet',
+  'Podgląd i zapis często wymagają płatnej subskrypcji',
+  'Montaż bywa z kuciem i kurzem w gotowym mieszkaniu',
+  'Cena dopisywana w trakcie, bez pełnej wyceny na piśmie',
+  'Po montażu brak schematów i protokołów pomiarów',
+  'Krótka gwarancja i brak stałej opieki po montażu',
+  'Kontakt przez infolinię, za każdym razem inna osoba',
+];
+
 export const SystemsComparisonSection: React.FC = () => {
-  const [activeSystemId, setActiveSystemId] = useState<string>('shelly_pro');
-
-  const activeSystem = SYSTEM_COMPARISONS.find((s) => s.id === activeSystemId) || SYSTEM_COMPARISONS[0];
-
   return (
-    <section id="systemy" className="py-24 relative overflow-hidden border-t transition-colors bg-[#F9FAFB] border-[#E5E7EB]">
+    <section id="systemy" className="py-24 relative overflow-hidden border-t transition-colors bg-white border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Chapter Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#334E68]/15 border border-[#334E68]/30 text-[#486581] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
-              <Layers className="w-3.5 h-3.5" />
-              <span>Systemy i standardy</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
-              Który zestaw pasuje do Twojego domu
-            </h2>
-            <p className="mt-3 text-sm sm:text-base max-w-2xl leading-relaxed text-[#4B5563]">
-              Wybierz, co pasuje do Twojej budowy: moduły do rozdzielnicy w nowym domu albo małe moduły pod włączniki w gotowym mieszkaniu. Bez kucia, jeśli nie trzeba.
-            </p>
-          </div>
-
-          <div className="mt-6 md:mt-0 flex items-center gap-2 text-xs p-3 rounded-[2px] border bg-[#F3F4F6] border-[#E5E7EB] text-[#4B5563]">
-            <Info className="w-4 h-4 text-[#B87333] shrink-0" />
-            <span>Wybierz, aby zobaczyć szczegóły</span>
-          </div>
-        </div>
-
-        {/* System Selector Tabs - Max 4px radius */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-          {SYSTEM_COMPARISONS.map((system) => {
-            const isSelected = system.id === activeSystemId;
-            return (
-              <button
-                key={system.id}
-                onClick={() => setActiveSystemId(system.id)}
-                className={`p-4 rounded-[2px] text-left transition-all border flex flex-col justify-between cursor-pointer ${
-                  isSelected
-                    ? 'bg-white border-2 border-[#B87333] shadow-sm': 'bg-[#F3F4F6] border-[#E5E7EB] hover:border-[#D1D5DB]'}`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span
-                      className={`text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded-[2px] border ${
-                        isSelected
-                          ? 'bg-[#B87333]/15 text-[#B87333] border-[#B87333]/30'
-                          : 'bg-white text-[#4B5563] border-[#E5E7EB]'}`}
-                    >
-                      {system.estimatedCostScale}
-                    </span>
-                    {system.id === 'shelly_pro' && (
-                      <span className="text-[9px] font-mono text-[#10B981] bg-[#10B981]/10 px-1.5 py-0.5 rounded-[2px] border border-[#10B981]/30">
-                        STANDARD INŻYNIERSKI
-                      </span>
-                    )}
-                  </div>
-                  <div className="font-display font-bold text-base sm:text-lg text-[#111827]">
-                    {system.name}
-                  </div>
-                </div>
-                <div className="text-[11px] mt-2 line-clamp-1 font-mono text-[#6B7280]">
-                  {system.cableType}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* In-depth System Detailed Panel */}
         <motion.div
-          key={activeSystem.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className="rounded-[2px] border p-6 sm:p-8 lg:p-10 shadow-sm relative bg-white border-[#E5E7EB]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
         >
-          {/* Top Banner with Human Translation */}
-          <div className="p-4 rounded-[2px] border mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-[#F9FAFB] border-[#B87333]/30 text-[#111827]">
-            <div className="w-9 h-9 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0 border border-[#B87333]/30">
-              <HelpCircle className="w-5 h-5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#B87333]/10 border border-[#B87333]/30 text-[#B87333] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+            <Layers className="w-3.5 h-3.5" />
+            <span>Porównanie</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
+            Nasze realizacje, a typowe tańsze rozwiązania
+          </h2>
+          <p className="mt-3 text-sm sm:text-base max-w-2xl leading-relaxed text-[#4B5563]">
+            Porównaj, co dostajesz. Bez nazw marek — liczy się to, jak dom działa na co dzień.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-[2px] border-2 border-[#B87333] bg-white p-6 sm:p-8 shadow-sm">
+              <h3 className="text-base font-bold text-[#111827]">Tak robimy my</h3>
+              <ul className="mt-5 space-y-3">
+                {OUR_WAY.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#374151]">
+                    <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#B87333]/15 border border-[#B87333]/30 flex items-center justify-center shrink-0">
+                      <Check className="w-3.5 h-3.5 text-[#B87333]" />
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="flex-1">
-              <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333]">
-                W skrócie:
-              </div>
-              <p className="text-sm mt-1 leading-relaxed text-[#374151]">
-                {activeSystem.humanVerdict}
-              </p>
+
+            <div className="rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB] p-6 sm:p-8">
+              <h3 className="text-base font-bold text-[#111827]">Tak bywa gdzie indziej</h3>
+              <ul className="mt-5 space-y-3">
+                {ELSEWHERE.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#4B5563]">
+                    <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+                      <Minus className="w-3.5 h-3.5 text-[#9CA3AF]" />
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            {/* Left Specs Column */}
-            <div className="lg:col-span-4 space-y-4">
-              <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Do jakiego domu?</div>
-                <div className="text-sm font-medium leading-relaxed text-[#111827]">{activeSystem.bestFor}</div>
-              </div>
-
-              <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Kabel czy Wi-Fi</div>
-                <div className="text-sm font-semibold text-[#38BDF8] flex items-center gap-2">
-                  <Cable className="w-4 h-4" />
-                  <span>{activeSystem.cableType}</span>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Czy działa bez internetu</div>
-                <div className="text-sm font-semibold text-[#10B981] flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>{activeSystem.autonomyOffline}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Pros & Cons Column */}
-            <div className="lg:col-span-8 flex flex-col justify-between">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Pros */}
-                <div>
-                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#10B981] mb-3 flex items-center gap-1.5">
-                    <Check className="w-4 h-4" />
-                    <span>Plusy:</span>
-                  </div>
-                  <ul className="space-y-2 text-xs">
-                    {activeSystem.pros.map((pro, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" />
-                        <span className="text-[#374151]">{pro}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Cons */}
-                <div>
-                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#F87171] mb-3 flex items-center gap-1.5">
-                    <X className="w-4 h-4" />
-                    <span>Czego potrzebujesz:</span>
-                  </div>
-                  <ul className="space-y-2 text-xs">
-                    {activeSystem.cons.map((con, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <X className="w-3.5 h-3.5 text-[#F87171] shrink-0 mt-0.5" />
-                        <span className="text-[#374151]">{con}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Consultation CTA */}
-              <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-[#E5E7EB]">
-                <div>
-                  <div className="text-sm font-bold text-[#111827]">
-                    Nie wiesz, co wybrać do swojego domu?
-                  </div>
-                  <div className="text-xs text-[#6B7280]">
-                    Wyślij nam plan elektryki albo rysunek domu — powiemy, co pasuje.
-                  </div>
-                </div>
-
-                <Link
-                  to="/kontakt"
-                  className="btn-engineering-primary gap-2 cursor-pointer"
-                >
-                  <span>Zapytaj inżyniera</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-
-            </div>
-
+          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB] p-6">
+            <p className="text-sm text-[#4B5563] leading-relaxed">
+              Chcesz wiedzieć, co pasuje do Twojego domu? Opisz dom w krótkiej ankiecie.
+            </p>
+            <Link
+              to="/kalkulator"
+              className="btn-engineering-primary gap-2 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              <span>Wypełnij ankietę (2 min)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

@@ -146,22 +146,22 @@ export const SystemsPage: React.FC = () => {
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-[#F9FAFB] border-[#E5E7EB]">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 mb-2">
-                  Kompletny zestaw jednej marki
+                  System przewodowy
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-[#111827]">
-                  KNX / Loxone (po kablu)
+                  Automatyka po kablu (system przewodowy)
                 </h3>
                 <p className="text-xs leading-[1.65] mb-4 text-[#4B5563]">
-                  Dla tych, którzy chcą wszystko od jednej marki: dźwięk w pokojach, pompę ciepła i stację pogody z jednym sterownikiem.
+                  Sterowanie prowadzi kabel w ścianie, więc działa stabilnie: bez baterii do wymiany i bez zależności od internetu w domu.
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Kabel w ścianie — bardzo stabilny</span>
+                    <span>Stabilne połączenie po kablu, bez baterii</span>
                   </li>
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Integracja z rekuperacją i pompami ciepła</span>
+                    <span>Światło, rolety i zamek działają też bez internetu</span>
                   </li>
                 </ul>
               </div>

@@ -2,98 +2,11 @@ import {
   SmartModule,
   PackageOffer,
   LifeScenario,
-  SystemComparison,
   TeletechnicService,
   FaqItem,
   ShellyProCapability,
   HikvisionProductLine,
 } from '../types.ts';
-
-export const SYSTEM_COMPARISONS: SystemComparison[] = [
-  {
-    id: 'shelly_pro',
-    name: 'Shelly Pro DIN (Przewodowa Rozdzielnica LAN)',
-    tagline: 'Szyna DIN w rozdzielnicy i bezpośrednie porty LAN RJ45',
-    cableType: 'Hybrydowy (LAN + Bezprzewodowy)',
-    bestFor: 'Stan deweloperski, nowe budynki oraz generalne modernizacje rozdzielnic elektrycznych',
-    autonomyOffline: 'Praca w pełni lokalna',
-    pros: [
-      'Montaż w rozdzielnicy głównej na szynie DIN, bezpośrednie połączenie kablem Ethernet LAN RJ45',
-      'Galwaniczna izolacja wejść, ochrona przeciwprzepięciowa, ognioodporna obudowa V-0',
-      'Pomiar poboru mocy PM na każdym niezależnym kanale obwodu',
-      'Sterowanie roletami, oświetleniem 230V, zaworami wody i klimatyzacją bezpośrednio z rozdzielnicy',
-    ],
-    cons: [
-      'Wymaga doprowadzenia obwodów zasilających bezpośrednio do centralnej rozdzielnicy elektrycznej',
-      'Wymaga miejsca w rozdzielnicy modułowej (szerokość 1-4 modułów DIN na urządzenie)',
-    ],
-    humanVerdict:
-      'Wersja przewodowa. Cała logika pracuje w rozdzielnicy — nie potrzebujesz ani baterii, ani Wi-Fi.',
-    estimatedCostScale: 'Średni',
-  },
-  {
-    id: 'shelly',
-    name: 'Shelly Pro & Plus (Wi-Fi / LAN / Matter)',
-    tagline: 'Mikromoduły (montaż z minimalną ingerencją w tynki, z odciągiem pyłu) i linia Pro na szynie DIN',
-    cableType: 'Hybrydowy (LAN + Bezprzewodowy)',
-    bestFor: 'Wykończone wnętrza oraz nowoczesne rozdzielnice: montaż z minimalną ingerencją w tynki, z odciągiem pyłu lub instalacja modułowa na szynie DIN',
-    autonomyOffline: 'Praca w pełni lokalna',
-    pros: [
-      'Linia Shelly Pro montowana na szynę DIN w rozdzielnicy z bezpośrednim kablem LAN RJ45',
-      'Linia Shelly Plus montowana za istniejącymi włącznikami w puszkach 60 mm — z minimalną ingerencją w tynki, z odciągiem pyłu',
-      'Pomiar zużycia energii dla każdego obwodu oświetlenia i gniazd',
-      'Otwarta praca lokalna bez chmury producenta (MQTT, REST API, Home Assistant)',
-      'Elastyczna rozbudowa pokój po pokoju w miarę potrzeb',
-    ],
-    cons: [
-      'Wersja dopuszkowa Plus wymaga głębokich puszek podtynkowych (min. 60mm)',
-      'Wymaga stabilnej sieci Wi-Fi lub okablowania LAN w szafie',
-    ],
-    humanVerdict:
-      'Standard montażowy. Shelly Pro w rozdzielnicy steruje obwodami przewodowo, a mikromoduły Plus pozwalają zautomatyzować gotowe mieszkanie — jeśli puszki elektryczne są wystarczająco głębokie.',
-    estimatedCostScale: 'Średni',
-  },
-  {
-    id: 'home_assistant',
-    name: 'Home Assistant (domowy sterownik)',
-    tagline: 'Standard DOMENCE: bez abonamentów, lokalny, łączy Shelly Europe + Hikvision + LAN',
-    cableType: 'Hybrydowy (LAN + Bezprzewodowy)',
-    bestFor: 'Domy, w których liczy się prywatność, wygoda i brak opłat',
-    autonomyOffline: 'Praca w pełni lokalna',
-    pros: [
-      'Automatyka działa lokalnie nawet po odcięciu internetu; powiadomienia PUSH poza domem i podgląd zdalny wymagają internetu',
-      'Jeden interfejs dla modułów Shelly Pro na szynę DIN, mikromodułów Plus, kamer i domofonów Hikvision oraz klimatyzacji',
-      'Brak subskrypcji i abonamentów chmurowych',
-      'Silnik scenariuszy: joga, budzenie światłem, ochrona przed zalaniem, powitanie w domu',
-    ],
-    cons: [
-      'Wymaga profesjonalnego wdrożenia i serwera dedykowanego w szafie RACK',
-    ],
-    humanVerdict:
-      'System zarządzający w szafce teletechnicznej. Nagrania z kamer i dane zostają w domu, a cały system pracuje lokalnie, bez zależności od serwerów zewnętrznych.',
-    estimatedCostScale: 'Wysoki',
-  },
-  {
-    id: 'loxone',
-    name: 'Loxone (Miniserver)',
-    tagline: 'Zintegrowany ekosystem przewodowy z naciskiem na audio i oświetlenie',
-    cableType: 'Magistrala przewodowa (Bus)',
-    bestFor: 'Nowe domy jednorodzinne o spójnej, zamkniętej koncepcji producenta',
-    autonomyOffline: 'Praca lokalna z opcją chmury',
-    pros: [
-      'Dobra integracja nagłośnienia wielostrefowego (Audioserver)',
-      'Stabilna komunikacja po skrętce CAT i magistrali Tree',
-      'Gotowa logika sterowania klimatem i zacienieniem',
-    ],
-    cons: [
-      'Zależność od jednego austriackiego producenta (hardware lock-in)',
-      'Wysoki próg wejścia finansowego dla osprzętu dedykowanego',
-    ],
-    humanVerdict:
-      'System zamknięty jednego producenta. Wszystko działa, dopóki korzystasz z podzespołów tej marki.',
-    estimatedCostScale: 'Wysoki',
-  },
-];
 
 export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   {
@@ -164,7 +77,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     description:
       'Bezramkowe głośniki sufitowe w strefie dziennej, sypialni, kuchni i łazience. Niezależna muzyka ze Spotify, Apple Music lub radia w każdym pomieszczeniu.',
     proAdvantage:
-      'Centralne wzmacniacze wielostrefowe w szafie RACK 19" zintegrowane przewodowo ze switchem LAN i lokalnym serwerem muzycznym Home Assistant.',
+      'Centralne wzmacniacze wielostrefowe w szafie RACK 19" zintegrowane przewodowo ze switchem LAN i lokalnym serwerem muzycznym.',
     shellyAdvantage:
       'Wyzwalanie strumieniowania i automatyzacji audio przez skrypty Shelly i integrację z lokalnymi odtwarzaczami sieciowymi (AirPlay 2, Linkplay, Sonos).',
     scenariosExample:
@@ -212,7 +125,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     features: [
       'Dotykowe panele ścienne 4" z podglądem kamer i klimatu',
       'Współpraca z dowolnymi włącznikami klawiszowymi na rynku',
-      'Sterowanie głosowe przez lokalnego asystenta (Home Assistant Voice); asystenci chmurowi wymagają internetu',
+      'Sterowanie głosowe przez lokalnego asystenta głosowego; asystenci chmurowi wymagają internetu',
       'Nowoczesna aplikacja na smartfony i tablety domowników',
     ],
   },
@@ -299,7 +212,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     series: 'Hikvision Android Touch Station (DS-KH9510 / KH9310)',
     category: 'intercom_android',
     tagline: 'Dotykowy ekran 10" IPS ze szkłem 2.5D z wbudowaną obsługą Smart Home',
-    keyTech: 'System Android + obsługa aplikacji Home Assistant / Shelly + podgląd kamer CCTV na żywo',
+    keyTech: 'System Android + aplikacja do domu + podgląd kamer na żywo',
     bestUse: 'Ściana w holu, kuchnia, salon, gabinet – centralny punkt sterowania domem',
     highlights: [
       'Wielofunkcyjny ekran: oprócz odbierania domofonu uruchamia aplikację sterowania domem (światło, rolety, klimat)',
@@ -346,7 +259,7 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
     equipment: [
       'Modułowa stacja bramowa Hikvision ze stali nierdzewnej z kamerą szerokokątną 180° WDR',
       'Terminale rozpoznawania twarzy Hikvision MinMoe z podwójną kamerą antyspoofingową',
-      'Dotykowy monitor wewnętrzny 7" lub 10" ze szkłem 2.5D z obsługą aplikacji Smart Home (Home Assistant/Shelly)',
+      'Dotykowy monitor wewnętrzny 7" lub 10" ze szkłem 2.5D z obsługą aplikacji Smart Home',
       'Atestowane elektrozaczepy rewersyjne i zamki silnikowe ze sterowaniem dwustopniowym',
     ],
     specs: [
@@ -921,7 +834,7 @@ export const PACKAGES: PackageOffer[] = [
       '2x cyfrowe ściemniacze oświetlenia LED bez efektu migotania z trybem nocnym',
       'Ochrona przed zalaniem (bezpieczna przy awarii): 3 czujniki zalania + siłownik zaworu (zamknięcie zaworu zwykle w kilka sekund)',
       'Sterowanie roletami ze sceną „Chcę poćwiczyć jogę” i „Budzenie słońcem”',
-      'Lokalna centrala Home Assistant Pro (przetwarzanie lokalne, bez chmury)',
+      'Lokalna centrala sterująca (przetwarzanie w domu, bez chmury)',
       'Przycisk „Wyjdź z domu” przy drzwiach wejściowych',
       'Czysty montaż z minimalną ingerencją w tynki, z odciągiem z filtrem HEPA H13 w 1–2 dni robocze',
     ],
@@ -932,7 +845,7 @@ export const PACKAGES: PackageOffer[] = [
     categoryBadge: 'Pełny Standard Inżynieryjny',
     badgeType: 'premium',
     timeframe: '3–5 dni roboczych',
-    description: 'Przewodowe moduły Shelly Pro DIN w rozdzielnicy elektrycznej, serwer Home Assistant, automatyka rolet i oświetlenia oraz szafa teletechniczna RACK.',
+    description: 'Przewodowe moduły Shelly Pro DIN w rozdzielnicy elektrycznej, serwer automatyki, sterowanie roletami i oświetlenia oraz szafa teletechniczna RACK.',
     humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i schematy na końcu.',
     priceNetto: 13900,
     priceBrutto: 17097,

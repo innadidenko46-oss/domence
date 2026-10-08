@@ -69,19 +69,6 @@ export interface HikvisionProductLine {
   image?: string;
 }
 
-export interface SystemComparison {
-  id: string;
-  name: string;
-  tagline: string;
-  cableType: 'Magistrala przewodowa (Bus)' | 'Hybrydowy (LAN + Bezprzewodowy)' | 'Czysto bezprzewodowy (Zigbee/Wi-Fi)' | 'Serwer przemysłowy (PLC)';
-  bestFor: string;
-  autonomyOffline: 'Praca w pełni lokalna' | 'Praca lokalna z opcją chmury' | 'Zależna od chmury producenta';
-  pros: string[];
-  cons: string[];
-  humanVerdict: string;
-  estimatedCostScale: 'Średni' | 'Wysoki' | 'Premium / Rezydencjalny';
-}
-
 export interface TeletechnicService {
   id: string;
   title: string;
