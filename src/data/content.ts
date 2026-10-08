@@ -1020,7 +1020,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Zapytania w języku naturalnym: kolor ubioru, typ pojazdu, kierunek ruchu',
       'Przeszukiwanie archiwum na lokalnym NVR — wideo nie opuszcza posesji (RODO)',
       'Eksport znalezionego klipu jednym kliknięciem',
-      'Przykładowe zapytania poniżej — kliknij, aby zobaczyć działanie',
+      'Przykłady poniżej.',
     ],
     simulationData: {
       samplePrompts: [

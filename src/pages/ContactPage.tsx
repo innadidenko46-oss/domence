@@ -71,10 +71,10 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
-                      Kontakt z inżynierem
+                      Jak się skontaktować
                     </div>
                     <div className="text-base font-bold font-mono transition-colors mt-0.5 text-[#111827] group-hover:text-[#B87333]">
-                      Napisz przez formularz albo e-mail
+                      Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
                     </div>
                     <div className="text-[11px] text-[#B87333] font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
@@ -239,7 +239,7 @@ export const ContactPage: React.FC = () => {
 
                       <div>
                         <label htmlFor="contact-location" className="block text-xs font-semibold mb-1 text-[#374151]">
-                          Lokalizacja Inwestycji
+                          Miejscowość (gdzie jest dom)
                         </label>
                         <input
                           id="contact-location"

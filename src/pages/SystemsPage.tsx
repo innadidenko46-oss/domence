@@ -31,7 +31,7 @@ export const SystemsPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-[#B87333] border border-white/10">
-                  Ciepłe światło 2400K
+                  Ciepłe światło jak przy świecach
                 </span>
               </div>
               <div className="p-5">
@@ -73,11 +73,11 @@ export const SystemsPage: React.FC = () => {
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
                   alt="Szafa serwerowa RACK z okablowaniem sieciowym"
                   loading="lazy"
-                  className="w-full h-full object-contain bg-[#18181B] p-4 duration-500 filter brightness-90"
+                  className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-emerald-400 border border-white/10">
-                  Szyna DIN w rozdzielnicy
+                  Szafka ze sprzętem
                 </span>
               </div>
               <div className="p-5">
@@ -227,7 +227,7 @@ export const SystemsPage: React.FC = () => {
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-[#111827]">
-              Monitoring Wizyjny CCTV AI, Sieci LAN i Szafy RACK
+              Kamery, internet i szafka ze sprzętem
             </div>
           </div>
           <Link

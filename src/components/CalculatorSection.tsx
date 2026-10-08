@@ -151,11 +151,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       case 'deweloperski':
         return 'Nowy dom / remont';
       case 'retro':
-        return 'Gotowe wnętrze bez kucia (retro)';
+        return 'Gotowe wnętrze bez kucia';
       case 'security':
-        return 'Bezpieczeństwo i furtka (security)';
+        return 'Bezpieczeństwo i furtka';
       case 'commercial':
-        return 'Biuro / lokal (commercial)';
+        return 'Biuro / lokal';
     }
   };
 
@@ -365,7 +365,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                               {mod.name}
                             </div>
                             <div className="text-[11px] text-[#9CA3AF] mt-1 leading-relaxed">
-                              {mod.description}
+                              {mod.humanExplanation}
                             </div>
                           </div>
                         </div>

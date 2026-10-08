@@ -71,7 +71,7 @@ export const HomePage: React.FC = () => {
       icon: Sparkles,
       badge: 'Ergonomia & Bezpieczeństwo',
       image:
-        'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Ciepłe, przytulne wnętrze o poranku ze zautomatyzowanym oświetleniem',
     },
     {

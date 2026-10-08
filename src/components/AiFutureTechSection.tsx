@@ -33,7 +33,7 @@ export const AiFutureTechSection: React.FC = () => {
             Co potrafią nowe kamery i sterowniki.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
-            Dostajesz 6 sprawdzonych rzeczy do domu. Opisujemy je zwykłymi słowami, bez obietnic bez pokrycia.
+            Dostajesz 6 sprawdzonych rzeczy do domu.
           </p>
         </div>
 
