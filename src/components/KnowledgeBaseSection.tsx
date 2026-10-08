@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FAQ_ITEMS } from '../data/content.ts';
-import { BookOpen, ChevronDown, ChevronUp, Cpu, HelpCircle, ShieldCheck } from 'lucide-react';
+import { ChevronDown, Search, X } from 'lucide-react';
 
 export const KnowledgeBaseSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [query, setQuery] = useState('');
   const [openIds, setOpenIds] = useState<string[]>(() =>
     FAQ_ITEMS.length > 0 ? [FAQ_ITEMS[0].question] : []
   );
@@ -17,10 +18,13 @@ export const KnowledgeBaseSection: React.FC = () => {
     { id: 'remont', label: 'Montaż i remont' },
   ];
 
-  const filteredItems =
-    selectedCategory === 'all'
-      ? FAQ_ITEMS
-      : FAQ_ITEMS.filter((item) => item.category === selectedCategory);
+  const needle = query.trim().toLowerCase();
+  const filteredItems = FAQ_ITEMS.filter(
+    (item) =>
+      (selectedCategory === 'all' || item.category === selectedCategory) &&
+      (!needle ||
+        `${item.question} ${item.simpleAnswer} ${item.technicalDetails}`.toLowerCase().includes(needle))
+  );
 
   const toggleId = (id: string) => {
     setOpenIds((prev) =>
@@ -28,153 +32,142 @@ export const KnowledgeBaseSection: React.FC = () => {
     );
   };
 
+  const resetFilters = () => {
+    setQuery('');
+    setSelectedCategory('all');
+  };
+
   return (
-    <section id="baza-wiedzy" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden transition-colors duration-500 border-t bg-gray-100 border-gray-200 text-gray-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-copper-500/10 text-copper-800 border-copper-500/30">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Baza wiedzy i FAQ</span>
+    <section id="baza-wiedzy" className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200 text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+        {/* Left: header, search and filters stay in view while reading */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28">
+          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3">
+            Baza wiedzy
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
             Pytania i odpowiedzi
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-gray-600">
-            Wiesz, czy dom działa bez internetu, co dzieje się przy burzy, ile kosztuje utrzymanie i czy każdy da sobie radę z obsługą.
+          <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
+            Co dzieje się bez internetu i przy burzy, ile kosztuje utrzymanie i czy każdy domownik da sobie radę z obsługą.
           </p>
-        </div>
 
-        {/* Photo header strip */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-              alt="Jasne wnętrze domu z automatyką działającą bez internetu"
-              loading="lazy"
-              className="w-full h-full object-cover object-center"
+          <label htmlFor="faq-search" className="block mt-8 mb-2 text-xs font-semibold text-gray-700">
+            Szukaj w pytaniach
+          </label>
+          <div className="relative">
+            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" aria-hidden="true" />
+            <input
+              id="faq-search"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="np. burza, abonament, kucie"
+              className="w-full min-h-11 pl-10 pr-10 rounded-[2px] text-sm border bg-white border-gray-300 text-gray-900 focus:outline-none focus:border-copper-500 focus-visible:ring-2 focus-visible:ring-copper-500/60"
             />
-          </div>
-          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
-            <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-              alt="Szafa serwerowa z rejestratorem nagrań i zabezpieczeniami"
-              loading="lazy"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
-              alt="Elektronika sterowników automatyki domowej z bliska"
-              loading="lazy"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
-
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
-                selectedCategory === cat.id
-                  ? 'bg-copper-600 text-white font-bold shadow-md shadow-copper-500/20'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'}`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Accordion List */}
-        <div className="space-y-4">
-          {filteredItems.map((item, index) => {
-            const isOpen = openIds.includes(item.question);
-
-            return (
-              <div
-                key={index}
-                className={`rounded-[2px] transition-all duration-200 border overflow-hidden shadow-sm ${
-                  isOpen
-                    ? 'bg-white border-copper-500 shadow-md': 'bg-white border-gray-200 hover:border-copper-500/40'}`}
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="Wyczyść wyszukiwanie"
+                className="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-[2px] text-gray-500 hover:text-gray-900 hover:bg-gray-100 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500"
               >
-                {/* Accordion Question Header */}
-                <button
-                  onClick={() => toggleId(item.question)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-panel-${index}`}
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
-                >
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`w-9 h-9 rounded-[2px] flex items-center justify-center shrink-0 ${
-                        isOpen
-                          ? 'bg-copper-600 text-white'
-                          : 'bg-gray-100 text-gray-600'}`}
-                    >
-                      <HelpCircle className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
-                      {item.question}
-                    </h3>
-                  </div>
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
 
-                  <div
-                    className="p-2 rounded-[2px] shrink-0 bg-gray-100 text-gray-600"
-                  >
-                    {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                  </div>
-                </button>
-
-                {/* Answers: Human Summary + Detailed Engineering */}
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.25 }}
-                      id={`faq-panel-${index}`}
-                      role="region"
-                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-gray-200"
-                    >
-                      {/* Human-Friendly Direct Answer */}
-                      <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-white border-copper-500/30 text-gray-700">
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0" />
-                          <span className="text-xs font-bold uppercase tracking-wider text-copper-800">
-                            Odpowiedź w skrócie:
-                          </span>
-                        </div>
-                        <p className="font-light">
-                          {item.simpleAnswer}
-                        </p>
-                      </div>
-
-                      {/* Deep-Dive Engineering Details */}
-                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-gray-50 border-gray-200 text-gray-600">
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <Cpu className="w-3.5 h-3.5 shrink-0 text-gray-600" />
-                          <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-                            Więcej szczegółów:
-                          </span>
-                        </div>
-                        <p className="font-mono text-xs leading-relaxed">
-                          {item.technicalDetails}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+          <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Kategorie pytań">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                aria-pressed={selectedCategory === cat.id}
+                className={`min-h-11 px-4 rounded-[2px] text-xs font-semibold transition-colors cursor-pointer active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                  selectedCategory === cat.id
+                    ? 'bg-copper-600 text-white'
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 hover:bg-gray-50'}`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
 
+        {/* Right: ruled question list */}
+        <div className="lg:col-span-8">
+          <p className="text-xs text-gray-500 mb-3 tabular-nums" aria-live="polite">
+            {filteredItems.length === 1 ? '1 pytanie' : `Pytań: ${filteredItems.length}`}
+          </p>
+
+          {filteredItems.length === 0 ? (
+            <div className="border-y border-gray-300 py-12">
+              <h3 className="font-display text-lg font-bold text-gray-900">Nie mamy jeszcze takiego pytania</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600 max-w-prose">
+                Spróbuj innego słowa albo zadaj pytanie inżynierowi — odpowiemy w ciągu 24 godzin roboczych.
+              </p>
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="mt-5 text-sm font-semibold text-copper-600 hover:text-copper-800 underline underline-offset-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500"
+              >
+                Pokaż wszystkie pytania
+              </button>
+            </div>
+          ) : (
+            <ul className="border-y border-gray-300 divide-y divide-gray-300">
+              {filteredItems.map((item, index) => {
+                const isOpen = openIds.includes(item.question);
+
+                return (
+                  <li key={item.question}>
+                    <button
+                      onClick={() => toggleId(item.question)}
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-panel-${index}`}
+                      className="group w-full text-left py-6 flex items-start justify-between gap-6 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    >
+                      <h3 className={`font-display text-base sm:text-lg font-bold transition-colors ${isOpen ? 'text-copper-700' : 'text-gray-900 group-hover:text-copper-700'}`}>
+                        {item.question}
+                      </h3>
+                      <ChevronDown
+                        className={`w-5 h-5 mt-0.5 shrink-0 text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                        aria-hidden="true"
+                      />
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                          id={`faq-panel-${index}`}
+                          role="region"
+                          className="overflow-hidden"
+                        >
+                          <div className="pb-7 grid gap-4 max-w-prose">
+                            <p className="text-base leading-relaxed text-gray-800">
+                              {item.simpleAnswer}
+                            </p>
+                            <div className="pl-4 border-l-2 border-copper-500/50">
+                              <div className="text-xs font-semibold text-gray-500 mb-1">Więcej szczegółów</div>
+                              <p className="text-sm leading-relaxed text-gray-600">
+                                {item.technicalDetails}
+                              </p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
       </div>
     </section>
   );

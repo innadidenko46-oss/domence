@@ -33,7 +33,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     id: 'cap-blinds',
     title: 'Automatyka rolet, żaluzji fasadowych i zasłon (sun-tracking)',
     category: 'blinds',
-    badge: 'Pozycja i Kąt Żaluzji',
+    badge: 'Pozycja i kąt żaluzji',
     description:
       'Inteligentne sterowanie roletami i żaluzjami fasadowymi. System reguluje położenie zgodnie z pozycją słońca na niebie, wpuszczając naturalne światło i ograniczając nagrzewanie pokoju.',
     proAdvantage:
@@ -73,7 +73,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     id: 'cap-sensors',
     title: 'Sensoryka obecności True Presence i radary mmWave',
     category: 'sensors',
-    badge: 'Czujniki Obecności',
+    badge: 'Czujniki obecności',
     description:
       'Nowoczesne czujniki radarowe fal milimetrowych wykrywają mikroruchy (oddychanie człowieka). Światło nie gaśnie, gdy siedzisz nieruchomo, czytasz książkę lub medytujesz na macie.',
     proAdvantage:
@@ -93,7 +93,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     id: 'cap-interface',
     title: 'Minimalistyczne panele dotykowe i sterowanie domem',
     category: 'interface',
-    badge: 'Panele Dotykowe',
+    badge: 'Panele dotykowe',
     description:
       'Jeden panel ścienny zamiast rzędu 6 włączników: zastępuje wszystkie klawisze, termostat i sterownik rolet.',
     proAdvantage:
@@ -313,8 +313,8 @@ export const SCENARIOS: LifeScenario[] = [
       'Dzwonek domofonu i powiadomienia w tym pokoju zostają wyciszone (tryb Zen)',
     ],
     actionSteps: [
-      { icon: 'Sun', label: 'Światło Nastrojowe', detail: 'Ciepły bursztyn 2200K na 15% (linie cokołowe i podsufitowe)' },
-      { icon: 'SlidersHorizontal', label: 'Rolety i Żaluzje', detail: 'Zamknięcie dla pełnej dyskrecji przed okiem sąsiadów' },
+      { icon: 'Sun', label: 'Światło nastrojowe', detail: 'Ciepły bursztyn 2200K na 15% (linie cokołowe i podsufitowe)' },
+      { icon: 'SlidersHorizontal', label: 'Rolety i żaluzje', detail: 'Zamknięcie dla pełnej dyskrecji przed okiem sąsiadów' },
       { icon: 'Volume2', label: 'Dźwięk z Twoich głośników', detail: 'Spokojny ambient z Twoich głośników (jeśli je masz)' },
       { icon: 'Wind', label: 'Mikroklimat', detail: 'Cichy napływ natlenionego powietrza, temperatura 21.5°C' },
     ],
@@ -324,7 +324,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-sunrise',
     number: '02',
-    title: 'Łagodne Budzenie (Sunrise Wake-Up)',
+    title: 'Łagodne budzenie (Sunrise Wake-Up)',
     tag: 'Zdrowy sen i energia',
     tagColor: '#F59E0B',
     trigger: 'Harmonogram biologiczny lub godzina budzika w telefonie',
@@ -340,9 +340,9 @@ export const SCENARIOS: LifeScenario[] = [
       'Uruchomienie ekspresu do kawy w kuchni dokładnie o ustalonej porze',
     ],
     actionSteps: [
-      { icon: 'SunMedium', label: 'Światło Świtu', detail: 'Stopniowe rozjaśnianie od ciepłego bursztynu do światła dziennego' },
+      { icon: 'SunMedium', label: 'Światło świtu', detail: 'Stopniowe rozjaśnianie od ciepłego bursztynu do światła dziennego' },
       { icon: 'SlidersHorizontal', label: 'Rolety', detail: 'Stopniowe uchylenie wpuszczające pierwsze promienie poranka' },
-      { icon: 'Flame', label: 'Ciepła Podłoga', detail: 'Automatyczne dogrzanie łazienki do komfortowych 23.5°C' },
+      { icon: 'Flame', label: 'Ciepła podłoga', detail: 'Automatyczne dogrzanie łazienki do komfortowych 23.5°C' },
       { icon: 'Coffee', label: 'Ekspres', detail: 'Świeża kawa gotowa w momencie zejścia do kuchni' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
@@ -351,7 +351,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-masteroff',
     number: '03',
-    title: 'Wyjście z domu („Wyłącz wszystko”)',
+    title: 'Wyjście z domu („wyłącz wszystko”)',
     tag: 'Bezpieczeństwo i wygoda',
     tagColor: '#EF4444',
     trigger: 'Pojedynczy klawisz przy drzwiach wejściowych lub zbliżenie breloka',
@@ -366,8 +366,8 @@ export const SCENARIOS: LifeScenario[] = [
       'Kamery Hikvision AcuSense przechodzą w aktywny tryb obrony obwodowej',
     ],
     actionSteps: [
-      { icon: 'Power', label: 'Obwody Ryzyka', detail: 'Mechaniczne odcięcie zasilania gniazd żelazka i płyty' },
-      { icon: 'LightbulbOff', label: 'Wszystkie Światła', detail: 'Automatyczne wygaszenie oświetlenia we wszystkich pokojach' },
+      { icon: 'Power', label: 'Obwody ryzyka', detail: 'Mechaniczne odcięcie zasilania gniazd żelazka i płyty' },
+      { icon: 'LightbulbOff', label: 'Wszystkie światła', detail: 'Automatyczne wygaszenie oświetlenia we wszystkich pokojach' },
       { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Uzbrojenie stref alarmu i aktywacja analityki sylwetek AI' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
@@ -377,7 +377,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-cinema',
     number: '04',
-    title: 'Kino Domowe (Movie Night)',
+    title: 'Kino domowe (movie night)',
     tag: 'Multimedia i atmosfera',
     tagColor: '#3B82F6',
     trigger: 'Komenda „Włącz kino”, przycisk w salonie lub włączenie telewizora/projektora',
@@ -393,7 +393,7 @@ export const SCENARIOS: LifeScenario[] = [
     ],
     actionSteps: [
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Całkowite zaryglowanie rolet i zasłon blackout' },
-      { icon: 'Sun', label: 'Światło Kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
+      { icon: 'Sun', label: 'Światło kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
       { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
@@ -402,7 +402,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-courier',
     number: '05',
-    title: 'Kurier i Furtka pod Kontrolą (Hikvision IP)',
+    title: 'Kurier i furtka pod kontrolą (Hikvision IP)',
     tag: 'Wideodomofon i dostęp',
     tagColor: '#F97316',
     trigger: 'Naciśnięcie dzwonka na stacji bramowej Hikvision KD8003 / KD9613',
@@ -418,7 +418,7 @@ export const SCENARIOS: LifeScenario[] = [
     ],
     actionSteps: [
       { icon: 'Video', label: 'Połączenie HD', detail: 'Wideo 180° w telefonie w aplikacji Hik-Connect' },
-      { icon: 'KeyRound', label: 'Zdalne Otwarcie', detail: 'Jedno dotknięcie zwalnia elektrozaczep furtki' },
+      { icon: 'KeyRound', label: 'Zdalne otwarcie', detail: 'Jedno dotknięcie zwalnia elektrozaczep furtki' },
       { icon: 'HardDrive', label: 'Zapis NVR', detail: 'Zdarzenie zapisane na dysku bez opłat abonamentowych' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
@@ -427,8 +427,8 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-water',
     number: '06',
-    title: 'Jak zabezpieczamy dom przed zalaniem (Zawór + Czujniki)',
-    tag: 'Ochrona Majątku',
+    title: 'Jak zabezpieczamy dom przed zalaniem (zawór + czujniki)',
+    tag: 'Ochrona majątku',
     tagColor: '#0284C7',
     trigger: 'Wykrycie wilgoci przez czujnik pod pralką, zmywarką lub w kotłowni',
     description:
@@ -442,8 +442,8 @@ export const SCENARIOS: LifeScenario[] = [
       'Cykliczne auto-odkamienianie zaworów raz w tygodniu w nocy',
     ],
     actionSteps: [
-      { icon: 'Droplets', label: 'Detekcja Wycieku', detail: 'zamknięcie zaworu zwykle w kilka sekund' },
-      { icon: 'ShieldAlert', label: 'Mechaniczne Odcięcie', detail: 'Zamknięcie głównego zaworu wody' },
+      { icon: 'Droplets', label: 'Detekcja wycieku', detail: 'zamknięcie zaworu zwykle w kilka sekund' },
+      { icon: 'ShieldAlert', label: 'Mechaniczne odcięcie', detail: 'Zamknięcie głównego zaworu wody' },
       { icon: 'Phone', label: 'Alarm PUSH', detail: 'Powiadomienie na telefony domowników z mapą wycieku' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
@@ -452,7 +452,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-sleep',
     number: '07',
-    title: 'Biorytmiczny Sen (Bio-Sleep)',
+    title: 'Biorytmiczny sen (Bio-Sleep)',
     tag: 'Zdrowie i biorytm',
     tagColor: '#10B981',
     trigger: 'Wykrycie ruchu stopą przy łóżku w godzinach 23:00 - 06:00',
@@ -467,8 +467,8 @@ export const SCENARIOS: LifeScenario[] = [
       'Brak dźwięków powiadomień i pukania domofonu w strefie sypialnej',
     ],
     actionSteps: [
-      { icon: 'Moon', label: 'Cokoły Bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
-      { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające zasypianiu' },
+      { icon: 'Moon', label: 'Cokoły bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
+      { icon: 'Thermometer', label: 'Klimat nocny', detail: 'Rześkie 18.5°C sprzyjające zasypianiu' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
     icon: 'Moon',
@@ -476,7 +476,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-dinner',
     number: '08',
-    title: '„Przytulna Kolacja”',
+    title: '„Przytulna kolacja”',
     tag: 'Komfort i atmosfera',
     tagColor: '#F59E0B',
     trigger: 'Komenda głosowa: „Włącz kolację” lub przycisk sceny w jadalni',
@@ -491,9 +491,9 @@ export const SCENARIOS: LifeScenario[] = [
       'Cicha, elegancka playlista z głośników sufitowych w strefie jadalni',
     ],
     actionSteps: [
-      { icon: 'Sun', label: 'Światło Kolacji', detail: 'Ciepły blask 2400K nad stołem jadalnym i wyspą' },
+      { icon: 'Sun', label: 'Światło kolacji', detail: 'Ciepły blask 2400K nad stołem jadalnym i wyspą' },
       { icon: 'SlidersHorizontal', label: 'Rolety i zasłony', detail: 'Zamknięcie przed zmierzchem chroniące prywatność' },
-      { icon: 'Volume2', label: 'Akustyka Tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
+      { icon: 'Volume2', label: 'Akustyka tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
@@ -501,8 +501,8 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-vacation',
     number: '09',
-    title: 'Tryb Urlopowy (Symulacja Obecności)',
-    tag: 'Maksymalne Bezpieczeństwo',
+    title: 'Tryb urlopowy (symulacja obecności)',
+    tag: 'Maksymalne bezpieczeństwo',
     tagColor: '#10B981',
     trigger: 'Aktywacja w aplikacji przed wyjazdem na wakacje',
     description:
@@ -516,8 +516,8 @@ export const SCENARIOS: LifeScenario[] = [
       'Kamery Hikvision AcuSense na wejściu aktywnie wykrywają obecność intruza i natychmiast wysyłają powiadomienie',
     ],
     actionSteps: [
-      { icon: 'Lightbulb', label: 'Symulacja Ruchu', detail: 'Realistyczne sceny świetlne wieczorem w różnych pokojach' },
-      { icon: 'Droplets', label: 'Zawór Wody', detail: 'Pełne fizyczne odcięcie dopływu wody do budynku' },
+      { icon: 'Lightbulb', label: 'Symulacja ruchu', detail: 'Realistyczne sceny świetlne wieczorem w różnych pokojach' },
+      { icon: 'Droplets', label: 'Zawór wody', detail: 'Pełne fizyczne odcięcie dopływu wody do budynku' },
       { icon: 'ShieldCheck', label: 'Strażnik Hikvision', detail: 'Analityka AI sylwetek ludzkich przy wejściu do domu' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
@@ -650,7 +650,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'alarm_satel_pack',
-    name: 'Certyfikowany Alarm SSWiN Grade 2',
+    name: 'Certyfikowany alarm SSWiN Grade 2',
     badge: 'Bezpieczeństwo',
     description: 'Centrala hybrydowa, klawiatura szklana, 4 czujki ruchu PIR+MW i powiadomienie LTE.',
     humanExplanation: 'Alarm z atestem. Te same czujki w dzień sterują oświetleniem, a po wyjściu z domu strzegą posesji.',
@@ -688,7 +688,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'rack_network_pack',
-    name: 'Szafa Teletechniczna RACK 19" + Switch PoE + Wi-Fi 6',
+    name: 'Szafa teletechniczna RACK 19" + switch PoE + Wi-Fi 6',
     badge: 'Infrastruktura',
     description: 'Okablowanie, szafa serwerowa z patchpanelem i roaming Wi-Fi w całym domu.',
     humanExplanation: 'Koniec z zawieszającym się internetem i martwymi strefami w sypialni czy gabinecie. Wszystkie kable uporządkowane w szafce.',
@@ -746,8 +746,8 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'shelly_trv_airing_pack',
-    name: 'Pakiet "Wietrzenie bez strat ciepła": Shelly BLU Door/Window + Shelly BLU TRV',
-    badge: 'Komfort Wietrzenia',
+    name: 'Pakiet "wietrzenie bez strat ciepła": Shelly BLU Door/Window + Shelly BLU TRV',
+    badge: 'Komfort wietrzenia',
     description: 'Odcięcie zaworu grzejnika po otwarciu okna na wietrzenie i automatyczny powrót do komfortowej temperatury po zamknięciu.',
     humanExplanation: 'Otwierasz okno, by wpuścić świeże powietrze – grzejnik natychmiast wyłącza się, by nie ogrzewać ulicy. Zamykasz okno – ciepło natychmiast wraca.',
     price: 890,
@@ -800,8 +800,8 @@ export const PACKAGES: PackageOffer[] = [
   },
   {
     id: 'retrofit_smart',
-    title: 'Smart Retrofit Shelly (Wykończone Wnętrze Bez Kucia)',
-    categoryBadge: 'Bestseller: Bez Ingerencji w Tynki',
+    title: 'Smart retrofit Shelly (wykończone wnętrze bez kucia)',
+    categoryBadge: 'Bestseller: Bez ingerencji w tynki',
     badgeType: 'bestseller',
     timeframe: '1–2 dni robocze',
     description: 'Kompletna automatyka Shelly Plus bez kurzu i bez niszczenia gładzi. Zabezpieczenie przed zalaniem, oświetlenie, rolety i sceny jogi.',
@@ -822,7 +822,7 @@ export const PACKAGES: PackageOffer[] = [
   {
     id: 'developer_din',
     title: 'Shelly Pro do nowego domu (moduły w rozdzielnicy)',
-    categoryBadge: 'Pełny Standard Inżynieryjny',
+    categoryBadge: 'Pełny standard inżynieryjny',
     badgeType: 'premium',
     timeframe: '3–5 dni roboczych',
     description: 'Przewodowe moduły Shelly Pro DIN w rozdzielnicy elektrycznej, serwer automatyki, sterowanie roletami i oświetlenia oraz szafa teletechniczna RACK.',

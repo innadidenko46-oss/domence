@@ -162,7 +162,7 @@ export const ContactPage: React.FC = () => {
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                      Dziękujemy! Wiadomość prawie gotowa.
+                      Dziękujemy. Wiadomość jest prawie gotowa.
                     </h3>
                     <p className="text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
                       Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.

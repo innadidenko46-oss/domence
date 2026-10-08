@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
           {/* Chapters & Services */}
           <div className="md:col-span-5 grid grid-cols-2 gap-6">
             <div>
-              <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="font-display text-sm font-semibold text-white mb-4">
                 Rozwiązania
               </h4>
               <ul className="space-y-2 text-xs text-gray-400">
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="font-display text-sm font-semibold text-white mb-4">
                 Wdrożenia i narzędzia
               </h4>
               <ul className="space-y-2 text-xs text-gray-400">
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact Direct */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-display text-sm font-semibold text-white mb-4">
               Kontakt z inżynierem
             </h4>
 
