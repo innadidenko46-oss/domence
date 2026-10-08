@@ -37,11 +37,11 @@ export const AiFutureTechSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16">
           {AI_FUTURE_TECH.map((tech) => (
             <article
               key={tech.id}
-              className="p-6 rounded-[2px] bg-white border border-gray-200 shadow-sm"
+              className="py-8 border-t border-gray-300"
             >
               <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
                 {getTechIcon(tech.icon)}

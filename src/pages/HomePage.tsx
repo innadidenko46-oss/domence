@@ -95,7 +95,7 @@ export const HomePage: React.FC = () => {
       {/* Hero */}
       <section className="relative flex items-center pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 hero-stagger">
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[2px] text-xs font-semibold mb-6 backdrop-blur-md border bg-copper-500/10 text-copper-800 border-copper-500/30">
               <span className="w-2 h-2 rounded-full bg-copper-600" />
@@ -105,7 +105,7 @@ export const HomePage: React.FC = () => {
             {/* Main Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-gray-950">
               Nowoczesny dom, którym sterujesz telefonem.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-copper-500 via-copper-400 to-copper-600">
+              <span className="text-copper-600">
                 Działa też bez internetu.
               </span>
             </h1>
@@ -119,7 +119,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 to="/kalkulator"
-                className="btn-engineering-primary shadow-sm active:scale-95 text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
@@ -154,7 +154,7 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block lg:col-span-5">
+          <div className="hidden lg:block lg:col-span-5 hero-media">
             <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-xl aspect-[4/5]">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
@@ -179,17 +179,21 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {chapters.map((ch) => {
+          {/* Bento rhythm on desktop: 2 wide, 3 narrow, 2 wide */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            {chapters.map((ch, i) => {
+              const wide = i < 2 || i > 4;
               return (
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 bg-white border-gray-200 hover:border-copper-400 hover:shadow-gray-300/70"
+                  className={`focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-copper-400 ${
+                    wide ? 'lg:col-span-3' : 'lg:col-span-2'
+                  } ${i === chapters.length - 1 ? 'md:col-span-2 lg:col-span-3' : ''}`}
                 >
                   {/* Photography Header */}
                   <div>
-                    <div className="relative h-44 sm:h-48 overflow-hidden bg-gray-900">
+                    <div className={`relative overflow-hidden bg-gray-900 ${wide ? 'h-52 lg:h-64' : 'h-44 lg:h-48'}`}>
                       <img
                         src={ch.image}
                         alt={ch.imageAlt}
@@ -340,7 +344,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/kalkulator"
-                className="btn-engineering-primary shadow-lg shadow-copper-500/20 active:scale-95 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-engineering-primary shadow-lg shadow-copper-500/20 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
               </Link>

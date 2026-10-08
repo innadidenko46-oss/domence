@@ -28,8 +28,8 @@ export const MultiroomGardenPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Kino jednym przyciskiem
                 </span>
               </div>
@@ -51,8 +51,8 @@ export const MultiroomGardenPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Dzwonek z furtki
                 </span>
               </div>

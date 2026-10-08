@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 active:scale-95 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+            className="flex items-center group shrink-0 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
@@ -92,7 +92,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               to="/kalkulator"
-              className="min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-copper-400/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-copper-400/40 active:scale-[0.98] flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
               <ClipboardList className="w-3.5 h-3.5" />
               <span>Dobierz zestaw (2 min)</span>

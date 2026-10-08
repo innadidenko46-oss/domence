@@ -17,7 +17,7 @@ export const MobileStickyBar: React.FC = () => {
 
         <Link
           to="/kalkulator"
-          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
         >
           <ClipboardList className="w-4 h-4" />
           <span>Dobierz zestaw</span>

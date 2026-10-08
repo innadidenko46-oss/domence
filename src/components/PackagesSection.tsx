@@ -66,7 +66,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                       loading="lazy"
                       className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
                   </div>
                 )}
                 <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">

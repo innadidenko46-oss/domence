@@ -206,7 +206,7 @@ export const Footer: React.FC = () => {
 
       {/* Legal Modals */}
       {activeModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
+        <div className="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
           <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-navy-950 border border-white/15 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
             <button
               onClick={() => setActiveModal(null)}

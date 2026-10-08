@@ -19,7 +19,7 @@ export const ScenariosPage: React.FC = () => {
       {/* Visual Atmosphere Showcase for Scenarios */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr] gap-6">
             <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <img
@@ -28,7 +28,7 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Budzenie światłem
                 </span>
@@ -51,7 +51,7 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Przycisk przy drzwiach
                 </span>
@@ -74,7 +74,7 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Woda odcięta w kilka sekund
                 </span>
@@ -116,8 +116,8 @@ export const ScenariosPage: React.FC = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-[2px] border shadow-sm bg-white border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="pt-6 border-t-2 border-copper-500/50">
               <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center mb-4">
                 <Droplets className="w-5 h-5" />
               </div>
@@ -129,7 +129,7 @@ export const ScenariosPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-[2px] border shadow-sm bg-white border-gray-200">
+            <div className="pt-6 border-t-2 border-copper-500/50">
               <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center mb-4">
                 <LogOut className="w-5 h-5" />
               </div>
@@ -141,7 +141,7 @@ export const ScenariosPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-[2px] border shadow-sm bg-white border-gray-200">
+            <div className="pt-6 border-t-2 border-copper-500/50">
               <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center mb-4">
                 <Moon className="w-5 h-5" />
               </div>

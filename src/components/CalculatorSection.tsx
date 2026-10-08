@@ -99,6 +99,21 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     message: '',
     agreement: false,
   });
+
+  type FieldErrors = Partial<Record<'name' | 'phone' | 'email' | 'agreement', string>>;
+  const [errors, setErrors] = useState<FieldErrors>({});
+
+  const validate = (): FieldErrors => {
+    const next: FieldErrors = {};
+    if (formData.name.trim().length < 3) next.name = 'Podaj imię i nazwisko (min. 3 znaki).';
+    if (!/^[+\d][\d\s\-/.]{5,19}$/.test(formData.phone)) next.phone = 'Wpisz numer w formacie +48 601 234 567.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
+    if (!formData.agreement) next.agreement = 'Zaznacz zgodę, żebyśmy mogli oddzwonić.';
+    return next;
+  };
+
+  const clearError = (field: keyof FieldErrors) =>
+    setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
@@ -161,6 +176,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const found = validate();
+    setErrors(found);
+    const firstInvalid = (['name', 'phone', 'email', 'agreement'] as const).find((f) => found[f]);
+    if (firstInvalid) {
+      document.getElementById(`calc-${firstInvalid}`)?.focus();
+      return;
+    }
     const selectedNames =
       SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
         .map((m) => `• ${m.name}`)
@@ -319,7 +341,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
@@ -439,9 +461,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4 max-w-lg mx-auto">
                   <div>
-                    <label htmlFor="calc-name" className="block text-xs font-semibold mb-1 text-gray-700">
+                    <label htmlFor="calc-name" className="block text-xs font-semibold mb-2 text-gray-700">
                       Imię i nazwisko
                     </label>
                     <div className="relative">
@@ -454,17 +476,22 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         minLength={3}
                         maxLength={60}
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
+                        onChange={(e) => { setFormData({ ...formData, name: e.target.value.trimStart() }); clearError('name'); }}
                         placeholder="np. Marek Wiśniewski"
-                        className="w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                        aria-invalid={!!errors.name}
+                        aria-describedby={errors.name ? 'calc-name-error' : undefined}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.name ? 'border-red-600' : 'border-gray-300'}`}
                       />
                       <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                     </div>
+                    {errors.name && (
+                      <p id="calc-name-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.name}</p>
+                    )}
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="calc-phone" className="block text-xs font-semibold mb-1 text-gray-700">
+                      <label htmlFor="calc-phone" className="block text-xs font-semibold mb-2 text-gray-700">
                         Telefon kontaktowy
                       </label>
                       <div className="relative">
@@ -478,16 +505,21 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           pattern="^[+\d][\d\s\-/.]{5,19}$"
                           maxLength={25}
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
+                          onChange={(e) => { setFormData({ ...formData, phone: e.target.value.trim() }); clearError('phone'); }}
                           placeholder="+48 601 234 567"
-                          className="w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          aria-invalid={!!errors.phone}
+                        aria-describedby={errors.phone ? 'calc-phone-error' : undefined}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Phone className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
+                    {errors.phone && (
+                      <p id="calc-phone-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.phone}</p>
+                    )}
                     </div>
 
                     <div>
-                      <label htmlFor="calc-email" className="block text-xs font-semibold mb-1 text-gray-700">
+                      <label htmlFor="calc-email" className="block text-xs font-semibold mb-2 text-gray-700">
                         Adres e-mail
                       </label>
                       <div className="relative">
@@ -499,17 +531,22 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           required
                           maxLength={254}
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearError('email'); }}
                           placeholder="inwestor@dom.pl"
-                          className="w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? 'calc-email-error' : undefined}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
+                    {errors.email && (
+                      <p id="calc-email-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.email}</p>
+                    )}
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="calc-message" className="block text-xs font-semibold mb-1 text-gray-700">
+                    <label htmlFor="calc-message" className="block text-xs font-semibold mb-2 text-gray-700">
                       Wiadomość (opcjonalnie)
                     </label>
                     <textarea
@@ -524,30 +561,37 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     />
                   </div>
 
-                  <div className="pt-2 text-xs text-gray-400">
+                  <div className="pt-2 text-xs text-gray-600">
                     <label className="flex items-start gap-2.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                       <input
+                        id="calc-agreement"
                         type="checkbox"
-                        required
+                        aria-invalid={!!errors.agreement}
+                        aria-describedby={errors.agreement ? 'calc-agreement-error' : undefined}
                         checked={formData.agreement}
-                        onChange={(e) =>
-                          setFormData({ ...formData, agreement: e.target.checked })
-                        }
+                        onChange={(e) => {
+                          setFormData({ ...formData, agreement: e.target.checked });
+                          clearError('agreement');
+                        }}
                         className="mt-0.5 accent-copper-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
                         Wyrażam zgodę na kontakt w sprawie ankiety i propozycji zestawu.
                       </span>
                     </label>
+                    {errors.agreement && (
+                      <p id="calc-agreement-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.agreement}</p>
+                    )}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 pt-3">
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium text-center transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
+                      className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
                     >
-                      ← Wstecz
+                      <ArrowLeft className="w-4 h-4" />
+                      <span>Wstecz</span>
                     </button>
 
                     <button

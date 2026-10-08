@@ -47,7 +47,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
               </div>
               <div className="p-6 flex flex-col flex-1">
               <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">

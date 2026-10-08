@@ -109,7 +109,7 @@ export const CookieBanner: React.FC = () => {
             aria-label="Zgoda na pliki cookies"
             className="fixed bottom-[76px] md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-2xl z-50"
           >
-            <div className="bg-navy-800/95 backdrop-blur-xl border border-white/15 rounded-[2px] px-4 py-3 shadow-2xl shadow-black/60 text-gray-200 flex flex-col sm:flex-row sm:items-center gap-3">
+            <div className="bg-navy-800/95 backdrop-blur-xl border border-white/15 rounded-[2px] px-4 py-3 shadow-2xl shadow-navy-950/60 text-gray-200 flex flex-col sm:flex-row sm:items-center gap-3">
               <p className="text-xs text-gray-300 leading-relaxed flex-1">
                 <span className="font-bold text-white">Cookies: </span>
                 zapamiętujemy tylko Twoje wybory na stronie. Bez skryptów śledzących.
@@ -146,7 +146,7 @@ export const CookieBanner: React.FC = () => {
       {/* Detailed Modal */}
       <AnimatePresence>
         {showDetailsModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setShowDetailsModal(false)}>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm" onClick={() => setShowDetailsModal(false)}>
             <motion.div
               role="dialog"
               aria-modal="true"

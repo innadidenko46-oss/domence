@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
 import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
-import { Network, ShieldCheck, ArrowRight, Video, HardDrive } from 'lucide-react';
+import { Network, ShieldCheck, ArrowRight, Video, HardDrive, X } from 'lucide-react';
 
 export const TeletechnicsPage: React.FC = () => {
 
@@ -20,7 +20,7 @@ export const TeletechnicsPage: React.FC = () => {
       {/* Visual Atmosphere Showcase for Security & Networks */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr] gap-6">
             <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <img
@@ -29,7 +29,7 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Dyskrecja na elewacji
                 </span>
@@ -52,7 +52,7 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Szafka ze sprzętem
                 </span>
@@ -75,7 +75,7 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Szybki internet bez zrywania
                 </span>
@@ -146,31 +146,31 @@ export const TeletechnicsPage: React.FC = () => {
 
             <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-rose-500/20 text-rose-400 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-rose-500/20 text-rose-600 flex items-center justify-center">
                   <Video className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
                     Kamery na Wi-Fi z obcą chmurą
                   </h3>
-                  <span className="text-xs text-rose-400 font-mono font-semibold">Zależność od dostawcy</span>
+                  <span className="text-xs text-rose-600 font-mono font-semibold">Zależność od dostawcy</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <X className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>Historia nagrań zwykle wymaga płatnego abonamentu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <X className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>Pełne archiwum często wymaga dopłaty (sprawdź cennik producenta).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <X className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>Sygnał Wi-Fi potrafi zrywać, zwłaszcza przez grube ściany.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-rose-400 font-bold shrink-0">✕</span>
+                  <X className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>Bez internetu nie podejrzysz domu z telefonu ani nie dostaniesz powiadomienia.</span>
                 </li>
               </ul>
