@@ -202,7 +202,7 @@ export const AiFutureTechSection: React.FC = () => {
               <button
                 key={tech.id}
                 onClick={() => setSelectedTechId(tech.id)}
-                className={`p-4 rounded-[2px] text-left transition-all border flex flex-col justify-between min-h-[120px] cursor-pointer ${
+                className={`p-4 rounded-[2px] text-left transition-all border flex flex-col justify-between min-h-[120px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                   isSelected
                     ? isDay
                       ? 'bg-white border-[#B87333] shadow-md ring-1 ring-[#B87333]'
@@ -320,14 +320,14 @@ export const AiFutureTechSection: React.FC = () => {
                 
                 {/* 1. iOS STYLE ACUSEEK NATURAL LANGUAGE ARCHIVE SEARCH */}
                 {currentTech.id === 'ai-acuseek' && (
-                  <div className={`rounded-2xl p-4 sm:p-6 border shadow-2xl transition-all ${
+                  <div className={`rounded-[2px] p-4 sm:p-6 border shadow-2xl transition-all ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     {/* iOS App Header Bar */}
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-amber-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-[#B87333]/80" />
                         <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                         <span className="text-xs font-semibold text-white ml-2">Archiwum Wideo • Szukaj</span>
                       </div>
@@ -346,7 +346,7 @@ export const AiFutureTechSection: React.FC = () => {
                         value={acuseekQuery}
                         onChange={(e) => setAcuseekQuery(e.target.value)}
                         placeholder="Wpisz np. kurier z paczką..."
-                        className={`w-full pl-10 pr-24 py-2.5 rounded-xl text-xs sm:text-sm border focus:outline-none transition-all ${
+                        className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 w-full pl-10 pr-24 py-2.5 rounded-[2px] text-xs sm:text-sm border focus:outline-none transition-all ${
                           isDay
                             ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#111827] focus:border-[#B87333] focus:bg-white'
                             : 'bg-[#27272A] border-white/10 text-white focus:border-[#B87333] focus:bg-[#27272A]/80'
@@ -355,7 +355,7 @@ export const AiFutureTechSection: React.FC = () => {
                       <button
                         onClick={() => handleAcuseekSearch(acuseekQuery)}
                         disabled={isSearchingAcuseek}
-                        className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-lg bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+                        className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                       >
                         {isSearchingAcuseek ? 'Szukanie...' : 'Szukaj'}
                       </button>
@@ -367,7 +367,7 @@ export const AiFutureTechSection: React.FC = () => {
                         <button
                           key={idx}
                           onClick={() => handleAcuseekSearch(prompt)}
-                          className={`text-[11px] px-2.5 py-1 rounded-full border text-left transition-colors cursor-pointer ${
+                          className={`text-[11px] px-2.5 py-1 rounded-[2px] border text-left transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                             acuseekQuery === prompt
                               ? 'bg-[#B87333]/20 border-[#B87333] text-[#E5E7EB] font-medium'
                               : isDay
@@ -382,7 +382,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                     {/* Result Video Preview / iOS Card */}
                     {isSearchingAcuseek ? (
-                      <div className="h-52 rounded-xl flex flex-col items-center justify-center gap-2 border border-white/5 bg-black/40">
+                      <div className="h-52 rounded-[2px] flex flex-col items-center justify-center gap-2 border border-white/5 bg-black/40">
                         <div className="w-6 h-6 border-2 border-[#B87333] border-t-transparent rounded-full animate-spin" />
                         <span className="text-xs text-[#9CA3AF] font-mono">
                           Analiza lokalnego strumienia 4K w NVR...
@@ -390,27 +390,27 @@ export const AiFutureTechSection: React.FC = () => {
                       </div>
                     ) : (
                       acuseekResult && (
-                        <div className="rounded-xl overflow-hidden border border-white/10 bg-black/50 shadow-inner">
+                        <div className="rounded-[2px] overflow-hidden border border-white/10 bg-black/50 shadow-inner">
                           <div className="relative h-52 overflow-hidden group">
                             <img
                               src={`${import.meta.env.BASE_URL}images/facade_dome_camera.svg`}
                               alt="Podgląd archiwum nagrań z kamery (symulacja)"
-                              className="w-full h-full object-cover filter brightness-90 group-hover:scale-102 transition-transform duration-500"
+                              className="w-full h-full object-contain bg-[#071822] p-4 filter brightness-90 group-hover:scale-102 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
                             
-                            <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500/90 text-white font-mono text-[10px] font-bold flex items-center gap-1 backdrop-blur-md">
+                            <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-[2px] bg-emerald-500/90 text-white font-mono text-[10px] font-bold flex items-center gap-1 backdrop-blur-md">
                               <Check className="w-3 h-3" />
                               <span>Znaleziono w archiwum</span>
                             </div>
 
-                            <div className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono text-white">
+                            <div className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-[2px] bg-black/60 backdrop-blur-md text-[10px] font-mono text-white">
                               {acuseekResult.timestamp}
                             </div>
 
                             {/* Play overlay button */}
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="w-12 h-12 rounded-full bg-[#B87333]/90 hover:bg-[#B87333] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105 cursor-pointer backdrop-blur-sm">
+                              <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/90 hover:bg-[#B87333] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105 cursor-pointer backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
                                 <Play className="w-5 h-5 ml-0.5 fill-white" />
                               </div>
                             </div>
@@ -433,7 +433,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* 2. ColorVu Interactive Visualizer */}
                 {currentTech.id === 'ai-colorvu-acusense' && (
-                  <div className={`rounded-2xl p-5 sm:p-6 border ${
+                  <div className={`rounded-[2px] p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -446,7 +446,7 @@ export const AiFutureTechSection: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       <button
                         onClick={() => setNightVisionMode('ir')}
-                        className={`py-2 px-3 rounded-[2px] border text-xs font-semibold transition-all cursor-pointer ${
+                        className={`py-2 px-3 rounded-[2px] border text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                           nightVisionMode === 'ir'
                             ? 'bg-[#27272A] text-white border-white/20'
                             : 'bg-white/5 text-[#9CA3AF] border-transparent hover:border-white/10'
@@ -456,7 +456,7 @@ export const AiFutureTechSection: React.FC = () => {
                       </button>
                       <button
                         onClick={() => setNightVisionMode('colorvu')}
-                        className={`py-2 px-3 rounded-[2px] border text-xs font-semibold transition-all cursor-pointer ${
+                        className={`py-2 px-3 rounded-[2px] border text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                           nightVisionMode === 'colorvu'
                             ? 'bg-sky-500/20 text-sky-300 border-sky-400'
                             : 'bg-white/5 text-[#9CA3AF] border-transparent hover:border-white/10'
@@ -466,11 +466,11 @@ export const AiFutureTechSection: React.FC = () => {
                       </button>
                     </div>
 
-                    <div className="relative h-56 rounded-xl overflow-hidden border border-white/10">
+                    <div className="relative h-56 rounded-[2px] overflow-hidden border border-white/10">
                       <img
                         src={`${import.meta.env.BASE_URL}images/facade_dome_camera.svg`}
                         alt="Symulacja obrazu z kamery — porównanie trybu nocnego i kolorowego"
-                        className={`w-full h-full object-cover transition-all duration-500 ${
+                        className={`w-full h-full object-contain bg-[#071822] p-4 transition-all duration-500 ${
                           nightVisionMode === 'ir'
                             ? 'grayscale contrast-125 brightness-75'
                             : 'contrast-105 brightness-105'
@@ -494,7 +494,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* 3. DeepinViewX Multimodal Edge AI */}
                 {currentTech.id === 'ai-deepinviewx' && (
-                  <div className={`rounded-2xl p-5 sm:p-6 border ${
+                  <div className={`rounded-[2px] p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -533,7 +533,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* 4. Millimeter Wave Radar Simulation */}
                 {currentTech.id === 'ai-mmwave-radar' && (
-                  <div className={`rounded-2xl p-5 sm:p-6 border ${
+                  <div className={`rounded-[2px] p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -568,7 +568,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* 5. LOQED Touch Smart Lock 2s */}
                 {currentTech.id === 'ai-loqed-lock' && (
-                  <div className={`rounded-2xl p-5 sm:p-6 border ${
+                  <div className={`rounded-[2px] p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -580,7 +580,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                     <div className="flex flex-col items-center justify-center p-6 rounded-[2px] border border-white/10 bg-[#27272A]/40 mb-4">
                       <div
-                        className={`w-16 h-16 rounded-full flex items-center justify-center mb-3 transition-all duration-300 ${
+                        className={`w-16 h-16 rounded-[2px] flex items-center justify-center mb-3 transition-all duration-300 ${
                           isUnlocking
                             ? 'bg-[#B87333]/20 text-[#B87333] animate-pulse'
                             : isDoorLocked
@@ -613,7 +613,7 @@ export const AiFutureTechSection: React.FC = () => {
                       <button
                         onClick={handleUnlockDoor}
                         disabled={isUnlocking}
-                        className={`px-6 py-2.5 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+                        className={`px-6 py-2.5 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                           isDoorLocked
                             ? 'bg-[#B87333] hover:bg-[#A36034] text-white shadow-md'
                             : 'bg-white/10 hover:bg-white/20 text-white'
@@ -628,7 +628,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* 6. Shelly Assistant Chat */}
                 {currentTech.id === 'ai-shelly-assistant' && (
-                  <div className={`rounded-2xl p-5 sm:p-6 border ${
+                  <div className={`rounded-[2px] p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
                   }`}>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -672,7 +672,7 @@ export const AiFutureTechSection: React.FC = () => {
                         value={assistantInput}
                         onChange={(e) => setAssistantInput(e.target.value)}
                         placeholder="Wpisz np. «Kino», «Dobranoc», «Temperatura»..."
-                        className={`w-full px-4 py-2.5 pr-14 rounded-[2px] text-xs border focus:outline-none ${
+                        className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 w-full px-4 py-2.5 pr-14 rounded-[2px] text-xs border focus:outline-none ${
                           isDay
                             ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]'
                             : 'bg-[#27272A] border-white/10 text-white'
@@ -680,7 +680,7 @@ export const AiFutureTechSection: React.FC = () => {
                       />
                       <button
                         type="submit"
-                        className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs flex items-center justify-center transition-colors cursor-pointer"
+                        className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs flex items-center justify-center transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                       >
                         <Send className="w-3.5 h-3.5" />
                       </button>

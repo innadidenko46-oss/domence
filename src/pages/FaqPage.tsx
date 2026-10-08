@@ -54,7 +54,7 @@ export const FaqPage: React.FC = () => {
             <div className="flex items-center gap-4 shrink-0">
               <Link
                 to="/kontakt"
-                className="px-6 py-3.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all shadow-sm"
+                className="btn-engineering-primary shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 Zapytaj Inżyniera
               </Link>
@@ -76,7 +76,7 @@ export const FaqPage: React.FC = () => {
           </div>
           <Link
             to="/kalkulator"
-            className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-sm"
+            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
             <span>Otwórz Kalkulator</span>
             <ArrowRight className="w-4 h-4" />

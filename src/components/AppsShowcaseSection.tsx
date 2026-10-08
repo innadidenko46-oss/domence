@@ -42,8 +42,8 @@ export const AppsShowcaseSection: React.FC = () => {
       name: 'Aplikacja do automatyki domowej',
       tagline: 'Centrum zarządzania światłem, mikroklimatem, bezpieczeństwem i energią (oparte na architekturze Shelly Smart Control)',
       badge: 'Sterowanie & Automatyzacje',
-      brandColor: 'text-amber-500',
-      icon: <Zap className="w-5 h-5 text-amber-500" />,
+      brandColor: 'text-[#B87333]',
+      icon: <Zap className="w-5 h-5 text-[#B87333]" />,
     },
     {
       id: 'hikvision',
@@ -60,15 +60,15 @@ export const AppsShowcaseSection: React.FC = () => {
       isDay ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-[#05111A] border-white/10 text-slate-200'
     }`}>
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#B87333]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border ${
+          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border ${
             isDay
-              ? 'bg-amber-100 text-amber-900 border-amber-300'
-              : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+              ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30'
+              : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
           }`}>
             <Smartphone className="w-3.5 h-3.5" />
             <span>Aplikacje Mobilne i Kontrola w Telefonie</span>
@@ -94,28 +94,28 @@ export const AppsShowcaseSection: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`p-4 rounded-2xl text-left transition-all border flex items-center gap-3.5 ${
+                className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-4 rounded-[2px] text-left transition-all border flex items-center gap-3.5 ${
                   isSelected
                     ? isDay
-                      ? 'bg-white border-amber-500 shadow-md ring-2 ring-amber-500/20'
-                      : 'bg-[#0B2535] border-amber-500/50 shadow-xl ring-2 ring-amber-500/20'
+                      ? 'bg-white border-[#B87333] shadow-md ring-2 ring-[#B87333]/20'
+                      : 'bg-[#0B2535] border-[#B87333]/50 shadow-xl ring-2 ring-[#B87333]/20'
                     : isDay
                       ? 'bg-white/70 border-slate-200 hover:border-slate-300'
                       : 'bg-[#0A2230]/40 border-white/5 hover:border-white/15'
                 }`}
               >
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                <div className={`w-10 h-10 rounded-[2px] flex items-center justify-center shrink-0 ${
                   isDay ? 'bg-slate-100' : 'bg-white/5'
                 }`}>
                   {tab.icon}
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                  <div className={`text-[10px] font-bold uppercase tracking-wider ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                     {tab.badge}
                   </div>
                   <div className={`text-sm font-bold ${
                     isSelected
-                      ? isDay ? 'text-amber-700' : 'text-amber-400'
+                      ? isDay ? 'text-[#A36034]' : 'text-[#C27A4E]'
                       : isDay ? 'text-slate-800' : 'text-white'
                   }`}>
                     {tab.name}
@@ -139,10 +139,10 @@ export const AppsShowcaseSection: React.FC = () => {
             >
               {/* Left Column: Visual Mockup / Feature Highlights */}
               <div className="lg:col-span-7 space-y-6">
-                <div className={`p-7 rounded-3xl border ${
+                <div className={`p-7 rounded-[2px] border ${
                   isDay ? 'bg-white border-slate-200 shadow-sm' : 'bg-[#0A2230]/70 border-white/10'
                 }`}>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase text-amber-500 mb-2">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase text-[#B87333] mb-2">
                     <Sun className="w-4 h-4" />
                     <span>Zdolności aplikacji automatyki domowej</span>
                   </div>
@@ -156,50 +156,50 @@ export const AppsShowcaseSection: React.FC = () => {
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-amber-400 font-bold text-xs mb-1.5">
+                      <div className="flex items-center gap-2 text-[#C27A4E] font-bold text-xs mb-1.5">
                         <Clock className="w-4 h-4 shrink-0" />
                         <span>Harmonogramy Wschód / Zachód</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Światło wejściowe zapala się dokładnie o zachodzie słońca (korygowanym astronomicznie każdego dnia), a rolety rano łagodnie wpuszczają pierwsze promienie słońca.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-sky-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>
                         <SlidersHorizontal className="w-4 h-4 shrink-0" />
                         <span>Sceny «Jedno Kliknięcie»</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Scena «Wieczorny Relaks i Kolacja» jednocześnie przygasza światło w salonie do 30%, zamyka rolety odcinając zmrok za oknem i włącza ulubioną playlistę.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-emerald-700' : 'text-emerald-400'}`}>
                         <Gauge className="w-4 h-4 shrink-0" />
                         <span>Pomiar Zużycia Energii na Żywo</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Widzisz w watach i złotówkach, ile prądu pobiera pompa ciepła, oświetlenie czy klimatyzacja. Wykresy dobowe, tygodniowe i miesięczne bez niespodzianek.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-rose-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-rose-600' : 'text-rose-400'}`}>
                         <ShieldCheck className="w-4 h-4 shrink-0" />
                         <span>Alerty i Ochrona w Tle</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Powiadomienie PUSH, jeśli zostawiłeś otwarte okno przy włączonym grzaniu, albo gdy czujnik zalania wykryje wilgoć przy zaworze pralki.
                       </p>
                     </div>
@@ -207,7 +207,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 </div>
 
                 {/* Local vs Cloud Callout */}
-                <div className={`p-5 rounded-2xl border flex items-start gap-4 ${
+                <div className={`p-5 rounded-[2px] border flex items-start gap-4 ${
                   isDay ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-emerald-950/20 border-emerald-500/30 text-emerald-200'
                 }`}>
                   <Lock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
@@ -220,27 +220,27 @@ export const AppsShowcaseSection: React.FC = () => {
 
               {/* Right Column: Phone Screen Feature Showcase */}
               <div className="lg:col-span-5">
-                <div className={`rounded-3xl p-6 sm:p-7 border ${
+                <div className={`rounded-[2px] p-6 sm:p-7 border ${
                   isDay ? 'bg-white border-slate-200 shadow-lg' : 'bg-[#091D29] border-white/15'
                 }`}>
-                  <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
-                    <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className={`flex items-center justify-between pb-4 mb-5 border-b ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
+                    <div className={`text-xs font-bold uppercase tracking-wider ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                       Podgląd funkcji w telefonie
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-mono text-[10px]">
+                    <span className="px-2.5 py-0.5 rounded-[2px] bg-[#B87333]/20 text-[#C27A4E] font-mono text-[10px]">
                       Shelly Smart Control
                     </span>
                   </div>
 
                   <div className="space-y-3 text-xs">
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <Droplets className="w-4 h-4 text-sky-400" />
+                        <Droplets className={`w-4 h-4 ${isDay ? 'text-sky-700' : 'text-sky-400'}`} />
                         <div>
-                          <div className="font-bold text-white">Ochrona przed zalaniem (Zawór Główny)</div>
-                          <div className="text-[11px] text-slate-400">Czujniki: Łazienka, Kuchnia, Kotłownia</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Ochrona przed zalaniem (Zawór Główny)</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Czujniki: Łazienka, Kuchnia, Kotłownia</div>
                         </div>
                       </div>
                       <span className="text-[10px] font-bold px-2 py-1 rounded bg-sky-500/20 text-sky-300">
@@ -248,57 +248,57 @@ export const AppsShowcaseSection: React.FC = () => {
                       </span>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <Sun className="w-4 h-4 text-amber-400" />
+                        <Sun className="w-4 h-4 text-[#C27A4E]" />
                         <div>
-                          <div className="font-bold text-white">Oświetlenie Nastrojowe Salonu</div>
-                          <div className="text-[11px] text-slate-400">Ciepły bursztyn 2400K • Ściemnienie 35%</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Oświetlenie Nastrojowe Salonu</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Ciepły bursztyn 2400K • Ściemnienie 35%</div>
                         </div>
                       </div>
-                      <span className="text-[10px] font-bold px-2 py-1 rounded bg-amber-500/20 text-amber-300">
+                      <span className="text-[10px] font-bold px-2 py-1 rounded bg-[#B87333]/20 text-[#C27A4E]">
                         Aktywna Scena
                       </span>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
                         <Sliders className="w-4 h-4 text-purple-400" />
                         <div>
-                          <div className="font-bold text-white">Scena «Joga & Mindfulness»</div>
-                          <div className="text-[11px] text-slate-400">Rolety 100% • LED 15% • Wentylacja cicha</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Scena «Joga & Mindfulness»</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Rolety 100% • LED 15% • Wentylacja cicha</div>
                         </div>
                       </div>
                       <button
-                        className="text-[10px] font-bold px-3 py-1 rounded-lg bg-purple-500 hover:bg-purple-600 text-white transition-colors"
+                        className="text-[10px] font-bold px-3 py-1 rounded-[2px] bg-purple-500 hover:bg-purple-600 text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                         onClick={() => navigate('/kalkulator')}
                       >
                         Uruchom
                       </button>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <Gauge className="w-4 h-4 text-emerald-400" />
+                        <Gauge className={`w-4 h-4 ${isDay ? 'text-emerald-700' : 'text-emerald-400'}`} />
                         <div>
-                          <div className="font-bold text-white">Bieżący pobór posesji</div>
-                          <div className="text-[11px] text-slate-400">Pompa ciepła, oświetlenie, rekuperator</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Bieżący pobór posesji</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Pompa ciepła, oświetlenie, rekuperator</div>
                         </div>
                       </div>
                       <span className="font-mono text-xs font-bold text-emerald-400">480 W</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/10 text-center">
+                  <div className={`mt-6 pt-4 border-t text-center ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
                     <Link
                       to="/kalkulator"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#C27A4E] hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       <span>Skonfiguruj automatykę dla Twojego domu</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -318,7 +318,7 @@ export const AppsShowcaseSection: React.FC = () => {
             >
               {/* Left Column: Visual Mockup / Feature Highlights */}
               <div className="lg:col-span-7 space-y-6">
-                <div className={`p-7 rounded-3xl border ${
+                <div className={`p-7 rounded-[2px] border ${
                   isDay ? 'bg-white border-slate-200 shadow-sm' : 'bg-[#0A2230]/70 border-white/10'
                 }`}>
                   <div className="flex items-center gap-2 text-xs font-bold uppercase text-sky-400 mb-2">
@@ -336,50 +336,50 @@ export const AppsShowcaseSection: React.FC = () => {
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-sky-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>
                         <BellRing className="w-4 h-4 shrink-0" />
                         <span>Szybkie połączenie wideo</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Gdy kurier dzwoni do furtki, Twój telefon dzwoni jak zwykłe połączenie wideo. Widzisz rozmówcę w jakości Full HD/4K i słyszysz go bez szumu wiatru.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-amber-400 font-bold text-xs mb-1.5">
+                      <div className="flex items-center gap-2 text-[#C27A4E] font-bold text-xs mb-1.5">
                         <KeyRound className="w-4 h-4 shrink-0" />
                         <span>Otwieranie Furtki i Bramy</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Jeden przycisk na ekranie rozmowy zwalnia elektrozaczep furtki lub uchyla bramę wjazdową. Kurier może bezpiecznie położyć paczkę pod wiatą.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-rose-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-rose-600' : 'text-rose-400'}`}>
                         <Eye className="w-4 h-4 shrink-0" />
                         <span>Podgląd na Żywo w Kolorze 24/7</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Dzięki przetwornikowi ColorVu F1.0 widzisz nocny obraz wejścia i podjazdu w żywych, naturalnych kolorach, a nie w ponurej szarości podczerwieni.
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${
+                    <div className={`p-4 rounded-[2px] border ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/5'
                     }`}>
-                      <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs mb-1.5">
+                      <div className={`flex items-center gap-2 font-bold text-xs mb-1.5 ${isDay ? 'text-emerald-700' : 'text-emerald-400'}`}>
                         <CheckCircle2 className="w-4 h-4 shrink-0" />
                         <span>Redukcja fałszywych alarmów</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-light">
+                      <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                         Sztuczna inteligencja odróżnia sylwetkę człowieka i samochodu od przebiegającego kota, psa, deszczu czy kołyszących się na wietrze gałęzi drzew.
                       </p>
                     </div>
@@ -387,7 +387,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 </div>
 
                 {/* Storage Callout */}
-                <div className={`p-5 rounded-2xl border flex items-start gap-4 ${
+                <div className={`p-5 rounded-[2px] border flex items-start gap-4 ${
                   isDay ? 'bg-sky-50 border-sky-200 text-sky-950' : 'bg-sky-950/20 border-sky-500/30 text-sky-200'
                 }`}>
                   <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
@@ -400,60 +400,60 @@ export const AppsShowcaseSection: React.FC = () => {
 
               {/* Right Column: Phone Screen Feature Showcase */}
               <div className="lg:col-span-5">
-                <div className={`rounded-3xl p-6 sm:p-7 border ${
+                <div className={`rounded-[2px] p-6 sm:p-7 border ${
                   isDay ? 'bg-white border-slate-200 shadow-lg' : 'bg-[#091D29] border-white/15'
                 }`}>
-                  <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
-                    <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className={`flex items-center justify-between pb-4 mb-5 border-b ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
+                    <div className={`text-xs font-bold uppercase tracking-wider ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                       Podgląd funkcji w telefonie
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-mono text-[10px]">
+                    <span className="px-2.5 py-0.5 rounded-[2px] bg-sky-500/20 text-sky-300 font-mono text-[10px]">
                       Hik-Connect Pro
                     </span>
                   </div>
 
                   <div className="space-y-3 text-xs">
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <Video className="w-4 h-4 text-sky-400" />
+                        <Video className={`w-4 h-4 ${isDay ? 'text-sky-700' : 'text-sky-400'}`} />
                         <div>
-                          <div className="font-bold text-white">Stacja Bramowa (Furtka Wejściowa)</div>
-                          <div className="text-[11px] text-slate-400">Kamera 180° WDR • Status: Online</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Stacja Bramowa (Furtka Wejściowa)</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Kamera 180° WDR • Status: Online</div>
                         </div>
                       </div>
                       <button
-                        className="text-[10px] font-bold px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 transition-colors"
+                        className="text-[10px] font-bold px-3 py-1 rounded-[2px] bg-emerald-500 hover:bg-emerald-600 text-slate-950 transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                         onClick={() => navigate('/teletechnika')}
                       >
                         Otwórz Furtkę
                       </button>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <Eye className="w-4 h-4 text-amber-400" />
+                        <Eye className="w-4 h-4 text-[#C27A4E]" />
                         <div>
-                          <div className="font-bold text-white">Kamera Podjazd & Brama (ColorVu 4K)</div>
-                          <div className="text-[11px] text-slate-400">Żywy kolor w nocy • Detekcja pojazdu</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Kamera Podjazd & Brama (ColorVu 4K)</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Żywy kolor w nocy • Detekcja pojazdu</div>
                         </div>
                       </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#B87333]/20 text-[#C27A4E]">
                         LIVE 4K
                       </span>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
-                        <ShieldCheck className="w-4 h-4 text-rose-400" />
+                        <ShieldCheck className={`w-4 h-4 ${isDay ? 'text-rose-600' : 'text-rose-400'}`} />
                         <div>
-                          <div className="font-bold text-white">Wejście Główne & Fasada (AcuSense AI)</div>
-                          <div className="text-[11px] text-slate-400">Ochrona wejścia aktywna • Redukcja fałszywych alarmów</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Wejście Główne & Fasada (AcuSense AI)</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Ochrona wejścia aktywna • Redukcja fałszywych alarmów</div>
                         </div>
                       </div>
                       <span className="text-[10px] font-bold px-2 py-1 rounded bg-rose-500/20 text-rose-300">
@@ -461,14 +461,14 @@ export const AppsShowcaseSection: React.FC = () => {
                       </span>
                     </div>
 
-                    <div className={`p-3.5 rounded-xl border flex items-center justify-between ${
+                    <div className={`p-3.5 rounded-[2px] border flex items-center justify-between ${
                       isDay ? 'bg-slate-50 border-slate-200' : 'bg-[#071822] border-white/10'
                     }`}>
                       <div className="flex items-center gap-3">
                         <Lock className="w-4 h-4 text-purple-400" />
                         <div>
-                          <div className="font-bold text-white">Czasowy kod QR dla kuriera</div>
-                          <div className="text-[11px] text-slate-400">Ważny dzisiaj do godziny 18:00</div>
+                          <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>Czasowy kod QR dla kuriera</div>
+                          <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Ważny dzisiaj do godziny 18:00</div>
                         </div>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">
@@ -477,10 +477,10 @@ export const AppsShowcaseSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/10 text-center">
+                  <div className={`mt-6 pt-4 border-t text-center ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
                     <Link
                       to="/teletechnika"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-sky-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-sky-300 transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       <span>Zobacz ofertę monitoringu i wideodomofonów</span>
                       <ArrowRight className="w-3.5 h-3.5" />

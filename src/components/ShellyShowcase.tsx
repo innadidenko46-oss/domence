@@ -151,7 +151,7 @@ export const ShellyShowcase: React.FC = () => {
             }`}
           >
             {/* Header of Active Feature */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#2E2E33] gap-4 mb-8">
+            <div className={`flex flex-col md:flex-row md:items-center justify-between pb-6 border-b gap-4 mb-8 ${isDay ? 'border-[#E5E7EB]' : 'border-[#2E2E33]'}`}>
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333]">
                   {activeCap.badge}

@@ -50,22 +50,22 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 h-[68px] flex items-center ${
           isDay
             ? isScrolled
-              ? 'bg-[#F9FAFB]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-sm py-2.5'
-              : 'bg-[#F9FAFB]/90 backdrop-blur-sm border-b border-[#E5E7EB] py-3.5'
+              ? 'bg-[#F9FAFB]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-sm'
+              : 'bg-[#F9FAFB]/90 backdrop-blur-sm border-b border-[#E5E7EB]'
             : isScrolled
-              ? 'bg-[#18181B]/95 backdrop-blur-md border-b border-[#27272A] shadow-sm py-2.5'
-              : 'bg-[#18181B]/90 backdrop-blur-sm border-b border-[#27272A] py-3.5'
+              ? 'bg-[#18181B]/95 backdrop-blur-md border-b border-[#27272A] shadow-sm'
+              : 'bg-[#18181B]/90 backdrop-blur-sm border-b border-[#27272A]'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2">
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2 w-full">
           
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 transition-transform active:scale-95"
+            className="flex items-center group shrink-0 transition-transform active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
@@ -73,7 +73,7 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation: ALL ITEMS ON A SINGLE ROW WITHOUT DROPDOWNS */}
-          <nav className={`hidden lg:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-semibold uppercase tracking-wider ${
+          <nav className={`hidden xl:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-semibold uppercase tracking-wider ${
             isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
           }`}>
             {navLinks.map((link) => (
@@ -102,7 +102,7 @@ export const Navbar: React.FC = () => {
             {/* Ambiance Switcher: Day (Dzień) vs Dreamy Dusk (Zmierzch) */}
             <button
               onClick={toggleTheme}
-              className={`px-3 py-1.5 rounded-[2px] border text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-[2px] border text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 isDay
                   ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151]'
                   : 'bg-[#27272A] hover:bg-[#3F3F46] border-white/10 text-[#D4D4D8]'
@@ -125,7 +125,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               to="/kontakt"
-              className={`flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap ${
+              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap ${
                 isDay
                   ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151] hover:text-[#B87333]'
                   : 'bg-[#27272A] hover:bg-[#3F3F46] border-white/10 text-[#D4D4D8] hover:text-[#C27A4E]'
@@ -137,7 +137,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               to="/kalkulator"
-              className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm"
+              className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
             >
               <Calculator className="w-3.5 h-3.5" />
               <span>Wycena</span>
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
           <div className="flex sm:hidden items-center gap-1.5">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-[2px] border text-xs flex items-center justify-center transition-all ${
+              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border text-xs flex items-center justify-center transition-all ${
                 isDay
                   ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
                   : 'bg-[#27272A] border-white/10 text-[#B87333]'
@@ -160,7 +160,7 @@ export const Navbar: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-[2px] border ${
+              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border ${
                 isDay
                   ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]'
                   : 'bg-[#27272A] border-white/10 text-[#F4F4F5] hover:text-white'
@@ -186,7 +186,7 @@ export const Navbar: React.FC = () => {
             id="mobile-menu"
             role="dialog"
             aria-label="Menu mobilne"
-            className={`fixed inset-x-0 top-[60px] z-40 border-b p-5 lg:hidden shadow-lg max-h-[calc(100vh-65px)] overflow-y-auto ${
+            className={`fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto ${
               isDay
                 ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]'
                 : 'bg-[#18181B] border-[#27272A] text-[#F3F4F6]'
@@ -217,7 +217,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kalkulator"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C27A4E]/40"
+                  className="w-full py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C27A4E]/40 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                 >
                   <Calculator className="w-4 h-4" />
                   <span>Kalkulator Wyceny</span>
@@ -226,7 +226,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider ${
+                  className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider ${
                     isDay
                       ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
                       : 'bg-[#27272A] border-white/10 text-[#D4D4D8]'

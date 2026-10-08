@@ -121,7 +121,7 @@ export const PackagesPage: React.FC = () => {
           </div>
           <Link
             to="/faq"
-            className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-sm"
+            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
             <span>Zobacz FAQ</span>
             <ArrowRight className="w-4 h-4" />

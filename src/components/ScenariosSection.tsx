@@ -115,7 +115,7 @@ export const ScenariosSection: React.FC = () => {
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-500 mb-3 font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Scenariusze Automatyki Budynkowej</span>
           </div>
@@ -132,35 +132,35 @@ export const ScenariosSection: React.FC = () => {
         </div>
 
         {/* Interactive Scenario Selector Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-2 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mb-8">
           {SCENARIOS.map((sc) => {
             const isActive = sc.id === activeScenarioId;
             return (
               <button
                 key={sc.id}
                 onClick={() => setActiveScenarioId(sc.id)}
-                className={`p-3.5 rounded-2xl text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer ${
+                className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                   isActive
                     ? isDay
-                      ? 'bg-amber-50 border-amber-400/80 shadow-md shadow-amber-500/10'
-                      : 'bg-[#0E2B3C] border-amber-400/80 shadow-xl shadow-amber-500/10'
+                      ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10'
+                      : 'bg-[#0E2B3C] border-[#C27A4E]/80 shadow-xl shadow-[#B87333]/10'
                     : isDay
-                      ? 'bg-slate-50 border-slate-200 hover:border-amber-300 hover:bg-slate-100/70'
+                      ? 'bg-slate-50 border-slate-200 hover:border-[#B87333]/30 hover:bg-slate-100/70'
                       : 'bg-[#0A2230]/60 border-white/5 hover:border-white/20 hover:bg-[#0A2230]'
                 }`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={`text-[11px] font-mono font-bold ${
-                      isActive ? (isDay ? 'text-amber-800' : 'text-amber-400') : 'text-slate-400'
+                      isActive ? (isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]') : 'text-slate-400'
                     }`}
                   >
                     {sc.number}
                   </span>
                   <div
-                    className={`w-7 h-7 rounded-lg flex items-center justify-center ${
+                    className={`w-7 h-7 rounded-[2px] flex items-center justify-center ${
                       isActive
-                        ? 'bg-amber-500 text-slate-950 font-bold'
+                        ? 'bg-[#B87333] text-white font-bold'
                         : isDay
                           ? 'bg-slate-200/80 text-slate-600'
                           : 'bg-white/5 text-slate-400'
@@ -172,7 +172,7 @@ export const ScenariosSection: React.FC = () => {
 
                 <div className="mt-2.5">
                   <div className={`text-[10px] font-semibold uppercase tracking-wider line-clamp-1 ${
-                    isActive ? (isDay ? 'text-amber-800' : 'text-amber-400') : (isDay ? 'text-slate-500' : 'text-slate-400')
+                    isActive ? (isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]') : (isDay ? 'text-slate-500' : 'text-slate-400')
                   }`}>
                     {sc.tag}
                   </div>
@@ -186,7 +186,7 @@ export const ScenariosSection: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeScenarioIndicator"
-                    className="absolute bottom-0 inset-x-3 h-[2px] bg-amber-500 rounded-full"
+                    className="absolute bottom-0 inset-x-3 h-[2px] bg-[#B87333] rounded-[2px]"
                   />
                 )}
               </button>
@@ -202,7 +202,7 @@ export const ScenariosSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className={`rounded-3xl border overflow-hidden shadow-2xl ${
+            className={`rounded-[2px] border overflow-hidden shadow-2xl ${
               isDay ? 'bg-white border-slate-200 shadow-slate-200/60' : 'bg-[#0A2230]/80 border-white/10'
             }`}
           >
@@ -211,7 +211,7 @@ export const ScenariosSection: React.FC = () => {
               <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-[500px] overflow-hidden bg-slate-900">
                 <img
                   src={activeScenario.imageUrl}
-                  alt={activeScenario.title}
+                  alt={`${activeScenario.title} — scenariusz automatyki domowej`}
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105 filter brightness-90"
                 />
                 <div className={`absolute inset-0 ${
@@ -220,10 +220,10 @@ export const ScenariosSection: React.FC = () => {
                     : 'bg-gradient-to-t lg:bg-gradient-to-r from-[#06121A] via-[#06121A]/40 to-transparent'
                 }`} />
                 <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full backdrop-blur-md text-xs font-bold uppercase tracking-wider border ${
+                  <span className={`px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border ${
                     isDay 
-                      ? 'bg-white/95 text-amber-900 border-amber-300' 
-                      : 'bg-[#071822]/85 text-amber-400 border-amber-500/30'
+                      ? 'bg-white/95 text-[#7C4A1F] border-[#B87333]/30' 
+                      : 'bg-[#071822]/85 text-[#C27A4E] border-[#B87333]/30'
                   }`}>
                     {activeScenario.tag}
                   </span>
@@ -231,10 +231,10 @@ export const ScenariosSection: React.FC = () => {
 
                 {/* Activation Trigger Pill on bottom of image */}
                 {activeScenario.trigger && (
-                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-[#071822]/90 backdrop-blur-md border border-white/10 text-xs text-slate-200 flex items-start gap-2.5">
-                    <Mic className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-[#071822]/90 backdrop-blur-md border border-white/10 text-xs text-slate-200 flex items-start gap-2.5">
+                    <Mic className="w-4 h-4 text-[#C27A4E] shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-amber-400 block mb-0.5">
+                      <span className="text-[10px] uppercase font-bold text-[#C27A4E] block mb-0.5">
                         Wyzwalacz scenariusza:
                       </span>
                       {activeScenario.trigger}
@@ -248,7 +248,7 @@ export const ScenariosSection: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className={`text-xs font-mono font-bold uppercase tracking-widest ${
-                      isDay ? 'text-amber-800' : 'text-amber-400'
+                      isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'
                     }`}>
                       Scenariusz {activeScenario.number}
                     </span>
@@ -276,13 +276,13 @@ export const ScenariosSection: React.FC = () => {
                         {activeScenario.actionSteps.map((step, sIdx) => (
                           <div
                             key={sIdx}
-                            className={`p-3 rounded-2xl border flex items-start gap-2.5 text-xs ${
+                            className={`p-3 rounded-[2px] border flex items-start gap-2.5 text-xs ${
                               isDay
                                 ? 'bg-slate-50 border-slate-200 text-slate-700'
                                 : 'bg-[#071822] border-white/5 text-slate-300'
                             }`}
                           >
-                            <div className="w-7 h-7 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0">
+                            <div className="w-7 h-7 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
                             </div>
                             <div>
@@ -300,12 +300,12 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className={`mt-5 p-4 rounded-2xl border text-xs leading-relaxed ${
+                  <div className={`mt-5 p-4 rounded-[2px] border text-xs leading-relaxed ${
                     isDay 
-                      ? 'bg-amber-50/60 border-amber-200/80 text-slate-800' 
+                      ? 'bg-[#B87333]/10 border-[#B87333]/30 text-slate-800' 
                       : 'bg-[#071822] border-white/5 text-slate-200'
                   }`}>
-                    <span className={`font-bold block mb-1 ${isDay ? 'text-amber-900' : 'text-amber-300'}`}>
+                    <span className={`font-bold block mb-1 ${isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'}`}>
                       Działanie w praktyce:
                     </span>
                     {activeScenario.humanNote}
@@ -315,7 +315,7 @@ export const ScenariosSection: React.FC = () => {
                   <div className="mt-5 space-y-2">
                     {activeScenario.detailPoints.map((point, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3" />
                         </div>
                         <span className={`text-xs sm:text-sm font-medium ${
@@ -336,7 +336,7 @@ export const ScenariosSection: React.FC = () => {
                   </span>
                   <Link
                     to="/kalkulator"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-500 hover:text-amber-600 transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
                     <span>Skonfiguruj ten scenariusz</span>
                     <ChevronRight className="w-4 h-4" />

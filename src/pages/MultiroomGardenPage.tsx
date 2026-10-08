@@ -34,6 +34,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1000&q=85"
                   alt="Dyskretne głośniki architektoniczne w suficie"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -58,6 +59,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
                   alt="Minimalistyczny salon rezydencjalny ze sceną kinową"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -82,7 +84,8 @@ export const MultiroomGardenPage: React.FC = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}images/hikvision_gate.svg`}
                   alt="Wideodomofon i kamera monitoringu przy wejściu na posesję"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
+                  loading="lazy"
+                  className="w-full h-full object-contain bg-[#18181B] p-4 group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#B87333] border border-white/10">
@@ -219,7 +222,7 @@ export const MultiroomGardenPage: React.FC = () => {
               </div>
               <Link
                 to="/kalkulator"
-                className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all text-center shrink-0 shadow-sm"
+                className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 Wyceń multimedia
               </Link>
@@ -241,7 +244,7 @@ export const MultiroomGardenPage: React.FC = () => {
           </div>
           <Link
             to="/scenariusze"
-            className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-sm"
+            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
             <span>Zobacz scenariusze</span>
             <ArrowRight className="w-4 h-4" />

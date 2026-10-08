@@ -96,14 +96,14 @@ export const MultiroomGardenSection: React.FC = () => {
           }`}>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[2px] bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                <div className={`w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 ${isDay ? 'bg-sky-100 text-sky-700' : 'bg-sky-500/20 text-sky-400'}`}>
                   <Film className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className={`text-xl sm:text-2xl font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className="text-xs text-sky-400 font-mono mt-0.5">Dolby Atmos • Rolety Blackout • HDMI eARC</div>
+                  <div className={`text-xs font-mono mt-0.5 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>Dolby Atmos • Rolety Blackout • HDMI eARC</div>
                 </div>
               </div>
 
@@ -114,7 +114,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <div className={`p-4 rounded-[2px] border text-xs leading-relaxed mb-6 ${
                 isDay ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]' : 'bg-[#18181B] border-white/5 text-[#D1D5DB]'
               }`}>
-                <span className="font-bold text-sky-400 font-mono text-[11px] uppercase block mb-1">W praktyce:</span>
+                <span className={`font-bold font-mono text-[11px] uppercase block mb-1 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>W praktyce:</span>
                 {HOME_MULTIMEDIA.cinema.humanNote}
               </div>
 
@@ -123,7 +123,7 @@ export const MultiroomGardenSection: React.FC = () => {
                   <div key={i} className={`flex items-start gap-2.5 text-xs sm:text-sm ${
                     isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'
                   }`}>
-                    <CheckCircle2 className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
+                    <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${isDay ? 'text-sky-700' : 'text-sky-400'}`} />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -134,7 +134,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <span className="text-xs text-[#9CA3AF] font-mono">Dedykowane sceny kinowe</span>
               <Link
                 to="/kalkulator"
-                className="text-xs font-mono font-bold text-sky-400 hover:text-sky-300 transition-colors"
+                className={`text-xs font-mono font-bold transition-colors ${isDay ? 'text-sky-700 hover:text-sky-800' : 'text-sky-400 hover:text-sky-300'}`}
               >
                 Wyceń Salę Kinową →
               </Link>

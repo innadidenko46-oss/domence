@@ -13,7 +13,6 @@ import {
   CheckCircle2,
   Lock,
   Cpu,
-  Moon,
 } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
@@ -119,35 +118,6 @@ export const HomePage: React.FC = () => {
     },
   ];
 
-  const atmosphericMoments = [
-    {
-      title: 'Wieczorny Spokój',
-      subtitle: 'Scena relaksu z ciepłym światłem 2200K',
-      image:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
-      description: 'Miękkie światło pośrednie pod szafkami i sufitami koi wzrok po całym dniu pracy.',
-    },
-    {
-      title: 'Scena Jogi & Medytacji',
-      subtitle: 'Ciepły bursztyn LED i zamknięcie rolet',
-      image:
-        'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1000&q=85',
-      description: 'Jedna komenda "Chcę poćwiczyć jogę" odcina spojrzenia z zewnątrz i włącza kojący ambient.',
-    },
-    {
-      title: 'Poranny Rozruch',
-      subtitle: 'Ciche podnoszenie rolet i komfort cieplny',
-      image:
-        'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85',
-      description: 'Światło w sypialni rozjaśnia się stopniowo, a w łazience wita Cię ciepła podłoga.',
-    },
-    {
-      title: 'Scena Kinowa & Relaks',
-      subtitle: 'Nastrojowe światło 5% i zaciemnienie blackout',
-      image: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
-      description: 'Jeden dotyk przyciemnia oświetlenie i opuszcza rolety, tworząc intymny nastrój sali kinowej.',
-    },
-  ];
 
   return (
     <div className={`transition-colors duration-500 ${isDay ? 'bg-[#F8FAFC] text-slate-800' : 'bg-[#040A10] text-slate-200'}`}>
@@ -172,7 +142,7 @@ export const HomePage: React.FC = () => {
             isDay ? 'bg-gradient-to-t from-[#F8FAFC] via-transparent to-transparent' : 'bg-gradient-to-t from-[#040A10] via-transparent to-transparent'
           }`} />
           <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#B87333]/10 blur-[150px] pointer-events-none" />
-          <div className="absolute top-1/3 -right-32 w-[650px] h-[650px] rounded-full bg-sky-500/10 blur-[170px] pointer-events-none" />
+          <div className="hidden sm:block absolute top-1/3 -right-32 w-[650px] h-[650px] rounded-full bg-sky-500/10 blur-[170px] pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -210,7 +180,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 to="/kalkulator"
-                className="py-4 px-8 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#B87333]/20 active:scale-95 text-center flex items-center justify-center gap-2"
+                className="btn-engineering-primary shadow-xl shadow-[#B87333]/20 active:scale-95 text-center gap-2 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 <span>Wyceń Inwestycję Online</span>
                 <ArrowRight className="w-4 h-4" />
@@ -218,7 +188,7 @@ export const HomePage: React.FC = () => {
 
               <Link
                 to="/systemy"
-                className={`py-4 px-8 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all border text-center flex items-center justify-center gap-2 ${
+                className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 py-4 px-8 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all border text-center flex items-center justify-center gap-2 ${
                   isDay 
                     ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300 shadow-sm' 
                     : 'bg-white/5 hover:bg-white/10 text-white border-white/10'
@@ -262,79 +232,6 @@ export const HomePage: React.FC = () => {
       {/* INTERACTIVE 24H LIGHTING & ATMOSPHERE SHOWCASE (DAY VS NIGHT) */}
       <LightingAtmosphereShowcase />
 
-      {/* Atmospheric Moments Gallery */}
-      <section className={`py-16 border-t overflow-hidden ${
-        isDay ? 'bg-white border-slate-200' : 'bg-[#03080E] border-white/10'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-2 border ${
-                isDay 
-                  ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30' 
-                  : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
-              }`}>
-                <Moon className="w-3.5 h-3.5" />
-                <span>Atmosfera & Wygoda</span>
-              </div>
-              <h2 className={`font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight ${
-                isDay ? 'text-slate-900' : 'text-white'
-              }`}>
-                Poczuj nastrojowe piękno nowoczesnego domu
-              </h2>
-            </div>
-            <p className={`text-xs sm:text-sm max-w-md font-light ${
-              isDay ? 'text-slate-600' : 'text-slate-400'
-            }`}>
-              Dobra automatyka to nie gadżet. To światło o zmroku, wygodna temperatura i cisza.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {atmosphericMoments.map((moment, idx) => (
-              <div
-                key={idx}
-                className={`group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl ${
-                  isDay 
-                    ? 'bg-slate-50 border-slate-200 hover:border-[#C27A4E] hover:shadow-slate-300' 
-                    : 'bg-[#0A2230]/80 border-white/10 hover:border-[#C27A4E]/50 hover:shadow-[#B87333]/10'
-                }`}
-              >
-                <div className="relative h-48 overflow-hidden bg-slate-900">
-                  <img
-                    src={moment.image}
-                    alt={moment.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
-                    loading="lazy"
-                  />
-                  <div className={`absolute inset-0 ${
-                    isDay 
-                      ? 'bg-gradient-to-t from-slate-900/60 via-transparent to-transparent' 
-                      : 'bg-gradient-to-t from-[#0A2230] via-[#0A2230]/30 to-transparent'
-                  }`} />
-                </div>
-                <div className="p-5">
-                  <h3 className={`font-bold text-base transition-colors ${
-                    isDay ? 'text-slate-900 group-hover:text-[#A36034]' : 'text-white group-hover:text-[#C27A4E]/60'
-                  }`}>
-                    {moment.title}
-                  </h3>
-                  <div className={`text-[11px] font-medium mt-0.5 ${
-                    isDay ? 'text-[#A36034]' : 'text-[#C27A4E]/90'
-                  }`}>
-                    {moment.subtitle}
-                  </div>
-                  <p className={`text-xs mt-2 leading-relaxed ${
-                    isDay ? 'text-slate-600' : 'text-slate-400'
-                  }`}>
-                    {moment.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Visual Solutions Grid with High-Res Photography */}
       <section className={`py-20 border-t ${
@@ -362,7 +259,7 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className={`group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 ${
+                  className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 ${
                     isDay 
                       ? 'bg-white border-slate-200 hover:border-[#C27A4E] hover:shadow-slate-300/70' 
                       : 'bg-[#0A2230]/70 border-white/10 hover:border-[#C27A4E]/50 hover:shadow-[#B87333]/10'
@@ -472,10 +369,10 @@ export const HomePage: React.FC = () => {
 
             <div className={`p-7 rounded-[2px] border transition-all ${
               isDay 
-                ? 'bg-slate-50 border-slate-200 hover:border-sky-400 shadow-sm' 
-                : 'bg-[#0A2230]/60 border-white/10 hover:border-sky-400/30'
+                ? 'bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm' 
+                : 'bg-[#0A2230]/60 border-white/10 hover:border-[#C27A4E]/30'
             }`}>
-              <div className="w-12 h-12 rounded-[2px] bg-sky-500/10 text-sky-500 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-slate-900' : 'text-white'}`}>
@@ -489,10 +386,10 @@ export const HomePage: React.FC = () => {
 
             <div className={`p-7 rounded-[2px] border transition-all ${
               isDay 
-                ? 'bg-slate-50 border-slate-200 hover:border-emerald-400 shadow-sm' 
-                : 'bg-[#0A2230]/60 border-white/10 hover:border-emerald-400/30'
+                ? 'bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm' 
+                : 'bg-[#0A2230]/60 border-white/10 hover:border-[#C27A4E]/30'
             }`}>
-              <div className="w-12 h-12 rounded-[2px] bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-slate-900' : 'text-white'}`}>
@@ -522,7 +419,7 @@ export const HomePage: React.FC = () => {
         <div className="absolute inset-0 -z-10 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
-            alt="Nowoczesny dom nocą"
+            alt="Nowoczesne wnętrze domu w świetle dziennym"
             className="w-full h-full object-cover"
           />
         </div>
@@ -541,14 +438,14 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/kalkulator"
-                className="px-6 py-3.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#B87333]/20 active:scale-95"
+                className="btn-engineering-primary shadow-lg shadow-[#B87333]/20 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 Wyceń w konfiguratorze
               </Link>
 
               <Link
                 to="/kontakt"
-                className="px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20"
+                className="px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 Napisz do inżyniera
               </Link>

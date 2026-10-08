@@ -35,6 +35,7 @@ export const SystemsPage: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
                   alt="Światło architektoniczne i inteligentne sceny"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -59,6 +60,7 @@ export const SystemsPage: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=85"
                   alt="Minimalistyczne włączniki ścienne i panele dotykowe"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -83,7 +85,8 @@ export const SystemsPage: React.FC = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}images/rack_installation.svg`}
                   alt="Instalacja modułów Shelly Pro na szynie DIN w rozdzielnicy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
+                  loading="lazy"
+                  className="w-full h-full object-contain bg-[#18181B] p-4 group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-emerald-400 border border-white/10">
@@ -176,11 +179,11 @@ export const SystemsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Magistrala przewodowa o najwyższej trwałości</span>
                   </li>
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Integracja z rekuperacją i pompami ciepła</span>
                   </li>
                 </ul>
@@ -209,11 +212,11 @@ export const SystemsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Montaż bezpyłowy i bez niszczenia gładzi</span>
                   </li>
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Niezależność od chmury (lokalna baza)</span>
                   </li>
                 </ul>
@@ -260,7 +263,7 @@ export const SystemsPage: React.FC = () => {
           </div>
           <Link
             to="/teletechnika"
-            className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-sm"
+            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
             <span>Zobacz szczegóły</span>
             <ArrowRight className="w-4 h-4" />

@@ -14,7 +14,7 @@ export const MobileStickyBar: React.FC = () => {
       <div className="flex items-center gap-2">
         <Link
           to="/kontakt"
-          className={`flex-1 py-3 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-2 transition-colors ${
+          className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex-1 py-3 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-2 transition-colors ${
             isDay
               ? 'bg-white border-[#D1D5DB] text-[#111827] active:bg-[#F3F4F6]'
               : 'bg-[#27272A] border-white/10 text-white active:bg-[#3F3F46]'
@@ -26,7 +26,7 @@ export const MobileStickyBar: React.FC = () => {
 
         <Link
           to="/kalkulator"
-          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center"
+          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
         >
           <Calculator className="w-4 h-4" />
           <span>Wycena Kosztorysu</span>

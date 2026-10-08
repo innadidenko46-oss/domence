@@ -87,7 +87,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
         activeId === 'day' 
           ? 'bg-sky-400/10' 
           : activeId === 'dusk' 
-            ? 'bg-amber-500/10' 
+            ? 'bg-[#B87333]/10' 
             : 'bg-indigo-500/10'
       }`} />
 
@@ -96,10 +96,10 @@ export const LightingAtmosphereShowcase: React.FC = () => {
         {/* Header Block */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-3xl">
-            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border ${
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border ${
               isDayTheme
-                ? 'bg-amber-100 text-amber-800 border-amber-300'
-                : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30'
+                : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
             }`}>
               <Eye className="w-3.5 h-3.5" />
               <span>Światło & Dobowy Rytm</span>
@@ -118,12 +118,12 @@ export const LightingAtmosphereShowcase: React.FC = () => {
           </div>
 
           {/* Quick atmosphere buttons */}
-          <div className={`flex items-center p-1.5 rounded-2xl border shrink-0 ${
+          <div className={`flex flex-wrap items-center p-1.5 rounded-[2px] border shrink-0 w-full lg:w-auto ${
             isDayTheme ? 'bg-white border-slate-200 shadow-sm' : 'bg-[#07151F] border-white/10'
           }`}>
             <button
               onClick={() => setActiveId('day')}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 activeId === 'day'
                   ? isDayTheme
                     ? 'bg-sky-500 text-white shadow-sm'
@@ -137,9 +137,9 @@ export const LightingAtmosphereShowcase: React.FC = () => {
 
             <button
               onClick={() => setActiveId('dusk')}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 activeId === 'dusk'
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-500/20'
+                  ? 'bg-[#B87333] text-white font-bold shadow-md shadow-[#B87333]/20'
                   : isDayTheme ? 'text-slate-600 hover:text-slate-900' : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -149,7 +149,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
 
             <button
               onClick={() => setActiveId('night')}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 activeId === 'night'
                   ? isDayTheme
                     ? 'bg-slate-900 text-white shadow-sm'
@@ -164,7 +164,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
         </div>
 
         {/* Interactive Presentation Canvas */}
-        <div className={`rounded-3xl border overflow-hidden transition-all duration-500 ${
+        <div className={`rounded-[2px] border overflow-hidden transition-all duration-500 ${
           isDayTheme 
             ? 'bg-white border-slate-200 shadow-xl shadow-slate-200/60' 
             : 'bg-[#071822] border-white/10 shadow-2xl'
@@ -184,7 +184,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 >
                   <img
                     src={currentScene.image}
-                    alt={currentScene.name}
+                    alt={`${currentScene.name} — scena oświetlenia i atmosfery`}
                     className="w-full h-full object-cover"
                   />
                   {/* Atmospheric overlay tint */}
@@ -193,7 +193,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                       currentScene.id === 'day'
                         ? 'bg-sky-500/5'
                         : currentScene.id === 'dusk'
-                          ? 'bg-gradient-to-t from-black/80 via-amber-950/20 to-transparent'
+                          ? 'bg-gradient-to-t from-black/80 via-[#7C4A1F]/20 to-transparent'
                           : 'bg-gradient-to-t from-black/90 via-indigo-950/40 to-transparent'
                     }`}
                   />
@@ -202,19 +202,19 @@ export const LightingAtmosphereShowcase: React.FC = () => {
 
               {/* Badges on top of image */}
               <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
-                <div className="px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-white text-xs font-mono font-bold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <div className="px-3 py-1.5 rounded-[2px] bg-black/60 backdrop-blur-md border border-white/15 text-white text-xs font-mono font-bold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#C27A4E] animate-pulse" />
                   <span>{currentScene.time}</span>
                 </div>
-                <div className="px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-amber-300 text-xs font-mono font-medium">
+                <div className="px-3 py-1.5 rounded-[2px] bg-black/60 backdrop-blur-md border border-white/15 text-[#C27A4E] text-xs font-mono font-medium">
                   {currentScene.kelvin}
                 </div>
               </div>
 
               {/* Bottom Light Metric */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-2xl bg-black/70 backdrop-blur-md border border-white/10 text-white text-xs z-10">
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-[2px] bg-black/70 backdrop-blur-md border border-white/10 text-white text-xs z-10">
                 <div className="flex items-center gap-2">
-                  <Sliders className="w-4 h-4 text-amber-400" />
+                  <Sliders className="w-4 h-4 text-[#C27A4E]" />
                   <span className="font-semibold">{currentScene.name}</span>
                 </div>
                 <div className="text-slate-300 font-mono">
@@ -229,9 +229,9 @@ export const LightingAtmosphereShowcase: React.FC = () => {
             }`}>
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <Thermometer className="w-4 h-4 text-amber-500" />
+                  <Thermometer className="w-4 h-4 text-[#B87333]" />
                   <span className={`text-xs font-mono uppercase tracking-wider ${
-                    isDayTheme ? 'text-amber-700' : 'text-amber-400'
+                    isDayTheme ? 'text-[#A36034]' : 'text-[#C27A4E]'
                   }`}>
                     Scena: {currentScene.name}
                   </span>
@@ -253,7 +253,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 <div className="space-y-2.5 mb-8">
                   {currentScene.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm">
-                      <div className="w-5 h-5 rounded-md bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0 mt-0.5">
                         <ShieldCheck className="w-3.5 h-3.5" />
                       </div>
                       <span className={isDayTheme ? 'text-slate-700' : 'text-slate-300'}>
@@ -275,10 +275,10 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                   onClick={toggleTheme}
                   role="switch"
                   aria-checked={!isDayTheme}
-                  className={`text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                  className={`text-xs font-semibold px-3 py-1.5 rounded-[2px] border transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                     isDayTheme
                       ? 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-800'
-                      : 'bg-white/5 hover:bg-white/10 border-white/10 text-amber-400'
+                      : 'bg-white/5 hover:bg-white/10 border-white/10 text-[#C27A4E]'
                   }`}
                 >
                   {isDayTheme ? 'Przełącz stronę na tryb nocny' : 'Przełącz stronę na tryb jasny'}

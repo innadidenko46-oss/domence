@@ -282,7 +282,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => handleSelectStep1('deweloperski')}
-                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer ${
+                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                       propertyState === 'deweloperski'
                         ? 'bg-[#B87333]/15 border-[#B87333] ring-1 ring-[#B87333]'
                         : isDay
@@ -304,7 +304,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => handleSelectStep1('retro')}
-                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer ${
+                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                       propertyState === 'retro'
                         ? 'bg-[#B87333]/15 border-[#B87333] ring-1 ring-[#B87333]'
                         : isDay
@@ -326,7 +326,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => handleSelectStep1('security')}
-                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer ${
+                    className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                       propertyState === 'security'
                         ? 'bg-[#B87333]/15 border-[#B87333] ring-1 ring-[#B87333]'
                         : isDay
@@ -374,7 +374,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       key={range}
                       type="button"
                       onClick={() => handleSelectStep2(range)}
-                      className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer ${
+                      className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                         areaRange === range
                           ? 'bg-[#B87333] text-white border-[#B87333] shadow-md'
                           : isDay
@@ -391,7 +391,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className={`inline-flex items-center gap-2 text-xs font-semibold text-[#9CA3AF] transition-colors cursor-pointer ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
+                    className={`inline-flex items-center gap-2 text-xs font-semibold text-[#9CA3AF] transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
@@ -432,7 +432,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       key={c.id}
                       type="button"
                       onClick={() => setActiveModuleCategory(c.id)}
-                      className={`px-3 py-1.5 rounded-[2px] text-xs font-semibold transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                         activeModuleCategory === c.id
                           ? 'bg-[#B87333] text-white font-bold'
                           : isDay
@@ -454,7 +454,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         key={mod.id}
                         onClick={() => toggleModule(mod.id)}
                         aria-pressed={isChecked}
-                        className={`p-4 rounded-[2px] transition-all border cursor-pointer w-full text-left ${
+                        className={`p-4 rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 w-full text-left ${
                           isChecked
                             ? 'bg-[#B87333]/15 border-[#B87333]'
                             : isDay
@@ -516,7 +516,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 </div>
 
                 {/* Real-time Subtotal bar */}
-                <div className={`mt-6 p-4 rounded-[2px] border flex flex-col sm:flex-row items-center justify-between gap-4 ${
+                <div className={`mt-6 p-4 rounded-[2px] border sticky bottom-0 z-10 flex flex-col sm:flex-row items-center justify-between gap-4 ${
                   isDay ? 'bg-[#F9FAFB] border-[#E5E7EB]' : 'bg-[#18181B] border-white/10'
                 }`}>
                   <div className="text-center sm:text-left">
@@ -532,7 +532,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className={`w-1/2 sm:w-auto px-4 py-3 text-xs text-[#9CA3AF] transition-colors flex items-center justify-center gap-1 font-mono cursor-pointer ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
+                      className={`w-1/2 sm:w-auto px-4 py-3 text-xs text-[#9CA3AF] transition-colors flex items-center justify-center gap-1 font-mono cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
                       <span>Wstecz</span>
@@ -541,7 +541,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(4)}
-                      className="w-1/2 sm:w-auto py-3.5 px-6 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1 cursor-pointer shadow-sm"
+                      className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       <span>Zobacz Kosztorys</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -675,7 +675,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </div>
 
                   <div className="pt-2 text-[11px] text-[#9CA3AF]">
-                    <label className="flex items-start gap-2.5 cursor-pointer">
+                    <label className="flex items-start gap-2.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
                       <input
                         type="checkbox"
                         required
@@ -683,7 +683,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, agreement: e.target.checked })
                         }
-                        className="mt-0.5 accent-[#B87333] w-4 h-4 rounded-[2px]"
+                        className="mt-0.5 accent-[#B87333] w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
                         Wyrażam zgodę na kontakt w celu weryfikacji założeń projektowych i przekazania szczegółowego kosztorysu.
@@ -695,7 +695,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className={`sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium text-center transition-all cursor-pointer ${
+                      className={`sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium text-center transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                         isDay
                           ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151] hover:bg-[#E5E7EB]'
                           : 'bg-white/5 border-white/10 text-[#D4D4D8] hover:bg-white/10'
@@ -706,7 +706,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                     <button
                       type="submit"
-                      className="sm:w-2/3 py-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all shadow-sm cursor-pointer"
+                      className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       Wyślij wycenę do inżyniera
                     </button>
@@ -756,7 +756,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={handleCopyBody}
-                    className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer ${
+                    className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                       isDay
                         ? 'bg-white border-[#D1D5DB] text-[#374151] hover:bg-[#F3F4F6]'
                         : 'bg-white/5 border-white/10 text-[#D4D4D8] hover:bg-white/10'
@@ -769,7 +769,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       setIsSubmitted(false);
                       setStep(1);
                     }}
-                  className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer ${
+                  className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                     isDay
                       ? 'bg-white border-[#D1D5DB] text-[#374151] hover:bg-[#F3F4F6]'
                       : 'bg-white/5 border-white/10 text-[#D4D4D8] hover:bg-white/10'

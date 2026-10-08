@@ -24,9 +24,9 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       <defs>
         {/* Amber - Orange Brand Gradient */}
         <linearGradient id={amberId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FBBF24" />
-          <stop offset="50%" stopColor="#F59E0B" />
-          <stop offset="100%" stopColor="#EA580C" />
+          <stop offset="0%" stopColor="#C27A4E" />
+          <stop offset="50%" stopColor="#B87333" />
+          <stop offset="100%" stopColor="#A36034" />
         </linearGradient>
 
         {/* Petrol Blue / Navy Gradient */}
@@ -150,11 +150,11 @@ export const Logo: React.FC<LogoProps> = ({
             >
               <path
                 d="M3 6.5C5.5 3 14.5 3 17 6.5"
-                stroke="#F59E0B"
+                stroke="#B87333"
                 strokeWidth="2.4"
                 strokeLinecap="round"
               />
-              <circle cx="10" cy="6" r="1.2" fill="#F59E0B" />
+              <circle cx="10" cy="6" r="1.2" fill="#B87333" />
             </svg>
             <span className={isLight ? 'text-white' : 'text-[#071822]'}>O</span>
           </span>

@@ -65,7 +65,7 @@ export const ProcessSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#6B7280]">
+              <div className={`mt-5 pt-3 border-t flex items-center justify-between text-[11px] font-mono text-[#6B7280] ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
                 <span>Etap {idx + 1} z 5</span>
               </div>
             </motion.div>

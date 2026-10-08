@@ -39,10 +39,10 @@ export const KnowledgeBaseSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border ${
+          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border ${
             isDay 
-              ? 'bg-amber-100 text-amber-800 border-amber-300' 
-              : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+              ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30' 
+              : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
           }`}>
             <BookOpen className="w-3.5 h-3.5" />
             <span>Baza Wiedzy & FAQ</span>
@@ -66,9 +66,9 @@ export const KnowledgeBaseSection: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 selectedCategory === cat.id
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-500/20'
+                  ? 'bg-[#B87333] text-white font-bold shadow-md shadow-[#B87333]/20'
                   : isDay
                     ? 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'
                     : 'bg-[#0A2230] text-slate-300 border border-white/5 hover:border-white/20'
@@ -87,11 +87,11 @@ export const KnowledgeBaseSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className={`rounded-3xl transition-all duration-200 border overflow-hidden ${
+                className={`rounded-[2px] transition-all duration-200 border overflow-hidden ${
                   isOpen
                     ? isDay
-                      ? 'bg-slate-50/80 border-amber-400 shadow-md'
-                      : 'bg-[#0A2230] border-amber-400/40 shadow-xl'
+                      ? 'bg-slate-50/80 border-[#C27A4E] shadow-md'
+                      : 'bg-[#0A2230] border-[#C27A4E]/40 shadow-xl'
                     : isDay
                       ? 'bg-white border-slate-200 hover:border-slate-300'
                       : 'bg-[#0A2230]/50 border-white/5 hover:border-white/15'
@@ -102,13 +102,13 @@ export const KnowledgeBaseSection: React.FC = () => {
                   onClick={() => toggleId(item.question)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${index}`}
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer"
+                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                      className={`w-9 h-9 rounded-[2px] flex items-center justify-center shrink-0 ${
                         isOpen
-                          ? 'bg-amber-500 text-slate-950'
+                          ? 'bg-[#B87333] text-white'
                           : isDay
                             ? 'bg-slate-100 text-slate-600'
                             : 'bg-white/5 text-slate-400'
@@ -124,7 +124,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                   </div>
 
                   <div
-                    className={`p-2 rounded-xl shrink-0 ${
+                    className={`p-2 rounded-[2px] shrink-0 ${
                       isDay ? 'bg-slate-100 text-slate-600' : 'bg-white/5 text-slate-400'
                     }`}
                   >
@@ -147,15 +147,15 @@ export const KnowledgeBaseSection: React.FC = () => {
                       }`}
                     >
                       {/* Human-Friendly Direct Answer */}
-                      <div className={`p-4 rounded-2xl border text-sm leading-relaxed ${
+                      <div className={`p-4 rounded-[2px] border text-sm leading-relaxed ${
                         isDay 
-                          ? 'bg-white border-amber-200 text-slate-700' 
-                          : 'bg-[#071822] border-amber-500/20 text-slate-200'
+                          ? 'bg-white border-[#B87333]/30 text-slate-700' 
+                          : 'bg-[#071822] border-[#B87333]/30 text-slate-200'
                       }`}>
                         <div className="flex items-center gap-2 mb-1.5">
-                          <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
+                          <ShieldCheck className="w-4 h-4 text-[#B87333] shrink-0" />
                           <span className={`text-xs font-bold uppercase tracking-wider ${
-                            isDay ? 'text-amber-800' : 'text-amber-400'
+                            isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'
                           }`}>
                             Odpowiedź w pigułce:
                           </span>
@@ -166,7 +166,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                       </div>
 
                       {/* Deep-Dive Engineering Details */}
-                      <div className={`p-4 rounded-2xl border text-xs leading-relaxed ${
+                      <div className={`p-4 rounded-[2px] border text-xs leading-relaxed ${
                         isDay 
                           ? 'bg-slate-100/70 border-slate-200 text-slate-600' 
                           : 'bg-black/30 border-white/5 text-slate-300'

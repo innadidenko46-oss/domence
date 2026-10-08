@@ -45,11 +45,11 @@ export const TopSellingScenariosSection: React.FC = () => {
       case 'ShieldAlert':
         return <ShieldAlert className="w-5 h-5 text-rose-400" />;
       case 'Zap':
-        return <Zap className="w-5 h-5 text-amber-500" />;
+        return <Zap className="w-5 h-5 text-[#B87333]" />;
       case 'Car':
         return <Car className="w-5 h-5 text-emerald-400" />;
       default:
-        return <Activity className="w-5 h-5 text-amber-500" />;
+        return <Activity className="w-5 h-5 text-[#B87333]" />;
     }
   };
 
@@ -74,7 +74,7 @@ export const TopSellingScenariosSection: React.FC = () => {
         
         {/* Section Header - Clean Typography */}
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-500 mb-3 font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
             <span>Scenariusze Inżynieryjne 2026</span>
             <span aria-hidden="true" className="text-slate-400 dark:text-slate-600">·</span>
             <span>Shelly Europe & Hikvision</span>
@@ -105,11 +105,11 @@ export const TopSellingScenariosSection: React.FC = () => {
               <button
                 key={sc.id}
                 onClick={() => setActiveScenarioId(sc.id)}
-                className={`p-5 rounded-2xl text-left transition-all border flex flex-col justify-between min-h-[220px] cursor-pointer relative overflow-hidden group ${
+                className={`p-5 rounded-[2px] text-left transition-all border flex flex-col justify-between min-h-[220px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 relative overflow-hidden group ${
                   isSelected
                     ? isDay
-                      ? 'bg-slate-50 border-amber-500 shadow-sm ring-1 ring-amber-500'
-                      : 'bg-[#081B26] border-amber-400/80 shadow-md ring-1 ring-amber-400/30'
+                      ? 'bg-slate-50 border-[#B87333] shadow-sm ring-1 ring-[#B87333]'
+                      : 'bg-[#081B26] border-[#C27A4E]/80 shadow-md ring-1 ring-[#C27A4E]/30'
                     : isDay
                     ? 'bg-slate-50/60 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                     : 'bg-[#05141E]/60 border-white/5 hover:border-white/15 hover:bg-[#071822]'
@@ -118,11 +118,11 @@ export const TopSellingScenariosSection: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      className={`w-10 h-10 rounded-[2px] flex items-center justify-center ${
                         isSelected
                           ? isDay
-                            ? 'bg-amber-100 text-amber-800'
-                            : 'bg-amber-500/20 text-amber-300'
+                            ? 'bg-[#B87333]/10 text-[#7C4A1F]'
+                            : 'bg-[#B87333]/20 text-[#C27A4E]'
                           : isDay
                           ? 'bg-slate-200 text-slate-700'
                           : 'bg-white/5 text-slate-400'
@@ -135,7 +135,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-amber-500 mb-1 font-semibold">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#B87333] mb-1 font-semibold">
                     {getScBadge(sc)}
                   </div>
                   <h3
@@ -151,18 +151,18 @@ export const TopSellingScenariosSection: React.FC = () => {
                   >
                     {getScTitle(sc)}
                   </h3>
-                  <div className="text-xs text-slate-400 mt-1 line-clamp-2 font-light">
+                  <div className={`text-xs mt-1 line-clamp-2 font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                     {getScSubtitle(sc)}
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-400 font-medium">
+                <div className={`mt-4 pt-3 border-t flex items-center justify-between text-[11px] ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
+                  <span className={`font-medium ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                     Szczegóły logiki
                   </span>
                   <ArrowRight
                     className={`w-3.5 h-3.5 transition-transform ${
-                      isSelected ? 'translate-x-1 text-amber-400' : 'text-slate-500 group-hover:translate-x-0.5'
+                      isSelected ? 'translate-x-1 text-[#C27A4E]' : 'text-slate-500 group-hover:translate-x-0.5'
                     }`}
                   />
                 </div>
@@ -179,7 +179,7 @@ export const TopSellingScenariosSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className={`rounded-3xl border p-6 sm:p-10 ${
+            className={`rounded-[2px] border p-6 sm:p-10 ${
               isDay
                 ? 'bg-slate-50 border-slate-200 shadow-md'
                 : 'bg-[#061722]/95 border-white/10 shadow-xl'
@@ -190,7 +190,7 @@ export const TopSellingScenariosSection: React.FC = () => {
               {/* Left Column: Full Scenario Breakdown & Devices */}
               <div className="lg:col-span-7 space-y-6">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-amber-500 mb-2 font-medium">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#B87333] mb-2 font-medium">
                     <span>Wyzwalacz: {getScTrigger(currentScenario)}</span>
                   </div>
                   <h3
@@ -211,14 +211,14 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                 {/* Practical note */}
                 <div
-                  className={`p-4 rounded-2xl border ${
+                  className={`p-4 rounded-[2px] border ${
                     isDay
                       ? 'bg-white border-slate-200 text-slate-800'
                       : 'bg-[#040E16] border-white/10 text-slate-300'
                   }`}
                 >
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-500 mb-1 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-amber-500" />
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#B87333] mb-1 flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-[#B87333]" />
                     <span>Co zyskujesz na co dzień:</span>
                   </div>
                   <p className="text-xs leading-relaxed font-light">
@@ -228,14 +228,14 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                 {/* Devices Used in this setup */}
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">
+                  <div className={`text-xs font-bold uppercase tracking-wider mb-2.5 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                     Użyte urządzenia instalacyjne:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {getScDevices(currentScenario).map((dev, idx) => (
                       <span
                         key={idx}
-                        className={`text-xs px-3 py-1.5 rounded-lg border font-mono ${
+                        className={`text-xs px-3 py-1.5 rounded-[2px] border font-mono ${
                           isDay
                             ? 'bg-white border-slate-200 text-slate-700 shadow-sm'
                             : 'bg-white/5 border-white/10 text-slate-300'
@@ -249,25 +249,25 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                 {/* Action Sequence Steps */}
                 <div className="space-y-2.5 pt-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                  <div className={`text-xs font-bold uppercase tracking-wider mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
                     Kolejność reakcji automatyki:
                   </div>
                   {currentScenario.actionSequence.map((act, i) => (
                     <div
                       key={i}
-                      className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
+                      className={`p-3 rounded-[2px] border flex items-center justify-between text-xs ${
                         isDay ? 'bg-white border-slate-200' : 'bg-[#041018] border-white/5'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-5 h-5 rounded-md bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono font-bold text-[10px]">
+                        <span className="w-5 h-5 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center font-mono font-bold text-[10px]">
                           0{i + 1}
                         </span>
                         <div>
-                          <span className="font-bold text-white block">
+                          <span className={`font-bold block ${isDay ? 'text-slate-900' : 'text-white'}`}>
                             {act.step}
                           </span>
-                          <span className="text-slate-400 text-[11px]">
+                          <span className={`text-[11px] ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
                             {act.detail}
                           </span>
                         </div>
@@ -281,12 +281,12 @@ export const TopSellingScenariosSection: React.FC = () => {
               {/* Right Column: Status Monitor of Installation State */}
               <div className="lg:col-span-5">
                 <div
-                  className={`rounded-2xl p-6 border ${
+                  className={`rounded-[2px] p-6 border ${
                     isDay ? 'bg-white border-slate-200 shadow-sm' : 'bg-[#040F16] border-white/10'
                   }`}
                 >
-                  <div className="flex items-center justify-between pb-3 mb-5 border-b border-white/10">
-                    <div className="text-xs font-bold text-amber-500 uppercase tracking-wider flex items-center gap-2">
+                  <div className={`flex items-center justify-between pb-3 mb-5 border-b ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
+                    <div className="text-xs font-bold text-[#B87333] uppercase tracking-wider flex items-center gap-2">
                       <Gauge className="w-4 h-4" />
                       <span>Stan obwodów instalacji</span>
                     </div>
@@ -298,9 +298,9 @@ export const TopSellingScenariosSection: React.FC = () => {
                   {/* 1. Airing Simulation */}
                   {currentScenario.id === 'top-sc-airing-trv' && (
                     <div className="space-y-4">
-                      <div className="p-4 rounded-xl border border-white/10 bg-[#071924] text-center">
-                        <div className="text-xs text-slate-400 mb-1">Stan skrzydła okiennego:</div>
-                        <div className={`text-base font-extrabold ${windowOpen ? 'text-amber-400' : 'text-emerald-400'}`}>
+                      <div className={`p-4 rounded-[2px] border text-center ${isDay ? 'border-[#E5E7EB] bg-slate-50' : 'border-white/10 bg-[#071924]'}`}>
+                        <div className={`text-xs mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Stan skrzydła okiennego:</div>
+                        <div className={`text-base font-extrabold ${windowOpen ? 'text-[#C27A4E]' : 'text-emerald-400'}`}>
                           {windowOpen
                             ? 'OKNO UCHYLONE NA WIETRZENIE'
                             : 'OKNO SZCZELNIE ZAMKNIĘTE'}
@@ -308,16 +308,16 @@ export const TopSellingScenariosSection: React.FC = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="p-3.5 rounded-xl border border-white/5 bg-white/5">
-                          <span className="text-slate-400 text-[11px] block mb-1">Kontaktron Shelly BLU:</span>
-                          <span className="font-mono font-bold text-white">
+                        <div className={`p-3.5 rounded-[2px] border ${isDay ? 'border-[#E5E7EB] bg-white' : 'border-white/5 bg-white/5'}`}>
+                          <span className={`text-[11px] block mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Kontaktron Shelly BLU:</span>
+                          <span className={`font-mono font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>
                             {windowOpen
                               ? 'ROZSZCZELNIONE'
                               : 'ZAMKNIĘTE (OK)'}
                           </span>
                         </div>
-                        <div className="p-3.5 rounded-xl border border-white/5 bg-white/5">
-                          <span className="text-slate-400 text-[11px] block mb-1">Głowica Shelly BLU TRV:</span>
+                        <div className={`p-3.5 rounded-[2px] border ${isDay ? 'border-[#E5E7EB] bg-white' : 'border-white/5 bg-white/5'}`}>
+                          <span className={`text-[11px] block mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Głowica Shelly BLU TRV:</span>
                           <span className={`font-mono font-bold ${windowOpen ? 'text-rose-400' : 'text-emerald-400'}`}>
                             {windowOpen
                               ? 'ZAWÓR 0% (ODCIĘCIE)'
@@ -326,7 +326,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/20 text-xs text-emerald-200">
+                      <div className="p-3 rounded-[2px] bg-emerald-950/20 border border-emerald-500/20 text-xs text-emerald-200">
                         {windowOpen
                           ? 'Ochrona przed stratami ciepła: głowica odcięła dopływ gorącej wody do grzejnika.'
                           : 'Ogrzewanie w normie według harmonogramu strefowego.'}
@@ -334,10 +334,10 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                       <button
                         onClick={() => setWindowOpen(!windowOpen)}
-                        className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                        className={`w-full py-3 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                           windowOpen
                             ? 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-sm'
-                            : 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm'
+                            : 'bg-[#B87333] hover:bg-[#A36034] text-white shadow-sm'
                         }`}
                       >
                         <Wind className="w-4 h-4" />
@@ -353,12 +353,12 @@ export const TopSellingScenariosSection: React.FC = () => {
                   {/* 2. Hazard Leak Simulation */}
                   {currentScenario.id === 'top-sc-hazard-defense' && (
                     <div className="space-y-4">
-                      <div className={`p-4 rounded-xl border transition-all text-center ${
+                      <div className={`p-4 rounded-[2px] border transition-all text-center ${
                         hazardTriggered
                           ? 'border-rose-500/60 bg-rose-950/40'
                           : 'border-white/10 bg-[#071924]'
                       }`}>
-                        <div className="text-xs text-slate-400 mb-1">Status magistrali wody i gazu:</div>
+                        <div className={`text-xs mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Status magistrali wody i gazu:</div>
                         <div className={`text-base font-extrabold ${hazardTriggered ? 'text-rose-400' : 'text-emerald-400'}`}>
                           {hazardTriggered
                             ? 'ALARM: ZAGROŻENIE WYKRYTE'
@@ -367,16 +367,16 @@ export const TopSellingScenariosSection: React.FC = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="p-3.5 rounded-xl border border-white/5 bg-white/5">
-                          <span className="text-slate-400 text-[11px] block mb-1">Zawór kulowy odcinający:</span>
+                        <div className={`p-3.5 rounded-[2px] border ${isDay ? 'border-[#E5E7EB] bg-white' : 'border-white/5 bg-white/5'}`}>
+                          <span className={`text-[11px] block mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Zawór kulowy odcinający:</span>
                           <span className={`font-mono font-bold ${hazardTriggered ? 'text-rose-400' : 'text-emerald-400'}`}>
                             {hazardTriggered
                               ? 'ZAMKNIĘTY (<2.8s)'
                               : 'OTWARTY (Dopływ OK)'}
                           </span>
                         </div>
-                        <div className="p-3.5 rounded-xl border border-white/5 bg-white/5">
-                          <span className="text-slate-400 text-[11px] block mb-1">Zasilanie urządzeń:</span>
+                        <div className={`p-3.5 rounded-[2px] border ${isDay ? 'border-[#E5E7EB] bg-white' : 'border-white/5 bg-white/5'}`}>
+                          <span className={`text-[11px] block mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Zasilanie urządzeń:</span>
                           <span className={`font-mono font-bold ${hazardTriggered ? 'text-rose-400' : 'text-emerald-400'}`}>
                             {hazardTriggered
                               ? 'ODCIĘTE (Pralka, Piec)'
@@ -387,7 +387,7 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                       <button
                         onClick={() => setHazardTriggered(!hazardTriggered)}
-                        className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                        className={`w-full py-3 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                           hazardTriggered
                             ? 'bg-emerald-500 hover:bg-emerald-400 text-slate-950'
                             : 'bg-rose-500 hover:bg-rose-600 text-white'
@@ -406,9 +406,9 @@ export const TopSellingScenariosSection: React.FC = () => {
                   {/* 3. Solar PV 3EM Simulation */}
                   {currentScenario.id === 'top-sc-solar-3em' && (
                     <div className="space-y-4">
-                      <div className="p-4 rounded-xl border border-white/10 bg-[#071924] text-center">
-                        <div className="text-xs text-slate-400 mb-1">Odczyt licznika 3-fazowego Shelly 3EM-63T:</div>
-                        <div className="text-lg font-mono font-extrabold text-amber-500">
+                      <div className={`p-4 rounded-[2px] border text-center ${isDay ? 'border-[#E5E7EB] bg-slate-50' : 'border-white/10 bg-[#071924]'}`}>
+                        <div className={`text-xs mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Odczyt licznika 3-fazowego Shelly 3EM-63T:</div>
+                        <div className="text-lg font-mono font-extrabold text-[#B87333]">
                           {solarPeakActive
                             ? 'NADWYŻKA PV: +5.4 kW · SIEĆ: 0 W'
                             : 'POBÓR DOMU: 1.1 kW · SIEĆ: 1.1 kW'}
@@ -416,14 +416,14 @@ export const TopSellingScenariosSection: React.FC = () => {
                       </div>
 
                       <div className="space-y-2 text-xs">
-                        <div className="p-3 rounded-xl bg-white/5 flex items-center justify-between">
-                          <span className="text-slate-300">Grzałka zasobnika CWU (2.0 kW):</span>
+                        <div className={`p-3 rounded-[2px] flex items-center justify-between ${isDay ? 'bg-slate-50 border border-[#E5E7EB]' : 'bg-white/5'}`}>
+                          <span className={`${isDay ? 'text-slate-700' : 'text-slate-300'}`}>Grzałka zasobnika CWU (2.0 kW):</span>
                           <span className={`font-mono font-bold ${solarPeakActive ? 'text-emerald-400' : 'text-slate-500'}`}>
                             {solarPeakActive ? 'ZAŁĄCZONA (Darmowe słońce)' : 'Czuwanie'}
                           </span>
                         </div>
-                        <div className="p-3 rounded-xl bg-white/5 flex items-center justify-between">
-                          <span className="text-slate-300">Ładowarka pojazdu EV:</span>
+                        <div className={`p-3 rounded-[2px] flex items-center justify-between ${isDay ? 'bg-slate-50 border border-[#E5E7EB]' : 'bg-white/5'}`}>
+                          <span className={`${isDay ? 'text-slate-700' : 'text-slate-300'}`}>Ładowarka pojazdu EV:</span>
                           <span className={`font-mono font-bold ${solarPeakActive ? 'text-emerald-400' : 'text-slate-500'}`}>
                             {solarPeakActive ? 'ŁADOWANIE DYNAMICZNE 16A' : 'Czuwanie'}
                           </span>
@@ -432,7 +432,7 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                       <button
                         onClick={() => setSolarPeakActive(!solarPeakActive)}
-                        className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                        className="btn-engineering-primary w-full gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                       >
                         <Zap className="w-4 h-4" />
                         <span>
@@ -447,9 +447,9 @@ export const TopSellingScenariosSection: React.FC = () => {
                   {/* 4. Car Welcome Simulation */}
                   {currentScenario.id === 'top-sc-welcome-car' && (
                     <div className="space-y-4">
-                      <div className="p-4 rounded-xl border border-white/10 bg-[#071924] text-center">
-                        <div className="text-xs text-slate-400 mb-1">Kamera Hikvision ANPR przy bramie:</div>
-                        <div className={`text-base font-extrabold ${carArriving ? 'text-emerald-400' : 'text-slate-300'}`}>
+                      <div className={`p-4 rounded-[2px] border text-center ${isDay ? 'border-[#E5E7EB] bg-slate-50' : 'border-white/10 bg-[#071924]'}`}>
+                        <div className={`text-xs mb-1 ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Kamera Hikvision ANPR przy bramie:</div>
+                        <div className={`text-base font-extrabold ${carArriving ? 'text-emerald-400' : (isDay ? 'text-slate-400' : 'text-slate-300')}`}>
                           {carArriving
                             ? 'ODCZYTANO TABLICĘ: WI 7777X (Domownik)'
                             : 'Oczekiwanie na zbliżenie pojazdu'}
@@ -457,20 +457,20 @@ export const TopSellingScenariosSection: React.FC = () => {
                       </div>
 
                       <div className="space-y-2 text-xs">
-                        <div className="p-3 rounded-xl bg-white/5 flex items-center justify-between">
-                          <span className="text-slate-300">Napęd bramy (Shelly Plus 1):</span>
+                        <div className={`p-3 rounded-[2px] flex items-center justify-between ${isDay ? 'bg-slate-50 border border-[#E5E7EB]' : 'bg-white/5'}`}>
+                          <span className={`${isDay ? 'text-slate-700' : 'text-slate-300'}`}>Napęd bramy (Shelly Plus 1):</span>
                           <span className={`font-mono font-bold ${carArriving ? 'text-emerald-400' : 'text-slate-500'}`}>
                             {carArriving ? 'OTWIERANIE AUTOMATYCZNE' : 'Zamknięta'}
                           </span>
                         </div>
-                        <div className="p-3 rounded-xl bg-white/5 flex items-center justify-between">
-                          <span className="text-slate-300">Ścieżka świetlna wejścia:</span>
-                          <span className={`font-mono font-bold ${carArriving ? 'text-amber-500' : 'text-slate-500'}`}>
+                        <div className={`p-3 rounded-[2px] flex items-center justify-between ${isDay ? 'bg-slate-50 border border-[#E5E7EB]' : 'bg-white/5'}`}>
+                          <span className={`${isDay ? 'text-slate-700' : 'text-slate-300'}`}>Ścieżka świetlna wejścia:</span>
+                          <span className={`font-mono font-bold ${carArriving ? 'text-[#B87333]' : 'text-slate-500'}`}>
                             {carArriving ? 'Ciepły bursztyn 2700K (100%)' : '0%'}
                           </span>
                         </div>
-                        <div className="p-3 rounded-xl bg-white/5 flex items-center justify-between">
-                          <span className="text-slate-300">Strefa alarmowa parteru:</span>
+                        <div className={`p-3 rounded-[2px] flex items-center justify-between ${isDay ? 'bg-slate-50 border border-[#E5E7EB]' : 'bg-white/5'}`}>
+                          <span className={`${isDay ? 'text-slate-700' : 'text-slate-300'}`}>Strefa alarmowa parteru:</span>
                           <span className={`font-mono font-bold ${carArriving ? 'text-emerald-400' : 'text-rose-400'}`}>
                             {carArriving ? 'ROZBROJONA' : 'Czuwanie'}
                           </span>
@@ -479,7 +479,7 @@ export const TopSellingScenariosSection: React.FC = () => {
 
                       <button
                         onClick={() => setCarArriving(!carArriving)}
-                        className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                        className="w-full py-3 rounded-[2px] bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                       >
                         <Car className="w-4 h-4" />
                         <span>
@@ -491,10 +491,10 @@ export const TopSellingScenariosSection: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="mt-5 pt-4 border-t border-white/10 text-center">
+                  <div className={`mt-5 pt-4 border-t text-center ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
                     <Link
                       to="/kalkulator"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#B87333] hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       <span>Wycena tego scenariusza w kalkulatorze</span>
                       <ArrowRight className="w-3.5 h-3.5" />

@@ -97,7 +97,7 @@ export const ContactPage: React.FC = () => {
 
                 <a
                   href="mailto:kontakt@domence.pl"
-                  className={`flex items-start gap-4 p-5 rounded-[2px] border transition-colors group ${
+                  className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group ${
                     isDay
                       ? 'bg-white border-[#E5E7EB] hover:border-[#B87333]'
                       : 'bg-[#27272A]/40 border-white/10 hover:border-[#B87333]'
@@ -190,7 +190,7 @@ export const ContactPage: React.FC = () => {
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="mt-6 px-6 py-2.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white text-xs font-medium uppercase tracking-wider transition-all"
+                      className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       Wyślij kolejne zapytanie
                     </button>
@@ -318,7 +318,7 @@ export const ContactPage: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                      className="btn-engineering-primary w-full gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
                       <Send className="w-4 h-4" />
                       <span>Prześlij Zapytanie do Inżyniera</span>

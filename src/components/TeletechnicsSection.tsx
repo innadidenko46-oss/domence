@@ -24,7 +24,7 @@ export const TeletechnicsSection: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Video':
-        return <Video className="w-6 h-6 text-[#B87333]" />;
+        return <Video className="w-6 h-6 text-sky-400" />;
       case 'Server':
         return <Server className="w-6 h-6 text-sky-400" />;
       case 'Camera':
@@ -32,7 +32,7 @@ export const TeletechnicsSection: React.FC = () => {
       case 'Network':
         return <Network className="w-6 h-6 text-[#B87333]" />;
       case 'ShieldAlert':
-        return <ShieldAlert className="w-6 h-6 text-emerald-400" />;
+        return <ShieldAlert className="w-6 h-6 text-rose-400" />;
       default:
         return <KeyRound className="w-6 h-6 text-[#B87333]" />;
     }
@@ -86,7 +86,7 @@ export const TeletechnicsSection: React.FC = () => {
                   onClick={() => setExpandedServiceId(isExpanded ? '' : service.id)}
                   aria-expanded={isExpanded}
                   aria-label={isExpanded ? 'Zwiń szczegóły' : 'Rozwiń szczegóły'}
-                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left"
+                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border ${
@@ -213,7 +213,7 @@ export const TeletechnicsSection: React.FC = () => {
 
           <Link
             to="/kalkulator"
-            className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all whitespace-nowrap shadow-sm"
+            className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
             Skonfiguruj instalację
           </Link>
