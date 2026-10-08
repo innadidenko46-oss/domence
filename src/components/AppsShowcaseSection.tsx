@@ -40,7 +40,7 @@ export const AppsShowcaseSection: React.FC = () => {
     {
       id: 'shelly',
       name: 'Aplikacja do automatyki domowej',
-      tagline: 'Centrum zarządzania światłem, mikroklimatem, bezpieczeństwem i energią (oparte na architekturze Shelly Smart Control)',
+      tagline: 'Centrum zarządzania światłem, mikroklimatem, bezpieczeństwem i energią (aplikacja Shelly Smart Control)',
       badge: 'Sterowanie & Automatyzacje',
       brandColor: 'text-[#B87333]',
       icon: <Zap className="w-5 h-5 text-[#B87333]" />,
@@ -48,7 +48,7 @@ export const AppsShowcaseSection: React.FC = () => {
     {
       id: 'hikvision',
       name: 'Aplikacja do wideodomofonów i kamer',
-      tagline: 'Podgląd na żywo 4K, rozmowy wideo z furtki i natychmiastowe alerty o ludziach/pojazdach (oparte na Hik-Connect)',
+      tagline: 'Podgląd na żywo 4K, rozmowy wideo z furtki i natychmiastowe alerty o ludziach/pojazdach (aplikacja Hik-Connect)',
       badge: 'Monitoring & Kontrola Wejścia',
       brandColor: 'text-sky-500',
       icon: <Video className="w-5 h-5 text-sky-500" />,
@@ -213,7 +213,7 @@ export const AppsShowcaseSection: React.FC = () => {
                   <Lock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <div className="text-xs leading-relaxed">
                     <span className="font-bold block mb-1">Działa lokalnie, także bez internetu</span>
-                    Jeśli operator odetnie kabel internetowy do Twojego domu, włączniki na ścianie i aplikacja w domowej sieci Wi-Fi nadal w pełni sterują światłem, roletami i klimatem. Nie ma żadnego uzależnienia od awarii serwerów zewnętrznych.
+                    Jeśli operator odetnie kabel internetowy do Twojego domu, włączniki na ścianie i aplikacja w domowej sieci Wi-Fi nadal w pełni sterują światłem, roletami i klimatem. Nie ma żadnego uzależnienia od awarii serwerów zewnętrznych. Powiadomienia PUSH poza domem i podgląd zdalny wymagają internetu.
                   </div>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export const AppsShowcaseSection: React.FC = () => {
                           <div className={`text-[11px] ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>Pompa ciepła, oświetlenie, rekuperator</div>
                         </div>
                       </div>
-                      <span className="font-mono text-xs font-bold text-emerald-400">480 W</span>
+                      <span className="font-mono text-xs font-bold text-emerald-400">np. 480 W</span>
                     </div>
                   </div>
 
@@ -300,7 +300,7 @@ export const AppsShowcaseSection: React.FC = () => {
                       to="/kalkulator"
                       className="inline-flex items-center gap-2 text-xs font-bold text-[#C27A4E] hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
-                      <span>Skonfiguruj automatykę dla Twojego domu</span>
+                      <span>Wyceń w kalkulatorze</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -326,7 +326,7 @@ export const AppsShowcaseSection: React.FC = () => {
                     <span>Zdolności aplikacji wideodomofonów i kamer 4K</span>
                   </div>
                   <h3 className={`text-2xl font-bold mb-3 ${isDay ? 'text-slate-900' : 'text-white'}`}>
-                    Spokój o bezpieczeństwo posesji i wygodne odbieranie furtki
+                    Bezpieczeństwo posesji bez zmartwień i wygodne odbieranie furtki
                   </h3>
                   <p className={`text-xs sm:text-sm leading-relaxed mb-6 font-light ${
                     isDay ? 'text-slate-600' : 'text-slate-300'
@@ -344,7 +344,7 @@ export const AppsShowcaseSection: React.FC = () => {
                         <span>Szybkie połączenie wideo</span>
                       </div>
                       <p className={`text-xs leading-relaxed font-light ${isDay ? 'text-slate-600' : 'text-slate-400'}`}>
-                        Gdy kurier dzwoni do furtki, Twój telefon dzwoni jak zwykłe połączenie wideo. Widzisz rozmówcę w jakości Full HD/4K i słyszysz go bez szumu wiatru.
+                        Gdy kurier dzwoni do furtki, Twój telefon dzwoni jak zwykłe połączenie wideo. Widzisz rozmówcę w jakości Full HD/4K i słyszysz go z redukcją szumu wiatru.
                       </p>
                     </div>
 
@@ -408,7 +408,7 @@ export const AppsShowcaseSection: React.FC = () => {
                       Podgląd funkcji w telefonie
                     </div>
                     <span className="px-2.5 py-0.5 rounded-[2px] bg-sky-500/20 text-sky-300 font-mono text-[10px]">
-                      Hik-Connect Pro
+                      Hik-Connect
                     </span>
                   </div>
 

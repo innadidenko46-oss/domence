@@ -45,7 +45,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
           }`}>
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Baza Wiedzy & FAQ</span>
+            <span>Baza wiedzy i FAQ</span>
           </div>
           <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
             isDay ? 'text-slate-900' : 'text-white'

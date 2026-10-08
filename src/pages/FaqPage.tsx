@@ -56,7 +56,7 @@ export const FaqPage: React.FC = () => {
                 to="/kontakt"
                 className="btn-engineering-primary shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Zapytaj Inżyniera
+                Zapytaj inżyniera
               </Link>
             </div>
           </div>
@@ -78,7 +78,7 @@ export const FaqPage: React.FC = () => {
             to="/kalkulator"
             className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
-            <span>Otwórz Kalkulator</span>
+            <span>Wyceń w kalkulatorze</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

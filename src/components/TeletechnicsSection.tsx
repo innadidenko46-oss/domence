@@ -215,7 +215,7 @@ export const TeletechnicsSection: React.FC = () => {
             to="/kalkulator"
             className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
-            Skonfiguruj instalację
+            Wyceń w kalkulatorze
           </Link>
         </div>
 

@@ -21,7 +21,7 @@ const SCENES: AtmosphereScene[] = [
     time: '12:00 • Południe',
     name: 'Naturalne Światło Dzienne',
     kelvin: '5000K (Biel dzienna)',
-    lux: '750 lx na blatach',
+    lux: 'ok. 750 lx na blatach (wartości poglądowe)',
     title: 'Światło, które wspiera koncentrację i chroni przed przegrzaniem',
     description:
       'Czujniki nasłonecznienia na dachu automatycznie sterują kątem lameli żaluzji fasadowych. Wnętrze pozostaje jasne i przestronne, podczas gdy promienie słoneczne nie nagrzewają salonu.',
@@ -38,7 +38,7 @@ const SCENES: AtmosphereScene[] = [
     time: '19:45 • Złota Godzina',
     name: 'Ciepły Zmierzch',
     kelvin: '2700K (Ciepły bursztyn)',
-    lux: '220 lx (Światło relaksu)',
+    lux: 'ok. 220 lx (światło relaksu) (wartości poglądowe)',
     title: 'Bezszelestne przejście w tryb wypoczynku i prywatności',
     description:
       'Gdy słońce chowa się za horyzontem, oświetlenie sufitowe powoli ustępuje miejsca liniom LED i lampom stołowym. Rolety opuszczają się bezszelestnie, zapewniając pełną intymność.',
@@ -46,7 +46,7 @@ const SCENES: AtmosphereScene[] = [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85',
     features: [
       'Dyskretne podświetlenie strefy wejściowej i korytarzy',
-      'Temperatura barwowa schodzi do 2700K – wzrok natychmiast odpoczywa',
+      'Temperatura barwowa schodzi do 2700K — światło mniej męczy wzrok',
       'Jeden dotyk przycisku przy kanapie przygotowuje scenę kinową',
     ],
   },
@@ -55,7 +55,7 @@ const SCENES: AtmosphereScene[] = [
     time: '23:30 • Cisza Nocna',
     name: 'Spokojna Noc',
     kelvin: '2000K (Bursztynowa poświata)',
-    lux: '15 lx (Bezpieczna orientacja)',
+    lux: 'ok. 15 lx (bezpieczna orientacja) (wartości poglądowe)',
     title: 'Orientacja bez oślepiania domowników',
     description:
       'Wstajesz w nocy do kuchni lub pokoju dziecka? Czujniki ruchu włączają jedynie subtelne podświetlenie przy podłodze o jasności 5%. Brak nagłego błysku i brak wybudzania organizmu.',

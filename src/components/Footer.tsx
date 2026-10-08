@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
               </Link>
               <p className="mt-4 text-[#A1A1AA] max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
                 Wdrożenia automatyki budynkowej Shelly Pro, wideodomofonii IP oraz monitoringu wizyjnego 4K.
-                Praca lokalna (Local-First) bez abonamentów chmurowych, montaż bezpyłowy i dokumentacja powykonawcza po zakończeniu prac.
+                Praca lokalna (Local-First) bez abonamentów chmurowych, montaż z minimalną ingerencją w tynki, z odciągiem pyłu i dokumentacja powykonawcza po zakończeniu prac.
               </p>
             </div>
 
@@ -108,17 +108,17 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-xs text-slate-400">
                 <li>
                   <Link to="/pakiety" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Pakiety "Pod Klucz"
+                    Pakiety „pod klucz”
                   </Link>
                 </li>
                 <li>
                   <Link to="/faq" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Baza Wiedzy & FAQ
+                    Baza wiedzy i FAQ
                   </Link>
                 </li>
                 <li>
                   <Link to="/kalkulator" className="hover:text-[#C27A4E] transition-colors font-semibold text-[#C27A4E] focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Kalkulator Wyceny
+                    Wyceń w kalkulatorze
                   </Link>
                 </li>
                 <li>
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-start gap-2.5 text-xs text-slate-400">
               <MapPin className="w-4 h-4 text-[#C27A4E] shrink-0 mt-0.5" />
-              <span>Realizacje na terenie całej Polski</span>
+              <span>Warszawa i okolice; większe rezydencje — cała Polska</span>
             </div>
 
             <div className="pt-2">
@@ -163,10 +163,10 @@ export const Footer: React.FC = () => {
                 to="/kontakt"
                 className="inline-block px-4 py-2.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-[11px] transition-colors shadow-md shadow-[#B87333]/10 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Zamów Bezpłatny Kosztorys
+                Wyceń w kalkulatorze
               </Link>
               <p className="text-[10px] text-slate-400 mt-1.5">
-                Odpowiadamy w dni robocze w ciągu 24 godzin. Bez spamu.
+                Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Bez spamu.
               </p>
             </div>
           </div>
@@ -254,7 +254,7 @@ export const Footer: React.FC = () => {
                     1. <strong>Zakres usług:</strong> DOMENCE wykonuje projekty okablowania, prefabrykację rozdzielnic elektrycznych, konfigurację modułów Shelly Pro na szynę DIN oraz instalację kamer i wideodomofonów IP Hikvision.
                   </p>
                   <p>
-                    2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonywane są w standardzie bezpyłowym z użyciem odciągów przemysłowych HEPA i zgodnie z normą PN-HD 60364.
+                    2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonujemy z minimalną ingerencją w tynki, z odciągiem pyłu (odciągi przemysłowe HEPA) i zgodnie z normą PN-HD 60364.
                   </p>
                   <p>
                     3. <strong>Gwarancja:</strong> Na wykonane okablowanie i prace montażowe udzielamy 24 miesięcy gwarancji. Szczegóły oraz ewentualne wydłużenia określa umowa zawierana z klientem.

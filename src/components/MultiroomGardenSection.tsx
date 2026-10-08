@@ -85,7 +85,7 @@ export const MultiroomGardenSection: React.FC = () => {
                 to="/kalkulator"
                 className="text-xs font-mono font-bold text-[#B87333] hover:text-[#A36034] transition-colors"
               >
-                Wyceń Multiroom →
+                Wyceń w kalkulatorze
               </Link>
             </div>
           </div>
@@ -136,7 +136,7 @@ export const MultiroomGardenSection: React.FC = () => {
                 to="/kalkulator"
                 className={`text-xs font-mono font-bold transition-colors ${isDay ? 'text-sky-700 hover:text-sky-800' : 'text-sky-400 hover:text-sky-300'}`}
               >
-                Wyceń Salę Kinową →
+                Wyceń w kalkulatorze
               </Link>
             </div>
           </div>

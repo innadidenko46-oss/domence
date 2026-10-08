@@ -319,7 +319,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       Istniejące Wnętrze
                     </div>
                     <div className="text-xs text-[#9CA3AF] mt-1.5 leading-relaxed">
-                      Bez kucia ścian i bez pyłu. Dyskretne mikromoduły instalowane za osprzętem oświetleniowym.
+                      Z minimalną ingerencją w tynki, z odciągiem pyłu. Dyskretne mikromoduły instalowane za osprzętem oświetleniowym.
                     </div>
                   </button>
 
@@ -422,7 +422,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <p className={`text-xs sm:text-sm mb-5 leading-relaxed ${
                   isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
                 }`}>
-                  Zaznacz interesujące Cię funkcjonalności. Wycena obejmuje markowe komponenty, montaż certyfikowanych inżynierów oraz testy poprawności instalacji.
+                  Zaznacz interesujące Cię funkcjonalności. Wycena obejmuje markowe komponenty, montaż zespołu z uprawnieniami SEP oraz testy poprawności instalacji.
                 </p>
 
                 {/* Categories Tab Filter */}
@@ -499,7 +499,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                             }`}>
                               +{mod.price.toLocaleString('pl-PL')} zł
                             </span>
-                            <span className="block text-[9px] text-[#6B7280]">z montażem</span>
+                            <span className="block text-[9px] text-[#6B7280]">z montażem (ceny netto, orientacyjne)</span>
                           </div>
                         </div>
 
@@ -543,7 +543,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       onClick={() => setStep(4)}
                       className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
-                      <span>Zobacz Kosztorys</span>
+                      <span>Wyceń w kalkulatorze</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -582,7 +582,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       {grossPrice.toLocaleString('pl-PL')} PLN brutto (z 23% VAT)
                     </div>
                     <div className="text-[11px] font-mono text-[#9CA3AF] mt-1">
-                      (sprzęt + certyfikowany montaż + dokumentacja powykonawcza)
+                      (sprzęt + montaż zespołu z uprawnieniami SEP + dokumentacja powykonawcza)
                     </div>
                   </div>
 
@@ -708,11 +708,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       type="submit"
                       className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
-                      Wyślij wycenę do inżyniera
+                      Zapytaj inżyniera
                     </button>
                   </div>
                   <p className="text-[11px] text-center text-[#6B7280] pt-1">
-                    * Odpowiadamy w ciągu 24h. Gwarancja braku spamu i przekazywania danych podmiotom trzecim.
+                    * Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Gwarancja braku spamu i przekazywania danych podmiotom trzecim.
                   </p>
                 </form>
               </motion.div>
@@ -737,7 +737,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Dziękujemy, {formData.name || 'Inwestorze'}!
                 </h3>
                 <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto mb-6 leading-relaxed">
-                  Otworzyliśmy Twój program pocztowy z gotową wiadomością na kontakt@domence.pl. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin w dni robocze.
+                  Otworzyliśmy Twój program pocztowy z gotową wiadomością na kontakt@domence.pl. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
                 </p>
 
                 <div className={`p-5 rounded-[2px] border max-w-md mx-auto mb-6 text-left ${
@@ -748,7 +748,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Dalsze kroki realizacji:</span>
                   </div>
                   <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                    Aby omówić założenia instalacyjne, napisz na kontakt@domence.pl — odpowiadamy w ciągu 24 godzin w dni robocze i proponujemy bezpłatny audyt techniczny.
+                    Aby omówić założenia instalacyjne, napisz na kontakt@domence.pl — odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00) i proponujemy bezpłatny audyt techniczny.
                   </p>
                 </div>
 

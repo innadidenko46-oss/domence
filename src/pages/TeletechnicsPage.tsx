@@ -16,7 +16,7 @@ export const TeletechnicsPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Teletechnika &amp; CCTV"
-        title="Monitoring Wizyjny 4K, Bezpieczeństwo i Szafy RACK 19''"
+        title="Monitoring Wizyjny 4K, Bezpieczeństwo i Szafy RACK 19″"
         description="Projektujemy i wykonujemy infrastrukturę teletechniczną dla rezydencji. Monitoring 4K z przeszukiwaniem nagrań, lokalny zapis NVR bez abonamentów i okablowanie strukturalne kat. 6A."
         icon={<Network className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
@@ -70,7 +70,7 @@ export const TeletechnicsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Serce Domowej Sieci LAN
+                  Serce domowej sieci LAN
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Wszystkie przewody schodzą się do jednej zamykanej szafy technicznej. Certyfikowane patchcordy, switche PoE+ i zasilacz awaryjny UPS.
@@ -95,7 +95,7 @@ export const TeletechnicsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Zasięg w Ogrodzie i Garażu
+                  Zasięg w ogrodzie i garażu
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Sufitowe punkty dostępowe z roamingiem 802.11k/v/r zapewniają nieprzerwane połączenie podczas poruszania się po całej posesji.
@@ -186,7 +186,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Ryzyko wycieku prywatnych nagrań domowników do zagranicznych serwerów.</span>
+                  <span>W wielu kamerach konsumenckich pełne archiwum w chmurze wymaga płatnej subskrypcji (sprawdź cennik producenta).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>

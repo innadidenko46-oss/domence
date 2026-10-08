@@ -270,7 +270,7 @@ export const ScenariosSection: React.FC = () => {
                       <div className={`text-xs font-bold uppercase tracking-wider mb-2.5 ${
                         isDay ? 'text-slate-700' : 'text-slate-300'
                       }`}>
-                        Sekwencja automatycznych działań w ułamku sekundy:
+                        Sekwencja automatycznych działań zwykle w ciągu 1–2 sekund w sieci lokalnej:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (
@@ -338,7 +338,7 @@ export const ScenariosSection: React.FC = () => {
                     to="/kalkulator"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
-                    <span>Skonfiguruj ten scenariusz</span>
+                    <span>Wyceń w kalkulatorze</span>
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>

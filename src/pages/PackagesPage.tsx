@@ -44,7 +44,7 @@ export const PackagesPage: React.FC = () => {
             <p className={`mt-2 text-sm sm:text-base leading-[1.7] ${
               isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
             }`}>
-              Stała, pisemna wycena ryczałtowa bez niespodziewanych dopłat za drobne materiały instalacyjne.
+              Stała, pisemna wycena ryczałtowa — zakres i wyłączenia potwierdzamy pisemnie przed startem.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export const PackagesPage: React.FC = () => {
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h3 className={`text-base font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Projekt Wykonawczy
+                Projekt wykonawczy
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Indywidualny rzut instalacji, schemat jednokreskowy rozdzielnicy i bilans mocy urządzeń.
@@ -70,7 +70,7 @@ export const PackagesPage: React.FC = () => {
                 <Sparkles className="w-5 h-5" />
               </div>
               <h3 className={`text-base font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Czysty Montaż
+                Czysty montaż
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Zabezpieczenie posadzek i mebli, odkurzanie przemysłowe z filtrem HEPA i estetyczne wykończenie.
@@ -84,7 +84,7 @@ export const PackagesPage: React.FC = () => {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h3 className={`text-base font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Pomiary Odbiorowe
+                Pomiary odbiorowe
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Pomiary impedancji pętli zwarcia, testy wyłączników RCD oraz protokół podpisany przez inżyniera z uprawnieniami SEP.
@@ -98,7 +98,7 @@ export const PackagesPage: React.FC = () => {
                 <Clock className="w-5 h-5" />
               </div>
               <h3 className={`text-base font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                24 Miesiące Gwarancji
+                24 miesiące gwarancji
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Pisemna umowa gwarancyjna, bezpośredni kontakt z kierownikiem projektu i bezpłatna optymalizacja scen po 30 dniach.

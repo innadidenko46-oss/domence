@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'systemy',
       path: '/systemy',
-      title: 'Technologie & Standardy Smart Home',
+      title: 'Technologie i standardy smart home',
       subtitle: 'Sterowanie domem • Oświetlenie • Rolety • Mikroklimat',
       description:
         'Sterowanie oświetleniem, roletami, mikroklimatem i scenami relaksu z poziomu włączników ściennych i telefonu — przewodowo lub bezprzewodowo, w zależności od stanu instalacji.',
@@ -42,7 +42,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'teletechnika',
       path: '/teletechnika',
-      title: 'Monitoring CCTV, Wideodomofony IP & Sieci LAN',
+      title: 'Monitoring CCTV, wideodomofony IP i sieci LAN',
       subtitle: 'Kamery 4K ColorVu & AcuSense • Wideorozmowy w telefonie • Szafy RACK',
       description:
         'Szybka identyfikacja ludzi i pojazdów AI bez fałszywych alarmów. Prywatny rejestrator w szafie RACK bez opłat chmurowych, zdalne otwieranie furtki kurierowi i stabilny zasięg Wi-Fi w całym domu.',
@@ -55,7 +55,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'multimedia-kino',
       path: '/multimedia',
-      title: 'Dźwięk Multiroom & Kino Domowe',
+      title: 'Dźwięk multiroom i kino domowe',
       subtitle: 'Bezramkowe głośniki sufitowe • Sceny filmowe • Dolby Atmos',
       description:
         'Dyskretne nagłośnienie wtopione w architekturę sufitu, zintegrowane ściemnianie światła, rolety blackout i automatyczna cisza podczas dzwonienia wideodomofonu.',
@@ -67,7 +67,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'scenariusze',
       path: '/scenariusze',
-      title: 'Scenariusze & Automatyzacja Codzienna',
+      title: 'Scenariusze i codzienna automatyka',
       subtitle: 'Wyjście z domu • Ochrona przed zalaniem • Oświetlenie nocne',
       description:
         'Dotykowy klawisz przy drzwiach wyłącza oświetlenie i wybrane obwody gniazd. Sensory zalania natychmiast zamykają główny elektrozawór wody przy nieszczelności.',
@@ -80,7 +80,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'pakiety',
       path: '/pakiety',
-      title: 'Pakiety Wdrożeniowe "Pod Klucz"',
+      title: 'Pakiety wdrożeniowe „pod klucz”',
       subtitle: 'Kompletny sprzęt i montaż • Przejrzysta wycena • Gwarancja',
       description:
         'Sprawdzone konfiguracje wdrożeniowe: od gotowych lokali bez ingerencji w tynki, po pełne rezydencje w profesjonalnym standardzie modułowym Shelly Pro na szynę DIN.',
@@ -93,7 +93,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'faq',
       path: '/faq',
-      title: 'Baza Wiedzy & Odpowiedzi na Pytania',
+      title: 'Baza wiedzy i odpowiedzi na pytania',
       subtitle: 'Wszystko o działaniu offline, kosztach i obsłudze dla rodziny',
       description:
         'Sprawdź, jak instalacja zachowuje się podczas wyładowań i braku internetu, jak szybko zwraca się inwestycja i jak wygląda codzienna obsługa.',
@@ -106,7 +106,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'kalkulator',
       path: '/kalkulator',
-      title: 'Konfigurator Wyceny Instalacji',
+      title: 'Konfigurator wyceny instalacji',
       subtitle: 'Wybierz metraż i moduły • Sprawdź szacunkowy koszt',
       description:
         'Narzędzie do oszacowania budżetu na urządzenia i montaż.',
@@ -161,9 +161,9 @@ export const HomePage: React.FC = () => {
             <h1 className={`font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] ${
               isDay ? 'text-slate-950' : 'text-white'
             }`}>
-              Nowoczesny dom, który dba o Twój spokój, wygodę i prywatność.{' '}
+              Nowoczesny dom, który wspiera Twój spokój, wygodę i prywatność.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B87333] via-[#C27A4E] to-[#A36034]">
-                Działa stabilnie, także bez internetu.
+                Działa stabilnie — również bez internetu.
               </span>
             </h1>
 
@@ -182,7 +182,7 @@ export const HomePage: React.FC = () => {
                 to="/kalkulator"
                 className="btn-engineering-primary shadow-xl shadow-[#B87333]/20 active:scale-95 text-center gap-2 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                <span>Wyceń Inwestycję Online</span>
+                <span>Wyceń w kalkulatorze</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -216,7 +216,7 @@ export const HomePage: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
-                <span>Czysty Montaż</span>
+                <span>Czysty montaż</span>
               </div>
             </div>
           </div>
@@ -248,7 +248,7 @@ export const HomePage: React.FC = () => {
             <p className={`mt-3 text-sm sm:text-base font-light ${
               isDay ? 'text-slate-600' : 'text-slate-300'
             }`}>
-              Każdy obszar ma swoje rozwiązanie, które poprawia bezpieczeństwo i komfort domowników.
+              Do każdego obszaru dobieramy konkretny zestaw: np. do wejścia — wideodomofon IP i 2 kamery 4K z zapisem lokalnym.
             </p>
           </div>
 
@@ -430,7 +430,7 @@ export const HomePage: React.FC = () => {
             </h2>
             <p className="text-sm text-slate-300 mt-2 max-w-xl font-light">
               Skonsultuj się z nami bezpłatnie. Doradzimy odpowiednie rozwiązania dla Twojego budynku
-              i przygotujemy jasny kosztorys w 24 godziny bez ukrytych opłat.
+              i przygotujemy kosztorys wstępny — wysyłamy go w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00) po otrzymaniu rzutów.
             </p>
           </div>
 
@@ -440,19 +440,19 @@ export const HomePage: React.FC = () => {
                 to="/kalkulator"
                 className="btn-engineering-primary shadow-lg shadow-[#B87333]/20 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Wyceń w konfiguratorze
+                Wyceń w kalkulatorze
               </Link>
 
               <Link
                 to="/kontakt"
                 className="px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Napisz do inżyniera
+                Zapytaj inżyniera
               </Link>
             </div>
             <p className="text-[11px] text-slate-400 font-light flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>Odpowiadamy w ciągu 24h w dni robocze (pon–pt 8–18). Bez spamu.</span>
+              <span>Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Bez spamu.</span>
             </p>
           </div>
         </div>

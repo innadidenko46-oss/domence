@@ -34,13 +34,13 @@ export const SYSTEM_COMPARISONS: SystemComparison[] = [
   {
     id: 'shelly',
     name: 'Shelly Pro & Plus (Wi-Fi / LAN / Matter)',
-    tagline: 'Mikromoduły bez kucia ścian i linia Pro na szynie DIN',
+    tagline: 'Mikromoduły (montaż z minimalną ingerencją w tynki, z odciągiem pyłu) i linia Pro na szynie DIN',
     cableType: 'Hybrydowy (LAN + Bezprzewodowy)',
-    bestFor: 'Wykończone wnętrza oraz nowoczesne rozdzielnice: montaż bezpyłowy lub instalacja modułowa na szynie DIN',
+    bestFor: 'Wykończone wnętrza oraz nowoczesne rozdzielnice: montaż z minimalną ingerencją w tynki, z odciągiem pyłu lub instalacja modułowa na szynie DIN',
     autonomyOffline: 'Praca w pełni lokalna',
     pros: [
       'Linia Shelly Pro montowana na szynę DIN w rozdzielnicy z bezpośrednim kablem LAN RJ45',
-      'Linia Shelly Plus montowana bezpyłowo za istniejącymi włącznikami w puszkach 60mm — bez kucia ścian',
+      'Linia Shelly Plus montowana za istniejącymi włącznikami w puszkach 60 mm — z minimalną ingerencją w tynki, z odciągiem pyłu',
       'Pomiar zużycia energii dla każdego obwodu oświetlenia i gniazd',
       'Otwarta praca lokalna bez chmury producenta (MQTT, REST API, Home Assistant)',
       'Elastyczna rozbudowa pokój po pokoju w miarę potrzeb',
@@ -61,7 +61,7 @@ export const SYSTEM_COMPARISONS: SystemComparison[] = [
     bestFor: 'Domy i rezydencje, gdzie liczy się prywatność, zaawansowane scenariusze i zero opłat',
     autonomyOffline: 'Praca w pełni lokalna',
     pros: [
-      'Pełna niezależność od chmury — działa nawet po odcięciu internetu od dostawcy',
+      'Automatyka działa lokalnie nawet po odcięciu internetu; powiadomienia PUSH poza domem i podgląd zdalny wymagają internetu',
       'Jeden interfejs dla modułów Shelly Pro na szynę DIN, mikromodułów Plus, kamer i domofonów Hikvision oraz klimatyzacji',
       'Brak subskrypcji i abonamentów chmurowych',
       'Silnik scenariuszy: joga, budzenie światłem, ochrona przed zalaniem, powitanie w domu',
@@ -98,19 +98,19 @@ export const SYSTEM_COMPARISONS: SystemComparison[] = [
 export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   {
     id: 'cap-lighting',
-    title: 'Oświetlenie Nastrojowe & Ściemnianie (Tunable White & HCL)',
+    title: 'Oświetlenie nastrojowe i ściemnianie (tunable white i HCL)',
     category: 'lighting',
     badge: 'Human Centric Lighting',
     description:
-      'Ściemnianie od 0.1% do 100% w standardzie PWM bez migotania. Regulacja temperatury barwowej (1800K ciepły bursztyn do 6500K światło dzienne) dopasowana do dobowego rytmu człowieka.',
+      'Ściemnianie od ok. 1% do 100% (PWM, zależnie od źródła światła), z ograniczeniem widocznego migotania. Regulacja temperatury barwowej (1800K ciepły bursztyn do 6500K światło dzienne) dopasowana do dobowego rytmu człowieka.',
     proAdvantage:
       'Moduły Shelly Pro Dimmer 1/2PM na szynę DIN z portem LAN RJ45 sterują bezpośrednio obwodami oświetleniowymi 230V i szynoprzewodami z centralnej rozdzielnicy.',
     shellyAdvantage:
-      'Moduły dopuszkowe Shelly Plus Dimmer montowane za włącznikami w puszkach 60mm pozwalają na bezpyłową automatyzację istniejących lamp bez kucia ścian.',
+      'Moduły dopuszkowe Shelly Plus Dimmer montowane za włącznikami w puszkach 60mm pozwalają na automatyzację istniejących lamp z minimalną ingerencją w tynki, z odciągiem pyłu.',
     scenariosExample:
-      'Rano światło łagodnie budzi ciepłym blaskiem wschodu słońca. W nocy czujnik w podłodze zapala subtelne światło cokołowe 1800K na 5%, by nie rozbudzać wzroku.',
+      'Rano światło łagodnie narasta, imitując ciepły blask wschodu słońca. W nocy czujnik w podłodze zapala subtelne światło cokołowe 1800K na 5%, by nie rozbudzać wzroku.',
     features: [
-      'Ściemnianie 0.1–100% bez efektu migotania kamerą',
+      'Ściemnianie od ok. 1% do 100% (PWM, zależnie od źródła światła)',
       'Tunable White (regulacja barwy 1800K – 6500K)',
       'Dedykowane sceny relaksu, czytania, kolacji i kina',
       'Eliminacja tętnienia i ochrona wzroku',
@@ -118,17 +118,17 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-blinds',
-    title: 'Automatyka Rolet, Żaluzji Fasadowych & Zasłon (Sun-Tracking)',
+    title: 'Automatyka rolet, żaluzji fasadowych i zasłon (sun-tracking)',
     category: 'blinds',
     badge: 'Pozycja i Kąt Żaluzji',
     description:
-      'Inteligentne sterowanie roletami i żaluzjami fasadowymi. System reguluje położenie zgodnie z pozycją słońca na niebie, wpuszczając naturalne światło i blokując nagrzewanie pokoju.',
+      'Inteligentne sterowanie roletami i żaluzjami fasadowymi. System reguluje położenie zgodnie z pozycją słońca na niebie, wpuszczając naturalne światło i ograniczając nagrzewanie pokoju.',
     proAdvantage:
       'Moduły Shelly Pro 2PM na szynę DIN z bezpośrednim kablem LAN RJ45, pomiarem poboru energii i autokalibracją obciążenia silnika z ochroną przed zablokowaniem.',
     shellyAdvantage:
       'Mikromoduły Shelly Plus 2PM w puszkach pod tradycyjnymi włącznikami roletowymi z obsługą harmonogramów wschodów i zachodów słońca.',
     scenariosExample:
-      'Po wypowiedzeniu "Chcę poćwiczyć jogę" rolety zamykają się, dając pełną prywatność. O poranku uchylają się powoli, by wpuścić pierwsze promienie słońca.',
+      'Po wypowiedzeniu „Chcę poćwiczyć jogę” rolety zamykają się, dając pełną prywatność. O poranku uchylają się powoli, by wpuścić pierwsze promienie słońca.',
     features: [
       'Śledzenie kąta słońca (Sun Tracking) zapobiegające upałom',
       'Ciche budzenie naturalnym światłem poranka',
@@ -138,7 +138,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-climate',
-    title: 'Klimat Strefowy, Ogrzewanie Podłogowe & Rekuperacja',
+    title: 'Klimat strefowy, ogrzewanie podłogowe i rekuperacja',
     category: 'climate',
     badge: 'Komfort & Oszczędność',
     description:
@@ -158,7 +158,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-audio',
-    title: 'Nagłośnienie Multiroom & Dźwięk Przestrzenny',
+    title: 'Nagłośnienie multiroom i dźwięk przestrzenny',
     category: 'audio',
     badge: 'Nagłośnienie Wielostrefowe',
     description:
@@ -178,7 +178,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-sensors',
-    title: 'Sensoryka Obecności True Presence & Radary mmWave',
+    title: 'Sensoryka obecności True Presence i radary mmWave',
     category: 'sensors',
     badge: 'Czujniki Obecności',
     description:
@@ -188,7 +188,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     shellyAdvantage:
       'Integracja radarów mmWave z mikromodułami Shelly pozwala przekształcić zwykłą lampę w inteligentne źródło światła reagujące natychmiast.',
     scenariosExample:
-      'Czujnik wie, że jesteś w pokoju, nawet gdy leżysz nieruchomo podczas relaksacji po jodze – światło nie zgaśnie i nie musisz machać ręką.',
+      'Czujnik wie, że jesteś w pokoju, nawet gdy leżysz nieruchomo podczas odpoczynku po jodze – światło nie zgaśnie i nie musisz machać ręką.',
     features: [
       'Detekcja mikroruchów (oddychanie, czytanie, medytacja)',
       'Podział pomieszczenia na strefy (np. sofa, biurko, łóżko)',
@@ -198,21 +198,21 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-interface',
-    title: 'Minimalistyczne Panele Dotykowe & Sterowanie Domem',
+    title: 'Minimalistyczne panele dotykowe i sterowanie domem',
     category: 'interface',
     badge: 'Panele Dotykowe',
     description:
-      'Koniec z rzędem 6 plastikowych włączników. Jeden minimalistyczny panel ścienny zastępuje wszystkie klawisze, termostat i sterownik rolet.',
+      'Jeden panel ścienny zamiast rzędu 6 włączników: zastępuje wszystkie klawisze, termostat i sterownik rolet.',
     proAdvantage:
       'Szklane panele dotykowe Shelly Wall Display zintegrowane bezpośrednio z siecią domową, wyświetlające temperaturę, sterowanie muzyką i podgląd z kamer.',
     shellyAdvantage:
       'Mikromoduły Shelly współpracują z dowolnym wybranym przez architekta tradycyjnym osprzętem klawiszowym (np. Jung LS990, Schneider Sedna, Berker Q.7).',
     scenariosExample:
-      'Wypowiedz na głos "Chcę poćwiczyć jogę" do asystenta lub naciśnij jeden klawisz "Scena Relaks" przy wejściu do pokoju.',
+      'Wypowiedz na głos „Chcę poćwiczyć jogę” do asystenta lub naciśnij jeden klawisz „Scena Relaks” przy wejściu do pokoju.',
     features: [
       'Dotykowe panele ścienne 4" z podglądem kamer i klimatu',
       'Współpraca z dowolnymi włącznikami klawiszowymi na rynku',
-      'Sterowanie głosowe offline bez wysyłania nagrań do internetu',
+      'Sterowanie głosowe przez lokalnego asystenta (Home Assistant Voice); asystenci chmurowi wymagają internetu',
       'Nowoczesna aplikacja na smartfony i tablety domowników',
     ],
   },
@@ -228,7 +228,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     bestUse: 'Elewacja budynku, drzwi wejściowe, strefa wjazdu, ciągi komunikacyjne',
     highlights: [
       'Pełnokolorowy obraz o zmierzchu i w nocy bez sztucznego naświetlania',
-      'Smart Hybrid Light: dyskretne widzenie IR, które automatycznie przełącza się na miękkie światło białe po wykryciu człowieka',
+      'Smart Hybrid Light: dyskretny tryb IR, który kamera automatycznie przełącza na miękkie światło białe po wykryciu człowieka',
       'Rozdzielczość 4K (8 Megapikseli) z kompresją H.265+ oszczędzającą miejsce na dysku',
       'Metalowa obudowa IK10 (wandaloodporna) i IP67 (odporność na mróz i ulewy)',
     ],
@@ -257,7 +257,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     keyTech: 'Kanał panoramiczny do ogólnego widoku + moduł obrotowy PTZ z auto-trackingiem',
     bestUse: 'Teren wokół budynku, wejście główne, brama wjazdowa i podjazd rezydencji',
     highlights: [
-      'Górny obiektyw stale monitoruje całą przestrzeń 180° – brak martwych stref',
+      'Górny obiektyw stale monitoruje całą przestrzeń 180° – ograniczenie martwych stref w monitorowanym obszarze',
       'Dolny moduł PTZ z zoomem optycznym 32x automatycznie namierza i podąża za poruszającą się osobą (Smart Tracking 3.0)',
       'Odczytywanie tablic rejestracyjnych pojazdów wjeżdżających na posesję',
       'Zastępuje kilka tradycyjnych kamer statycznych w jednym punkcie montażowym',
@@ -288,7 +288,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     bestUse: 'Furtka wejściowa, drzwi główne do domu, wejście do strefy prywatnej',
     highlights: [
       'Wchodzisz do domu z siatkami z zakupami bez szukania kluczy – stacja rozpoznaje Twoją twarz i otwiera drzwi',
-      'Algorytm zapobiega oszustwom – nie da się otworzyć drzwi zdjęciem, filmem na telefonie ani maską',
+      'Rozpoznawanie z ochroną antyspoofingową utrudnia otwarcie zdjęciem czy filmem (zgodnie z deklaracją producenta)',
       'Kamera z doświetleniem IR działa niezawodnie w kompletnych ciemnościach i w pełnym słońcu',
       'Możliwość generowania tymczasowych kodów QR na smartfon dla gości i kurierów',
     ],
@@ -314,13 +314,13 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
 export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   {
     id: 'cctv_ai',
-    title: 'Monitoring Wizyjny Hikvision ColorVu & AcuSense AI',
+    title: 'Monitoring wizyjny Hikvision ColorVu i AcuSense AI',
     subtitle: 'Kamery 4K / 8MP, pełen kolor w nocy F1.0, rozpoznawanie ludzi i aut, eliminacja fałszywych alarmów',
     icon: 'Camera',
     description:
       'Cyfrowa telewizja przemysłowa IP oparta na przetwornikach Hikvision ColorVu z technologią Smart Hybrid Light i analityką AcuSense AI. Obraz w nocy, aktywny stroboskop Live Guard i prywatność bez wysyłania nagrań do chmury.',
     humanExplanation:
-      'Kamera widzi w nocy w barwach, odróżnia człowieka i auto od kota czy gałęzi na wietrze, więc telefon nie wibruje bez powodu. Wszystkie nagrania zapisują się w domowej szafce na twardym dysku, bez opłat abonamentowych.',
+      'Kamera rejestruje w nocy obraz w kolorze i odróżnia człowieka oraz auto od zwierzęcia czy gałęzi, dzięki czemu ogranicza zbędne powiadomienia w telefonie. Wszystkie nagrania zapisują się w domowej szafce na twardym dysku, bez opłat abonamentowych.',
     equipment: [
       'Kamery kopułkowe lub tubowe Hikvision 4K ColorVu / AcuSense w obudowach IK10/IP67',
       'Rejestrator NVR Hikvision Pro z dyskami serwerowymi (WD Purple / Seagate SkyHawk) do pracy ciągłej 24/7',
@@ -336,7 +336,7 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   },
   {
     id: 'access_control',
-    title: 'Wideodomofony IP Hikvision Modular & Rozpoznawanie Twarzy MinMoe',
+    title: 'Wideodomofony IP Hikvision Modular i rozpoznawanie twarzy MinMoe',
     subtitle: 'Moduły ze stali nierdzewnej, biometria twarzy, zdalne otwieranie furtki i bramy w smartfonie',
     icon: 'KeyRound',
     description:
@@ -358,16 +358,16 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   },
   {
     id: 'structured_lan',
-    title: 'Sieci Strukturalne LAN, Światłowody & Szafy RACK 19"',
+    title: 'Sieci strukturalne LAN, światłowody i szafy RACK 19"',
     subtitle: 'Szybki internet w całym domu: okablowanie kat. 6A/7, switche PoE+ i Wi-Fi 6/7 Mesh',
     icon: 'Network',
     description:
       'Projekt i wykonanie okablowania teleinformatycznego. Centralna szafa serwerowa RACK 19", organizery kabli, patchpanele krosowe, zasilacze awaryjne UPS oraz punkty dostępowe Wi-Fi montowane podtynkowo i podsufitowo.',
     humanExplanation:
-      'Stabilny internet bez zrywania połączeń podczas wideorozmów czy oglądania filmów w 4K. Kable doprowadzone do biurek i telewizorów, a punkty Wi-Fi na suficie przełączają telefon między piętrami i pokojami.',
+      'Stabilny internet bez przerywania wideorozmów czy oglądania filmów w 4K. Kable doprowadzone do biurek i telewizorów, a punkty Wi-Fi na suficie przełączają telefon między piętrami i pokojami.',
     equipment: [
       'Szafa RACK 19" z wentylacją termostatyczną i szklanymi drzwiami dymionymi',
-      'Przewody teleinformatyczne S/FTP kat. 6A / 7 (przepustowość do 10 Gbit/s)',
+      'Przewody teleinformatyczne S/FTP kat. 6A / 7 — do 10 Gbit/s na krótkich odcinkach (kat. 6A, po pomiarach)',
       'Switche zarządzalne PoE+ z podziałem na bezpieczne sieci VLAN (Kamery, IoT, Dom, Goście)',
       'Punkty dostępowe Wi-Fi 6/7 podsufitowe z szybkim roamingiem 802.11k/v/r',
     ],
@@ -379,13 +379,13 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   },
   {
     id: 'alarm_sswin',
-    title: 'Systemy Alarmowe SSWiN & Ochrona Obwodowa',
+    title: 'Systemy alarmowe SSWiN i ochrona obwodowa',
     subtitle: 'Certyfikowane centrale alarmowe Grade 2 / Grade 3 zintegrowane z automatyką Shelly',
     icon: 'ShieldAlert',
     description:
       'Wdrożenia oparte na centralach alarmowych ze zintegrowanymi kontaktronami okiennymi, czujkami kurtynowymi zewnętrznymi i czujkami dualnymi PIR+MW. Współpraca z kamerami Hikvision AcuSense.',
     humanExplanation:
-      'Czujniki okienne pracują podwójnie: w nocy pilnują domu przed włamaniem, a w dzień wyłączają klimatyzację i grzejnik przy wietrzeniu. Kiedy uzbrajasz alarm kodem przy wyjściu, dom gasi światła i zamyka rolety.',
+      'Czujniki okienne pracują podwójnie: w nocy pilnują domu przed włamaniem, a w dzień wyłączają klimatyzację i grzejnik przy wietrzeniu. Kiedy uzbrajasz alarm kodem przy wyjściu, system gasi światła i zamyka rolety.',
     equipment: [
       'Centrala alarmowa ze zintegrowanym powiadomieniem GSM LTE i łącznością IP',
       'Czujki kurtynowe zewnętrzne (ochrona posesji zanim ktoś dotknie okna)',
@@ -404,16 +404,16 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-yoga',
     number: '01',
-    title: '"Chcę poćwiczyć jogę" (Joga & Medytacja)',
+    title: '„Chcę poćwiczyć jogę” (Joga & Medytacja)',
     tag: 'Relaks & Prywatność',
     tagColor: '#8B5CF6',
-    trigger: 'Komenda głosowa: "Chcę poćwiczyć jogę" lub dedykowany przycisk sceny na ścianie',
+    trigger: 'Komenda głosowa: „Chcę poćwiczyć jogę” lub dedykowany przycisk sceny na ścianie',
     description:
-      'Powiedz "Chcę poćwiczyć jogę" lub naciśnij jeden klawisz. Dom w ułamku sekundy przekształca pokój w intymne studio medytacji: ostre światło sufitowe gaśnie, zapalają się ciepłe bursztynowe linie LED, rolety zamykają się, by odciąć spojrzenia z zewnątrz, a z głośników płynie kojący dźwięk.',
+      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden klawisz. Dom zwykle w ciągu 1–2 sekund w sieci lokalnej przekształca pokój w intymne studio medytacji: ostre światło sufitowe gaśnie, zapalają się ciepłe bursztynowe linie LED, rolety zamykają się, by odciąć spojrzenia z zewnątrz, a z głośników płynie kojący dźwięk.',
     humanNote:
       'Nie musisz chodzić po pokoju, zaciągać rolet, szukać pilota od klimatyzacji ani włączać głośnika w telefonie. Wypowiadasz jedno zdanie, rozkładasz matę i przechodzisz do ćwiczeń.',
     detailPoints: [
-      'Główne światło wygasza się w 2 sekundy, zapalają się ciepłe cokoły LED 2200K na 15% jasności',
+      'Główne światło wygasza się w ciągu 2 sekund, zapalają się ciepłe cokoły LED 2200K na 15% jasności',
       'Rolety lub żaluzje fasadowe bezszelestnie opuszczają się, zapewniając prywatność',
       'W strefie ćwiczeń multiroom włącza uspokajający ambient, mantry lub dźwięki lasu',
       'Wentylacja mechaniczna/rekuperacja bezgłośnie zwiększa dopływ świeżego tlenu',
@@ -438,7 +438,7 @@ export const SCENARIOS: LifeScenario[] = [
     description:
       '20 minut przed planowanym wstaniem rolety unoszą się wpuszczając światło, oświetlenie w sypialni symuluje świt, podłoga w łazience staje się ciepła, a z głośników płynie podcast.',
     humanNote:
-      'Wstajesz wypoczęty, bo ciało reaguje na narastające światło. Wchodzisz bosą stopą na ciepłe płytki w łazience.',
+      'Wstajesz wypoczęty, bo ciało reaguje na narastające światło. Wchodzisz bosymi stopami na ciepłe płytki w łazience.',
     detailPoints: [
       'Stopniowe unoszenie rolet i lameli o 10-20% wpuszczające naturalne słońce',
       'Światło w sypialni naśladuje świt, przechodząc z 2000K do rześkiego 3500K',
@@ -463,11 +463,11 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#EF4444',
     trigger: 'Pojedynczy klawisz przy drzwiach wejściowych lub zbliżenie breloka',
     description:
-      'Jeden przycisk przy drzwiach odcina zasilanie z gniazd żelazka, ekspresu i płyty indukcyjnej, gasi światła, opuszcza żaluzje fasadowe, przełącza ogrzewanie w tryb oszczędny i uzbraja monitoring.',
+      'Jeden przycisk przy drzwiach odcina zasilanie gniazd żelazka, ekspresu i płyty indukcyjnej, gasi światła, opuszcza żaluzje fasadowe, przełącza ogrzewanie w tryb oszczędny i uzbraja monitoring.',
     humanNote:
       'Nie musisz wracać z połowy drogi, by sprawdzić, czy żelazko jest wyjęte z gniazdka. Wciskasz guzik i wiesz, że dom jest wyłączony.',
     detailPoints: [
-      'Koniec z zastanawianiem się "czy na pewno wyłączyłem żelazko"',
+      'Koniec z zastanawianiem się "czy na pewno wyłączyłam / wyłączyłem żelazko"',
       'Automatyczne obniżenie temperatury do trybu Eco',
       'Dioda LED przy drzwiach potwierdza, że wszystkie okna są zamknięte',
       'Kamery Hikvision AcuSense przechodzą w aktywny tryb obrony obwodowej',
@@ -487,9 +487,9 @@ export const SCENARIOS: LifeScenario[] = [
     title: 'Kino Domowe (Movie Night)',
     tag: 'Multimedia & Atmosfera',
     tagColor: '#3B82F6',
-    trigger: 'Komenda "Włącz kino", przycisk w salonie lub włączenie telewizora/projektora',
+    trigger: 'Komenda „Włącz kino”, przycisk w salonie lub włączenie telewizora/projektora',
     description:
-      'Gdy włączasz film, żaluzje zjeżdżają tworząc zaciemnienia blackout, oświetlenie gaśnie zostawiając akcent 5%, opuszcza się ekran projektora, a nagłośnienie wypełnia przestrzeń.',
+      'Gdy włączasz film, żaluzje zjeżdżają tworząc zaciemnienie blackout, oświetlenie gaśnie zostawiając akcent 5%, opuszcza się ekran projektora, a nagłośnienie wypełnia przestrzeń.',
     humanNote:
       'Klimat kinowy bez wstawania z kanapy. Jeden dotyk przycisku przygaśnia światło.',
     detailPoints: [
@@ -539,9 +539,9 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#0284C7',
     trigger: 'Wykrycie wilgoci przez czujnik pod pralką, zmywarką lub w kotłowni',
     description:
-      'Gdy pęka wężyk pod umywalką, sensor wykrywa wodę i wysyła sygnał do zaworu silnikowego. Dopływ wody zostaje odcięty mechanicznie, nawet przy braku prądu i internetu.',
+      'Gdy pęka wężyk pod umywalką, sensor wykrywa wodę i wysyła sygnał do zaworu silnikowego. Zawór ze sprężyną powrotną zamyka się samoczynnie przy zaniku zasilania; sterowanie elektroniczne wymaga zasilania.',
     humanNote:
-      'Zalanie sąsiada lub zniszczenie podłogi za kilkadziesiąt tysięcy złotych zostaje ograniczone, nawet gdy śpisz lub jesteś na wakacjach.',
+      'Skala zalania sąsiada i zniszczeń podłogi wartych kilkadziesiąt tysięcy złotych zostaje ograniczona, nawet gdy śpisz lub jesteś na wakacjach.',
     detailPoints: [
       'Praca Fail-Safe lokalnie, bez zewnętrznej chmury',
       'Zawory kulowe ze sprężyną powrotną odcinające wodę nawet przy braku zasilania',
@@ -549,7 +549,7 @@ export const SCENARIOS: LifeScenario[] = [
       'Cykliczne auto-odkamienianie zaworów raz w tygodniu w nocy',
     ],
     actionSteps: [
-      { icon: 'Droplets', label: 'Detekcja Wycieku', detail: 'Reakcja sensora na wodę' },
+      { icon: 'Droplets', label: 'Detekcja Wycieku', detail: 'zamknięcie zaworu zwykle w kilka sekund' },
       { icon: 'ShieldAlert', label: 'Mechaniczne Odcięcie', detail: 'Zamknięcie głównego zaworu wody' },
       { icon: 'Phone', label: 'Alarm PUSH', detail: 'Powiadomienie na telefony domowników z mapą wycieku' },
     ],
@@ -568,14 +568,14 @@ export const SCENARIOS: LifeScenario[] = [
     humanNote:
       'Nie musisz szukać po omacku włącznika ani mrużyć oczu przed ostrym światłem. Idziesz oświetloną ścieżką, a po powrocie do łóżka zasypiasz z powrotem.',
     detailPoints: [
-      'Barwa 1800K (amber) wolna od niebieskich fal blokujących melatoninę',
+      'Barwa 1800 K (bursztynowa), o ograniczonej emisji światła niebieskiego',
       'Temperatura w sypialni automatycznie obniżana do 18.5°C na czas snu',
       'Cicha praca siłowników ogrzewania i bezgłośne wygaszanie',
       'Brak dźwięków powiadomień i pukania domofonu w strefie sypialnej',
     ],
     actionSteps: [
       { icon: 'Moon', label: 'Cokoły Bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
-      { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające głębokiej fazie snu REM' },
+      { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające zasypianiu' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85',
     icon: 'Moon',
@@ -583,10 +583,10 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-dinner',
     number: '08',
-    title: '"Przytulna Kolacja"',
+    title: '„Przytulna Kolacja”',
     tag: 'Komfort & Atmosfera',
     tagColor: '#F59E0B',
-    trigger: 'Komenda głosowa: "Włącz kolację" lub przycisk sceny w jadalni',
+    trigger: 'Komenda głosowa: „Włącz kolację” lub przycisk sceny w jadalni',
     description:
       'W porze wieczornej oświetlenie sufitowe wygasza się, stół jadalniany oświetla ciepłe światło 2400K, rolety i zasłony zamykają się, a w tle płynie jazz.',
     humanNote:
@@ -599,7 +599,7 @@ export const SCENARIOS: LifeScenario[] = [
     ],
     actionSteps: [
       { icon: 'Sun', label: 'Światło Kolacji', detail: 'Ciepły blask 2400K nad stołem jadalnym i wyspą' },
-      { icon: 'SlidersHorizontal', label: 'Rolety & Zasłony', detail: 'Zamknięcie przed zmierzkiem chroniące prywatność' },
+      { icon: 'SlidersHorizontal', label: 'Rolety & Zasłony', detail: 'Zamknięcie przed zmierzchem chroniące prywatność' },
       { icon: 'Volume2', label: 'Akustyka Tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
@@ -635,31 +635,31 @@ export const SCENARIOS: LifeScenario[] = [
 export const WORKFLOW_STEPS = [
   {
     number: '01',
-    title: 'Wstępna Konfiguracja w Kalkulatorze',
+    title: 'Wstępna konfiguracja w kalkulatorze',
     desc: 'Wybierasz stan inwestycji, metraż i pożądane moduły teletechniczne — wycena liczy się na bieżąco.',
     humanNote: 'Od razu wiesz, w jakim rzędzie wielkości finansowej się poruszamy. Zero ukrytych kosztów.',
   },
   {
     number: '02',
-    title: 'Audyt Inżynieryjny na Obiekcie 0 PLN',
+    title: 'Audyt inżynieryjny na obiekcie – bezpłatny',
     desc: 'Nasz certyfikowany inżynier weryfikuje rozdzielnicę, puszki, trasy kablowe i przewód N.',
     humanNote: 'Nie zgadujemy – sprawdzamy fizycznie instalację miernikami, aby wykluczyć niespodzianki.',
   },
   {
     number: '03',
-    title: 'Projekt & Transparentna Wycena',
+    title: 'Projekt i transparentna wycena',
     desc: 'Szczegółowy wykaz urządzeń, rzetelny kosztorys oraz przejrzysty harmonogram robót.',
     humanNote: 'Jasne zasady od samego początku – wiesz dokładnie, co i za ile zostanie zainstalowane.',
   },
   {
     number: '04',
-    title: 'Czysty Montaż bez Pyłu',
+    title: 'Czysty montaż bez pyłu',
     desc: 'Praca z odsysaniem pyłu, dbałość o wykończenie wnętrz i trwałe oznakowanie obwodów.',
-    humanNote: 'Wchodzimy w ochraniaczach na obuwie. Po skończonej pracy zostawiamy czysty porządek.',
+    humanNote: 'Wchodzimy w ochraniaczach na obuwie. Po skończonej pracy zostawiamy porządek.',
   },
   {
     number: '05',
-    title: 'Test Fail-Safe, Uruchomienie & Szkolenie',
+    title: 'Test fail-safe, uruchomienie i szkolenie',
     desc: 'Demonstrujemy działanie systemu, konfigurujemy aplikacje i przekazujemy przejrzystą dokumentację.',
     humanNote: 'Upewniamy się, że każdy domownik swobodnie korzysta z nowych funkcji i czuje się bezpiecznie.',
   },
@@ -668,7 +668,7 @@ export const WORKFLOW_STEPS = [
 export const FAQ_ITEMS: FaqItem[] = [
   {
     category: 'dzialanie',
-    question: 'Czy system Shelly i monitoring działa, gdy w domu zabraknie internetu?',
+    question: 'Czy system Shelly i monitoring działają, gdy w domu zabraknie internetu?',
     simpleAnswer:
       'Tak. Wszystkie funkcje domowe (włączniki, moduły Shelly, zawory wody, rolety, ogrzewanie, podgląd z kamer Hikvision) działają bezpośrednio w sieci domowej, bez połączenia z internetem.',
     technicalDetails:
@@ -676,7 +676,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     category: 'bezpieczenstwo',
-    question: 'Czy kamery Hikvision i nagrania z wideodomofonu są bezpieczne przed hakerami?',
+    question: 'Czy kamery Hikvision i nagrania z wideodomofonu są zabezpieczone przed hakerami?',
     simpleAnswer:
       'Tak. Nagrania nie trafiają na serwery chmurowe. Obraz z kamer ColorVu, AcuSense i wideodomofonu zapisuje się na dysku w rejestratorze NVR w szafie RACK.',
     technicalDetails:
@@ -684,7 +684,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     category: 'remont',
-    question: 'Mam już wykończone mieszkanie (płytki, gładzie). Czy muszę cokolwiek kuć?',
+    question: 'Mam już wykończone mieszkanie (płytki, gładzie). Czy trzeba kuć ściany lub zrywać tynki?',
     simpleAnswer:
       'Często nie jest to konieczne. W wykończonych obiektach stosujemy mikromoduły Shelly Plus, montowane w puszkach pod włącznikami światła, oraz sensory bezprzewodowe. Montaż wykonujemy z odsysaniem pyłu.',
     technicalDetails:
@@ -700,9 +700,9 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     category: 'bezpieczenstwo',
-    question: 'Czy w rozdzielnicy nie powstanie pożar i czy montaż nie narusza ubezpieczenia domu?',
+    question: 'Czy w rozdzielnicy nie powstanie pożar i czy montaż jest zgodny z warunkami polisy domu?',
     simpleAnswer:
-      'Nie ma takiego ryzyka. Stosujemy wyłącznie atestowane moduły Shelly Pro z certyfikatem niepalności obudowy V-0 i wbudowanym zabezpieczeniem termicznym OTP. Na koniec prac wykonujemy pomiary odbiorcze i wystawiamy oficjalny protokół do polisy ubezpieczeniowej.',
+      'Ryzyko ograniczamy do minimum: stosujemy wyłącznie atestowane moduły i protokoły pomiarowe. Stosujemy wyłącznie atestowane moduły Shelly Pro z certyfikatem niepalności obudowy V-0 i wbudowanym zabezpieczeniem termicznym OTP. Na koniec prac wykonujemy pomiary odbiorcze i wystawiamy oficjalny protokół do polisy ubezpieczeniowej.',
     technicalDetails:
       'Wszystkie moduły na szynie DIN posiadają wewnętrzny czujnik temperatury – w przypadku przekroczenia 95°C obwód wyłącza się automatycznie. Instalacja wykonywana jest zgodnie z normą PN-HD 60364, a każdy obwód chroniony jest dedykowanym wyłącznikiem nadprądowym i ogranicznikiem przepięć T1+T2.',
   },
@@ -710,7 +710,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'dzialanie',
     question: 'Co się stanie, gdy w całej okolicy zabraknie prądu?',
     simpleAnswer:
-      'Główny monitoring posesji, rejestrator NVR w szafie RACK oraz zasilanie wideodomofonu podtrzymywane są przez zasilacz awaryjny UPS przez min. 3–4 godziny. Po powrocie prądu cały system wznawia pracę w ułamku sekundy bez potrzeby jakiejkolwiek interwencji.',
+      'Główny monitoring posesji, rejestrator NVR w szafie RACK oraz zasilanie wideodomofonu podtrzymywane są przez zasilacz awaryjny UPS przez co najmniej 3–4 godziny. Po powrocie prądu cały system wznawia pracę w ciągu 1–2 sekund w sieci lokalnej, zwykle bez ingerencji domowników.',
     technicalDetails:
       'Zasilacz UPS on-line z czystą sinusoidą zabezpiecza urządzenia sieciowe przed przepięciami i skokami napięcia przy ponownym włączeniu faz przez zakład energetyczny. Stan przekaźników Shelly po zaniku prądu jest w pełni konfigurowalny (domyślnie wyłączony lub przywrócenie ostatniego stanu).',
   },
@@ -737,7 +737,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'master_off',
-    name: 'Scenariusz "Wyłącz wszystko" (Master Off)',
+    name: 'Scenariusz „Wyłącz wszystko” (Master Off)',
     badge: 'Must have',
     description: 'Jeden przycisk przy drzwiach gasi oświetlenie i odłącza zasilanie żelazka, płyty i ekspresu.',
     humanExplanation: 'Po naciśnięciu klawisza przy drzwiach, wyłączane jest oświetlenie, odcinane zasilanie wybranych urządzeń i zamykane rolety.',
@@ -873,10 +873,10 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'shelly_hazard_leak_pack',
-    name: 'Wykrywanie gazu i zalania: Shelly Gas + Shelly Flood S Gen4 + zawór odcinający <3s',
+    name: 'Wykrywanie gazu i zalania: Shelly Gas + Shelly Flood S Gen4 — zamknięcie zaworu zwykle w kilka sekund',
     badge: 'Bezpieczeństwo',
     description: 'Wykrywanie ulatniającego się gazu i wycieków wody z natychmiastowym mechanicznym odcięciem zaworu i zrzuceniem zasilania gniazd.',
-    humanExplanation: 'Gdy pęknie rura lub zawór kuchenki, dom sam odcina dopływ w 3 sekundy i wyłącza prąd w strefie zagrożenia, chroniąc przed zalaniem i wybuchem.',
+    humanExplanation: 'Gdy pęknie rura lub zawór kuchenki, dom sam odcina dopływ — zamknięcie zaworu zwykle w kilka sekund i wyłącza prąd w strefie zagrożenia, chroniąc przed zalaniem i wybuchem.',
     price: 1450,
     category: 'safety',
     icon: 'ShieldAlert',
@@ -900,9 +900,9 @@ export const PACKAGES: PackageOffer[] = [
       'Dotykowy monitor wewnętrzny 7" Android ze szkłem 2.5D i podglądem kamer',
       '2x kamery fasadowe 4K Hikvision ColorVu z analityką ludzi i aut AcuSense AI',
       'Rejestrator NVR z dyskiem serwerowym 2TB bez opłat chmurowych',
-      'Czysty montaż bezpyłowy w wykończonych wnętrzach',
+      'Czysty montaż z minimalną ingerencją w tynki, z odciągiem pyłu w wykończonych wnętrzach',
       'Brak ukrytych abonamentów – darmowa aplikacja Hik-Connect',
-      'Możliwość otwierania furtki z poziomu smartfona z dowolnego miejsca',
+      'Możliwość otwierania furtki z poziomu smartfona z dowolnego miejsca z dostępem do internetu',
     ],
   },
   {
@@ -919,11 +919,11 @@ export const PACKAGES: PackageOffer[] = [
     features: [
       '6x mikromodułów dopuszkowych Shelly Plus z pomiarem zużycia prądu',
       '2x cyfrowe ściemniacze oświetlenia LED bez efektu migotania z trybem nocnym',
-      'Ochrona przed zalaniem Fail-Safe: 3 sensory zalania + siłownik zaworu kulowego 3s',
-      'Sterowanie roletami ze sceną "Chcę poćwiczyć jogę" i "Budzenie słońcem"',
+      'Ochrona przed zalaniem fail-safe: 3 sensory zalania + siłownik zaworu kulowego (zamknięcie zaworu zwykle w kilka sekund)',
+      'Sterowanie roletami ze sceną „Chcę poćwiczyć jogę” i „Budzenie słońcem”',
       'Lokalna centrala Home Assistant Pro (przetwarzanie lokalne, bez chmury)',
-      'Scenariusz Master Off ("Wyjdź z domu") przy drzwiach wejściowych',
-      'Czysty montaż bezpyłowy z odciągiem H13 w 24-48 godzin',
+      'Scenariusz Master Off („Wyjdź z domu”) przy drzwiach wejściowych',
+      'Czysty montaż z minimalną ingerencją w tynki, z odciągiem z filtrem HEPA H13 w 1–2 dni robocze',
     ],
   },
   {
@@ -951,7 +951,7 @@ export const PACKAGES: PackageOffer[] = [
 
 export const HOME_MULTIMEDIA = {
   audio: {
-    title: 'Multiroom Audio & Domowe Nagłośnienie',
+    title: 'Multiroom audio i domowe nagłośnienie',
     desc: 'Dyskretne głośniki sufitowe bezramkowe i nagłośnienie strefowe w całym domu. Muzyka ze Spotify, Apple Music lub radia internetowego gra dokładnie w tych pokojach, w których przebywasz.',
     humanNote:
       'W łazience relaksujesz się przy spokojnej muzyce, w kuchni cicho gra poranny podcast, a w salonie leci ulubiona playlista. Wszystkim sterujesz intuicyjnie ze smartfona lub przycisku na ścianie.',
@@ -963,10 +963,10 @@ export const HOME_MULTIMEDIA = {
     ],
   },
   cinema: {
-    title: 'Sala Kinowa & Akustyka Wnętrz',
+    title: 'Sala kinowa i akustyka wnętrz',
     desc: 'Połączenie inteligentnego zaciemnienia roletami blackout, wielostrefowego ściemniania oświetlenia nastrojowego oraz integracji projektora i nagłośnienia kinowego w jednym scenariuszu.',
     humanNote:
-      'Nie musisz oddzielnie gasić lamp, szukać pilotów do projektora ani opuszczać zasłon. Jeden klawisz "Kino" lub polecenie głosowe natychmiast przenosi Cię w atmosferę prawdziwej sali filmowej.',
+      'Nie musisz oddzielnie gasić lamp, szukać pilotów do projektora ani opuszczać zasłon. Jeden klawisz „Kino” lub polecenie głosowe natychmiast przenosi Cię w atmosferę prawdziwej sali filmowej.',
     features: [
       'Automatyczne zamykanie rolet i żaluzji blackout po włączeniu projektora lub TV',
       'Światło cokołowe i podszafkowe 5% w barwie kinowej – bezpieczne poruszanie się po napoje bez oślepiania',
@@ -975,7 +975,7 @@ export const HOME_MULTIMEDIA = {
     ],
   },
   garden: {
-    title: 'Multimedia & Nagłośnienie Ogrodu',
+    title: 'Multimedia i nagłośnienie ogrodu',
     desc: 'Wodoodporne głośniki ogrodowe i oświetlenie ścieżek zsynchronizowane z muzyką. Taras jako osobna strefa audio z automatycznym harmonogramem wieczornym i integracją ze strefą wejścia.',
     humanNote:
       'Wieczorem na tarasie włącza się subtelne oświetlenie ogrodowe i cicha muzyka. Wystarczy jeden klawisz "Wieczór na tarasie" lub komenda głosowa.',
@@ -1066,7 +1066,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Obliczenia AI na urządzeniu — dane nie trafiają do chmury',
       'Wykrywanie podejrzego przebywania (loitering) przy wejściu i garażu',
       'Wykrywanie upadku osoby — przydatne przy starszych domownikach',
-      'Reakcja na zdarzenia lokalnie, bez opóźnień chmury',
+      'Reakcja na zdarzenia z reakcją lokalną, bez opóźnień chmury',
     ],
     icon: 'Cpu',
     image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=85',
@@ -1168,7 +1168,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'W momencie otwarcia okna bezprzewodowy czujnik Shelly BLU wysyła komendę Bluetooth do głowicy termostatycznej na grzejniku. Zawór domyka się, żeby nie ogrzewać ulicy, a po zamknięciu okna grzejnik wznawia dogrzewanie pokoju.',
     humanNote:
-      'Wpuszczasz rześkie powietrze do sypialni bez wyrzucania pieniędzy w błoto. Grzejnik nie rozgrzewa się bez sensu do maksymalnej mocy, gdy wietrzysz pomieszczenie.',
+      'Wpuszczasz rześkie powietrze do sypialni bez marnowania energii i pieniędzy. Grzejnik nie rozgrzewa się bez sensu do maksymalnej mocy, gdy wietrzysz pomieszczenie.',
     actionSequence: [
       { step: 'Otwarcie okna', icon: 'SlidersHorizontal', detail: 'Czujnik Shelly BLU rejestruje rozszczelnienie ramy' },
       { step: 'Odcięcie grzania', icon: 'Flame', detail: 'Głowica Shelly BLU TRV domyka zawór na 0%' },
@@ -1184,14 +1184,14 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     subtitle: 'Shelly Gas + Shelly Flood S Gen4 + elektrozawór kulowy',
     trigger: 'Wykrycie ulatniającego się gazu lub wilgoci pod pralką/zmywarką',
     devicesUsed: ['Czujnik Shelly Gas', 'Czujniki zalania Shelly Flood S Gen4', 'Siłownik zaworu kulowego Fail-Safe 230V', 'Moduł Shelly Pro 1PM'],
-    reactionTime: 'Poniżej 3 s',
+    reactionTime: 'zamknięcie zaworu zwykle w kilka sekund',
     economicBenefit: 'Ochrona przed zniszczeniem podłóg za dziesiątki tysięcy złotych i bezpieczeństwo życia',
     description:
       'W przypadku wykrycia nieszczelności gazu przez Shelly Gas lub pierwszych kropel wody przez sensory Shelly Flood S, system w ciągu kilku sekund mechanicznie zamyka główny zawór odcinający i odłącza zasilanie z gniazd pralki, zmywarki czy pieca.',
     humanNote:
       'Pełen spokój, gdy jesteś w pracy lub na wakacjach. Pęknięty wężyk pralki nie zaleje parkietu ani sąsiada, a ewentualny wyciek gazu zostaje odcięty w zarodku bez udziału człowieka.',
     actionSequence: [
-      { step: 'Wykrycie wycieku', icon: 'Droplets', detail: 'Sensory Shelly Flood / Gas reagują w czasie milisekund' },
+      { step: 'Wykrycie wycieku', icon: 'Droplets', detail: 'Sensory Shelly Flood / Gas wykrywają zagrożenie w kilka sekund' },
       { step: 'Zamknięcie zaworu', icon: 'ShieldCheck', detail: 'Siłownik odcina główny dopływ wody/gazu w kilka sekund' },
       { step: 'Zrzut zasilania', icon: 'Power', detail: 'Przekaźniki Shelly natychmiast odcinają prąd w strefie awarii' },
       { step: 'Alarm na telefon', icon: 'Bell', detail: 'Syrena akustyczna oraz powiadomienie alarmowe PUSH na smartfon' },
@@ -1232,7 +1232,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'Kamera Hikvision z funkcją ANPR odczytuje tablicę rejestracyjną samochodu podczas dojazdu do posesji. Brama wjazdowa otwiera się automatycznie, w korytarzu rozjaśnia się światło 2700K, a parter domu rozbraja strefę alarmową.',
     humanNote:
-      'Nie musisz szukać pilota po ciemku w schowku ani klikać w aplikację podczas manewrowania autem. Dom rozpoznaje Twój samochód ze 100 metrów i bezpiecznie zaprasza do środka.',
+      'Nie musisz szukać pilota po ciemku w schowku ani klikać w aplikację podczas manewrowania autem. System rozpoznaje tablicę Twojego auta przy podjeździe (dystans zależy od obiektywu i montażu) i otwiera bramę.',
     actionSequence: [
       { step: 'Odczyt tablicy LPR', icon: 'Camera', detail: 'Kamera Hikvision identyfikuje numer rejestracyjny' },
       { step: 'Otwarcie bramy', icon: 'DoorClosed', detail: 'Moduł Shelly Plus 1 podaje impuls na sterownik bramy wjazdowej' },

@@ -15,7 +15,7 @@ export const ScenariosPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Scenariusze Codziennego Dnia"
-        title="Automatyka, która zdejmuje obowiązki z Twojej głowy"
+        title="Automatyka, która wyręcza Cię w codziennych obowiązkach"
         description="Automatyka działa sama, a Ty masz pełną kontrolę — z telefonu, przycisku lub głosu. Mechaniczne odcięcie wody w ciągu kilku sekund po detekcji wycieku, bezpieczny odbiór przesyłek od kuriera i automatyczne wygaszanie obwodów przy wyjściu."
         icon={<SlidersHorizontal className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
@@ -44,7 +44,7 @@ export const ScenariosPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Komfortowy Poranek
+                  Komfortowy poranek
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Żaluzje bezszelestnie unoszą się o określonej godzinie, a światło w strefie prywatnej rozjaśnia się stopniowo do poziomu 20%.
@@ -69,7 +69,7 @@ export const ScenariosPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Spokój Przy Wyjściu
+                  Spokój przy wyjściu
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Koniec ze sprawdzaniem żelazka czy okien w pośpiechu. Pojedyncze dotknięcie przycisku przy drzwiach gasi oświetlenie i uzbraja czujniki.
@@ -94,7 +94,7 @@ export const ScenariosPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Ochrona Przed Zalaniem
+                  Ochrona przed zalaniem
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Zawór ze sprężyną mechaniczną odcina główny dopływ wody w ciągu kilku sekund po wykryciu wilgoci pod urządzeniami AGD.
@@ -117,7 +117,7 @@ export const ScenariosPage: React.FC = () => {
             <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${
               isDay ? 'text-[#111827]' : 'text-white'
             }`}>
-              Standard Fail-Safe: Bezpieczeństwo nawet przy braku zasilania
+              Standard fail-safe: bezpieczeństwo nawet przy braku zasilania
             </h2>
             <p className={`mt-2 text-sm sm:text-base leading-[1.7] ${
               isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
@@ -134,7 +134,7 @@ export const ScenariosPage: React.FC = () => {
                 <Droplets className="w-5 h-5" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Zawór ze Sprężyną Powrotną
+                Zawór ze sprężyną powrotną
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Stosujemy zawory kulowe z mechaniczną sprężyną. Nawet przy całkowitym zaniku prądu w budynku zawór zamyka się samoczynnie.
@@ -148,10 +148,10 @@ export const ScenariosPage: React.FC = () => {
                 <LogOut className="w-5 h-5" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Fizyczny Przycisk Ścienny
+                Fizyczny przycisk ścienny
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
-                Przycisk "Wyjście" przy drzwiach wejściowych jest połączony przewodem bezpośrednio z rozdzielnicą. Działa natychmiast bez udziału telefonu.
+                Przycisk „Wyjście” przy drzwiach wejściowych jest połączony przewodem bezpośrednio z rozdzielnicą. Działa natychmiast bez udziału telefonu.
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export const ScenariosPage: React.FC = () => {
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Następny krok:</div>
             <div className={`text-base font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-              Pakiety Wdrożeniowe z Gwarancją Stałej Ceny
+              Pakiety wdrożeniowe z gwarancją stałej ceny
             </div>
           </div>
           <Link

@@ -95,7 +95,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Stabilność i Przewodowy LAN
+                  Stabilność i przewodowy LAN
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Przemysłowa seria modułów DIN w rozdzielnicy gwarantuje bezpośrednie połączenie kablowe Ethernet i pracę lokalną bez chmury.
@@ -139,7 +139,7 @@ export const SystemsPage: React.FC = () => {
                   Stan surowy / Nowa rozdzielnica
                 </div>
                 <h3 className={`text-lg font-bold mb-3 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Shelly Pro DIN (Rozdzielnica)
+                  Shelly Pro DIN (rozdzielnica)
                 </h3>
                 <p className={`text-xs leading-[1.65] mb-4 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Wybierz serię Shelly Pro, jeśli budujesz dom od podstaw. Każdy moduł montowany jest na szynie DIN w rozdzielnicy, posiada port Ethernet LAN oraz sprzętowy pomiar zużycia prądu.
@@ -159,7 +159,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#B87333] hover:text-[#A36034]"
               >
-                <span>Wycena instalacji rozdzielnicy</span>
+                <span>Wyceń w kalkulatorze</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -172,7 +172,7 @@ export const SystemsPage: React.FC = () => {
                   Kompletny ekosystem automatyki budynkowej
                 </div>
                 <h3 className={`text-lg font-bold mb-3 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  KNX / Loxone (Magistrala)
+                  KNX / Loxone (magistrala)
                 </h3>
                 <p className={`text-xs leading-[1.65] mb-4 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Rozwiązanie dla inwestorów oczekujących jednolitego ekosystemu jednej marki: strefowego audio, integracji pomp ciepła i stacji meteo z centralnym sterownikiem logicznym.
@@ -192,7 +192,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-sky-400 hover:text-sky-300"
               >
-                <span>Wycena instalacji magistralnej</span>
+                <span>Wyceń w kalkulatorze</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -205,7 +205,7 @@ export const SystemsPage: React.FC = () => {
                   Wykończone wnętrza / Bez kucia
                 </div>
                 <h3 className={`text-lg font-bold mb-3 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Home Assistant &amp; Mikromoduły
+                  Home Assistant i mikromoduły
                 </h3>
                 <p className={`text-xs leading-[1.65] mb-4 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Idealne rozwiązanie, jeśli masz już pomalowane ściany. Montujemy mikromoduły w puszkach pod włącznikami, które komunikują się lokalnie z domowym serwerem.
@@ -213,7 +213,7 @@ export const SystemsPage: React.FC = () => {
                 <ul className="space-y-2 text-xs">
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Montaż bezpyłowy i bez niszczenia gładzi</span>
+                    <span>Montaż z minimalną ingerencją w tynki, z odciągiem pyłu</span>
                   </li>
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
@@ -225,7 +225,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300"
               >
-                <span>Wycena bezinwazyjna</span>
+                <span>Wyceń w kalkulatorze</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -243,7 +243,7 @@ export const SystemsPage: React.FC = () => {
                 Dlaczego w DOMENCE nie instalujemy rozwiązań uzależnionych od zewnętrznej chmury?
               </h4>
               <p className={`text-xs mt-1 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#D1D5DB]'}`}>
-                Typowe urządzenia z marketu wymagają stałego połączenia z obcymi serwerami. W przypadku awarii łącza internetowego tracisz kontrolę nad oświetleniem i ogrzewaniem. W DOMENCE wdrażamy architekturę pracującą w lokalnej sieci LAN.
+                Typowe urządzenia konsumenckie wymagają stałego połączenia z obcymi serwerami. W przypadku awarii łącza internetowego tracisz kontrolę nad oświetleniem i ogrzewaniem. W DOMENCE wdrażamy architekturę pracującą w lokalnej sieci LAN.
               </p>
             </div>
           </div>

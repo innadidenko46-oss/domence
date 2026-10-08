@@ -140,7 +140,7 @@ export const Navbar: React.FC = () => {
               className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
             >
               <Calculator className="w-3.5 h-3.5" />
-              <span>Wycena</span>
+              <span>Wyceń w kalkulatorze</span>
             </Link>
           </div>
 
@@ -220,7 +220,7 @@ export const Navbar: React.FC = () => {
                   className="w-full py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C27A4E]/40 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                 >
                   <Calculator className="w-4 h-4" />
-                  <span>Kalkulator Wyceny</span>
+                  <span>Wyceń w kalkulatorze</span>
                 </Link>
 
                 <Link
@@ -233,7 +233,7 @@ export const Navbar: React.FC = () => {
                   }`}
                 >
                   <Phone className="w-3.5 h-3.5 text-[#B87333]" />
-                  <span>Kontakt i Konsultacja</span>
+                  <span>Zapytaj inżyniera</span>
                 </Link>
               </div>
             </div>

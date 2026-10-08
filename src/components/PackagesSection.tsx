@@ -29,7 +29,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
           <h2 className={`font-display text-3xl sm:text-5xl font-bold tracking-tight ${
             isDay ? 'text-[#111827]' : 'text-[#F3F4F6]'
           }`}>
-            Pakiety Wdrożeniowe "Pod Klucz"
+            Pakiety wdrożeniowe „pod klucz”
           </h2>
           <p className={`mt-4 text-sm sm:text-base ${
             isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
@@ -156,7 +156,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                         : 'bg-[#27272A] hover:bg-[#3F3F46] text-[#F4F4F5] border-white/10'
                   }`}
                 >
-                  <span>Wybierz Ten Pakiet</span>
+                  <span>Wybierz pakiet</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </motion.div>
@@ -169,7 +169,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
           <p className={`text-xs ${isDay ? 'text-[#6B7280]' : 'text-[#71717A]'}`}>
             Potrzebujesz integracji z pompą ciepła, modułami Shelly Pro, monitoringiem 4K lub nietypowym systemem bramowym?{' '}
             <Link to="/kalkulator" className="text-[#B87333] underline hover:text-[#A36034]">
-              Skonfiguruj w kalkulatorze lub zamów bezpłatny audyt.
+              Wyceń w kalkulatorze
             </Link>
           </p>
         </div>

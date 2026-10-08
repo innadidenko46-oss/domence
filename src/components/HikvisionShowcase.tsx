@@ -239,7 +239,7 @@ export const HikvisionShowcase: React.FC = () => {
                     to="/kalkulator"
                     className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
-                    <span>Wycena zestawu Hikvision</span>
+                    <span>Wyceń w kalkulatorze</span>
                   </Link>
                 </div>
               </div>

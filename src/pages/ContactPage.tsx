@@ -45,8 +45,8 @@ export const ContactPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Bezpośredni Kontakt"
-        title="Skonsultuj Projekt instalacji z inżynierem"
-        description="Dysponujesz rzutem instalacji elektrycznej lub budujesz dom? Prześlij nam dokumentację do bezpłatnej weryfikacji — odpowiadamy w ciągu 24 godzin w dni robocze."
+        title="Skonsultuj projekt instalacji z inżynierem"
+        description="Dysponujesz rzutem instalacji elektrycznej lub budujesz dom? Prześlij nam dokumentację do bezpłatnej weryfikacji — odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00)."
         icon={<Phone className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
@@ -61,12 +61,12 @@ export const ContactPage: React.FC = () => {
                 <h2 className={`text-xl sm:text-2xl font-bold tracking-tight mb-2 ${
                   isDay ? 'text-[#111827]' : 'text-white'
                 }`}>
-                  Dział Inżynierii i Prefabrykacji
+                  Dział inżynierii i prefabrykacji
                 </h2>
                 <p className={`text-xs sm:text-sm leading-[1.7] ${
                   isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
                 }`}>
-                  Realizujemy instalacje na terenie Warszawy, Konstancina, Wilanowa, Podkowy Leśnej oraz indywidualne projekty rezydencjalne w całej Polsce.
+                  Realizujemy instalacje na terenie Warszawy, Konstancina, Wilanowa i Podkowy Leśnej. Większe rezydencje realizujemy w całej Polsce po zdalnym audycie.
                 </p>
               </div>
 
@@ -114,7 +114,7 @@ export const ContactPage: React.FC = () => {
                       kontakt@domence.pl
                     </div>
                     <div className="text-[11px] text-[#9CA3AF] mt-0.5 font-mono">
-                      Odpowiadamy w ciągu 24h
+                      Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00)
                     </div>
                   </div>
                 </a>
@@ -132,7 +132,7 @@ export const ContactPage: React.FC = () => {
                       Obszar realizacji
                     </div>
                     <div className={`text-sm font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                      Warszawa i cała Polska
+                      Warszawa i okolice; większe rezydencje — cała Polska
                     </div>
                     <div className="text-xs text-[#9CA3AF] mt-0.5">
                       Projekty prowadzimy na miejscu u inwestora oraz zdalnie na podstawie rzutów.
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
                     </h3>
                     <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto leading-relaxed">
                       Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
-                      Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin w dni robocze.
+                      Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -324,7 +324,7 @@ export const ContactPage: React.FC = () => {
                       <span>Prześlij Zapytanie do Inżyniera</span>
                     </button>
                     <p className="text-[11px] text-center text-[#6B7280]">
-                      * Odpowiadamy w ciągu 24h. Dane nie są przekazywane firmom marketingowym.
+                      * Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Dane nie są przekazywane firmom marketingowym.
                     </p>
                   </form>
                 )}

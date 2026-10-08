@@ -42,7 +42,7 @@ export const SystemsComparisonSection: React.FC = () => {
             <p className={`mt-3 text-sm sm:text-base max-w-2xl leading-relaxed ${
               isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
             }`}>
-              Dobieramy technologię ściśle do etapu inwestycji: rozdzielnica modułowa Shelly Pro na szynie DIN w nowym domu lub bezpyłowe mikromoduły Shelly Plus w wykończonym lokalu.
+              Dobieramy technologię ściśle do etapu inwestycji: rozdzielnica modułowa Shelly Pro na szynie DIN w nowym domu lub mikromoduły Shelly Plus w wykończonym lokalu (z minimalną ingerencją w tynki, z odciągiem pyłu).
             </p>
           </div>
 
@@ -221,7 +221,7 @@ export const SystemsComparisonSection: React.FC = () => {
                   to="/kontakt"
                   className="btn-engineering-primary gap-2 cursor-pointer"
                 >
-                  <span>Skonsultuj projekt</span>
+                  <span>Zapytaj inżyniera</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

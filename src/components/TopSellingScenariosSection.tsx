@@ -93,7 +93,7 @@ export const TopSellingScenariosSection: React.FC = () => {
               isDay ? 'text-slate-600' : 'text-slate-300'
             }`}
           >
-            Prawdziwy komfort nie wymaga pamiętania o włącznikach. Dom samoczynnie odcina ogrzewanie przy wietrzeniu, zabezpiecza przed skutkami pękniętych wężyków, optymalizuje zużycie fotowoltaiki i rozpoznaje Twój samochód.
+            Dom sam odcina ogrzewanie przy wietrzeniu i wodę przy wycieku — bez pamiętania o włącznikach. Do tego ogranicza skutki pękniętych wężyków i optymalizuje zużycie fotowoltaiki.
           </p>
         </div>
 
@@ -496,7 +496,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                       to="/kalkulator"
                       className="inline-flex items-center gap-2 text-xs font-bold text-[#B87333] hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                     >
-                      <span>Wycena tego scenariusza w kalkulatorze</span>
+                      <span>Wyceń w kalkulatorze</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
