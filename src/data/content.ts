@@ -71,7 +71,7 @@ export const SYSTEM_COMPARISONS: SystemComparison[] = [
     ],
     humanVerdict:
       'System zarządzający w szafce teletechnicznej. Nagrania z kamer i dane zostają w domu, a cały system pracuje lokalnie, bez zależności od serwerów zewnętrznych.',
-    estimatedCostScale: 'Średni',
+    estimatedCostScale: 'Wysoki',
   },
   {
     id: 'loxone',
@@ -232,7 +232,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Rozdzielczość 4K (8 Megapikseli) z kompresją H.265+ oszczędzającą miejsce na dysku',
       'Metalowa obudowa IK10 (wandaloodporna) i IP67 (odporność na mróz i ulewy)',
     ],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-acusense',
@@ -262,7 +262,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Odczytywanie tablic rejestracyjnych pojazdów wjeżdżających na posesję',
       'Zastępuje kilka tradycyjnych kamer statycznych w jednym punkcie montażowym',
     ],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-intercom-modular',
@@ -478,7 +478,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Uzbrojenie stref alarmu i aktywacja analityki sylwetek AI' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85',
     icon: 'LogOut',
   },
   {
@@ -577,7 +577,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Moon', label: 'Cokoły Bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
       { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające głębokiej fazie snu REM' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85',
     icon: 'Moon',
   },
   {
@@ -1040,7 +1040,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
     badge: 'Obiektyw F1.0 • Filtracja fałszywych alarmów',
     techStack: 'ColorVu CMOS 1/1.2" / AcuSense / Audio dwukierunkowe',
     summary:
-      'Kamery przekazują kolorowy obraz 4K przy minimalnym oświetleniu (0.0003 Lux to parametr producenta dla serii ColorVu). Analityka AcuSense odróżnia ludzi i pojazdy od zwierząt, liści czy opadów, więc telefon nie wibruje bez powodu. Audio dwukierunkowe pozwala porozmawiać z gościem przy furtce.',
+      'Kamery przekazują kolorowy obraz 4K przy minimalnym oświetleniu (Parametr producenta dla serii ColorVu (wartość lux zależy od warunków otoczenia)). Analityka AcuSense odróżnia ludzi i pojazdy od zwierząt, liści czy opadów, więc telefon nie wibruje bez powodu. Audio dwukierunkowe pozwala porozmawiać z gościem przy furtce.',
     humanBenefit:
       'W nocy widzisz kolor kurtki i markę samochodu zamiast szarego ziarna. Kamera podświetla scenę miękkim światłem dopiero wtedy, gdy wykryje człowieka.',
     keyPoints: [
@@ -1174,7 +1174,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
       { step: 'Odcięcie grzania', icon: 'Flame', detail: 'Głowica Shelly BLU TRV domyka zawór na 0%' },
       { step: 'Powrót do komfortu', icon: 'CheckCircle2', detail: 'Po zamknięciu okna grzejnik automatycznie wznawia dogrzewanie' },
     ],
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85',
   },
   {
     id: 'top-sc-hazard-defense',
