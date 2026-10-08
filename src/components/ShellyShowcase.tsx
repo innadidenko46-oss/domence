@@ -49,26 +49,25 @@ export const ShellyShowcase: React.FC = () => {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-mono font-semibold uppercase tracking-wider mb-3 border bg-[#F3F4F6] text-[#374151] border-[#D1D5DB]">
               <Layers className="w-3.5 h-3.5 text-[#B87333]" />
-              <span>Możliwości Systemowe • Shelly Pro & Plus</span>
+              <span>Co potrafi • Shelly Pro i Plus</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
-              Shelly Pro & Plus: Precyzja rozdzielnicy i wygoda bezprzewodowa
+              Shelly Pro i Plus: światło i rolety bez kucia i z rozdzielnicy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#4B5563]">
-              Połączenie przemysłowej serii <strong>Shelly Pro (szyna DIN)</strong> z elastycznymi mikromodułami <strong>Shelly Plus & BLU</strong>. 
-              Stabilna praca w lokalnej sieci LAN bez konieczności wysyłania komend do zewnętrznej chmury.
+              Dostajesz światło, rolety i ogrzewanie sterowane z telefonu i zwykłych włączników. Do nowego domu wkładamy moduły do rozdzielnicy, do gotowego mieszkania — małe moduły pod włączniki.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-[#E5E7EB] text-[#374151]">
-              Przewodowy LAN RJ45
+              Kabel do rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-[#E5E7EB] text-[#374151]">
-              Szyna DIN Rozdzielnicy
+              Szyna DIN w rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-[#E5E7EB] text-[#374151]">
-              Praca lokalna bez chmury
+              Działa w domu, bez obcych serwerów
             </span>
           </div>
         </div>
@@ -139,7 +138,7 @@ export const ShellyShowcase: React.FC = () => {
 
                 <div className="pt-2 space-y-2">
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280]">
-                    Kluczowe parametry wdrożenia:
+                    Kluczowe parametry:
                   </div>
                   {activeCap.features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-2.5 text-xs">
@@ -155,17 +154,17 @@ export const ShellyShowcase: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333]">
-                      Scenariusz w codziennym życiu:
+                      Tak to wygląda u Ciebie w domu:
                     </span>
                   </div>
                   <p className="text-sm leading-relaxed text-[#111827]">
-                    «{activeCap.scenariosExample}»
+                    „{activeCap.scenariosExample}”
                   </p>
                 </div>
 
                 <div className="mt-4 pt-4 border-t flex items-center justify-between text-xs border-[#E5E7EB]">
                   <span className="text-[#6B7280]">
-                    Autonomia: praca lokalna w sieci LAN
+                    Działa w domu, także bez internetu
                   </span>
                   <Link
                     to="/scenariusze"
@@ -188,10 +187,10 @@ export const ShellyShowcase: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#111827]">
-                      Shelly Pro DIN (Rozdzielnica Główna)
+                      Shelly Pro do rozdzielnicy
                     </h4>
                     <span className="text-[10px] text-[#10B981] font-mono font-semibold uppercase tracking-wider">
-                      Przewodowy port LAN RJ45 • Szyna DIN • Pomiar PM
+                      Kabel • Szyna DIN • Pomiar prądu
                     </span>
                   </div>
                 </div>
@@ -208,7 +207,7 @@ export const ShellyShowcase: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#111827]">
-                      Shelly Plus & BLU (Dopuszkowe i Bezprzewodowe)
+                      Shelly Plus i BLU (pod włącznik, bez kucia)
                     </h4>
                     <span className="text-[10px] text-[#38BDF8] font-mono font-semibold uppercase tracking-wider">
                       Bez kucia tynków • Puszki 60mm & BLE Mesh

@@ -72,7 +72,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
             Jak Twój dom żyje za dnia, o zmierzchu i w nocy.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-            Dobre oświetlenie to dobra barwa i jasność o właściwej porze.
+            Światło, które samo dopasowuje się do pory dnia.
             Dom dopasowuje je sam, bez klikania w telefon.
           </p>
         </div>

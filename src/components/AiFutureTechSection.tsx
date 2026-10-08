@@ -30,11 +30,10 @@ export const AiFutureTechSection: React.FC = () => {
             Technologie • Hikvision i Shelly
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-            Co potrafią nowoczesne kamery i sterowniki.
+            Co potrafią nowe kamery i sterowniki.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
-            Krótki przegląd możliwości. Poniżej opisujemy sześć rozwiązań, które
-            najczęściej polecamy w domach. Bez żargonu i bez obietnic bez pokrycia.
+            Dostajesz 6 sprawdzonych rzeczy do domu. Opisujemy je zwykłymi słowami, bez obietnic bez pokrycia.
           </p>
         </div>
 

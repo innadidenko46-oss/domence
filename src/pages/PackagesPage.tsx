@@ -15,9 +15,9 @@ export const PackagesPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
-        badge="Pakiety Wdrożeniowe"
-        title="Pakiety automatyki i teletechniki dla domu"
-        description="Trzy gotowe zakresy: wideodomofon z monitoringiem, retrofit bez kucia oraz pełna rozdzielnica modułowa. Każdy z pisemną wyceną ryczałtową."
+        badge="Gotowe zestawy"
+        title="Gotowe zestawy do domu — ze sprzętem i montażem"
+        description="Trzy zakresy: domofon z kamerą i monitoring, gotowe mieszkanie bez kucia oraz pełna rozdzielnica w nowym domu. Każdy z ceną na piśmie."
         icon={<Package className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
       />
@@ -30,10 +30,10 @@ export const PackagesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
-              Co gwarantuje każdy pakiet DOMENCE?
+              Co zawiera każdy zestaw?
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-              Stała, pisemna wycena ryczałtowa — zakres i wyłączenia potwierdzamy pisemnie przed startem.
+              Cenę i zakres potwierdzamy na piśmie przed startem.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export const PackagesPage: React.FC = () => {
                 Projekt wykonawczy
               </h3>
               <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Indywidualny rzut instalacji, schemat jednokreskowy rozdzielnicy i bilans mocy urządzeń.
+                Rysunek instalacji i schemat rozdzielnicy.
               </p>
             </div>
 
@@ -58,7 +58,7 @@ export const PackagesPage: React.FC = () => {
                 Czysty montaż
               </h3>
               <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Zabezpieczenie posadzek i mebli, odkurzanie przemysłowe z filtrem HEPA i estetyczne wykończenie.
+                Zabezpieczamy podłogi i meble, wiercimy z odsysaniem pyłu i sprzątamy po sobie.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export const PackagesPage: React.FC = () => {
                 Pomiary odbiorowe
               </h3>
               <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Pomiary impedancji pętli zwarcia, testy wyłączników RCD oraz protokół podpisany przez inżyniera z uprawnieniami SEP.
+                Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export const PackagesPage: React.FC = () => {
                 24 miesiące gwarancji
               </h3>
               <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Pisemna umowa gwarancyjna, bezpośredni kontakt z kierownikiem projektu i bezpłatna optymalizacja scen po 30 dniach.
+                Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ export const PackagesPage: React.FC = () => {
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Następny krok:</div>
             <div className="text-base font-bold text-[#111827]">
-              Baza Wiedzy, Odpowiedzi na Pytania Techniczne &amp; FAQ
+              Pytania i odpowiedzi techniczne
             </div>
           </div>
           <Link

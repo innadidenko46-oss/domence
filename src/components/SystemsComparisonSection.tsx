@@ -27,19 +27,19 @@ export const SystemsComparisonSection: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#334E68]/15 border border-[#334E68]/30 text-[#486581] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
               <Layers className="w-3.5 h-3.5" />
-              <span>Systemy & Standardy Technologiczne</span>
+              <span>Systemy i standardy</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
-              Porównanie architektur
+              Który zestaw pasuje do Twojego domu
             </h2>
             <p className="mt-3 text-sm sm:text-base max-w-2xl leading-relaxed text-[#4B5563]">
-              Dobieramy technologię ściśle do etapu inwestycji: rozdzielnica modułowa Shelly Pro na szynie DIN w nowym domu lub mikromoduły Shelly Plus w wykończonym lokalu (z minimalną ingerencją w tynki, z odciągiem pyłu).
+              Wybierz, co pasuje do Twojej budowy: moduły do rozdzielnicy w nowym domu albo małe moduły pod włączniki w gotowym mieszkaniu. Bez kucia, jeśli nie trzeba.
             </p>
           </div>
 
           <div className="mt-6 md:mt-0 flex items-center gap-2 text-xs p-3 rounded-[2px] border bg-[#F3F4F6] border-[#E5E7EB] text-[#4B5563]">
             <Info className="w-4 h-4 text-[#B87333] shrink-0" />
-            <span>Wybierz technologię, aby sprawdzić specyfikację</span>
+            <span>Wybierz, aby zobaczyć szczegóły</span>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export const SystemsComparisonSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333]">
-                Wnioski dla inwestora:
+                W skrócie:
               </div>
               <p className="text-sm mt-1 leading-relaxed text-[#374151]">
                 {activeSystem.humanVerdict}
@@ -111,12 +111,12 @@ export const SystemsComparisonSection: React.FC = () => {
             {/* Left Specs Column */}
             <div className="lg:col-span-4 space-y-4">
               <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Dla jakiego typu budynku?</div>
+                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Do jakiego domu?</div>
                 <div className="text-sm font-medium leading-relaxed text-[#111827]">{activeSystem.bestFor}</div>
               </div>
 
               <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Typ połączenia i magistrala</div>
+                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Kabel czy Wi-Fi</div>
                 <div className="text-sm font-semibold text-[#38BDF8] flex items-center gap-2">
                   <Cable className="w-4 h-4" />
                   <span>{activeSystem.cableType}</span>
@@ -124,7 +124,7 @@ export const SystemsComparisonSection: React.FC = () => {
               </div>
 
               <div className="p-4 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Działanie offline bez internetu</div>
+                <div className="text-xs font-semibold mb-1 text-[#6B7280]">Czy działa bez internetu</div>
                 <div className="text-sm font-semibold text-[#10B981] flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>{activeSystem.autonomyOffline}</span>
@@ -139,7 +139,7 @@ export const SystemsComparisonSection: React.FC = () => {
                 <div>
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#10B981] mb-3 flex items-center gap-1.5">
                     <Check className="w-4 h-4" />
-                    <span>Zalety rozwiązania:</span>
+                    <span>Plusy:</span>
                   </div>
                   <ul className="space-y-2 text-xs">
                     {activeSystem.pros.map((pro, idx) => (
@@ -155,7 +155,7 @@ export const SystemsComparisonSection: React.FC = () => {
                 <div>
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#F87171] mb-3 flex items-center gap-1.5">
                     <X className="w-4 h-4" />
-                    <span>Wymagania i ograniczenia:</span>
+                    <span>Czego potrzebujesz:</span>
                   </div>
                   <ul className="space-y-2 text-xs">
                     {activeSystem.cons.map((con, idx) => (
@@ -172,10 +172,10 @@ export const SystemsComparisonSection: React.FC = () => {
               <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-[#E5E7EB]">
                 <div>
                   <div className="text-sm font-bold text-[#111827]">
-                    Nie wiesz, który standard sprawdzi się na Twojej budowie?
+                    Nie wiesz, co wybrać do swojego domu?
                   </div>
                   <div className="text-xs text-[#6B7280]">
-                    Prześlij projekt elektryczny lub rzut budynku – inżynier wskaże optymalną architekturę.
+                    Wyślij nam plan elektryki albo rysunek domu — powiemy, co pasuje.
                   </div>
                 </div>
 

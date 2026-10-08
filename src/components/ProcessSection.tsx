@@ -12,13 +12,13 @@ export const ProcessSection: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#B87333] mb-2">
             <ShieldCheck className="w-4 h-4" />
-            <span>Harmonogram i Standard Realizacji</span>
+            <span>Jak działamy krok po kroku</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-[#111827]">
-            Od analizy projektu po przekazanie kluczy
+            Od pierwszej rozmowy do gotowego domu
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-            Eliminujemy niespodzianki na budowie. Każdy etap ma przypisanego imiennego inżyniera prowadzącego, ustalony termin i precyzyjną procedurę odbiorową.
+            Wiesz, co dzieje się na każdym etapie. Masz jednego człowieka do kontaktu, umówiony termin i sprawdzenie prac na końcu.
           </p>
         </div>
 

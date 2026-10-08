@@ -112,13 +112,13 @@ export const ScenariosSection: React.FC = () => {
         <div className="max-w-3xl mb-14">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
             <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>Scenariusze Automatyki Budynkowej</span>
+            <span>Przykłady z życia</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950">
-            Gotowe sekwencje dla domu i rezydencji
+            Przykłady: co dom robi za Ciebie
           </h2>
           <p className="mt-4 text-sm sm:text-base max-w-2xl leading-relaxed text-slate-600">
-            Automatyka bez skomplikowanych instrukcji: inteligentne wietrzenie bez strat ciepła, natychmiastowe odcięcie wycieków wody i gazu, bilansowanie energii fotowoltaicznej oraz rozpoznawanie auta domownika.
+            Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
           </p>
         </div>
 
@@ -232,7 +232,7 @@ export const ScenariosSection: React.FC = () => {
                   {activeScenario.actionSteps && activeScenario.actionSteps.length > 0 && (
                     <div className="mt-5">
                       <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-slate-700">
-                        Sekwencja automatycznych działań zwykle w ciągu 1–2 sekund w sieci lokalnej:
+                        Co robi dom, zwykle w 1–2 sekundy:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (
@@ -260,7 +260,7 @@ export const ScenariosSection: React.FC = () => {
                   {/* Practical insight Box */}
                   <div className="mt-5 p-4 rounded-[2px] border text-xs leading-relaxed bg-[#B87333]/10 border-[#B87333]/30 text-slate-800">
                     <span className="font-bold block mb-1 text-[#7C4A1F]">
-                      Działanie w praktyce:
+                      Tak to działa u Ciebie:
                     </span>
                     {activeScenario.humanNote}
                   </div>
@@ -282,13 +282,13 @@ export const ScenariosSection: React.FC = () => {
 
                 <div className="mt-8 pt-6 border-t flex items-center justify-between border-slate-200">
                   <span className="text-xs text-slate-500">
-                    Local-First • Brak zależności od chmury
+                    Działa w domu, bez obcych serwerów
                   </span>
                   <Link
                     to="/kalkulator"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
-                    <span>Wyceń w kalkulatorze</span>
+                    <span>Wypełnij ankietę (2 min)</span>
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>

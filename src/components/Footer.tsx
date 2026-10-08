@@ -44,8 +44,8 @@ export const Footer: React.FC = () => {
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
               <p className="mt-4 text-[#A1A1AA] max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                Wdrożenia automatyki budynkowej Shelly Pro, wideodomofonii IP oraz monitoringu wizyjnego 4K.
-                Praca lokalna (Local-First) bez abonamentów chmurowych, montaż z minimalną ingerencją w tynki, z odciągiem pyłu i dokumentacja powykonawcza po zakończeniu prac.
+                Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
+                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
               </p>
             </div>
 
@@ -54,10 +54,10 @@ export const Footer: React.FC = () => {
                 Norma PN-HD 60364
               </span>
               <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
-                Praca lokalna bez chmury
+                Działa bez internetu
               </span>
               <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
-                Lokalny NVR bez abonamentu
+                Nagrania w domu, bez abonamentu
               </span>
             </div>
           </div>
@@ -71,22 +71,22 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-xs text-slate-400">
                 <li>
                   <Link to="/systemy" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Automatyka & Shelly Pro
+                    Automatyka domu
                   </Link>
                 </li>
                 <li>
                   <Link to="/teletechnika" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Kamery & Wideodomofony IP
+                    Kamery i domofon z kamerą
                   </Link>
                 </li>
                 <li>
                   <Link to="/multimedia" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Multimedia & Kino Domowe
+                    Muzyka i kino w domu
                   </Link>
                 </li>
                 <li>
                   <Link to="/scenariusze" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Scenariusze Smart Home
+                    Przykłady z życia
                   </Link>
                 </li>
                 <li>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
                     className="hover:text-[#C27A4E] transition-colors text-left flex items-center gap-1.5 text-slate-300 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
                     <Award className="w-3.5 h-3.5 text-[#C27A4E]" />
-                    <span>Standardy &amp; Dokumentacja</span>
+                    <span>Normy i dokumenty</span>
                   </button>
                 </li>
               </ul>
@@ -108,22 +108,22 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-xs text-slate-400">
                 <li>
                   <Link to="/pakiety" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Pakiety „pod klucz”
+                    Gotowe zestawy z montażem
                   </Link>
                 </li>
                 <li>
                   <Link to="/faq" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Baza wiedzy i FAQ
+                    Pytania i odpowiedzi
                   </Link>
                 </li>
                 <li>
                   <Link to="/kalkulator" className="hover:text-[#C27A4E] transition-colors font-semibold text-[#C27A4E] focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Wyceń w kalkulatorze
+                    Wypełnij ankietę (2 min)
                   </Link>
                 </li>
                 <li>
                   <Link to="/kontakt" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Kontakt & Audyt 0 PLN
+                    Zapytaj inżyniera
                   </Link>
                 </li>
                 <li>
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
           {/* Contact Direct */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
-              Kontakt z Inżynierem
+              Kontakt z inżynierem
             </h4>
 
             <a
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-start gap-2.5 text-xs text-slate-400">
               <MapPin className="w-4 h-4 text-[#C27A4E] shrink-0 mt-0.5" />
-              <span>Warszawa i okolice; większe rezydencje — cała Polska</span>
+              <span>Warszawa i okolice; większe domy — cała Polska</span>
             </div>
 
             <div className="pt-2">
@@ -163,10 +163,10 @@ export const Footer: React.FC = () => {
                 to="/kontakt"
                 className="inline-block px-4 py-2.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-[11px] transition-colors shadow-md shadow-[#B87333]/10 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Wyceń w kalkulatorze
+                Zapytaj inżyniera
               </Link>
               <p className="text-[10px] text-slate-400 mt-1.5">
-                Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Bez spamu.
+                Odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00). Bez spamu.
               </p>
             </div>
           </div>

@@ -210,7 +210,7 @@ export const CookieBanner: React.FC = () => {
                     />
                   </div>
                   <p className="text-slate-400 text-[11px] leading-relaxed">
-                    Umożliwiają zapamiętanie wprowadzonych w kalkulatorze parametrów metrażu i wybranych pakietów, aby nie tracić ich przy przechodzeniu między podstronami.
+                    Umożliwiają zapamiętanie wpisanych w ankiecie odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
                   </p>
                 </div>
 

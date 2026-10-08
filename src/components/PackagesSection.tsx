@@ -19,13 +19,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
-            <span>Kalkulacja Kosztów • Gwarancja Stałej Ceny</span>
+            <span>Ceny i gwarancja</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-[#111827]">
-            Pakiety wdrożeniowe „pod klucz”
+            Gotowe zestawy z montażem i gwarancją
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#4B5563]">
-            Osprzęt Shelly i Hikvision + montaż DOMENCE + rozdzielnica + 24 miesiące gwarancji.
+            Sprzęt, montaż i ustawienie plus 24 miesiące gwarancji. Cenę dostajesz na piśmie.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   {/* Features List */}
                   <div className="mt-6 space-y-2.5">
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#4B5563]">
-                      Zakres wdrożenia:
+                      Co zawiera zestaw:
                     </div>
                     {pkg.features.map((feat, i) => (
                       <div key={i} className="flex items-start gap-2.5 text-xs">
@@ -128,9 +128,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         {/* Custom Solution Note */}
         <div className="mt-12 text-center">
           <p className="text-xs text-[#6B7280]">
-            Potrzebujesz integracji z pompą ciepła, modułami Shelly Pro, monitoringiem 4K lub nietypowym systemem bramowym?{' '}
+            Masz pompę ciepła, panele albo nietypową bramę?{' '}
             <Link to="/kalkulator" className="text-[#B87333] underline hover:text-[#A36034]">
-              Wyceń w kalkulatorze
+              Wypełnij ankietę (2 min)
             </Link>
           </p>
         </div>

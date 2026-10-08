@@ -26,10 +26,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'systemy',
       path: '/systemy',
-      title: 'Technologie i standardy smart home',
-      subtitle: 'Sterowanie domem • Oświetlenie • Rolety • Mikroklimat',
+      title: 'Sterowanie domem: światło, rolety, ogrzewanie',
+      subtitle: 'Włączniki i telefon • Z kablami albo bez kucia',
       description:
-        'Sterowanie oświetleniem, roletami, mikroklimatem i scenami relaksu z poziomu włączników ściennych i telefonu — przewodowo lub bezprzewodowo, w zależności od stanu instalacji.',
+        'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
       icon: Layers,
       badge: 'Sterowanie & Automatyka',
       image:
@@ -39,10 +39,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'teletechnika',
       path: '/teletechnika',
-      title: 'Monitoring CCTV, wideodomofony IP i sieci LAN',
-      subtitle: 'Kamery 4K ColorVu & AcuSense • Wideorozmowy w telefonie • Szafy RACK',
+      title: 'Kamery, domofon z kamerą i internet w domu',
+      subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
       description:
-        'Szybka identyfikacja ludzi i pojazdów AI bez fałszywych alarmów. Prywatny rejestrator w szafie RACK bez opłat chmurowych, zdalne otwieranie furtki kurierowi i stabilny zasięg Wi-Fi w całym domu.',
+        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, furtkę otworzysz z telefonu, a internet działa w każdym pokoju.',
       icon: Network,
       badge: 'Prywatność & Zero Abonamentów',
       image:
@@ -52,10 +52,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'multimedia-kino',
       path: '/multimedia',
-      title: 'Dźwięk multiroom i kino domowe',
-      subtitle: 'Bezramkowe głośniki sufitowe • Sceny filmowe • Dolby Atmos',
+      title: 'Muzyka w pokojach i kino w salonie',
+      subtitle: 'Głośniki w suficie • Jeden przycisk do filmu',
       description:
-        'Dyskretne nagłośnienie wtopione w architekturę sufitu, zintegrowane ściemnianie światła, rolety blackout i automatyczna cisza podczas dzwonienia wideodomofonu.',
+        'Muzyka gra tam, gdzie jesteś. Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, dźwięk sam się ścisza.',
       icon: Volume2,
       badge: 'Multimedia & Atmosfera',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
@@ -64,10 +64,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'scenariusze',
       path: '/scenariusze',
-      title: 'Scenariusze i codzienna automatyka',
-      subtitle: 'Wyjście z domu • Ochrona przed zalaniem • Oświetlenie nocne',
+      title: 'Dom, który sam gasi światło i pilnuje wody',
+      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
       description:
-        'Dotykowy klawisz przy drzwiach wyłącza oświetlenie i wybrane obwody gniazd. Sensory zalania natychmiast zamykają główny elektrozawór wody przy nieszczelności.',
+        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
       icon: Sparkles,
       badge: 'Ergonomia & Bezpieczeństwo',
       image:
@@ -77,10 +77,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'pakiety',
       path: '/pakiety',
-      title: 'Pakiety wdrożeniowe „pod klucz”',
-      subtitle: 'Kompletny sprzęt i montaż • Przejrzysta wycena • Gwarancja',
+      title: 'Gotowe zestawy z montażem',
+      subtitle: 'Sprzęt i montaż • Cena na piśmie • Gwarancja',
       description:
-        'Sprawdzone konfiguracje wdrożeniowe: od gotowych lokali bez ingerencji w tynki, po pełne rezydencje w profesjonalnym standardzie modułowym Shelly Pro na szynę DIN.',
+        'Sprawdzone zestawy: do gotowego mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
       icon: Package,
       badge: 'Pakiety & Wyceny',
       image:
@@ -90,10 +90,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'faq',
       path: '/faq',
-      title: 'Baza wiedzy i odpowiedzi na pytania',
-      subtitle: 'Wszystko o działaniu offline, kosztach i obsłudze dla rodziny',
+      title: 'Pytania i odpowiedzi',
+      subtitle: 'Czy działa bez internetu • Ile to kosztuje • Czy obsłuży to babcia',
       description:
-        'Sprawdź, jak instalacja zachowuje się podczas wyładowań i braku internetu, jak szybko zwraca się inwestycja i jak wygląda codzienna obsługa.',
+        'Sprawdź, co dzieje się bez internetu i bez prądu, czy trzeba kuć ściany i czy każdy domownik da sobie radę z obsługą.',
       icon: BookOpen,
       badge: 'Wiedza & FAQ',
       image:
@@ -103,12 +103,12 @@ export const HomePage: React.FC = () => {
     {
       id: 'kalkulator',
       path: '/kalkulator',
-      title: 'Konfigurator wyceny instalacji',
-      subtitle: 'Wybierz metraż i moduły • Sprawdź szacunkowy koszt',
+      title: 'Krótka ankieta o Twoim domu',
+      subtitle: 'Wybierz metraż i potrzeby • Oddzwonimy z propozycją',
       description:
-        'Narzędzie do oszacowania budżetu na urządzenia i montaż.',
+        'Trzy pytania i kontakt. Zajmie Ci to około 2 minut.',
       icon: Calculator,
-      badge: 'Wycena Online',
+      badge: 'Ankieta (2 min)',
       image:
         'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Cyfrowy tablet wyświetlający przejrzyste sterowanie domem',
@@ -136,22 +136,20 @@ export const HomePage: React.FC = () => {
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[2px] text-xs font-semibold mb-6 backdrop-blur-md border bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30">
               <span className="w-2 h-2 rounded-full bg-[#B87333]" />
-              <span>Wdrożenia Inżynierskie • Smart Home, Wideodomofony & Monitoring</span>
+              <span>Wdrożenia • Smart home, kamery i domofony</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-950">
-              Nowoczesny dom, który wspiera Twój spokój, wygodę i prywatność.{' '}
+              Nowoczesny dom, którym sterujesz telefonem.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B87333] via-[#C27A4E] to-[#A36034]">
-                Działa stabilnie — również bez internetu.
+                Działa też bez internetu.
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="mt-5 text-base sm:text-lg leading-relaxed font-light text-slate-600">
-              Projektujemy i montujemy instalacje automatyki budynkowej, kamery 4K z analityką ludzi i pojazdów, 
-              wideodomofony IP oraz szybkie sieci Wi-Fi. Bez zewnętrznych abonamentów, 
-              z czytelną rozdzielnicą i czystym montażem bez pyłu w wykończonych wnętrzach.
+              Światło, rolety, ogrzewanie i kamery — montujemy, ustawiamy i pokazujemy, jak z tego korzystać.
             </p>
 
             {/* CTA Buttons */}
@@ -160,7 +158,7 @@ export const HomePage: React.FC = () => {
                 to="/kalkulator"
                 className="btn-engineering-primary shadow-xl shadow-[#B87333]/20 active:scale-95 text-center gap-2 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                <span>Wyceń w kalkulatorze</span>
+                <span>Wypełnij ankietę (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -168,7 +166,7 @@ export const HomePage: React.FC = () => {
                 to="/systemy"
                 className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 py-4 px-8 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all border text-center flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-800 border-slate-300 shadow-sm"
               >
-                <span>Poznaj Technologie Smart Home</span>
+                <span>Zobacz, jak to działa</span>
               </Link>
             </div>
 
@@ -176,11 +174,11 @@ export const HomePage: React.FC = () => {
             <div className="mt-10 pt-6 border-t grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs border-slate-200 text-slate-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
-                <span>Praca lokalna bez chmury</span>
+                <span>Praca w domu, bez obcych serwerów</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
-                <span>Zero Abonamentów</span>
+                <span>Bez abonamentu</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
@@ -211,10 +209,10 @@ export const HomePage: React.FC = () => {
           
           <div className="max-w-3xl mb-14">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-              Obszary instalacji i technologie
+              Obszary instalacji — co montujemy
             </h2>
             <p className="mt-3 text-sm sm:text-base font-light text-slate-600">
-              Do każdego obszaru dobieramy konkretny zestaw: np. do wejścia — wideodomofon IP i 2 kamery 4K z zapisem lokalnym.
+              Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
             </p>
           </div>
 
@@ -284,10 +282,10 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-14">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-              Zasady montażu i bezpieczeństwo
+              Jak montujemy i dlaczego to bezpieczne
             </h2>
             <p className="mt-3 text-sm sm:text-base font-light text-slate-600">
-              Trzy filary, które odróżniają profesjonalną instalację od amatorskich zestawów ze sklepu.
+              Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
             </p>
           </div>
 
@@ -297,11 +295,10 @@ export const HomePage: React.FC = () => {
                 <Lock className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
-                Prywatność i praca bez internetu
+                Prywatność i działanie bez internetu
               </h3>
               <p className="text-xs leading-relaxed font-light text-slate-600">
-                Obraz z kamer i dane domowników zostają w Twoim domu. Żadne zewnętrzne serwery nie mają dostępu
-                do Twoich pomieszczeń i nie ponosisz żadnych miesięcznych opłat.
+                Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.
               </p>
             </div>
 
@@ -310,11 +307,11 @@ export const HomePage: React.FC = () => {
                 <Cpu className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
-                Przejrzysta rozdzielnica i ochrona AGD
+                Porządna rozdzielnica i ochrona sprzętu
               </h3>
               <p className="text-xs leading-relaxed font-light text-slate-600">
-                Każdy bezpiecznik ma jasny opis i schemat. Zastosowane ograniczniki przepięć chronią pompę ciepła,
-                sprzęt kuchenny, telewizory i komputery przed wyładowaniami burzowymi.
+                Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła,
+                sprzęt kuchenny, telewizory i komputery przed burzą.
               </p>
             </div>
 
@@ -323,11 +320,11 @@ export const HomePage: React.FC = () => {
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
-                Czysty i precyzyjny montaż
+                Czysty montaż bez kurzu
               </h3>
               <p className="text-xs leading-relaxed font-light text-slate-600">
-                Pracujemy w wykończonych domach i mieszkaniach. Każde wiercenie wykonujemy z odsysaniem pyłu,
-                zabezpieczamy podłogi i zostawiamy nienaganny porządek.
+                Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu,
+                zabezpieczamy podłogi i sprzątamy po sobie.
               </p>
             </div>
           </div>
@@ -353,11 +350,10 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
-              Planujesz budowę, remont lub modernizację?
+              Planujesz budowę albo remont?
             </h2>
             <p className="text-sm text-slate-300 mt-2 max-w-xl font-light">
-              Skonsultuj się z nami bezpłatnie. Doradzimy odpowiednie rozwiązania dla Twojego budynku
-              i przygotujemy kosztorys wstępny — wysyłamy go w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00) po otrzymaniu rzutów.
+              Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00).
             </p>
           </div>
 
@@ -367,7 +363,7 @@ export const HomePage: React.FC = () => {
                 to="/kalkulator"
                 className="btn-engineering-primary shadow-lg shadow-[#B87333]/20 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Wyceń w kalkulatorze
+                <span>Wypełnij ankietę (2 min)</span>
               </Link>
 
               <Link

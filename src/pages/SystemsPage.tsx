@@ -10,9 +10,9 @@ export const SystemsPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
-        badge="Automatyka & Sterowanie"
-        title="Dobór Systemu Automatyki dla Rezydencji: Shelly Pro, KNX &amp; Loxone"
-        description="Porównanie technologii. Dobieramy technologię do etapu budowy: od modułów DIN w centralnej szafie elektrycznej po wdrożenia w zamieszkałych wnętrzach."
+        badge="Automatyka i sterowanie"
+        title="Światło, rolety i ogrzewanie — co pasuje do Twojego domu"
+        description="Pokażemy Ci zwykłymi słowami, co wybrać do nowego domu, a co do gotowego mieszkania. Bez kucia, jeśli nie trzeba."
         icon={<Layers className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
       />
@@ -36,10 +36,10 @@ export const SystemsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-[#111827]">
-                  Światło bez olśnienia
+                  Miękkie światło wieczorem
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Niewidoczne linie LED COB w sufitach podwieszanych i cokołach tworzą miękki, nastrojowy klimat o zmierzchu.
+                  Ukryte listwy LED w suficie dają ciepłe światło, które nie razi w oczy.
                 </p>
               </div>
             </div>
@@ -59,10 +59,10 @@ export const SystemsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-[#111827]">
-                  Koniec z rzędem włączników
+                  Jeden panel zamiast wielu włączników
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Zamiast 6 oddzielnych klawiszy obok siebie montujemy panel dotykowy zintegrowany ze sterowaniem temperaturą i scenami.
+                  Zamiast 6 klawiszy obok siebie masz jeden panel: światło, temperatura i rolety w jednym miejscu.
                 </p>
               </div>
             </div>
@@ -77,15 +77,15 @@ export const SystemsPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-emerald-400 border border-white/10">
-                  Szyna DIN Rozdzielnicy
+                  Szyna DIN w rozdzielnicy
                 </span>
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-[#111827]">
-                  Stabilność i przewodowy LAN
+                  Działa po kablu, także bez internetu
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Przemysłowa seria modułów DIN w rozdzielnicy gwarantuje bezpośrednie połączenie kablowe Ethernet i pracę lokalną bez chmury.
+                  Moduły w rozdzielnicy łączą się kablem, więc światło i rolety działają nawet, gdy padnie internet.
                 </p>
               </div>
             </div>
@@ -104,10 +104,10 @@ export const SystemsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
-              Kiedy wybrać Shelly Pro DIN, a kiedy moduły dopuszkowe?
+              Kiedy wybrać moduły do rozdzielnicy, a kiedy bez kucia?
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-              Jako niezależny inżynier doradzamy technologie dopasowane do stopnia wykończenia ścian oraz założeń projektowych.
+              Podpowiemy, co pasuje do Twojej budowy albo gotowego mieszkania.
             </p>
           </div>
 
@@ -115,18 +115,18 @@ export const SystemsPage: React.FC = () => {
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-[#F9FAFB] border-[#E5E7EB]">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333] mb-2">
-                  Stan surowy / Nowa rozdzielnica
+                  Stan surowy / nowa rozdzielnica
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-[#111827]">
-                  Shelly Pro DIN (rozdzielnica)
+                  Shelly Pro do rozdzielnicy
                 </h3>
                 <p className="text-xs leading-[1.65] mb-4 text-[#4B5563]">
-                  Wybierz serię Shelly Pro, jeśli budujesz dom od podstaw. Każdy moduł montowany jest na szynie DIN w rozdzielnicy, posiada port Ethernet LAN oraz sprzętowy pomiar zużycia prądu.
+                  Jeśli budujesz dom od zera. Moduły siedzą w rozdzielnicy, łączą się kablem i mierzą zużycie prądu.
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Niezawodne połączenie kablowe Ethernet LAN</span>
+                    <span>Pewne połączenie po kablu</span>
                   </li>
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
@@ -138,7 +138,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#B87333] hover:text-[#A36034]"
               >
-                <span>Wyceń w kalkulatorze</span>
+                <span>Wypełnij ankietę (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -146,18 +146,18 @@ export const SystemsPage: React.FC = () => {
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-[#F9FAFB] border-[#E5E7EB]">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 mb-2">
-                  Kompletny ekosystem automatyki budynkowej
+                  Kompletny zestaw jednej marki
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-[#111827]">
-                  KNX / Loxone (magistrala)
+                  KNX / Loxone (po kablu)
                 </h3>
                 <p className="text-xs leading-[1.65] mb-4 text-[#4B5563]">
-                  Rozwiązanie dla inwestorów oczekujących jednolitego ekosystemu jednej marki: strefowego audio, integracji pomp ciepła i stacji meteo z centralnym sterownikiem logicznym.
+                  Dla tych, którzy chcą wszystko od jednej marki: dźwięk w pokojach, pompę ciepła i stację pogody z jednym sterownikiem.
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Magistrala przewodowa o najwyższej trwałości</span>
+                    <span>Kabel w ścianie — bardzo stabilny</span>
                   </li>
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
@@ -169,7 +169,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-sky-400 hover:text-sky-300"
               >
-                <span>Wyceń w kalkulatorze</span>
+                <span>Wypełnij ankietę (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -177,22 +177,22 @@ export const SystemsPage: React.FC = () => {
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-[#F9FAFB] border-[#E5E7EB]">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 mb-2">
-                  Wykończone wnętrza / Bez kucia
+                  Gotowe mieszkanie / bez kucia
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-[#111827]">
-                  Home Assistant i mikromoduły
+                  Małe moduły i aplikacja w domu
                 </h3>
                 <p className="text-xs leading-[1.65] mb-4 text-[#4B5563]">
-                  Idealne rozwiązanie, jeśli masz już pomalowane ściany. Montujemy mikromoduły w puszkach pod włącznikami, które komunikują się lokalnie z domowym serwerem.
+                  Masz już pomalowane ściany. Małe moduły chowamy pod włącznikami i łączą się z domowym sterownikiem.
                 </p>
                 <ul className="space-y-2 text-xs">
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Montaż z minimalną ingerencją w tynki, z odciągiem pyłu</span>
+                    <span>Montaż bez kucia, z odsysaniem pyłu</span>
                   </li>
                   <li className="flex items-center gap-2 text-[#374151]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Niezależność od chmury (lokalna baza)</span>
+                    <span>Działa w domu, bez obcych serwerów</span>
                   </li>
                 </ul>
               </div>
@@ -200,7 +200,7 @@ export const SystemsPage: React.FC = () => {
                 to="/kalkulator"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300"
               >
-                <span>Wyceń w kalkulatorze</span>
+                <span>Wypełnij ankietę (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -211,10 +211,10 @@ export const SystemsPage: React.FC = () => {
             <AlertTriangle className="w-6 h-6 text-[#B87333] shrink-0 mt-0.5" />
             <div>
               <h4 className="text-sm font-bold text-[#111827]">
-                Dlaczego w DOMENCE nie instalujemy rozwiązań uzależnionych od zewnętrznej chmury?
+                Dlaczego dom działa też bez internetu?
               </h4>
               <p className="text-xs mt-1 leading-[1.65] text-[#4B5563]">
-                Typowe urządzenia konsumenckie wymagają stałego połączenia z obcymi serwerami. W przypadku awarii łącza internetowego tracisz kontrolę nad oświetleniem i ogrzewaniem. W DOMENCE wdrażamy architekturę pracującą w lokalnej sieci LAN.
+                Zwykłe gadżety potrzebują stałego łącza z serwerami producenta. Gdy pada internet, nie zapalą światła. U nas sterowanie działa w domowej sieci, więc światło i ogrzewanie słuchają Cię dalej.
               </p>
             </div>
           </div>

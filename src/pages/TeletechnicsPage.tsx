@@ -10,9 +10,9 @@ export const TeletechnicsPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
-        badge="Teletechnika &amp; CCTV"
-        title="Monitoring Wizyjny 4K, Bezpieczeństwo i Szafy RACK 19″"
-        description="Projektujemy i wykonujemy infrastrukturę teletechniczną dla rezydencji. Monitoring 4K z przeszukiwaniem nagrań, lokalny zapis NVR bez abonamentów i okablowanie strukturalne kat. 6A."
+        badge="Kamery i domofony"
+        title="Kamery, domofon z kamerą i szybki internet"
+        description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator nagrań (NVR) w metalowej szafce na sprzęt (RACK) — u Ciebie w domu, bez abonamentu."
         icon={<Network className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
       />
@@ -36,10 +36,10 @@ export const TeletechnicsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-[#111827]">
-                  Kamery 4K wtopione w architekturę
+                  Kamery schowane w elewacji
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Kompaktowe obudowy w kolorze elewacji z inteligentnym filtrem – natychmiastowa reakcja na ludzi i auta bez fałszywych alarmów od deszczu czy drzew.
+                  Małe obudowy w kolorze ściany. Kamera odróżnia człowieka od psa czy gałęzi i nie wysyła fałszywych alarmów.
                 </p>
               </div>
             </div>
@@ -54,15 +54,15 @@ export const TeletechnicsPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-emerald-400 border border-white/10">
-                  Szafa RACK 19"
+                  Szafka ze sprzętem
                 </span>
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-[#111827]">
-                  Serce domowej sieci LAN
+                  Serce domowego internetu
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Wszystkie przewody schodzą się do jednej zamykanej szafy technicznej. Certyfikowane patchcordy, switche PoE+ i zasilacz awaryjny UPS.
+                  Wszystkie kable schodzą się do jednej zamykanej szafki. Porządek, zasilanie awaryjne i szybki internet.
                 </p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export const TeletechnicsPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-sky-400 border border-white/10">
-                  Szybki Roaming Wi-Fi
+                  Szybki internet bez zrywania
                 </span>
               </div>
               <div className="p-5">
@@ -85,7 +85,7 @@ export const TeletechnicsPage: React.FC = () => {
                   Zasięg w ogrodzie i garażu
                 </h3>
                 <p className="text-xs mt-1.5 leading-[1.65] text-[#4B5563]">
-                  Sufitowe punkty dostępowe z roamingiem 802.11k/v/r zapewniają nieprzerwane połączenie podczas poruszania się po całej posesji.
+                  Internet działa w ogrodzie i w garażu. Telefon sam przełącza się między punktami, a rozmowa nie zrywa się.
                 </p>
               </div>
             </div>
@@ -104,10 +104,10 @@ export const TeletechnicsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
-              Dlaczego lokalny rejestrator NVR zamiast kamer z obcą chmurą?
+              Nagrania u Ciebie w domu, nie u obcej firmy
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-              Część kamer z chmurą wysyła strumień na serwery producenta. W standardzie DOMENCE Twoje prywatne życie pozostaje w Twoim domu.
+              Niektóre kamery wysyłają obraz na serwery producenta. U nas nagrania zostają w Twoim domu.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#111827]">
-                    Standard DOMENCE: Rejestrator NVR PoE
+                    Nasz standard: rejestrator nagrań w domu
                   </h3>
                   <span className="text-xs text-emerald-400 font-mono font-semibold">Twoje dane u Ciebie</span>
                 </div>
@@ -127,19 +127,19 @@ export const TeletechnicsPage: React.FC = () => {
               <ul className="space-y-3 text-xs sm:text-sm text-[#374151]">
                 <li className="flex items-start gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Brak abonamentów:</strong> Nie ponosisz comiesięcznych opłat za przechowywanie nagrań w chmurze.</span>
+                  <span><strong>Bez abonamentu:</strong> nie płacisz co miesiąc za przechowywanie nagrań.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Prywatność i bezpieczeństwo:</strong> Obraz z kamer nie opuszcza Twojej szafy RACK – nikt postronny nie ma do niego wglądu.</span>
+                  <span><strong>Prywatność:</strong> obraz z kamer nie wychodzi z Twojej szafki. Nikt obcy nie ma do niego dostępu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Przewodowe zasilanie PoE:</strong> Zasilanie i transmisja 4K odbywają się po jednym odpornym kablu ethernetowym.</span>
+                  <span><strong>Jeden kabel do kamery:</strong> prąd i obraz idą jednym kablem.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Dyski WD Purple:</strong> Przystosowane do ciągłego zapisu 24/7; retencja zależy od liczby kamer i bitrate'u.</span>
+                  <span><strong>Dyski do pracy ciągłej:</strong> zapisują 24 godziny na dobę. Ile dni wstecz zobaczysz, zależy od liczby kamer.</span>
                 </li>
               </ul>
             </div>
@@ -151,7 +151,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#111827]">
-                    Kamery Chmurowe (Consumer Wi-Fi)
+                    Kamery na Wi-Fi z obcą chmurą
                   </h3>
                   <span className="text-xs text-rose-400 font-mono font-semibold">Zależność od dostawcy</span>
                 </div>
@@ -159,19 +159,19 @@ export const TeletechnicsPage: React.FC = () => {
               <ul className="space-y-3 text-xs sm:text-sm text-[#4B5563]">
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Przechowywanie historii w chmurze zwykle wymaga płatnego abonamentu.</span>
+                  <span>Historia nagrań zwykle wymaga płatnego abonamentu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>W wielu kamerach konsumenckich pełne archiwum w chmurze wymaga płatnej subskrypcji (sprawdź cennik producenta).</span>
+                  <span>Pełne archiwum często wymaga dopłaty (sprawdź cennik producenta).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Zaniki sygnału bezprzewodowego i podatność na zakłócenia fal radiowych.</span>
+                  <span>Sygnał Wi-Fi potrafi zrywać, zwłaszcza przez grube ściany.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Bez internetu przestaje działać podgląd zdalny i powiadomienia w chmurze (zapis lokalny zależy od modelu).</span>
+                  <span>Bez internetu nie podejrzysz domu z telefonu ani nie dostaniesz powiadomienia.</span>
                 </li>
               </ul>
             </div>
@@ -185,7 +185,7 @@ export const TeletechnicsPage: React.FC = () => {
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-[#111827]">
-              Dźwięk Multiroom &amp; Domowa Sala Kinowa
+              Dźwięk i kino w domu
             </div>
           </div>
           <Link

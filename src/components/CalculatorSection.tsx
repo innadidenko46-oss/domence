@@ -26,8 +26,8 @@ interface CalculatorSectionProps {
 const PROPERTY_OPTIONS: { value: PropertyState; title: string; sub: string; icon: typeof Home }[] = [
   {
     value: 'deweloperski',
-    title: 'Nowa Rezydencja / Remont',
-    sub: 'Budowa albo remont od dewelopera — instalację zaplanujemy od zera.',
+    title: 'Nowy dom / remont',
+    sub: 'Budowa albo remont — instalację zaplanujemy od zera.',
     icon: Hammer,
   },
   {
@@ -149,7 +149,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const getPropertyLabel = (state: PropertyState) => {
     switch (state) {
       case 'deweloperski':
-        return 'Nowa Rezydencja / Remont (deweloperski)';
+        return 'Nowy dom / remont';
       case 'retro':
         return 'Gotowe wnętrze bez kucia (retro)';
       case 'security':

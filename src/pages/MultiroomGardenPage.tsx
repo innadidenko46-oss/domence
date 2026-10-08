@@ -9,9 +9,9 @@ export const MultiroomGardenPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
-        badge="Multimedia &amp; Kino Domowe"
-        title="Dźwięk Wielostrefowy Multiroom &amp; Prywatna Sala Kinowa"
-        description="Dyskretna technologia służąca Twojemu relaksowi. Muzyka płynąca z bezramkowych głośników sufitowych wpuszczonych w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz synchronizacja ze stacją bramową."
+        badge="Muzyka i kino"
+        title="Muzyka w każdym pokoju i kino w salonie"
+        description="Głośniki schowane w suficie, jeden przycisk do filmu i muzyka, która ścisza się, gdy ktoś dzwoni do furtki."
         icon={<Volume2 className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
       />
@@ -35,10 +35,10 @@ export const MultiroomGardenPage: React.FC = () => {
               </div>
               <div className="p-7">
                 <h3 className="font-bold text-lg text-[#111827]">
-                  Głośniki schowane w suficie
+                  Głośniki w suficie, których nie widać
                 </h3>
                 <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
-                  Magnetyczne bezramkowe maskownice malowane pod kolor sufitu sprawiają, że źródło dźwięku w salonie, sypialni czy łazience staje się zupełnie niewidoczne dla oczu.
+                  Maskownice malujemy pod kolor sufitu. W salonie, sypialni czy łazience nie widać, skąd gra muzyka.
                 </p>
               </div>
             </div>
@@ -53,15 +53,15 @@ export const MultiroomGardenPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-sky-400 border border-white/10">
-                  Scena kinowa 1 kliknięcie
+                  Kino jednym przyciskiem
                 </span>
               </div>
               <div className="p-7">
                 <h3 className="font-bold text-lg text-[#111827]">
-                  Atmosfera sali kinowej
+                  Wieczór filmowy bez szukania pilotów
                 </h3>
                 <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
-                  Rolety blackout zjeżdżają w dół, światła powoli wygaszają się do 5%, a dźwięk Dolby Atmos wypełnia przestrzeń jak w prywatnej sali kinowej.
+                  Rolety same się zamykają, światło gaśnie do 5%, a dźwięk wypełnia pokój.
                 </p>
               </div>
             </div>
@@ -76,15 +76,15 @@ export const MultiroomGardenPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#B87333] border border-white/10">
-                  Integracja ze stacją bramową
+                  Dzwonek z furtki
                 </span>
               </div>
               <div className="p-7">
                 <h3 className="font-bold text-lg text-[#111827]">
-                  Automatyczne wyciszanie przy dzwonku
+                  Muzyka cichnie, gdy dzwoni furtka
                 </h3>
                 <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
-                  Gdy kurier dzwoni do furtki, muzyka w strefach automatycznie cichnie, a na ściennym panelu dotykowym pojawia się podgląd wideo.
+                  Gdy kurier dzwoni do furtki, muzyka sama cichnie, a na panelu na ścianie widzisz, kto przyszedł.
                 </p>
               </div>
             </div>
@@ -100,10 +100,10 @@ export const MultiroomGardenPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
-              Kino domowe i strefy audio zintegrowane w jednym systemie
+              Jeden przycisk do filmu: rolety, światło i dźwięk
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-              Zamiast osobnych pilotów do telewizora, rolet, amplitunera i ściemniaczy – w DOMENCE wszystko działa w oparciu o naturalne sceny.
+              Koniec z kilkoma pilotami. Rolety, światło i dźwięk ustawiają się same.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#111827]">
-                    Scena „Seans kinowy” – 1 kliknięcie
+                    „Seans” — jeden przycisk
                   </h3>
                   <span className="text-xs text-[#B87333] font-mono font-semibold">Pełna koordynacja salonu</span>
                 </div>
@@ -150,13 +150,13 @@ export const MultiroomGardenPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#111827]">
-                    Niezależne strefy dźwięku w rezydencji
+                    Muzyka tam, gdzie jesteś
                   </h3>
                   <span className="text-xs text-sky-400 font-mono font-semibold">Muzyka dokładnie tam, gdzie przebywasz</span>
                 </div>
               </div>
               <p className="text-xs sm:text-sm leading-relaxed mb-4 text-[#4B5563]">
-                Każdy domownik słucha ulubionych utworów bez kłótni o głośność i repertuar:
+                Każdy słucha swojego, bez kłótni o głośność:
               </p>
               <ul className="space-y-2.5 text-xs sm:text-sm text-[#374151]">
                 <li className="flex items-center gap-2">
@@ -188,7 +188,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#111827]">
-                    Inżynieryjne wdrożenie dźwięku i sali kinowej
+                    Dźwięk i film — montujemy i ustawiamy
                   </h3>
                   <div className="text-xs text-[#B87333] font-mono mt-0.5">
                     Głośniki sufitowe bezramkowe • Amplitunery AV • Automatyka rolet blackout • Sceny nastrojowe
@@ -199,7 +199,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 to="/kalkulator"
                 className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
-                Wyceń w kalkulatorze
+                Wypełnij ankietę (2 min)
               </Link>
             </div>
           </div>
@@ -212,7 +212,7 @@ export const MultiroomGardenPage: React.FC = () => {
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-[#111827]">
-              Praktyczne Scenariusze Codziennego Dnia
+              Przykłady z życia wzięte
             </div>
           </div>
           <Link

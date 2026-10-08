@@ -18,13 +18,13 @@ export const MultiroomGardenSection: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[2px] bg-[#B87333]/15 border border-[#B87333]/30 text-[#B87333] text-xs font-mono font-bold uppercase tracking-wider mb-3">
             <Volume2 className="w-4 h-4" />
-            <span>Multimedia &amp; Nagłośnienie</span>
+            <span>Muzyka i nagłośnienie</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-[#111827]">
-            Muzyka w każdym pomieszczeniu. Prywatna sala kinowa w salonie.
+            Muzyka w pokojach. Kino w salonie.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-            Dyskretne, bezramkowe głośniki sufitowe wpuszczane w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz bezpośrednie sterowanie jednym dotknięciem.
+            Dostajesz muzykę tam, gdzie jesteś, i film jednym przyciskiem. Głośników prawie nie widać, bo chowają się w suficie.
           </p>
         </div>
 
@@ -65,12 +65,12 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-[#E5E7EB]">
-              <span className="text-xs text-[#9CA3AF] font-mono">Standard architektoniczny</span>
+              <span className="text-xs text-[#9CA3AF] font-mono">Sprawdzony zestaw</span>
               <Link
                 to="/kalkulator"
                 className="text-xs font-mono font-bold text-[#B87333] hover:text-[#A36034] transition-colors"
               >
-                Wyceń w kalkulatorze
+                Wypełnij ankietę (2 min)
               </Link>
             </div>
           </div>
@@ -110,12 +110,12 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-[#E5E7EB]">
-              <span className="text-xs text-[#9CA3AF] font-mono">Dedykowane sceny kinowe</span>
+              <span className="text-xs text-[#9CA3AF] font-mono">Sceny do filmu</span>
               <Link
                 to="/kalkulator"
                 className="text-xs font-mono font-bold transition-colors text-sky-700 hover:text-sky-800"
               >
-                Wyceń w kalkulatorze
+                Wypełnij ankietę (2 min)
               </Link>
             </div>
           </div>

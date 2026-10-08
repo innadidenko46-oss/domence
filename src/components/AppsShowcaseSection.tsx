@@ -27,11 +27,10 @@ export const AppsShowcaseSection: React.FC = () => {
             Aplikacje • Telefon
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Sterowanie światłem, roletami i klimatem z telefonu.
+            Światło, rolety i ogrzewanie z telefonu.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-            Dwie aplikacje do dwóch zadań. Proste w obsłudze dla każdego
-            domownika. Poniżej opisujemy, do czego służy każda z nich.
+            Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
           </p>
         </div>
 
@@ -63,7 +62,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 to="/kalkulator"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
               >
-                <span>Wyceń automatykę w kalkulatorze</span>
+                <span>Wypełnij ankietę (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

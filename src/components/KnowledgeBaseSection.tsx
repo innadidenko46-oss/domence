@@ -10,11 +10,11 @@ export const KnowledgeBaseSection: React.FC = () => {
   );
 
   const categories = [
-    { id: 'all', label: 'Wszystkie Zagadnienia' },
-    { id: 'dzialanie', label: 'Niezawodność & Działanie' },
-    { id: 'koszty', label: 'Koszty & Oszczędności' },
-    { id: 'bezpieczenstwo', label: 'Prywatność & Ochrona' },
-    { id: 'remont', label: 'Instalacja & Remont' },
+    { id: 'all', label: 'Wszystkie pytania' },
+    { id: 'dzialanie', label: 'Czy działa bez awarii' },
+    { id: 'koszty', label: 'Koszty' },
+    { id: 'bezpieczenstwo', label: 'Prywatność' },
+    { id: 'remont', label: 'Montaż i remont' },
   ];
 
   const filteredItems =
@@ -39,11 +39,10 @@ export const KnowledgeBaseSection: React.FC = () => {
             <span>Baza wiedzy i FAQ</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-            Odpowiedzi na kluczowe pytania techniczne.
+            Pytania i odpowiedzi
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-            Konkretne informacje o stabilności instalacji offline, zachowaniu urządzeń podczas burzy, 
-            kosztach eksploatacji i ergonomii codziennego użytkowania.
+            Wiesz, czy dom działa bez internetu, co dzieje się przy burzy, ile kosztuje utrzymanie i czy każdy da sobie radę z obsługą.
           </p>
         </div>
 
@@ -120,7 +119,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                         <div className="flex items-center gap-2 mb-1.5">
                           <ShieldCheck className="w-4 h-4 text-[#B87333] shrink-0" />
                           <span className="text-xs font-bold uppercase tracking-wider text-[#7C4A1F]">
-                            Odpowiedź w pigułce:
+                            Odpowiedź w skrócie:
                           </span>
                         </div>
                         <p className="font-light">
@@ -133,7 +132,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                         <div className="flex items-center gap-2 mb-1.5">
                           <Cpu className="w-3.5 h-3.5 shrink-0 text-slate-600" />
                           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
-                            Aspekty techniczne & integracja:
+                            Więcej szczegółów:
                           </span>
                         </div>
                         <p className="font-mono text-[11px] leading-relaxed">

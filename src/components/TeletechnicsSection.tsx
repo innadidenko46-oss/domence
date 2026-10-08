@@ -43,13 +43,13 @@ export const TeletechnicsSection: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[2px] text-xs font-mono font-bold uppercase tracking-wider mb-3 bg-[#B87333]/15 text-[#B87333] border border-[#B87333]/30">
             <Network className="w-4 h-4" />
-            <span>Teletechnika &amp; Prywatność Rezydencji</span>
+            <span>Kamery i internet w domu</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-[#111827]">
-            Stabilne okablowanie strukturalne i lokalny monitoring 4K.
+            Szybki internet, kamery i domofon — wszystko działa u Ciebie w domu.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
-            Fundament każdego inteligentnego domu: szafa RACK 19", certyfikowane patchcordy kat. 6A, zasilacze buforowe UPS oraz stacja bramowa. Bez abonamentów chmurowych – z pełną suwerennością danych w Twojej sieci lokalnej.
+            Zaczynamy od podstaw: metalowa szafka na sprzęt, dobre kable, zasilanie awaryjne i domofon z kamerą. Nagrania zostają u Ciebie, bez abonamentu.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export const TeletechnicsSection: React.FC = () => {
                       <div>
                         <div className="text-[11px] font-mono font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-[#6B7280]">
                           <HardDrive className="w-4 h-4 text-[#B87333]" />
-                          <span>Zastosowane komponenty sprzętowe:</span>
+                          <span>Co montujemy:</span>
                         </div>
                         <ul className="space-y-2">
                           {service.equipment.map((item, idx) => (
@@ -162,10 +162,10 @@ export const TeletechnicsSection: React.FC = () => {
             </div>
             <div>
               <div className="font-bold text-base text-[#111827]">
-                Certyfikowana szafa RACK 19" z pełną dokumentacją powykonawczą
+                Szafka na sprzęt z dokumentacją i schematami
               </div>
               <div className="text-xs mt-1 leading-relaxed text-[#6B7280]">
-                Wszystkie tory transmisyjne wyprowadzamy na patchpanele kat. 6A i weryfikujemy certyfikowanym miernikiem okablowania.
+                Wszystkie kable opisujemy i sprawdzamy miernikiem. Dostajesz schematy.
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ export const TeletechnicsSection: React.FC = () => {
             to="/kalkulator"
             className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           >
-            Wyceń w kalkulatorze
+            Wypełnij ankietę (2 min)
           </Link>
         </div>
 

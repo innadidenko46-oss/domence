@@ -55,10 +55,10 @@ export const SYSTEM_COMPARISONS: SystemComparison[] = [
   },
   {
     id: 'home_assistant',
-    name: 'Home Assistant (Local-First Pro Integrator)',
+    name: 'Home Assistant (domowy sterownik)',
     tagline: 'Standard DOMENCE: bez abonamentów, lokalny, łączy Shelly Europe + Hikvision + LAN',
     cableType: 'Hybrydowy (LAN + Bezprzewodowy)',
-    bestFor: 'Domy i rezydencje, gdzie liczy się prywatność, zaawansowane scenariusze i zero opłat',
+    bestFor: 'Domy, w których liczy się prywatność, wygoda i brak opłat',
     autonomyOffline: 'Praca w pełni lokalna',
     pros: [
       'Automatyka działa lokalnie nawet po odcięciu internetu; powiadomienia PUSH poza domem i podgląd zdalny wymagają internetu',
@@ -255,7 +255,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     category: 'cctv_tandemvu',
     tagline: 'Dwa obiektywy w jednej kamerze: stały podgląd 180° + obrotowy zoom 32x ze śledzeniem celu',
     keyTech: 'Kanał panoramiczny do ogólnego widoku + moduł obrotowy PTZ z auto-trackingiem',
-    bestUse: 'Teren wokół budynku, wejście główne, brama wjazdowa i podjazd rezydencji',
+    bestUse: 'Teren wokół domu, wejście główne, brama wjazdowa i podjazd',
     highlights: [
       'Górny obiektyw stale monitoruje całą przestrzeń 180° – ograniczenie martwych stref w monitorowanym obszarze',
       'Dolny moduł PTZ z zoomem optycznym 32x automatycznie namierza i podąża za poruszającą się osobą (Smart Tracking 3.0)',
@@ -270,7 +270,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     category: 'intercom_modular',
     tagline: 'Elegancka stacja bramowa ze stali nierdzewnej lub aluminium anodowanego',
     keyTech: 'Kamera 2MP Fisheye 180° WDR + moduły zbliżeniowe Mifare/NFC/Bluetooth + zamek szyfrowy',
-    bestUse: 'Furtka wejściowa, brama frontowa rezydencji, główne wejście do budynku',
+    bestUse: 'Furtka wejściowa, brama frontowa domu, główne wejście do budynku',
     highlights: [
       'Modułowa budowa: zestawienie modułu kamery z klawiaturą PIN, czytnikiem breloków i ekranem lokatorów',
       'Szerokokątna kamera 180° widzi całą sylwetkę osoby stojącej przed furtką oraz paczkę na ziemi',
@@ -409,7 +409,7 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#8B5CF6',
     trigger: 'Komenda głosowa: „Chcę poćwiczyć jogę” lub dedykowany przycisk sceny na ścianie',
     description:
-      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden klawisz. Dom zwykle w ciągu 1–2 sekund w sieci lokalnej przekształca pokój w intymne studio medytacji: ostre światło sufitowe gaśnie, zapalają się ciepłe bursztynowe linie LED, rolety zamykają się, by odciąć spojrzenia z zewnątrz, a z głośników płynie kojący dźwięk.',
+      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden przycisk. Światło przygasa, rolety się zamykają, a z głośników płynie spokojna muzyka. Zwykle wszystko ustawia się w 1–2 sekundy.',
     humanNote:
       'Nie musisz chodzić po pokoju, zaciągać rolet, szukać pilota od klimatyzacji ani włączać głośnika w telefonie. Wypowiadasz jedno zdanie, rozkładasz matę i przechodzisz do ćwiczeń.',
     detailPoints: [
@@ -458,7 +458,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-masteroff',
     number: '03',
-    title: 'Wyjście z domu (Master Off)',
+    title: 'Wyjście z domu („Wyłącz wszystko”)',
     tag: 'Bezpieczeństwo & Wygoda',
     tagColor: '#EF4444',
     trigger: 'Pojedynczy klawisz przy drzwiach wejściowych lub zbliżenie breloka',
@@ -543,7 +543,7 @@ export const SCENARIOS: LifeScenario[] = [
     humanNote:
       'Skala zalania sąsiada i zniszczeń podłogi wartych kilkadziesiąt tysięcy złotych zostaje ograniczona, nawet gdy śpisz lub jesteś na wakacjach.',
     detailPoints: [
-      'Praca Fail-Safe lokalnie, bez zewnętrznej chmury',
+      'Działa w domu, także bez internetu i bez prądu (zawór sam się zamyka)',
       'Zawory kulowe ze sprężyną powrotną odcinające wodę nawet przy braku zasilania',
       'Powiadomienie PUSH na telefon z lokalizacją wycieku',
       'Cykliczne auto-odkamienianie zaworów raz w tygodniu w nocy',
@@ -635,33 +635,33 @@ export const SCENARIOS: LifeScenario[] = [
 export const WORKFLOW_STEPS = [
   {
     number: '01',
-    title: 'Wstępna konfiguracja w kalkulatorze',
-    desc: 'Wybierasz stan inwestycji, metraż i pożądane moduły teletechniczne — wycena liczy się na bieżąco.',
-    humanNote: 'Od razu wiesz, w jakim rzędzie wielkości finansowej się poruszamy. Zero ukrytych kosztów.',
+    title: 'Krótka ankieta o domu',
+    desc: 'Odpowiadasz na 3 pytania i zostawiasz kontakt — oddzwaniamy z propozycją.',
+    humanNote: 'Zajmie Ci to około 2 minut. Nic nie płacisz i do niczego się nie zobowiązujesz.',
   },
   {
     number: '02',
-    title: 'Audyt inżynieryjny na obiekcie – bezpłatny',
-    desc: 'Nasz certyfikowany inżynier weryfikuje rozdzielnicę, puszki, trasy kablowe i przewód N.',
-    humanNote: 'Nie zgadujemy – sprawdzamy fizycznie instalację miernikami, aby wykluczyć niespodzianki.',
+    title: 'Sprawdzenie domu — za darmo',
+    desc: 'Inżynier sprawdza rozdzielnicę, puszki i kable oraz to, czy jest przewód neutralny.',
+    humanNote: 'Nie zgadujemy — sprawdzamy instalację miernikami, żeby nie było niespodzianek.',
   },
   {
     number: '03',
-    title: 'Projekt i transparentna wycena',
-    desc: 'Szczegółowy wykaz urządzeń, rzetelny kosztorys oraz przejrzysty harmonogram robót.',
-    humanNote: 'Jasne zasady od samego początku – wiesz dokładnie, co i za ile zostanie zainstalowane.',
+    title: 'Plan i cena na piśmie',
+    desc: 'Lista urządzeń, cena i terminy.',
+    humanNote: 'Wiesz, co i za ile montujemy, zanim zaczniemy.',
   },
   {
     number: '04',
-    title: 'Czysty montaż bez pyłu',
-    desc: 'Praca z odsysaniem pyłu, dbałość o wykończenie wnętrz i trwałe oznakowanie obwodów.',
-    humanNote: 'Wchodzimy w ochraniaczach na obuwie. Po skończonej pracy zostawiamy porządek.',
+    title: 'Montaż bez kurzu',
+    desc: 'Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i opisujemy obwody.',
+    humanNote: 'Wkładamy ochraniacze na buty. Po pracy sprzątamy.',
   },
   {
     number: '05',
-    title: 'Test fail-safe, uruchomienie i szkolenie',
-    desc: 'Demonstrujemy działanie systemu, konfigurujemy aplikacje i przekazujemy przejrzystą dokumentację.',
-    humanNote: 'Upewniamy się, że każdy domownik swobodnie korzysta z nowych funkcji i czuje się bezpiecznie.',
+    title: 'Start, sprawdzenie awarii i nauka obsługi',
+    desc: 'Pokazujemy, jak wszystko działa, ustawiamy aplikacje i dajemy proste instrukcje.',
+    humanNote: 'Sprawdzamy, czy każdy domownik umie zapalić światło, otworzyć furtkę i podejrzeć kamery.',
   },
 ];
 
@@ -727,7 +727,7 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const SMART_MODULES: SmartModule[] = [
   {
     id: 'water_shield',
-    name: 'Zawór odcinający wodę + czujniki (Fail-Safe)',
+    name: 'Zawór odcinający wodę + czujniki (bezpieczny przy awarii)',
     badge: 'Kluczowe',
     description: 'Mechaniczne odcięcie głównego zaworu wody po wykryciu wycieku. Działa bez internetu.',
     humanExplanation: 'Czujnik pod pralką po wykryciu wycieku zakręca główny zawór wody. Ogranicza to ryzyko zalania podłogi.',
@@ -737,7 +737,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'master_off',
-    name: 'Scenariusz „Wyłącz wszystko” (Master Off)',
+    name: 'Scenariusz „Wyłącz wszystko” (jeden przycisk przy drzwiach)',
     badge: 'Must have',
     description: 'Jeden przycisk przy drzwiach gasi oświetlenie i odłącza zasilanie żelazka, płyty i ekspresu.',
     humanExplanation: 'Po naciśnięciu klawisza przy drzwiach, wyłączane jest oświetlenie, odcinane zasilanie wybranych urządzeń i zamykane rolety.',
@@ -891,7 +891,7 @@ export const PACKAGES: PackageOffer[] = [
     badgeType: 'standard',
     timeframe: '1–2 dni robocze',
     description: 'Całościowa kontrola bramy i furtki, eliminacja fałszywych alarmów z AcuSense AI, bezpłatny podgląd wideo 4K bez abonamentu.',
-    humanSummary: 'Pełen spokój przy wejściu: wiesz, kto dzwoni, otwierasz furtkę telefonem i masz pewność, że posesja jest pod stałą dyskretną ochroną kamer ColorVu.',
+    humanSummary: 'Wiesz, kto dzwoni do furtki, otwierasz ją telefonem, a kamery zapisują obraz w domu.',
     priceNetto: 5300,
     priceBrutto: 6519,
     recommendedFor: 'security',
@@ -912,28 +912,28 @@ export const PACKAGES: PackageOffer[] = [
     badgeType: 'bestseller',
     timeframe: '1–2 dni robocze',
     description: 'Kompletna automatyka Shelly Plus bez kurzu i bez niszczenia gładzi. Zabezpieczenie przed zalaniem, oświetlenie, rolety i sceny jogi.',
-    humanSummary: 'Przekształcamy gotowe mieszkanie lub dom w nowoczesny smart home w 48 godzin. Twoje ściany i płytki pozostają nienaruszone.',
+    humanSummary: 'Z gotowego mieszkania robimy dom sterowany telefonem w 1–2 dni. Ściany i płytki zostają całe.',
     priceNetto: 6900,
     priceBrutto: 8487,
     recommendedFor: 'retro',
     features: [
       '6x mikromodułów dopuszkowych Shelly Plus z pomiarem zużycia prądu',
       '2x cyfrowe ściemniacze oświetlenia LED bez efektu migotania z trybem nocnym',
-      'Ochrona przed zalaniem fail-safe: 3 sensory zalania + siłownik zaworu kulowego (zamknięcie zaworu zwykle w kilka sekund)',
+      'Ochrona przed zalaniem (bezpieczna przy awarii): 3 czujniki zalania + siłownik zaworu (zamknięcie zaworu zwykle w kilka sekund)',
       'Sterowanie roletami ze sceną „Chcę poćwiczyć jogę” i „Budzenie słońcem”',
       'Lokalna centrala Home Assistant Pro (przetwarzanie lokalne, bez chmury)',
-      'Scenariusz Master Off („Wyjdź z domu”) przy drzwiach wejściowych',
+      'Przycisk „Wyjdź z domu” przy drzwiach wejściowych',
       'Czysty montaż z minimalną ingerencją w tynki, z odciągiem z filtrem HEPA H13 w 1–2 dni robocze',
     ],
   },
   {
     id: 'developer_din',
-    title: 'Shelly Pro Rezydencja (Szyna DIN + Rozdzielnica Modułowa)',
+    title: 'Shelly Pro do nowego domu (moduły w rozdzielnicy)',
     categoryBadge: 'Pełny Standard Inżynieryjny',
     badgeType: 'premium',
     timeframe: '3–5 dni roboczych',
     description: 'Przewodowe moduły Shelly Pro DIN w rozdzielnicy elektrycznej, serwer Home Assistant, automatyka rolet i oświetlenia oraz szafa teletechniczna RACK.',
-    humanSummary: 'Najwyższy standard dla nowo budowanych domów: trwałość na dekady, niezawodne połączenia kablowe LAN RJ45, certyfikowana rozdzielnica i pełna dokumentacja powykonawcza.',
+    humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i schematy na końcu.',
     priceNetto: 13900,
     priceBrutto: 17097,
     recommendedFor: 'deweloperski',
@@ -941,10 +941,10 @@ export const PACKAGES: PackageOffer[] = [
       'Moduły przekaźnikowe i ściemniacze Shelly Pro na szynę DIN w rozdzielnicy',
       'Bezpośrednia łączność sieciowa Ethernet LAN RJ45 dla każdego modułu automatyki',
       'Sterownik strefowego ogrzewania podłogowego dla 6-8 niezależnych obwodów',
-      '2x zawory kulowe ze stali nierdzewnej 230V ze sprężyną powrotną Fail-Safe',
+      '2x zawory ze stali nierdzewnej 230V z samoczynnym zamknięciem bez prądu',
       'Kompletna szafka teletechniczna RACK 19" z panelem krosowym i switchem PoE',
       'Prefabrykacja i czytelne znakowanie rozdzielnicy z ochroną przeciwprzepięciową T1+T2',
-      'Pełne wdrożenie scenariuszy: Joga, Poranne Budzenie Słońcem, Master Off, Kino Domowe',
+      'Pełne ustawienie przykładów: joga, pobudka, wyjście z domu, kino',
     ],
   },
 ];
@@ -1097,7 +1097,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
     badge: 'Touch-to-Open • Atest SKG***',
     techStack: 'LOQED Touch Smart Lock 2s / Shelly BLE Mesh / Bluetooth 5.3',
     summary:
-      'Drzwi otwierasz dotykiem klamki, gdy telefon masz w kieszeni, albo ze smartfona i kodem PIN na zamku. Zamek współpracuje z ekosystemem Shelly, a europejski certyfikat SKG*** potwierdza wysoką odporność na włamania.',
+      'Drzwi otwierasz dotykiem klamki, gdy telefon masz w kieszeni, albo ze smartfona i kodem PIN na zamku. Zamek współpracuje z modułami Shelly, a europejski certyfikat SKG*** potwierdza wysoką odporność na włamania.',
     humanBenefit:
       'Wracasz z zakupami w obu rękach — dotykasz klamki łokciem i drzwi się otwierają. Możesz też nadać jednorazowy kod PIN gościom lub ekipie remontowej.',
     keyPoints: [

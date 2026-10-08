@@ -27,11 +27,10 @@ export const TopSellingScenariosSection: React.FC = () => {
             Scenariusze • Shelly i Hikvision
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Scenariusze codziennego komfortu i bezpieczeństwa.
+            4 rzeczy, które dom robi za Ciebie.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
-            Cztery gotowe pomysły na automatykę. Każdy działa lokalnie, w sieci
-            domowej. Wybierz ten, który pasuje do Twojego domu.
+            Cztery przykłady z gotowych domów. Każdy działa u Ciebie, także bez internetu.
           </p>
         </div>
 
@@ -49,7 +48,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                 {sc.description}
               </p>
               <p className="mt-3 text-xs text-slate-600">
-                <span className="font-semibold text-slate-900">Kiedy działa: </span>
+                <span className="font-semibold text-slate-900">Kiedy to działa: </span>
                 {sc.trigger}
               </p>
               <p className="mt-2 text-xs leading-relaxed text-slate-600">
@@ -61,7 +60,7 @@ export const TopSellingScenariosSection: React.FC = () => {
                   to="/kontakt"
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
                 >
-                  <span>Zapytaj o ten scenariusz</span>
+                  <span>Zapytaj inżyniera</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
