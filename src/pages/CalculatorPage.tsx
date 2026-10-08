@@ -8,7 +8,6 @@ import { PropertyState } from '../types.ts';
 export const CalculatorPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const stateParam = searchParams.get('state') as PropertyState | null;
-  const isDay = true;
 
   const [propertyState, setPropertyState] = useState<PropertyState>(
     stateParam && ['deweloperski', 'retro', 'security', 'commercial'].includes(stateParam)
@@ -28,9 +27,7 @@ export const CalculatorPage: React.FC = () => {
   };
 
   return (
-    <div className={`transition-colors duration-300 ${
-      isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
-    }`}>
+    <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
         badge="Krótka ankieta"
         title="Krótka ankieta: dobierzemy zestaw pod Twój dom"

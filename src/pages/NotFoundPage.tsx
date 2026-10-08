@@ -4,14 +4,8 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { FileQuestion } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
-  const isDay = true;
-
   return (
-    <div
-      className={`transition-colors duration-300 ${
-        isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
-      }`}
-    >
+    <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
         badge="Błąd 404"
         title="Nie znaleziono strony"
@@ -20,9 +14,7 @@ export const NotFoundPage: React.FC = () => {
       />
       <section className="py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p
-            className={`text-sm mb-8 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}
-          >
+          <p className="text-sm mb-8 text-[#4B5563]">
             Sprawdź poprawność adresu albo skorzystaj z nawigacji.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -34,13 +26,9 @@ export const NotFoundPage: React.FC = () => {
             </Link>
             <Link
               to="/kalkulator"
-              className={`px-6 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider transition-colors ${
-                isDay
-                  ? 'bg-white border-[#D1D5DB] text-[#111827] hover:bg-[#F3F4F6]'
-                  : 'bg-[#27272A] border-white/10 text-white hover:bg-[#3F3F46]'
-              }`}
+              className="px-6 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider transition-colors bg-white border-[#D1D5DB] text-[#111827] hover:bg-[#F3F4F6]"
             >
-              Przejdź do kalkulatora
+              Przejdź do ankiety
             </Link>
           </div>
         </div>

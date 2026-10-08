@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
-  const isDay = true;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -38,9 +37,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className={`transition-colors duration-300 ${
-      isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
-    }`}>
+    <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
         badge="Bezpośredni Kontakt"
         title="Skonsultuj projekt instalacji z inżynierem"
@@ -56,14 +53,10 @@ export const ContactPage: React.FC = () => {
             {/* Contact Details & Office */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <h2 className={`text-xl sm:text-2xl font-bold tracking-tight mb-2 ${
-                  isDay ? 'text-[#111827]' : 'text-white'
-                }`}>
+                <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-2 text-[#111827]">
                   Dział inżynierii i prefabrykacji
                 </h2>
-                <p className={`text-xs sm:text-sm leading-[1.7] ${
-                  isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
-                }`}>
+                <p className="text-xs sm:text-sm leading-[1.7] text-[#4B5563]">
                   Realizujemy instalacje na terenie Warszawy, Konstancina, Wilanowa i Podkowy Leśnej. Większe rezydencje realizujemy w całej Polsce po zdalnym audycie.
                 </p>
               </div>
@@ -71,11 +64,7 @@ export const ContactPage: React.FC = () => {
               {/* Direct Info Cards with 2px radius */}
               <div className="space-y-3">
                 <div
-                  className={`flex items-start gap-4 p-5 rounded-[2px] border transition-colors group ${
-                    isDay
-                      ? 'bg-white border-[#E5E7EB]'
-                      : 'bg-[#27272A]/40 border-white/10'
-                  }`}
+                  className="flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-[#E5E7EB]"
                 >
                   <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
@@ -84,7 +73,7 @@ export const ContactPage: React.FC = () => {
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
                       Kontakt z inżynierem
                     </div>
-                    <div className={`text-base font-bold font-mono transition-colors mt-0.5 ${isDay ? 'text-[#111827]' : 'text-white'} group-hover:text-[#B87333]`}>
+                    <div className="text-base font-bold font-mono transition-colors mt-0.5 text-[#111827] group-hover:text-[#B87333]">
                       Kontakt przez formularz lub e-mail
                     </div>
                     <div className="text-[11px] text-[#B87333] font-mono mt-0.5">
@@ -95,11 +84,7 @@ export const ContactPage: React.FC = () => {
 
                 <a
                   href="mailto:kontakt@domence.pl"
-                  className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group ${
-                    isDay
-                      ? 'bg-white border-[#E5E7EB] hover:border-[#B87333]'
-                      : 'bg-[#27272A]/40 border-white/10 hover:border-[#B87333]'
-                  }`}
+                  className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-[#E5E7EB] hover:border-[#B87333]"
                 >
                   <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
@@ -108,7 +93,7 @@ export const ContactPage: React.FC = () => {
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
                       Analiza Projektów Budowlanych
                     </div>
-                    <div className={`text-base font-bold group-hover:text-[#B87333] transition-colors mt-0.5 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                    <div className="text-base font-bold group-hover:text-[#B87333] transition-colors mt-0.5 text-[#111827]">
                       kontakt@domence.pl
                     </div>
                     <div className="text-[11px] text-[#9CA3AF] mt-0.5 font-mono">
@@ -117,11 +102,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </a>
 
-                <div className={`flex items-start gap-4 p-5 rounded-[2px] border ${
-                  isDay
-                    ? 'bg-white border-[#E5E7EB]'
-                    : 'bg-[#27272A]/40 border-white/10'
-                }`}>
+                <div className="flex items-start gap-4 p-5 rounded-[2px] border bg-white border-[#E5E7EB]">
                   <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -129,7 +110,7 @@ export const ContactPage: React.FC = () => {
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
                       Obszar realizacji
                     </div>
-                    <div className={`text-sm font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                    <div className="text-sm font-bold text-[#111827]">
                       Warszawa i okolice; większe rezydencje — cała Polska
                     </div>
                     <div className="text-xs text-[#9CA3AF] mt-0.5">
@@ -140,16 +121,12 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {/* Authority and Trust Guarantee Box */}
-              <div className={`p-6 rounded-[2px] border ${
-                isDay
-                  ? 'bg-white border-[#E5E7EB]'
-                  : 'bg-[#27272A]/40 border-white/10'
-              }`}>
+              <div className="p-6 rounded-[2px] border bg-white border-[#E5E7EB]">
                 <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333] mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Standard Współpracy DOMENCE</span>
                 </h4>
-                <ul className={`space-y-2 text-xs ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                <ul className="space-y-2 text-xs text-[#374151]">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Bezpłatna analiza przesłanych rzutów i dokumentacji</span>
@@ -169,17 +146,13 @@ export const ContactPage: React.FC = () => {
 
             {/* Direct Form */}
             <div className="lg:col-span-7">
-              <div className={`p-8 sm:p-10 rounded-[2px] border shadow-xl ${
-                isDay
-                  ? 'bg-white border-[#E5E7EB]'
-                  : 'bg-[#27272A]/50 border-white/10'
-              }`}>
+              <div className="p-8 sm:p-10 rounded-[2px] border shadow-xl bg-white border-[#E5E7EB]">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h3 className={`text-2xl font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                    <h3 className="text-2xl font-bold mb-2 text-[#111827]">
                       Dziękujemy za kontakt!
                     </h3>
                     <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto leading-relaxed">
@@ -196,7 +169,7 @@ export const ContactPage: React.FC = () => {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <h3 className={`text-xl font-bold mb-1 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                      <h3 className="text-xl font-bold mb-1 text-[#111827]">
                         Wyślij zapytanie o projekt instalacji
                       </h3>
                       <p className="text-xs text-[#9CA3AF]">
@@ -206,7 +179,7 @@ export const ContactPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="contact-name" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-name" className="block text-xs font-semibold mb-1 text-[#374151]">
                           Imię i Nazwisko *
                         </label>
                         <input
@@ -220,16 +193,12 @@ export const ContactPage: React.FC = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
                           placeholder="np. Jan Kowalski"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
-                            isDay
-                              ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
-                              : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
-                          }`}
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="contact-phone" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-phone" className="block text-xs font-semibold mb-1 text-[#374151]">
                           Numer Telefonu *
                         </label>
                         <input
@@ -244,18 +213,14 @@ export const ContactPage: React.FC = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
                           placeholder="np. 500 600 700"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
-                            isDay
-                              ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
-                              : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
-                          }`}
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="contact-email" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-email" className="block text-xs font-semibold mb-1 text-[#374151]">
                           Adres E-mail *
                         </label>
                         <input
@@ -268,16 +233,12 @@ export const ContactPage: React.FC = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="inwestor@dom.pl"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
-                            isDay
-                              ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
-                              : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
-                          }`}
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="contact-location" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-location" className="block text-xs font-semibold mb-1 text-[#374151]">
                           Lokalizacja Inwestycji
                         </label>
                         <input
@@ -288,17 +249,13 @@ export const ContactPage: React.FC = () => {
                           value={formData.location}
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                           placeholder="np. Warszawa / Konstancin"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
-                            isDay
-                              ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
-                              : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
-                          }`}
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                      <label className="block text-xs font-semibold mb-1 text-[#374151]">
                         Wiadomość / Krótki opis założeń projektu
                       </label>
                       <textarea
@@ -306,11 +263,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Napisz, jaki jest metraż domu, czy posiadasz już projekt elektryczny i na czym najbardziej Ci zależy (oświetlenie, kamery, kino, rolety)..."
-                        className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 leading-relaxed ${
-                          isDay
-                            ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
-                            : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
-                        }`}
+                        className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 leading-relaxed bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]"
                       />
                     </div>
 

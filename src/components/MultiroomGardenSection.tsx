@@ -9,12 +9,9 @@ import {
 import { Link } from 'react-router-dom';
 
 export const MultiroomGardenSection: React.FC = () => {
-  const isDay = true;
 
   return (
-    <section id="multimedia-kino" className={`py-24 relative overflow-hidden border-t transition-colors duration-300 ${
-      isDay ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]' : 'bg-[#18181B] border-[#27272A] text-[#F3F4F6]'
-    }`}>
+    <section id="multimedia-kino" className="py-24 relative overflow-hidden border-t transition-colors duration-300 bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -23,14 +20,10 @@ export const MultiroomGardenSection: React.FC = () => {
             <Volume2 className="w-4 h-4" />
             <span>Multimedia &amp; Nagłośnienie</span>
           </div>
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] ${
-            isDay ? 'text-[#111827]' : 'text-white'
-          }`}>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-[#111827]">
             Muzyka w każdym pomieszczeniu. Prywatna sala kinowa w salonie.
           </h2>
-          <p className={`mt-3 text-sm sm:text-base leading-[1.7] ${
-            isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
-          }`}>
+          <p className="mt-3 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
             Dyskretne, bezramkowe głośniki sufitowe wpuszczane w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz bezpośrednie sterowanie jednym dotknięciem.
           </p>
         </div>
@@ -38,38 +31,32 @@ export const MultiroomGardenSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Card 1: Multiroom Audio */}
-          <div className={`rounded-[2px] border p-7 sm:p-8 flex flex-col justify-between ${
-            isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#27272A]/40 border-white/10'
-          }`}>
+          <div className="rounded-[2px] border p-7 sm:p-8 flex flex-col justify-between bg-white border-[#E5E7EB]">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
                   <Music2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className={`text-xl sm:text-2xl font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111827]">
                     {HOME_MULTIMEDIA.audio.title}
                   </h3>
                   <div className="text-xs text-[#B87333] font-mono mt-0.5">Apple AirPlay 2 • Spotify Connect • Multi-Zone</div>
                 </div>
               </div>
 
-              <p className={`text-xs sm:text-sm leading-[1.7] mb-5 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
+              <p className="text-xs sm:text-sm leading-[1.7] mb-5 text-[#4B5563]">
                 {HOME_MULTIMEDIA.audio.desc}
               </p>
 
-              <div className={`p-4 rounded-[2px] border text-xs leading-relaxed mb-6 ${
-                isDay ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]' : 'bg-[#18181B] border-white/5 text-[#D1D5DB]'
-              }`}>
+              <div className="p-4 rounded-[2px] border text-xs leading-relaxed mb-6 bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
                 <span className="font-bold text-[#B87333] font-mono text-[11px] uppercase block mb-1">W praktyce:</span>
                 {HOME_MULTIMEDIA.audio.humanNote}
               </div>
 
               <div className="space-y-2.5">
                 {HOME_MULTIMEDIA.audio.features.map((feat, i) => (
-                  <div key={i} className={`flex items-start gap-2.5 text-xs sm:text-sm ${
-                    isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'
-                  }`}>
+                  <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#374151]">
                     <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                     <span>{feat}</span>
                   </div>
@@ -77,7 +64,7 @@ export const MultiroomGardenSection: React.FC = () => {
               </div>
             </div>
 
-            <div className={`mt-8 pt-4 border-t flex items-center justify-between ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
+            <div className="mt-8 pt-4 border-t flex items-center justify-between border-[#E5E7EB]">
               <span className="text-xs text-[#9CA3AF] font-mono">Standard architektoniczny</span>
               <Link
                 to="/kalkulator"
@@ -89,50 +76,44 @@ export const MultiroomGardenSection: React.FC = () => {
           </div>
 
           {/* Card 2: Home Cinema */}
-          <div className={`rounded-[2px] border p-7 sm:p-8 flex flex-col justify-between ${
-            isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#27272A]/40 border-white/10'
-          }`}>
+          <div className="rounded-[2px] border p-7 sm:p-8 flex flex-col justify-between bg-white border-[#E5E7EB]">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 ${isDay ? 'bg-sky-100 text-sky-700' : 'bg-sky-500/20 text-sky-400'}`}>
+                <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 bg-sky-100 text-sky-700">
                   <Film className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className={`text-xl sm:text-2xl font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111827]">
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className={`text-xs font-mono mt-0.5 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>Dolby Atmos • Rolety Blackout • HDMI eARC</div>
+                  <div className="text-xs font-mono mt-0.5 text-sky-700">Dolby Atmos • Rolety Blackout • HDMI eARC</div>
                 </div>
               </div>
 
-              <p className={`text-xs sm:text-sm leading-[1.7] mb-5 ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
+              <p className="text-xs sm:text-sm leading-[1.7] mb-5 text-[#4B5563]">
                 {HOME_MULTIMEDIA.cinema.desc}
               </p>
 
-              <div className={`p-4 rounded-[2px] border text-xs leading-relaxed mb-6 ${
-                isDay ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]' : 'bg-[#18181B] border-white/5 text-[#D1D5DB]'
-              }`}>
-                <span className={`font-bold font-mono text-[11px] uppercase block mb-1 ${isDay ? 'text-sky-700' : 'text-sky-400'}`}>W praktyce:</span>
+              <div className="p-4 rounded-[2px] border text-xs leading-relaxed mb-6 bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
+                <span className="font-bold font-mono text-[11px] uppercase block mb-1 text-sky-700">W praktyce:</span>
                 {HOME_MULTIMEDIA.cinema.humanNote}
               </div>
 
               <div className="space-y-2.5">
                 {HOME_MULTIMEDIA.cinema.features.map((feat, i) => (
-                  <div key={i} className={`flex items-start gap-2.5 text-xs sm:text-sm ${
-                    isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'
-                  }`}>
-                    <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${isDay ? 'text-sky-700' : 'text-sky-400'}`} />
+                  <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#374151]">
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-sky-700" />
                     <span>{feat}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className={`mt-8 pt-4 border-t flex items-center justify-between ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
+            <div className="mt-8 pt-4 border-t flex items-center justify-between border-[#E5E7EB]">
               <span className="text-xs text-[#9CA3AF] font-mono">Dedykowane sceny kinowe</span>
               <Link
                 to="/kalkulator"
-                className={`text-xs font-mono font-bold transition-colors ${isDay ? 'text-sky-700 hover:text-sky-800' : 'text-sky-400 hover:text-sky-300'}`}
+                className="text-xs font-mono font-bold transition-colors text-sky-700 hover:text-sky-800"
               >
                 Wyceń w kalkulatorze
               </Link>

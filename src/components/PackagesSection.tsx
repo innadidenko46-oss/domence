@@ -10,12 +10,9 @@ interface PackagesSectionProps {
 }
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackage }) => {
-  const isDay = true;
 
   return (
-    <section id="pakiety" className={`py-24 border-t transition-colors ${
-      isDay ? 'bg-[#F9FAFB] border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
-    }`}>
+    <section id="pakiety" className="py-24 border-t transition-colors bg-[#F9FAFB] border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -24,14 +21,10 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
             <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
             <span>Kalkulacja Kosztów • Gwarancja Stałej Ceny</span>
           </div>
-          <h2 className={`font-display text-3xl sm:text-5xl font-bold tracking-tight ${
-            isDay ? 'text-[#111827]' : 'text-[#F3F4F6]'
-          }`}>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-[#111827]">
             Pakiety wdrożeniowe „pod klucz”
           </h2>
-          <p className={`mt-4 text-sm sm:text-base ${
-            isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
-          }`}>
+          <p className="mt-4 text-sm sm:text-base text-[#4B5563]">
             Osprzęt Shelly i Hikvision + montaż DOMENCE + rozdzielnica + 24 miesiące gwarancji.
           </p>
         </div>
@@ -47,13 +40,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 transition={{ duration: 0.15 }}
                 className={`relative rounded-[2px] p-7 sm:p-8 flex flex-col justify-between transition-all ${
                   isBestseller
-                    ? isDay
-                      ? 'bg-white border-2 border-[#B87333] shadow-md'
-                      : 'bg-[#27272A] border-2 border-[#B87333] shadow-md'
-                    : isDay
-                      ? 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'
-                      : 'bg-[#202024] border border-[#2E2E33] hover:border-[#3F3F46] shadow-sm'
-                }`}
+                    ? 'bg-white border-2 border-[#B87333] shadow-md': 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'}`}
               >
                 {/* Top Bestseller Badge */}
                 {isBestseller && (
@@ -69,73 +56,52 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                       className={`text-[10px] font-mono font-semibold uppercase px-2.5 py-0.5 rounded-[2px] border ${
                         isBestseller
                           ? 'bg-[#B87333]/15 text-[#B87333] border-[#B87333]/30'
-                          : isDay
-                            ? 'bg-[#F3F4F6] text-[#4B5563] border-[#E5E7EB]'
-                            : 'bg-white/5 text-[#A1A1AA] border-white/10'
-                      }`}
+                          : 'bg-[#F3F4F6] text-[#4B5563] border-[#E5E7EB]'}`}
                     >
                       {pkg.categoryBadge}
                     </span>
-                    <div className={`flex items-center gap-1.5 text-xs font-mono ${
-                      isDay ? 'text-[#6B7280]' : 'text-[#71717A]'
-                    }`}>
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-[#6B7280]">
                       <Clock className="w-3.5 h-3.5 text-[#B87333]" />
                       <span>{pkg.timeframe}</span>
                     </div>
                   </div>
 
-                  <h3 className={`font-display text-xl sm:text-2xl font-bold ${
-                    isDay ? 'text-[#111827]' : 'text-[#F4F4F5]'
-                  }`}>
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111827]">
                     {pkg.title}
                   </h3>
-                  <p className={`text-xs mt-2 leading-relaxed ${
-                    isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
-                  }`}>
+                  <p className="text-xs mt-2 leading-relaxed text-[#4B5563]">
                     {pkg.description}
                   </p>
 
                   {/* Summary Box */}
-                  <div className={`mt-3 p-3 rounded-[2px] border text-[11px] leading-relaxed ${
-                    isDay
-                      ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]'
-                      : 'bg-[#18181B] border-white/5 text-[#D4D4D8]'
-                  }`}>
+                  <div className="mt-3 p-3 rounded-[2px] border text-[11px] leading-relaxed bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
                     <span className="font-bold text-[#B87333] block mb-0.5">Co robimy:</span>
                     {pkg.humanSummary}
                   </div>
 
                   {/* Price Box */}
-                  <div className={`mt-6 pb-6 border-b ${
-                    isDay ? 'border-[#E5E7EB]' : 'border-[#2E2E33]'
-                  }`}>
+                  <div className="mt-6 pb-6 border-b border-[#E5E7EB]">
                     <div className="flex items-baseline gap-1.5">
                       <span className="text-xs text-[#71717A]">od</span>
-                      <span className={`font-display text-3xl sm:text-4xl font-extrabold ${
-                        isDay ? 'text-[#111827]' : 'text-[#FFFFFF]'
-                      }`}>
+                      <span className="font-display text-3xl sm:text-4xl font-extrabold text-[#111827]">
                         {pkg.priceNetto.toLocaleString('pl-PL')}
                       </span>
                       <span className="text-xs font-semibold text-[#71717A]">PLN netto</span>
                     </div>
-                    <div className={`text-[11px] mt-1 font-mono ${
-                      isDay ? 'text-[#6B7280]' : 'text-[#A1A1AA]'
-                    }`}>
+                    <div className="text-[11px] mt-1 font-mono text-[#6B7280]">
                       {pkg.priceBrutto.toLocaleString('pl-PL')} PLN brutto (z VAT 23%)
                     </div>
                   </div>
 
                   {/* Features List */}
                   <div className="mt-6 space-y-2.5">
-                    <div className={`text-[11px] font-mono font-bold uppercase tracking-wider ${
-                      isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
-                    }`}>
+                    <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#4B5563]">
                       Zakres wdrożenia:
                     </div>
                     {pkg.features.map((feat, i) => (
                       <div key={i} className="flex items-start gap-2.5 text-xs">
                         <Check className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
-                        <span className={`leading-snug ${isDay ? 'text-[#374151]' : 'text-[#D4D4D8]'}`}>
+                        <span className="leading-snug text-[#374151]">
                           {feat}
                         </span>
                       </div>
@@ -149,10 +115,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   className={`mt-8 w-full py-3.5 rounded-[2px] font-bold text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 cursor-pointer border ${
                     isBestseller
                       ? 'bg-[#B87333] hover:bg-[#A36034] text-white border-[#C27A4E]/40'
-                      : isDay
-                        ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] text-[#111827] border-[#D1D5DB]'
-                        : 'bg-[#27272A] hover:bg-[#3F3F46] text-[#F4F4F5] border-white/10'
-                  }`}
+                      : 'bg-[#F3F4F6] hover:bg-[#E5E7EB] text-[#111827] border-[#D1D5DB]'}`}
                 >
                   <span>Wybierz pakiet</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -164,7 +127,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
 
         {/* Custom Solution Note */}
         <div className="mt-12 text-center">
-          <p className={`text-xs ${isDay ? 'text-[#6B7280]' : 'text-[#71717A]'}`}>
+          <p className="text-xs text-[#6B7280]">
             Potrzebujesz integracji z pompą ciepła, modułami Shelly Pro, monitoringiem 4K lub nietypowym systemem bramowym?{' '}
             <Link to="/kalkulator" className="text-[#B87333] underline hover:text-[#A36034]">
               Wyceń w kalkulatorze

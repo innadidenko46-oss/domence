@@ -7,7 +7,6 @@ import { Logo } from './Logo.tsx';
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isDay = true;
   const location = useLocation();
 
   useEffect(() => {
@@ -48,31 +47,24 @@ export const Navbar: React.FC = () => {
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 h-[68px] flex items-center ${
-          isDay
-            ? isScrolled
+          isScrolled
               ? 'bg-[#F9FAFB]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-sm'
-              : 'bg-[#F9FAFB]/90 backdrop-blur-sm border-b border-[#E5E7EB]'
-            : isScrolled
-              ? 'bg-[#18181B]/95 backdrop-blur-md border-b border-[#27272A] shadow-sm'
-              : 'bg-[#18181B]/90 backdrop-blur-sm border-b border-[#27272A]'
-        }`}
+              : 'bg-[#F9FAFB]/90 backdrop-blur-sm border-b border-[#E5E7EB]'}`}
       >
         <div className="max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2 w-full">
           
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 transition-transform active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+            className="flex items-center group shrink-0 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
-            <Logo size="sm" variant={isDay ? 'dark' : 'light'} showSubtitle={true} />
+            <Logo size="sm" variant={'dark'} showSubtitle={true} />
           </Link>
 
           {/* Desktop Navigation: ALL ITEMS ON A SINGLE ROW WITHOUT DROPDOWNS */}
-          <nav className={`hidden xl:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-semibold uppercase tracking-wider ${
-            isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
-          }`}>
+          <nav className="hidden xl:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#4B5563]">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
@@ -80,13 +72,7 @@ export const Navbar: React.FC = () => {
                 className={({ isActive }) =>
                   `px-2.5 xl:px-3 py-1.5 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
                     isActive
-                      ? isDay
-                        ? 'text-[#B87333] bg-[#B87333]/10 font-bold border border-[#B87333]/25'
-                        : 'text-[#C27A4E] bg-[#B87333]/15 font-bold border border-[#B87333]/30'
-                      : isDay
-                        ? 'hover:text-[#111827] hover:bg-[#F3F4F6]'
-                        : 'hover:text-[#F4F4F5] hover:bg-[#27272A]'
-                  }`
+                      ? 'text-[#B87333] bg-[#B87333]/10 font-bold border border-[#B87333]/25': 'hover:text-[#111827] hover:bg-[#F3F4F6]'}`
                 }
               >
                 {link.label}
@@ -98,11 +84,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
             <Link
               to="/kontakt"
-              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap ${
-                isDay
-                  ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151] hover:text-[#B87333]'
-                  : 'bg-[#27272A] hover:bg-[#3F3F46] border-white/10 text-[#D4D4D8] hover:text-[#C27A4E]'
-              }`}
+              className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151] hover:text-[#B87333]"
             >
               <Phone className="w-3.5 h-3.5 text-[#B87333]" />
               <span>Kontakt</span>
@@ -121,11 +103,7 @@ export const Navbar: React.FC = () => {
           <div className="flex sm:hidden items-center gap-1.5">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border ${
-                isDay
-                  ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]'
-                  : 'bg-[#27272A] border-white/10 text-[#F4F4F5] hover:text-white'
-              }`}
+              className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]"
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -147,11 +125,7 @@ export const Navbar: React.FC = () => {
             id="mobile-menu"
             role="dialog"
             aria-label="Menu mobilne"
-            className={`fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto ${
-              isDay
-                ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]'
-                : 'bg-[#18181B] border-[#27272A] text-[#F3F4F6]'
-            }`}
+            className="fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -163,10 +137,7 @@ export const Navbar: React.FC = () => {
                     `text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
                       isActive
                         ? 'bg-[#B87333]/15 text-[#B87333] font-bold border border-[#B87333]/30'
-                        : isDay
-                          ? 'text-[#374151] hover:text-[#111827] hover:bg-[#F3F4F6]'
-                          : 'text-[#D4D4D8] hover:text-white hover:bg-[#27272A]'
-                    }`
+                        : 'text-[#374151] hover:text-[#111827] hover:bg-[#F3F4F6]'}`
                   }
                 >
                   <span>{link.label}</span>
@@ -174,7 +145,7 @@ export const Navbar: React.FC = () => {
                 </NavLink>
               ))}
 
-              <div className={`pt-3 flex flex-col gap-2 border-t mt-2 ${isDay ? 'border-[#E5E7EB]' : 'border-[#27272A]'}`}>
+              <div className="pt-3 flex flex-col gap-2 border-t mt-2 border-[#E5E7EB]">
                 <Link
                   to="/kalkulator"
                   onClick={() => setMobileMenuOpen(false)}
@@ -187,11 +158,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider ${
-                    isDay
-                      ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
-                      : 'bg-[#27272A] border-white/10 text-[#D4D4D8]'
-                  }`}
+                  className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#B87333]" />
                   <span>Zapytaj inżyniera</span>

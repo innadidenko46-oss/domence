@@ -17,7 +17,6 @@ import { Link } from 'react-router-dom';
 
 export const TeletechnicsSection: React.FC = () => {
   const [expandedServiceId, setExpandedServiceId] = useState<string>('cctv');
-  const isDay = true;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -37,9 +36,7 @@ export const TeletechnicsSection: React.FC = () => {
   };
 
   return (
-    <section id="teletechnika" className={`py-24 relative overflow-hidden transition-colors duration-300 border-t ${
-      isDay ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]' : 'bg-[#18181B] border-[#27272A] text-[#F3F4F6]'
-    }`}>
+    <section id="teletechnika" className="py-24 relative overflow-hidden transition-colors duration-300 border-t bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Chapter Header */}
@@ -48,14 +45,10 @@ export const TeletechnicsSection: React.FC = () => {
             <Network className="w-4 h-4" />
             <span>Teletechnika &amp; Prywatność Rezydencji</span>
           </div>
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] ${
-            isDay ? 'text-[#111827]' : 'text-white'
-          }`}>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-[#111827]">
             Stabilne okablowanie strukturalne i lokalny monitoring 4K.
           </h2>
-          <p className={`mt-3 text-sm sm:text-base leading-[1.7] ${
-            isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
-          }`}>
+          <p className="mt-3 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
             Fundament każdego inteligentnego domu: szafa RACK 19", certyfikowane patchcordy kat. 6A, zasilacze buforowe UPS oraz stacja bramowa. Bez abonamentów chmurowych – z pełną suwerennością danych w Twojej sieci lokalnej.
           </p>
         </div>
@@ -70,13 +63,7 @@ export const TeletechnicsSection: React.FC = () => {
                 key={service.id}
                 className={`rounded-[2px] p-6 sm:p-7 transition-all duration-200 border ${
                   isExpanded
-                    ? isDay
-                      ? 'bg-white border-[#B87333] shadow-md ring-1 ring-[#B87333]'
-                      : 'bg-[#27272A] border-[#B87333] shadow-lg ring-1 ring-[#B87333]'
-                    : isDay
-                      ? 'bg-white/80 border-[#E5E7EB] hover:border-[#D1D5DB]'
-                      : 'bg-[#27272A]/40 border-white/5 hover:border-white/15'
-                }`}
+                    ? 'bg-white border-[#B87333] shadow-md ring-1 ring-[#B87333]': 'bg-white/80 border-[#E5E7EB] hover:border-[#D1D5DB]'}`}
               >
                 {/* Header of the card */}
                 <button
@@ -87,17 +74,11 @@ export const TeletechnicsSection: React.FC = () => {
                   className="cursor-pointer flex items-start justify-between gap-4 w-full text-left focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border ${
-                      isDay 
-                        ? 'bg-[#B87333]/10 border-[#B87333]/25' 
-                        : 'bg-[#B87333]/20 border-[#B87333]/30'
-                    }`}>
+                    <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border bg-[#B87333]/10 border-[#B87333]/25">
                       {getIcon(service.icon)}
                     </div>
                     <div>
-                      <h3 className={`text-lg sm:text-xl font-bold leading-snug ${
-                        isDay ? 'text-[#111827]' : 'text-white'
-                      }`}>
+                      <h3 className="text-lg sm:text-xl font-bold leading-snug text-[#111827]">
                         {service.title}
                       </h3>
                       <p className="text-xs font-mono font-medium mt-1 text-[#B87333]">
@@ -107,20 +88,14 @@ export const TeletechnicsSection: React.FC = () => {
                   </div>
 
                   <span
-                    className={`p-2 rounded-[2px] shrink-0 border ${
-                      isDay ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#4B5563]' : 'bg-white/5 border-white/10 text-[#9CA3AF]'
-                    }`}
+                    className="p-2 rounded-[2px] shrink-0 border bg-[#F3F4F6] border-[#D1D5DB] text-[#4B5563]"
                   >
                     {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                   </span>
                 </button>
 
                 {/* Practical insight box */}
-                <div className={`mt-5 p-4 rounded-[2px] border text-xs leading-relaxed flex items-start gap-3 ${
-                  isDay 
-                    ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]' 
-                    : 'bg-[#18181B]/80 border-white/5 text-[#D1D5DB]'
-                }`}>
+                <div className="mt-5 p-4 rounded-[2px] border text-xs leading-relaxed flex items-start gap-3 bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
                   <div className="w-2 h-2 rounded-full bg-[#B87333] mt-1.5 shrink-0" />
                   <div>
                     <span className="font-bold block mb-1 text-[#B87333] font-mono text-[11px] uppercase">
@@ -138,27 +113,21 @@ export const TeletechnicsSection: React.FC = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
-                      className={`overflow-hidden mt-6 pt-5 border-t space-y-5 ${
-                        isDay ? 'border-[#E5E7EB]' : 'border-white/10'
-                      }`}
+                      className="overflow-hidden mt-6 pt-5 border-t space-y-5 border-[#E5E7EB]"
                     >
-                      <p className={`text-xs sm:text-sm leading-[1.7] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
+                      <p className="text-xs sm:text-sm leading-[1.7] text-[#4B5563]">
                         {service.description}
                       </p>
 
                       {/* Equipment List */}
                       <div>
-                        <div className={`text-[11px] font-mono font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 ${
-                          isDay ? 'text-[#6B7280]' : 'text-[#9CA3AF]'
-                        }`}>
+                        <div className="text-[11px] font-mono font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-[#6B7280]">
                           <HardDrive className="w-4 h-4 text-[#B87333]" />
                           <span>Zastosowane komponenty sprzętowe:</span>
                         </div>
                         <ul className="space-y-2">
                           {service.equipment.map((item, idx) => (
-                            <li key={idx} className={`text-xs flex items-start gap-2.5 ${
-                              isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'
-                            }`}>
+                            <li key={idx} className="text-xs flex items-start gap-2.5 text-[#374151]">
                               <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                               <span>{item}</span>
                             </li>
@@ -171,11 +140,7 @@ export const TeletechnicsSection: React.FC = () => {
                         {service.specs.map((spec, idx) => (
                           <span
                             key={idx}
-                            className={`text-[10px] font-mono px-2.5 py-1 rounded-[2px] border ${
-                              isDay
-                                ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
-                                : 'bg-white/5 border-white/10 text-[#D1D5DB]'
-                            }`}
+                            className="text-[10px] font-mono px-2.5 py-1 rounded-[2px] border bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]"
                           >
                             {spec}
                           </span>
@@ -190,20 +155,16 @@ export const TeletechnicsSection: React.FC = () => {
         </div>
 
         {/* Teletechnic Standard Banner */}
-        <div className={`mt-12 p-6 rounded-[2px] border flex flex-col md:flex-row items-center justify-between gap-6 ${
-          isDay
-            ? 'bg-white border-[#E5E7EB] shadow-sm'
-            : 'bg-[#27272A]/70 border-white/10'
-        }`}>
+        <div className="mt-12 p-6 rounded-[2px] border flex flex-col md:flex-row items-center justify-between gap-6 bg-white border-[#E5E7EB] shadow-sm">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
               <Server className="w-6 h-6" />
             </div>
             <div>
-              <div className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+              <div className="font-bold text-base text-[#111827]">
                 Certyfikowana szafa RACK 19" z pełną dokumentacją powykonawczą
               </div>
-              <div className={`text-xs mt-1 leading-relaxed ${isDay ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+              <div className="text-xs mt-1 leading-relaxed text-[#6B7280]">
                 Wszystkie tory transmisyjne wyprowadzamy na patchpanele kat. 6A i weryfikujemy certyfikowanym miernikiem okablowania.
               </div>
             </div>

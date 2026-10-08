@@ -8,7 +8,6 @@ export const KnowledgeBaseSection: React.FC = () => {
   const [openIds, setOpenIds] = useState<string[]>(() =>
     FAQ_ITEMS.length > 0 ? [FAQ_ITEMS[0].question] : []
   );
-  const isDay = true;
 
   const categories = [
     { id: 'all', label: 'Wszystkie Zagadnienia' },
@@ -30,29 +29,19 @@ export const KnowledgeBaseSection: React.FC = () => {
   };
 
   return (
-    <section id="baza-wiedzy" className={`py-24 relative overflow-hidden transition-colors duration-500 border-t ${
-      isDay ? 'bg-white border-slate-200 text-slate-800' : 'bg-[#040D14] border-white/10 text-slate-200'
-    }`}>
+    <section id="baza-wiedzy" className="py-24 relative overflow-hidden transition-colors duration-500 border-t bg-white border-slate-200 text-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border ${
-            isDay 
-              ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30' 
-              : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
-          }`}>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Baza wiedzy i FAQ</span>
           </div>
-          <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
-            isDay ? 'text-slate-900' : 'text-white'
-          }`}>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
             Odpowiedzi na kluczowe pytania techniczne.
           </h2>
-          <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
-            isDay ? 'text-slate-600' : 'text-slate-300'
-          }`}>
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
             Konkretne informacje o stabilności instalacji offline, zachowaniu urządzeń podczas burzy, 
             kosztach eksploatacji i ergonomii codziennego użytkowania.
           </p>
@@ -67,10 +56,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 selectedCategory === cat.id
                   ? 'bg-[#B87333] text-white font-bold shadow-md shadow-[#B87333]/20'
-                  : isDay
-                    ? 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'
-                    : 'bg-[#0A2230] text-slate-300 border border-white/5 hover:border-white/20'
-              }`}
+                  : 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'}`}
             >
               {cat.label}
             </button>
@@ -87,13 +73,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                 key={index}
                 className={`rounded-[2px] transition-all duration-200 border overflow-hidden ${
                   isOpen
-                    ? isDay
-                      ? 'bg-slate-50/80 border-[#C27A4E] shadow-md'
-                      : 'bg-[#0A2230] border-[#C27A4E]/40 shadow-xl'
-                    : isDay
-                      ? 'bg-white border-slate-200 hover:border-slate-300'
-                      : 'bg-[#0A2230]/50 border-white/5 hover:border-white/15'
-                }`}
+                    ? 'bg-slate-50/80 border-[#C27A4E] shadow-md': 'bg-white border-slate-200 hover:border-slate-300'}`}
               >
                 {/* Accordion Question Header */}
                 <button
@@ -107,24 +87,17 @@ export const KnowledgeBaseSection: React.FC = () => {
                       className={`w-9 h-9 rounded-[2px] flex items-center justify-center shrink-0 ${
                         isOpen
                           ? 'bg-[#B87333] text-white'
-                          : isDay
-                            ? 'bg-slate-100 text-slate-600'
-                            : 'bg-white/5 text-slate-400'
-                      }`}
+                          : 'bg-slate-100 text-slate-600'}`}
                     >
                       <HelpCircle className="w-5 h-5" />
                     </div>
-                    <h3 className={`font-display text-base sm:text-lg font-bold ${
-                      isDay ? 'text-slate-900' : 'text-white'
-                    }`}>
+                    <h3 className="font-display text-base sm:text-lg font-bold text-slate-900">
                       {item.question}
                     </h3>
                   </div>
 
                   <div
-                    className={`p-2 rounded-[2px] shrink-0 ${
-                      isDay ? 'bg-slate-100 text-slate-600' : 'bg-white/5 text-slate-400'
-                    }`}
+                    className="p-2 rounded-[2px] shrink-0 bg-slate-100 text-slate-600"
                   >
                     {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                   </div>
@@ -140,21 +113,13 @@ export const KnowledgeBaseSection: React.FC = () => {
                       transition={{ duration: 0.25 }}
                       id={`faq-panel-${index}`}
                       role="region"
-                      className={`overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 ${
-                        isDay ? 'border-slate-200' : 'border-white/10'
-                      }`}
+                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-slate-200"
                     >
                       {/* Human-Friendly Direct Answer */}
-                      <div className={`p-4 rounded-[2px] border text-sm leading-relaxed ${
-                        isDay 
-                          ? 'bg-white border-[#B87333]/30 text-slate-700' 
-                          : 'bg-[#071822] border-[#B87333]/30 text-slate-200'
-                      }`}>
+                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-white border-[#B87333]/30 text-slate-700">
                         <div className="flex items-center gap-2 mb-1.5">
                           <ShieldCheck className="w-4 h-4 text-[#B87333] shrink-0" />
-                          <span className={`text-xs font-bold uppercase tracking-wider ${
-                            isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'
-                          }`}>
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#7C4A1F]">
                             Odpowiedź w pigułce:
                           </span>
                         </div>
@@ -164,16 +129,10 @@ export const KnowledgeBaseSection: React.FC = () => {
                       </div>
 
                       {/* Deep-Dive Engineering Details */}
-                      <div className={`p-4 rounded-[2px] border text-xs leading-relaxed ${
-                        isDay 
-                          ? 'bg-slate-100/70 border-slate-200 text-slate-600' 
-                          : 'bg-black/30 border-white/5 text-slate-300'
-                      }`}>
+                      <div className="p-4 rounded-[2px] border text-xs leading-relaxed bg-slate-100/70 border-slate-200 text-slate-600">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <Cpu className={`w-3.5 h-3.5 shrink-0 ${isDay ? 'text-slate-600' : 'text-slate-400'}`} />
-                          <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${
-                            isDay ? 'text-slate-700' : 'text-slate-400'
-                          }`}>
+                          <Cpu className="w-3.5 h-3.5 shrink-0 text-slate-600" />
+                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
                             Aspekty techniczne & integracja:
                           </span>
                         </div>

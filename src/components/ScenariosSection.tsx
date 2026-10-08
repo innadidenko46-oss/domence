@@ -38,7 +38,6 @@ import { Link } from 'react-router-dom';
 
 export const ScenariosSection: React.FC = () => {
   const [activeScenarioId, setActiveScenarioId] = useState(SCENARIOS[0].id);
-  const isDay = true;
 
   const activeScenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
 
@@ -106,9 +105,7 @@ export const ScenariosSection: React.FC = () => {
   };
 
   return (
-    <section id="scenariusze" className={`py-24 relative overflow-hidden transition-colors duration-500 border-t ${
-      isDay ? 'bg-white border-slate-200 text-slate-800' : 'bg-[#06121A] border-white/10 text-slate-200'
-    }`}>
+    <section id="scenariusze" className="py-24 relative overflow-hidden transition-colors duration-500 border-t bg-white border-slate-200 text-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -117,14 +114,10 @@ export const ScenariosSection: React.FC = () => {
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Scenariusze Automatyki Budynkowej</span>
           </div>
-          <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
-            isDay ? 'text-slate-950' : 'text-white'
-          }`}>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950">
             Gotowe sekwencje dla domu i rezydencji
           </h2>
-          <p className={`mt-4 text-sm sm:text-base max-w-2xl leading-relaxed ${
-            isDay ? 'text-slate-600' : 'text-slate-300'
-          }`}>
+          <p className="mt-4 text-sm sm:text-base max-w-2xl leading-relaxed text-slate-600">
             Automatyka bez skomplikowanych instrukcji: inteligentne wietrzenie bez strat ciepła, natychmiastowe odcięcie wycieków wody i gazu, bilansowanie energii fotowoltaicznej oraz rozpoznawanie auta domownika.
           </p>
         </div>
@@ -139,18 +132,12 @@ export const ScenariosSection: React.FC = () => {
                 onClick={() => setActiveScenarioId(sc.id)}
                 className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                   isActive
-                    ? isDay
-                      ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10'
-                      : 'bg-[#0E2B3C] border-[#C27A4E]/80 shadow-xl shadow-[#B87333]/10'
-                    : isDay
-                      ? 'bg-slate-50 border-slate-200 hover:border-[#B87333]/30 hover:bg-slate-100/70'
-                      : 'bg-[#0A2230]/60 border-white/5 hover:border-white/20 hover:bg-[#0A2230]'
-                }`}
+                    ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10': 'bg-slate-50 border-slate-200 hover:border-[#B87333]/30 hover:bg-slate-100/70'}`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={`text-[11px] font-mono font-bold ${
-                      isActive ? (isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]') : 'text-slate-400'
+                      isActive ? ('text-[#7C4A1F]') : 'text-slate-400'
                     }`}
                   >
                     {sc.number}
@@ -159,10 +146,7 @@ export const ScenariosSection: React.FC = () => {
                     className={`w-7 h-7 rounded-[2px] flex items-center justify-center ${
                       isActive
                         ? 'bg-[#B87333] text-white font-bold'
-                        : isDay
-                          ? 'bg-slate-200/80 text-slate-600'
-                          : 'bg-white/5 text-slate-400'
-                    }`}
+                        : 'bg-slate-200/80 text-slate-600'}`}
                   >
                     {getIcon(sc.icon)}
                   </div>
@@ -170,13 +154,11 @@ export const ScenariosSection: React.FC = () => {
 
                 <div className="mt-2.5">
                   <div className={`text-[10px] font-semibold uppercase tracking-wider line-clamp-1 ${
-                    isActive ? (isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]') : (isDay ? 'text-slate-500' : 'text-slate-400')
+                    isActive ? ('text-[#7C4A1F]') : ('text-slate-500')
                   }`}>
                     {sc.tag}
                   </div>
-                  <div className={`text-xs font-bold leading-snug line-clamp-2 mt-0.5 ${
-                    isDay ? 'text-slate-900' : 'text-white'
-                  }`}>
+                  <div className="text-xs font-bold leading-snug line-clamp-2 mt-0.5 text-slate-900">
                     {sc.title}
                   </div>
                 </div>
@@ -200,9 +182,7 @@ export const ScenariosSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className={`rounded-[2px] border overflow-hidden shadow-2xl ${
-              isDay ? 'bg-white border-slate-200 shadow-slate-200/60' : 'bg-[#0A2230]/80 border-white/10'
-            }`}
+            className="rounded-[2px] border overflow-hidden shadow-2xl bg-white border-slate-200 shadow-slate-200/60"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Scenario Image */}
@@ -210,19 +190,11 @@ export const ScenariosSection: React.FC = () => {
                 <img
                   src={activeScenario.imageUrl}
                   alt={`${activeScenario.title} — scenariusz automatyki domowej`}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105 filter brightness-90"
+                  className="w-full h-full object-cover object-center duration-700 filter brightness-90"
                 />
-                <div className={`absolute inset-0 ${
-                  isDay
-                    ? 'bg-gradient-to-t lg:bg-gradient-to-r from-slate-900/50 via-transparent to-transparent'
-                    : 'bg-gradient-to-t lg:bg-gradient-to-r from-[#06121A] via-[#06121A]/40 to-transparent'
-                }`} />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900/50 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border ${
-                    isDay 
-                      ? 'bg-white/95 text-[#7C4A1F] border-[#B87333]/30' 
-                      : 'bg-[#071822]/85 text-[#C27A4E] border-[#B87333]/30'
-                  }`}>
+                  <span className="px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border bg-white/95 text-[#7C4A1F] border-[#B87333]/30">
                     {activeScenario.tag}
                   </span>
                 </div>
@@ -245,46 +217,34 @@ export const ScenariosSection: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className={`text-xs font-mono font-bold uppercase tracking-widest ${
-                      isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'
-                    }`}>
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#7C4A1F]">
                       Scenariusz {activeScenario.number}
                     </span>
                   </div>
-                  <h3 className={`font-display text-2xl sm:text-3xl font-extrabold ${
-                    isDay ? 'text-slate-900' : 'text-white'
-                  }`}>
+                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900">
                     {activeScenario.title}
                   </h3>
-                  <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
-                    isDay ? 'text-slate-600' : 'text-slate-300'
-                  }`}>
+                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
                     {activeScenario.description}
                   </p>
 
                   {/* Step-by-Step Action Sequence */}
                   {activeScenario.actionSteps && activeScenario.actionSteps.length > 0 && (
                     <div className="mt-5">
-                      <div className={`text-xs font-bold uppercase tracking-wider mb-2.5 ${
-                        isDay ? 'text-slate-700' : 'text-slate-300'
-                      }`}>
+                      <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-slate-700">
                         Sekwencja automatycznych działań zwykle w ciągu 1–2 sekund w sieci lokalnej:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (
                           <div
                             key={sIdx}
-                            className={`p-3 rounded-[2px] border flex items-start gap-2.5 text-xs ${
-                              isDay
-                                ? 'bg-slate-50 border-slate-200 text-slate-700'
-                                : 'bg-[#071822] border-white/5 text-slate-300'
-                            }`}
+                            className="p-3 rounded-[2px] border flex items-start gap-2.5 text-xs bg-slate-50 border-slate-200 text-slate-700"
                           >
                             <div className="w-7 h-7 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
                             </div>
                             <div>
-                              <div className={`font-bold ${isDay ? 'text-slate-900' : 'text-white'}`}>
+                              <div className="font-bold text-slate-900">
                                 {step.label}
                               </div>
                               <div className="text-[11px] text-slate-400 mt-0.5 leading-snug">
@@ -298,12 +258,8 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className={`mt-5 p-4 rounded-[2px] border text-xs leading-relaxed ${
-                    isDay 
-                      ? 'bg-[#B87333]/10 border-[#B87333]/30 text-slate-800' 
-                      : 'bg-[#071822] border-white/5 text-slate-200'
-                  }`}>
-                    <span className={`font-bold block mb-1 ${isDay ? 'text-[#7C4A1F]' : 'text-[#C27A4E]'}`}>
+                  <div className="mt-5 p-4 rounded-[2px] border text-xs leading-relaxed bg-[#B87333]/10 border-[#B87333]/30 text-slate-800">
+                    <span className="font-bold block mb-1 text-[#7C4A1F]">
                       Działanie w praktyce:
                     </span>
                     {activeScenario.humanNote}
@@ -316,9 +272,7 @@ export const ScenariosSection: React.FC = () => {
                         <div className="w-4 h-4 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3" />
                         </div>
-                        <span className={`text-xs sm:text-sm font-medium ${
-                          isDay ? 'text-slate-700' : 'text-slate-300'
-                        }`}>
+                        <span className="text-xs sm:text-sm font-medium text-slate-700">
                           {point}
                         </span>
                       </div>
@@ -326,10 +280,8 @@ export const ScenariosSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className={`mt-8 pt-6 border-t flex items-center justify-between ${
-                  isDay ? 'border-slate-200' : 'border-white/10'
-                }`}>
-                  <span className={`text-xs ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className="mt-8 pt-6 border-t flex items-center justify-between border-slate-200">
+                  <span className="text-xs text-slate-500">
                     Local-First • Brak zależności od chmury
                   </span>
                   <Link

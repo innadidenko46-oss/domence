@@ -130,7 +130,7 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
-      <div className="shrink-0 transition-transform duration-300 hover:scale-105">
+      <div className="shrink-0">
         <DomenceLogoMark size={iconSizes[size]} />
       </div>
 

@@ -5,12 +5,9 @@ import { KnowledgeBaseSection } from '../components/KnowledgeBaseSection.tsx';
 import { BookOpen, ArrowRight, MessageSquare } from 'lucide-react';
 
 export const FaqPage: React.FC = () => {
-  const isDay = true;
 
   return (
-    <div className={`transition-colors duration-300 ${
-      isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
-    }`}>
+    <div className="transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       <PageHeader
         badge="Baza Wiedzy &amp; FAQ"
         title="Odpowiedzi inżynieryjne dla świadomego inwestora"
@@ -23,28 +20,18 @@ export const FaqPage: React.FC = () => {
       <KnowledgeBaseSection />
 
       {/* Direct Engineer Contact Banner */}
-      <section className={`py-16 border-t ${
-        isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
-      }`}>
+      <section className="py-16 border-t bg-white border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`p-8 rounded-[2px] border flex flex-col md:flex-row items-center justify-between gap-6 ${
-            isDay
-              ? 'bg-[#F9FAFB] border-[#E5E7EB]'
-              : 'bg-[#27272A]/50 border-white/10'
-          }`}>
+          <div className="p-8 rounded-[2px] border flex flex-col md:flex-row items-center justify-between gap-6 bg-[#F9FAFB] border-[#E5E7EB]">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#B87333]/15 text-[#B87333] border border-[#B87333]/30 text-xs font-mono font-semibold mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Nietypowe założenie architektoniczne?</span>
               </div>
-              <h3 className={`text-xl sm:text-2xl font-bold tracking-tight ${
-                isDay ? 'text-[#111827]' : 'text-white'
-              }`}>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111827]">
                 Skonsultuj projekt bezpośrednio z inżynierem
               </h3>
-              <p className={`text-xs sm:text-sm mt-2 leading-[1.7] ${
-                isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
-              }`}>
+              <p className="text-xs sm:text-sm mt-2 leading-[1.7] text-[#4B5563]">
                 Nie korzystamy z anonimowej infolinii. Na Twoje pytania odpowiada certyfikowany inżynier automatyki i teletechniki z uprawnieniami SEP.
               </p>
             </div>
@@ -62,13 +49,11 @@ export const FaqPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className={`py-12 border-t ${
-        isDay ? 'bg-[#F9FAFB] border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
-      }`}>
+      <section className="py-12 border-t bg-[#F9FAFB] border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Następny krok:</div>
-            <div className={`text-base font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
+            <div className="text-base font-bold text-[#111827]">
               Sprawdź szacunkowy kosztorys instalacji dla swojego metrażu
             </div>
           </div>
