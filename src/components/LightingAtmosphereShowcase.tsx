@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sun, Sunset, Moon, Sparkles, Sliders, Eye, ShieldCheck, Thermometer } from 'lucide-react';
+import { Sun, Sunset, Moon, Sliders, Eye, ShieldCheck, Thermometer } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 interface AtmosphereScene {
@@ -269,10 +269,12 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 isDayTheme ? 'border-slate-200' : 'border-white/10'
               }`}>
                 <div className="text-xs text-slate-500">
-                  Podoba Ci się ten nastrój?
+                  Motyw całej strony:
                 </div>
                 <button
                   onClick={toggleTheme}
+                  role="switch"
+                  aria-checked={!isDayTheme}
                   className={`text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
                     isDayTheme
                       ? 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-800'

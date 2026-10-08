@@ -7,13 +7,10 @@ import {
   BellRing,
   UserCheck,
   Tablet,
+  ScanFace,
   CheckCircle2,
-  HardDrive,
   Cpu,
-  Lock,
   Eye,
-  Sliders,
-  Sparkles,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
@@ -36,6 +33,12 @@ export const HikvisionShowcase: React.FC = () => {
         return <BellRing className="w-5 h-5 text-sky-500" />;
       case 'access_minmoe':
         return <UserCheck className="w-5 h-5 text-emerald-500" />;
+      case 'cctv_tandemvu':
+        return <Video className="w-5 h-5 text-sky-500" />;
+      case 'intercom_face':
+        return <ScanFace className="w-5 h-5 text-emerald-500" />;
+      case 'intercom_android':
+        return <Tablet className="w-5 h-5 text-purple-500" />;
       default:
         return <Tablet className="w-5 h-5 text-purple-500" />;
     }

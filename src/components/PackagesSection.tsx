@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { PACKAGES } from '../data/content.ts';
 import { Check, Clock, ArrowRight } from 'lucide-react';
 import { PropertyState } from '../types.ts';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 interface PackagesSectionProps {
@@ -167,9 +168,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="mt-12 text-center">
           <p className={`text-xs ${isDay ? 'text-[#6B7280]' : 'text-[#71717A]'}`}>
             Potrzebujesz integracji z pompą ciepła, modułami Shelly Pro, monitoringiem 4K lub nietypowym systemem bramowym?{' '}
-            <a href="#kalkulator" className="text-[#B87333] underline hover:text-[#A36034]">
+            <Link to="/kalkulator" className="text-[#B87333] underline hover:text-[#A36034]">
               Skonfiguruj w kalkulatorze lub zamów bezpłatny audyt.
-            </a>
+            </Link>
           </p>
         </div>
 

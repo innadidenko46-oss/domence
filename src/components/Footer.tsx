@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo.tsx';
 import { Mail, MapPin, Cookie, FileText, Award, X, ShieldCheck } from 'lucide-react';
@@ -7,9 +7,28 @@ export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'rodo' | 'regulamin' | 'certyfikaty' | null>(null);
 
   const openCookiePreferences = () => {
-    localStorage.removeItem('domence_cookie_consent');
-    window.location.reload();
+    try {
+      localStorage.removeItem('domence_cookie_consent');
+    } catch {
+      // blocked storage: just reopen the banner
+    }
+    window.dispatchEvent(new Event('domence:open-cookie-prefs'));
   };
+
+  // ESC closes legal modal + body scroll lock
+  useEffect(() => {
+    if (!activeModal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveModal(null);
+    };
+    document.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [activeModal]);
 
   return (
     <footer className="bg-[#18181B] border-t border-[#27272A] pt-16 pb-24 md:pb-16 text-[#9CA3AF] text-xs">
@@ -187,10 +206,12 @@ export const Footer: React.FC = () => {
 
       {/* Legal Modals */}
       {activeModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-[#18181B] border border-[#3F3F46] rounded-[2px] max-w-2xl w-full p-6 text-slate-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
+          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-[#18181B] border border-[#3F3F46] rounded-[2px] max-w-2xl w-full p-6 text-slate-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
             <button
               onClick={() => setActiveModal(null)}
+              aria-label="Zamknij"
+              autoFocus
               className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-[2px] bg-white/5 border border-white/10"
             >
               <X className="w-5 h-5" />

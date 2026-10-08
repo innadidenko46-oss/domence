@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TELETECHNIC_SERVICES } from '../data/content.ts';
 import { 
-  Network, 
+  Network,
+  Camera, 
   ChevronDown, 
   ChevronUp, 
   Video, 
@@ -12,6 +13,7 @@ import {
   CheckCircle2, 
   HardDrive 
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 export const TeletechnicsSection: React.FC = () => {
@@ -25,6 +27,10 @@ export const TeletechnicsSection: React.FC = () => {
         return <Video className="w-6 h-6 text-[#B87333]" />;
       case 'Server':
         return <Server className="w-6 h-6 text-sky-400" />;
+      case 'Camera':
+        return <Video className="w-6 h-6 text-sky-400" />;
+      case 'Network':
+        return <Network className="w-6 h-6 text-[#B87333]" />;
       case 'ShieldAlert':
         return <ShieldAlert className="w-6 h-6 text-emerald-400" />;
       default:
@@ -75,9 +81,12 @@ export const TeletechnicsSection: React.FC = () => {
                 }`}
               >
                 {/* Header of the card */}
-                <div
+                <button
+                  type="button"
                   onClick={() => setExpandedServiceId(isExpanded ? '' : service.id)}
-                  className="cursor-pointer flex items-start justify-between gap-4"
+                  aria-expanded={isExpanded}
+                  aria-label={isExpanded ? 'Zwiń szczegóły' : 'Rozwiń szczegóły'}
+                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left"
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border ${
@@ -99,15 +108,14 @@ export const TeletechnicsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <button
+                  <span
                     className={`p-2 rounded-[2px] shrink-0 border ${
                       isDay ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#4B5563]' : 'bg-white/5 border-white/10 text-[#9CA3AF]'
                     }`}
-                    aria-label="Rozwiń szczegóły"
                   >
                     {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                  </button>
-                </div>
+                  </span>
+                </button>
 
                 {/* Practical insight box */}
                 <div className={`mt-5 p-4 rounded-[2px] border text-xs leading-relaxed flex items-start gap-3 ${
@@ -198,17 +206,17 @@ export const TeletechnicsSection: React.FC = () => {
                 Certyfikowana szafa RACK 19" z pełną dokumentacją powykonawczą
               </div>
               <div className={`text-xs mt-1 leading-relaxed ${isDay ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
-                Wszystkie tory transmisyjne zarabiamy na patchpanelach kat. 6A i weryfikujemy certyfikowanym miernikiem okablowania.
+                Wszystkie tory transmisyjne wyprowadzamy na patchpanele kat. 6A i weryfikujemy certyfikowanym miernikiem okablowania.
               </div>
             </div>
           </div>
 
-          <a
-            href="#kalkulator"
+          <Link
+            to="/kalkulator"
             className="px-6 py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all whitespace-nowrap shadow-sm"
           >
             Skonfiguruj instalację
-          </a>
+          </Link>
         </div>
 
       </div>

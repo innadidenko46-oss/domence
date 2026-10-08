@@ -23,13 +23,16 @@ import {
   Film,
   Zap,
   Mic,
-  Clock,
   Coffee,
   Tv,
   KeyRound,
   Lock,
   Eye,
   Phone,
+  Lightbulb,
+  LightbulbOff,
+  Thermometer,
+  HardDrive,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
@@ -91,6 +94,14 @@ export const ScenariosSection: React.FC = () => {
         return <ShieldCheck className="w-4 h-4" />;
       case 'Check':
         return <Check className="w-4 h-4" />;
+      case 'Lightbulb':
+        return <Lightbulb className="w-4 h-4" />;
+      case 'LightbulbOff':
+        return <LightbulbOff className="w-4 h-4" />;
+      case 'Thermometer':
+        return <Thermometer className="w-4 h-4" />;
+      case 'HardDrive':
+        return <HardDrive className="w-4 h-4" />;
       default:
         return <ShieldAlert className="w-4 h-4" />;
     }

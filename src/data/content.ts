@@ -247,7 +247,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Dwukierunkowe audio: możliwość rozmowy przez kamerę bezpośrednio z poziomu telefonu',
       'Natychmiastowe powiadomienia PUSH ze zdjęciem zdarzenia na smartfon',
     ],
-    image: '/images/facade_dome_camera.svg',
+    image: `${import.meta.env.BASE_URL}images/facade_dome_camera.svg`,
   },
   {
     id: 'hik-tandemvu',
@@ -307,7 +307,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Interkom domowy: rozmowy głosowe między pokojami (np. kuchnia z piętrem)',
       'Zasilanie PoE (jeden cienki przewód sieciowy dostarcza prąd i dane)',
     ],
-    image: '/images/shelly_box.svg',
+    image: `${import.meta.env.BASE_URL}images/shelly_box.svg`,
   },
 ];
 
@@ -503,7 +503,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Sun', label: 'Światło Kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
       { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
     ],
-    imageUrl: '/images/living_room_cinema.svg',
+    imageUrl: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
     icon: 'Tv',
   },
   {
@@ -1031,7 +1031,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       ],
     },
     icon: 'Search',
-    image: '/images/rack_cabinet_clean.svg',
+    image: `${import.meta.env.BASE_URL}images/rack_cabinet_clean.svg`,
   },
   {
     id: 'ai-colorvu-acusense',
@@ -1050,7 +1050,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Smart Hybrid Light: podświetlenie aktywuje się przy podejściu człowieka',
     ],
     icon: 'Eye',
-    image: '/images/hikvision_gate.svg',
+    image: `${import.meta.env.BASE_URL}images/hikvision_gate.svg`,
   },
   {
     id: 'ai-deepinviewx',
@@ -1088,7 +1088,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Czujniki obecności Shelly BLU do automatyki oświetlenia',
     ],
     icon: 'Radio',
-    image: '/images/facade_dome_camera.svg',
+    image: `${import.meta.env.BASE_URL}images/facade_dome_camera.svg`,
   },
   {
     id: 'ai-loqed-lock',

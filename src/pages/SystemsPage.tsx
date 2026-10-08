@@ -81,7 +81,7 @@ export const SystemsPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="/images/rack_installation.svg"
+                  src={`${import.meta.env.BASE_URL}images/rack_installation.svg`}
                   alt="Instalacja modułów Shelly Pro na szynie DIN w rozdzielnicy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />

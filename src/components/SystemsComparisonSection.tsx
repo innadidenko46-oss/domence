@@ -14,9 +14,7 @@ import {
 import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
 
-export const SystemsComparisonSection: React.FC<{ onConsultSystem?: (systemName: string) => void }> = ({
-  onConsultSystem,
-}) => {
+export const SystemsComparisonSection: React.FC = () => {
   const [activeSystemId, setActiveSystemId] = useState<string>('shelly_pro');
   const { theme } = useTheme();
   const isDay = theme === 'day';

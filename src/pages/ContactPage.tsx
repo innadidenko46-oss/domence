@@ -19,7 +19,6 @@ export const ContactPage: React.FC = () => {
     phone: '',
     email: '',
     location: '',
-    propertyType: 'Nowa Rezydencja (stan surowy)',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -209,16 +208,21 @@ export const ContactPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-name" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                           Imię i Nazwisko *
                         </label>
                         <input
+                          id="contact-name"
+                          name="name"
+                          autoComplete="name"
                           type="text"
                           required
+                          minLength={3}
+                          maxLength={60}
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
                           placeholder="np. Jan Kowalski"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none ${
+                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
@@ -227,16 +231,22 @@ export const ContactPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-phone" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                           Numer Telefonu *
                         </label>
                         <input
+                          id="contact-phone"
+                          name="phone"
+                          autoComplete="tel"
+                          inputMode="tel"
                           type="tel"
                           required
+                          pattern="^[+\d][\d\s\-/.]{5,19}$"
+                          maxLength={25}
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
                           placeholder="np. 500 600 700"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none ${
+                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
@@ -247,16 +257,20 @@ export const ContactPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-email" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                           Adres E-mail *
                         </label>
                         <input
+                          id="contact-email"
+                          name="email"
+                          autoComplete="email"
                           type="email"
                           required
+                          maxLength={254}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="inwestor@dom.pl"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none ${
+                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
@@ -265,15 +279,18 @@ export const ContactPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                        <label htmlFor="contact-location" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                           Lokalizacja Inwestycji
                         </label>
                         <input
+                          id="contact-location"
+                          name="location"
                           type="text"
+                          maxLength={120}
                           value={formData.location}
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                           placeholder="np. Warszawa / Konstancin"
-                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none ${
+                          className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'
@@ -291,7 +308,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Napisz, jaki jest metraż domu, czy posiadasz już projekt elektryczny i na czym najbardziej Ci zależy (oświetlenie, kamery, kino, rolety)..."
-                        className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none leading-relaxed ${
+                        className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 leading-relaxed ${
                           isDay
                             ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                             : 'bg-[#18181B] border-white/15 text-white focus:border-[#B87333]'

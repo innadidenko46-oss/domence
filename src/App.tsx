@@ -1,10 +1,12 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext.tsx';
 import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Footer } from './components/Footer.tsx';
 import { MobileStickyBar } from './components/MobileStickyBar.tsx';
 import { CookieBanner } from './components/CookieBanner.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
+import { NotFoundPage } from './pages/NotFoundPage.tsx';
 
 // Separate Section Pages
 import { HomePage } from './pages/HomePage.tsx';
@@ -28,6 +30,7 @@ function AppContent() {
       <Navbar />
 
       {/* Dynamic Route Content */}
+      <ErrorBoundary>
       <main className="flex-1 pt-[68px]">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -39,9 +42,10 @@ function AppContent() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/kalkulator" element={<CalculatorPage />} />
           <Route path="/kontakt" element={<ContactPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      </ErrorBoundary>
 
       {/* Global Footer */}
       <Footer />

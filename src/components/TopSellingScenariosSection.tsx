@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TOP_SELLING_SCENARIOS, TopSellingScenario } from '../data/content.ts';
 import {
@@ -7,21 +7,10 @@ import {
   Zap,
   Car,
   CheckCircle2,
-  Play,
-  SlidersHorizontal,
-  Flame,
-  Droplets,
-  Power,
-  Bell,
-  Sun,
-  BatteryCharging,
   Gauge,
-  Camera,
-  DoorClosed,
   ShieldCheck,
   ArrowRight,
   Activity,
-  Check,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
@@ -34,6 +23,13 @@ export const TopSellingScenariosSection: React.FC = () => {
   const [hazardTriggered, setHazardTriggered] = useState<boolean>(false);
   const [solarPeakActive, setSolarPeakActive] = useState<boolean>(false);
   const [carArriving, setCarArriving] = useState<boolean>(false);
+
+  useEffect(() => {
+    setWindowOpen(false);
+    setHazardTriggered(false);
+    setSolarPeakActive(false);
+    setCarArriving(false);
+  }, [activeScenarioId]);
 
   const { theme } = useTheme();
   const isDay = theme === 'day';

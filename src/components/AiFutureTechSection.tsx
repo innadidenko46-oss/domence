@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   AI_FUTURE_TECH,
@@ -13,13 +13,11 @@ import {
   Bot,
   Sparkles,
   CheckCircle2,
-  Volume2,
   Check,
   CloudRain,
   KeyRound,
   Fingerprint,
   Send,
-  SlidersHorizontal,
   Play,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
@@ -70,6 +68,11 @@ export const AiFutureTechSection: React.FC = () => {
     },
   ]);
 
+  const timers = useRef<number[]>([]);
+  useEffect(() => () => {
+    timers.current.forEach((t) => window.clearTimeout(t));
+  }, []);
+
   const currentTech =
     AI_FUTURE_TECH.find((t) => t.id === selectedTechId) || AI_FUTURE_TECH[0];
 
@@ -78,14 +81,14 @@ export const AiFutureTechSection: React.FC = () => {
     setIsSearchingAcuseek(true);
     setAcuseekResult(null);
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       setIsSearchingAcuseek(false);
       setAcuseekResult({
         found: true,
         timestamp: 'Dzisiaj, 14:22:08',
         camera: 'Kamera 1 (Drzwi wejściowe 4K ColorVu)',
       });
-    }, 750);
+    }, 750));
   };
 
   const handleUnlockDoor = () => {
@@ -94,10 +97,10 @@ export const AiFutureTechSection: React.FC = () => {
       return;
     }
     setIsUnlocking(true);
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       setIsUnlocking(false);
       setIsDoorLocked(false);
-    }, 1200);
+    }, 1200));
   };
 
   const handleSendAssistant = (e: React.FormEvent) => {
@@ -108,7 +111,7 @@ export const AiFutureTechSection: React.FC = () => {
     setAssistantInput('');
     setAssistantMessages((prev) => [...prev, { role: 'user', text: userText }]);
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       let reply = 'Polecenie przetworzone lokalnie na sterowniku, bez zależności od łącza.';
       let action = 'Scenariusz wykonany w szafie RACK';
 
@@ -125,7 +128,7 @@ export const AiFutureTechSection: React.FC = () => {
         ...prev,
         { role: 'assistant', text: reply, action },
       ]);
-    }, 600);
+    }, 600));
   };
 
   const getTechIcon = (iconName: string) => {
@@ -390,7 +393,7 @@ export const AiFutureTechSection: React.FC = () => {
                         <div className="rounded-xl overflow-hidden border border-white/10 bg-black/50 shadow-inner">
                           <div className="relative h-52 overflow-hidden group">
                             <img
-                              src="/images/facade_dome_camera.svg"
+                              src={`${import.meta.env.BASE_URL}images/facade_dome_camera.svg`}
                               alt="Podgląd archiwum nagrań z kamery (symulacja)"
                               className="w-full h-full object-cover filter brightness-90 group-hover:scale-102 transition-transform duration-500"
                             />
@@ -465,7 +468,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                     <div className="relative h-56 rounded-xl overflow-hidden border border-white/10">
                       <img
-                        src="/images/facade_dome_camera.svg"
+                        src={`${import.meta.env.BASE_URL}images/facade_dome_camera.svg`}
                         alt="Symulacja obrazu z kamery — porównanie trybu nocnego i kolorowego"
                         className={`w-full h-full object-cover transition-all duration-500 ${
                           nightVisionMode === 'ir'

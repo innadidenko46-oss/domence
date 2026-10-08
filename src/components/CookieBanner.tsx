@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Check, X, Cookie, ChevronRight, Sliders, Info } from 'lucide-react';
+import { Shield, X, Cookie, Sliders } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface CookiePreferences {
@@ -17,32 +17,80 @@ export const CookieBanner: React.FC = () => {
     analytics: false,
   });
 
-  useEffect(() => {
-    const consent = localStorage.getItem('domence_cookie_consent');
-    if (!consent) {
-      // Small delay for smooth entry
-      const timer = setTimeout(() => setIsVisible(true), 800);
-      return () => clearTimeout(timer);
+  const persist = (obj: Record<string, unknown>) => {
+    try {
+      localStorage.setItem('domence_cookie_consent', JSON.stringify(obj));
+    } catch {
+      // private mode / blocked storage: keep banner-only behaviour
     }
+  };
+
+  useEffect(() => {
+    let consent: string | null = null;
+    try {
+      consent = localStorage.getItem('domence_cookie_consent');
+    } catch {
+      consent = null;
+    }
+    if (consent) {
+      try {
+        const parsed = JSON.parse(consent) as Partial<CookiePreferences>;
+        setPreferences((prev) => ({
+          necessary: true,
+          functional: typeof parsed.functional === 'boolean' ? parsed.functional : prev.functional,
+          analytics: typeof parsed.analytics === 'boolean' ? parsed.analytics : prev.analytics,
+        }));
+      } catch {
+        // corrupt JSON: show banner again
+        const timer = setTimeout(() => setIsVisible(true), 800);
+        return () => clearTimeout(timer);
+      }
+      return;
+    }
+    // Small delay for smooth entry
+    const timer = setTimeout(() => setIsVisible(true), 800);
+    return () => clearTimeout(timer);
   }, []);
+
+  // Reopen banner when Footer asks to change preferences
+  useEffect(() => {
+    const reopen = () => setIsVisible(true);
+    window.addEventListener('domence:open-cookie-prefs', reopen);
+    return () => window.removeEventListener('domence:open-cookie-prefs', reopen);
+  }, []);
+
+  // ESC closes details modal + body scroll lock
+  useEffect(() => {
+    if (!showDetailsModal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowDetailsModal(false);
+    };
+    document.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [showDetailsModal]);
 
   const handleAcceptAll = () => {
     const full = { necessary: true, functional: true, analytics: true, timestamp: new Date().toISOString() };
-    localStorage.setItem('domence_cookie_consent', JSON.stringify(full));
+    persist(full);
     setIsVisible(false);
     setShowDetailsModal(false);
   };
 
   const handleAcceptNecessary = () => {
     const nec = { necessary: true, functional: false, analytics: false, timestamp: new Date().toISOString() };
-    localStorage.setItem('domence_cookie_consent', JSON.stringify(nec));
+    persist(nec);
     setIsVisible(false);
     setShowDetailsModal(false);
   };
 
   const handleSaveCustom = () => {
     const custom = { ...preferences, necessary: true, timestamp: new Date().toISOString() };
-    localStorage.setItem('domence_cookie_consent', JSON.stringify(custom));
+    persist(custom);
     setIsVisible(false);
     setShowDetailsModal(false);
   };
@@ -57,7 +105,9 @@ export const CookieBanner: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-xl z-50"
+            role="region"
+            aria-label="Zgoda na pliki cookies"
+            className="fixed bottom-[76px] md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-xl z-50"
           >
             <div className="bg-[#092231]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/60 text-slate-200">
               <div className="flex items-start gap-3.5">
@@ -112,8 +162,12 @@ export const CookieBanner: React.FC = () => {
       {/* Detailed Modal */}
       <AnimatePresence>
         {showDetailsModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setShowDetailsModal(false)}>
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Ustawienia prywatności i plików cookies"
+              onClick={(e) => e.stopPropagation()}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -126,6 +180,8 @@ export const CookieBanner: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setShowDetailsModal(false)}
+                  aria-label="Zamknij ustawienia"
+                  autoFocus
                   className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/5"
                 >
                   <X className="w-5 h-5" />

@@ -15,9 +15,20 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // ESC closes mobile drawer
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mobileMenuOpen]);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -54,7 +65,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 transition-transform active:scale-98"
+            className="flex items-center group shrink-0 transition-transform active:scale-95"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
@@ -126,7 +137,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               to="/kalkulator"
-              className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-98 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm"
+              className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm"
             >
               <Calculator className="w-3.5 h-3.5" />
               <span>Wycena</span>
@@ -154,7 +165,9 @@ export const Navbar: React.FC = () => {
                   ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]'
                   : 'bg-[#27272A] border-white/10 text-[#F4F4F5] hover:text-white'
               }`}
-              aria-label="Otwórz menu"
+              aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -170,6 +183,9 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.2 }}
+            id="mobile-menu"
+            role="dialog"
+            aria-label="Menu mobilne"
             className={`fixed inset-x-0 top-[60px] z-40 border-b p-5 lg:hidden shadow-lg max-h-[calc(100vh-65px)] overflow-y-auto ${
               isDay
                 ? 'bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]'

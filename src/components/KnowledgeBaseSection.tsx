@@ -6,7 +6,9 @@ import { useTheme } from '../context/ThemeContext.tsx';
 
 export const KnowledgeBaseSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [openIndexes, setOpenIndexes] = useState<number[]>([0]);
+  const [openIds, setOpenIds] = useState<string[]>(() =>
+    FAQ_ITEMS.length > 0 ? [FAQ_ITEMS[0].question] : []
+  );
   const { theme } = useTheme();
   const isDay = theme === 'day';
 
@@ -23,9 +25,9 @@ export const KnowledgeBaseSection: React.FC = () => {
       ? FAQ_ITEMS
       : FAQ_ITEMS.filter((item) => item.category === selectedCategory);
 
-  const toggleIndex = (idx: number) => {
-    setOpenIndexes((prev) =>
-      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+  const toggleId = (id: string) => {
+    setOpenIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
     );
   };
 
@@ -80,7 +82,7 @@ export const KnowledgeBaseSection: React.FC = () => {
         {/* Accordion List */}
         <div className="space-y-4">
           {filteredItems.map((item, index) => {
-            const isOpen = openIndexes.includes(index);
+            const isOpen = openIds.includes(item.question);
 
             return (
               <div
@@ -97,7 +99,9 @@ export const KnowledgeBaseSection: React.FC = () => {
               >
                 {/* Accordion Question Header */}
                 <button
-                  onClick={() => toggleIndex(index)}
+                  onClick={() => toggleId(item.question)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${index}`}
                   className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
@@ -136,6 +140,8 @@ export const KnowledgeBaseSection: React.FC = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
+                      id={`faq-panel-${index}`}
+                      role="region"
                       className={`overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 ${
                         isDay ? 'border-slate-200' : 'border-white/10'
                       }`}

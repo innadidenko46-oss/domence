@@ -6,6 +6,7 @@ import {
   Music2,
   CheckCircle2,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 export const MultiroomGardenSection: React.FC = () => {
@@ -78,14 +79,14 @@ export const MultiroomGardenSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+            <div className={`mt-8 pt-4 border-t flex items-center justify-between ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
               <span className="text-xs text-[#9CA3AF] font-mono">Standard architektoniczny</span>
-              <a
-                href="#kalkulator"
+              <Link
+                to="/kalkulator"
                 className="text-xs font-mono font-bold text-[#B87333] hover:text-[#A36034] transition-colors"
               >
                 Wyceń Multiroom →
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -129,14 +130,14 @@ export const MultiroomGardenSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+            <div className={`mt-8 pt-4 border-t flex items-center justify-between ${isDay ? 'border-[#E5E7EB]' : 'border-white/5'}`}>
               <span className="text-xs text-[#9CA3AF] font-mono">Dedykowane sceny kinowe</span>
-              <a
-                href="#kalkulator"
+              <Link
+                to="/kalkulator"
                 className="text-xs font-mono font-bold text-sky-400 hover:text-sky-300 transition-colors"
               >
                 Wyceń Salę Kinową →
-              </a>
+              </Link>
             </div>
           </div>
 

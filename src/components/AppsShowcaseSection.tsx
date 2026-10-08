@@ -10,19 +10,16 @@ import {
   Sun,
   Droplets,
   Gauge,
-  Wifi,
   Lock,
-  Compass,
   ArrowRight,
   Eye,
   CheckCircle2,
   Clock,
   SlidersHorizontal,
-  Layers,
   KeyRound,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface AppTab {
   id: 'shelly' | 'hikvision';
@@ -35,6 +32,7 @@ interface AppTab {
 
 export const AppsShowcaseSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'shelly' | 'hikvision'>('shelly');
+  const navigate = useNavigate();
   const { theme } = useTheme();
   const isDay = theme === 'day';
 
@@ -277,7 +275,7 @@ export const AppsShowcaseSection: React.FC = () => {
                       </div>
                       <button
                         className="text-[10px] font-bold px-3 py-1 rounded-lg bg-purple-500 hover:bg-purple-600 text-white transition-colors"
-                        onClick={() => window.location.href = '/kalkulator'}
+                        onClick={() => navigate('/kalkulator')}
                       >
                         Uruchom
                       </button>
@@ -427,7 +425,7 @@ export const AppsShowcaseSection: React.FC = () => {
                       </div>
                       <button
                         className="text-[10px] font-bold px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 transition-colors"
-                        onClick={() => window.location.href = '/teletechnika'}
+                        onClick={() => navigate('/teletechnika')}
                       >
                         Otwórz Furtkę
                       </button>

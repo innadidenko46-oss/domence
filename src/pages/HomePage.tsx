@@ -62,7 +62,7 @@ export const HomePage: React.FC = () => {
         'Dyskretne nagłośnienie wtopione w architekturę sufitu, zintegrowane ściemnianie światła, rolety blackout i automatyczna cisza podczas dzwonienia wideodomofonu.',
       icon: Volume2,
       badge: 'Multimedia & Atmosfera',
-      image: '/images/living_room_cinema.svg',
+      image: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
       imageAlt: 'Domowa sala kinowa z nastrojowym oświetleniem i dźwiękiem surround',
     },
     {
@@ -144,7 +144,7 @@ export const HomePage: React.FC = () => {
     {
       title: 'Scena Kinowa & Relaks',
       subtitle: 'Nastrojowe światło 5% i zaciemnienie blackout',
-      image: '/images/living_room_cinema.svg',
+      image: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
       description: 'Jeden dotyk przyciemnia oświetlenie i opuszcza rolety, tworząc intymny nastrój sali kinowej.',
     },
   ];

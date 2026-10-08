@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 interface LogoProps {
   className?: string;
@@ -8,8 +8,11 @@ interface LogoProps {
 }
 
 export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = ({ size = 48, className = '' }) => {
+  const uid = useId().replace(/[^a-zA-Z0-9]/g, '');
+  const amberId = `domenceAmberGrad-${uid}`;
+  const petrolId = `domencePetrolGrad-${uid}`;
   return (
-    <svg
+    <svg role="img"
       width={size}
       height={size}
       viewBox="0 0 160 160"
@@ -20,14 +23,14 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
     >
       <defs>
         {/* Amber - Orange Brand Gradient */}
-        <linearGradient id="domenceAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id={amberId} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#FBBF24" />
           <stop offset="50%" stopColor="#F59E0B" />
           <stop offset="100%" stopColor="#EA580C" />
         </linearGradient>
 
         {/* Petrol Blue / Navy Gradient */}
-        <linearGradient id="domencePetrolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id={petrolId} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#0284C7" />
           <stop offset="60%" stopColor="#0B374D" />
           <stop offset="100%" stopColor="#071E2B" />
@@ -55,7 +58,7 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Outer Amber Wave 1 (Upper Right Roof to Arch) */}
       <path
         d="M80 27C94 30 106 37 114 47C124 59 126 73 124 87"
-        stroke="url(#domenceAmberGrad)"
+        stroke={`url(#${amberId})`}
         strokeWidth="9"
         strokeLinecap="round"
       />
@@ -63,7 +66,7 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Outer Amber Wave 2 (Middle Arc) */}
       <path
         d="M74 38C86 42 96 48 103 57C110 66 112 76 110 88C108 97 101 106 92 112"
-        stroke="url(#domenceAmberGrad)"
+        stroke={`url(#${amberId})`}
         strokeWidth="8.5"
         strokeLinecap="round"
       />
@@ -71,7 +74,7 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Intertwining Petrol Navy Loop (Doorway & Smart Loop) */}
       <path
         d="M50 120V80C50 63 64 50 81 50C97 50 110 63 110 80C110 96 97 108 81 108C69 108 59 99 59 87C59 75 69 66 81 66C88 66 94 71 94 78"
-        stroke="url(#domencePetrolGrad)"
+        stroke={`url(#${petrolId})`}
         strokeWidth="9"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -80,7 +83,7 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Inner Amber Telemetry Loop (Accent Wave inside the aperture) */}
       <path
         d="M86 52C96 56 102 65 102 76C102 87 94 96 83 96C74 96 68 90 68 81"
-        stroke="url(#domenceAmberGrad)"
+        stroke={`url(#${amberId})`}
         strokeWidth="7.5"
         strokeLinecap="round"
       />

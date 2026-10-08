@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
@@ -32,15 +32,43 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
   const [step, setStep] = useState<number>(1);
   const [propertyState, setPropertyState] = useState<PropertyState>(selectedPropertyState);
-  const [areaRange, setAreaRange] = useState<AreaRange>('61_110');
+  const [areaRange, setAreaRange] = useState<AreaRange>(() => {
+    try {
+      const raw = localStorage.getItem('domence_calc_v1');
+      if (raw) {
+        const parsed = JSON.parse(raw) as { areaRange?: AreaRange };
+        if (parsed.areaRange && ['do_60', '61_110', '111_180', 'ponad_180'].includes(parsed.areaRange)) {
+          return parsed.areaRange;
+        }
+      }
+    } catch { /* blocked storage: defaults */ }
+    return '61_110';
+  });
   const [activeModuleCategory, setActiveModuleCategory] = useState<string>('all');
-  const [selectedModuleIds, setSelectedModuleIds] = useState<string[]>([
-    'water_shield',
-    'master_off',
-    'intercom_poe',
-    'cctv_starter',
-    'switchboard_protection_pack',
-  ]);
+  const [selectedModuleIds, setSelectedModuleIds] = useState<string[]>(() => {
+    const defaults = [
+      'water_shield',
+      'master_off',
+      'intercom_poe',
+      'cctv_starter',
+      'switchboard_protection_pack',
+    ];
+    try {
+      const raw = localStorage.getItem('domence_calc_v1');
+      if (raw) {
+        const parsed = JSON.parse(raw) as { selectedModuleIds?: string[] };
+        if (Array.isArray(parsed.selectedModuleIds) && parsed.selectedModuleIds.length > 0) {
+          const valid = parsed.selectedModuleIds.filter((id) =>
+            SMART_MODULES.some((m) => m.id === id)
+          );
+          if (valid.length > 0) return valid;
+        }
+      }
+    } catch { /* blocked storage: defaults */ }
+    return defaults;
+  });
+  const [mailBody, setMailBody] = useState('');
+  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -49,11 +77,20 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedPropertyState) {
       setPropertyState(selectedPropertyState);
     }
   }, [selectedPropertyState]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        'domence_calc_v1',
+        JSON.stringify({ propertyState, areaRange, selectedModuleIds })
+      );
+    } catch { /* blocked storage: skip persistence */ }
+  }, [propertyState, areaRange, selectedModuleIds]);
 
   const handleSelectStep1 = (val: PropertyState) => {
     setPropertyState(val);
@@ -99,7 +136,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const totalPrice = calculateTotal();
   const grossPrice = Math.round(totalPrice * 1.23);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const moduleList =
       SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
@@ -121,8 +158,27 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       '',
       'Uwaga: kalkulacja ma charakter poglądowy i nie stanowi oferty w rozumieniu art. 66 Kodeksu Cywilnego.',
     ].join('\n');
-    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    let finalBody = body;
+    if (finalBody.length > 1800) {
+      const shortList =
+        SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
+          .map((m) => `• ${m.name}`)
+          .join('\n') || '• brak wybranych modułów';
+      finalBody = finalBody.replace(moduleList, shortList);
+    }
+    setMailBody(finalBody);
+    setCopied(false);
+    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(finalBody)}`;
     setIsSubmitted(true);
+  };
+
+  const handleCopyBody = async () => {
+    try {
+      await navigator.clipboard.writeText(mailBody);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
   };
 
   const getAreaLabel = (range: AreaRange) => {
@@ -189,7 +245,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <span className="font-mono text-[#9CA3AF]">Krok {step} z 4</span>
               </div>
               
-              <div className="w-full h-1 bg-white/10 rounded-[2px] overflow-hidden">
+              <div className={`w-full h-1 rounded-[2px] overflow-hidden ${isDay ? 'bg-[#E5E7EB]' : 'bg-white/10'}`}>
                 <motion.div
                   className="h-full bg-[#B87333]"
                   animate={{ width: `${step * 25}%` }}
@@ -393,10 +449,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   {filteredModules.map((mod) => {
                     const isChecked = selectedModuleIds.includes(mod.id);
                     return (
-                      <div
+                      <button
+                        type="button"
                         key={mod.id}
                         onClick={() => toggleModule(mod.id)}
-                        className={`p-4 rounded-[2px] transition-all border cursor-pointer ${
+                        aria-pressed={isChecked}
+                        className={`p-4 rounded-[2px] transition-all border cursor-pointer w-full text-left ${
                           isChecked
                             ? 'bg-[#B87333]/15 border-[#B87333]'
                             : isDay
@@ -452,7 +510,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           <span className="text-[#B87333] font-bold shrink-0">W praktyce:</span>
                           <span className="leading-normal">{mod.humanExplanation}</span>
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
@@ -542,12 +600,17 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     </label>
                     <div className="relative">
                       <input
+                        id="calc-name"
+                        name="name"
+                        autoComplete="name"
                         type="text"
                         required
+                        minLength={3}
+                        maxLength={60}
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
                         placeholder="np. Marek Wiśniewski"
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                           isDay
                             ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                             : 'bg-[#18181B] border-white/10 text-white focus:border-[#B87333]'
@@ -559,17 +622,23 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                      <label htmlFor="calc-phone" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                         Telefon kontaktowy
                       </label>
                       <div className="relative">
                         <input
+                          id="calc-phone"
+                          name="phone"
+                          autoComplete="tel"
+                          inputMode="tel"
                           type="tel"
                           required
+                          pattern="^[+\d][\d\s\-/.]{5,19}$"
+                          maxLength={25}
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
                           placeholder="+48 601 234 567"
-                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none ${
+                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/10 text-white focus:border-[#B87333]'
@@ -580,17 +649,21 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     </div>
 
                     <div>
-                      <label className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
+                      <label htmlFor="calc-email" className={`block text-xs font-semibold mb-1 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                         Adres e-mail
                       </label>
                       <div className="relative">
                         <input
+                          id="calc-email"
+                          name="email"
+                          autoComplete="email"
                           type="email"
                           required
+                          maxLength={254}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="inwestor@dom.pl"
-                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none ${
+                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/60 ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
                               : 'bg-[#18181B] border-white/10 text-white focus:border-[#B87333]'
@@ -679,11 +752,23 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </p>
                 </div>
 
-                <button
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setStep(1);
-                  }}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={handleCopyBody}
+                    className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer ${
+                      isDay
+                        ? 'bg-white border-[#D1D5DB] text-[#374151] hover:bg-[#F3F4F6]'
+                        : 'bg-white/5 border-white/10 text-[#D4D4D8] hover:bg-white/10'
+                    }`}
+                  >
+                    {copied ? 'Skopiowano treść' : 'Kopiuj treść wiadomości'}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setStep(1);
+                    }}
                   className={`px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer ${
                     isDay
                       ? 'bg-white border-[#D1D5DB] text-[#374151] hover:bg-[#F3F4F6]'
@@ -691,7 +776,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   }`}
                 >
                   Skonfiguruj kolejny obiekt
-                </button>
+                  </button>
+                </div>
               </motion.div>
             )}
 

@@ -26,7 +26,7 @@ export const MobileStickyBar: React.FC = () => {
 
         <Link
           to="/kalkulator"
-          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-98 transition-all text-center"
+          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center"
         >
           <Calculator className="w-4 h-4" />
           <span>Wycena Kosztorysu</span>

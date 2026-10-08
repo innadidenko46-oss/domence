@@ -18,7 +18,7 @@ export const MultiroomGardenPage: React.FC = () => {
         title="Dźwięk Wielostrefowy Multiroom &amp; Prywatna Sala Kinowa"
         description="Dyskretna technologia służąca Twojemu relaksowi. Muzyka płynąca z bezramkowych głośników sufitowych wpuszczonych w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz synchronizacja ze stacją bramową."
         icon={<Volume2 className="w-4 h-4 text-[#B87333]" />}
-        image="/images/living_room_cinema.svg"
+        image={`${import.meta.env.BASE_URL}images/living_room_cinema.svg`}
       />
 
       {/* Visual Atmosphere Showcase for Audio & Cinema */}
@@ -80,7 +80,7 @@ export const MultiroomGardenPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="/images/hikvision_gate.svg"
+                  src={`${import.meta.env.BASE_URL}images/hikvision_gate.svg`}
                   alt="Wideodomofon i kamera monitoringu przy wejściu na posesję"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />

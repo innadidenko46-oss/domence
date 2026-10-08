@@ -19,6 +19,14 @@ export const PackagesPage: React.FC = () => {
     <div className={`transition-colors duration-300 ${
       isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
     }`}>
+      <PageHeader
+        badge="Pakiety Wdrożeniowe"
+        title="Pakiety automatyki i teletechniki dla domu"
+        description="Trzy gotowe zakresy: wideodomofon z monitoringiem, retrofit bez kucia oraz pełna rozdzielnica modułowa. Każdy z pisemną wyceną ryczałtową."
+        icon={<Package className="w-4 h-4 text-[#B87333]" />}
+        image={`${import.meta.env.BASE_URL}images/rack_cabinet_clean.svg`}
+      />
+
       {/* Main Packages Section Component */}
       <PackagesSection onSelectPackage={handleSelectPackage} />
 
