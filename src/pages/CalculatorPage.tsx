@@ -35,7 +35,7 @@ export const CalculatorPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Konfigurator Inwestycji"
-        title="Wycena Instalacji w 60 Sekund: Kosztorys Sprzętu i Montażu"
+        title="Wycena instalacji: kosztorys sprzętu i montażu"
         description="Wybierz stan nieruchomości, metraż i pożądane moduły automatyki, wideodomofonu oraz monitoringu wideo. Otrzymasz szacunkowy kosztorys ryczałtowy bez ukrytych kosztów."
         icon={<Calculator className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"

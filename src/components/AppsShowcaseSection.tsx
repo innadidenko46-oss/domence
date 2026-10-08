@@ -78,12 +78,12 @@ export const AppsShowcaseSection: React.FC = () => {
           <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
             isDay ? 'text-slate-900' : 'text-white'
           }`}>
-            Twój inteligentny dom w Twojej kieszeni. Prosto i bez tajemnic.
+            Sterowanie światłem, roletami i klimatem z telefonu.
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
             isDay ? 'text-slate-600' : 'text-slate-300'
           }`}>
-            Nie potrzebujesz doktoratu z informatyki. Dostarczamy intuicyjne, przejrzyste aplikacje na iOS i Android, 
+            Konfiguracja jest opisana krok po kroku. Dostarczamy intuicyjne, przejrzyste aplikacje na iOS i Android, 
             z którymi poradzi sobie każdy domownik – od podglądu furtki w pracy po sceny relaksu i ochronę przed zalaniem.
           </p>
         </div>
@@ -154,7 +154,7 @@ export const AppsShowcaseSection: React.FC = () => {
                   <p className={`text-xs sm:text-sm leading-relaxed mb-6 font-light ${
                     isDay ? 'text-slate-600' : 'text-slate-300'
                   }`}>
-                    Aplikacja łączy w jednym miejscu oświetlenie, rolety, ogrzewanie, ochronę przed zalaniem, sceny nastrojowe i gniazda zasilania. Działa zarówno z kanapy przez sieć Wi-Fi, jak i zdalnie z drugiego końca świata.
+                    Aplikacja łączy w jednym miejscu oświetlenie, rolety, ogrzewanie, ochronę przed zalaniem, sceny nastrojowe i gniazda zasilania. Działa z kanapy przez sieć Wi-Fi, a zdalnie przez internet.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -214,7 +214,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 }`}>
                   <Lock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <div className="text-xs leading-relaxed">
-                    <span className="font-bold block mb-1">Działa w 100% lokalnie nawet bez internetu</span>
+                    <span className="font-bold block mb-1">Działa lokalnie, także bez internetu</span>
                     Jeśli operator odetnie kabel internetowy do Twojego domu, włączniki na ścianie i aplikacja w domowej sieci Wi-Fi nadal w pełni sterują światłem, roletami i klimatem. Nie ma żadnego uzależnienia od awarii serwerów zewnętrznych.
                   </div>
                 </div>
@@ -340,7 +340,7 @@ export const AppsShowcaseSection: React.FC = () => {
                     }`}>
                       <div className="flex items-center gap-2 text-sky-400 font-bold text-xs mb-1.5">
                         <BellRing className="w-4 h-4 shrink-0" />
-                        <span>Połączenie Wideo w 1 Sekundę</span>
+                        <span>Szybkie połączenie wideo</span>
                       </div>
                       <p className="text-xs text-slate-400 leading-relaxed font-light">
                         Gdy kurier dzwoni do furtki, Twój telefon dzwoni jak zwykłe połączenie wideo. Widzisz rozmówcę w jakości Full HD/4K i słyszysz go bez szumu wiatru.
@@ -376,7 +376,7 @@ export const AppsShowcaseSection: React.FC = () => {
                     }`}>
                       <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs mb-1.5">
                         <CheckCircle2 className="w-4 h-4 shrink-0" />
-                        <span>Zero Fałszywych Alarmów</span>
+                        <span>Redukcja fałszywych alarmów</span>
                       </div>
                       <p className="text-xs text-slate-400 leading-relaxed font-light">
                         Sztuczna inteligencja odróżnia sylwetkę człowieka i samochodu od przebiegającego kota, psa, deszczu czy kołyszących się na wietrze gałęzi drzew.
@@ -391,7 +391,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 }`}>
                   <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
                   <div className="text-xs leading-relaxed">
-                    <span className="font-bold block mb-1">Darmowa aplikacja Hik-Connect bez żadnych abonamentów</span>
+                    <span className="font-bold block mb-1">Aplikacja Hik-Connect — podgląd na telefonie bez opłat abonamentowych</span>
                     Wszystkie nagrania wideo zapisują się na fizycznym, bezpiecznym dysku twardym rejestratora w Twoim domu. Nie płacisz co miesiąc za miejsce w chmurze ani za dostęp do archiwum nagrań.
                   </div>
                 </div>
@@ -449,7 +449,7 @@ export const AppsShowcaseSection: React.FC = () => {
                         <ShieldCheck className="w-4 h-4 text-rose-400" />
                         <div>
                           <div className="font-bold text-white">Wejście Główne & Fasada (AcuSense AI)</div>
-                          <div className="text-[11px] text-slate-400">Ochrona wejścia aktywna • 0 fałszywych alertów</div>
+                          <div className="text-[11px] text-slate-400">Ochrona wejścia aktywna • Redukcja fałszywych alarmów</div>
                         </div>
                       </div>
                       <span className="text-[10px] font-bold px-2 py-1 rounded bg-rose-500/20 text-rose-300">

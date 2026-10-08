@@ -1,7 +1,5 @@
-import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext.tsx';
-import { LanguageProvider } from './context/LanguageContext.tsx';
 import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -41,11 +39,6 @@ function AppContent() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/kalkulator" element={<CalculatorPage />} />
           <Route path="/kontakt" element={<ContactPage />} />
-          {/* Redirects */}
-          <Route path="/multimedia-ogrod" element={<Navigate to="/multimedia" replace />} />
-          <Route path="/standard-pracy" element={<Navigate to="/pakiety" replace />} />
-          <Route path="/energetyka" element={<Navigate to="/systemy" replace />} />
-          <Route path="/pomiary-sep" element={<Navigate to="/systemy" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -65,12 +58,10 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <LanguageProvider>
-        <HashRouter>
-          <ScrollToTop />
-          <AppContent />
-        </HashRouter>
-      </LanguageProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <AppContent />
+      </HashRouter>
     </ThemeProvider>
   );
 }

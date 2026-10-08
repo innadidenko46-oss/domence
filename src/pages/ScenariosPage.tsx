@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ScenariosSection } from '../components/ScenariosSection.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { SlidersHorizontal, ArrowRight, Droplets, LogOut, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
@@ -17,7 +16,7 @@ export const ScenariosPage: React.FC = () => {
       <PageHeader
         badge="Scenariusze Codziennego Dnia"
         title="Automatyka, Która Zdejmuje Obowiązki z Twojej Głowy"
-        description="Prawdziwy inteligentny dom to nie aplikacja w telefonie, lecz przestrzeń działająca w tle. Mechaniczne odcięcie wody w 3 sekundy po detekcji wycieku, bezpieczny odbiór przesyłek od kuriera i automatyczne wygaszanie obwodów przy wyjściu."
+        description="Prawdziwy inteligentny dom to nie aplikacja w telefonie, lecz przestrzeń działająca w tle. Mechaniczne odcięcie wody w ciągu kilku sekund po detekcji wycieku, bezpieczny odbiór przesyłek od kuriera i automatyczne wygaszanie obwodów przy wyjściu."
         icon={<SlidersHorizontal className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
@@ -81,13 +80,13 @@ export const ScenariosPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Bezpieczeństwo wodne i ochrona przed zalaniem"
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+                  alt="Łazienka z armaturą narażoną na zalanie — strefa ochrony przed wodą"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-[#18181B]/80 backdrop-blur-md text-[11px] font-mono font-semibold text-emerald-400 border border-white/10">
-                  Zamknięcie wody w 3 sekundy
+                  Zamknięcie wody w ciągu kilku sekund
                 </span>
               </div>
               <div className="p-5">
@@ -95,7 +94,7 @@ export const ScenariosPage: React.FC = () => {
                   Ochrona Przed Zalaniem
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
-                  Zawór ze sprężyną mechaniczną odcina główny dopływ wody natychmiast po wykryciu wilgoci pod urządzeniami AGD.
+                  Zawór ze sprężyną mechaniczną odcina główny dopływ wody w ciągu kilku sekund po wykryciu wilgoci pod urządzeniami AGD.
                 </p>
               </div>
             </div>
@@ -160,7 +159,7 @@ export const ScenariosPage: React.FC = () => {
                 <Moon className="w-5 h-5" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                Autonomia 24/7/365
+                Autonomia lokalna
               </h3>
               <p className={`text-xs leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 Wszystkie reguły logiczne wykonują się na sterowniku w rozdzielnicy. Brak łączności ze światem zewnętrznym nie wpływa na działanie domu.
@@ -169,9 +168,6 @@ export const ScenariosPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Mobile Apps & Control Showcase */}
-      <AppsShowcaseSection />
 
       {/* Next Area Banner */}
       <section className={`py-12 border-t ${

@@ -23,15 +23,21 @@ export const ContactPage: React.FC = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 600);
+    const subject = `Zapytanie o projekt instalacji — ${formData.name}`;
+    const body = [
+      `Imię i nazwisko: ${formData.name}`,
+      `Telefon: ${formData.phone}`,
+      `E-mail: ${formData.email}`,
+      `Lokalizacja inwestycji: ${formData.location}`,
+      '',
+      'Opis założeń:',
+      formData.message,
+    ].join('\n');
+    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   };
 
   return (
@@ -40,8 +46,8 @@ export const ContactPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Bezpośredni Kontakt"
-        title="Skonsultuj Projekt z Głównym Inżynierem Realizacji"
-        description="Dysponujesz rzutem instalacji elektrycznej lub budujesz dom? Prześlij nam dokumentację do bezpłatnej weryfikacji lub zadzwoń bezpośrednio do inżyniera projektu."
+        title="Skonsultuj Projekt instalacji z inżynierem"
+        description="Dysponujesz rzutem instalacji elektrycznej lub budujesz dom? Prześlij nam dokumentację do bezpłatnej weryfikacji — odpowiadamy w ciągu 24 godzin w dni robocze."
         icon={<Phone className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
@@ -67,12 +73,11 @@ export const ContactPage: React.FC = () => {
 
               {/* Direct Info Cards with 2px radius */}
               <div className="space-y-3">
-                <a
-                  href="tel:+48220000000"
+                <div
                   className={`flex items-start gap-4 p-5 rounded-[2px] border transition-colors group ${
                     isDay
-                      ? 'bg-white border-[#E5E7EB] hover:border-[#B87333]'
-                      : 'bg-[#27272A]/40 border-white/10 hover:border-[#B87333]'
+                      ? 'bg-white border-[#E5E7EB]'
+                      : 'bg-[#27272A]/40 border-white/10'
                   }`}
                 >
                   <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0">
@@ -80,16 +85,16 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
-                      Kierownik Realizacji Projektów
+                      Kontakt z inżynierem
                     </div>
-                    <div className="text-base font-bold font-mono text-white group-hover:text-[#B87333] transition-colors mt-0.5">
-                      +48 22 000 00 00
+                    <div className={`text-base font-bold font-mono transition-colors mt-0.5 ${isDay ? 'text-[#111827]' : 'text-white'} group-hover:text-[#B87333]`}>
+                      Kontakt przez formularz lub e-mail
                     </div>
                     <div className="text-[11px] text-[#B87333] font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
                     </div>
                   </div>
-                </a>
+                </div>
 
                 <a
                   href="mailto:kontakt@domence.pl"
@@ -106,7 +111,7 @@ export const ContactPage: React.FC = () => {
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
                       Analiza Projektów Budowlanych
                     </div>
-                    <div className="text-base font-bold text-white group-hover:text-[#B87333] transition-colors mt-0.5">
+                    <div className={`text-base font-bold group-hover:text-[#B87333] transition-colors mt-0.5 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
                       kontakt@domence.pl
                     </div>
                     <div className="text-[11px] text-[#9CA3AF] mt-0.5 font-mono">
@@ -125,16 +130,13 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9CA3AF]">
-                      Siedziba i Warsztat Prefabrykacji
+                      Obszar realizacji
                     </div>
                     <div className={`text-sm font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                      DOMENCE Sp. z o.o.
+                      Warszawa i cała Polska
                     </div>
                     <div className="text-xs text-[#9CA3AF] mt-0.5">
-                      ul. Cybernetyki 9, budynek B, 02-677 Warszawa {/* TODO: wstaw prawdziwy adres siedziby */}
-                    </div>
-                    <div className="text-[11px] font-mono text-[#6B7280] mt-1">
-                      NIP: [WSTAW NIP] • REGON: [WSTAW REGON] {/* TODO: uzupełnij oficjalne dane rejestrowe */}
+                      Projekty prowadzimy na miejscu u inwestora oraz zdalnie na podstawie rzutów.
                     </div>
                   </div>
                 </div>
@@ -148,20 +150,20 @@ export const ContactPage: React.FC = () => {
               }`}>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333] mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
-                  <span>Standard Inżynierski DOMENCE</span>
+                  <span>Standard Współpracy DOMENCE</span>
                 </h4>
                 <ul className={`space-y-2 text-xs ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Uprawnienia elektroinstalacyjne SEP Eksploatacja + Dozór do 1kV</span>
+                    <span>Bezpłatna analiza przesłanych rzutów i dokumentacji</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Certyfikowany instalator Shelly Pro &amp; Partner Hikvision</span>
+                    <span>Zakres prac i wycena potwierdzone pisemnie przed startem</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                    <span>Polisa ubezpieczeniowa OC wykonawcy na kwotę 2 000 000 PLN</span>
+                    <span>Dokumentacja powykonawcza i protokoły pomiarowe po odbiorze</span>
                   </li>
                 </ul>
               </div>
@@ -184,7 +186,8 @@ export const ContactPage: React.FC = () => {
                       Dziękujemy za kontakt!
                     </h3>
                     <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto leading-relaxed">
-                      Twoje zgłoszenie trafiło bezpośrednio do inżyniera projektanta DOMENCE. Skontaktujemy się telefonicznie w ciągu 24 godzin roboczych.
+                      Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
+                      Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin w dni robocze.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -232,7 +235,7 @@ export const ContactPage: React.FC = () => {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+48 601 000 000"
+                          placeholder="np. 500 600 700"
                           className={`w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none ${
                             isDay
                               ? 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] focus:border-[#B87333]'
@@ -298,11 +301,10 @@ export const ContactPage: React.FC = () => {
 
                     <button
                       type="submit"
-                      disabled={loading}
                       className="w-full py-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{loading ? 'Przesyłanie...' : 'Prześlij Zapytanie do Inżyniera'}</span>
+                      <span>Prześlij Zapytanie do Inżyniera</span>
                     </button>
                     <p className="text-[11px] text-center text-[#6B7280]">
                       * Odpowiadamy w ciągu 24h. Dane nie są przekazywane firmom marketingowym.

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { MultiroomGardenSection } from '../components/MultiroomGardenSection.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { Volume2, ArrowRight, Film, Music2, Tv } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
@@ -19,7 +18,7 @@ export const MultiroomGardenPage: React.FC = () => {
         title="Dźwięk Wielostrefowy Multiroom &amp; Prywatna Sala Kinowa"
         description="Dyskretna technologia służąca Twojemu relaksowi. Muzyka płynąca z bezramkowych głośników sufitowych wpuszczonych w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz synchronizacja ze stacją bramową."
         icon={<Volume2 className="w-4 h-4 text-[#B87333]" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+        image="/images/living_room_cinema.svg"
       />
 
       {/* Visual Atmosphere Showcase for Audio & Cinema */}
@@ -81,8 +80,8 @@ export const MultiroomGardenPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Dyskretny wideodomofon i monitoring strefy wejścia"
+                  src="/images/hikvision_gate.svg"
+                  alt="Wideodomofon i kamera monitoringu przy wejściu na posesję"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -95,7 +94,7 @@ export const MultiroomGardenPage: React.FC = () => {
                   Automatyczne Wyciszanie przy Dzwonku
                 </h3>
                 <p className={`text-sm mt-3 leading-[1.7] ${isDay ? 'text-[#4B5563]' : 'text-[#D4D4D8]'}`}>
-                  Gdy kurier dzwoni do furtki, muzyka w strefach automatycznie wycisza się o 80%, a na ściennym panelu dotykowym pojawia się podgląd wideo.
+                  Gdy kurier dzwoni do furtki, muzyka w strefach automatycznie cichnie, a na ściennym panelu dotykowym pojawia się podgląd wideo.
                 </p>
               </div>
             </div>
@@ -204,7 +203,7 @@ export const MultiroomGardenPage: React.FC = () => {
           <div className={`mt-8 p-8 rounded-[2px] border ${
             isDay ? 'bg-[#F9FAFB] border-[#E5E7EB]' : 'bg-[#27272A]/50 border-white/10'
           }`}>
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
+            <div className={`flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b ${isDay ? 'border-[#E5E7EB]' : 'border-white/10'}`}>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
                   <Tv className="w-6 h-6" />
@@ -228,9 +227,6 @@ export const MultiroomGardenPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Mobile Apps Showcase */}
-      <AppsShowcaseSection />
 
       {/* Next Area Banner */}
       <section className={`py-12 border-t ${

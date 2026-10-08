@@ -23,19 +23,14 @@ import {
   Play,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
-import { useLanguage } from '../context/LanguageContext.tsx';
 
 export const AiFutureTechSection: React.FC = () => {
   const [selectedTechId, setSelectedTechId] = useState<string>('ai-acuseek');
-  const { lang } = useLanguage();
-  const isUa = lang === 'ua';
   const { theme } = useTheme();
   const isDay = theme === 'day';
 
   const [acuseekQuery, setAcuseekQuery] = useState<string>(
-    isUa
-      ? 'Кур\'єр з коробкою біля вхідних дверей'
-      : 'Kurier z paczką przy drzwiach'
+    'Kurier z paczką przy drzwiach'
   );
   const [isSearchingAcuseek, setIsSearchingAcuseek] = useState<boolean>(false);
   const [acuseekResult, setAcuseekResult] = useState<{
@@ -44,10 +39,8 @@ export const AiFutureTechSection: React.FC = () => {
     camera: string;
   } | null>({
     found: true,
-    timestamp: isUa ? 'Сьогодні, 14:22:08' : 'Dzisiaj, 14:22:08',
-    camera: isUa
-      ? 'Камера 1 (Вхідні двері 4K ColorVu)'
-      : 'Kamera 1 (Drzwi wejściowe 4K ColorVu)',
+    timestamp: 'Dzisiaj, 14:22:08',
+    camera: 'Kamera 1 (Drzwi wejściowe 4K ColorVu)',
   });
 
   // Interactive ColorVu toggle: IR vs ColorVu
@@ -61,39 +54,21 @@ export const AiFutureTechSection: React.FC = () => {
   const [assistantInput, setAssistantInput] = useState<string>('');
   const [assistantMessages, setAssistantMessages] = useState<
     { role: 'user' | 'assistant'; text: string; action?: string }[]
-  >(() =>
-    isUa
-      ? [
-          {
-            role: 'assistant',
-            text: 'Вітаю! Я Shelly Assistant. Можу відрегулювати клімат або перевірити стан безпеки будинку. Чим допомогти?',
-          },
-          {
-            role: 'user',
-            text: 'Зроби комфортну атмосферу для вечері',
-          },
-          {
-            role: 'assistant',
-            text: 'Виконано: ролети опущені, освітлення 2400K на 30%, фонова музика активна.',
-            action: 'Сцена «Вечеря» активна • 2400K • Ролети 100%',
-          },
-        ]
-      : [
-          {
-            role: 'assistant',
-            text: 'Dzień dobry. Mogę wyregulować temperaturę, sprawdzić stan rozdzielnicy lub ustawić scenę oświetleniową. W czym pomóc?',
-          },
-          {
-            role: 'user',
-            text: 'Ustaw nastrojowe światło do kolacji',
-          },
-          {
-            role: 'assistant',
-            text: 'Wykonano: rolety opuszczone, taśmy LED ściemnione do 30% w ciepłej barwie 2400K, audio w salonie włączone.',
-            action: 'Scena «Kolacja» aktywna • Światło 2400K • Rolety 100%',
-          },
-        ]
-  );
+  >(() => [
+    {
+      role: 'assistant',
+      text: 'Dzień dobry. Mogę wyregulować temperaturę, sprawdzić stan rozdzielnicy lub ustawić scenę oświetleniową. W czym pomóc?',
+    },
+    {
+      role: 'user',
+      text: 'Ustaw nastrojowe światło do kolacji',
+    },
+    {
+      role: 'assistant',
+      text: 'Wykonano: rolety opuszczone, taśmy LED ściemnione do 30% w ciepłej barwie 2400K, audio w salonie włączone.',
+      action: 'Scena «Kolacja» aktywna • Światło 2400K • Rolety 100%',
+    },
+  ]);
 
   const currentTech =
     AI_FUTURE_TECH.find((t) => t.id === selectedTechId) || AI_FUTURE_TECH[0];
@@ -107,10 +82,8 @@ export const AiFutureTechSection: React.FC = () => {
       setIsSearchingAcuseek(false);
       setAcuseekResult({
         found: true,
-        timestamp: isUa ? 'Сьогодні, 14:22:08' : 'Dzisiaj, 14:22:08',
-        camera: isUa
-          ? 'Камера 1 (Вхідні двері 4K ColorVu)'
-          : 'Kamera 1 (Drzwi wejściowe 4K ColorVu)',
+        timestamp: 'Dzisiaj, 14:22:08',
+        camera: 'Kamera 1 (Drzwi wejściowe 4K ColorVu)',
       });
     }, 750);
   };
@@ -136,23 +109,15 @@ export const AiFutureTechSection: React.FC = () => {
     setAssistantMessages((prev) => [...prev, { role: 'user', text: userText }]);
 
     setTimeout(() => {
-      let reply = isUa
-        ? 'Команда прийнята та виконана на локальному сервері.'
-        : 'Polecenie przetworzone lokalnie na sterowniku bez opóźnień.';
-      let action = isUa
-        ? 'Сценарій виконано на шині'
-        : 'Scenariusz wykonany w szafie RACK';
+      let reply = 'Polecenie przetworzone lokalnie na sterowniku, bez zależności od łącza.';
+      let action = 'Scenariusz wykonany w szafie RACK';
 
       const lower = userText.toLowerCase();
       if (lower.includes('kino') || lower.includes('film') || lower.includes('кіно')) {
-        reply = isUa
-          ? 'Увімкнено режим домашнього кінотеатру: екран опущено, звук переведено в Dolby Atmos.'
-          : 'Aktywowano tryb kinowy: rolety zjeżdżają w dół, światła wygaszają się do 5%, a dźwięk Dolby Atmos wypełnia salon.';
+        reply = 'Aktywowano tryb kinowy: rolety zjeżdżają w dół, światła wygaszają się do 5%, a dźwięk Dolby Atmos wypełnia salon.';
         action = 'Kino Domowe • Wyciemnienie 95% • HDMI CEC On';
       } else if (lower.includes('dobranoc') || lower.includes('sen') || lower.includes('ніч')) {
-        reply = isUa
-          ? 'Всі двері зачинено на ригель, периметр під охороною, світло вимкнено.'
-          : 'Wszystkie zamki zaryglowane, obwody oświetlenia wyłączone, monitoring w trybie nocnym.';
+        reply = 'Wszystkie zamki zaryglowane, obwody oświetlenia wyłączone, monitoring w trybie nocnym.';
         action = 'Tryb Nocny • Zamki Zaryglowane • Perymetria Aktywna';
       }
 
@@ -182,15 +147,13 @@ export const AiFutureTechSection: React.FC = () => {
     }
   };
 
-  const getTechName = (t: AiTechFeature) => (isUa && t.name_ua ? t.name_ua : t.name);
-  const getTechSubtitle = (t: AiTechFeature) => (isUa && t.subtitle_ua ? t.subtitle_ua : t.subtitle);
-  const getTechSummary = (t: AiTechFeature) => (isUa && t.summary_ua ? t.summary_ua : t.summary);
-  const getTechHumanBenefit = (t: AiTechFeature) => (isUa && t.humanBenefit_ua ? t.humanBenefit_ua : t.humanBenefit);
-  const getTechKeyPoints = (t: AiTechFeature) => (isUa && t.keyPoints_ua ? t.keyPoints_ua : t.keyPoints);
+  const getTechName = (t: AiTechFeature) => t.name;
+  const getTechSubtitle = (t: AiTechFeature) => t.subtitle;
+  const getTechSummary = (t: AiTechFeature) => t.summary;
+  const getTechHumanBenefit = (t: AiTechFeature) => t.humanBenefit;
+  const getTechKeyPoints = (t: AiTechFeature) => t.keyPoints;
   const getTechSamplePrompts = (t: AiTechFeature) =>
-    isUa && t.simulationData?.samplePrompts_ua
-      ? t.simulationData.samplePrompts_ua
-      : t.simulationData?.samplePrompts || [];
+    t.simulationData?.samplePrompts || [];
 
   return (
     <section
@@ -206,29 +169,25 @@ export const AiFutureTechSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3">
-            <span>{isUa ? 'Як ми монтуємо системи' : 'Jak montujemy systemy'}</span>
+            <span>Jak montujemy systemy</span>
             <span aria-hidden="true">·</span>
             <span>Hikvision &amp; Shelly Europe</span>
             <span aria-hidden="true">·</span>
-            <span>{isUa ? '100% Локально Без Хмари' : '100% Lokalnie Bez Chmury'}</span>
+            <span>Lokalnie, Bez Chmury</span>
           </div>
           <h2
             className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] ${
               isDay ? 'text-[#111827]' : 'text-white'
             }`}
           >
-            {isUa
-              ? 'Інтелектуальні системи безпеки та комфорту.'
-              : 'Jak szukasz zdarzenia w nagraniach.'}
+            Jak szukasz zdarzenia w nagraniach.
           </h2>
           <p
             className={`mt-4 text-base sm:text-lg leading-[1.7] font-normal ${
               isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
             }`}
           >
-            {isUa
-              ? 'Знаходьте будь-який момент в архіві камер за простим текстовим описом, відмикайте двері за 2 секунди дотиком до клямки та керуйте будинkiem без передачі особистих даних у хмару.'
-              : 'Koniec ze żmudnym przewijaniem 48 godzin nagrań. Wpisz po prostu: „kurier zostawił paczkę przy bramie” lub „samochód pod bramą o 21:00”, a system wskaże sekundę nagrania. Czasem trafisz od razu, czasem trzeba powtórzyć hasło innymi słowami – działa w 100% lokalnie na Twoim rejestratorze.'}
+            Koniec ze żmudnym przewijaniem 48 godzin nagrań. Wpisz po prostu: „kurier zostawił paczkę przy bramie” lub „samochód pod bramą o 21:00”, a system wskaże sekundę nagrania. Czasem trafisz od razu, czasem trzeba powtórzyć hasło innymi słowami – działa lokalnie na Twoim rejestratorze.
           </p>
         </div>
 
@@ -328,7 +287,7 @@ export const AiFutureTechSection: React.FC = () => {
                     <Sparkles className="w-5 h-5 text-[#B87333] shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs font-bold uppercase tracking-wider font-mono mb-1 text-[#B87333]">
-                        {isUa ? 'Практична користь для власника:' : 'Praktyczna korzyść dla inwestora:'}
+                        Praktyczna korzyść dla inwestora:
                       </div>
                       <p className="text-xs sm:text-sm leading-relaxed">
                         {getTechHumanBenefit(currentTech)}
@@ -349,7 +308,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                 {/* Hardware Spec Note for Enthusiasts (Reduced Jargon on Front) */}
                 <div className="pt-2 text-[11px] font-mono text-[#6B7280] border-t border-white/5">
-                  Sprzęt: Rejestrator NVR z procesorem NPU w szafie RACK. Dane kodowane lokalnie bez ekspozycji w Internecie.
+                  Sprzęt: Rejestrator NVR z procesorem NPU w szafie RACK. Dane przetwarzane lokalnie, bez wysyłania ich do chmury.
                 </div>
               </div>
 
@@ -370,7 +329,7 @@ export const AiFutureTechSection: React.FC = () => {
                         <span className="text-xs font-semibold text-white ml-2">Archiwum Wideo • Szukaj</span>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        100% Offline LAN
+                        Offline LAN
                       </span>
                     </div>
 
@@ -431,8 +390,8 @@ export const AiFutureTechSection: React.FC = () => {
                         <div className="rounded-xl overflow-hidden border border-white/10 bg-black/50 shadow-inner">
                           <div className="relative h-52 overflow-hidden group">
                             <img
-                              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
-                              alt="Wyszukiwanie zdarzeń w kamerach"
+                              src="/images/facade_dome_camera.svg"
+                              alt="Podgląd archiwum nagrań z kamery (symulacja)"
                               className="w-full h-full object-cover filter brightness-90 group-hover:scale-102 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
@@ -455,7 +414,7 @@ export const AiFutureTechSection: React.FC = () => {
 
                             <div className="absolute bottom-2.5 inset-x-3 flex items-center justify-between text-xs text-white">
                               <span className="font-medium truncate">{acuseekResult.camera}</span>
-                              <span className="font-mono text-[10px] text-[#D1D5DB]">4K UHD @ 25fps</span>
+                              <span className="font-mono text-[10px] text-[#D1D5DB]">podgląd archiwum</span>
                             </div>
                           </div>
 
@@ -469,7 +428,7 @@ export const AiFutureTechSection: React.FC = () => {
                   </div>
                 )}
 
-                {/* 2. ColorVu 3.0 Interactive Visualizer */}
+                {/* 2. ColorVu Interactive Visualizer */}
                 {currentTech.id === 'ai-colorvu-acusense' && (
                   <div className={`rounded-2xl p-5 sm:p-6 border ${
                     isDay ? 'bg-white border-[#E5E7EB]' : 'bg-[#18181B] border-[#27272A]'
@@ -477,7 +436,7 @@ export const AiFutureTechSection: React.FC = () => {
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
                       <div className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-2">
                         <Eye className="w-4 h-4" />
-                        <span>Nocny Podgląd: Zwykłe IR vs ColorVu 3.0 F1.0</span>
+                        <span>Nocny Podgląd: Zwykłe IR vs ColorVu F1.0</span>
                       </div>
                     </div>
 
@@ -500,14 +459,14 @@ export const AiFutureTechSection: React.FC = () => {
                             : 'bg-white/5 text-[#9CA3AF] border-transparent hover:border-white/10'
                         }`}
                       >
-                        ColorVu 3.0 (Pełen Kolor 24/7)
+                        ColorVu (Pełen Kolor 24/7)
                       </button>
                     </div>
 
                     <div className="relative h-56 rounded-xl overflow-hidden border border-white/10">
                       <img
-                        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
-                        alt="Nocne widzenie Hikvision"
+                        src="/images/facade_dome_camera.svg"
+                        alt="Symulacja obrazu z kamery — porównanie trybu nocnego i kolorowego"
                         className={`w-full h-full object-cover transition-all duration-500 ${
                           nightVisionMode === 'ir'
                             ? 'grayscale contrast-125 brightness-75'
@@ -517,7 +476,7 @@ export const AiFutureTechSection: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
                       <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[2px] text-[11px] font-mono font-bold backdrop-blur-md bg-black/60 text-white">
-                        {nightVisionMode === 'ir' ? '00:42:15 • IR LED (Monochromia)' : '00:42:15 • ColorVu 3.0 F1.0 (Kolor 4K)'}
+                        {nightVisionMode === 'ir' ? 'Symulacja: tryb nocny' : 'Symulacja: kolor w nocy'}
                       </div>
 
                       <div className="absolute bottom-3 inset-x-3 flex items-center justify-between text-xs text-white">
@@ -560,10 +519,10 @@ export const AiFutureTechSection: React.FC = () => {
                           <div className="w-2.5 h-2.5 rounded-full bg-sky-400" />
                           <div>
                             <div className="font-bold text-white">Klasyfikacja tablic rejestracyjnych (LPR)</div>
-                            <div className="text-[#9CA3AF] text-[11px]">Automatyczne otwarcie bramy dla aut domowników w 15 ms</div>
+                            <div className="text-[#9CA3AF] text-[11px]">Automatyczne otwarcie bramy dla aut domowników w kilka sekund</div>
                           </div>
                         </div>
-                        <span className="font-mono text-[10px] text-sky-300">15 ms</span>
+                        <span className="font-mono text-[10px] text-sky-300">kilka sekund</span>
                       </div>
                     </div>
                   </div>
@@ -587,7 +546,7 @@ export const AiFutureTechSection: React.FC = () => {
                         <div className="p-2.5 rounded-[2px] bg-white/5 border border-white/5">
                           <CloudRain className="w-4 h-4 text-sky-400 mx-auto mb-1" />
                           <div className="text-[11px] font-bold text-white">Ulewa &amp; Wiatr</div>
-                          <div className="text-[9px] text-emerald-400">0% pomyłek</div>
+                          <div className="text-[9px] text-emerald-400">Redukcja fałszywych alarmów</div>
                         </div>
                         <div className="p-2.5 rounded-[2px] bg-white/5 border border-white/5">
                           <Sparkles className="w-4 h-4 text-[#B87333] mx-auto mb-1" />
@@ -597,7 +556,7 @@ export const AiFutureTechSection: React.FC = () => {
                         <div className="p-2.5 rounded-[2px] bg-white/5 border border-white/5">
                           <Check className="w-4 h-4 text-emerald-400 mx-auto mb-1" />
                           <div className="text-[11px] font-bold text-white">Reakcja</div>
-                          <div className="text-[9px] text-emerald-400">&lt; 30 ms</div>
+                          <div className="text-[9px] text-emerald-400">natychmiast</div>
                         </div>
                       </div>
                     </div>
@@ -641,7 +600,7 @@ export const AiFutureTechSection: React.FC = () => {
                             ? 'Touch to Open: Odryglowywanie...'
                             : isDoorLocked
                             ? 'Drzwi bezpiecznie zaryglowane na 3 punkty'
-                            : 'Drzwi otwarte w 2.0 sekundy!'}
+                            : 'Drzwi otwarte po 2 sekundach!'}
                         </div>
                         <div className="text-xs text-[#9CA3AF] font-mono">
                           {isDoorLocked ? 'Telefon w kieszeni • Dotknij klamki' : 'Scenariusz powitalny aktywny'}

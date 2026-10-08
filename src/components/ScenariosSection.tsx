@@ -32,14 +32,11 @@ import {
   Phone,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
-import { useLanguage } from '../context/LanguageContext.tsx';
 import { Link } from 'react-router-dom';
 
 export const ScenariosSection: React.FC = () => {
   const [activeScenarioId, setActiveScenarioId] = useState(SCENARIOS[0].id);
   const { theme } = useTheme();
-  const { lang } = useLanguage();
-  const isUa = lang === 'ua';
   const isDay = theme === 'day';
 
   const activeScenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
@@ -109,19 +106,17 @@ export const ScenariosSection: React.FC = () => {
         <div className="max-w-3xl mb-14">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-500 mb-3 font-semibold">
             <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>{isUa ? 'Сценарії Життя в Розумному Домі' : 'Scenariusze Automatyki Budynkowej'}</span>
+            <span>Scenariusze Automatyki Budynkowej</span>
           </div>
           <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
             isDay ? 'text-slate-950' : 'text-white'
           }`}>
-            {isUa ? 'Сценарії, які закохують з першого дня' : 'Scenariusze, które pokochasz od pierwszego dnia'}
+            Gotowe sekwencje dla domu i rezydencji
           </h2>
           <p className={`mt-4 text-sm sm:text-base max-w-2xl leading-relaxed ${
             isDay ? 'text-slate-600' : 'text-slate-300'
           }`}>
-            {isUa
-              ? 'Автоматизація без складних інструкцій: розумне провітрювання без тепловтрат, миттєве відсікання аварій газу й води, 3-фазний баланс сонячної енергії та впізнавання вашого авто на в\'їзді.'
-              : 'Automatyka bez skomplikowanych instrukcji: inteligentne wietrzenie bez strat ciepła, natychmiastowe odcięcie wycieków wody i gazu, bilansowanie energii fotowoltaicznej oraz rozpoznawanie auta domownika.'}
+            Automatyka bez skomplikowanych instrukcji: inteligentne wietrzenie bez strat ciepła, natychmiastowe odcięcie wycieków wody i gazu, bilansowanie energii fotowoltaicznej oraz rozpoznawanie auta domownika.
           </p>
         </div>
 
@@ -326,7 +321,7 @@ export const ScenariosSection: React.FC = () => {
                   isDay ? 'border-slate-200' : 'border-white/10'
                 }`}>
                   <span className={`text-xs ${isDay ? 'text-slate-500' : 'text-slate-400'}`}>
-                    100% Local-First • Brak zależności od chmury
+                    Local-First • Brak zależności od chmury
                   </span>
                   <Link
                     to="/kalkulator"

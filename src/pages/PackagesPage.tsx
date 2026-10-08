@@ -24,7 +24,7 @@ export const PackagesPage: React.FC = () => {
         title="Kompleksowe Realizacje z Gwarancją Stałej Ceny i Certyfikowanym Montażem"
         description="Komponenty Shelly i Hikvision, prefabrykacja rozdzielnic, bezpyłowy montaż oraz 24-miesięczna gwarancja."
         icon={<Package className="w-4 h-4 text-[#B87333]" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+        image="/images/rack_cabinet_clean.svg"
       />
 
       {/* Visual Atmosphere Showcase */}

@@ -45,7 +45,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     name: '',
     phone: '',
     email: '',
-    agreement: true,
+    agreement: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -101,6 +101,27 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const moduleList =
+      SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
+        .map((m) => `• ${m.name} (${m.price.toLocaleString('pl-PL')} zł)`)
+        .join('\n') || '• brak wybranych modułów';
+    const subject = `Wycena wstępna — ${formData.name}`;
+    const body = [
+      `Inwestor: ${formData.name}`,
+      `Telefon: ${formData.phone}`,
+      `E-mail: ${formData.email}`,
+      '',
+      `Typ nieruchomości: ${getPropertyLabel(propertyState)}`,
+      `Metraż: ${getAreaLabel(areaRange)}`,
+      '',
+      'Wybrane moduły:',
+      moduleList,
+      '',
+      `Szacunkowa wartość: ${totalPrice.toLocaleString('pl-PL')} PLN netto / ${grossPrice.toLocaleString('pl-PL')} PLN brutto`,
+      '',
+      'Uwaga: kalkulacja ma charakter poglądowy i nie stanowi oferty w rozumieniu art. 66 Kodeksu Cywilnego.',
+    ].join('\n');
+    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setIsSubmitted(true);
   };
 
@@ -314,7 +335,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#9CA3AF] hover:text-white transition-colors cursor-pointer"
+                    className={`inline-flex items-center gap-2 text-xs font-semibold text-[#9CA3AF] transition-colors cursor-pointer ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
@@ -389,6 +410,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                               className={`w-5 h-5 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                                 isChecked
                                   ? 'bg-[#B87333] text-white'
+                                  : isDay
+                                  ? 'border border-[#D1D5DB] bg-white'
                                   : 'border border-white/30 bg-white/5'
                               }`}
                             >
@@ -451,7 +474,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="w-1/2 sm:w-auto px-4 py-3 text-xs text-[#9CA3AF] hover:text-white flex items-center justify-center gap-1 font-mono cursor-pointer"
+                      className={`w-1/2 sm:w-auto px-4 py-3 text-xs text-[#9CA3AF] transition-colors flex items-center justify-center gap-1 font-mono cursor-pointer ${isDay ? 'hover:text-[#111827]' : 'hover:text-white'}`}
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
                       <span>Wstecz</span>
@@ -590,7 +613,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         className="mt-0.5 accent-[#B87333] w-4 h-4 rounded-[2px]"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt inżyniera DOMENCE w celu weryfikacji założeń projektowych oraz przesłania szczegółowego kosztorysu PDF.
+                        Wyrażam zgodę na kontakt w celu weryfikacji założeń projektowych i przekazania szczegółowego kosztorysu.
                       </span>
                     </label>
                   </div>
@@ -612,7 +635,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       type="submit"
                       className="sm:w-2/3 py-4 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-medium text-xs uppercase tracking-wider transition-all shadow-sm cursor-pointer"
                     >
-                      Otrzymaj Wycenę PDF i Audyt 0 PLN
+                      Wyślij wycenę do inżyniera
                     </button>
                   </div>
                   <p className="text-[11px] text-center text-[#6B7280] pt-1">
@@ -641,7 +664,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Dziękujemy, {formData.name || 'Inwestorze'}!
                 </h3>
                 <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto mb-6 leading-relaxed">
-                  Szczegółowy wykaz urządzeń dla metrażu {getAreaLabel(areaRange)} przesłaliśmy na adres e-mail: <strong className="text-white">{formData.email}</strong>.
+                  Wykaz urządzeń dla metrażu {getAreaLabel(areaRange)} jest gotowy w Twoim programie pocztowym — wiadomość kierowana na adres <strong className={isDay ? 'text-[#111827]' : 'text-white'}>kontakt@domence.pl</strong>. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio.
                 </p>
 
                 <div className={`p-5 rounded-[2px] border max-w-md mx-auto mb-6 text-left ${
@@ -652,7 +675,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Dalsze kroki realizacji:</span>
                   </div>
                   <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                    Dedykowany inżynier projektu skontaktuje się z Tobą telefonicznie w ciągu 24 godzin roboczych, aby zweryfikować założenia instalacyjne i zaproponować bezpłatny audyt techniczny.
+                    Aby omówić założenia instalacyjne, napisz na kontakt@domence.pl — odpowiadamy w ciągu 24 godzin w dni robocze i proponujemy bezpłatny audyt techniczny.
                   </p>
                 </div>
 

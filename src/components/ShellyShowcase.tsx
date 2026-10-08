@@ -69,7 +69,7 @@ export const ShellyShowcase: React.FC = () => {
               isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'
             }`}>
               Połączenie przemysłowej serii <strong>Shelly Pro (szyna DIN)</strong> z elastycznymi mikromodułami <strong>Shelly Plus & BLU</strong>. 
-              Stabilna praca w 100% lokalnej sieci LAN bez konieczności wysyłania komend do zewnętrznej chmury.
+              Stabilna praca w lokalnej sieci LAN bez konieczności wysyłania komend do zewnętrznej chmury.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export const ShellyShowcase: React.FC = () => {
             <span className={`px-2.5 py-1 rounded-[2px] border font-mono font-medium ${
               isDay ? 'bg-white border-[#E5E7EB] text-[#374151]' : 'bg-[#27272A] border-white/10 text-[#D4D4D8]'
             }`}>
-              100% Offline Local-First
+              Praca lokalna bez chmury
             </span>
           </div>
         </div>
@@ -202,7 +202,7 @@ export const ShellyShowcase: React.FC = () => {
                   isDay ? 'border-[#E5E7EB]' : 'border-white/10'
                 }`}>
                   <span className={isDay ? 'text-[#6B7280]' : 'text-[#71717A]'}>
-                    Autonomia: 100% lokalnie w sieci LAN
+                    Autonomia: praca lokalna w sieci LAN
                   </span>
                   <Link
                     to="/scenariusze"

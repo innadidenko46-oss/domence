@@ -4,13 +4,11 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Phone, Menu, X, ArrowRight, Calculator, Sun, Moon } from 'lucide-react';
 import { Logo } from './Logo.tsx';
 import { useTheme } from '../context/ThemeContext.tsx';
-import { useLanguage } from '../context/LanguageContext.tsx';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { lang, toggleLang } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -88,24 +86,8 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Desktop Actions + Day/Night Atmosphere Switcher + Language Toggle */}
+          {/* Desktop Actions + Day/Night Atmosphere Switcher */}
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
-            {/* Language Switcher PL / UA */}
-            <button
-              onClick={toggleLang}
-              className={`px-2.5 py-1.5 rounded-[2px] border text-xs font-mono font-bold flex items-center gap-1 transition-all cursor-pointer ${
-                isDay
-                  ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151]'
-                  : 'bg-[#27272A] hover:bg-[#3F3F46] border-white/10 text-[#D4D4D8]'
-              }`}
-              title="Przełącz język / Змінити мову"
-              aria-label="Language switch"
-            >
-              <span className={lang === 'pl' ? 'text-[#B87333] font-bold' : 'text-[#71717A]'}>PL</span>
-              <span className="text-[#52525B]">/</span>
-              <span className={lang === 'ua' ? 'text-[#B87333] font-bold' : 'text-[#71717A]'}>UA</span>
-            </button>
-
             {/* Ambiance Switcher: Day (Dzień) vs Dreamy Dusk (Zmierzch) */}
             <button
               onClick={toggleTheme}
@@ -151,22 +133,8 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Controls: Ambiance Button + Language Button + Menu Button */}
+          {/* Mobile Right Controls: Ambiance Button + Menu Button */}
           <div className="flex sm:hidden items-center gap-1.5">
-            <button
-              onClick={toggleLang}
-              className={`px-2 py-1.5 rounded-[2px] border text-xs font-mono font-bold flex items-center gap-0.5 transition-all ${
-                isDay
-                  ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
-                  : 'bg-[#27272A] border-white/10 text-[#D4D4D8]'
-              }`}
-              aria-label="Language switch"
-            >
-              <span className={lang === 'pl' ? 'text-[#B87333]' : 'text-[#71717A]'}>PL</span>
-              <span className="text-[#52525B]">/</span>
-              <span className={lang === 'ua' ? 'text-[#B87333]' : 'text-[#71717A]'}>UA</span>
-            </button>
-
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-[2px] border text-xs flex items-center justify-center transition-all ${

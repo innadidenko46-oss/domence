@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo.tsx';
-import { Shield, Phone, Mail, MapPin, Cookie, CheckCircle2, FileText, Award, X, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Cookie, FileText, Award, X, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'rodo' | 'regulamin' | 'certyfikaty' | null>(null);
@@ -25,21 +25,9 @@ export const Footer: React.FC = () => {
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
               <p className="mt-4 text-[#A1A1AA] max-w-sm leading-relaxed text-xs">
-                Inżynierskie wdrożenia automatyki budynkowej Shelly Pro, wideodomofonii IP oraz monitoringu wizyjnego 4K.
-                Autonomia offline Local-First, certyfikowany montaż bez pyłu i pełna ochrona prywatności bez abonamentów chmurowych.
+                Wdrożenia automatyki budynkowej Shelly Pro, wideodomofonii IP oraz monitoringu wizyjnego 4K.
+                Praca lokalna (Local-First) bez abonamentów chmurowych, montaż bezpyłowy i dokumentacja powykonawcza po zakończeniu prac.
               </p>
-            </div>
-
-            {/* Official Legal Registry Box */}
-            <div className="mt-6 p-3.5 rounded-[2px] bg-[#27272A] border border-white/10 text-[11px] font-mono text-[#D4D4D8] space-y-1">
-              <div className="font-bold text-white flex items-center gap-1.5 mb-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-                <span>DOMENCE Sp. z o.o. [LUB: JDG WŁAŚCICIELA]</span>
-              </div>
-              <div className="text-[#A1A1AA]">NIP: <span className="text-[#C27A4E] font-bold">[WSTAW NIP]</span></div>
-              <div className="text-[#A1A1AA]">REGON: <span className="text-slate-200">[WSTAW REGON]</span></div>
-              <div className="text-[#A1A1AA]">KRS: <span className="text-slate-200">[WSTAW KRS]</span></div>
-              <div className="text-[#A1A1AA]">Standard: <span className="text-[#10B981] font-semibold">Certyfikowane moduły Shelly Pro DIN • Norma PN-HD 60364</span></div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-mono text-[#C27A4E]">
@@ -47,7 +35,7 @@ export const Footer: React.FC = () => {
                 Norma PN-HD 60364
               </span>
               <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
-                100% Offline Local-First
+                Praca lokalna bez chmury
               </span>
               <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
                 Lokalny NVR bez abonamentu
@@ -88,7 +76,7 @@ export const Footer: React.FC = () => {
                     className="hover:text-amber-400 transition-colors text-left flex items-center gap-1.5 text-slate-300"
                   >
                     <Award className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Certyfikaty & Uprawnienia SEP</span>
+                    <span>Standardy &amp; Dokumentacja</span>
                   </button>
                 </li>
               </ul>
@@ -111,7 +99,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/kalkulator" className="hover:text-amber-400 transition-colors font-semibold text-amber-400">
-                    Kalkulator Wyceny 360°
+                    Kalkulator Wyceny
                   </Link>
                 </li>
                 <li>
@@ -139,14 +127,6 @@ export const Footer: React.FC = () => {
             </h4>
 
             <a
-              href="tel:+48220000000"
-              className="flex items-center gap-2.5 text-xs text-slate-200 hover:text-amber-400 transition-colors font-semibold"
-            >
-              <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>+48 22 000 00 00</span>
-            </a>
-
-            <a
               href="mailto:kontakt@domence.pl"
               className="flex items-center gap-2.5 text-xs text-slate-200 hover:text-amber-400 transition-colors font-mono"
             >
@@ -156,7 +136,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-start gap-2.5 text-xs text-slate-400">
               <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <span>ul. Cybernetyki 9, 02-677 Warszawa (Działamy w całej Polsce) {/* TODO: wstaw prawdziwy adres siedziby */}</span>
+              <span>Realizacje na terenie całej Polski</span>
             </div>
 
             <div className="pt-2">
@@ -167,7 +147,7 @@ export const Footer: React.FC = () => {
                 Zamów Bezpłatny Kosztorys
               </Link>
               <p className="text-[10px] text-slate-400 mt-1.5">
-                Odpowiedź w 15 minut w dni robocze. Bez spamu.
+                Odpowiadamy w dni robocze w ciągu 24 godzin. Bez spamu.
               </p>
             </div>
           </div>
@@ -177,7 +157,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar with Real Legal Modals */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <div>
-            © {new Date().getFullYear()} DOMENCE Sp. z o.o. NIP: [WSTAW NIP] • REGON: [WSTAW REGON]. Wszelkie prawa zastrzeżone.
+            © {new Date().getFullYear()} DOMENCE. Wszelkie prawa zastrzeżone.
           </div>
 
           <div className="flex items-center gap-6">
@@ -224,7 +204,7 @@ export const Footer: React.FC = () => {
                 </h3>
                 <div className="space-y-3 leading-relaxed text-[#D4D4D8]">
                   <p>
-                    1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest DOMENCE Sp. z o.o. [LUB: JDG WŁAŚCICIELA], z siedzibą przy ul. Cybernetyki 9, 02-677 Warszawa, NIP: [WSTAW NIP], REGON: [WSTAW REGON].
+                    1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest właściciel serwisu DOMENCE. Kontakt w sprawie danych osobowych: kontakt@domence.pl.
                   </p>
                   <p>
                     2. <strong>Cel przetwarzania:</strong> Dane wprowadzone w konfiguratorze i formularzu kontaktowym (imię, telefon, e-mail, metraż nieruchomości) przetwarzane są wyłącznie w celu sporządzenia kosztorysu technicznego i kontaktu inżyniera z klientem (art. 6 ust. 1 lit. b RODO).
@@ -256,7 +236,7 @@ export const Footer: React.FC = () => {
                     2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonywane są w standardzie bezpyłowym z użyciem odciągów przemysłowych HEPA i zgodnie z normą PN-HD 60364.
                   </p>
                   <p>
-                    3. <strong>Gwarancja i SLA:</strong> Na wykonane okablowanie i prace montażowe udzielamy 24 miesięcy gwarancji z opcją rozszerzenia do 60 miesięcy. Czas reakcji serwisowej w pakiecie VIP wynosi do 12 godzin.
+                    3. <strong>Gwarancja:</strong> Na wykonane okablowanie i prace montażowe udzielamy 24 miesięcy gwarancji. Szczegóły oraz ewentualne wydłużenia określa umowa zawierana z klientem.
                   </p>
                   <p>
                     4. <strong>Wycena:</strong> Kosztorys wstępny generowany przez kalkulator ma charakter informacyjny i nie stanowi oferty w rozumieniu art. 66 Kodeksu Cywilnego do czasu weryfikacji rzutów architektonicznych przez inżyniera.
@@ -269,17 +249,20 @@ export const Footer: React.FC = () => {
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
                   <Award className="w-5 h-5 text-[#B87333]" />
-                  <span>Certyfikaty Producentów & Standardy Jakości</span>
+                  <span>Standardy i Dokumentacja Wykonawcza</span>
                 </h3>
                 <div className="space-y-3 leading-relaxed text-[#D4D4D8]">
                   <p>
-                    • <strong>Shelly Certified Pro Integrator:</strong> Wdrożenia profesjonalnych modułów automatyki na szynę DIN (seria Shelly Pro) oraz urządzeń BLE Mesh z zachowaniem 100% redundancji lokalnej bez chmury.
+                    • <strong>Norma PN-HD 60364:</strong> Instalacje niskonapięciowe projektowane i wykonywane zgodnie z europejskimi standardami bezpieczeństwa, w tym ochroną przeciwprzepięciową.
                   </p>
                   <p>
-                    • <strong>Hikvision Certified Security Associate (HCSA):</strong> Autoryzacja montażu zaawansowanych systemów CCTV IP, ColorVu 3.0, AcuSense 3.0 oraz systemów kontroli dostępu.
+                    • <strong>Pomiary i odbiory:</strong> Tor transmisyjny sieci LAN weryfikowany certyfikowanym miernikiem okablowania, protokoły pomiarowe przekazywane inwestorowi.
                   </p>
                   <p>
-                    • <strong>Norma Bezpieczeństwa Instalacji PN-HD 60364:</strong> Prace wykonywane zgodnie z europejskimi standardami instalacji niskonapięciowych i ochrony przeciwprzepięciowej.
+                    • <strong>Dokumentacja powykonawcza:</strong> Po zakończeniu prac przekazujemy schematy, listę urządzeń, konfiguracje oraz instrukcję obsługi systemu.
+                  </p>
+                  <p>
+                    • <strong>Uprawnienia:</strong> Prace elektryczne wykonuje osoba z aktualnymi uprawnieniami SEP; numery i zakres uprawnień przedstawiamy na życzenie wraz z ofertą.
                   </p>
                 </div>
               </div>

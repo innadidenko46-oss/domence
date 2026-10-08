@@ -4,7 +4,6 @@ import { ChevronRight, Home } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 interface PageHeaderProps {
-  chapterNumber?: string;
   badge: string;
   title: string;
   description: string;

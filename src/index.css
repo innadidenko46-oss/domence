@@ -38,20 +38,6 @@
   }
 }
 
-/* Architectural Clean Cards - Max 4px corner radius */
-.arch-card {
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: rgba(39, 39, 42, 0.65);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.theme-day .arch-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-}
-
 /* Solid Flat Engineering Buttons - No glowing neon */
 .btn-engineering-primary {
   display: inline-flex;
@@ -75,43 +61,3 @@
   border-color: rgba(194, 122, 78, 0.7);
 }
 
-.btn-engineering-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2px;
-  background-color: #27272A;
-  color: #F4F4F5;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.85rem 1.75rem;
-  transition: all 0.15s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.btn-engineering-secondary:hover {
-  background-color: #3F3F46;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.theme-day .btn-engineering-secondary {
-  background-color: #F3F4F6;
-  color: #111827;
-  border: 1px solid #D1D5DB;
-}
-
-.theme-day .btn-engineering-secondary:hover {
-  background-color: #E5E7EB;
-}
-
-/* Micro badges & labels - strict 2px radius */
-.badge-arch {
-  border-radius: 2px;
-  font-family: monospace;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  padding: 2px 8px;
-  border-width: 1px;
-}

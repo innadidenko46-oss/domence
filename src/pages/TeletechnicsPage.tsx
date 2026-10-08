@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
 import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
-import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
 import { Network, ShieldCheck, ArrowRight, Video, HardDrive } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
@@ -19,7 +17,7 @@ export const TeletechnicsPage: React.FC = () => {
       <PageHeader
         badge="Teletechnika &amp; CCTV"
         title="Monitoring Wizyjny 4K, Bezpieczeństwo i Szafy RACK 19''"
-        description="Projektujemy i wykonujemy infrastrukturę teletechniczną dla rezydencji. Monitoring 4K z wyszukiwaniem zdarzeń w 3 sekundy, 100% lokalny zapis NVR bez abonamentów i certyfikowane okablowanie strukturalne kat. 6A."
+        description="Projektujemy i wykonujemy infrastrukturę teletechniczną dla rezydencji. Monitoring 4K z przeszukiwaniem nagrań, lokalny zapis NVR bez abonamentów i okablowanie strukturalne kat. 6A."
         icon={<Network className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
       />
@@ -84,7 +82,7 @@ export const TeletechnicsPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=85"
-                  alt="Szybkie Wi-Fi na terenie całej posesji"
+                  alt="Ilustracja przedstawiająca kobietę z dokumentacją projektu"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -108,9 +106,6 @@ export const TeletechnicsPage: React.FC = () => {
       {/* Main Teletechnics Section Component */}
       <TeletechnicsSection />
 
-      {/* AI Innovations */}
-      <AiFutureTechSection />
-
       {/* Latest Hikvision Series Showcase */}
       <HikvisionShowcase />
 
@@ -128,7 +123,7 @@ export const TeletechnicsPage: React.FC = () => {
             <p className={`mt-2 text-sm sm:text-base leading-[1.7] ${
               isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'
             }`}>
-              Większość kamer marketowych przesyła strumień wideo do zagranicznych serwerów. W standardzie DOMENCE Twoje prywatne życie pozostaje w 100% w Twoim domu.
+              Część kamer z chmurą wysyła strumień na serwery producenta. W standardzie DOMENCE Twoje prywatne życie pozostaje w Twoim domu.
             </p>
           </div>
 
@@ -144,7 +139,7 @@ export const TeletechnicsPage: React.FC = () => {
                   <h3 className={`text-lg font-bold ${isDay ? 'text-[#111827]' : 'text-white'}`}>
                     Standard DOMENCE: Rejestrator NVR PoE
                   </h3>
-                  <span className="text-xs text-emerald-400 font-mono font-semibold">100% Twoja Własność</span>
+                  <span className="text-xs text-emerald-400 font-mono font-semibold">Twoje dane u Ciebie</span>
                 </div>
               </div>
               <ul className={`space-y-3 text-xs sm:text-sm ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
@@ -162,7 +157,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Dyski WD Purple:</strong> Przystosowane do ciągłego zapisu 24/7 przez 30 dni z możliwością szybkiego przeszukania.</span>
+                  <span><strong>Dyski WD Purple:</strong> Przystosowane do ciągłego zapisu 24/7; retencja zależy od liczby kamer i bitrate'u.</span>
                 </li>
               </ul>
             </div>
@@ -184,7 +179,7 @@ export const TeletechnicsPage: React.FC = () => {
               <ul className={`space-y-3 text-xs sm:text-sm ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Wymagają płatnych subskrypcji, by przechowywać historię dłuższą niż 24 godziny.</span>
+                  <span>Przechowywanie historii w chmurze zwykle wymaga płatnego abonamentu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
@@ -196,16 +191,13 @@ export const TeletechnicsPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-400 font-bold shrink-0">✕</span>
-                  <span>Brak połączenia z Internetem oznacza całkowite zatrzymanie rejestracji wideo.</span>
+                  <span>Bez internetu przestaje działać podgląd zdalny i powiadomienia w chmurze (zapis lokalny zależy od modelu).</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Mobile Apps & Control Showcase */}
-      <AppsShowcaseSection />
 
       {/* Next Area Banner */}
       <section className={`py-12 border-t ${

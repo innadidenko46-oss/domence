@@ -67,7 +67,6 @@ export const ProcessSection: React.FC = () => {
 
               <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#6B7280]">
                 <span>Etap {idx + 1} z 5</span>
-                <span className="text-[#B87333]">SLA: Potwierdzone</span>
               </div>
             </motion.div>
           ))}

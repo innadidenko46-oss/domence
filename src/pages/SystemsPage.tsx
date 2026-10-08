@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { SystemsComparisonSection } from '../components/SystemsComparisonSection.tsx';
 import { ShellyShowcase } from '../components/ShellyShowcase.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
-import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
 import { Layers, CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext.tsx';
 
@@ -46,7 +44,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Światło Bez Olśnień
+                  Światło bez olśnienia
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Niewidoczne linie LED COB w sufitach podwieszanych i cokołach tworzą miękki, nastrojowy klimat o zmierzchu.
@@ -70,7 +68,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className={`font-bold text-base ${isDay ? 'text-[#111827]' : 'text-white'}`}>
-                  Koniec z Baterią Włączników
+                  Koniec z rzędem włączników
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
                   Zamiast 6 oddzielnych klawiszy obok siebie montujemy panel dotykowy zintegrowany ze sterowaniem temperaturą i scenami.
@@ -83,8 +81,8 @@ export const SystemsPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Niezawodna rozdzielnica przewodowa Shelly Pro"
+                  src="/images/rack_installation.svg"
+                  alt="Instalacja modułów Shelly Pro na szynie DIN w rozdzielnicy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -97,7 +95,7 @@ export const SystemsPage: React.FC = () => {
                   Stabilność i Przewodowy LAN
                 </h3>
                 <p className={`text-xs mt-1.5 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#9CA3AF]'}`}>
-                  Przemysłowa seria modułów DIN w rozdzielnicy gwarantuje bezpośrednie połączenie kablowe Ethernet i 100% redundancji offline.
+                  Przemysłowa seria modułów DIN w rozdzielnicy gwarantuje bezpośrednie połączenie kablowe Ethernet i pracę lokalną bez chmury.
                 </p>
               </div>
             </div>
@@ -106,13 +104,10 @@ export const SystemsPage: React.FC = () => {
       </section>
 
       {/* Main Systems Comparison Matrix Component */}
-      <SystemsComparisonSection onConsultSystem={() => {}} />
+      <SystemsComparisonSection />
 
       {/* Deep Dive: Full Capabilities of Shelly System */}
       <ShellyShowcase />
-
-      {/* Top Selling Real-Life Automation Scenarios */}
-      <TopSellingScenariosSection />
 
       {/* Detailed Architectural Comparison Guidance */}
       <section className={`py-16 border-t ${
@@ -171,7 +166,7 @@ export const SystemsPage: React.FC = () => {
             }`}>
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 mb-2">
-                  Kompletny ekosystem PLC
+                  Kompletny ekosystem automatyki budynkowej
                 </div>
                 <h3 className={`text-lg font-bold mb-3 ${isDay ? 'text-[#111827]' : 'text-white'}`}>
                   KNX / Loxone (Magistrala)
@@ -219,7 +214,7 @@ export const SystemsPage: React.FC = () => {
                   </li>
                   <li className={`flex items-center gap-2 ${isDay ? 'text-[#374151]' : 'text-[#D1D5DB]'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Niezależność od chmury (100% lokalna baza)</span>
+                    <span>Niezależność od chmury (lokalna baza)</span>
                   </li>
                 </ul>
               </div>
@@ -245,15 +240,12 @@ export const SystemsPage: React.FC = () => {
                 Dlaczego w DOMENCE nie instalujemy rozwiązań uzależnionych od zewnętrznej chmury?
               </h4>
               <p className={`text-xs mt-1 leading-[1.65] ${isDay ? 'text-[#4B5563]' : 'text-[#D1D5DB]'}`}>
-                Typowe urządzenia z marketu wymagają stałego połączenia z obcymi serwerami. W przypadku awarii łącza internetowego tracisz kontrolę nad oświetleniem i ogrzewaniem. W DOMENCE wdrażamy architekturę pracującą w 100% w lokalnej sieci LAN.
+                Typowe urządzenia z marketu wymagają stałego połączenia z obcymi serwerami. W przypadku awarii łącza internetowego tracisz kontrolę nad oświetleniem i ogrzewaniem. W DOMENCE wdrażamy architekturę pracującą w lokalnej sieci LAN.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Mobile Apps & Control Systems */}
-      <AppsShowcaseSection />
 
       {/* Next Area Banner */}
       <section className={`py-12 border-t ${

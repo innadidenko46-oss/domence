@@ -32,11 +32,6 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
           <stop offset="60%" stopColor="#0B374D" />
           <stop offset="100%" stopColor="#071E2B" />
         </linearGradient>
-
-        <linearGradient id="domenceTealGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#0369A1" />
-          <stop offset="100%" stopColor="#38BDF8" />
-        </linearGradient>
       </defs>
 
       {/* Chimney on the left */}

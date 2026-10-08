@@ -122,7 +122,7 @@
   <!-- NVR 4K Surveillance Unit (U5-U6) -->
   <rect x="232" y="285" width="336" height="65" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
   <text x="245" y="308" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="bold">HIKVISION ACUSENSE 4K NVR</text>
-  <text x="245" y="325" fill="#64748b" font-family="monospace" font-size="9">HARD DRIVE: 2x 8TB WD PURPLE SURVEILLANCE • RAID 1</text>
+  <text x="245" y="325" fill="#64748b" font-family="monospace" font-size="9">DYSKI: 2x 8TB WD PURPLE • ZAPIS CIĄGŁY</text>
   <circle cx="525" cy="308" r="3" fill="#22c55e"/>
   <circle cx="540" cy="308" r="3" fill="#38bdf8"/>
   <circle cx="555" cy="308" r="3" fill="#f59e0b"/>
@@ -137,9 +137,7 @@
   <!-- Camera Viewfinder Overlay -->
   <rect x="30" y="25" width="740" height="550" rx="16" fill="none" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="16 8"/>
   <g fill="#f59e0b" font-family="monospace" font-size="11" font-weight="bold">
-    <text x="45" y="48">● REC [RAW]</text>
-    <text x="45" y="558">SONY A7R IV • 35mm f/1.8 • 1/160s ISO 100</text>
-    <text x="490" y="48">AUTENTYCZNA INSTALACJA RACK 19"</text>
+    <text x="45" y="48">● SCHEMAT INSTALACJI RACK 19"</text>
     <text x="560" y="558">STATUS: 100% LOCAL-FIRST</text>
   </g>
 </svg>

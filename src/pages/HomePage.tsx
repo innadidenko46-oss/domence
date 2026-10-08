@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   Layers,
   Network,
-  Zap,
   Volume2,
   Sparkles,
   Wrench,
@@ -11,25 +10,20 @@ import {
   BookOpen,
   Calculator,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   Lock,
   Cpu,
   Moon,
-  Sun,
-  Eye,
-  Sliders,
 } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
 import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
-import { HumanTestimonialsSection } from '../components/HumanTestimonialsSection.tsx';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 export const HomePage: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const isDay = theme === 'day';
 
   const chapters = [
@@ -39,7 +33,7 @@ export const HomePage: React.FC = () => {
       title: 'Technologie & Standardy Smart Home',
       subtitle: 'Sterowanie domem • Oświetlenie • Rolety • Mikroklimat',
       description:
-        'Sterowanie oświetleniem, roletami, mikroklimatem i scenami relaksu z poziomu włączników ściennych i telefonu — przewodowo lub bezpyłowo, w zależności od stanu wnętrza.',
+        'Sterowanie oświetleniem, roletami, mikroklimatem i scenami relaksu z poziomu włączników ściennych i telefonu — przewodowo lub bezprzewodowo, w zależności od stanu instalacji.',
       icon: Layers,
       badge: 'Sterowanie & Automatyka',
       image:
@@ -68,8 +62,7 @@ export const HomePage: React.FC = () => {
         'Dyskretne nagłośnienie wtopione w architekturę sufitu, zintegrowane ściemnianie światła, rolety blackout i automatyczna cisza podczas dzwonienia wideodomofonu.',
       icon: Volume2,
       badge: 'Multimedia & Atmosfera',
-      image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
+      image: '/images/living_room_cinema.svg',
       imageAlt: 'Domowa sala kinowa z nastrojowym oświetleniem i dźwiękiem surround',
     },
     {
@@ -96,7 +89,7 @@ export const HomePage: React.FC = () => {
       badge: 'Pakiety & Wyceny',
       image:
         'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Profesjonalne komponenty automatyki i sterowniki modułowe',
+      imageAlt: 'Zbliżenie układów elektronicznych na płytce drukowanej',
     },
     {
       id: 'faq',
@@ -104,7 +97,7 @@ export const HomePage: React.FC = () => {
       title: 'Baza Wiedzy & Odpowiedzi na Pytania',
       subtitle: 'Wszystko o działaniu offline, kosztach i obsłudze dla rodziny',
       description:
-        'Sprawdź, jak instalacja zachowuje się podczas wyładowań i braku internetu, jak szybko zwraca się automatyka i jak wygląda codzienna obsługa.',
+        'Sprawdź, jak instalacja zachowuje się podczas wyładowań i braku internetu, jak szybko zwraca się inwestycja i jak wygląda codzienna obsługa.',
       icon: BookOpen,
       badge: 'Wiedza & FAQ',
       image:
@@ -151,8 +144,7 @@ export const HomePage: React.FC = () => {
     {
       title: 'Scena Kinowa & Relaks',
       subtitle: 'Nastrojowe światło 5% i zaciemnienie blackout',
-      image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/living_room_cinema.svg',
       description: 'Jeden dotyk przyciemnia oświetlenie i opuszcza rolety, tworząc intymny nastrój sali kinowej.',
     },
   ];
@@ -166,7 +158,7 @@ export const HomePage: React.FC = () => {
         <div className="absolute inset-0 -z-10">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85"
-            alt="Nowoczesny dom z inteligentną automatyką DOMENCE o zmierzchu"
+            alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami"
             className={`w-full h-full object-cover object-center scale-105 transition-opacity duration-700 ${
               isDay ? 'opacity-15 filter brightness-110 contrast-95' : 'opacity-30 filter brightness-90 contrast-110'
             }`}
@@ -179,19 +171,19 @@ export const HomePage: React.FC = () => {
           <div className={`absolute inset-0 ${
             isDay ? 'bg-gradient-to-t from-[#F8FAFC] via-transparent to-transparent' : 'bg-gradient-to-t from-[#040A10] via-transparent to-transparent'
           }`} />
-          <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-amber-500/10 blur-[150px] pointer-events-none" />
+          <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#B87333]/10 blur-[150px] pointer-events-none" />
           <div className="absolute top-1/3 -right-32 w-[650px] h-[650px] rounded-full bg-sky-500/10 blur-[170px] pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             {/* Top Badge */}
-            <div className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 backdrop-blur-md border ${
+            <div className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[2px] text-xs font-semibold mb-6 backdrop-blur-md border ${
               isDay 
-                ? 'bg-amber-100 text-amber-800 border-amber-300' 
-                : 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30' 
+                : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
             }`}>
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-[#B87333] animate-ping" />
               <span>Wdrożenia Inżynierskie • Smart Home, Wideodomofony & Monitoring</span>
             </div>
 
@@ -200,7 +192,7 @@ export const HomePage: React.FC = () => {
               isDay ? 'text-slate-950' : 'text-white'
             }`}>
               Nowoczesny dom, który dba o Twój spokój, wygodę i prywatność.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B87333] via-[#C27A4E] to-[#A36034]">
                 Działa stabilnie, także bez internetu.
               </span>
             </h1>
@@ -218,7 +210,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 to="/kalkulator"
-                className="py-4 px-8 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-amber-500/20 active:scale-95 text-center flex items-center justify-center gap-2"
+                className="py-4 px-8 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-[#B87333]/20 active:scale-95 text-center flex items-center justify-center gap-2"
               >
                 <span>Wyceń Inwestycję Online</span>
                 <ArrowRight className="w-4 h-4" />
@@ -226,7 +218,7 @@ export const HomePage: React.FC = () => {
 
               <Link
                 to="/systemy"
-                className={`py-4 px-8 rounded-full font-bold text-xs uppercase tracking-wider transition-all border text-center flex items-center justify-center gap-2 ${
+                className={`py-4 px-8 rounded-[2px] font-bold text-xs uppercase tracking-wider transition-all border text-center flex items-center justify-center gap-2 ${
                   isDay 
                     ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300 shadow-sm' 
                     : 'bg-white/5 hover:bg-white/10 text-white border-white/10'
@@ -241,19 +233,19 @@ export const HomePage: React.FC = () => {
               isDay ? 'border-slate-200 text-slate-700' : 'border-white/10 text-slate-300'
             }`}>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>100% Działa Offline</span>
+                <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
+                <span>Praca lokalna bez chmury</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
                 <span>Zero Abonamentów</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Ochrona Bezpieczników</span>
+                <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
+                <span>Bezpieczna instalacja</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
                 <span>Czysty Montaż</span>
               </div>
             </div>
@@ -277,10 +269,10 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2 border ${
+              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-2 border ${
                 isDay 
-                  ? 'bg-amber-100 text-amber-800 border-amber-300' 
-                  : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                  ? 'bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30' 
+                  : 'bg-[#B87333]/10 text-[#C27A4E] border-[#B87333]/30'
               }`}>
                 <Moon className="w-3.5 h-3.5" />
                 <span>Atmosfera & Wygoda</span>
@@ -302,10 +294,10 @@ export const HomePage: React.FC = () => {
             {atmosphericMoments.map((moment, idx) => (
               <div
                 key={idx}
-                className={`group rounded-3xl border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl ${
+                className={`group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl ${
                   isDay 
-                    ? 'bg-slate-50 border-slate-200 hover:border-amber-400 hover:shadow-slate-300' 
-                    : 'bg-[#0A2230]/80 border-white/10 hover:border-amber-400/50 hover:shadow-amber-500/10'
+                    ? 'bg-slate-50 border-slate-200 hover:border-[#C27A4E] hover:shadow-slate-300' 
+                    : 'bg-[#0A2230]/80 border-white/10 hover:border-[#C27A4E]/50 hover:shadow-[#B87333]/10'
                 }`}
               >
                 <div className="relative h-48 overflow-hidden bg-slate-900">
@@ -323,12 +315,12 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="p-5">
                   <h3 className={`font-bold text-base transition-colors ${
-                    isDay ? 'text-slate-900 group-hover:text-amber-700' : 'text-white group-hover:text-amber-300'
+                    isDay ? 'text-slate-900 group-hover:text-[#A36034]' : 'text-white group-hover:text-[#C27A4E]/60'
                   }`}>
                     {moment.title}
                   </h3>
                   <div className={`text-[11px] font-medium mt-0.5 ${
-                    isDay ? 'text-amber-700' : 'text-amber-400/90'
+                    isDay ? 'text-[#A36034]' : 'text-[#C27A4E]/90'
                   }`}>
                     {moment.subtitle}
                   </div>
@@ -370,10 +362,10 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className={`group rounded-3xl border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 ${
+                  className={`group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 ${
                     isDay 
-                      ? 'bg-white border-slate-200 hover:border-amber-400 hover:shadow-slate-300/70' 
-                      : 'bg-[#0A2230]/70 border-white/10 hover:border-amber-400/50 hover:shadow-amber-500/10'
+                      ? 'bg-white border-slate-200 hover:border-[#C27A4E] hover:shadow-slate-300/70' 
+                      : 'bg-[#0A2230]/70 border-white/10 hover:border-[#C27A4E]/50 hover:shadow-[#B87333]/10'
                   }`}
                 >
                   {/* Photography Header */}
@@ -393,25 +385,25 @@ export const HomePage: React.FC = () => {
                       
                       {/* Floating Badge */}
                       <div className="absolute top-3.5 left-3.5">
-                        <span className="text-[11px] font-semibold text-white px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 shadow-sm">
+                        <span className="text-[11px] font-semibold text-white px-3 py-1 rounded-[2px] bg-black/60 backdrop-blur-md border border-white/20 shadow-sm">
                           {ch.badge}
                         </span>
                       </div>
 
                       {/* Icon overlay */}
-                      <div className="absolute bottom-3 right-3.5 w-10 h-10 rounded-2xl bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center text-amber-400 shadow-md">
+                      <div className="absolute bottom-3 right-3.5 w-10 h-10 rounded-[2px] bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#C27A4E] shadow-md">
                         <Icon className="w-5 h-5" />
                       </div>
                     </div>
 
                     <div className="p-6">
                       <h3 className={`font-display text-xl font-bold transition-colors ${
-                        isDay ? 'text-slate-900 group-hover:text-amber-700' : 'text-white group-hover:text-amber-300'
+                        isDay ? 'text-slate-900 group-hover:text-[#A36034]' : 'text-white group-hover:text-[#C27A4E]/60'
                       }`}>
                         {ch.title}
                       </h3>
                       <div className={`text-xs font-semibold mt-1 ${
-                        isDay ? 'text-amber-700' : 'text-amber-400/90'
+                        isDay ? 'text-[#A36034]' : 'text-[#C27A4E]/90'
                       }`}>
                         {ch.subtitle}
                       </div>
@@ -427,8 +419,8 @@ export const HomePage: React.FC = () => {
                   <div className="px-6 pb-6 pt-2">
                     <div className={`pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors ${
                       isDay 
-                        ? 'border-slate-100 text-amber-700 group-hover:text-amber-800' 
-                        : 'border-white/10 text-amber-400 group-hover:text-amber-300'
+                        ? 'border-slate-100 text-[#A36034] group-hover:text-[#7C4A1F]' 
+                        : 'border-white/10 text-[#C27A4E] group-hover:text-[#C27A4E]/60'
                     }`}>
                       <span>Zobacz szczegóły</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
@@ -461,12 +453,12 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className={`p-7 rounded-3xl border transition-all ${
+            <div className={`p-7 rounded-[2px] border transition-all ${
               isDay 
-                ? 'bg-slate-50 border-slate-200 hover:border-amber-400 shadow-sm' 
-                : 'bg-[#0A2230]/60 border-white/10 hover:border-amber-400/30'
+                ? 'bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm' 
+                : 'bg-[#0A2230]/60 border-white/10 hover:border-[#C27A4E]/30'
             }`}>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Lock className="w-6 h-6" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-slate-900' : 'text-white'}`}>
@@ -478,12 +470,12 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className={`p-7 rounded-3xl border transition-all ${
+            <div className={`p-7 rounded-[2px] border transition-all ${
               isDay 
                 ? 'bg-slate-50 border-slate-200 hover:border-sky-400 shadow-sm' 
                 : 'bg-[#0A2230]/60 border-white/10 hover:border-sky-400/30'
             }`}>
-              <div className="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-500 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-[2px] bg-sky-500/10 text-sky-500 flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-slate-900' : 'text-white'}`}>
@@ -495,12 +487,12 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className={`p-7 rounded-3xl border transition-all ${
+            <div className={`p-7 rounded-[2px] border transition-all ${
               isDay 
                 ? 'bg-slate-50 border-slate-200 hover:border-emerald-400 shadow-sm' 
                 : 'bg-[#0A2230]/60 border-white/10 hover:border-emerald-400/30'
             }`}>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-[2px] bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className={`text-lg font-bold mb-2 ${isDay ? 'text-slate-900' : 'text-white'}`}>
@@ -520,9 +512,6 @@ export const HomePage: React.FC = () => {
 
       {/* 5-Step Process */}
       <ProcessSection />
-
-      {/* Human-to-Human Authentic Case Studies */}
-      <HumanTestimonialsSection />
 
       {/* Direct Contact Banner */}
       <section className={`relative py-20 border-t overflow-hidden ${
@@ -552,21 +541,21 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/kalkulator"
-                className="px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 active:scale-95"
+                className="px-6 py-3.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#B87333]/20 active:scale-95"
               >
                 Wyceń w konfiguratorze
               </Link>
 
               <Link
                 to="/kontakt"
-                className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20"
+                className="px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20"
               >
                 Napisz do inżyniera
               </Link>
             </div>
             <p className="text-[11px] text-slate-400 font-light flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>Odpowiadamy w 15 minut (pon-pt 8-18). Bez spamu.</span>
+              <span>Odpowiadamy w ciągu 24h w dni robocze (pon–pt 8–18). Bez spamu.</span>
             </p>
           </div>
         </div>

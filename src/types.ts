@@ -58,20 +58,6 @@ export interface ShellyProCapability {
   features: string[];
 }
 
-export interface AiFeature {
-  id: string;
-  title: string;
-  brand: 'Hikvision' | 'Shelly' | 'Hybrid';
-  badge: string;
-  tagline: string;
-  description: string;
-  examplePrompt?: string;
-  capabilities: string[];
-  specs: string[];
-  icon: string;
-  image: string;
-}
-
 export interface HikvisionProductLine {
   id: string;
   series: string;
@@ -89,7 +75,7 @@ export interface SystemComparison {
   tagline: string;
   cableType: 'Magistrala przewodowa (Bus)' | 'Hybrydowy (LAN + Bezprzewodowy)' | 'Czysto bezprzewodowy (Zigbee/Wi-Fi)' | 'Serwer przemysłowy (PLC)';
   bestFor: string;
-  autonomyOffline: '100% Pełna lokalnie' | '100% Lokalna z opcją chmury' | 'Zależna od chmury producenta';
+  autonomyOffline: 'Praca w pełni lokalna' | 'Praca lokalna z opcją chmury' | 'Zależna od chmury producenta';
   pros: string[];
   cons: string[];
   humanVerdict: string;
@@ -105,15 +91,6 @@ export interface TeletechnicService {
   humanExplanation: string;
   equipment: string[];
   specs: string[];
-}
-
-export interface EnergyFeature {
-  id: string;
-  title: string;
-  benefit: string;
-  howItWorks: string;
-  humanVerdict: string;
-  icon: string;
 }
 
 export interface FaqItem {

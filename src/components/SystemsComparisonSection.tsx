@@ -39,7 +39,7 @@ export const SystemsComparisonSection: React.FC<{ onConsultSystem?: (systemName:
             <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight ${
               isDay ? 'text-[#111827]' : 'text-[#F3F4F6]'
             }`}>
-              Rzetelne porównanie architektur
+              Porównanie architektur
             </h2>
             <p className={`mt-3 text-sm sm:text-base max-w-2xl leading-relaxed ${
               isDay ? 'text-[#4B5563]' : 'text-[#A1A1AA]'

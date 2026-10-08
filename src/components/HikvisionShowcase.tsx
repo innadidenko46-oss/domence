@@ -61,13 +61,13 @@ export const HikvisionShowcase: React.FC = () => {
             <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
               isDay ? 'text-slate-950' : 'text-white'
             }`}>
-              Monitoring ColorVu 3.0, AcuSense AI i Domofony IP Hikvision
+              Monitoring ColorVu, AcuSense AI i Domofony IP Hikvision
             </h2>
             <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
               isDay ? 'text-slate-600' : 'text-slate-300'
             }`}>
-              Oferujemy wyłącznie najnowsze serie Hikvision. Zobacz, czym różnią się przetworniki F1.0 Super-Confocal,
-              aktywne odstraszanie Live Guard oraz biometryczne terminale twarzy MinMoe.
+              Oferujemy wyłącznie najnowsze serie Hikvision. Zobacz, czym różnią się przetworniki F1.0 oraz tryby
+              hybrydowego oświetlenia, aktywne odstraszanie Live Guard oraz biometryczne terminale twarzy MinMoe.
             </p>
           </div>
 
@@ -80,12 +80,12 @@ export const HikvisionShowcase: React.FC = () => {
             <span className={`px-3 py-1.5 rounded-xl border font-mono font-medium ${
               isDay ? 'bg-slate-50 border-slate-300 text-slate-700' : 'bg-white/5 border-white/10 text-slate-300'
             }`}>
-              AcuSense 2.0 Live Guard
+              AcuSense Live Guard
             </span>
             <span className={`px-3 py-1.5 rounded-xl border font-mono font-medium ${
               isDay ? 'bg-slate-50 border-slate-300 text-slate-700' : 'bg-white/5 border-white/10 text-slate-300'
             }`}>
-              MinMoe Biometria 0.2s
+              MinMoe — rozpoznawanie twarzy
             </span>
           </div>
         </div>
@@ -165,7 +165,7 @@ export const HikvisionShowcase: React.FC = () => {
                 }`} />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-full bg-[#071822]/85 backdrop-blur-md text-xs font-bold text-sky-400 border border-sky-500/30">
-                    Hikvision Original Standard
+                    Hikvision — oryginalne urządzenia
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#071822]/90 backdrop-blur-md border border-white/10 text-xs text-slate-200">
@@ -183,7 +183,7 @@ export const HikvisionShowcase: React.FC = () => {
                     <span className={`text-xs font-bold uppercase tracking-wider ${
                       isDay ? 'text-sky-800' : 'text-sky-400'
                     }`}>
-                      Inżynieryjna Seria Hikvision
+                      Systemy Hikvision w wykonaniu DOMENCE
                     </span>
                   </div>
                   <h3 className={`font-display text-2xl sm:text-3xl font-extrabold ${

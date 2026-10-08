@@ -69,9 +69,8 @@
   <!-- Annotations / Viewfinder Overlay -->
   <rect x="30" y="25" width="740" height="550" rx="16" fill="none" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="16 8"/>
   <g fill="#22c55e" font-family="monospace" font-size="11" font-weight="bold">
-    <text x="45" y="48">● ELEWACJA MODERN BARN [COLORVU 3.0]</text>
-    <text x="45" y="558">HASSELBLAD X2D 100C • 45mm f/4.0 • ISO 64</text>
+    <text x="45" y="48">● ELEWACJA MODERN BARN [COLORVU]</text>
+    <text x="45" y="558">PEŁEN KOLOR W NOCY (F1.0)</text>
     <text x="470" y="48">KAMERA 4K ACUSENSE BEZ WIDOCZNYCH KABLI</text>
-    <text x="560" y="558">PEŁEN KOLOR W NOCY (F1.0)</text>
   </g>
 </svg>
