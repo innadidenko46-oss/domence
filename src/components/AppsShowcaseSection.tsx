@@ -275,7 +275,10 @@ export const AppsShowcaseSection: React.FC = () => {
                           <div className="text-[11px] text-slate-400">Rolety 100% • LED 15% • Wentylacja cicha</div>
                         </div>
                       </div>
-                      <button className="text-[10px] font-bold px-3 py-1 rounded-lg bg-purple-500 hover:bg-purple-600 text-white transition-colors">
+                      <button
+                        className="text-[10px] font-bold px-3 py-1 rounded-lg bg-purple-500 hover:bg-purple-600 text-white transition-colors"
+                        onClick={() => window.location.href = '/kalkulator'}
+                      >
                         Uruchom
                       </button>
                     </div>
@@ -422,7 +425,10 @@ export const AppsShowcaseSection: React.FC = () => {
                           <div className="text-[11px] text-slate-400">Kamera 180° WDR • Status: Online</div>
                         </div>
                       </div>
-                      <button className="text-[10px] font-bold px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 transition-colors">
+                      <button
+                        className="text-[10px] font-bold px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 transition-colors"
+                        onClick={() => window.location.href = '/teletechnika'}
+                      >
                         Otwórz Furtkę
                       </button>
                     </div>
