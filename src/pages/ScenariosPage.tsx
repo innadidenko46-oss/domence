@@ -15,7 +15,7 @@ export const ScenariosPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Scenariusze Codziennego Dnia"
-        title="Automatyka, Która Zdejmuje Obowiązki z Twojej Głowy"
+        title="Automatyka, która zdejmuje obowiązki z Twojej głowy"
         description="Automatyka działa sama, a Ty masz pełną kontrolę — z telefonu, przycisku lub głosu. Mechaniczne odcięcie wody w ciągu kilku sekund po detekcji wycieku, bezpieczny odbiór przesyłek od kuriera i automatyczne wygaszanie obwodów przy wyjściu."
         icon={<SlidersHorizontal className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"

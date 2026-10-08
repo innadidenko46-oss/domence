@@ -15,7 +15,7 @@ export const FaqPage: React.FC = () => {
     }`}>
       <PageHeader
         badge="Baza Wiedzy &amp; FAQ"
-        title="Odpowiedzi Inżynieryjne dla Świadomego Inwestora"
+        title="Odpowiedzi inżynieryjne dla świadomego inwestora"
         description="Rozwiewamy wątpliwości techniczne. Dowiedz się, jak automatyka działa bez dostępu do Internetu, ile oszczędzasz dzięki sterowaniu ogrzewaniem i dlaczego dane z monitoringu nie opuszczają Twojego domu."
         icon={<BookOpen className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
