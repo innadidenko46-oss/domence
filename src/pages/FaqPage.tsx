@@ -20,18 +20,18 @@ export const FaqPage: React.FC = () => {
       <KnowledgeBaseSection />
 
       {/* Direct Engineer Contact Banner */}
-      <section className="py-16 border-t bg-white border-[#E5E7EB]">
+      <section className="py-16 border-t bg-[#0B1F2A] text-white border-[#0B1F2A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 rounded-[2px] border flex flex-col md:flex-row items-center justify-between gap-6 bg-[#F9FAFB] border-[#E5E7EB]">
+          <div className="p-8 rounded-[2px] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#B87333]/15 text-[#B87333] border border-[#B87333]/30 text-xs font-mono font-semibold mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#B87333]/20 text-[#E8B07D] border border-[#B87333]/40 text-xs font-mono font-semibold mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Dziwny układ mieszkania albo domu?</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111827]">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
                 Porozmawiaj z inżynierem
               </h3>
-              <p className="text-xs sm:text-sm mt-2 leading-[1.7] text-[#4B5563]">
+              <p className="text-sm mt-2 leading-relaxed text-slate-300">
                 Nie dzwonisz na infolinię. Odpisuje inżynier, który montuje takie instalacje.
               </p>
             </div>
@@ -39,7 +39,7 @@ export const FaqPage: React.FC = () => {
             <div className="flex items-center gap-4 shrink-0">
               <Link
                 to="/kontakt"
-                className="btn-engineering-primary shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>
@@ -49,7 +49,7 @@ export const FaqPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="py-12 border-t bg-[#F9FAFB] border-[#E5E7EB]">
+      <section className="py-16 border-t bg-white border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <div className="text-xs text-[#9CA3AF] font-mono">Następny krok:</div>

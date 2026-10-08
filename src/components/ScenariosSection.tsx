@@ -105,7 +105,7 @@ export const ScenariosSection: React.FC = () => {
   };
 
   return (
-    <section id="scenariusze" className="py-24 relative overflow-hidden transition-colors duration-500 border-t bg-white border-slate-200 text-slate-800">
+    <section id="scenariusze" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-white border-[#E5E7EB] text-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -117,7 +117,7 @@ export const ScenariosSection: React.FC = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950">
             Przykłady: co dom robi za Ciebie
           </h2>
-          <p className="mt-4 text-sm sm:text-base max-w-2xl leading-relaxed text-slate-600">
+          <p className="mt-4 text-sm sm:text-base max-w-prose leading-relaxed text-slate-600">
             Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
           </p>
         </div>
@@ -132,7 +132,7 @@ export const ScenariosSection: React.FC = () => {
                 onClick={() => setActiveScenarioId(sc.id)}
                 className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                   isActive
-                    ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10': 'bg-slate-50 border-slate-200 hover:border-[#B87333]/30 hover:bg-slate-100/70'}`}
+                    ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10': 'bg-[#F9FAFB] border-[#E5E7EB] hover:border-[#B87333]/30 hover:bg-[#F3F4F6]'}`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
@@ -146,7 +146,7 @@ export const ScenariosSection: React.FC = () => {
                     className={`w-7 h-7 rounded-[2px] flex items-center justify-center ${
                       isActive
                         ? 'bg-[#B87333] text-white font-bold'
-                        : 'bg-slate-200/80 text-slate-600'}`}
+                        : 'bg-[#E5E7EB] text-slate-600'}`}
                   >
                     {getIcon(sc.icon)}
                   </div>
@@ -182,7 +182,7 @@ export const ScenariosSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className="rounded-[2px] border overflow-hidden shadow-2xl bg-white border-slate-200 shadow-slate-200/60"
+            className="rounded-[2px] border overflow-hidden shadow-2xl bg-white border-[#E5E7EB] shadow-slate-200/60"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Scenario Image */}
@@ -238,7 +238,7 @@ export const ScenariosSection: React.FC = () => {
                         {activeScenario.actionSteps.map((step, sIdx) => (
                           <div
                             key={sIdx}
-                            className="p-3 rounded-[2px] border flex items-start gap-2.5 text-xs bg-slate-50 border-slate-200 text-slate-700"
+                            className="p-3 rounded-[2px] border flex items-start gap-2.5 text-sm bg-[#F9FAFB] border-[#E5E7EB] text-slate-700"
                           >
                             <div className="w-7 h-7 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
@@ -258,7 +258,7 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className="mt-5 p-4 rounded-[2px] border text-xs leading-relaxed bg-[#B87333]/10 border-[#B87333]/30 text-slate-800">
+                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-[#B87333] text-sm leading-relaxed bg-[#B87333]/10 border-[#B87333]/30 text-slate-800">
                     <span className="font-bold block mb-1 text-[#7C4A1F]">
                       Tak to działa u Ciebie:
                     </span>
@@ -280,7 +280,7 @@ export const ScenariosSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t flex items-center justify-between border-slate-200">
+                <div className="mt-8 pt-6 border-t flex items-center justify-between border-[#E5E7EB]">
                   <span className="text-xs text-slate-500">
                     Działa w domu, bez obcych serwerów
                   </span>

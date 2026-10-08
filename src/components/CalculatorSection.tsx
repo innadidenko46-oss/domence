@@ -201,8 +201,17 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   return (
-    <section id="kalkulator" className="py-24 relative overflow-hidden border-t bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]">
+    <section id="kalkulator" className="py-16 relative overflow-hidden border-t bg-[#F3F4F6] border-[#E5E7EB] text-[#111827]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+
+        <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm mb-6 h-40">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
+            alt="Jasne wnętrze domu z planowaną automatyką smart home"
+            loading="lazy"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
 
         <div className="rounded-[2px] border p-6 sm:p-10 lg:p-12 shadow-xl bg-white border-[#E5E7EB]">
 

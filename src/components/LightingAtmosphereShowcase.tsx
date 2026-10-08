@@ -61,7 +61,7 @@ const SCENES: AtmosphereScene[] = [
 
 export const LightingAtmosphereShowcase: React.FC = () => {
   return (
-    <section className="py-20 bg-[#F9FAFB] border-t border-slate-200">
+    <section className="py-16 bg-[#F3F4F6] border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30">
@@ -71,7 +71,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
             Jak Twój dom żyje za dnia, o zmierzchu i w nocy.
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-slate-600">
             Światło, które samo dopasowuje się do pory dnia.
             Dom dopasowuje je sam, bez klikania w telefon.
           </p>
@@ -81,7 +81,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
           {SCENES.map((scene) => (
             <article
               key={scene.id}
-              className="rounded-[2px] border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col"
+              className="rounded-[2px] border border-[#E5E7EB] bg-white shadow-sm overflow-hidden flex flex-col"
             >
               <img
                 src={scene.image}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Video, Check, ArrowRight } from 'lucide-react';
+import { Zap, Video, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SHELLY_FEATURES = [
@@ -20,7 +20,7 @@ const HIK_FEATURES = [
 
 export const AppsShowcaseSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white border-t border-slate-200">
+    <section className="py-16 bg-white border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <div className="text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
@@ -29,13 +29,23 @@ export const AppsShowcaseSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
             Światło, rolety i ogrzewanie z telefonu.
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-slate-600">
             Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <article className="p-7 rounded-[2px] bg-[#F9FAFB] border border-slate-200 flex flex-col">
+          <article className="rounded-[2px] bg-[#F9FAFB] border border-[#E5E7EB] overflow-hidden flex flex-col shadow-sm">
+            <div className="relative h-40 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+                alt="Jasne wnętrze ze sterowaniem światłem i roletami z telefonu"
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            </div>
+            <div className="p-7 flex flex-col flex-1">
             <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/10 flex items-center justify-center mb-4">
               <Zap className="w-5 h-5 text-[#B87333]" />
             </div>
@@ -51,13 +61,13 @@ export const AppsShowcaseSection: React.FC = () => {
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {SHELLY_FEATURES.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                  <Check className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
+                  <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 pt-4 border-t border-slate-200">
+            <div className="mt-6 pt-4 border-t border-[#E5E7EB]">
               <Link
                 to="/kalkulator"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
@@ -66,9 +76,20 @@ export const AppsShowcaseSection: React.FC = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
+            </div>
           </article>
 
-          <article className="p-7 rounded-[2px] bg-[#F9FAFB] border border-slate-200 flex flex-col">
+          <article className="rounded-[2px] bg-[#F9FAFB] border border-[#E5E7EB] overflow-hidden flex flex-col shadow-sm">
+            <div className="relative h-40 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85"
+                alt="Kamera monitoringu na elewacji z podglądem w telefonie"
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            </div>
+            <div className="p-7 flex flex-col flex-1">
             <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/10 flex items-center justify-center mb-4">
               <Video className="w-5 h-5 text-[#B87333]" />
             </div>
@@ -82,13 +103,13 @@ export const AppsShowcaseSection: React.FC = () => {
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {HIK_FEATURES.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                  <Check className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
+                  <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 pt-4 border-t border-slate-200">
+            <div className="mt-6 pt-4 border-t border-[#E5E7EB]">
               <Link
                 to="/teletechnika"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
@@ -96,6 +117,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 <span>Zobacz monitoring i wideodomofony</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
+            </div>
             </div>
           </article>
         </div>

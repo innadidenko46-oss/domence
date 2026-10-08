@@ -41,7 +41,7 @@ export const ShellyShowcase: React.FC = () => {
   };
 
   return (
-    <section className="py-24 border-t transition-colors bg-[#F9FAFB] border-[#E5E7EB]">
+    <section className="py-16 border-t transition-colors bg-[#F3F4F6] border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -54,7 +54,7 @@ export const ShellyShowcase: React.FC = () => {
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
               Shelly Pro i Plus: światło i rolety bez kucia i z rozdzielnicy
             </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#4B5563]">
+            <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-[#4B5563]">
               Dostajesz światło, rolety i ogrzewanie sterowane z telefonu i zwykłych włączników. Do nowego domu wkładamy moduły do rozdzielnicy, do gotowego mieszkania — małe moduły pod włączniki.
             </p>
           </div>
@@ -141,8 +141,8 @@ export const ShellyShowcase: React.FC = () => {
                     Kluczowe parametry:
                   </div>
                   {activeCap.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 text-xs">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                    <div key={idx} className="flex items-center gap-2.5 text-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                       <span className="text-[#374151]">{feat}</span>
                     </div>
                   ))}
@@ -150,7 +150,17 @@ export const ShellyShowcase: React.FC = () => {
               </div>
 
               {/* Right: Real-Life Automation Scenario */}
-              <div className="lg:col-span-6 p-6 rounded-[2px] border flex flex-col justify-between bg-[#F9FAFB] border-[#E5E7EB]">
+              <div className="lg:col-span-6 rounded-[2px] border flex flex-col justify-between overflow-hidden bg-[#F9FAFB] border-[#E5E7EB]">
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
+                    alt="Moduły elektroniki automatyki domowej z bliska"
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#B87333]">
@@ -174,6 +184,7 @@ export const ShellyShowcase: React.FC = () => {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
+                </div>
               </div>
             </div>
 
@@ -182,19 +193,19 @@ export const ShellyShowcase: React.FC = () => {
               {/* Shelly Pro DIN Role */}
               <div className="p-5 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-[#10B981]/20 text-[#10B981] flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-6 h-6 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center font-mono font-bold text-xs">
                     DIN
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#111827]">
                       Shelly Pro do rozdzielnicy
                     </h4>
-                    <span className="text-[10px] text-[#10B981] font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-[10px] text-[#B87333] font-mono font-semibold uppercase tracking-wider">
                       Kabel • Szyna DIN • Pomiar prądu
                     </span>
                   </div>
                 </div>
-                <p className="text-xs leading-relaxed text-[#4B5563]">
+                <p className="text-sm leading-relaxed text-[#4B5563]">
                   {activeCap.proAdvantage}
                 </p>
               </div>
@@ -202,19 +213,19 @@ export const ShellyShowcase: React.FC = () => {
               {/* Shelly Plus Role */}
               <div className="p-5 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-[#38BDF8]/20 text-[#38BDF8] flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-6 h-6 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center font-mono font-bold text-xs">
                     BOX
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#111827]">
                       Shelly Plus i BLU (pod włącznik, bez kucia)
                     </h4>
-                    <span className="text-[10px] text-[#38BDF8] font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-[10px] text-[#B87333] font-mono font-semibold uppercase tracking-wider">
                       Bez kucia tynków • Puszki 60mm & BLE Mesh
                     </span>
                   </div>
                 </div>
-                <p className="text-xs leading-relaxed text-[#4B5563]">
+                <p className="text-sm leading-relaxed text-[#4B5563]">
                   {activeCap.shellyAdvantage}
                 </p>
               </div>

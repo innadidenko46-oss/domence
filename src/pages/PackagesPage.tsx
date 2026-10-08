@@ -32,75 +32,87 @@ export const PackagesPage: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
               Co zawiera każdy zestaw?
             </h2>
-            <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
+            <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-[#4B5563]">
               Cenę i zakres potwierdzamy na piśmie przed startem.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-5 h-5" />
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-bold mb-2 text-[#111827]">
+                  Projekt wykonawczy
+                </h3>
+                <p className="text-sm leading-relaxed text-[#4B5563]">
+                  Rysunek instalacji i schemat rozdzielnicy.
+                </p>
               </div>
-              <h3 className="text-base font-bold mb-2 text-[#111827]">
-                Projekt wykonawczy
-              </h3>
-              <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Rysunek instalacji i schemat rozdzielnicy.
-              </p>
+
+              <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center mb-4">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-bold mb-2 text-[#111827]">
+                  Czysty montaż
+                </h3>
+                <p className="text-sm leading-relaxed text-[#4B5563]">
+                  Zabezpieczamy podłogi i meble, wiercimy z odsysaniem pyłu i sprzątamy po sobie.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center mb-4">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-bold mb-2 text-[#111827]">
+                  Pomiary odbiorowe
+                </h3>
+                <p className="text-sm leading-relaxed text-[#4B5563]">
+                  Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center mb-4">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-bold mb-2 text-[#111827]">
+                  24 miesiące gwarancji
+                </h3>
+                <p className="text-sm leading-relaxed text-[#4B5563]">
+                  Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded-[2px] bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-[#111827]">
-                Czysty montaż
-              </h3>
-              <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Zabezpieczamy podłogi i meble, wiercimy z odsysaniem pyłu i sprzątamy po sobie.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded-[2px] bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-[#111827]">
-                Pomiary odbiorowe
-              </h3>
-              <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded-[2px] bg-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
-                <Clock className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-[#111827]">
-                24 miesiące gwarancji
-              </h3>
-              <p className="text-xs leading-[1.65] text-[#4B5563]">
-                Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
-              </p>
+            <div className="relative rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm min-h-[280px]">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+                alt="Ciepłe wnętrze domu po czystym montażu z gwarancją"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Next Area Banner */}
-      <section className="py-12 border-t bg-[#F9FAFB] border-[#E5E7EB]">
+      <section className="py-16 border-t bg-[#0B1F2A] text-white border-[#0B1F2A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-[#9CA3AF] font-mono">Następny krok:</div>
-            <div className="text-base font-bold text-[#111827]">
+            <div className="text-xs text-[#E8B07D] font-mono">Następny krok:</div>
+            <div className="text-base font-bold text-white">
               Pytania i odpowiedzi techniczne
             </div>
           </div>
           <Link
             to="/faq"
-            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors"
           >
             <span>Zobacz FAQ</span>
             <ArrowRight className="w-4 h-4" />

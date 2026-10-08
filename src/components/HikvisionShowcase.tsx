@@ -25,37 +25,37 @@ export const HikvisionShowcase: React.FC = () => {
       case 'cctv_colorvu':
         return <Eye className="w-5 h-5 text-[#B87333]" />;
       case 'cctv_acusense':
-        return <ShieldAlert className="w-5 h-5 text-red-500" />;
+        return <ShieldAlert className="w-5 h-5 text-[#B87333]" />;
       case 'intercom_modular':
-        return <BellRing className="w-5 h-5 text-sky-500" />;
+        return <BellRing className="w-5 h-5 text-[#B87333]" />;
       case 'access_minmoe':
-        return <UserCheck className="w-5 h-5 text-emerald-500" />;
+        return <UserCheck className="w-5 h-5 text-[#B87333]" />;
       case 'cctv_tandemvu':
-        return <Video className="w-5 h-5 text-sky-500" />;
+        return <Video className="w-5 h-5 text-[#B87333]" />;
       case 'intercom_face':
-        return <ScanFace className="w-5 h-5 text-emerald-500" />;
+        return <ScanFace className="w-5 h-5 text-[#B87333]" />;
       case 'intercom_android':
-        return <Tablet className="w-5 h-5 text-purple-500" />;
+        return <Tablet className="w-5 h-5 text-[#B87333]" />;
       default:
-        return <Tablet className="w-5 h-5 text-purple-500" />;
+        return <Tablet className="w-5 h-5 text-[#B87333]" />;
     }
   };
 
   return (
-    <section className="py-20 relative overflow-hidden transition-colors duration-500 border-t bg-white border-slate-200 text-slate-800">
+    <section className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-[#F3F4F6] border-[#E5E7EB] text-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-sky-100 text-sky-900 border-sky-300">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-[#B87333]/10 text-[#B87333] border-[#B87333]/30">
               <Video className="w-3.5 h-3.5" />
               <span>Najnowsze kamery i domofony Hikvision</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950">
               Kamery, które widzą w nocy w kolorze, i domofon z kamerą
             </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+            <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-slate-600">
               Dostajesz podgląd domu w telefonie i nagrania u siebie. Kamery ColorVu dają kolorowy obraz w nocy, a system AcuSense rozpoznaje ludzi i auta, więc nie dostajesz fałszywych alarmów.
             </p>
           </div>
@@ -83,23 +83,23 @@ export const HikvisionShowcase: React.FC = () => {
                 onClick={() => setActiveProductId(prod.id)}
                 className={`p-4 rounded-[2px] text-left transition-all duration-200 border flex flex-col justify-between cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 min-h-[110px] ${
                   isSelected
-                    ? 'bg-sky-50 border-sky-500 shadow-md shadow-sky-500/10 ring-1 ring-sky-500': 'bg-slate-50 border-slate-200 hover:border-slate-300 hover:bg-slate-100'}`}
+                    ? 'bg-[#B87333]/10 border-[#B87333] shadow-md shadow-[#B87333]/10 ring-1 ring-[#B87333]': 'bg-white border-[#E5E7EB] hover:border-[#B87333]/40'}`}
               >
                 <div className="flex items-center justify-between w-full mb-2">
                   <div className={`w-8 h-8 rounded-[2px] flex items-center justify-center ${
                     isSelected
-                      ? 'bg-sky-200 text-sky-900': 'bg-white text-slate-600'}`}>
+                      ? 'bg-[#B87333] text-white': 'bg-[#F3F4F6] text-slate-600'}`}>
                     {getSeriesIcon(prod.category)}
                   </div>
                   <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
                     isSelected
-                      ? 'bg-sky-100 text-sky-800': 'bg-slate-200 text-slate-600'}`}>
+                      ? 'bg-[#B87333]/15 text-[#B87333]': 'bg-slate-200 text-slate-600'}`}>
                     Hikvision
                   </span>
                 </div>
                 <div className={`font-bold text-xs sm:text-sm leading-snug line-clamp-2 ${
                   isSelected
-                    ? 'text-sky-950 font-extrabold': 'text-slate-800'}`}>
+                    ? 'text-[#111827] font-extrabold': 'text-slate-800'}`}>
                   {prod.series}
                 </div>
               </button>
@@ -127,7 +127,7 @@ export const HikvisionShowcase: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900/60 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-[2px] bg-[#071822]/85 backdrop-blur-md text-xs font-bold text-sky-400 border border-sky-500/30">
+                  <span className="px-3 py-1 rounded-[2px] bg-[#071822]/85 backdrop-blur-md text-xs font-bold text-[#E8B07D] border border-[#B87333]/40">
                     Hikvision — oryginalne urządzenia
                   </span>
                 </div>
@@ -143,7 +143,7 @@ export const HikvisionShowcase: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-sky-800">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#B87333]">
                       System rozpoznawania ludzi i aut, syrena i światło na intruza
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export const HikvisionShowcase: React.FC = () => {
 
                   {/* Key Tech Box */}
                   <div className="mt-4 p-4 rounded-[2px] border text-xs leading-relaxed flex items-start gap-3 bg-slate-50 border-slate-200 text-slate-800">
-                    <Cpu className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                    <Cpu className="w-5 h-5 text-[#B87333] shrink-0 mt-0.5" />
                     <div>
                       <strong className="block mb-0.5 text-slate-900">
                         Co jest w środku:
@@ -169,7 +169,7 @@ export const HikvisionShowcase: React.FC = () => {
                   <div className="mt-5 space-y-2.5">
                     {activeProduct.highlights.map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
                         <span className="text-slate-700">
                           {item}
                         </span>
@@ -185,7 +185,7 @@ export const HikvisionShowcase: React.FC = () => {
                   </div>
                   <Link
                     to="/kalkulator"
-                    className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
                   >
                     <span>Wypełnij ankietę (2 min)</span>
                   </Link>

@@ -17,19 +17,19 @@ export const MultiroomGardenPage: React.FC = () => {
       />
 
       {/* Visual Atmosphere Showcase for Audio & Cinema */}
-      <section className="py-12 border-b bg-white border-[#E5E7EB]">
+      <section className="py-16 border-b bg-[#F3F4F6] border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-[2px] overflow-hidden border group bg-[#F9FAFB] border-[#E5E7EB]">
+            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-[#E5E7EB]">
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1000&q=85"
-                  alt="Dyskretne głośniki architektoniczne w suficie"
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+                  alt="Łazienka z dyskretnym nagłośnieniem sufitowym"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#B87333] border border-white/10">
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#E8B07D] border border-white/10">
                   Dźwięk bez kabli na widoku
                 </span>
               </div>
@@ -37,22 +37,22 @@ export const MultiroomGardenPage: React.FC = () => {
                 <h3 className="font-bold text-lg text-[#111827]">
                   Głośniki w suficie, których nie widać
                 </h3>
-                <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
+                <p className="text-sm mt-3 leading-relaxed text-[#4B5563]">
                   Maskownice malujemy pod kolor sufitu. W salonie, sypialni czy łazience nie widać, skąd gra muzyka.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[2px] overflow-hidden border group bg-[#F9FAFB] border-[#E5E7EB]">
+            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-[#E5E7EB]">
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami"
+                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+                  alt="Ciepły salon wieczorem przygotowany na seans filmowy"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-sky-400 border border-white/10">
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#E8B07D] border border-white/10">
                   Kino jednym przyciskiem
                 </span>
               </div>
@@ -60,22 +60,22 @@ export const MultiroomGardenPage: React.FC = () => {
                 <h3 className="font-bold text-lg text-[#111827]">
                   Wieczór filmowy bez szukania pilotów
                 </h3>
-                <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
+                <p className="text-sm mt-3 leading-relaxed text-[#4B5563]">
                   Rolety same się zamykają, światło gaśnie do 5%, a dźwięk wypełnia pokój.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[2px] overflow-hidden border group bg-[#F9FAFB] border-[#E5E7EB]">
+            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-[#E5E7EB]">
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85"
-                  alt="Dyskretna kamera monitoringu przy wejściu na posesję"
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+                  alt="Jasny salon z panelem ściennym i podglądem furtki"
                   loading="lazy"
-                  className="w-full h-full object-contain bg-[#18181B] p-4 duration-500 filter brightness-90"
+                  className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#B87333] border border-white/10">
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-black/80 backdrop-blur-md text-xs font-mono font-semibold text-[#E8B07D] border border-white/10">
                   Dzwonek z furtki
                 </span>
               </div>
@@ -83,7 +83,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 <h3 className="font-bold text-lg text-[#111827]">
                   Muzyka cichnie, gdy dzwoni furtka
                 </h3>
-                <p className="text-sm mt-3 leading-[1.7] text-[#4B5563]">
+                <p className="text-sm mt-3 leading-relaxed text-[#4B5563]">
                   Gdy kurier dzwoni do furtki, muzyka sama cichnie, a na panelu na ścianie widzisz, kto przyszedł.
                 </p>
               </div>
@@ -96,19 +96,19 @@ export const MultiroomGardenPage: React.FC = () => {
       <MultiroomGardenSection />
 
       {/* Deep-dive into Cinema & Multiroom Logic */}
-      <section className="py-16 border-t bg-white border-[#E5E7EB]">
+      <section className="py-16 border-t bg-[#F3F4F6] border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827]">
               Jeden przycisk do filmu: rolety, światło i dźwięk
             </h2>
-            <p className="mt-2 text-sm sm:text-base leading-[1.7] text-[#4B5563]">
+            <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-[#4B5563]">
               Koniec z kilkoma pilotami. Rolety, światło i dźwięk ustawiają się same.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-7 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+            <div className="p-7 rounded-[2px] border shadow-sm bg-white border-[#E5E7EB]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center">
                   <Film className="w-5 h-5" />
@@ -120,10 +120,10 @@ export const MultiroomGardenPage: React.FC = () => {
                   <span className="text-xs text-[#B87333] font-mono font-semibold">Pełna koordynacja salonu</span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm leading-relaxed mb-4 text-[#4B5563]">
+              <p className="text-sm leading-relaxed mb-4 text-[#4B5563]">
                 Po wybraniu sceny kinowej (przyciskiem na ścianie, pilotem lub ze smartfona):
               </p>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#374151]">
+              <ul className="space-y-2.5 text-sm text-[#374151]">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
                   <span>Rolety i żaluzje zjeżdżają w 100%, eliminując wszelkie odblaski światła dziennego.</span>
@@ -143,36 +143,36 @@ export const MultiroomGardenPage: React.FC = () => {
               </ul>
             </div>
 
-            <div className="p-7 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+            <div className="p-7 rounded-[2px] border shadow-sm bg-white border-[#E5E7EB]">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-sky-500/20 text-sky-400 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center">
                   <Music2 className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#111827]">
                     Muzyka tam, gdzie jesteś
                   </h3>
-                  <span className="text-xs text-sky-400 font-mono font-semibold">Muzyka dokładnie tam, gdzie przebywasz</span>
+                  <span className="text-xs text-[#B87333] font-mono font-semibold">Muzyka dokładnie tam, gdzie przebywasz</span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm leading-relaxed mb-4 text-[#4B5563]">
+              <p className="text-sm leading-relaxed mb-4 text-[#4B5563]">
                 Każdy słucha swojego, bez kłótni o głośność:
               </p>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#374151]">
+              <ul className="space-y-2.5 text-sm text-[#374151]">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
                   <span>W strefie kąpielowej relaksacyjna muzyka włącza się wraz ze sceną oświetleniową.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
                   <span>W kuchni poranny podcast i wiadomości podczas przygotowywania śniadania.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
                   <span>W sypialni łagodne budzenie ulubioną playlistą zsynchronizowaną z zegarem astronomicznym.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B87333]" />
                   <span>Pełna obsługa Apple AirPlay 2, Spotify Connect, Tidal i bezstratnego strumienia Hi-Res.</span>
                 </li>
               </ul>
@@ -180,7 +180,7 @@ export const MultiroomGardenPage: React.FC = () => {
           </div>
 
           {/* Dedicated Home Multimedia Feature Card */}
-          <div className="mt-8 p-8 rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB]">
+          <div className="mt-8 p-8 rounded-[2px] border shadow-sm bg-white border-[#E5E7EB]">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#E5E7EB]">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
@@ -207,17 +207,17 @@ export const MultiroomGardenPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="py-12 border-t bg-[#F9FAFB] border-[#E5E7EB]">
+      <section className="py-16 border-t bg-[#0B1F2A] text-white border-[#0B1F2A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-[#9CA3AF] font-mono">Kolejny obszar instalacji:</div>
-            <div className="text-base font-bold text-[#111827]">
+            <div className="text-xs text-[#E8B07D] font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-base font-bold text-white">
               Przykłady z życia wzięte
             </div>
           </div>
           <Link
             to="/scenariusze"
-            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors"
           >
             <span>Zobacz scenariusze</span>
             <ArrowRight className="w-4 h-4" />

@@ -21,7 +21,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <header
       aria-label={title}
-      className="relative isolate py-14 md:py-20 border-b overflow-hidden transition-colors duration-300 bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]"
+      className="relative isolate py-20 border-b overflow-hidden transition-colors duration-300 bg-white border-[#E5E7EB] text-[#111827]"
     >
       {/* Architectural background photo (decorative) */}
       <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
@@ -34,8 +34,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           loading="lazy"
           className="w-full h-full object-cover object-center filter transition-opacity duration-300 opacity-10 brightness-110 contrast-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F9FAFB] via-[#F9FAFB]/90 to-[#F9FAFB]/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F9FAFB] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

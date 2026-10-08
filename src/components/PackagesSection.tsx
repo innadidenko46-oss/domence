@@ -1,9 +1,24 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { PACKAGES } from '../data/content.ts';
-import { Check, Clock, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Clock, ArrowRight } from 'lucide-react';
 import { PropertyState } from '../types.ts';
 import { Link } from 'react-router-dom';
+
+const PACKAGE_IMAGES: Record<string, { src: string; alt: string }> = {
+  security_intercom: {
+    src: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Dyskretna kamera monitoringu na elewacji domu',
+  },
+  retrofit_smart: {
+    src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Jasne gotowe wnętrze z automatyką bez kucia ścian',
+  },
+  developer_din: {
+    src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Szafa teletechniczna RACK z okablowaniem i rejestratorem',
+  },
+};
 
 interface PackagesSectionProps {
   onSelectPackage: (type: PropertyState) => void;
@@ -12,7 +27,7 @@ interface PackagesSectionProps {
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackage }) => {
 
   return (
-    <section id="pakiety" className="py-24 border-t transition-colors bg-[#F9FAFB] border-[#E5E7EB]">
+    <section id="pakiety" className="py-16 border-t transition-colors bg-[#F3F4F6] border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -24,7 +39,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-[#111827]">
             Gotowe zestawy z montażem i gwarancją
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-[#4B5563]">
+          <p className="mt-4 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-[#4B5563]">
             Sprzęt, montaż i ustawienie plus 24 miesiące gwarancji. Cenę dostajesz na piśmie.
           </p>
         </div>
@@ -38,10 +53,23 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 key={pkg.id}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.15 }}
-                className={`relative rounded-[2px] p-7 sm:p-8 flex flex-col justify-between transition-all ${
+                className={`relative rounded-[2px] overflow-hidden flex flex-col justify-between transition-all ${
                   isBestseller
                     ? 'bg-white border-2 border-[#B87333] shadow-md': 'bg-white border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm'}`}
               >
+                {/* Photo top */}
+                {PACKAGE_IMAGES[pkg.id] && (
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src={PACKAGE_IMAGES[pkg.id].src}
+                      alt={PACKAGE_IMAGES[pkg.id].alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                )}
+                <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
                 {/* Top Bestseller Badge */}
                 {isBestseller && (
                   <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-[#B87333] text-white font-mono font-bold text-[10px] uppercase tracking-wider shadow-sm">
@@ -69,12 +97,12 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111827]">
                     {pkg.title}
                   </h3>
-                  <p className="text-xs mt-2 leading-relaxed text-[#4B5563]">
+                  <p className="text-sm mt-2 leading-relaxed text-[#4B5563]">
                     {pkg.description}
                   </p>
 
                   {/* Summary Box */}
-                  <div className="mt-3 p-3 rounded-[2px] border text-[11px] leading-relaxed bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
+                  <div className="mt-3 p-3 pl-4 rounded-[2px] border border-l-4 border-l-[#B87333] text-sm leading-relaxed bg-[#F9FAFB] border-[#E5E7EB] text-[#374151]">
                     <span className="font-bold text-[#B87333] block mb-0.5">Co robimy:</span>
                     {pkg.humanSummary}
                   </div>
@@ -99,9 +127,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                       Co zawiera zestaw:
                     </div>
                     {pkg.features.map((feat, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs">
-                        <Check className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
-                        <span className="leading-snug text-[#374151]">
+                      <div key={i} className="flex items-start gap-2.5 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                        <span className="leading-relaxed text-[#374151]">
                           {feat}
                         </span>
                       </div>
@@ -120,6 +148,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   <span>Wybierz pakiet</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
+                </div>
               </motion.div>
             );
           })}

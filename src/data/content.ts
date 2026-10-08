@@ -145,7 +145,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Rozdzielczość 4K (8 Megapikseli) z kompresją H.265+ oszczędzającą miejsce na dysku',
       'Metalowa obudowa IK10 (wandaloodporna) i IP67 (odporność na mróz i ulewy)',
     ],
-    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-acusense',
@@ -160,7 +160,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Dwukierunkowe audio: możliwość rozmowy przez kamerę bezpośrednio z poziomu telefonu',
       'Natychmiastowe powiadomienia PUSH ze zdjęciem zdarzenia na smartfon',
     ],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-tandemvu',
@@ -175,7 +175,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Odczytywanie tablic rejestracyjnych pojazdów wjeżdżających na posesję',
       'Zastępuje kilka tradycyjnych kamer statycznych w jednym punkcie montażowym',
     ],
-    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-intercom-modular',
@@ -190,7 +190,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Bezpośrednie sterowanie elektrozaczepem furtki i automatyką bramy wjazdowej z dwóch niezależnych przekaźników',
       'Wandaloodporna obudowa IK08/IK09 odporna na trudne warunki atmosferyczne od -40°C do +60°C',
     ],
-    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-minmoe-face',
@@ -205,7 +205,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Kamera z doświetleniem IR działa niezawodnie w kompletnych ciemnościach i w pełnym słońcu',
       'Możliwość generowania tymczasowych kodów QR na smartfon dla gości i kurierów',
     ],
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-android-screen',
@@ -220,7 +220,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Interkom domowy: rozmowy głosowe między pokojami (np. kuchnia z piętrem)',
       'Zasilanie PoE (jeden cienki przewód sieciowy dostarcza prąd i dane)',
     ],
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
   },
 ];
 
@@ -338,7 +338,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Volume2', label: 'Akustyka Multiroom', detail: 'Spokojny ambient lub playlista Joga & Zen ze Spotify/Tidal' },
       { icon: 'Wind', label: 'Mikroklimat', detail: 'Cichy napływ natlenionego powietrza, temperatura 21.5°C' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
   },
   {
@@ -391,7 +391,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Uzbrojenie stref alarmu i aktywacja analityki sylwetek AI' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
     icon: 'LogOut',
   },
   {
@@ -416,7 +416,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Sun', label: 'Światło Kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
       { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
     icon: 'Tv',
   },
   {
@@ -441,7 +441,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'KeyRound', label: 'Zdalne Otwarcie', detail: 'Jedno dotknięcie zwalnia elektrozaczep furtki' },
       { icon: 'HardDrive', label: 'Zapis NVR', detail: 'Zdarzenie zapisane na dysku bez opłat abonamentowych' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     icon: 'Video',
   },
   {
@@ -490,7 +490,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Moon', label: 'Cokoły Bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
       { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające zasypianiu' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
     icon: 'Moon',
   },
   {
@@ -515,7 +515,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'SlidersHorizontal', label: 'Rolety & Zasłony', detail: 'Zamknięcie przed zmierzchem chroniące prywatność' },
       { icon: 'Volume2', label: 'Akustyka Tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
   },
   {
@@ -540,7 +540,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Droplets', label: 'Zawór Wody', detail: 'Pełne fizyczne odcięcie dopływu wody do budynku' },
       { icon: 'ShieldCheck', label: 'Strażnik Hikvision', detail: 'Analityka AI sylwetek ludzkich przy wejściu do domu' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
     icon: 'ShieldCheck',
   },
 ];
@@ -1020,7 +1020,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Integracja ze scenami Shelly: otwarcie zamka rozbraja alarm i zapala światło',
     ],
     icon: 'Lock',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
   },
   {
     id: 'ai-shelly-assistant',
@@ -1152,6 +1152,6 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
       { step: 'Ścieżka świetlna', icon: 'Sun', detail: 'Rozświetlenie korytarza ciepłym światłem 2700K' },
       { step: 'Rozbrojenie strefy', icon: 'ShieldCheck', detail: 'Automatyczne wyłączenie czuwania alarmu na parterze budynku' },
     ],
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
   },
 ];

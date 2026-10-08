@@ -1,6 +1,6 @@
 import React from 'react';
 import { AI_FUTURE_TECH } from '../data/content.ts';
-import { Search, Eye, Cpu, Radio, Lock, Bot, Sparkles, Check } from 'lucide-react';
+import { Search, Eye, Cpu, Radio, Lock, Bot, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const getTechIcon = (iconName: string) => {
   switch (iconName) {
@@ -23,7 +23,7 @@ const getTechIcon = (iconName: string) => {
 
 export const AiFutureTechSection: React.FC = () => {
   return (
-    <section id="ai-technologie" className="py-24 bg-[#F9FAFB] border-t border-[#E5E7EB]">
+    <section id="ai-technologie" className="py-16 bg-[#F3F4F6] border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
           <div className="text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3">
@@ -32,7 +32,7 @@ export const AiFutureTechSection: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
             Co potrafią nowe kamery i sterowniki.
           </h2>
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
+          <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-prose text-slate-600">
             Dostajesz 6 sprawdzonych rzeczy do domu.
           </p>
         </div>
@@ -69,8 +69,8 @@ export const AiFutureTechSection: React.FC = () => {
               </p>
               <ul className="mt-4 space-y-2">
                 {tech.keyPoints.slice(0, 3).map((point, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
-                    <Check className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                  <li key={index} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
+                    <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
                     <span>{point}</span>
                   </li>
                 ))}

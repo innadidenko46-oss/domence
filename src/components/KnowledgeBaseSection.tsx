@@ -29,7 +29,7 @@ export const KnowledgeBaseSection: React.FC = () => {
   };
 
   return (
-    <section id="baza-wiedzy" className="py-24 relative overflow-hidden transition-colors duration-500 border-t bg-white border-slate-200 text-slate-800">
+    <section id="baza-wiedzy" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-[#F3F4F6] border-[#E5E7EB] text-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -41,9 +41,37 @@ export const KnowledgeBaseSection: React.FC = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
             Pytania i odpowiedzi
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-slate-600">
             Wiesz, czy dom działa bez internetu, co dzieje się przy burzy, ile kosztuje utrzymanie i czy każdy da sobie radę z obsługą.
           </p>
+        </div>
+
+        {/* Photo header strip */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+              alt="Jasne wnętrze domu z automatyką działającą bez internetu"
+              loading="lazy"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+              alt="Szafa serwerowa z rejestratorem nagrań i zabezpieczeniami"
+              loading="lazy"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
+              alt="Elektronika sterowników automatyki domowej z bliska"
+              loading="lazy"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
         </div>
 
         {/* Category Filters */}
@@ -55,7 +83,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
                 selectedCategory === cat.id
                   ? 'bg-[#B87333] text-white font-bold shadow-md shadow-[#B87333]/20'
-                  : 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'}`}
+                  : 'bg-white text-slate-700 border border-[#E5E7EB] hover:bg-[#F9FAFB]'}`}
             >
               {cat.label}
             </button>
@@ -70,9 +98,9 @@ export const KnowledgeBaseSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className={`rounded-[2px] transition-all duration-200 border overflow-hidden ${
+                className={`rounded-[2px] transition-all duration-200 border overflow-hidden shadow-sm ${
                   isOpen
-                    ? 'bg-slate-50/80 border-[#C27A4E] shadow-md': 'bg-white border-slate-200 hover:border-slate-300'}`}
+                    ? 'bg-white border-[#B87333] shadow-md': 'bg-white border-[#E5E7EB] hover:border-[#B87333]/40'}`}
               >
                 {/* Accordion Question Header */}
                 <button
@@ -86,7 +114,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                       className={`w-9 h-9 rounded-[2px] flex items-center justify-center shrink-0 ${
                         isOpen
                           ? 'bg-[#B87333] text-white'
-                          : 'bg-slate-100 text-slate-600'}`}
+                          : 'bg-[#F3F4F6] text-slate-600'}`}
                     >
                       <HelpCircle className="w-5 h-5" />
                     </div>
@@ -96,7 +124,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                   </div>
 
                   <div
-                    className="p-2 rounded-[2px] shrink-0 bg-slate-100 text-slate-600"
+                    className="p-2 rounded-[2px] shrink-0 bg-[#F3F4F6] text-slate-600"
                   >
                     {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                   </div>
@@ -112,10 +140,10 @@ export const KnowledgeBaseSection: React.FC = () => {
                       transition={{ duration: 0.25 }}
                       id={`faq-panel-${index}`}
                       role="region"
-                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-slate-200"
+                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-[#E5E7EB]"
                     >
                       {/* Human-Friendly Direct Answer */}
-                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-white border-[#B87333]/30 text-slate-700">
+                      <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-[#B87333] text-sm leading-relaxed bg-white border-[#B87333]/30 text-slate-700">
                         <div className="flex items-center gap-2 mb-1.5">
                           <ShieldCheck className="w-4 h-4 text-[#B87333] shrink-0" />
                           <span className="text-xs font-bold uppercase tracking-wider text-[#7C4A1F]">
@@ -128,7 +156,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                       </div>
 
                       {/* Deep-Dive Engineering Details */}
-                      <div className="p-4 rounded-[2px] border text-xs leading-relaxed bg-slate-100/70 border-slate-200 text-slate-600">
+                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-[#F9FAFB] border-[#E5E7EB] text-slate-600">
                         <div className="flex items-center gap-2 mb-1.5">
                           <Cpu className="w-3.5 h-3.5 shrink-0 text-slate-600" />
                           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">

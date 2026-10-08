@@ -110,14 +110,14 @@ export const HomePage: React.FC = () => {
       icon: Calculator,
       badge: 'Ankieta (2 min)',
       image:
-        'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Cyfrowy tablet wyświetlający przejrzyste sterowanie domem',
+        'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85',
+      imageAlt: 'Jasny salon z nowoczesnym oświetleniem i sterowaniem domem',
     },
   ];
 
 
   return (
-    <div className="transition-colors duration-500 bg-[#F8FAFC] text-slate-800">
+    <div className="transition-colors duration-500 bg-white text-slate-800">
       
       {/* Hero Section with Dreamy Ambient Background */}
       <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
@@ -204,14 +204,14 @@ export const HomePage: React.FC = () => {
 
 
       {/* Visual Solutions Grid with High-Res Photography */}
-      <section className="py-20 border-t bg-slate-50 border-slate-200">
+      <section className="py-16 border-t bg-white border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
               Obszary instalacji — co montujemy
             </h2>
-            <p className="mt-3 text-sm sm:text-base font-light text-slate-600">
+            <p className="mt-3 text-sm sm:text-base font-light leading-relaxed max-w-prose text-slate-600">
               Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
             </p>
           </div>
@@ -223,7 +223,7 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 bg-white border-slate-200 hover:border-[#C27A4E] hover:shadow-slate-300/70"
+                  className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-all duration-500 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 bg-[#F9FAFB] border-[#E5E7EB] hover:border-[#C27A4E] hover:shadow-slate-300/70"
                 >
                   {/* Photography Header */}
                   <div>
@@ -257,14 +257,14 @@ export const HomePage: React.FC = () => {
                         {ch.subtitle}
                       </div>
 
-                      <p className="text-xs mt-3 leading-relaxed font-light text-slate-600">
+                      <p className="text-sm mt-3 leading-relaxed font-light text-slate-600">
                         {ch.description}
                       </p>
                     </div>
                   </div>
 
                   <div className="px-6 pb-6 pt-2">
-                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-slate-100 text-[#A36034] group-hover:text-[#7C4A1F]">
+                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-[#E5E7EB] text-[#A36034] group-hover:text-[#7C4A1F]">
                       <span>Zobacz szczegóły</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -278,51 +278,79 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Why DOMENCE Trust Pillars */}
-      <section className="py-20 border-t bg-white border-slate-200">
+      <section className="py-16 border-t bg-[#F3F4F6] border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-10">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
               Jak montujemy i dlaczego to bezpieczne
             </h2>
-            <p className="mt-3 text-sm sm:text-base font-light text-slate-600">
+            <p className="mt-3 text-sm sm:text-base font-light leading-relaxed max-w-prose text-slate-600">
               Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
             </p>
           </div>
 
+          {/* 3-photo strip */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-44">
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+                alt="Szafa serwerowa z rejestratorem — nagrania zostają w domu"
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-44">
+              <img
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85"
+                alt="Bezpieczny dom o zmierzchu z włączonym oświetleniem"
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-44">
+              <img
+                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+                alt="Czysta łazienka po montażu bez kurzu i kucia"
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 rounded-[2px] border transition-all bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm">
+            <div className="p-7 rounded-[2px] border transition-all bg-white border-[#E5E7EB] hover:border-[#C27A4E] shadow-sm">
               <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Lock className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
                 Prywatność i działanie bez internetu
               </h3>
-              <p className="text-xs leading-relaxed font-light text-slate-600">
+              <p className="text-sm leading-relaxed font-light text-slate-600">
                 Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.
               </p>
             </div>
 
-            <div className="p-7 rounded-[2px] border transition-all bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm">
+            <div className="p-7 rounded-[2px] border transition-all bg-white border-[#E5E7EB] hover:border-[#C27A4E] shadow-sm">
               <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
                 Porządna rozdzielnica i ochrona sprzętu
               </h3>
-              <p className="text-xs leading-relaxed font-light text-slate-600">
+              <p className="text-sm leading-relaxed font-light text-slate-600">
                 Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła,
                 sprzęt kuchenny, telewizory i komputery przed burzą.
               </p>
             </div>
 
-            <div className="p-7 rounded-[2px] border transition-all bg-slate-50 border-slate-200 hover:border-[#C27A4E] shadow-sm">
+            <div className="p-7 rounded-[2px] border transition-all bg-white border-[#E5E7EB] hover:border-[#C27A4E] shadow-sm">
               <div className="w-12 h-12 rounded-[2px] bg-[#B87333]/10 text-[#B87333] flex items-center justify-center mb-4">
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-slate-900">
                 Czysty montaż bez kurzu
               </h3>
-              <p className="text-xs leading-relaxed font-light text-slate-600">
+              <p className="text-sm leading-relaxed font-light text-slate-600">
                 Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu,
                 zabezpieczamy podłogi i sprzątamy po sobie.
               </p>
@@ -338,11 +366,11 @@ export const HomePage: React.FC = () => {
       <ProcessSection />
 
       {/* Direct Contact Banner */}
-      <section className="relative py-20 border-t overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 text-white">
-        <div className="absolute inset-0 -z-10 opacity-20">
+      <section className="relative py-16 border-t overflow-hidden bg-[#0B1F2A] text-white border-[#0B1F2A]">
+        <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
-            alt="Nowoczesne wnętrze domu w świetle dziennym"
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85"
+            alt="Dom jednorodzinny o zmierzchu z oświetlonym wnętrzem"
             className="w-full h-full object-cover"
             loading="lazy"
           />

@@ -46,7 +46,7 @@ export const ContactPage: React.FC = () => {
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
-      <section className="py-16">
+      <section className="py-16 bg-[#F3F4F6] border-t border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -56,9 +56,18 @@ export const ContactPage: React.FC = () => {
                 <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-2 text-[#111827]">
                   Nasi ludzie i gdzie działamy
                 </h2>
-                <p className="text-xs sm:text-sm leading-[1.7] text-[#4B5563]">
+                <p className="text-sm leading-relaxed max-w-prose text-[#4B5563]">
                   Robimy domy w Warszawie, Konstancinie, Wilanowie i Podkowie Leśnej. Większe domy — w całej Polsce, po sprawdzeniu rysunków.
                 </p>
+              </div>
+
+              <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-48">
+                <img
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
+                  alt="Biuro projektowe z planami instalacji i dokumentacją"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
 
               {/* Direct Info Cards with 2px radius */}
@@ -113,7 +122,7 @@ export const ContactPage: React.FC = () => {
                     <div className="text-sm font-bold text-[#111827]">
                       Warszawa i okolice; większe domy — cała Polska
                     </div>
-                    <div className="text-xs text-[#9CA3AF] mt-0.5">
+                    <div className="text-sm text-[#9CA3AF] mt-0.5">
                       Przyjeżdżamy na miejsce albo pracujemy na podstawie rysunków.
                     </div>
                   </div>
@@ -126,7 +135,7 @@ export const ContactPage: React.FC = () => {
                   <ShieldCheck className="w-4 h-4" />
                   <span>Jak działamy</span>
                 </h4>
-                <ul className="space-y-2 text-xs text-[#374151]">
+                <ul className="space-y-2 text-sm text-[#374151]">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                     <span>Za darmo sprawdzamy przesłane rysunki</span>
@@ -155,7 +164,7 @@ export const ContactPage: React.FC = () => {
                     <h3 className="text-2xl font-bold mb-2 text-[#111827]">
                       Dziękujemy! Wiadomość prawie gotowa.
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto leading-relaxed">
+                    <p className="text-sm text-[#9CA3AF] max-w-md mx-auto leading-relaxed">
                       Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
                       Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
                     </p>
@@ -172,7 +181,7 @@ export const ContactPage: React.FC = () => {
                       <h3 className="text-xl font-bold mb-1 text-[#111827]">
                         Zapytaj o swój dom
                       </h3>
-                      <p className="text-xs text-[#9CA3AF]">
+                      <p className="text-sm text-[#9CA3AF]">
                         Wypełnij pola — za darmo sprawdzimy, co da się zrobić.
                       </p>
                     </div>

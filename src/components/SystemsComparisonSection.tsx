@@ -25,7 +25,7 @@ const ELSEWHERE: string[] = [
 
 export const SystemsComparisonSection: React.FC = () => {
   return (
-    <section id="systemy" className="py-24 relative overflow-hidden border-t transition-colors bg-white border-[#E5E7EB]">
+    <section id="systemy" className="py-16 relative overflow-hidden border-t transition-colors bg-white border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,37 +39,49 @@ export const SystemsComparisonSection: React.FC = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111827]">
             Nasze realizacje, a typowe tańsze rozwiązania
           </h2>
-          <p className="mt-3 text-sm sm:text-base max-w-2xl leading-relaxed text-[#4B5563]">
+          <p className="mt-3 text-sm sm:text-base max-w-prose leading-relaxed text-[#4B5563]">
             Porównaj, co dostajesz. Bez nazw marek — liczy się to, jak dom działa na co dzień.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-[2px] border-2 border-[#B87333] bg-white p-6 sm:p-8 shadow-sm">
-              <h3 className="text-base font-bold text-[#111827]">Tak robimy my</h3>
-              <ul className="mt-5 space-y-3">
-                {OUR_WAY.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#374151]">
-                    <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#B87333]/15 border border-[#B87333]/30 flex items-center justify-center shrink-0">
-                      <Check className="w-3.5 h-3.5 text-[#B87333]" />
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="rounded-[2px] border-2 border-[#B87333] bg-[#F9FAFB] p-6 sm:p-8 shadow-sm">
+                <h3 className="text-base font-bold text-[#111827]">Tak robimy my</h3>
+                <ul className="mt-5 space-y-3">
+                  {OUR_WAY.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#374151]">
+                      <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#B87333]/15 border border-[#B87333]/30 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-[#B87333]" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB] p-6 sm:p-8">
+                <h3 className="text-base font-bold text-[#111827]">Tak bywa gdzie indziej</h3>
+                <ul className="mt-5 space-y-3">
+                  {ELSEWHERE.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#4B5563]">
+                      <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
+                        <Minus className="w-3.5 h-3.5 text-[#9CA3AF]" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="rounded-[2px] border bg-[#F9FAFB] border-[#E5E7EB] p-6 sm:p-8">
-              <h3 className="text-base font-bold text-[#111827]">Tak bywa gdzie indziej</h3>
-              <ul className="mt-5 space-y-3">
-                {ELSEWHERE.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-[#4B5563]">
-                    <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center shrink-0">
-                      <Minus className="w-3.5 h-3.5 text-[#9CA3AF]" />
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="relative rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm min-h-[280px]">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+                alt="Ciepłe wnętrze domu z dobrze wykonaną instalacją elektryczną"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
           </div>
 
