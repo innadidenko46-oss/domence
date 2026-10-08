@@ -123,7 +123,7 @@ export const Logo: React.FC<LogoProps> = ({
   const subtitleClasses = {
     sm: 'text-[8px] tracking-[0.2em]',
     md: 'text-[9.5px] tracking-[0.22em]',
-    lg: 'text-[11px] tracking-[0.25em]',
+    lg: 'text-xs tracking-[0.25em]',
   };
 
   const isLight = variant === 'light';
@@ -137,7 +137,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className="flex flex-col justify-center">
         {/* Brand Name "DOMENCE" with curved smart beacon over O */}
         <div className="flex items-baseline leading-none font-display font-black tracking-wider">
-          <span className={isLight ? 'text-white' : 'text-[#071822]'}>D</span>
+          <span className={isLight ? 'text-white' : 'text-navy-950'}>D</span>
           
           {/* Letter O with WiFi / Smart Signal Arch */}
           <span className="relative inline-flex flex-col items-center mx-[0.5px]">
@@ -156,20 +156,20 @@ export const Logo: React.FC<LogoProps> = ({
               />
               <circle cx="10" cy="6" r="1.2" fill="#B87333" />
             </svg>
-            <span className={isLight ? 'text-white' : 'text-[#071822]'}>O</span>
+            <span className={isLight ? 'text-white' : 'text-navy-950'}>O</span>
           </span>
 
-          <span className={isLight ? 'text-white' : 'text-[#071822]'}>MENCE</span>
+          <span className={isLight ? 'text-white' : 'text-navy-950'}>MENCE</span>
         </div>
 
-        {/* Subtitle: SMART HOME & INTERCOM SYSTEMS */}
+        {/* Subtitle: AUTOMATYKA DOMU I TELETECHNIKA */}
         {showSubtitle && (
           <span
             className={`font-sans font-bold uppercase mt-1 leading-none ${
               isLight ? 'text-[#38BDF8]' : 'text-[#0E384D]'
             } ${subtitleClasses[size]}`}
           >
-            SMART HOME & INTERCOM SYSTEMS
+            AUTOMATYKA DOMU I TELETECHNIKA
           </span>
         )}
       </div>

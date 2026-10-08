@@ -105,19 +105,19 @@ export const ScenariosSection: React.FC = () => {
   };
 
   return (
-    <section id="scenariusze" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-white border-[#E5E7EB] text-slate-800">
+    <section id="scenariusze" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-white border-gray-200 text-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Przykłady z życia</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-950">
             Przykłady: co dom robi za Ciebie
           </h2>
-          <p className="mt-4 text-sm sm:text-base max-w-prose leading-relaxed text-slate-600">
+          <p className="mt-4 text-sm sm:text-base max-w-prose leading-relaxed text-gray-600">
             Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
           </p>
         </div>
@@ -130,14 +130,14 @@ export const ScenariosSection: React.FC = () => {
               <button
                 key={sc.id}
                 onClick={() => setActiveScenarioId(sc.id)}
-                className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
+                className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
                   isActive
-                    ? 'bg-[#B87333]/10 border-[#C27A4E]/80 shadow-md shadow-[#B87333]/10': 'bg-[#F9FAFB] border-[#E5E7EB] hover:border-[#B87333]/30 hover:bg-[#F3F4F6]'}`}
+                    ? 'bg-copper-500/10 border-copper-400/80 shadow-md shadow-copper-500/10': 'bg-gray-50 border-gray-200 hover:border-copper-500/30 hover:bg-gray-100'}`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
-                    className={`text-[11px] font-mono font-bold ${
-                      isActive ? ('text-[#7C4A1F]') : 'text-slate-400'
+                    className={`text-xs font-mono font-bold ${
+                      isActive ? ('text-copper-800') : 'text-gray-400'
                     }`}
                   >
                     {sc.number}
@@ -145,20 +145,20 @@ export const ScenariosSection: React.FC = () => {
                   <div
                     className={`w-7 h-7 rounded-[2px] flex items-center justify-center ${
                       isActive
-                        ? 'bg-[#B87333] text-white font-bold'
-                        : 'bg-[#E5E7EB] text-slate-600'}`}
+                        ? 'bg-copper-600 text-white font-bold'
+                        : 'bg-gray-200 text-gray-600'}`}
                   >
                     {getIcon(sc.icon)}
                   </div>
                 </div>
 
                 <div className="mt-2.5">
-                  <div className={`text-[10px] font-semibold uppercase tracking-wider line-clamp-1 ${
-                    isActive ? ('text-[#7C4A1F]') : ('text-slate-500')
+                  <div className={`text-xs font-semibold uppercase tracking-wider line-clamp-1 ${
+                    isActive ? ('text-copper-800') : ('text-gray-500')
                   }`}>
                     {sc.tag}
                   </div>
-                  <div className="text-xs font-bold leading-snug line-clamp-2 mt-0.5 text-slate-900">
+                  <div className="text-xs font-bold leading-snug line-clamp-2 mt-0.5 text-gray-900">
                     {sc.title}
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export const ScenariosSection: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeScenarioIndicator"
-                    className="absolute bottom-0 inset-x-3 h-[2px] bg-[#B87333] rounded-[2px]"
+                    className="absolute bottom-0 inset-x-3 h-[2px] bg-copper-600 rounded-[2px]"
                   />
                 )}
               </button>
@@ -182,29 +182,29 @@ export const ScenariosSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className="rounded-[2px] border overflow-hidden shadow-2xl bg-white border-[#E5E7EB] shadow-slate-200/60"
+            className="rounded-[2px] border overflow-hidden shadow-2xl bg-white border-gray-200 shadow-gray-200/60"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Scenario Image */}
-              <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-[500px] overflow-hidden bg-slate-900">
+              <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-[500px] overflow-hidden bg-gray-900">
                 <img
                   src={activeScenario.imageUrl}
                   alt={`${activeScenario.title} — scenariusz automatyki domowej`}
                   className="w-full h-full object-cover object-center duration-700 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-gray-900/50 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border bg-white/95 text-[#7C4A1F] border-[#B87333]/30">
+                  <span className="px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border bg-white/95 text-copper-800 border-copper-500/30">
                     {activeScenario.tag}
                   </span>
                 </div>
 
                 {/* Activation Trigger Pill on bottom of image */}
                 {activeScenario.trigger && (
-                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-[#071822]/90 backdrop-blur-md border border-white/10 text-xs text-slate-200 flex items-start gap-2.5">
-                    <Mic className="w-4 h-4 text-[#C27A4E] shrink-0 mt-0.5" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-navy-950/90 backdrop-blur-md border border-white/10 text-xs text-gray-200 flex items-start gap-2.5">
+                    <Mic className="w-4 h-4 text-copper-400 shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-[#C27A4E] block mb-0.5">
+                      <span className="text-xs uppercase font-bold text-copper-400 block mb-0.5">
                         Wyzwalacz scenariusza:
                       </span>
                       {activeScenario.trigger}
@@ -217,37 +217,37 @@ export const ScenariosSection: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#7C4A1F]">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-copper-800">
                       Scenariusz {activeScenario.number}
                     </span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900">
+                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-gray-900">
                     {activeScenario.title}
                   </h3>
-                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-gray-600">
                     {activeScenario.description}
                   </p>
 
                   {/* Step-by-Step Action Sequence */}
                   {activeScenario.actionSteps && activeScenario.actionSteps.length > 0 && (
                     <div className="mt-5">
-                      <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-slate-700">
+                      <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-gray-700">
                         Co robi dom, zwykle w 1–2 sekundy:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (
                           <div
                             key={sIdx}
-                            className="p-3 rounded-[2px] border flex items-start gap-2.5 text-sm bg-[#F9FAFB] border-[#E5E7EB] text-slate-700"
+                            className="p-3 rounded-[2px] border flex items-start gap-2.5 text-sm bg-gray-50 border-gray-200 text-gray-700"
                           >
-                            <div className="w-7 h-7 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0">
+                            <div className="w-7 h-7 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
                             </div>
                             <div>
-                              <div className="font-bold text-slate-900">
+                              <div className="font-bold text-gray-900">
                                 {step.label}
                               </div>
-                              <div className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                              <div className="text-xs text-gray-400 mt-0.5 leading-snug">
                                 {step.detail}
                               </div>
                             </div>
@@ -258,8 +258,8 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-[#B87333] text-sm leading-relaxed bg-[#B87333]/10 border-[#B87333]/30 text-slate-800">
-                    <span className="font-bold block mb-1 text-[#7C4A1F]">
+                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-copper-500/10 border-copper-500/30 text-gray-800">
+                    <span className="font-bold block mb-1 text-copper-800">
                       Tak to działa u Ciebie:
                     </span>
                     {activeScenario.humanNote}
@@ -269,10 +269,10 @@ export const ScenariosSection: React.FC = () => {
                   <div className="mt-5 space-y-2">
                     {activeScenario.detailPoints.map((point, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-[2px] bg-[#B87333]/20 text-[#B87333] flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3" />
                         </div>
-                        <span className="text-xs sm:text-sm font-medium text-slate-700">
+                        <span className="text-xs sm:text-sm font-medium text-gray-700">
                           {point}
                         </span>
                       </div>
@@ -280,15 +280,15 @@ export const ScenariosSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t flex items-center justify-between border-[#E5E7EB]">
-                  <span className="text-xs text-slate-500">
+                <div className="mt-8 pt-6 border-t flex items-center justify-between border-gray-200">
+                  <span className="text-xs text-gray-500">
                     Działa w domu, bez obcych serwerów
                   </span>
                   <Link
                     to="/kalkulator"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
-                    <span>Wypełnij ankietę (2 min)</span>
+                    <span>Dobierz zestaw (2 min)</span>
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>

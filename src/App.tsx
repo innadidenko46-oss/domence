@@ -11,7 +11,6 @@ import { NotFoundPage } from './pages/NotFoundPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { SystemsPage } from './pages/SystemsPage.tsx';
 import { TeletechnicsPage } from './pages/TeletechnicsPage.tsx';
-import { MultiroomGardenPage } from './pages/MultiroomGardenPage.tsx';
 import { ScenariosPage } from './pages/ScenariosPage.tsx';
 import { PackagesPage } from './pages/PackagesPage.tsx';
 import { FaqPage } from './pages/FaqPage.tsx';
@@ -20,7 +19,7 @@ import { ContactPage } from './pages/ContactPage.tsx';
 
 function AppContent() {
   return (
-    <div className="min-h-screen font-sans selection:bg-[#B87333] selection:text-white flex flex-col transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
+    <div className="min-h-screen font-sans selection:bg-copper-500 selection:text-white flex flex-col transition-colors duration-300 bg-gray-50 text-gray-900">
       {/* Persistent Global Navigation */}
       <Navbar />
 
@@ -31,7 +30,6 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/systemy" element={<SystemsPage />} />
           <Route path="/teletechnika" element={<TeletechnicsPage />} />
-          <Route path="/multimedia" element={<MultiroomGardenPage />} />
           <Route path="/scenariusze" element={<ScenariosPage />} />
           <Route path="/pakiety" element={<PackagesPage />} />
           <Route path="/faq" element={<FaqPage />} />

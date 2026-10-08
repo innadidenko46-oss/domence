@@ -61,17 +61,17 @@ const SCENES: AtmosphereScene[] = [
 
 export const LightingAtmosphereShowcase: React.FC = () => {
   return (
-    <section className="py-16 bg-[#F3F4F6] border-t border-[#E5E7EB]">
+    <section className="py-16 bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-copper-500/10 text-copper-800 border-copper-500/30">
             <Eye className="w-3.5 h-3.5" />
             <span>Światło i rytm dnia</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
             Jak Twój dom żyje za dnia, o zmierzchu i w nocy.
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
             Światło, które samo dopasowuje się do pory dnia.
             Dom dopasowuje je sam, bez klikania w telefon.
           </p>
@@ -81,7 +81,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
           {SCENES.map((scene) => (
             <article
               key={scene.id}
-              className="rounded-[2px] border border-[#E5E7EB] bg-white shadow-sm overflow-hidden flex flex-col"
+              className="rounded-[2px] border border-gray-200 bg-white shadow-sm overflow-hidden flex flex-col"
             >
               <img
                 src={scene.image}
@@ -90,20 +90,20 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 loading="lazy"
               />
               <div className="p-6 flex flex-col flex-1">
-                <div className="text-xs font-mono text-[#B87333] font-semibold mb-1">
+                <div className="text-xs font-mono text-copper-600 font-semibold mb-1">
                   {scene.time}
                 </div>
-                <div className="text-sm font-bold text-slate-900">{scene.name}</div>
-                <h3 className="mt-2 text-lg font-bold text-slate-900 leading-snug">
+                <div className="text-sm font-bold text-gray-900">{scene.name}</div>
+                <h3 className="mt-2 text-lg font-bold text-gray-900 leading-snug">
                   {scene.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
                   {scene.description}
                 </p>
                 <ul className="mt-4 space-y-2">
                   {scene.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
-                      <span className="w-5 h-5 rounded-[2px] bg-[#B87333]/15 text-[#B87333] flex items-center justify-center shrink-0 mt-0.5">
+                    <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-700">
+                      <span className="w-5 h-5 rounded-[2px] bg-copper-500/15 text-copper-600 flex items-center justify-center shrink-0 mt-0.5">
                         <ShieldCheck className="w-3.5 h-3.5" />
                       </span>
                       <span>{feat}</span>

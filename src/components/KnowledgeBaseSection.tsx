@@ -29,26 +29,26 @@ export const KnowledgeBaseSection: React.FC = () => {
   };
 
   return (
-    <section id="baza-wiedzy" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-[#F3F4F6] border-[#E5E7EB] text-slate-800">
+    <section id="baza-wiedzy" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-gray-100 border-gray-200 text-gray-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-[#B87333]/10 text-[#7C4A1F] border-[#B87333]/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-copper-500/10 text-copper-800 border-copper-500/30">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Baza wiedzy i FAQ</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
             Pytania i odpowiedzi
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-gray-600">
             Wiesz, czy dom działa bez internetu, co dzieje się przy burzy, ile kosztuje utrzymanie i czy każdy da sobie radę z obsługą.
           </p>
         </div>
 
         {/* Photo header strip */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
               alt="Jasne wnętrze domu z automatyką działającą bez internetu"
@@ -56,7 +56,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               className="w-full h-full object-cover object-center"
             />
           </div>
-          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
             <img
               src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
               alt="Szafa serwerowa z rejestratorem nagrań i zabezpieczeniami"
@@ -64,7 +64,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               className="w-full h-full object-cover object-center"
             />
           </div>
-          <div className="rounded-[2px] overflow-hidden border border-[#E5E7EB] shadow-sm h-32">
+          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-32">
             <img
               src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
               alt="Elektronika sterowników automatyki domowej z bliska"
@@ -80,10 +80,10 @@ export const KnowledgeBaseSection: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
+              className={`px-4 py-2 rounded-[2px] text-xs font-semibold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
                 selectedCategory === cat.id
-                  ? 'bg-[#B87333] text-white font-bold shadow-md shadow-[#B87333]/20'
-                  : 'bg-white text-slate-700 border border-[#E5E7EB] hover:bg-[#F9FAFB]'}`}
+                  ? 'bg-copper-600 text-white font-bold shadow-md shadow-copper-500/20'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'}`}
             >
               {cat.label}
             </button>
@@ -100,31 +100,31 @@ export const KnowledgeBaseSection: React.FC = () => {
                 key={index}
                 className={`rounded-[2px] transition-all duration-200 border overflow-hidden shadow-sm ${
                   isOpen
-                    ? 'bg-white border-[#B87333] shadow-md': 'bg-white border-[#E5E7EB] hover:border-[#B87333]/40'}`}
+                    ? 'bg-white border-copper-500 shadow-md': 'bg-white border-gray-200 hover:border-copper-500/40'}`}
               >
                 {/* Accordion Question Header */}
                 <button
                   onClick={() => toggleId(item.question)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${index}`}
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >
                   <div className="flex items-center gap-4">
                     <div
                       className={`w-9 h-9 rounded-[2px] flex items-center justify-center shrink-0 ${
                         isOpen
-                          ? 'bg-[#B87333] text-white'
-                          : 'bg-[#F3F4F6] text-slate-600'}`}
+                          ? 'bg-copper-600 text-white'
+                          : 'bg-gray-100 text-gray-600'}`}
                     >
                       <HelpCircle className="w-5 h-5" />
                     </div>
-                    <h3 className="font-display text-base sm:text-lg font-bold text-slate-900">
+                    <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
                       {item.question}
                     </h3>
                   </div>
 
                   <div
-                    className="p-2 rounded-[2px] shrink-0 bg-[#F3F4F6] text-slate-600"
+                    className="p-2 rounded-[2px] shrink-0 bg-gray-100 text-gray-600"
                   >
                     {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                   </div>
@@ -140,13 +140,13 @@ export const KnowledgeBaseSection: React.FC = () => {
                       transition={{ duration: 0.25 }}
                       id={`faq-panel-${index}`}
                       role="region"
-                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-[#E5E7EB]"
+                      className="overflow-hidden px-6 pb-7 sm:px-7 sm:pb-8 border-t space-y-4 border-gray-200"
                     >
                       {/* Human-Friendly Direct Answer */}
-                      <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-[#B87333] text-sm leading-relaxed bg-white border-[#B87333]/30 text-slate-700">
+                      <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-white border-copper-500/30 text-gray-700">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <ShieldCheck className="w-4 h-4 text-[#B87333] shrink-0" />
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#7C4A1F]">
+                          <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0" />
+                          <span className="text-xs font-bold uppercase tracking-wider text-copper-800">
                             Odpowiedź w skrócie:
                           </span>
                         </div>
@@ -156,14 +156,14 @@ export const KnowledgeBaseSection: React.FC = () => {
                       </div>
 
                       {/* Deep-Dive Engineering Details */}
-                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-[#F9FAFB] border-[#E5E7EB] text-slate-600">
+                      <div className="p-4 rounded-[2px] border text-sm leading-relaxed bg-gray-50 border-gray-200 text-gray-600">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <Cpu className="w-3.5 h-3.5 shrink-0 text-slate-600" />
-                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
+                          <Cpu className="w-3.5 h-3.5 shrink-0 text-gray-600" />
+                          <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
                             Więcej szczegółów:
                           </span>
                         </div>
-                        <p className="font-mono text-[11px] leading-relaxed">
+                        <p className="font-mono text-xs leading-relaxed">
                           {item.technicalDetails}
                         </p>
                       </div>

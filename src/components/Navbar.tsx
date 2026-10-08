@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Menu, X, ArrowRight, Calculator } from 'lucide-react';
+import { Phone, Menu, X, ArrowRight, ClipboardList } from 'lucide-react';
 import { Logo } from './Logo.tsx';
 
 export const Navbar: React.FC = () => {
@@ -35,9 +35,8 @@ export const Navbar: React.FC = () => {
 
   // All sections laid out on a SINGLE level (no dropdowns or hidden submenus)
   const navLinks = [
-    { label: 'Automatyka Domowa', path: '/systemy' },
-    { label: 'Kamery & Domofony', path: '/teletechnika' },
-    { label: 'Multimedia & Kino', path: '/multimedia' },
+    { label: 'Automatyka', path: '/systemy' },
+    { label: 'Kamery i domofony', path: '/teletechnika' },
     { label: 'Scenariusze', path: '/scenariusze' },
     { label: 'Pakiety', path: '/pakiety' },
     { label: 'FAQ', path: '/faq' },
@@ -48,15 +47,15 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 h-[68px] flex items-center ${
           isScrolled
-              ? 'bg-[#F9FAFB]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-sm'
-              : 'bg-[#F9FAFB]/90 backdrop-blur-sm border-b border-[#E5E7EB]'}`}
+              ? 'bg-gray-50/95 backdrop-blur-md border-b border-gray-200 shadow-sm'
+              : 'bg-gray-50/90 backdrop-blur-sm border-b border-gray-200'}`}
       >
         <div className="max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2 w-full">
           
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+            className="flex items-center group shrink-0 active:scale-95 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
@@ -64,15 +63,15 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation: ALL ITEMS ON A SINGLE ROW WITHOUT DROPDOWNS */}
-          <nav className="hidden xl:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#4B5563]">
+          <nav className="hidden xl:flex items-center gap-1 xl:gap-2 text-xs xl:text-xs font-semibold uppercase tracking-wider text-gray-600">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `px-2.5 xl:px-3 py-1.5 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
+                  `px-2.5 xl:px-3 py-2.5 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
                     isActive
-                      ? 'text-[#B87333] bg-[#B87333]/10 font-bold border border-[#B87333]/25': 'hover:text-[#111827] hover:bg-[#F3F4F6]'}`
+                      ? 'text-copper-600 bg-copper-500/10 font-bold border border-copper-500/25': 'hover:text-gray-900 hover:bg-gray-100'}`
                 }
               >
                 {link.label}
@@ -81,29 +80,29 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto xl:ml-0">
             <Link
               to="/kontakt"
-              className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151] hover:text-[#B87333]"
+              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex xl:hidden 2xl:flex items-center gap-1.5 min-h-11 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap bg-gray-100 hover:bg-gray-200 border-gray-300 text-gray-700 hover:text-copper-700"
             >
-              <Phone className="w-3.5 h-3.5 text-[#B87333]" />
+              <Phone className="w-3.5 h-3.5 text-copper-600" />
               <span>Zapytaj inżyniera</span>
             </Link>
 
             <Link
               to="/kalkulator"
-              className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider transition-colors border border-[#C27A4E]/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-copper-400/40 active:scale-95 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              <Calculator className="w-3.5 h-3.5" />
-              <span>Wypełnij ankietę (2 min)</span>
+              <ClipboardList className="w-3.5 h-3.5" />
+              <span>Dobierz zestaw (2 min)</span>
             </Link>
           </div>
 
           {/* Mobile Right Controls: Menu Button */}
-          <div className="flex sm:hidden items-center gap-1.5">
+          <div className="flex xl:hidden items-center gap-1.5">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border bg-[#F3F4F6] border-[#D1D5DB] text-[#111827]"
+              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 w-11 h-11 flex items-center justify-center rounded-[2px] border bg-gray-100 border-gray-300 text-gray-900"
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -125,7 +124,7 @@ export const Navbar: React.FC = () => {
             id="mobile-menu"
             role="dialog"
             aria-label="Menu mobilne"
-            className="fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto bg-[#F9FAFB] border-[#E5E7EB] text-[#111827]"
+            className="fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto bg-gray-50 border-gray-200 text-gray-900"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -134,33 +133,33 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
+                    `text-xs font-semibold uppercase tracking-wider py-3.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
                       isActive
-                        ? 'bg-[#B87333]/15 text-[#B87333] font-bold border border-[#B87333]/30'
-                        : 'text-[#374151] hover:text-[#111827] hover:bg-[#F3F4F6]'}`
+                        ? 'bg-copper-500/15 text-copper-600 font-bold border border-copper-500/30'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`
                   }
                 >
                   <span>{link.label}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#71717A]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-500" />
                 </NavLink>
               ))}
 
-              <div className="pt-3 flex flex-col gap-2 border-t mt-2 border-[#E5E7EB]">
+              <div className="pt-3 flex flex-col gap-2 border-t mt-2 border-gray-200">
                 <Link
                   to="/kalkulator"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C27A4E]/40 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                  className="w-full py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-copper-400/40 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >
-                  <Calculator className="w-4 h-4" />
-                  <span>Wypełnij ankietę (2 min)</span>
+                  <ClipboardList className="w-4 h-4" />
+                  <span>Dobierz zestaw (2 min)</span>
                 </Link>
 
                 <Link
                   to="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]"
+                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider bg-gray-100 border-gray-300 text-gray-700"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#B87333]" />
+                  <Phone className="w-3.5 h-3.5 text-copper-600" />
                   <span>Zapytaj inżyniera</span>
                 </Link>
               </div>

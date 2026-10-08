@@ -31,11 +31,11 @@ export const Footer: React.FC = () => {
   }, [activeModal]);
 
   return (
-    <footer className="bg-[#18181B] border-t border-[#27272A] pt-16 pb-24 md:pb-16 text-[#9CA3AF] text-xs">
+    <footer className="bg-anthracite-900 border-t border-anthracite-800 pt-16 pb-24 md:pb-16 text-gray-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#27272A]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-anthracite-800">
           
           {/* Brand Info & Legal Registry */}
           <div className="md:col-span-4 flex flex-col justify-between">
@@ -43,20 +43,20 @@ export const Footer: React.FC = () => {
               <Link to="/" aria-label="DOMENCE Strona Główna">
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
-              <p className="mt-4 text-[#A1A1AA] max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+              <p className="mt-4 text-zinc-400 max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                 Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
                 Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
               </p>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-mono text-[#C27A4E]">
-              <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
+            <div className="mt-4 flex flex-wrap gap-2 text-xs font-mono text-copper-400">
+              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
                 Norma PN-HD 60364
               </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
+              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
                 Działa bez internetu
               </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-[#27272A] border border-white/10">
+              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
                 Nagrania w domu, bez abonamentu
               </span>
             </div>
@@ -68,33 +68,28 @@ export const Footer: React.FC = () => {
               <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
                 Rozwiązania
               </h4>
-              <ul className="space-y-2 text-xs text-slate-400">
+              <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/systemy" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/systemy" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Automatyka domu
                   </Link>
                 </li>
                 <li>
-                  <Link to="/teletechnika" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/teletechnika" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Kamery i domofon z kamerą
                   </Link>
                 </li>
                 <li>
-                  <Link to="/multimedia" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Muzyka i kino w domu
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/scenariusze" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/scenariusze" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Przykłady z życia
                   </Link>
                 </li>
                 <li>
                   <button
                     onClick={() => setActiveModal('certyfikaty')}
-                    className="hover:text-[#C27A4E] transition-colors text-left flex items-center gap-1.5 text-slate-300 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="hover:text-copper-400 transition-colors text-left flex items-center gap-1.5 text-gray-300 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
-                    <Award className="w-3.5 h-3.5 text-[#C27A4E]" />
+                    <Award className="w-3.5 h-3.5 text-copper-400" />
                     <span>Normy i dokumenty</span>
                   </button>
                 </li>
@@ -103,35 +98,35 @@ export const Footer: React.FC = () => {
 
             <div>
               <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">
-                Wdrożenia & Narzędzia
+                Wdrożenia i narzędzia
               </h4>
-              <ul className="space-y-2 text-xs text-slate-400">
+              <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/pakiety" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/pakiety" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Gotowe zestawy z montażem
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/faq" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Pytania i odpowiedzi
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kalkulator" className="hover:text-[#C27A4E] transition-colors font-semibold text-[#C27A4E] focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
-                    Wypełnij ankietę (2 min)
+                  <Link to="/kalkulator" className="hover:text-copper-400 transition-colors font-semibold text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                    Dobierz zestaw (2 min)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kontakt" className="hover:text-[#C27A4E] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2">
+                  <Link to="/kontakt" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Zapytaj inżyniera
                   </Link>
                 </li>
                 <li>
                   <button
                     onClick={openCookiePreferences}
-                    className="hover:text-[#C27A4E] transition-colors flex items-center gap-1.5 text-slate-400 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="hover:text-copper-400 transition-colors flex items-center gap-1.5 text-gray-400 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
-                    <Cookie className="w-3.5 h-3.5 text-[#C27A4E]" />
+                    <Cookie className="w-3.5 h-3.5 text-copper-400" />
                     <span>Ustawienia plików cookies</span>
                   </button>
                 </li>
@@ -147,25 +142,25 @@ export const Footer: React.FC = () => {
 
             <a
               href="mailto:kontakt@domence.pl"
-              className="flex items-center gap-2.5 text-xs text-slate-200 hover:text-[#C27A4E] transition-colors font-mono focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-copper-400 transition-colors font-mono focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
               <Mail className="w-4 h-4 text-sky-400 shrink-0" />
               <span>kontakt@domence.pl</span>
             </a>
 
-            <div className="flex items-start gap-2.5 text-xs text-slate-400">
-              <MapPin className="w-4 h-4 text-[#C27A4E] shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 text-xs text-gray-400">
+              <MapPin className="w-4 h-4 text-copper-400 shrink-0 mt-0.5" />
               <span>Warszawa i okolice; większe domy — cała Polska</span>
             </div>
 
             <div className="pt-2">
               <Link
                 to="/kontakt"
-                className="inline-block px-4 py-2.5 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-[11px] transition-colors shadow-md shadow-[#B87333]/10 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                className="inline-block px-4 py-2.5 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs transition-colors shadow-md shadow-copper-500/10 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>
-              <p className="text-[10px] text-slate-400 mt-1.5">
+              <p className="text-xs text-gray-400 mt-1.5">
                 Odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00). Bez spamu.
               </p>
             </div>
@@ -174,7 +169,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar with Real Legal Modals */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <div>
             © {new Date().getFullYear()} DOMENCE. Wszelkie prawa zastrzeżone.
           </div>
@@ -182,21 +177,21 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => setActiveModal('rodo')}
-              className="hover:text-[#C27A4E] transition-colors cursor-pointer text-slate-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              Polityka Prywatności & RODO
+              Polityka prywatności i RODO
             </button>
             <button
               onClick={() => setActiveModal('regulamin')}
-              className="hover:text-[#C27A4E] transition-colors cursor-pointer text-slate-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
               Regulamin Świadczenia Usług
             </button>
             <button
               onClick={openCookiePreferences}
-              className="hover:text-[#C27A4E] transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="hover:text-copper-400 transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              <Cookie className="w-3 h-3 text-[#C27A4E] focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2" />
+              <Cookie className="w-3 h-3 text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2" />
               <span>Cookies</span>
             </button>
           </div>
@@ -207,12 +202,12 @@ export const Footer: React.FC = () => {
       {/* Legal Modals */}
       {activeModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
-          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-[#18181B] border border-[#3F3F46] rounded-[2px] max-w-2xl w-full p-6 text-slate-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
+          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-anthracite-900 border border-anthracite-700 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
             <button
               onClick={() => setActiveModal(null)}
               aria-label="Zamknij"
               autoFocus
-              className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-[2px] bg-white/5 border border-white/10 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white p-1 rounded-[2px] bg-white/5 border border-white/10 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
               <X className="w-5 h-5" />
             </button>
@@ -220,10 +215,10 @@ export const Footer: React.FC = () => {
             {activeModal === 'rodo' && (
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-[#B87333]" />
+                  <ShieldCheck className="w-5 h-5 text-copper-600" />
                   <span>Polityka Prywatności i Informacja o Danych Osobowych (RODO)</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-[#D4D4D8]">
+                <div className="space-y-3 leading-relaxed text-zinc-300">
                   <p>
                     1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest właściciel serwisu DOMENCE. Kontakt w sprawie danych osobowych: kontakt@domence.pl.
                   </p>
@@ -246,10 +241,10 @@ export const Footer: React.FC = () => {
             {activeModal === 'regulamin' && (
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-[#B87333]" />
+                  <FileText className="w-5 h-5 text-copper-600" />
                   <span>Regulamin Świadczenia Usług Montażowych i Projektowych</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-[#D4D4D8]">
+                <div className="space-y-3 leading-relaxed text-zinc-300">
                   <p>
                     1. <strong>Zakres usług:</strong> DOMENCE wykonuje projekty okablowania, prefabrykację rozdzielnic elektrycznych, konfigurację modułów Shelly Pro na szynę DIN oraz instalację kamer i wideodomofonów IP Hikvision.
                   </p>
@@ -269,10 +264,10 @@ export const Footer: React.FC = () => {
             {activeModal === 'certyfikaty' && (
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[#B87333]" />
+                  <Award className="w-5 h-5 text-copper-600" />
                   <span>Standardy i Dokumentacja Wykonawcza</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-[#D4D4D8]">
+                <div className="space-y-3 leading-relaxed text-zinc-300">
                   <p>
                     • <strong>Norma PN-HD 60364:</strong> Instalacje niskonapięciowe projektowane i wykonywane zgodnie z europejskimi standardami bezpieczeństwa, w tym ochroną przeciwprzepięciową.
                   </p>
@@ -292,7 +287,7 @@ export const Footer: React.FC = () => {
             <div className="mt-6 pt-4 border-t border-white/10 text-right">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                className="px-5 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 Rozumiem i Zamykam
               </button>

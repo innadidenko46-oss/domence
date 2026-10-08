@@ -49,7 +49,7 @@ export interface LifeScenario {
 export interface ShellyProCapability {
   id: string;
   title: string;
-  category: 'lighting' | 'blinds' | 'climate' | 'audio' | 'sensors' | 'interface';
+  category: 'lighting' | 'blinds' | 'climate' | 'sensors' | 'interface';
   badge: string;
   description: string;
   proAdvantage: string;

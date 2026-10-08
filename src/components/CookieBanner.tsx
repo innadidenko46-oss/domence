@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, X, Cookie, Sliders } from 'lucide-react';
+import { Shield, X, Sliders } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface CookiePreferences {
@@ -107,52 +107,36 @@ export const CookieBanner: React.FC = () => {
             transition={{ duration: 0.3 }}
             role="region"
             aria-label="Zgoda na pliki cookies"
-            className="fixed bottom-[76px] md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-xl z-50"
+            className="fixed bottom-[76px] md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-2xl z-50"
           >
-            <div className="bg-[#092231]/95 backdrop-blur-xl border border-white/15 rounded-[2px] p-5 md:p-6 shadow-2xl shadow-black/60 text-slate-200">
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/15 border border-[#B87333]/30 flex items-center justify-center shrink-0 text-[#C27A4E]">
-                  <Cookie className="w-5 h-5" />
-                </div>
+            <div className="bg-navy-800/95 backdrop-blur-xl border border-white/15 rounded-[2px] px-4 py-3 shadow-2xl shadow-black/60 text-gray-200 flex flex-col sm:flex-row sm:items-center gap-3">
+              <p className="text-xs text-gray-300 leading-relaxed flex-1">
+                <span className="font-bold text-white">Cookies: </span>
+                zapamiętujemy tylko Twoje wybory na stronie. Bez skryptów śledzących.
+              </p>
 
-                <div className="flex-1 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                      <span>Informacja o plikach cookies</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-[2px] bg-emerald-500/20 text-emerald-300 font-medium border border-emerald-500/30">
-                        RODO & Prywatność
-                      </span>
-                    </h4>
-                  </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  onClick={handleAcceptNecessary}
+                  className="min-h-11 px-3.5 rounded-[2px] bg-white/5 hover:bg-white/10 border border-white/15 text-gray-200 hover:text-white font-medium text-xs transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                >
+                  Tylko niezbędne
+                </button>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Używamy plików cookies i pamięci podręcznej przeglądarki, aby zapamiętywać Twoje wybory w konfiguratorze kalkulatora, preferencje techniczne oraz zapewnić stabilne działanie portalu. Nie instalujemy uciążliwych skryptów śledzących ani nie sprzedajemy Twoich danych.
-                  </p>
+                <button
+                  onClick={handleAcceptAll}
+                  className="min-h-11 px-4 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                >
+                  Akceptuję
+                </button>
 
-                  <div className="flex flex-wrap items-center gap-2 pt-2">
-                    <button
-                      onClick={handleAcceptAll}
-                      className="px-4 py-2 rounded-[2px] bg-gradient-to-r from-[#B87333] to-[#A36034] hover:from-[#C27A4E] hover:to-[#B87333] text-white font-bold text-xs transition-all shadow-md shadow-[#B87333]/20 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
-                    >
-                      Akceptuję wszystkie
-                    </button>
-
-                    <button
-                      onClick={handleAcceptNecessary}
-                      className="px-3.5 py-2 rounded-[2px] bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white font-medium text-xs transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
-                    >
-                      Tylko niezbędne
-                    </button>
-
-                    <button
-                      onClick={() => setShowDetailsModal(true)}
-                      className="text-xs text-[#C27A4E] hover:text-[#C27A4E] underline underline-offset-4 ml-auto py-1 flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
-                    >
-                      <Sliders className="w-3 h-3" />
-                      <span>Dostosuj / Więcej</span>
-                    </button>
-                  </div>
-                </div>
+                <button
+                  onClick={() => setShowDetailsModal(true)}
+                  aria-label="Ustawienia cookies"
+                  className="min-h-11 w-11 flex items-center justify-center rounded-[2px] text-copper-200 hover:bg-white/10 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                >
+                  <Sliders className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </motion.div>
@@ -171,30 +155,30 @@ export const CookieBanner: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-[#092231] border border-white/15 rounded-[2px] max-w-lg w-full p-6 md:p-8 shadow-2xl space-y-5"
+              className="bg-navy-800 border border-white/15 rounded-[2px] max-w-lg w-full p-6 md:p-8 shadow-2xl space-y-5"
             >
               <div className="flex items-center justify-between pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2.5">
-                  <Shield className="w-5 h-5 text-[#C27A4E]" />
+                  <Shield className="w-5 h-5 text-copper-400" />
                   <h3 className="text-base font-bold text-white">Ustawienia prywatności i plików cookies</h3>
                 </div>
                 <button
                   onClick={() => setShowDetailsModal(false)}
                   aria-label="Zamknij ustawienia"
                   autoFocus
-                  className="p-1 rounded-[2px] text-slate-400 hover:text-white hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                  className="p-1 rounded-[2px] text-gray-400 hover:text-white hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="space-y-4 text-xs text-slate-300">
+              <div className="space-y-4 text-xs text-gray-300">
                 <div className="p-3.5 rounded-[2px] bg-white/5 border border-white/10 space-y-1.5">
                   <div className="flex items-center justify-between font-bold text-white">
                     <span>1. Cookies techniczne (niezbędne)</span>
-                    <span className="text-[#C27A4E] font-mono text-[11px]">Zawsze aktywne</span>
+                    <span className="text-copper-400 font-mono text-xs">Zawsze aktywne</span>
                   </div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">
+                  <p className="text-gray-400 text-xs leading-relaxed">
                     Wymagane do działania podstawowych mechanizmów strony: utrzymanie stanu sesji, bezpieczna obsługa formularzy wyceny, zapamiętanie zgody na cookies.
                   </p>
                 </div>
@@ -206,10 +190,10 @@ export const CookieBanner: React.FC = () => {
                       type="checkbox"
                       checked={preferences.functional}
                       onChange={(e) => setPreferences({ ...preferences, functional: e.target.checked })}
-                      className="w-4 h-4 accent-[#B87333] rounded cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                      className="w-4 h-4 accent-copper-500 rounded cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     />
                   </div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">
+                  <p className="text-gray-400 text-xs leading-relaxed">
                     Umożliwiają zapamiętanie wpisanych w ankiecie odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
                   </p>
                 </div>
@@ -221,10 +205,10 @@ export const CookieBanner: React.FC = () => {
                       type="checkbox"
                       checked={preferences.analytics}
                       onChange={(e) => setPreferences({ ...preferences, analytics: e.target.checked })}
-                      className="w-4 h-4 accent-[#B87333] rounded cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                      className="w-4 h-4 accent-copper-500 rounded cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     />
                   </div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">
+                  <p className="text-gray-400 text-xs leading-relaxed">
                     Pomagają nam badać, które działy i narzędzia są najbardziej czytelne dla inwestorów, bez identyfikacji konkretnych osób.
                   </p>
                 </div>
@@ -233,20 +217,20 @@ export const CookieBanner: React.FC = () => {
               <div className="flex items-center justify-between pt-3 border-t border-white/10">
                 <button
                   onClick={handleAcceptNecessary}
-                  className="text-xs text-slate-400 hover:text-white focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                  className="text-xs text-gray-400 hover:text-white focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >
                   Odrzuć opcjonalne
                 </button>
                 <div className="flex gap-2">
                   <button
                     onClick={handleSaveCustom}
-                    className="px-4 py-2 rounded-[2px] bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="px-4 py-2 rounded-[2px] bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     Zapisz wybrane
                   </button>
                   <button
                     onClick={handleAcceptAll}
-                    className="px-4 py-2 rounded-[2px] bg-[#B87333] hover:bg-[#A36034] text-white font-bold text-xs transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
+                    className="px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     Zaakceptuj wszystkie
                   </button>

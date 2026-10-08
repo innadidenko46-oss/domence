@@ -18,9 +18,19 @@
   --color-offwhite-200: #E5E7EB;
 
   /* Engineering Accent Tones: Copper (Wiring & Luxury) + Steel Blue + Slate */
-  --color-copper-500: #B87333;
+  /* copper-500 is decorative only (icons, borders, large display text).
+     Text and button fills use copper-600+ to pass WCAG AA on white. */
+  --color-copper-200: #E8B07D;
   --color-copper-400: #C27A4E;
+  --color-copper-500: #B87333;
   --color-copper-600: #A36034;
+  --color-copper-700: #8C5229;
+  --color-copper-800: #7C4A1F;
+
+  /* Deep petrol navy for dark CTA bands and overlays */
+  --color-navy-800: #092231;
+  --color-navy-900: #0B1F2A;
+  --color-navy-950: #071822;
   
   --color-steelblue-500: #334E68;
   --color-steelblue-400: #486581;
@@ -38,26 +48,40 @@
   }
 }
 
-/* Solid Flat Engineering Buttons - No glowing neon */
-.btn-engineering-primary {
+/* Buttons: one primary, one secondary. Both 44px tall minimum. */
+.btn-engineering-primary,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
   border-radius: 2px;
-  background-color: #B87333;
-  color: #FFFFFF;
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.85rem 1.75rem;
-  transition: all 0.15s ease-in-out;
-  border: 1px solid rgba(194, 122, 78, 0.4);
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-engineering-primary {
+  background-color: var(--color-copper-600);
+  color: #FFFFFF;
+  border: 1px solid var(--color-copper-700);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-engineering-primary:hover {
-  background-color: #A36034;
-  border-color: rgba(194, 122, 78, 0.7);
+  background-color: var(--color-copper-700);
 }
 
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-300);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-100);
+}

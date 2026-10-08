@@ -20,22 +20,22 @@ const HIK_FEATURES = [
 
 export const AppsShowcaseSection: React.FC = () => {
   return (
-    <section className="py-16 bg-white border-t border-[#E5E7EB]">
+    <section className="py-16 bg-gray-100 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono uppercase tracking-widest text-[#B87333] mb-3 font-semibold">
+          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
             Aplikacje • Telefon
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
             Światło, rolety i ogrzewanie z telefonu.
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-slate-600">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
             Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <article className="rounded-[2px] bg-[#F9FAFB] border border-[#E5E7EB] overflow-hidden flex flex-col shadow-sm">
+          <article className="rounded-[2px] bg-gray-50 border border-gray-200 overflow-hidden flex flex-col shadow-sm">
             <div className="relative h-40 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
@@ -46,40 +46,40 @@ export const AppsShowcaseSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 flex flex-col flex-1">
-            <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/10 flex items-center justify-center mb-4">
-              <Zap className="w-5 h-5 text-[#B87333]" />
+            <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
+              <Zap className="w-5 h-5 text-copper-600" />
             </div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-[#B87333]">
+            <div className="text-xs font-bold uppercase tracking-wider text-copper-600">
               Automatyka domu
             </div>
-            <h3 className="mt-1 text-xl font-bold text-slate-900">
+            <h3 className="mt-1 text-xl font-bold text-gray-900">
               Shelly Smart Control
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
               Centrum sterowania domem. Światło, rolety, ogrzewanie, sceny
               i zużycie energii. Wszystko w jednym miejscu.
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {SHELLY_FEATURES.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 pt-4 border-t border-[#E5E7EB]">
+            <div className="mt-6 pt-4 border-t border-gray-200">
               <Link
                 to="/kalkulator"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
+                className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
               >
-                <span>Wypełnij ankietę (2 min)</span>
+                <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             </div>
           </article>
 
-          <article className="rounded-[2px] bg-[#F9FAFB] border border-[#E5E7EB] overflow-hidden flex flex-col shadow-sm">
+          <article className="rounded-[2px] bg-gray-50 border border-gray-200 overflow-hidden flex flex-col shadow-sm">
             <div className="relative h-40 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85"
@@ -90,29 +90,29 @@ export const AppsShowcaseSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 flex flex-col flex-1">
-            <div className="w-10 h-10 rounded-[2px] bg-[#B87333]/10 flex items-center justify-center mb-4">
-              <Video className="w-5 h-5 text-[#B87333]" />
+            <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
+              <Video className="w-5 h-5 text-copper-600" />
             </div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-[#B87333]">
+            <div className="text-xs font-bold uppercase tracking-wider text-copper-600">
               Kamery i domofon
             </div>
-            <h3 className="mt-1 text-xl font-bold text-slate-900">Hik-Connect</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <h3 className="mt-1 text-xl font-bold text-gray-900">Hik-Connect</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
               Podgląd posesji i rozmowy z furtki. Odbierasz gościa z pracy
               albo z wakacji. Otwierasz furtkę jednym dotknięciem.
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {HIK_FEATURES.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 pt-4 border-t border-[#E5E7EB]">
+            <div className="mt-6 pt-4 border-t border-gray-200">
               <Link
                 to="/teletechnika"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#B87333] hover:text-[#A36034] transition-colors focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 rounded-[2px]"
+                className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
               >
                 <span>Zobacz monitoring i wideodomofony</span>
                 <ArrowRight className="w-4 h-4" />
