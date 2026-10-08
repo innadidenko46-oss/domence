@@ -664,7 +664,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Dziękujemy, {formData.name || 'Inwestorze'}!
                 </h3>
                 <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-md mx-auto mb-6 leading-relaxed">
-                  Wykaz urządzeń dla metrażu {getAreaLabel(areaRange)} jest gotowy w Twoim programie pocztowym — wiadomość kierowana na adres <strong className={isDay ? 'text-[#111827]' : 'text-white'}>kontakt@domence.pl</strong>. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio.
+                  Otworzyliśmy Twój program pocztowy z gotową wiadomością na kontakt@domence.pl. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin w dni robocze.
                 </p>
 
                 <div className={`p-5 rounded-[2px] border max-w-md mx-auto mb-6 text-left ${
