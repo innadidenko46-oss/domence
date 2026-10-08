@@ -17,7 +17,7 @@ export const ScenariosPage: React.FC = () => {
       />
 
       {/* Visual Atmosphere Showcase for Scenarios */}
-      <section className="py-16 border-b bg-gray-100 border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
@@ -29,7 +29,7 @@ export const ScenariosPage: React.FC = () => {
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-anthracite-900/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Budzenie światłem
                 </span>
               </div>
@@ -52,7 +52,7 @@ export const ScenariosPage: React.FC = () => {
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-anthracite-900/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Przycisk przy drzwiach
                 </span>
               </div>
@@ -75,7 +75,7 @@ export const ScenariosPage: React.FC = () => {
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-anthracite-900/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
                   Woda odcięta w kilka sekund
                 </span>
               </div>
@@ -96,7 +96,7 @@ export const ScenariosPage: React.FC = () => {
       <ScenariosSection />
 
       {/* Fail-Safe Engineering */}
-      <section className="py-16 border-t bg-gray-100 border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
@@ -157,7 +157,7 @@ export const ScenariosPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="py-16 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <div className="text-xs text-copper-200 font-mono">Następny krok:</div>

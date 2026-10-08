@@ -21,12 +21,24 @@ import { ContactPage } from './pages/ContactPage.tsx';
 function AppContent() {
   return (
     <div className="min-h-screen font-sans selection:bg-copper-500 selection:text-white flex flex-col transition-colors duration-300 bg-gray-50 text-gray-900">
+      <a
+        href="#main"
+        className="skip-link"
+        onClick={(e) => {
+          // HashRouter owns the URL hash, so move focus instead of navigating
+          e.preventDefault();
+          document.getElementById('main')?.focus();
+        }}
+      >
+        Przejdź do treści
+      </a>
+
       {/* Persistent Global Navigation */}
       <Navbar />
 
       {/* Dynamic Route Content */}
       <ErrorBoundary>
-      <main className="flex-1 pt-[68px]">
+      <main id="main" tabIndex={-1} className="flex-1 pt-[68px] focus:outline-none">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/systemy" element={<SystemsPage />} />

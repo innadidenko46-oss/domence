@@ -64,15 +64,15 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation: ALL ITEMS ON A SINGLE ROW WITHOUT DROPDOWNS */}
-          <nav className="hidden xl:flex items-center gap-1 xl:gap-2 text-xs xl:text-xs font-semibold uppercase tracking-wider text-gray-600">
+          <nav className="hidden xl:flex items-center gap-1 text-sm font-medium text-gray-600">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `px-2.5 xl:px-3 py-2.5 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
+                  `px-2.5 xl:px-3 py-3 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
                     isActive
-                      ? 'text-copper-600 bg-copper-500/10 font-bold border border-copper-500/25': 'hover:text-gray-900 hover:bg-gray-100'}`
+                      ? 'text-copper-700 bg-copper-500/10 font-semibold border border-copper-500/25': 'hover:text-gray-900 hover:bg-gray-100'}`
                 }
               >
                 {link.label}
@@ -134,14 +134,14 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `text-xs font-semibold uppercase tracking-wider py-3.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
+                    `text-sm font-medium py-3.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
                       isActive
                         ? 'bg-copper-500/15 text-copper-600 font-bold border border-copper-500/30'
                         : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`
                   }
                 >
                   <span>{link.label}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-zinc-500" />
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-500" />
                 </NavLink>
               ))}
 

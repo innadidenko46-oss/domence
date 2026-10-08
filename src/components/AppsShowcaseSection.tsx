@@ -20,7 +20,7 @@ const HIK_FEATURES = [
 
 export const AppsShowcaseSection: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-100 border-t border-gray-200">
+    <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">

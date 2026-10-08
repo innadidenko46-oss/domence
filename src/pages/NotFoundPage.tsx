@@ -12,7 +12,7 @@ export const NotFoundPage: React.FC = () => {
         description="Adres, którego szukasz, nie istnieje lub został przeniesiony."
         icon={<FileQuestion className="w-4 h-4 text-copper-600" />}
       />
-      <section className="py-16">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm mb-8 text-gray-600">
             Sprawdź poprawność adresu albo skorzystaj z nawigacji.

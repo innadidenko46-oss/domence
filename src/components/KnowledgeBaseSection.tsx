@@ -29,7 +29,7 @@ export const KnowledgeBaseSection: React.FC = () => {
   };
 
   return (
-    <section id="baza-wiedzy" className="py-16 relative overflow-hidden transition-colors duration-500 border-t bg-gray-100 border-gray-200 text-gray-800">
+    <section id="baza-wiedzy" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden transition-colors duration-500 border-t bg-gray-100 border-gray-200 text-gray-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

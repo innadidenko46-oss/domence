@@ -37,6 +37,13 @@
   --color-steelblue-600: #243B53;
 
   --color-forest-600: #234E3E;
+
+  /* Shadows tinted with the brand navy instead of neutral black */
+  --shadow-sm: 0 1px 2px 0 rgb(11 31 42 / 0.06);
+  --shadow-md: 0 4px 10px -2px rgb(11 31 42 / 0.08), 0 2px 4px -2px rgb(11 31 42 / 0.05);
+  --shadow-lg: 0 12px 24px -6px rgb(11 31 42 / 0.10), 0 4px 8px -4px rgb(11 31 42 / 0.05);
+  --shadow-xl: 0 20px 40px -10px rgb(11 31 42 / 0.14), 0 8px 12px -6px rgb(11 31 42 / 0.06);
+  --shadow-2xl: 0 32px 64px -16px rgb(11 31 42 / 0.20);
 }
 
 @layer base {
@@ -46,6 +53,48 @@
     color-scheme: light;
     transition: background-color 0.25s ease, color 0.25s ease;
   }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  p, li {
+    text-wrap: pretty;
+  }
+
+  h1, h2 {
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Very light paper grain so large flat bands don't feel sterile */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Keyboard users can jump past the header */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 70;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  background: var(--color-navy-900);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
 }
 
 /* Buttons: one primary, one secondary. Both 44px tall minimum. */
@@ -62,7 +111,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.85rem 1.75rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-engineering-primary {
@@ -74,6 +123,11 @@
 
 .btn-engineering-primary:hover {
   background-color: var(--color-copper-700);
+}
+
+.btn-engineering-primary:active,
+.btn-secondary:active {
+  transform: translateY(1px);
 }
 
 .btn-secondary {

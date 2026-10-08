@@ -46,7 +46,7 @@ export const ContactPage: React.FC = () => {
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
-      <section className="py-16 bg-gray-100 border-t border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             

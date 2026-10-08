@@ -25,7 +25,7 @@ const ELSEWHERE: string[] = [
 
 export const SystemsComparisonSection: React.FC = () => {
   return (
-    <section id="systemy" className="py-16 relative overflow-hidden border-t transition-colors bg-white border-gray-200">
+    <section id="systemy" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t transition-colors bg-white border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}

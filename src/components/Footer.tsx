@@ -31,11 +31,11 @@ export const Footer: React.FC = () => {
   }, [activeModal]);
 
   return (
-    <footer className="bg-anthracite-900 border-t border-anthracite-800 pt-16 pb-24 md:pb-16 text-gray-400 text-xs">
+    <footer className="bg-navy-950 border-t border-white/10 pt-16 pb-24 md:pb-16 text-gray-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-anthracite-800">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
           {/* Brand Info & Legal Registry */}
           <div className="md:col-span-4 flex flex-col justify-between">
@@ -43,20 +43,20 @@ export const Footer: React.FC = () => {
               <Link to="/" aria-label="DOMENCE Strona Główna">
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
-              <p className="mt-4 text-zinc-400 max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+              <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                 Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
                 Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
               </p>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-mono text-copper-400">
-              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
+              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
                 Norma PN-HD 60364
               </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
+              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
                 Działa bez internetu
               </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-anthracite-800 border border-white/10">
+              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
                 Nagrania w domu, bez abonamentu
               </span>
             </div>
@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
               href="mailto:kontakt@domence.pl"
               className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-copper-400 transition-colors font-mono focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              <Mail className="w-4 h-4 text-sky-400 shrink-0" />
+              <Mail className="w-4 h-4 text-copper-400 shrink-0" />
               <span>kontakt@domence.pl</span>
             </a>
 
@@ -207,7 +207,7 @@ export const Footer: React.FC = () => {
       {/* Legal Modals */}
       {activeModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
-          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-anthracite-900 border border-anthracite-700 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
+          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-navy-950 border border-white/15 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
             <button
               onClick={() => setActiveModal(null)}
               aria-label="Zamknij"
@@ -223,7 +223,7 @@ export const Footer: React.FC = () => {
                   <ShieldCheck className="w-5 h-5 text-copper-600" />
                   <span>Polityka Prywatności i Informacja o Danych Osobowych (RODO)</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-zinc-300">
+                <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest właściciel serwisu DOMENCE. Kontakt w sprawie danych osobowych: kontakt@domence.pl.
                   </p>
@@ -249,7 +249,7 @@ export const Footer: React.FC = () => {
                   <FileText className="w-5 h-5 text-copper-600" />
                   <span>Regulamin Świadczenia Usług Montażowych i Projektowych</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-zinc-300">
+                <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     1. <strong>Zakres usług:</strong> DOMENCE wykonuje projekty okablowania, prefabrykację rozdzielnic elektrycznych, konfigurację modułów Shelly Pro na szynę DIN oraz instalację kamer i wideodomofonów IP Hikvision.
                   </p>
@@ -272,7 +272,7 @@ export const Footer: React.FC = () => {
                   <Award className="w-5 h-5 text-copper-600" />
                   <span>Standardy i Dokumentacja Wykonawcza</span>
                 </h3>
-                <div className="space-y-3 leading-relaxed text-zinc-300">
+                <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     • <strong>Norma PN-HD 60364:</strong> Instalacje niskonapięciowe projektowane i wykonywane zgodnie z europejskimi standardami bezpieczeństwa, w tym ochroną przeciwprzepięciową.
                   </p>

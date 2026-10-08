@@ -27,7 +27,7 @@ interface PackagesSectionProps {
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackage }) => {
 
   return (
-    <section id="pakiety" className="py-16 border-t transition-colors bg-gray-100 border-gray-200">
+    <section id="pakiety" className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t transition-colors bg-gray-100 border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -110,11 +110,11 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   {/* Price Box */}
                   <div className="mt-6 pb-6 border-b border-gray-200">
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-xs text-zinc-500">od</span>
-                      <span className="font-display text-3xl sm:text-4xl font-extrabold text-gray-900">
+                      <span className="text-xs text-gray-500">od</span>
+                      <span className="font-display text-3xl sm:text-4xl font-extrabold tabular-nums text-gray-900">
                         {pkg.priceNetto.toLocaleString('pl-PL')}
                       </span>
-                      <span className="text-xs font-semibold text-zinc-500">PLN netto</span>
+                      <span className="text-xs font-semibold text-gray-500">PLN netto</span>
                     </div>
                     <div className="text-xs mt-1 font-mono text-gray-500">
                       {pkg.priceBrutto.toLocaleString('pl-PL')} PLN brutto (z VAT 23%)

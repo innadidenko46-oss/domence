@@ -6,7 +6,7 @@ import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 export const ProcessSection: React.FC = () => {
 
   return (
-    <section className="py-16 relative overflow-hidden border-t transition-colors duration-300 bg-white border-gray-200 text-gray-900">
+    <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t transition-colors duration-300 bg-white border-gray-200 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-3xl mb-12">

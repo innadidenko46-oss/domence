@@ -36,7 +36,7 @@ export const TeletechnicsSection: React.FC = () => {
   };
 
   return (
-    <section id="teletechnika" className="py-16 relative overflow-hidden transition-colors duration-300 border-t bg-white border-gray-200 text-gray-900">
+    <section id="teletechnika" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden transition-colors duration-300 border-t bg-white border-gray-200 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Chapter Header */}

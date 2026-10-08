@@ -201,7 +201,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   return (
-    <section id="kalkulator" className="py-16 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
+    <section id="kalkulator" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
         <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-40">

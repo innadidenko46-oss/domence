@@ -93,7 +93,7 @@ export const HomePage: React.FC = () => {
     <div className="transition-colors duration-500 bg-white text-gray-800">
       
       {/* Hero */}
-      <section className="relative flex items-center pt-16 pb-16 lg:pt-20 lg:pb-20 overflow-hidden">
+      <section className="relative flex items-center pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7">
             {/* Top Badge */}
@@ -167,7 +167,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Visual Solutions Grid with High-Res Photography */}
-      <section className="py-16 border-t bg-gray-100 border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14">
@@ -227,39 +227,31 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why DOMENCE Trust Pillars */}
-      <section className="py-16 border-t bg-white border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
-              Jak montujemy i dlaczego to bezpieczne
-            </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
-            </p>
-          </div>
+      {/* Why DOMENCE: asymmetric photo mosaic + numbered pillars */}
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* 3-photo strip */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-44">
+          {/* Photo mosaic: one tall image, two stacked */}
+          <div className="order-2 lg:order-1 lg:col-span-6 grid grid-cols-2 grid-rows-2 gap-3 h-80 sm:h-[28rem] lg:h-[34rem]">
+            <div className="row-span-2 rounded-[2px] overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85"
                 alt="Szafa serwerowa z rejestratorem — nagrania zostają w domu"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-44">
+            <div className="rounded-[2px] overflow-hidden shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85"
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85"
                 alt="Bezpieczny dom o zmierzchu z włączonym oświetleniem"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-44">
+            <div className="rounded-[2px] overflow-hidden shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=85"
                 alt="Czysta łazienka po montażu bez kurzu i kucia"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
@@ -267,44 +259,51 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 rounded-[2px] border transition-all bg-gray-50 border-gray-200 hover:border-copper-400 shadow-sm">
-              <div className="w-12 h-12 rounded-[2px] bg-copper-500/10 text-copper-600 flex items-center justify-center mb-4">
-                <Lock className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Prywatność i działanie bez internetu
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.
-              </p>
-            </div>
+          <div className="order-1 lg:order-2 lg:col-span-6">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+              Jak montujemy i dlaczego to bezpieczne
+            </h2>
+            <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
+              Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
+            </p>
 
-            <div className="p-7 rounded-[2px] border transition-all bg-gray-50 border-gray-200 hover:border-copper-400 shadow-sm">
-              <div className="w-12 h-12 rounded-[2px] bg-copper-500/10 text-copper-600 flex items-center justify-center mb-4">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Porządna rozdzielnica i ochrona sprzętu
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła,
-                sprzęt kuchenny, telewizory i komputery przed burzą.
-              </p>
-            </div>
-
-            <div className="p-7 rounded-[2px] border transition-all bg-gray-50 border-gray-200 hover:border-copper-400 shadow-sm">
-              <div className="w-12 h-12 rounded-[2px] bg-copper-500/10 text-copper-600 flex items-center justify-center mb-4">
-                <Wrench className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Czysty montaż bez kurzu
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu,
-                zabezpieczamy podłogi i sprzątamy po sobie.
-              </p>
-            </div>
+            <ol className="mt-10 divide-y divide-gray-200 border-y border-gray-200">
+              {[
+                {
+                  icon: Lock,
+                  title: 'Prywatność i działanie bez internetu',
+                  text: 'Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.',
+                },
+                {
+                  icon: Cpu,
+                  title: 'Porządna rozdzielnica i ochrona sprzętu',
+                  text: 'Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła, sprzęt kuchenny, telewizory i komputery przed burzą.',
+                },
+                {
+                  icon: Wrench,
+                  title: 'Czysty montaż bez kurzu',
+                  text: 'Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i sprzątamy po sobie.',
+                },
+              ].map((pillar, i) => {
+                const Icon = pillar.icon;
+                return (
+                  <li key={pillar.title} className="py-7 grid grid-cols-[auto_1fr] gap-x-5">
+                    <span className="font-display text-sm font-semibold tabular-nums text-copper-600 pt-1">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <h3 className="flex items-center gap-2.5 text-lg font-bold text-gray-900">
+                        <Icon className="w-5 h-5 text-copper-500 shrink-0" aria-hidden="true" />
+                        {pillar.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-gray-600 max-w-prose">
+                        {pillar.text}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
         </div>
       </section>
@@ -326,7 +325,7 @@ export const HomePage: React.FC = () => {
       <AiFutureTechSection />
 
       {/* Direct Contact Banner */}
-      <section className="relative py-16 border-t overflow-hidden bg-navy-900 text-white border-navy-900">
+      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 border-t overflow-hidden bg-navy-900 text-white border-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">

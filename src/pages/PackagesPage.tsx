@@ -26,7 +26,7 @@ export const PackagesPage: React.FC = () => {
       <PackagesSection onSelectPackage={handleSelectPackage} />
 
       {/* What every package includes */}
-      <section className="py-16 border-t bg-white border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
@@ -102,7 +102,7 @@ export const PackagesPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="py-16 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <div className="text-xs text-copper-200 font-mono">Następny krok:</div>
