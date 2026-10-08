@@ -38,7 +38,7 @@ export const ScenariosPage: React.FC = () => {
                   Spokojny poranek
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Rolety same podnoszą się o ustawionej godzinie, a światło powoli się rozjaśnia.
+                  Rolety same podnoszą się o ustawionej godzinie, a światło powoli się rozjaśnia.
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export const ScenariosPage: React.FC = () => {
                   Spokój przy wyjściu
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Nie sprawdzasz żelazka ani okien w pośpiechu. Jeden przycisk przy drzwiach gasi światła i uzbraja czujniki.
+                  Nie sprawdzasz żelazka ani okien w pośpiechu. Jeden przycisk przy drzwiach gasi światła i uzbraja czujniki.
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export const ScenariosPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
-                  Woda odcięta w kilka sekund
+                  Woda odcięta w kilka sekund
                 </span>
               </div>
               <div className="p-5">
@@ -84,7 +84,7 @@ export const ScenariosPage: React.FC = () => {
                   Ochrona przed zalaniem
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Zawór sam zakręca wodę w kilka sekund, gdy czujnik pod pralką wykryje wilgoć.
+                  Zawór sam zakręca wodę w kilka sekund, gdy czujnik pod pralką wykryje wilgoć.
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ export const ScenariosPage: React.FC = () => {
               Bezpieczny przy awarii — także bez prądu
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Fail-safe znaczy: bezpieczny przy awarii. Dom sam przechodzi w bezpieczny stan, nawet gdy zabraknie prądu.
+              Fail-safe znaczy: bezpieczny przy awarii. Dom sam przechodzi w bezpieczny stan, nawet gdy zabraknie prądu.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export const ScenariosPage: React.FC = () => {
                 Zawór ze sprężyną powrotną
               </h3>
               <p className="text-sm leading-relaxed text-gray-600">
-                Stosujemy zawory ze sprężyną. Gdy zabraknie prądu, zawór sam się zamyka i woda nie leci dalej.
+                Stosujemy zawory ze sprężyną. Gdy zabraknie prądu, zawór sam się zamyka i woda nie leci dalej.
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export const ScenariosPage: React.FC = () => {
                 Fizyczny przycisk ścienny
               </h3>
               <p className="text-sm leading-relaxed text-gray-600">
-                Przycisk przy drzwiach łączy się kablem prosto z rozdzielnicą. Działa od razu, bez telefonu.
+                Przycisk przy drzwiach łączy się kablem prosto z rozdzielnicą. Działa od razu, bez telefonu.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export const ScenariosPage: React.FC = () => {
                 Autonomia lokalna
               </h3>
               <p className="text-sm leading-relaxed text-gray-600">
-                Zasady działania siedzą w sterowniku w rozdzielnicy. Bez internetu dom dalej robi swoje.
+                Zasady działania siedzą w sterowniku w rozdzielnicy. Bez internetu dom dalej robi swoje.
               </p>
             </div>
           </div>
@@ -162,12 +162,12 @@ export const ScenariosPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Następny krok:</div>
             <div className="text-base font-bold text-white">
-              Gotowe zestawy z ceną na piśmie
+              Gotowe zestawy z ceną na piśmie
             </div>
           </div>
           <Link
             to="/pakiety"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
             <span>Zobacz pakiety</span>
             <ArrowRight className="w-4 h-4" />

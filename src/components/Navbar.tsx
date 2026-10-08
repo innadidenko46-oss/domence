@@ -6,12 +6,14 @@ import { Logo } from './Logo.tsx';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      setPastHero(window.scrollY > 520);
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -32,6 +34,9 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
+  // On the home page the hero already shows the same CTA; reveal the header one after scrolling past it
+  const hideHeaderCta = location.pathname === '/' && !pastHero;
 
   // All sections laid out on a SINGLE level (no dropdowns or hidden submenus)
   const navLinks = [
@@ -84,7 +89,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto xl:ml-0">
             <Link
               to="/kontakt"
-              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex xl:hidden 2xl:flex items-center gap-1.5 min-h-11 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap bg-gray-100 hover:bg-gray-200 border-gray-300 text-gray-700 hover:text-copper-700"
+              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex xl:hidden 2xl:flex items-center gap-2 min-h-11 text-sm font-semibold transition-colors px-4 rounded-[2px] border whitespace-nowrap bg-white hover:bg-gray-100 border-gray-300 text-gray-800"
             >
               <Phone className="w-3.5 h-3.5 text-copper-600" />
               <span>Zapytaj inżyniera</span>
@@ -92,9 +97,11 @@ export const Navbar: React.FC = () => {
 
             <Link
               to="/kalkulator"
-              className="min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-copper-400/40 active:scale-[0.98] flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              aria-hidden={hideHeaderCta}
+              tabIndex={hideHeaderCta ? -1 : undefined}
+              className={`${hideHeaderCta ? 'opacity-0 pointer-events-none translate-y-1' : 'opacity-100'} transition-[opacity,transform,background-color] duration-300 min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm border border-copper-400/40 active:scale-[0.98] flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2`}
             >
-              <ClipboardList className="w-3.5 h-3.5" />
+              <ClipboardList className="w-4 h-4" />
               <span>Dobierz zestaw (2 min)</span>
             </Link>
           </div>
@@ -149,7 +156,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kalkulator"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-copper-400/40 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                  className="w-full py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-copper-400/40 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >
                   <ClipboardList className="w-4 h-4" />
                   <span>Dobierz zestaw (2 min)</span>
@@ -158,7 +165,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider bg-gray-100 border-gray-300 text-gray-700"
+                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-sm font-semibold bg-gray-100 border-gray-300 text-gray-700"
                 >
                   <Phone className="w-3.5 h-3.5 text-copper-600" />
                   <span>Zapytaj inżyniera</span>

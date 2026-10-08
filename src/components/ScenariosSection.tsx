@@ -118,7 +118,7 @@ export const ScenariosSection: React.FC = () => {
             Przykłady: co dom robi za Ciebie
           </h2>
           <p className="mt-4 text-sm sm:text-base max-w-prose leading-relaxed text-gray-600">
-            Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
+            Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export const ScenariosSection: React.FC = () => {
                 </div>
 
                 <div className="mt-2.5">
-                  <div className={`text-xs font-semibold uppercase tracking-wider line-clamp-1 ${
+                  <div className={`text-sm font-semibold line-clamp-1 ${
                     isActive ? ('text-copper-800') : ('text-gray-500')
                   }`}>
                     {sc.tag}
@@ -232,7 +232,7 @@ export const ScenariosSection: React.FC = () => {
                   {activeScenario.actionSteps && activeScenario.actionSteps.length > 0 && (
                     <div className="mt-5">
                       <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-gray-700">
-                        Co robi dom, zwykle w 1–2 sekundy:
+                        Co robi dom, zwykle w 1–2 sekundy:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (
@@ -260,7 +260,7 @@ export const ScenariosSection: React.FC = () => {
                   {/* Practical insight Box */}
                   <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-copper-500/10 border-copper-500/30 text-gray-800">
                     <span className="font-bold block mb-1 text-copper-800">
-                      Tak to działa u Ciebie:
+                      Tak to działa u Ciebie:
                     </span>
                     {activeScenario.humanNote}
                   </div>
@@ -282,11 +282,11 @@ export const ScenariosSection: React.FC = () => {
 
                 <div className="mt-8 pt-6 border-t flex items-center justify-between border-gray-200">
                   <span className="text-xs text-gray-500">
-                    Działa w domu, bez obcych serwerów
+                    Działa w domu, bez obcych serwerów
                   </span>
                   <Link
                     to="/kalkulator"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     <span>Dobierz zestaw (2 min)</span>
                     <ChevronRight className="w-4 h-4" />

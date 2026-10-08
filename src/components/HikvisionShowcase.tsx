@@ -53,19 +53,19 @@ export const HikvisionShowcase: React.FC = () => {
               <span>Najnowsze kamery i domofony Hikvision</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-950">
-              Kamery, które widzą w nocy w kolorze, i domofon z kamerą
+              Kamery, które widzą w nocy w kolorze, i domofon z kamerą
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Dostajesz podgląd domu w telefonie i nagrania u siebie. Kamery ColorVu dają kolorowy obraz w nocy, a system AcuSense rozpoznaje ludzi i auta, więc nie dostajesz fałszywych alarmów.
+              Dostajesz podgląd domu w telefonie i nagrania u siebie. Kamery ColorVu dają kolorowy obraz w nocy, a system AcuSense rozpoznaje ludzi i auta, więc nie dostajesz fałszywych alarmów.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
-              Kolor w nocy
+              Kolor w nocy
             </span>
             <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
-              Rozpoznawanie ludzi i aut
+              Rozpoznawanie ludzi i aut
             </span>
             <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
               Otwarcie twarzą
@@ -144,7 +144,7 @@ export const HikvisionShowcase: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs font-bold uppercase tracking-wider text-copper-600">
-                      System rozpoznawania ludzi i aut, syrena i światło na intruza
+                      System rozpoznawania ludzi i aut, syrena i światło na intruza
                     </span>
                   </div>
                   <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-gray-900">
@@ -159,7 +159,7 @@ export const HikvisionShowcase: React.FC = () => {
                     <Cpu className="w-5 h-5 text-copper-600 shrink-0 mt-0.5" />
                     <div>
                       <strong className="block mb-0.5 text-gray-900">
-                        Co jest w środku:
+                        Co jest w środku:
                       </strong>
                       {activeProduct.keyTech}
                     </div>
@@ -185,7 +185,7 @@ export const HikvisionShowcase: React.FC = () => {
                   </div>
                   <Link
                     to="/kalkulator"
-                    className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-all focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     <span>Dobierz zestaw (2 min)</span>
                   </Link>

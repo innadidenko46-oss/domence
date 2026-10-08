@@ -21,10 +21,10 @@ export const MultiroomGardenSection: React.FC = () => {
             <span>Kino w salonie</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
-            Kino w salonie. Swoje głośniki też podłączymy.
+            Kino w salonie. Swoje głośniki też podłączymy.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Film jednym przyciskiem: rolety, światło i scena. A jeśli masz już głośniki, które pasują do Shelly albo Hikvision, podepniemy je do scen — montażu audio nie robimy.
+            Film jednym przyciskiem: rolety, światło i scena. A jeśli masz już głośniki, które pasują do Shelly albo Hikvision, podepniemy je do scen — montażu audio nie robimy.
           </p>
         </div>
 

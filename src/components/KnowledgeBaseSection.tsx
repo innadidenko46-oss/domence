@@ -47,14 +47,14 @@ export const KnowledgeBaseSection: React.FC = () => {
             Baza wiedzy
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Pytania i odpowiedzi
+            Pytania i odpowiedzi
           </h2>
           <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
-            Co dzieje się bez internetu i przy burzy, ile kosztuje utrzymanie i czy każdy domownik da sobie radę z obsługą.
+            Co dzieje się bez internetu i przy burzy, ile kosztuje utrzymanie i czy każdy domownik da sobie radę z obsługą.
           </p>
 
           <label htmlFor="faq-search" className="block mt-8 mb-2 text-xs font-semibold text-gray-700">
-            Szukaj w pytaniach
+            Szukaj w pytaniach
           </label>
           <div className="relative">
             <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" aria-hidden="true" />
@@ -105,7 +105,7 @@ export const KnowledgeBaseSection: React.FC = () => {
             <div className="border-y border-gray-300 py-12">
               <h3 className="font-display text-lg font-bold text-gray-900">Nie mamy jeszcze takiego pytania</h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-600 max-w-prose">
-                Spróbuj innego słowa albo zadaj pytanie inżynierowi — odpowiemy w ciągu 24 godzin roboczych.
+                Spróbuj innego słowa albo zadaj pytanie inżynierowi — odpowiemy w ciągu 24 godzin roboczych.
               </p>
               <button
                 type="button"

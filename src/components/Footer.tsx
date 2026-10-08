@@ -44,8 +44,8 @@ export const Footer: React.FC = () => {
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
               <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
-                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
+                Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
+                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
               </p>
             </div>
 
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
                 Działa bez internetu
               </span>
               <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
-                Nagrania w domu, bez abonamentu
+                Nagrania w domu, bez abonamentu
               </span>
             </div>
           </div>
@@ -76,17 +76,17 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/teletechnika" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                    Kamery i domofon z kamerą
+                    Kamery i domofon z kamerą
                   </Link>
                 </li>
                 <li>
                   <Link to="/multimedia" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                    Kino w salonie
+                    Kino w salonie
                   </Link>
                 </li>
                 <li>
                   <Link to="/scenariusze" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                    Przykłady z życia
+                    Przykłady z życia
                   </Link>
                 </li>
                 <li>
@@ -103,17 +103,17 @@ export const Footer: React.FC = () => {
 
             <div>
               <h4 className="font-display text-sm font-semibold text-white mb-4">
-                Wdrożenia i narzędzia
+                Wdrożenia i narzędzia
               </h4>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
                   <Link to="/pakiety" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                    Gotowe zestawy z montażem
+                    Gotowe zestawy z montażem
                   </Link>
                 </li>
                 <li>
                   <Link to="/faq" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
-                    Pytania i odpowiedzi
+                    Pytania i odpowiedzi
                   </Link>
                 </li>
                 <li>
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
           {/* Contact Direct */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-display text-sm font-semibold text-white mb-4">
-              Kontakt z inżynierem
+              Kontakt z inżynierem
             </h4>
 
             <a
@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
               onClick={() => setActiveModal('rodo')}
               className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              Polityka prywatności i RODO
+              Polityka prywatności i RODO
             </button>
             <button
               onClick={() => setActiveModal('regulamin')}
@@ -294,7 +294,7 @@ export const Footer: React.FC = () => {
                 onClick={() => setActiveModal(null)}
                 className="px-5 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
-                Rozumiem i Zamykam
+                Rozumiem i Zamykam
               </button>
             </div>
           </div>

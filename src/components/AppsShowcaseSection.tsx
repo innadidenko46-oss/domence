@@ -3,19 +3,19 @@ import { Zap, Video, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SHELLY_FEATURES = [
-  'Światło, rolety, ogrzewanie i sceny w jednej aplikacji',
-  'Harmonogramy według wschodu i zachodu słońca',
-  'Podgląd zużycia prądu w watach i złotówkach',
+  'Światło, rolety, ogrzewanie i sceny w jednej aplikacji',
+  'Harmonogramy według wschodu i zachodu słońca',
+  'Podgląd zużycia prądu w watach i złotówkach',
   'Powiadomienia, gdy okno jest otwarte albo czujnik wykryje wodę',
-  'Działa w domowym Wi-Fi, także przy awarii internetu',
+  'Działa w domowym Wi-Fi, także przy awarii internetu',
 ];
 
 const HIK_FEATURES = [
-  'Podgląd z kamer i wideodomofonu na żywo',
-  'Rozmowa wideo z gościem przy furtce',
-  'Otwieranie furtki i bramy z poziomu telefonu',
-  'Kolorowy obraz w nocy i mniej fałszywych alarmów',
-  'Nagrania na dysku w domu, bez abonamentu',
+  'Podgląd z kamer i wideodomofonu na żywo',
+  'Rozmowa wideo z gościem przy furtce',
+  'Otwieranie furtki i bramy z poziomu telefonu',
+  'Kolorowy obraz w nocy i mniej fałszywych alarmów',
+  'Nagrania na dysku w domu, bez abonamentu',
 ];
 
 export const AppsShowcaseSection: React.FC = () => {
@@ -27,10 +27,10 @@ export const AppsShowcaseSection: React.FC = () => {
             Aplikacje • Telefon
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Światło, rolety i ogrzewanie z telefonu.
+            Światło, rolety i ogrzewanie z telefonu.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
+            Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const AppsShowcaseSection: React.FC = () => {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-600">
               Centrum sterowania domem. Światło, rolety, ogrzewanie, sceny
-              i zużycie energii. Wszystko w jednym miejscu.
+              i zużycie energii. Wszystko w jednym miejscu.
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {SHELLY_FEATURES.map((feat, idx) => (
@@ -94,12 +94,12 @@ export const AppsShowcaseSection: React.FC = () => {
               <Video className="w-5 h-5 text-copper-600" />
             </div>
             <div className="text-xs font-bold uppercase tracking-wider text-copper-600">
-              Kamery i domofon
+              Kamery i domofon
             </div>
             <h3 className="mt-1 text-xl font-bold text-gray-900">Hik-Connect</h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-600">
-              Podgląd posesji i rozmowy z furtki. Odbierasz gościa z pracy
-              albo z wakacji. Otwierasz furtkę jednym dotknięciem.
+              Podgląd posesji i rozmowy z furtki. Odbierasz gościa z pracy
+              albo z wakacji. Otwierasz furtkę jednym dotknięciem.
             </p>
             <ul className="mt-5 space-y-2.5 flex-1">
               {HIK_FEATURES.map((feat, idx) => (

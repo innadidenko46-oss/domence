@@ -18,7 +18,7 @@ export const ProcessSection: React.FC = () => {
             Od pierwszej rozmowy do gotowego domu
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Wiesz, co dzieje się na każdym etapie. Masz jednego człowieka do kontaktu, umówiony termin i sprawdzenie prac na końcu.
+            Wiesz, co dzieje się na każdym etapie. Masz jednego człowieka do kontaktu, umówiony termin i sprawdzenie prac na końcu.
           </p>
         </div>
 

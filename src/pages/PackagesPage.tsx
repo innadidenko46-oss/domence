@@ -33,7 +33,7 @@ export const PackagesPage: React.FC = () => {
               Co zawiera każdy zestaw?
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Cenę i zakres potwierdzamy na piśmie przed startem.
+              Cenę i zakres potwierdzamy na piśmie przed startem.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export const PackagesPage: React.FC = () => {
                   Projekt wykonawczy
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Rysunek instalacji i schemat rozdzielnicy.
+                  Rysunek instalacji i schemat rozdzielnicy.
                 </p>
               </div>
 
@@ -59,7 +59,7 @@ export const PackagesPage: React.FC = () => {
                   Czysty montaż
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Zabezpieczamy podłogi i meble, wiercimy z odsysaniem pyłu i sprzątamy po sobie.
+                  Zabezpieczamy podłogi i meble, wiercimy z odsysaniem pyłu i sprzątamy po sobie.
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ export const PackagesPage: React.FC = () => {
                   Pomiary odbiorowe
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
+                  Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export const PackagesPage: React.FC = () => {
                   24 miesiące gwarancji
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
+                  Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
                 </p>
               </div>
             </div>
@@ -107,12 +107,12 @@ export const PackagesPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Następny krok:</div>
             <div className="text-base font-bold text-white">
-              Pytania i odpowiedzi techniczne
+              Pytania i odpowiedzi techniczne
             </div>
           </div>
           <Link
             to="/faq"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
             <span>Zobacz FAQ</span>
             <ArrowRight className="w-4 h-4" />

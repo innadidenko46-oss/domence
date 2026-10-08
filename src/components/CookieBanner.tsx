@@ -194,7 +194,7 @@ export const CookieBanner: React.FC = () => {
                     />
                   </div>
                   <p className="text-gray-400 text-xs leading-relaxed">
-                    Umożliwiają zapamiętanie wpisanych w ankiecie odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
+                    Umożliwiają zapamiętanie wpisanych w ankiecie odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
                   </p>
                 </div>
 
@@ -209,7 +209,7 @@ export const CookieBanner: React.FC = () => {
                     />
                   </div>
                   <p className="text-gray-400 text-xs leading-relaxed">
-                    Pomagają nam badać, które działy i narzędzia są najbardziej czytelne dla inwestorów, bez identyfikacji konkretnych osób.
+                    Pomagają nam badać, które działy i narzędzia są najbardziej czytelne dla inwestorów, bez identyfikacji konkretnych osób.
                   </p>
                 </div>
               </div>

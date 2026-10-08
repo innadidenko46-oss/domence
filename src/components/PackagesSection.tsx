@@ -12,11 +12,11 @@ const PACKAGE_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   retrofit_smart: {
     src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Jasne gotowe wnętrze z automatyką bez kucia ścian',
+    alt: 'Jasne gotowe wnętrze z automatyką bez kucia ścian',
   },
   developer_din: {
     src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Szafa teletechniczna RACK z okablowaniem i rejestratorem',
+    alt: 'Szafa teletechniczna RACK z okablowaniem i rejestratorem',
   },
 };
 
@@ -37,10 +37,10 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
             <span>Ceny i gwarancja</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-            Gotowe zestawy z montażem i gwarancją
+            Gotowe zestawy z montażem i gwarancją
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-gray-600">
-            Sprzęt, montaż i ustawienie plus 24 miesiące gwarancji. Cenę dostajesz na piśmie.
+            Sprzęt, montaż i ustawienie plus 24 miesiące gwarancji. Cenę dostajesz na piśmie.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
                 {/* Top Bestseller Badge */}
                 {isBestseller && (
-                  <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-copper-600 text-white font-mono font-bold text-xs uppercase tracking-wider shadow-sm">
+                  <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-copper-600 text-white font-mono font-semibold text-sm shadow-sm">
                     Bestseller: Bez Kucia Ścian
                   </div>
                 )}
@@ -140,7 +140,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 {/* Select Button - Solid Flat Architectural CTA */}
                 <button
                   onClick={() => onSelectPackage(pkg.recommendedFor)}
-                  className={`mt-8 w-full py-3.5 rounded-[2px] font-bold text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 cursor-pointer border ${
+                  className={`mt-8 w-full py-3.5 rounded-[2px] font-semibold text-sm text-center transition-colors flex items-center justify-center gap-2 cursor-pointer border ${
                     isBestseller
                       ? 'bg-copper-600 hover:bg-copper-700 text-white border-copper-400/40'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-300'}`}

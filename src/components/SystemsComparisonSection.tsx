@@ -4,22 +4,22 @@ import { Layers, Check, Minus, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const OUR_WAY: string[] = [
-  'Światło, rolety i zamek działają też bez internetu',
-  'Brak abonamentu za zapis i podgląd — nagrania zostają w domu',
-  'Montaż z odciągiem pyłu, bez kucia na gotowo',
+  'Światło, rolety i zamek działają też bez internetu',
+  'Brak abonamentu za zapis i podgląd — nagrania zostają w domu',
+  'Montaż z odciągiem pyłu, bez kucia na gotowo',
   'Pisemna wycena przed startem — wiesz, za co płacisz',
-  'Dokumentacja i protokoły pomiarów po montażu',
+  'Dokumentacja i protokoły pomiarów po montażu',
   'Gwarancja 24 miesiące + opieka po montażu',
   'Jeden kontakt do człowieka, nie infolinia',
 ];
 
 const ELSEWHERE: string[] = [
   'Światło czy rolety potrafią stanąć, gdy padnie internet',
-  'Podgląd i zapis często wymagają płatnej subskrypcji',
-  'Montaż bywa z kuciem i kurzem w gotowym mieszkaniu',
-  'Cena dopisywana w trakcie, bez pełnej wyceny na piśmie',
-  'Po montażu brak schematów i protokołów pomiarów',
-  'Krótka gwarancja i brak stałej opieki po montażu',
+  'Podgląd i zapis często wymagają płatnej subskrypcji',
+  'Montaż bywa z kuciem i kurzem w gotowym mieszkaniu',
+  'Cena dopisywana w trakcie, bez pełnej wyceny na piśmie',
+  'Po montażu brak schematów i protokołów pomiarów',
+  'Krótka gwarancja i brak stałej opieki po montażu',
   'Kontakt przez infolinię, za każdym razem inna osoba',
 ];
 
@@ -37,7 +37,7 @@ export const SystemsComparisonSection: React.FC = () => {
             <span>Porównanie</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-gray-900">
-            Nasze realizacje, a typowe tańsze rozwiązania
+            Nasze realizacje, a typowe tańsze rozwiązania
           </h2>
           <p className="mt-3 text-sm sm:text-base max-w-prose leading-relaxed text-gray-600">
             Porównaj, co dostajesz. Bez nazw marek — liczy się to, jak dom działa na co dzień.
@@ -87,7 +87,7 @@ export const SystemsComparisonSection: React.FC = () => {
 
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-[2px] border bg-gray-50 border-gray-200 p-6">
             <p className="text-sm text-gray-600 leading-relaxed">
-              Chcesz wiedzieć, co pasuje do Twojego domu? Opisz dom w krótkiej ankiecie.
+              Chcesz wiedzieć, co pasuje do Twojego domu? Opisz dom w krótkiej ankiecie.
             </p>
             <Link
               to="/kalkulator"

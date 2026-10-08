@@ -36,10 +36,10 @@ export const TeletechnicsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-gray-900">
-                  Kamery schowane w elewacji
+                  Kamery schowane w elewacji
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Małe obudowy w kolorze ściany. Kamera odróżnia człowieka od psa czy gałęzi i nie wysyła fałszywych alarmów.
+                  Małe obudowy w kolorze ściany. Kamera odróżnia człowieka od psa czy gałęzi i nie wysyła fałszywych alarmów.
                 </p>
               </div>
             </div>
@@ -62,7 +62,7 @@ export const TeletechnicsPage: React.FC = () => {
                   Serce domowego internetu
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Wszystkie kable schodzą się do jednej zamykanej szafki. Porządek, zasilanie awaryjne i szybki internet.
+                  Wszystkie kable schodzą się do jednej zamykanej szafki. Porządek, zasilanie awaryjne i szybki internet.
                 </p>
               </div>
             </div>
@@ -82,10 +82,10 @@ export const TeletechnicsPage: React.FC = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-base text-gray-900">
-                  Zasięg w ogrodzie i garażu
+                  Zasięg w ogrodzie i garażu
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Internet działa w ogrodzie i w garażu. Telefon sam przełącza się między punktami, a rozmowa nie zrywa się.
+                  Internet działa w ogrodzie i w garażu. Telefon sam przełącza się między punktami, a rozmowa nie zrywa się.
                 </p>
               </div>
             </div>
@@ -104,10 +104,10 @@ export const TeletechnicsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Nagrania u Ciebie w domu, nie u obcej firmy
+              Nagrania u Ciebie w domu, nie u obcej firmy
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Niektóre kamery wysyłają obraz na serwery producenta. U nas nagrania zostają w Twoim domu.
+              Niektóre kamery wysyłają obraz na serwery producenta. U nas nagrania zostają w Twoim domu.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
-                    Nasz standard: rejestrator nagrań w domu
+                    Nasz standard: rejestrator nagrań w domu
                   </h3>
                   <span className="text-xs text-copper-600 font-mono font-semibold">Twoje dane u Ciebie</span>
                 </div>
@@ -151,7 +151,7 @@ export const TeletechnicsPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
-                    Kamery na Wi-Fi z obcą chmurą
+                    Kamery na Wi-Fi z obcą chmurą
                   </h3>
                   <span className="text-xs text-rose-600 font-mono font-semibold">Zależność od dostawcy</span>
                 </div>
@@ -185,12 +185,12 @@ export const TeletechnicsPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
-              Kino w salonie
+              Kino w salonie
             </div>
           </div>
           <Link
             to="/multimedia"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
             <span>Zobacz multimedia</span>
             <ArrowRight className="w-4 h-4" />

@@ -169,7 +169,7 @@ export const Logo: React.FC<LogoProps> = ({
               isLight ? 'text-[#38BDF8]' : 'text-[#0E384D]'
             } ${subtitleClasses[size]}`}
           >
-            AUTOMATYKA DOMU I TELETECHNIKA
+            AUTOMATYKA DOMU I TELETECHNIKA
           </span>
         )}
       </div>

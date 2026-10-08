@@ -14,52 +14,52 @@ export const HomePage: React.FC = () => {
       id: 'systemy',
       path: '/systemy',
       title: 'Sterowanie domem: światło, rolety, ogrzewanie',
-      subtitle: 'Włączniki i telefon • Z kablami albo bez kucia',
+      subtitle: 'Włączniki i telefon • Z kablami albo bez kucia',
       description:
-        'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
+        'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
       image:
         'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Minimalistyczne wnętrze z ciepłym światłem smart home',
+      imageAlt: 'Minimalistyczne wnętrze z ciepłym światłem smart home',
     },
     {
       id: 'teletechnika',
       path: '/teletechnika',
-      title: 'Kamery, domofon z kamerą i internet w domu',
-      subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
+      title: 'Kamery, domofon z kamerą i internet w domu',
+      subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
       description:
-        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, furtkę otworzysz z telefonu, a internet działa w każdym pokoju.',
+        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, furtkę otworzysz z telefonu, a internet działa w każdym pokoju.',
       image:
         'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Dyskretna kamera zewnętrzna na nowoczesnej elewacji o zmierzchu',
+      imageAlt: 'Dyskretna kamera zewnętrzna na nowoczesnej elewacji o zmierzchu',
     },
     {
       id: 'multimedia-kino',
       path: '/multimedia',
-      title: 'Kino w salonie — jeden przycisk',
-      subtitle: 'Rolety • Światło • Dzwonek z furtki',
+      title: 'Kino w salonie — jeden przycisk',
+      subtitle: 'Rolety • Światło • Dzwonek z furtki',
       description:
-        'Do filmu rolety same się zamykają, a światło gaśnie. Dzwonek z furtki słyszysz od razu. Masz już głośniki? Podepniemy je do scen.',
+        'Do filmu rolety same się zamykają, a światło gaśnie. Dzwonek z furtki słyszysz od razu. Masz już głośniki? Podepniemy je do scen.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
+      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
     },
     {
       id: 'scenariusze',
       path: '/scenariusze',
-      title: 'Dom, który sam gasi światło i pilnuje wody',
-      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
+      title: 'Dom, który sam gasi światło i pilnuje wody',
+      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
       description:
-        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
+        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
       image:
         'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Ciepłe, przytulne wnętrze o poranku ze zautomatyzowanym oświetleniem',
+      imageAlt: 'Ciepłe, przytulne wnętrze o poranku ze zautomatyzowanym oświetleniem',
     },
     {
       id: 'pakiety',
       path: '/pakiety',
-      title: 'Gotowe zestawy z montażem',
-      subtitle: 'Sprzęt i montaż • Cena na piśmie • Gwarancja',
+      title: 'Gotowe zestawy z montażem',
+      subtitle: 'Sprzęt i montaż • Cena na piśmie • Gwarancja',
       description:
-        'Sprawdzone zestawy: do gotowego mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
+        'Sprawdzone zestawy: do gotowego mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
       image:
         'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Zbliżenie układów elektronicznych na płytce drukowanej',
@@ -67,24 +67,24 @@ export const HomePage: React.FC = () => {
     {
       id: 'faq',
       path: '/faq',
-      title: 'Pytania i odpowiedzi',
+      title: 'Pytania i odpowiedzi',
       subtitle: 'Czy działa bez internetu • Ile to kosztuje • Czy obsłuży to babcia',
       description:
-        'Sprawdź, co dzieje się bez internetu i bez prądu, czy trzeba kuć ściany i czy każdy domownik da sobie radę z obsługą.',
+        'Sprawdź, co dzieje się bez internetu i bez prądu, czy trzeba kuć ściany i czy każdy domownik da sobie radę z obsługą.',
       image:
         'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Czyste biuro projektowe z planami architektonicznymi i tabletem',
+      imageAlt: 'Czyste biuro projektowe z planami architektonicznymi i tabletem',
     },
     {
       id: 'kalkulator',
       path: '/kalkulator',
-      title: 'Krótka ankieta o Twoim domu',
-      subtitle: 'Wybierz metraż i potrzeby • Oddzwonimy z propozycją',
+      title: 'Krótka ankieta o Twoim domu',
+      subtitle: 'Wybierz metraż i potrzeby • Oddzwonimy z propozycją',
       description:
-        'Trzy pytania i kontakt. Zajmie Ci to około 2 minut.',
+        'Trzy pytania i kontakt. Zajmie Ci to około 2 minut.',
       image:
         'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Jasny salon z nowoczesnym oświetleniem i sterowaniem domem',
+      imageAlt: 'Jasny salon z nowoczesnym oświetleniem i sterowaniem domem',
     },
   ];
 
@@ -96,14 +96,8 @@ export const HomePage: React.FC = () => {
       <section className="relative flex items-center pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 hero-stagger">
-            {/* Top Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[2px] text-xs font-semibold mb-6 backdrop-blur-md border bg-copper-500/10 text-copper-800 border-copper-500/30">
-              <span className="w-2 h-2 rounded-full bg-copper-600" />
-              <span>Wdrożenia • Smart home, kamery i domofony</span>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-gray-950">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.015em] leading-[1.05] text-gray-950">
               Nowoczesny dom, którym sterujesz telefonem.{' '}
               <span className="text-copper-600">
                 Działa też bez internetu.
@@ -112,7 +106,7 @@ export const HomePage: React.FC = () => {
 
             {/* Subtitle */}
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-gray-600">
-              Światło, rolety, ogrzewanie i kamery — montujemy, ustawiamy i pokazujemy, jak z tego korzystać.
+              Światło, rolety, ogrzewanie i kamery — montujemy, ustawiamy i pokazujemy, jak z tego korzystać.
             </p>
 
             {/* CTA Buttons */}
@@ -157,8 +151,11 @@ export const HomePage: React.FC = () => {
           <div className="hidden lg:block lg:col-span-5 hero-media">
             <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-xl aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami"
+                src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
+                alt="Dłoń z telefonem pokazującym obraz z kamery przy furtce, obok drzwi wejściowych panel sterowania domem"
+                width={1136}
+                height={1408}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -175,7 +172,7 @@ export const HomePage: React.FC = () => {
               Obszary instalacji — co montujemy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
+              Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
             </p>
           </div>
 
@@ -265,7 +262,7 @@ export const HomePage: React.FC = () => {
 
           <div className="order-1 lg:order-2 lg:col-span-6">
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-              Jak montujemy i dlaczego to bezpieczne
+              Jak montujemy i dlaczego to bezpieczne
             </h2>
             <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
               Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
@@ -275,18 +272,18 @@ export const HomePage: React.FC = () => {
               {[
                 {
                   icon: Lock,
-                  title: 'Prywatność i działanie bez internetu',
-                  text: 'Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.',
+                  title: 'Prywatność i działanie bez internetu',
+                  text: 'Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.',
                 },
                 {
                   icon: Cpu,
-                  title: 'Porządna rozdzielnica i ochrona sprzętu',
-                  text: 'Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła, sprzęt kuchenny, telewizory i komputery przed burzą.',
+                  title: 'Porządna rozdzielnica i ochrona sprzętu',
+                  text: 'Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła, sprzęt kuchenny, telewizory i komputery przed burzą.',
                 },
                 {
                   icon: Wrench,
                   title: 'Czysty montaż bez kurzu',
-                  text: 'Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i sprzątamy po sobie.',
+                  text: 'Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i sprzątamy po sobie.',
                 },
               ].map((pillar, i) => {
                 const Icon = pillar.icon;
@@ -351,7 +348,7 @@ export const HomePage: React.FC = () => {
 
               <Link
                 to="/kontakt"
-                className="min-h-11 inline-flex items-center px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="min-h-11 inline-flex items-center px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>

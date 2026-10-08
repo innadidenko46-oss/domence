@@ -15,18 +15,18 @@ export const NotFoundPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm mb-8 text-gray-600">
-            Sprawdź poprawność adresu albo skorzystaj z nawigacji.
+            Sprawdź poprawność adresu albo skorzystaj z nawigacji.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/"
-              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
             >
               Wróć na stronę główną
             </Link>
             <Link
               to="/kalkulator"
-              className="px-6 py-3 rounded-[2px] border text-xs font-semibold uppercase tracking-wider transition-colors bg-white border-gray-300 text-gray-900 hover:bg-gray-100"
+              className="px-6 py-3 rounded-[2px] border text-sm font-semibold transition-colors bg-white border-gray-300 text-gray-900 hover:bg-gray-100"
             >
               Dobierz zestaw
             </Link>

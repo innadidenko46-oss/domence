@@ -38,7 +38,7 @@ export const MultiroomGardenPage: React.FC = () => {
                   Wieczór filmowy bez szukania pilotów
                 </h3>
                 <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                  Rolety same się zamykają, światło gaśnie do 5%, a dźwięk wypełnia pokój.
+                  Rolety same się zamykają, światło gaśnie do 5%, a dźwięk wypełnia pokój.
                 </p>
               </div>
             </div>
@@ -53,15 +53,15 @@ export const MultiroomGardenPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
-                  Dzwonek z furtki
+                  Dzwonek z furtki
                 </span>
               </div>
               <div className="p-7">
                 <h3 className="font-bold text-lg text-gray-900">
-                  Dzwonek słyszysz od razu — i widzisz, kto przyszedł
+                  Dzwonek słyszysz od razu — i widzisz, kto przyszedł
                 </h3>
                 <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                  Gdy kurier dzwoni do furtki, na panelu na ścianie i w telefonie widzisz, kto przyszedł, i otwierasz jednym dotknięciem.
+                  Gdy kurier dzwoni do furtki, na panelu na ścianie i w telefonie widzisz, kto przyszedł, i otwierasz jednym dotknięciem.
                 </p>
               </div>
             </div>
@@ -77,10 +77,10 @@ export const MultiroomGardenPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Jeden przycisk do filmu: rolety i światło
+              Jeden przycisk do filmu: rolety i światło
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Koniec z kilkoma pilotami. Rolety i światło ustawiają się same.
+              Koniec z kilkoma pilotami. Rolety i światło ustawiają się same.
             </p>
           </div>
 
@@ -150,12 +150,12 @@ export const MultiroomGardenPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
-              Przykłady z życia wzięte
+              Przykłady z życia wzięte
             </div>
           </div>
           <Link
             to="/scenariusze"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
             <span>Zobacz scenariusze</span>
             <ArrowRight className="w-4 h-4" />

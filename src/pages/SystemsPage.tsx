@@ -39,7 +39,7 @@ export const SystemsPage: React.FC = () => {
                   Miękkie światło wieczorem
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Ukryte listwy LED w suficie dają ciepłe światło, które nie razi w oczy.
+                  Ukryte listwy LED w suficie dają ciepłe światło, które nie razi w oczy.
                 </p>
               </div>
             </div>
@@ -62,7 +62,7 @@ export const SystemsPage: React.FC = () => {
                   Jeden panel zamiast wielu włączników
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Zamiast 6 klawiszy obok siebie masz jeden panel: światło, temperatura i rolety w jednym miejscu.
+                  Zamiast 6 klawiszy obok siebie masz jeden panel: światło, temperatura i rolety w jednym miejscu.
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ export const SystemsPage: React.FC = () => {
                   Działa po kablu, także bez internetu
                 </h3>
                 <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Moduły w rozdzielnicy łączą się kablem, więc światło i rolety działają nawet, gdy padnie internet.
+                  Moduły w rozdzielnicy łączą się kablem, więc światło i rolety działają nawet, gdy padnie internet.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export const SystemsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Kiedy wybrać moduły do rozdzielnicy, a kiedy bez kucia?
+              Kiedy wybrać moduły do rozdzielnicy, a kiedy bez kucia?
             </h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
               Podpowiemy, co pasuje do Twojej budowy albo gotowego mieszkania.
@@ -121,7 +121,7 @@ export const SystemsPage: React.FC = () => {
                   Shelly Pro do rozdzielnicy
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 text-gray-600">
-                  Jeśli budujesz dom od zera. Moduły siedzą w rozdzielnicy, łączą się kablem i mierzą zużycie prądu.
+                  Jeśli budujesz dom od zera. Moduły siedzą w rozdzielnicy, łączą się kablem i mierzą zużycie prądu.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
@@ -152,7 +152,7 @@ export const SystemsPage: React.FC = () => {
                   Automatyka po kablu (system przewodowy)
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 text-gray-600">
-                  Sterowanie prowadzi kabel w ścianie, więc działa stabilnie: bez baterii do wymiany i bez zależności od internetu w domu.
+                  Sterowanie prowadzi kabel w ścianie, więc działa stabilnie: bez baterii do wymiany i bez zależności od internetu w domu.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
@@ -180,10 +180,10 @@ export const SystemsPage: React.FC = () => {
                   Gotowe mieszkanie / bez kucia
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
-                  Małe moduły i aplikacja w domu
+                  Małe moduły i aplikacja w domu
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 text-gray-600">
-                  Masz już pomalowane ściany. Małe moduły chowamy pod włącznikami i łączą się z domowym sterownikiem.
+                  Masz już pomalowane ściany. Małe moduły chowamy pod włącznikami i łączą się z domowym sterownikiem.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
@@ -214,7 +214,7 @@ export const SystemsPage: React.FC = () => {
                 Dlaczego dom działa też bez internetu?
               </h4>
               <p className="text-sm mt-1 leading-relaxed text-gray-600">
-                Zwykłe gadżety potrzebują stałego łącza z serwerami producenta. Gdy pada internet, nie zapalą światła. U nas sterowanie działa w domowej sieci, więc światło i ogrzewanie słuchają Cię dalej.
+                Zwykłe gadżety potrzebują stałego łącza z serwerami producenta. Gdy pada internet, nie zapalą światła. U nas sterowanie działa w domowej sieci, więc światło i ogrzewanie słuchają Cię dalej.
               </p>
             </div>
           </div>
@@ -227,12 +227,12 @@ export const SystemsPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
-              Kamery, internet i szafka ze sprzętem
+              Kamery, internet i szafka ze sprzętem
             </div>
           </div>
           <Link
             to="/teletechnika"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
             <span>Zobacz szczegóły</span>
             <ArrowRight className="w-4 h-4" />

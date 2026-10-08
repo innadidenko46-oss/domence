@@ -32,13 +32,13 @@ export class ErrorBoundary extends React.Component<
             <button
               type="button"
               onClick={() => this.setState({ hasError: false })}
-              className="px-6 py-3 rounded-[2px] border border-gray-300 text-xs font-semibold uppercase tracking-wider"
+              className="px-6 py-3 rounded-[2px] border border-gray-300 text-sm font-semibold"
             >
               Spróbuj ponownie
             </button>
             <Link
               to="/"
-              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white text-xs font-bold uppercase tracking-wider"
+              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white text-sm font-semibold"
             >
               Strona główna
             </Link>

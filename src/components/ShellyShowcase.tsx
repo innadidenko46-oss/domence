@@ -49,10 +49,10 @@ export const ShellyShowcase: React.FC = () => {
               <span>Co potrafi • Shelly Pro i Plus</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-gray-900">
-              Shelly Pro i Plus: światło i rolety bez kucia i z rozdzielnicy
+              Shelly Pro i Plus: światło i rolety bez kucia i z rozdzielnicy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Dostajesz światło, rolety i ogrzewanie sterowane z telefonu i zwykłych włączników. Do nowego domu wkładamy moduły do rozdzielnicy, do gotowego mieszkania — małe moduły pod włączniki.
+              Dostajesz światło, rolety i ogrzewanie sterowane z telefonu i zwykłych włączników. Do nowego domu wkładamy moduły do rozdzielnicy, do gotowego mieszkania — małe moduły pod włączniki.
             </p>
           </div>
 
@@ -61,10 +61,10 @@ export const ShellyShowcase: React.FC = () => {
               Kabel do rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
-              Szyna DIN w rozdzielnicy
+              Szyna DIN w rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
-              Działa w domu, bez obcych serwerów
+              Działa w domu, bez obcych serwerów
             </span>
           </div>
         </div>
@@ -161,7 +161,7 @@ export const ShellyShowcase: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-copper-600">
-                      Tak to wygląda u Ciebie w domu:
+                      Tak to wygląda u Ciebie w domu:
                     </span>
                   </div>
                   <p className="text-sm leading-relaxed text-gray-900">
@@ -171,7 +171,7 @@ export const ShellyShowcase: React.FC = () => {
 
                 <div className="mt-4 pt-4 border-t flex items-center justify-between text-xs border-gray-200">
                   <span className="text-gray-500">
-                    Działa w domu, także bez internetu
+                    Działa w domu, także bez internetu
                   </span>
                   <Link
                     to="/scenariusze"
@@ -218,7 +218,7 @@ export const ShellyShowcase: React.FC = () => {
                       Shelly Plus i BLU (pod włącznik, bez kucia)
                     </h4>
                     <span className="text-xs text-copper-600 font-mono font-semibold uppercase tracking-wider">
-                      Bez kucia tynków • Puszki 60 mm i BLE Mesh
+                      Bez kucia tynków • Puszki 60 mm i BLE Mesh
                     </span>
                   </div>
                 </div>

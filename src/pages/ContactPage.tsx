@@ -54,10 +54,10 @@ export const ContactPage: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight mb-2 text-gray-900">
-                  Nasi ludzie i gdzie działamy
+                  Nasi ludzie i gdzie działamy
                 </h2>
                 <p className="text-sm leading-relaxed max-w-prose text-gray-600">
-                  Robimy domy w Warszawie, Konstancinie, Wilanowie i Podkowie Leśnej. Większe domy — w całej Polsce, po sprawdzeniu rysunków.
+                  Robimy domy w Warszawie, Konstancinie, Wilanowie i Podkowie Leśnej. Większe domy — w całej Polsce, po sprawdzeniu rysunków.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export const ContactPage: React.FC = () => {
                       Jak się skontaktować
                     </div>
                     <div className="text-base font-bold font-mono transition-colors mt-0.5 text-gray-900 group-hover:text-copper-700">
-                      Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
+                      Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
                     </div>
                     <div className="text-xs text-copper-600 font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
@@ -165,7 +165,7 @@ export const ContactPage: React.FC = () => {
                       Dziękujemy. Wiadomość jest prawie gotowa.
                     </h3>
                     <p className="text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
-                      Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
+                      Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
                       Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
                     </p>
                     <button
@@ -179,7 +179,7 @@ export const ContactPage: React.FC = () => {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <h3 className="text-xl font-bold mb-1 text-gray-900">
-                        Zapytaj o swój dom
+                        Zapytaj o swój dom
                       </h3>
                       <p className="text-sm text-gray-400">
                         Wypełnij pola — za darmo sprawdzimy, co da się zrobić.
@@ -189,7 +189,7 @@ export const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-name" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Imię i Nazwisko *
+                          Imię i Nazwisko *
                         </label>
                         <input
                           id="contact-name"

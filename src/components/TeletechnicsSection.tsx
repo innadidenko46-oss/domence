@@ -46,10 +46,10 @@ export const TeletechnicsSection: React.FC = () => {
             <span>Kamery i internet w domu</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
-            Szybki internet, kamery i domofon — wszystko działa u Ciebie w domu.
+            Szybki internet, kamery i domofon — wszystko działa u Ciebie w domu.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Zaczynamy od podstaw: metalowa szafka na sprzęt, dobre kable, zasilanie awaryjne i domofon z kamerą. Nagrania zostają u Ciebie, bez abonamentu.
+            Zaczynamy od podstaw: metalowa szafka na sprzęt, dobre kable, zasilanie awaryjne i domofon z kamerą. Nagrania zostają u Ciebie, bez abonamentu.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export const TeletechnicsSection: React.FC = () => {
                   <div className="w-2 h-2 rounded-full bg-copper-600 mt-1.5 shrink-0" />
                   <div>
                     <span className="font-bold block mb-1 text-copper-600 font-mono text-xs uppercase">
-                      W praktyce:
+                      W praktyce:
                     </span>
                     <span className="leading-[1.65]">{service.humanExplanation}</span>
                   </div>
@@ -163,10 +163,10 @@ export const TeletechnicsSection: React.FC = () => {
               </div>
               <div>
                 <div className="font-bold text-base text-gray-900">
-                  Szafka na sprzęt z dokumentacją i schematami
+                  Szafka na sprzęt z dokumentacją i schematami
                 </div>
                 <div className="text-sm mt-1 leading-relaxed text-gray-500">
-                  Wszystkie kable opisujemy i sprawdzamy miernikiem. Dostajesz schematy.
+                  Wszystkie kable opisujemy i sprawdzamy miernikiem. Dostajesz schematy.
                 </div>
               </div>
             </div>

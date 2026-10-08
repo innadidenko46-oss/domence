@@ -24,13 +24,13 @@ export const TopSellingScenariosSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
-            Scenariusze • Shelly i Hikvision
+            Scenariusze • Shelly i Hikvision
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
             4 rzeczy, które dom robi za Ciebie.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-prose text-gray-600">
-            Cztery przykłady z gotowych domów. Każdy działa u Ciebie, także bez internetu.
+            Cztery przykłady z gotowych domów. Każdy działa u Ciebie, także bez internetu.
           </p>
         </div>
 

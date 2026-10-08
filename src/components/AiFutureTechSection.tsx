@@ -27,10 +27,10 @@ export const AiFutureTechSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
           <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3">
-            Technologie • Hikvision i Shelly
+            Technologie • Hikvision i Shelly
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Co potrafią nowe kamery i sterowniki.
+            Co potrafią nowe kamery i sterowniki.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-prose text-gray-600">
             Dostajesz 6 sprawdzonych rzeczy do domu.

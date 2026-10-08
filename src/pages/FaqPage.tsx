@@ -29,7 +29,7 @@ export const FaqPage: React.FC = () => {
                 <span>Dziwny układ mieszkania albo domu?</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                Porozmawiaj z inżynierem
+                Porozmawiaj z inżynierem
               </h3>
               <p className="text-sm mt-2 leading-relaxed text-gray-300">
                 Nie dzwonisz na infolinię. Odpisuje inżynier, który montuje takie instalacje.
@@ -39,7 +39,7 @@ export const FaqPage: React.FC = () => {
             <div className="flex items-center gap-4 shrink-0">
               <Link
                 to="/kontakt"
-                className="inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>

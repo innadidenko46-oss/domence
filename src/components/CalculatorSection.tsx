@@ -33,13 +33,13 @@ const PROPERTY_OPTIONS: { value: PropertyState; title: string; sub: string; icon
   {
     value: 'retro',
     title: 'Gotowe wnętrze bez kucia',
-    sub: 'Mieszkasz już w domu — wszystko bez kucia ścian i bez kurzu.',
+    sub: 'Mieszkasz już w domu — wszystko bez kucia ścian i bez kurzu.',
     icon: Home,
   },
   {
     value: 'security',
-    title: 'Bezpieczeństwo i furtka',
-    sub: 'Wideodomofon, kamery i kontrola wejścia na posesję.',
+    title: 'Bezpieczeństwo i furtka',
+    sub: 'Wideodomofon, kamery i kontrola wejścia na posesję.',
     icon: Video,
   },
   {
@@ -201,7 +201,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       '',
       formData.message ? `Wiadomość: ${formData.message}` : 'Wiadomość: —',
       '',
-      'Ankieta nie jest wyceną — oddzwonimy z propozycją.',
+      'Ankieta nie jest wyceną — oddzwonimy z propozycją.',
     ].join('\n');
     let finalBody = body;
     if (finalBody.length > 1800) {
@@ -362,7 +362,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Co Cię interesuje? (wybierz dowolną liczbę)
                 </h3>
                 <p className="text-xs sm:text-sm mb-5 leading-relaxed text-gray-600">
-                  Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu oddzwonimy i wszystko wyjaśnimy.
+                  Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu oddzwonimy i wszystko wyjaśnimy.
                 </p>
 
                 <div className="space-y-3 max-h-[460px] overflow-y-auto pr-1">
@@ -408,7 +408,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-gray-400">
                     {selectedModuleIds.length === 0
-                      ? 'Nic nie wybrano — możesz też przejść dalej, a my dobierzemy zestaw.'
+                      ? 'Nic nie wybrano — możesz też przejść dalej, a my dobierzemy zestaw.'
                       : `Wybrano: ${selectedModuleIds.length}`}
                   </div>
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -464,7 +464,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <form onSubmit={handleSubmit} noValidate className="space-y-4 max-w-lg mx-auto">
                   <div>
                     <label htmlFor="calc-name" className="block text-xs font-semibold mb-2 text-gray-700">
-                      Imię i nazwisko
+                      Imię i nazwisko
                     </label>
                     <div className="relative">
                       <input
@@ -576,7 +576,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         className="mt-0.5 accent-copper-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie ankiety i propozycji zestawu.
+                        Wyrażam zgodę na kontakt w sprawie ankiety i propozycji zestawu.
                       </span>
                     </label>
                     {errors.agreement && (
@@ -633,7 +633,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Dalsze kroki:</span>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed">
-                    Oddzwonimy z propozycją dobraną do Twoich odpowiedzi. Ankieta nie jest wyceną.
+                    Oddzwonimy z propozycją dobraną do Twoich odpowiedzi. Ankieta nie jest wyceną.
                   </p>
                 </div>
 
@@ -641,7 +641,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={handleCopyBody}
-                    className="px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
                     {copied ? 'Skopiowano treść' : 'Kopiuj treść wiadomości'}
                   </button>
@@ -650,7 +650,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       setIsSubmitted(false);
                       setStep(1);
                     }}
-                    className="px-6 py-2.5 rounded-[2px] border text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
                     Wypełnij kolejną ankietę
                   </button>
