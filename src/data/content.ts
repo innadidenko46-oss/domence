@@ -97,7 +97,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     description:
       'Jeden panel ścienny zamiast rzędu 6 włączników: zastępuje wszystkie klawisze, termostat i sterownik rolet.',
     proAdvantage:
-      'Szklane panele dotykowe Shelly Wall Display zintegrowane bezpośrednio z siecią domową, wyświetlające temperaturę i podgląd z kamer.',
+      'Szklane panele dotykowe Shelly Wall Display zintegrowane bezpośrednio z siecią domową, wyświetlające temperaturę, sterowanie muzyką i podgląd z kamer.',
     shellyAdvantage:
       'Mikromoduły Shelly współpracują z dowolnym wybranym przez architekta tradycyjnym osprzętem klawiszowym (np. Jung LS990, Schneider Sedna, Berker Q.7).',
     scenariosExample:
@@ -246,7 +246,7 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
       'Rozpoznanie twarzy z ochroną przed zdjęciami (antyspoofing)',
       'Darmowa aplikacja Hik-Connect na nielimitowaną liczbę telefonów domowników',
       'Czasowe kody PIN i kody QR dla kurierów i serwisantów',
-      'Integracja z automatyką: dzwonek włącza światło przed furtką i wysyła powiadomienie na telefon',
+      'Integracja z automatyką: dzwonek włącza światło przed furtką, a Twoją muzykę — jeśli masz głośniki — przyciszamy',
     ],
   },
   {
@@ -302,19 +302,20 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#8B5CF6',
     trigger: 'Komenda głosowa: „Chcę poćwiczyć jogę” lub dedykowany przycisk sceny na ścianie',
     description:
-      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden przycisk. Światło przygasa, a rolety się zamykają. Zwykle wszystko ustawia się w 1–2 sekundy.',
+      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden przycisk. Światło przygasa, rolety się zamykają, a z głośników płynie spokojna muzyka. Zwykle wszystko ustawia się w 1–2 sekundy.',
     humanNote:
-      'Nie musisz chodzić po pokoju, zaciągać rolet ani szukać pilota od klimatyzacji. Wypowiadasz jedno zdanie, rozkładasz matę i przechodzisz do ćwiczeń.',
+      'Nie musisz chodzić po pokoju, zaciągać rolet, szukać pilota od klimatyzacji ani włączać głośnika w telefonie. Wypowiadasz jedno zdanie, rozkładasz matę i przechodzisz do ćwiczeń.',
     detailPoints: [
       'Główne światło wygasza się w ciągu 2 sekund, zapalają się ciepłe cokoły LED 2200K na 15% jasności',
       'Rolety lub żaluzje fasadowe bezszelestnie opuszczają się, zapewniając prywatność',
+      'W strefie ćwiczeń — jeśli masz głośniki — włącza się spokojny ambient',
       'Wentylacja mechaniczna/rekuperacja bezgłośnie zwiększa dopływ świeżego tlenu',
       'Dzwonek domofonu i powiadomienia w tym pokoju zostają wyciszone (tryb Zen)',
     ],
     actionSteps: [
       { icon: 'Sun', label: 'Światło Nastrojowe', detail: 'Ciepły bursztyn 2200K na 15% (linie cokołowe i podsufitowe)' },
       { icon: 'SlidersHorizontal', label: 'Rolety i Żaluzje', detail: 'Zamknięcie dla pełnej dyskrecji przed okiem sąsiadów' },
-      { icon: 'Moon', label: 'Tryb Zen', detail: 'Wyciszenie dzwonka i powiadomień w tym pokoju' },
+      { icon: 'Volume2', label: 'Dźwięk z Twoich głośników', detail: 'Spokojny ambient z Twoich głośników (jeśli je masz)' },
       { icon: 'Wind', label: 'Mikroklimat', detail: 'Cichy napływ natlenionego powietrza, temperatura 21.5°C' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
@@ -328,13 +329,14 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#F59E0B',
     trigger: 'Harmonogram biologiczny lub godzina budzika w telefonie',
     description:
-      '20 minut przed planowanym wstaniem rolety unoszą się wpuszczając światło, oświetlenie w sypialni symuluje świt, a podłoga w łazience staje się ciepła.',
+      '20 minut przed planowanym wstaniem rolety unoszą się wpuszczając światło, oświetlenie w sypialni symuluje świt, podłoga w łazience staje się ciepła, a z głośników płynie podcast.',
     humanNote:
       'Wstajesz wypoczęty, bo ciało reaguje na narastające światło. Wchodzisz bosymi stopami na ciepłe płytki w łazience.',
     detailPoints: [
       'Stopniowe unoszenie rolet i lameli o 10-20% wpuszczające naturalne słońce',
       'Światło w sypialni naśladuje świt, przechodząc z 2000K do rześkiego 3500K',
       'Klimat: podgrzanie podłogi w łazience do 23.5°C przed wejściem pod prysznic',
+      'Cicha poranna playlista lub wiadomości w głośnikach sufitowych',
       'Uruchomienie ekspresu do kawy w kuchni dokładnie o ustalonej porze',
     ],
     actionSteps: [
@@ -375,24 +377,26 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-cinema',
     number: '04',
-    title: 'Wieczór przy filmie',
-    tag: 'Komfort i atmosfera',
+    title: 'Kino Domowe (Movie Night)',
+    tag: 'Multimedia i atmosfera',
     tagColor: '#3B82F6',
-    trigger: 'Przycisk w salonie lub jeden przycisk przy kanapie',
+    trigger: 'Komenda „Włącz kino”, przycisk w salonie lub włączenie telewizora/projektora',
     description:
-      'Gdy włączasz film na własnym telewizorze, żaluzje zjeżdżają tworząc zaciemnienie blackout, a oświetlenie gaśnie zostawiając dyskretny akcent 5%.',
+      'Gdy włączasz film, żaluzje zjeżdżają tworząc zaciemnienie blackout, oświetlenie gaśnie zostawiając akcent 5%, opuszcza się ekran projektora, a nagłośnienie wypełnia przestrzeń.',
     humanNote:
-      'Klimat kinowy bez wstawania z kanapy. Jeden dotyk przycisku przygaśnia światło i zamyka rolety.',
+      'Klimat kinowy bez wstawania z kanapy. Jeden dotyk przycisku przygaśnia światło.',
     detailPoints: [
       '100% zaciemnienia roletami lub zasłonami z tkaniną blackout',
-      'Dyskretne oświetlenie przypodłogowe 5% w barwie ciepłej lub indygo',
+      'Dyskretne oświetlenie przypodłogowe 5% w barwie kinowej indygo/ciepłej',
+      'Włączenie Twojego projektora, ekranu i sprzętu grającego',
       'Wyciszenie zbędnych powiadomień w strefie salonu',
     ],
     actionSteps: [
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Całkowite zaryglowanie rolet i zasłon blackout' },
       { icon: 'Sun', label: 'Światło Kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
+      { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
     icon: 'Tv',
   },
   {
@@ -410,6 +414,7 @@ export const SCENARIOS: LifeScenario[] = [
       'Dźwięk dwukierunkowy z redukcją szumów wiatru i ulicy',
       'Możliwość generowania tymczasowych kodów PIN/QR dla kurierów i ekip',
       'Zapis obrazu na lokalnym dysku w domu',
+      'Przyciszenie Twojej muzyki na czas dzwonienia furtki',
     ],
     actionSteps: [
       { icon: 'Video', label: 'Połączenie HD', detail: 'Wideo 180° w telefonie w aplikacji Hik-Connect' },
@@ -476,17 +481,19 @@ export const SCENARIOS: LifeScenario[] = [
     tagColor: '#F59E0B',
     trigger: 'Komenda głosowa: „Włącz kolację” lub przycisk sceny w jadalni',
     description:
-      'W porze wieczornej oświetlenie sufitowe wygasza się, stół jadalniany oświetla ciepłe światło 2400K, a rolety i zasłony zamykają się.',
+      'W porze wieczornej oświetlenie sufitowe wygasza się, stół jadalniany oświetla ciepłe światło 2400K, rolety i zasłony zamykają się, a z Twoich głośników może płynąć jazz.',
     humanNote:
       'Jeden dotyk przycisku lub komenda zmienia przestrzeń dzienną w restaurację. Zero biegania po włącznikach i pilotach.',
     detailPoints: [
       'Ściemnienie światła nad stołem do 35% o barwie ciepłego bursztynu 2400K',
       'Automatyczne zamknięcie rolet i żaluzji we wszystkich oknach salonu i kuchni',
       'Uruchomienie subtelnego podświetlenia blatów kuchennych i witryn szklanych',
+      'Cicha, elegancka playlista z głośników sufitowych w strefie jadalni',
     ],
     actionSteps: [
       { icon: 'Sun', label: 'Światło Kolacji', detail: 'Ciepły blask 2400K nad stołem jadalnym i wyspą' },
       { icon: 'SlidersHorizontal', label: 'Rolety i zasłony', detail: 'Zamknięcie przed zmierzchem chroniące prywatność' },
+      { icon: 'Volume2', label: 'Akustyka Tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
@@ -718,6 +725,16 @@ export const SMART_MODULES: SmartModule[] = [
     icon: 'DoorClosed',
   },
   {
+    id: 'cinema_multimedia_pack',
+    name: 'Kino domowe i Twoje głośniki (salon + sypialnia)',
+    badge: 'Rozrywka w domu',
+    description: 'Scena kinowa: rolety blackout i światło. Twoje głośniki — jeśli pasują do Shelly albo Hikvision — podepniemy do scen. Montażu audio nie robimy.',
+    humanExplanation: 'Włączasz film: światła gasną do 5%, rolety zamykają się. Masz już głośniki? Podłączymy je, żeby grały razem ze sceną.',
+    price: 1950,
+    category: 'comfort',
+    icon: 'Tv',
+  },
+  {
     id: 'loqed_smart_lock',
     name: 'LOQED Touch Smart Lock 2s (Powered by Shelly) – Dostęp bezkluczykowy',
     badge: 'Touch-to-Open 2s',
@@ -824,6 +841,46 @@ export const PACKAGES: PackageOffer[] = [
     ],
   },
 ];
+
+export const HOME_MULTIMEDIA = {
+  audio: {
+    title: 'Masz już głośniki? Podłączymy je do scen',
+    desc: 'Nie montujemy systemów audio. Jeśli masz w domu głośniki, które pasują do Shelly albo Hikvision, podłączymy je do scen: przycisk „Kino” zgasi światło i opuści rolety, a dzwonek z furtki przyciszy dźwięk.',
+    humanNote:
+      'Powiedz nam, jaki masz sprzęt, a sprawdzimy, czy da się go połączyć z resztą domu. Samych głośników ani amplitunerów nie sprzedajemy i nie montujemy.',
+    features: [
+      'Sprawdzenie, czy Twoje głośniki połączą się z Shelly lub Hikvision',
+      'Scena „Kino”: rolety, światło i Twój dźwięk jednym przyciskiem',
+      'Przyciszanie Twojej muzyki, gdy dzwoni furtka',
+      'Zero montażu audio z naszej strony — tylko podłączenie tego, co już masz',
+    ],
+  },
+  cinema: {
+    title: 'Sala kinowa i akustyka wnętrz',
+    desc: 'Połączenie inteligentnego zaciemnienia roletami blackout, wielostrefowego ściemniania oświetlenia nastrojowego oraz integracji projektora i nagłośnienia kinowego w jednym scenariuszu.',
+    humanNote:
+      'Nie musisz oddzielnie gasić lamp, szukać pilotów do projektora ani opuszczać zasłon. Jeden klawisz „Kino” lub polecenie głosowe natychmiast przenosi Cię w atmosferę prawdziwej sali filmowej.',
+    features: [
+      'Automatyczne zamykanie rolet i żaluzji blackout po włączeniu projektora lub TV',
+      'Światło cokołowe i podszafkowe 5% w barwie kinowej – bezpieczne poruszanie się po napoje bez oślepiania',
+      'Integracja zasilania sprzętu audio-wideo (brak poboru prądu w trybie czuwania)',
+      'Sterowanie głosem lub jednym panelem ściennym bez potrzeby używania kilku pilotów',
+    ],
+  },
+  garden: {
+    title: 'Multimedia i nagłośnienie ogrodu',
+    desc: 'Wodoodporne głośniki ogrodowe i oświetlenie ścieżek zsynchronizowane z muzyką. Taras jako osobna strefa audio z automatycznym harmonogramem wieczornym i integracją ze strefą wejścia.',
+    humanNote:
+      'Wieczorem na tarasie włącza się subtelne oświetlenie ogrodowe i cicha muzyka. Wystarczy jeden klawisz "Wieczór na tarasie" lub komenda głosowa.',
+    features: [
+      'Osobna strefa audio dla tarasu i ogrodu (głośniki wodoodporne IP65)',
+      'Scena "Wieczór na tarasie": oświetlenie ogrodowe, muzyka i ciepło podłogi',
+      'Automatyczne wyciszanie audio w domu przy otwarciu drzwi tarasowych',
+      'Sterowanie głosem lub jednym panelem ściennym',
+    ],
+  },
+};
+
 
 export interface AiTechFeature {
   id: string;

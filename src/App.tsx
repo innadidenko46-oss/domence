@@ -11,6 +11,7 @@ import { NotFoundPage } from './pages/NotFoundPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { SystemsPage } from './pages/SystemsPage.tsx';
 import { TeletechnicsPage } from './pages/TeletechnicsPage.tsx';
+import { MultiroomGardenPage } from './pages/MultiroomGardenPage.tsx';
 import { ScenariosPage } from './pages/ScenariosPage.tsx';
 import { PackagesPage } from './pages/PackagesPage.tsx';
 import { FaqPage } from './pages/FaqPage.tsx';
@@ -30,6 +31,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/systemy" element={<SystemsPage />} />
           <Route path="/teletechnika" element={<TeletechnicsPage />} />
+          <Route path="/multimedia" element={<MultiroomGardenPage />} />
           <Route path="/scenariusze" element={<ScenariosPage />} />
           <Route path="/pakiety" element={<PackagesPage />} />
           <Route path="/faq" element={<FaqPage />} />

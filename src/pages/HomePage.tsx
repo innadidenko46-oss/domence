@@ -33,6 +33,16 @@ export const HomePage: React.FC = () => {
       imageAlt: 'Dyskretna kamera zewnętrzna na nowoczesnej elewacji o zmierzchu',
     },
     {
+      id: 'multimedia-kino',
+      path: '/multimedia',
+      title: 'Kino w salonie — jeden przycisk',
+      subtitle: 'Rolety • Światło • Dzwonek z furtki',
+      description:
+        'Do filmu rolety same się zamykają, a światło gaśnie. Dzwonek z furtki słyszysz od razu. Masz już głośniki? Podepniemy je do scen.',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
+    },
+    {
       id: 'scenariusze',
       path: '/scenariusze',
       title: 'Dom, który sam gasi światło i pilnuje wody',

@@ -185,14 +185,14 @@ export const TeletechnicsPage: React.FC = () => {
           <div>
             <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
-              Przykłady z życia wzięte
+              Kino w salonie
             </div>
           </div>
           <Link
-            to="/scenariusze"
+            to="/multimedia"
             className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
           >
-            <span>Zobacz scenariusze</span>
+            <span>Zobacz multimedia</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
