@@ -4,13 +4,11 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { CalculatorSection } from '../components/CalculatorSection.tsx';
 import { Calculator } from 'lucide-react';
 import { PropertyState } from '../types.ts';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const CalculatorPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const stateParam = searchParams.get('state') as PropertyState | null;
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const [propertyState, setPropertyState] = useState<PropertyState>(
     stateParam && ['deweloperski', 'retro', 'security', 'commercial'].includes(stateParam)
@@ -34,9 +32,9 @@ export const CalculatorPage: React.FC = () => {
       isDay ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
     }`}>
       <PageHeader
-        badge="Konfigurator Inwestycji"
-        title="Wycena instalacji: kosztorys sprzętu i montażu"
-        description="Wybierz stan nieruchomości, metraż i pożądane moduły automatyki, wideodomofonu oraz monitoringu wideo. Otrzymasz szacunkowy kosztorys ryczałtowy bez ukrytych kosztów."
+        badge="Krótka ankieta"
+        title="Krótka ankieta: dobierzemy zestaw pod Twój dom"
+        description="3 pytania + kontakt (ok. 2 minuty). Bez cen na stronie — po ankiecie oddzwonimy z konkretną propozycją. Odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
         icon={<Calculator className="w-4 h-4 text-[#B87333]" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />

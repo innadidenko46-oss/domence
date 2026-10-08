@@ -4,11 +4,9 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { SystemsComparisonSection } from '../components/SystemsComparisonSection.tsx';
 import { ShellyShowcase } from '../components/ShellyShowcase.tsx';
 import { Layers, CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const SystemsPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`transition-colors duration-300 ${
@@ -34,7 +32,7 @@ export const SystemsPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Światło architektoniczne i inteligentne sceny"
+                  alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami w świetle dziennym"
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
@@ -83,8 +81,8 @@ export const SystemsPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/rack_installation.svg`}
-                  alt="Instalacja modułów Shelly Pro na szynie DIN w rozdzielnicy"
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+                  alt="Szafa serwerowa RACK z okablowaniem sieciowym"
                   loading="lazy"
                   className="w-full h-full object-contain bg-[#18181B] p-4 group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />

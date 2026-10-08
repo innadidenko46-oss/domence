@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Calculator } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const MobileStickyBar: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`fixed bottom-0 inset-x-0 z-40 md:hidden backdrop-blur-xl border-t p-3 shadow-2xl transition-colors duration-200 ${

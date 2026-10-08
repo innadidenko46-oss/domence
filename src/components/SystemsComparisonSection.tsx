@@ -11,13 +11,11 @@ import {
   ArrowRight,
   Info,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
 
 export const SystemsComparisonSection: React.FC = () => {
   const [activeSystemId, setActiveSystemId] = useState<string>('shelly_pro');
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const activeSystem = SYSTEM_COMPARISONS.find((s) => s.id === activeSystemId) || SYSTEM_COMPARISONS[0];
 

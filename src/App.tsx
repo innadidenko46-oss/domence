@@ -1,5 +1,4 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, useTheme } from './context/ThemeContext.tsx';
 import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -20,12 +19,8 @@ import { CalculatorPage } from './pages/CalculatorPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 
 function AppContent() {
-  const { theme } = useTheme();
-
   return (
-    <div className={`min-h-screen font-sans selection:bg-[#B87333] selection:text-white flex flex-col transition-colors duration-300 ${
-      theme === 'day' ? 'bg-[#F9FAFB] text-[#111827]' : 'bg-[#18181B] text-[#F3F4F6]'
-    }`}>
+    <div className="min-h-screen font-sans selection:bg-[#B87333] selection:text-white flex flex-col transition-colors duration-300 bg-[#F9FAFB] text-[#111827]">
       {/* Persistent Global Navigation */}
       <Navbar />
 
@@ -61,11 +56,9 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <HashRouter>
-        <ScrollToTop />
-        <AppContent />
-      </HashRouter>
-    </ThemeProvider>
+    <HashRouter>
+      <ScrollToTop />
+      <AppContent />
+    </HashRouter>
   );
 }

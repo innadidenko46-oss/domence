@@ -4,12 +4,10 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { PackagesSection } from '../components/PackagesSection.tsx';
 import { Package, ShieldCheck, CheckCircle2, ArrowRight, Sparkles, Clock } from 'lucide-react';
 import { PropertyState } from '../types.ts';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const PackagesPage: React.FC = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const handleSelectPackage = (propertyState: PropertyState) => {
     navigate(`/kalkulator?state=${propertyState}`);

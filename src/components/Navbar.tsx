@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Menu, X, ArrowRight, Calculator, Sun, Moon } from 'lucide-react';
+import { Phone, Menu, X, ArrowRight, Calculator } from 'lucide-react';
 import { Logo } from './Logo.tsx';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const isDay = true;
   const location = useLocation();
 
   useEffect(() => {
@@ -44,8 +43,6 @@ export const Navbar: React.FC = () => {
     { label: 'Pakiety', path: '/pakiety' },
     { label: 'FAQ', path: '/faq' },
   ];
-
-  const isDay = theme === 'day';
 
   return (
     <>
@@ -97,32 +94,8 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Desktop Actions + Day/Night Atmosphere Switcher */}
+          {/* Desktop Actions */}
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
-            {/* Ambiance Switcher: Day (Dzień) vs Dreamy Dusk (Zmierzch) */}
-            <button
-              onClick={toggleTheme}
-              className={`px-3 py-1.5 rounded-[2px] border text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 ${
-                isDay
-                  ? 'bg-[#F3F4F6] hover:bg-[#E5E7EB] border-[#D1D5DB] text-[#374151]'
-                  : 'bg-[#27272A] hover:bg-[#3F3F46] border-white/10 text-[#D4D4D8]'
-              }`}
-              title={isDay ? 'Włącz nastrojowy tryb wieczorny (Zmierzch)' : 'Włącz jasny tryb architektoniczny (Dzień)'}
-              aria-label="Przełącz atmosferę dzień / zmierzch"
-            >
-              {isDay ? (
-                <>
-                  <Moon className="w-3.5 h-3.5 text-[#334E68]" />
-                  <span>Zmierzch</span>
-                </>
-              ) : (
-                <>
-                  <Sun className="w-3.5 h-3.5 text-[#B87333]" />
-                  <span>Dzień</span>
-                </>
-              )}
-            </button>
-
             <Link
               to="/kontakt"
               className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 flex items-center gap-1.5 text-xs font-semibold transition-colors px-3 py-1.5 rounded-[2px] border whitespace-nowrap ${
@@ -144,20 +117,8 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Controls: Ambiance Button + Menu Button */}
+          {/* Mobile Right Controls: Menu Button */}
           <div className="flex sm:hidden items-center gap-1.5">
-            <button
-              onClick={toggleTheme}
-              className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border text-xs flex items-center justify-center transition-all ${
-                isDay
-                  ? 'bg-[#F3F4F6] border-[#D1D5DB] text-[#374151]'
-                  : 'bg-[#27272A] border-white/10 text-[#B87333]'
-              }`}
-              aria-label="Przełącz tryb dzień / zmierzch"
-            >
-              {isDay ? <Moon className="w-4 h-4 text-[#334E68]" /> : <Sun className="w-4 h-4 text-[#B87333]" />}
-            </button>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 p-2 rounded-[2px] border ${

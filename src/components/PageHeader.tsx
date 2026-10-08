@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, ChevronRight } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 interface PageHeaderProps {
   badge: string;
@@ -18,8 +17,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   icon,
   image,
 }) => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <header

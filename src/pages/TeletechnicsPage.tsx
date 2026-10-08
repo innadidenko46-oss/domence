@@ -4,11 +4,9 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
 import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
 import { Network, ShieldCheck, ArrowRight, Video, HardDrive } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const TeletechnicsPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`transition-colors duration-300 ${

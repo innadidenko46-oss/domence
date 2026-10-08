@@ -13,13 +13,11 @@ import {
   ArrowRight,
   Layers,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
 
 export const ShellyShowcase: React.FC = () => {
   const [activeCapId, setActiveCapId] = useState<string>(SHELLY_PRO_CAPABILITIES[0].id);
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const activeCap =
     SHELLY_PRO_CAPABILITIES.find((c) => c.id === activeCapId) || SHELLY_PRO_CAPABILITIES[0];

@@ -247,7 +247,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Dwukierunkowe audio: możliwość rozmowy przez kamerę bezpośrednio z poziomu telefonu',
       'Natychmiastowe powiadomienia PUSH ze zdjęciem zdarzenia na smartfon',
     ],
-    image: `${import.meta.env.BASE_URL}images/facade_dome_camera.svg`,
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'hik-tandemvu',
@@ -307,7 +307,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Interkom domowy: rozmowy głosowe między pokojami (np. kuchnia z piętrem)',
       'Zasilanie PoE (jeden cienki przewód sieciowy dostarcza prąd i dane)',
     ],
-    image: `${import.meta.env.BASE_URL}images/shelly_box.svg`,
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
   },
 ];
 
@@ -478,7 +478,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Uzbrojenie stref alarmu i aktywacja analityki sylwetek AI' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
     icon: 'LogOut',
   },
   {
@@ -503,7 +503,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Sun', label: 'Światło Kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
       { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
     ],
-    imageUrl: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
     icon: 'Tv',
   },
   {
@@ -577,7 +577,7 @@ export const SCENARIOS: LifeScenario[] = [
       { icon: 'Moon', label: 'Cokoły Bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
       { icon: 'Thermometer', label: 'Klimat Nocny', detail: 'Rześkie 18.5°C sprzyjające zasypianiu' },
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
     icon: 'Moon',
   },
   {
@@ -1031,7 +1031,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       ],
     },
     icon: 'Search',
-    image: `${import.meta.env.BASE_URL}images/rack_cabinet_clean.svg`,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'ai-colorvu-acusense',
@@ -1050,7 +1050,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Smart Hybrid Light: podświetlenie aktywuje się przy podejściu człowieka',
     ],
     icon: 'Eye',
-    image: `${import.meta.env.BASE_URL}images/hikvision_gate.svg`,
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'ai-deepinviewx',
@@ -1088,7 +1088,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Czujniki obecności Shelly BLU do automatyki oświetlenia',
     ],
     icon: 'Radio',
-    image: `${import.meta.env.BASE_URL}images/facade_dome_camera.svg`,
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'ai-loqed-lock',

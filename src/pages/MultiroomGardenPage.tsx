@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { MultiroomGardenSection } from '../components/MultiroomGardenSection.tsx';
 import { Volume2, ArrowRight, Film, Music2, Tv } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const MultiroomGardenPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`transition-colors duration-300 ${
@@ -18,7 +16,7 @@ export const MultiroomGardenPage: React.FC = () => {
         title="Dźwięk Wielostrefowy Multiroom &amp; Prywatna Sala Kinowa"
         description="Dyskretna technologia służąca Twojemu relaksowi. Muzyka płynąca z bezramkowych głośników sufitowych wpuszczonych w tynk, automatyczne sceny kinowe z zaciemnieniem roletami blackout oraz synchronizacja ze stacją bramową."
         icon={<Volume2 className="w-4 h-4 text-[#B87333]" />}
-        image={`${import.meta.env.BASE_URL}images/living_room_cinema.svg`}
+        image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
       />
 
       {/* Visual Atmosphere Showcase for Audio & Cinema */}
@@ -58,7 +56,7 @@ export const MultiroomGardenPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Minimalistyczny salon rezydencjalny ze sceną kinową"
+                  alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami"
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
@@ -82,8 +80,8 @@ export const MultiroomGardenPage: React.FC = () => {
             }`}>
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/hikvision_gate.svg`}
-                  alt="Wideodomofon i kamera monitoringu przy wejściu na posesję"
+                  src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85"
+                  alt="Dyskretna kamera monitoringu przy wejściu na posesję"
                   loading="lazy"
                   className="w-full h-full object-contain bg-[#18181B] p-4 group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />

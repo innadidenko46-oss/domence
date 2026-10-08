@@ -33,7 +33,7 @@
   html {
     font-family: var(--font-sans);
     letter-spacing: -0.01em;
-    color-scheme: dark light;
+    color-scheme: light;
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 }

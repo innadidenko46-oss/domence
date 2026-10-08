@@ -14,12 +14,10 @@ import {
   HardDrive 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const TeletechnicsSection: React.FC = () => {
   const [expandedServiceId, setExpandedServiceId] = useState<string>('cctv');
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {

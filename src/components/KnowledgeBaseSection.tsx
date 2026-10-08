@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FAQ_ITEMS } from '../data/content.ts';
 import { BookOpen, ChevronDown, ChevronUp, Cpu, HelpCircle, ShieldCheck } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const KnowledgeBaseSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [openIds, setOpenIds] = useState<string[]>(() =>
     FAQ_ITEMS.length > 0 ? [FAQ_ITEMS[0].question] : []
   );
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const categories = [
     { id: 'all', label: 'Wszystkie Zagadnienia' },

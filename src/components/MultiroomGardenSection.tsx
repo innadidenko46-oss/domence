@@ -7,11 +7,9 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const MultiroomGardenSection: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <section id="multimedia-kino" className={`py-24 relative overflow-hidden border-t transition-colors duration-300 ${

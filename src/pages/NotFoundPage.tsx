@@ -2,11 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { FileQuestion } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const NotFoundPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div

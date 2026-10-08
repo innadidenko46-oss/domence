@@ -34,13 +34,11 @@ import {
   Thermometer,
   HardDrive,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
 
 export const ScenariosSection: React.FC = () => {
   const [activeScenarioId, setActiveScenarioId] = useState(SCENARIOS[0].id);
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const activeScenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
 

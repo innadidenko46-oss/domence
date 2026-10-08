@@ -4,15 +4,13 @@ import { PACKAGES } from '../data/content.ts';
 import { Check, Clock, ArrowRight } from 'lucide-react';
 import { PropertyState } from '../types.ts';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 interface PackagesSectionProps {
   onSelectPackage: (type: PropertyState) => void;
 }
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackage }) => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <section id="pakiety" className={`py-24 border-t transition-colors ${

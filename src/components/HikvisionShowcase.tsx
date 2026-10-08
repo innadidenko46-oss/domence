@@ -12,13 +12,11 @@ import {
   Cpu,
   Eye,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 import { Link } from 'react-router-dom';
 
 export const HikvisionShowcase: React.FC = () => {
   const [activeProductId, setActiveProductId] = useState<string>(HIKVISION_PRODUCTS[0].id);
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const activeProduct =
     HIKVISION_PRODUCTS.find((p) => p.id === activeProductId) || HIKVISION_PRODUCTS[0];

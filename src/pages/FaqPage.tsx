@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { KnowledgeBaseSection } from '../components/KnowledgeBaseSection.tsx';
 import { BookOpen, ArrowRight, MessageSquare } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const FaqPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`transition-colors duration-300 ${

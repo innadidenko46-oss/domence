@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ScenariosSection } from '../components/ScenariosSection.tsx';
 import { SlidersHorizontal, ArrowRight, Droplets, LogOut, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const ScenariosPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <div className={`transition-colors duration-300 ${
@@ -58,7 +56,7 @@ export const ScenariosPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Jeden przycisk wyjścia z domu"
+                  alt="Jasne wnętrze domu z automatycznym oświetleniem i sterowaniem przy wyjściu"
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />

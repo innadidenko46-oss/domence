@@ -19,11 +19,9 @@ import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShow
 import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const HomePage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const chapters = [
     {
@@ -61,7 +59,7 @@ export const HomePage: React.FC = () => {
         'Dyskretne nagłośnienie wtopione w architekturę sufitu, zintegrowane ściemnianie światła, rolety blackout i automatyczna cisza podczas dzwonienia wideodomofonu.',
       icon: Volume2,
       badge: 'Multimedia & Atmosfera',
-      image: `${import.meta.env.BASE_URL}images/living_room_cinema.svg`,
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Domowa sala kinowa z nastrojowym oświetleniem i dźwiękiem surround',
     },
     {
@@ -421,6 +419,7 @@ export const HomePage: React.FC = () => {
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
             alt="Nowoczesne wnętrze domu w świetle dziennym"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">

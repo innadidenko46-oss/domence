@@ -2,11 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { WORKFLOW_STEPS } from '../data/content.ts';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const ProcessSection: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   return (
     <section className={`py-20 relative overflow-hidden border-t transition-colors duration-300 ${

@@ -8,11 +8,9 @@ import {
   ShieldCheck,
   Send,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext.tsx';
 
 export const ContactPage: React.FC = () => {
-  const { theme } = useTheme();
-  const isDay = theme === 'day';
+  const isDay = true;
 
   const [formData, setFormData] = useState({
     name: '',
