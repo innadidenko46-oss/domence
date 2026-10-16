@@ -121,8 +121,8 @@ export const Logo: React.FC<LogoProps> = ({
   };
 
   const subtitleClasses = {
-    sm: 'text-[8px] tracking-[0.2em]',
-    md: 'text-[9.5px] tracking-[0.22em]',
+    sm: 'text-[11px] tracking-[0.08em]',
+    md: 'text-[11px] tracking-[0.1em]',
     lg: 'text-xs tracking-[0.25em]',
   };
 
@@ -165,8 +165,8 @@ export const Logo: React.FC<LogoProps> = ({
         {/* Subtitle: AUTOMATYKA DOMU I TELETECHNIKA */}
         {showSubtitle && (
           <span
-            className={`font-sans font-bold uppercase mt-1 leading-none ${
-              isLight ? 'text-[#38BDF8]' : 'text-[#0E384D]'
+            className={`font-sans font-semibold uppercase mt-1 leading-none whitespace-nowrap ${
+              isLight ? 'text-copper-200' : 'text-navy-900'
             } ${subtitleClasses[size]}`}
           >
             AUTOMATYKA DOMU I TELETECHNIKA

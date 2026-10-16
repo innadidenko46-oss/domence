@@ -32,7 +32,7 @@ export const SystemsComparisonSection: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-copper-500/10 border border-copper-500/30 text-copper-600 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <Layers className="w-3.5 h-3.5" />
             <span>Porównanie</span>
           </div>

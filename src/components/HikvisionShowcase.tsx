@@ -48,7 +48,7 @@ export const HikvisionShowcase: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-copper-500/10 text-copper-600 border-copper-500/30">
+            <div className="eyebrow inline-flex items-center gap-2 mb-3">
               <Video className="w-3.5 h-3.5" />
               <span>Najnowsze kamery i domofony Hikvision</span>
             </div>
@@ -93,7 +93,7 @@ export const HikvisionShowcase: React.FC = () => {
                   </div>
                   <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
                     isSelected
-                      ? 'bg-copper-500/15 text-copper-600': 'bg-gray-200 text-gray-600'}`}>
+                      ? 'bg-copper-500/15 text-copper-800': 'bg-gray-200 text-gray-600'}`}>
                     Hikvision
                   </span>
                 </div>
@@ -143,7 +143,7 @@ export const HikvisionShowcase: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-copper-600">
+                    <span className="text-xs font-bold uppercase tracking-wider text-copper-700">
                       System rozpoznawania ludzi i aut, syrena i światło na intruza
                     </span>
                   </div>
@@ -180,7 +180,7 @@ export const HikvisionShowcase: React.FC = () => {
 
                 {/* Footer bar inside card */}
                 <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-gray-200">
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-gray-600">
                     Działa z rejestratorem nagrań w domu (zapis bez abonamentu)
                   </div>
                   <Link

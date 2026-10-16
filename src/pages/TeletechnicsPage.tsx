@@ -114,14 +114,14 @@ export const TeletechnicsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center">
                   <HardDrive className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
                     Nasz standard: rejestrator nagrań w domu
                   </h3>
-                  <span className="text-xs text-copper-600 font-mono font-semibold">Twoje dane u Ciebie</span>
+                  <span className="text-xs text-copper-700 font-mono font-semibold">Twoje dane u Ciebie</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-700">

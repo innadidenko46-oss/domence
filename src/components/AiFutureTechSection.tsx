@@ -26,7 +26,7 @@ export const AiFutureTechSection: React.FC = () => {
     <section id="ai-technologie" className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
-          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3">
+          <div className="eyebrow mb-3">
             Technologie • Hikvision i Shelly
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
@@ -43,11 +43,9 @@ export const AiFutureTechSection: React.FC = () => {
               key={tech.id}
               className="py-8 border-t border-gray-300"
             >
-              <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
-                {getTechIcon(tech.icon)}
-              </div>
-              <h3 className="text-base font-bold text-gray-900 leading-snug">
-                {tech.name}
+              <h3 className="flex items-start gap-2.5 text-base font-bold text-gray-900 leading-snug">
+                <span className="mt-0.5 shrink-0" aria-hidden="true">{getTechIcon(tech.icon)}</span>
+                <span>{tech.name}</span>
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-600">
                 {tech.summary}

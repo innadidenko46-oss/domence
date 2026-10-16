@@ -23,7 +23,7 @@ export const AppsShowcaseSection: React.FC = () => {
     <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
+          <div className="eyebrow mb-3">
             Aplikacje • Telefon
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
@@ -49,7 +49,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
               <Zap className="w-5 h-5 text-copper-600" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-copper-600">
+            <div className="text-xs font-bold uppercase tracking-wider text-copper-700">
               Automatyka domu
             </div>
             <h3 className="mt-1 text-xl font-bold text-gray-900">
@@ -93,7 +93,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
               <Video className="w-5 h-5 text-copper-600" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-copper-600">
+            <div className="text-xs font-bold uppercase tracking-wider text-copper-700">
               Kamery i domofon
             </div>
             <h3 className="mt-1 text-xl font-bold text-gray-900">Hik-Connect</h3>

@@ -52,7 +52,7 @@ export const FaqPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-gray-400 font-mono">Następny krok:</div>
+            <div className="text-xs text-gray-600 font-mono">Następny krok:</div>
             <div className="text-base font-bold text-gray-900">
               Sprawdź, ile mniej więcej kosztuje zestaw do Twojego metrażu
             </div>

@@ -21,54 +21,46 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <header
       aria-label={title}
-      className="relative isolate py-20 border-b overflow-hidden transition-colors duration-300 bg-white border-gray-200 text-gray-900"
+      className="border-b bg-white border-gray-200 text-gray-900"
     >
-      {/* Architectural background photo (decorative) */}
-      <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <img
-          src={
-            image ||
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80'
-          }
-          alt=""
-          loading="lazy"
-          className="w-full h-full object-cover object-center filter transition-opacity duration-300 opacity-10 brightness-110 contrast-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="lg:col-span-7">
+          {/* Breadcrumb */}
+          <nav aria-label="Nawigacja" className="flex items-center gap-2 text-xs mb-6 text-gray-600">
+            <Link
+              to="/"
+              className="flex items-center gap-1.5 min-h-11 hover:text-copper-700 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500"
+            >
+              <Home className="w-4 h-4" />
+              <span>Strona główna</span>
+            </Link>
+            <ChevronRight className="w-4 h-4 opacity-50" aria-hidden="true" />
+            <span className="eyebrow inline-flex items-center gap-2" aria-current="page">
+              {icon}
+              {badge}
+            </span>
+          </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Nawigacja" className="flex items-center gap-2 text-xs mb-6 text-gray-500">
-          <Link
-            to="/"
-            className="flex items-center gap-1.5 hover:text-copper-700 transition-colors"
-          >
-            <Home className="w-4 h-4" />
-            <span>Strona Główna</span>
-          </Link>
-          <ChevronRight className="w-4 h-4 opacity-50" />
-          <span className="text-copper-600 font-medium font-mono">{badge}</span>
-        </nav>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.015em] max-w-3xl leading-[1.1] text-gray-900">
+            {title}
+          </h1>
 
-        {/* Minimalist 2px Badge */}
-        <div className="flex items-center gap-2.5 mb-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[2px] bg-copper-500/15 border border-copper-500/30 text-copper-600 text-xs font-mono font-semibold uppercase tracking-wider backdrop-blur-md">
-            {icon}
-            <span>{badge}</span>
-          </div>
+          <p className="mt-4 text-base sm:text-lg max-w-[60ch] leading-relaxed text-gray-600">
+            {description}
+          </p>
         </div>
 
-        {/* Title */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight max-w-4xl leading-[1.2] text-gray-900">
-          {title}
-        </h1>
-
-        {/* Description */}
-        <p className="mt-4 text-base sm:text-lg max-w-3xl leading-[1.7] font-normal text-gray-600">
-          {description}
-        </p>
+        {image && (
+          <div className="hidden lg:block lg:col-span-5">
+            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-lg aspect-[4/3]">
+              <img
+                src={image}
+                alt=""
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

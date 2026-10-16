@@ -43,7 +43,7 @@ export const KnowledgeBaseSection: React.FC = () => {
 
         {/* Left: header, search and filters stay in view while reading */}
         <div className="lg:col-span-4 lg:sticky lg:top-28">
-          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3">
+          <div className="eyebrow mb-3">
             Baza wiedzy
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
@@ -97,7 +97,7 @@ export const KnowledgeBaseSection: React.FC = () => {
 
         {/* Right: ruled question list */}
         <div className="lg:col-span-8">
-          <p className="text-xs text-gray-500 mb-3 tabular-nums" aria-live="polite">
+          <p className="text-xs text-gray-600 mb-3 tabular-nums" aria-live="polite">
             {filteredItems.length === 1 ? '1 pytanie' : `Pytań: ${filteredItems.length}`}
           </p>
 
@@ -148,12 +148,12 @@ export const KnowledgeBaseSection: React.FC = () => {
                           role="region"
                           className="overflow-hidden"
                         >
-                          <div className="pb-7 grid gap-4 max-w-prose">
+                          <div className="pb-7 grid gap-4 max-w-[34rem]">
                             <p className="text-base leading-relaxed text-gray-800">
                               {item.simpleAnswer}
                             </p>
                             <div className="pl-4 border-l-2 border-copper-500/50">
-                              <div className="text-xs font-semibold text-gray-500 mb-1">Więcej szczegółów</div>
+                              <div className="text-xs font-semibold text-gray-600 mb-1">Więcej szczegółów</div>
                               <p className="text-sm leading-relaxed text-gray-600">
                                 {item.technicalDetails}
                               </p>

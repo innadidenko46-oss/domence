@@ -16,7 +16,7 @@ export const MultiroomGardenSection: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[2px] bg-copper-500/15 border border-copper-500/30 text-copper-600 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+          <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <Volume2 className="w-4 h-4" />
             <span>Kino w salonie</span>
           </div>
@@ -44,14 +44,14 @@ export const MultiroomGardenSection: React.FC = () => {
             <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
                   <Music2 className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.audio.title}
                   </h3>
-                  <div className="text-xs text-copper-600 font-mono mt-0.5">Twoje głośniki • Sceny • Dzwonek</div>
+                  <div className="text-xs text-copper-700 font-mono mt-0.5">Twoje głośniki • Sceny • Dzwonek</div>
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ export const MultiroomGardenSection: React.FC = () => {
               </p>
 
               <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold text-copper-600 font-mono text-xs uppercase block mb-1">W praktyce:</span>
+                <span className="font-bold text-copper-700 font-mono text-xs uppercase block mb-1">W praktyce:</span>
                 {HOME_MULTIMEDIA.audio.humanNote}
               </div>
 
@@ -75,10 +75,10 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-              <span className="text-xs text-gray-400 font-mono">Bez montażu audio</span>
+              <span className="text-xs text-gray-600 font-mono">Bez montażu audio</span>
               <Link
                 to="/kalkulator"
-                className="text-xs font-mono font-bold text-copper-600 hover:text-copper-800 transition-colors"
+                className="text-xs font-mono font-bold text-copper-700 hover:text-copper-800 transition-colors"
               >
                 Dobierz zestaw (2 min)
               </Link>
@@ -100,14 +100,14 @@ export const MultiroomGardenSection: React.FC = () => {
             <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 bg-copper-500/20 text-copper-600">
+                <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 bg-copper-500/20 text-copper-800">
                   <Film className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className="text-xs font-mono mt-0.5 text-copper-600">Dolby Atmos • Rolety Blackout • HDMI eARC</div>
+                  <div className="text-xs font-mono mt-0.5 text-copper-700">Dolby Atmos • Rolety Blackout • HDMI eARC</div>
                 </div>
               </div>
 
@@ -116,7 +116,7 @@ export const MultiroomGardenSection: React.FC = () => {
               </p>
 
               <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold font-mono text-xs uppercase block mb-1 text-copper-600">W praktyce:</span>
+                <span className="font-bold font-mono text-xs uppercase block mb-1 text-copper-700">W praktyce:</span>
                 {HOME_MULTIMEDIA.cinema.humanNote}
               </div>
 
@@ -131,10 +131,10 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-              <span className="text-xs text-gray-400 font-mono">Sceny do filmu</span>
+              <span className="text-xs text-gray-600 font-mono">Sceny do filmu</span>
               <Link
                 to="/kalkulator"
-                className="text-xs font-mono font-bold transition-colors text-copper-600 hover:text-copper-800"
+                className="text-xs font-mono font-bold transition-colors text-copper-700 hover:text-copper-800"
               >
                 Dobierz zestaw (2 min)
               </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, ShieldCheck } from 'lucide-react';
+import { Eye, Check } from 'lucide-react';
 
 interface AtmosphereScene {
   id: 'day' | 'dusk' | 'night';
@@ -15,7 +15,7 @@ const SCENES: AtmosphereScene[] = [
   {
     id: 'day',
     time: '12:00 • Południe',
-    name: 'Naturalne Światło Dzienne',
+    name: 'Naturalne światło dzienne',
     title: 'Światło, które wspiera koncentrację i chroni przed przegrzaniem',
     description:
       'Czujniki nasłonecznienia na dachu sterują kątem lameli żaluzji fasadowych. Wnętrze zostaje jasne, a słońce nie nagrzewa salonu.',
@@ -30,7 +30,7 @@ const SCENES: AtmosphereScene[] = [
   {
     id: 'dusk',
     time: '19:45 • Złota Godzina',
-    name: 'Ciepły Zmierzch',
+    name: 'Ciepły zmierzch',
     title: 'Spokojne przejście w tryb wypoczynku i prywatności',
     description:
       'Gdy słońce zachodzi, sufitowe światło ustępuje miejsca liniom LED i lampom stołowym. Rolety opuszczają się i dają pełną prywatność.',
@@ -45,7 +45,7 @@ const SCENES: AtmosphereScene[] = [
   {
     id: 'night',
     time: '23:30 • Cisza Nocna',
-    name: 'Spokojna Noc',
+    name: 'Spokojna noc',
     title: 'Orientacja w nocy bez oślepiania domowników',
     description:
       'Wstajesz w nocy do kuchni lub pokoju dziecka? Czujniki włączają tylko ciche światło przy podłodze. Bez ostrego błysku.',
@@ -64,7 +64,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
     <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] text-xs font-semibold uppercase tracking-wider mb-3 border bg-copper-500/10 text-copper-800 border-copper-500/30">
+          <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <Eye className="w-3.5 h-3.5" />
             <span>Światło i rytm dnia</span>
           </div>
@@ -90,7 +90,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 loading="lazy"
               />
               <div className="p-6 flex flex-col flex-1">
-                <div className="text-xs font-mono text-copper-600 font-semibold mb-1">
+                <div className="text-xs font-mono text-copper-700 font-semibold mb-1">
                   {scene.time}
                 </div>
                 <div className="text-sm font-bold text-gray-900">{scene.name}</div>
@@ -103,8 +103,8 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 <ul className="mt-4 space-y-2">
                   {scene.features.map((feat, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-[2px] bg-copper-500/15 text-copper-600 flex items-center justify-center shrink-0 mt-0.5">
-                        <ShieldCheck className="w-3.5 h-3.5" />
+                      <span className="w-5 h-5 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5" />
                       </span>
                       <span>{feat}</span>
                     </li>

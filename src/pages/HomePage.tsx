@@ -148,15 +148,15 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block lg:col-span-5 hero-media">
-            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-xl aspect-[4/5]">
+          <div className="lg:col-span-5 hero-media">
+            <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5]">
               <img
                 src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
                 alt="Dłoń z telefonem pokazującym obraz z kamery przy furtce, obok drzwi wejściowych panel sterowania domem"
                 width={1136}
                 height={1408}
                 fetchPriority="high"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[35%_55%] lg:object-center"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ export const HomePage: React.FC = () => {
                       <h3 className="font-display text-xl font-bold transition-colors text-gray-900 group-hover:text-copper-800">
                         {ch.title}
                       </h3>
-                      <div className="text-xs font-semibold mt-1 text-copper-600">
+                      <div className="text-xs font-semibold mt-1 text-copper-700">
                         {ch.subtitle}
                       </div>
 
@@ -215,7 +215,7 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   <div className="px-6 pb-6 pt-2">
-                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-copper-600 group-hover:text-copper-800">
+                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-copper-700 group-hover:text-copper-800">
                       <span>Zobacz szczegóły</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>

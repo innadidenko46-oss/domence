@@ -23,7 +23,7 @@ export const TopSellingScenariosSection: React.FC = () => {
     <section id="top-scenariusze" className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
+          <div className="eyebrow mb-3">
             Scenariusze • Shelly i Hikvision
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
@@ -50,10 +50,10 @@ export const TopSellingScenariosSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
               </div>
               <div className="p-6 flex flex-col flex-1">
-              <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
-                {getScenarioIcon(sc.icon)}
-              </div>
-              <h3 className="text-lg font-bold text-gray-900">{sc.title}</h3>
+              <h3 className="flex items-start gap-2.5 text-lg font-bold text-gray-900">
+                <span className="mt-1 shrink-0" aria-hidden="true">{getScenarioIcon(sc.icon)}</span>
+                {sc.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-600">
                 {sc.description}
               </p>

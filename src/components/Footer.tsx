@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
               <Link to="/" aria-label="DOMENCE Strona Główna">
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
-              <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+              <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-sm">
                 Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
                 Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
               </p>
@@ -190,7 +190,7 @@ export const Footer: React.FC = () => {
               onClick={() => setActiveModal('regulamin')}
               className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
-              Regulamin Świadczenia Usług
+              Regulamin świadczenia usług
             </button>
             <button
               onClick={openCookiePreferences}
@@ -247,7 +247,7 @@ export const Footer: React.FC = () => {
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-copper-600" />
-                  <span>Regulamin Świadczenia Usług Montażowych i Projektowych</span>
+                  <span>Regulamin świadczenia usług montażowych i projektowych</span>
                 </h3>
                 <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>

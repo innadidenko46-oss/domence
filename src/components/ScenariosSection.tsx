@@ -110,7 +110,7 @@ export const ScenariosSection: React.FC = () => {
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-copper-600 mb-3 font-semibold">
+          <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Przykłady z życia</span>
           </div>
@@ -137,7 +137,7 @@ export const ScenariosSection: React.FC = () => {
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={`text-xs font-mono font-bold ${
-                      isActive ? ('text-copper-800') : 'text-gray-400'
+                      isActive ? ('text-copper-800') : 'text-gray-600'
                     }`}
                   >
                     {sc.number}
@@ -240,14 +240,14 @@ export const ScenariosSection: React.FC = () => {
                             key={sIdx}
                             className="p-3 rounded-[2px] border flex items-start gap-2.5 text-sm bg-gray-50 border-gray-200 text-gray-700"
                           >
-                            <div className="w-7 h-7 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0">
+                            <div className="w-7 h-7 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
                             </div>
                             <div>
                               <div className="font-bold text-gray-900">
                                 {step.label}
                               </div>
-                              <div className="text-xs text-gray-400 mt-0.5 leading-snug">
+                              <div className="text-xs text-gray-600 mt-0.5 leading-snug">
                                 {step.detail}
                               </div>
                             </div>
@@ -269,7 +269,7 @@ export const ScenariosSection: React.FC = () => {
                   <div className="mt-5 space-y-2">
                     {activeScenario.detailPoints.map((point, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3" />
                         </div>
                         <span className="text-xs sm:text-sm font-medium text-gray-700">

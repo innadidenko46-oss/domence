@@ -114,7 +114,7 @@ export const SystemsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-600 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
                   Stan surowy / nowa rozdzielnica
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -136,7 +136,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/kalkulator"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-600 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -145,7 +145,7 @@ export const SystemsPage: React.FC = () => {
 
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-600 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
                   System przewodowy
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -167,7 +167,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/kalkulator"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-600 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -176,7 +176,7 @@ export const SystemsPage: React.FC = () => {
 
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-600 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
                   Gotowe mieszkanie / bez kucia
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -198,7 +198,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/kalkulator"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-600 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />

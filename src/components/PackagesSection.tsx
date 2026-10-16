@@ -32,7 +32,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-copper-600 mb-2">
+          <div className="eyebrow inline-flex items-center gap-2 mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
             <span>Ceny i gwarancja</span>
           </div>
@@ -83,7 +83,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                     <span
                       className={`text-xs font-mono font-semibold uppercase px-2.5 py-0.5 rounded-[2px] border ${
                         isBestseller
-                          ? 'bg-copper-500/15 text-copper-600 border-copper-500/30'
+                          ? 'bg-copper-500/15 text-copper-800 border-copper-500/30'
                           : 'bg-gray-100 text-gray-600 border-gray-200'}`}
                     >
                       {pkg.categoryBadge}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Menu, X, ArrowRight, ClipboardList } from 'lucide-react';
+import { MessageSquare, Menu, X, ArrowRight, ClipboardList } from 'lucide-react';
 import { Logo } from './Logo.tsx';
 
 export const Navbar: React.FC = () => {
@@ -35,7 +35,8 @@ export const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // On the home page the hero already shows the same CTA; reveal the header one after scrolling past it
+  // On the home page the hero already shows the main CTA: until the visitor scrolls past it,
+  // the header offers the secondary contact link in that slot instead
   const hideHeaderCta = location.pathname === '/' && !pastHero;
 
   // All sections laid out on a SINGLE level (no dropdowns or hidden submenus)
@@ -89,17 +90,15 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto xl:ml-0">
             <Link
               to="/kontakt"
-              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex xl:hidden 2xl:flex items-center gap-2 min-h-11 text-sm font-semibold transition-colors px-4 rounded-[2px] border whitespace-nowrap bg-white hover:bg-gray-100 border-gray-300 text-gray-800"
+              className={`${hideHeaderCta ? 'flex' : 'flex xl:hidden 2xl:flex'} focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 items-center gap-2 min-h-11 text-sm font-semibold transition-colors px-4 rounded-[2px] border whitespace-nowrap bg-white hover:bg-gray-100 border-gray-300 text-gray-800`}
             >
-              <Phone className="w-3.5 h-3.5 text-copper-600" />
+              <MessageSquare className="w-3.5 h-3.5 text-copper-600" />
               <span>Zapytaj inżyniera</span>
             </Link>
 
             <Link
               to="/kalkulator"
-              aria-hidden={hideHeaderCta}
-              tabIndex={hideHeaderCta ? -1 : undefined}
-              className={`${hideHeaderCta ? 'opacity-0 pointer-events-none translate-y-1' : 'opacity-100'} transition-[opacity,transform,background-color] duration-300 min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm border border-copper-400/40 active:scale-[0.98] flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2`}
+              className={`${hideHeaderCta ? 'hidden' : 'flex animate-[rise-in_0.3s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none'} transition-colors min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm border border-copper-400/40 active:scale-[0.98] items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2`}
             >
               <ClipboardList className="w-4 h-4" />
               <span>Dobierz zestaw (2 min)</span>
@@ -167,7 +166,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-sm font-semibold bg-gray-100 border-gray-300 text-gray-700"
                 >
-                  <Phone className="w-3.5 h-3.5 text-copper-600" />
+                  <MessageSquare className="w-3.5 h-3.5 text-copper-600" />
                   <span>Zapytaj inżyniera</span>
                 </Link>
               </div>

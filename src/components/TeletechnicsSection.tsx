@@ -41,7 +41,7 @@ export const TeletechnicsSection: React.FC = () => {
         
         {/* Chapter Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[2px] text-xs font-mono font-bold uppercase tracking-wider mb-3 bg-copper-500/15 text-copper-600 border border-copper-500/30">
+          <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <Network className="w-4 h-4" />
             <span>Kamery i internet w domu</span>
           </div>
@@ -81,7 +81,7 @@ export const TeletechnicsSection: React.FC = () => {
                       <h3 className="text-lg sm:text-xl font-bold leading-snug text-gray-900">
                         {service.title}
                       </h3>
-                      <p className="text-xs font-mono font-medium mt-1 text-copper-600">
+                      <p className="text-xs font-mono font-medium mt-1 text-copper-700">
                         {service.subtitle}
                       </p>
                     </div>
@@ -98,7 +98,7 @@ export const TeletechnicsSection: React.FC = () => {
                 <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
                   <div className="w-2 h-2 rounded-full bg-copper-600 mt-1.5 shrink-0" />
                   <div>
-                    <span className="font-bold block mb-1 text-copper-600 font-mono text-xs uppercase">
+                    <span className="font-bold block mb-1 text-copper-700 font-mono text-xs uppercase">
                       W praktyce:
                     </span>
                     <span className="leading-[1.65]">{service.humanExplanation}</span>
@@ -158,7 +158,7 @@ export const TeletechnicsSection: React.FC = () => {
         <div className="mt-12 rounded-[2px] border overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_240px] bg-white border-gray-200 shadow-sm">
           <div className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
                 <Server className="w-6 h-6" />
               </div>
               <div>

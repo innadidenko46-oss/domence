@@ -10,6 +10,12 @@ interface CookiePreferences {
 
 export const CookieBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  // Lets the mobile CTA bar step aside while the banner is on screen
+  useEffect(() => {
+    document.documentElement.toggleAttribute('data-cookie-open', isVisible);
+    return () => document.documentElement.removeAttribute('data-cookie-open');
+  }, [isVisible]);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
@@ -107,7 +113,7 @@ export const CookieBanner: React.FC = () => {
             transition={{ duration: 0.3 }}
             role="region"
             aria-label="Zgoda na pliki cookies"
-            className="fixed bottom-[76px] md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-2xl z-50"
+            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-2xl z-50"
           >
             <div className="bg-navy-800/95 backdrop-blur-xl border border-white/15 rounded-[2px] px-4 py-3 shadow-2xl shadow-navy-950/60 text-gray-200 flex flex-col sm:flex-row sm:items-center gap-3">
               <p className="text-xs text-gray-300 leading-relaxed flex-1">

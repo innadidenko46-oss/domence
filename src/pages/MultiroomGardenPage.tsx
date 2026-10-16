@@ -87,14 +87,14 @@ export const MultiroomGardenPage: React.FC = () => {
           <div className="grid grid-cols-1 gap-8 max-w-3xl">
             <div className="p-7 rounded-[2px] border shadow-sm bg-white border-gray-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center">
                   <Film className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
                     „Seans” — jeden przycisk
                   </h3>
-                  <span className="text-xs text-copper-600 font-mono font-semibold">Pełna koordynacja salonu</span>
+                  <span className="text-xs text-copper-700 font-mono font-semibold">Pełna koordynacja salonu</span>
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-4 text-gray-600">
@@ -121,14 +121,14 @@ export const MultiroomGardenPage: React.FC = () => {
           <div className="mt-8 p-8 rounded-[2px] border shadow-sm bg-white border-gray-200">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-gray-200">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
                   <Tv className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
                     Sceny kinowe — ustawiamy od początku do końca
                   </h3>
-                  <div className="text-xs text-copper-600 font-mono mt-0.5">
+                  <div className="text-xs text-copper-700 font-mono mt-0.5">
                     Automatyka rolet blackout • Sceny nastrojowe • Jeden przycisk
                   </div>
                 </div>
