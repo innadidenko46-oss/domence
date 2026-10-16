@@ -1,6 +1,9 @@
 # DOMENCE website: project rules
 
-A marketing site in Polish for an installer of smart home systems, IP cameras and video intercoms. It is built with React, Vite, Tailwind v4 and HashRouter, and deployed to GitHub Pages from `main`.
+A marketing site in Polish for an installer of smart home systems, IP cameras and video intercoms. It is built with React, Vite, Tailwind v4 and React Router (`BrowserRouter`, basename `/domence`), and deployed to GitHub Pages from `main`.
+
+- **Adding a page:** add the route in `src/App.tsx` **and** in `scripts/spa-routes.mjs` (its title and description). The build script writes `dist/<route>/index.html`, `404.html`, `sitemap.xml` and `robots.txt`, so each page answers with 200 and has its own meta.
+- **Old `#/` links** are rewritten to normal paths in `src/main.tsx`.
 
 ## Who the site is for
 

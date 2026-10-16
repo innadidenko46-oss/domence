@@ -4,7 +4,6 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { SystemsComparisonSection } from '../components/SystemsComparisonSection.tsx';
 import { ShellyShowcase } from '../components/ShellyShowcase.tsx';
 import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { Layers, CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export const SystemsPage: React.FC = () => {
@@ -19,94 +18,8 @@ export const SystemsPage: React.FC = () => {
         image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
       />
 
-      {/* Visual Atmosphere Showcase for Lighting & Systems */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr] gap-6">
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Nowoczesny dom jednorodzinny z dużymi przeszkleniami w świetle dziennym"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Ciepłe światło jak przy świecach
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Miękkie światło wieczorem
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Ukryte listwy LED w suficie dają ciepłe światło, które nie razi w oczy.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
-                  alt="Nowoczesne włączniki i detale wykończenia jasnego wnętrza"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Jeden przycisk na ścianie
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Jeden panel zamiast wielu włączników
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Zamiast 6 klawiszy obok siebie masz jeden panel: światło, temperatura i rolety w jednym miejscu.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Szafa ze sprzętem sieciowym i uporządkowanymi kablami"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Szafka ze sprzętem
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Działa po kablu, także bez internetu
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Moduły w rozdzielnicy łączą się kablem, więc światło i rolety działają nawet, gdy padnie internet.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Systems Comparison Matrix Component */}
-      <SystemsComparisonSection />
-
-      {/* Deep Dive: Full Capabilities of Shelly System */}
-      <ShellyShowcase />
-
-      {/* How the light changes through the day, and the two phone apps */}
-      <LightingAtmosphereShowcase />
-      <AppsShowcaseSection />
-
-      {/* Detailed Architectural Comparison Guidance */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
+      {/* The first decision: modules in the switchboard or behind switches */}
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
@@ -118,7 +31,7 @@ export const SystemsPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
+            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Stan surowy / nowa rozdzielnica
@@ -149,7 +62,7 @@ export const SystemsPage: React.FC = () => {
               </Link>
             </div>
 
-            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
+            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   System przewodowy
@@ -180,7 +93,7 @@ export const SystemsPage: React.FC = () => {
               </Link>
             </div>
 
-            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
+            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Gotowe mieszkanie / bez kucia
@@ -226,6 +139,16 @@ export const SystemsPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Main Systems Comparison Matrix Component */}
+      <SystemsComparisonSection />
+
+      {/* Deep Dive: Full Capabilities of Shelly System */}
+      <ShellyShowcase />
+
+      {/* How the light changes through the day */}
+      <LightingAtmosphereShowcase />
+
 
       {/* Next Area Banner */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
