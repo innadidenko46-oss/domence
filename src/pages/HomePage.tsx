@@ -4,6 +4,9 @@ import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone, MapPin } from 'luci
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
 import { FAQ_ITEMS } from '../data/content.ts';
+import { OfflineDemo } from '../components/OfflineDemo.tsx';
+import { BrandArcs } from '../components/BrandArcs.tsx';
+import { Reveal } from '../components/Reveal.tsx';
 import { SITE, telHref } from '../config/site.ts';
 
 export const HomePage: React.FC = () => {
@@ -130,7 +133,8 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 hero-media">
+          <div className="lg:col-span-5 hero-media relative">
+            <BrandArcs className="hidden lg:block absolute right-0 bottom-0 translate-x-[calc(100%-1rem)] translate-y-[calc(100%-1rem)] w-36 h-36 pointer-events-none" />
             <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5]">
               <img
                 src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
@@ -176,7 +180,7 @@ export const HomePage: React.FC = () => {
                       <img
                         src={ch.image}
                         alt={ch.imageAlt}
-                        className="w-full h-full object-cover object-center duration-700 filter brightness-85 group-hover:brightness-100"
+                        className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                         loading="lazy"
                       />
                       
@@ -199,7 +203,7 @@ export const HomePage: React.FC = () => {
                   <div className="px-6 pb-6 pt-2">
                     <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-amber-700 group-hover:text-amber-800">
                       <span>{ch.cta}</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" />
                     </div>
                   </div>
                 </Link>
@@ -214,33 +218,10 @@ export const HomePage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Photo mosaic: one tall image, two stacked */}
-          <div className="order-2 lg:order-1 lg:col-span-6 grid grid-cols-2 grid-rows-2 gap-3 h-80 sm:h-[28rem] lg:h-[34rem]">
-            <div className="row-span-2 rounded-[2px] overflow-hidden shadow-lg">
-              <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85"
-                alt="Szafa serwerowa z rejestratorem — nagrania zostają w domu"
-                loading="lazy"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="rounded-[2px] overflow-hidden shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85"
-                alt="Bezpieczny dom o zmierzchu z włączonym oświetleniem"
-                loading="lazy"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="rounded-[2px] overflow-hidden shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=85"
-                alt="Czysta łazienka po montażu bez kurzu i kucia"
-                loading="lazy"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </div>
+          {/* Try it: switch the internet off and see what keeps working */}
+          <Reveal className="order-2 lg:order-1 lg:col-span-6">
+            <OfflineDemo />
+          </Reveal>
 
           <div className="order-1 lg:order-2 lg:col-span-6">
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
@@ -307,7 +288,7 @@ export const HomePage: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+          <Reveal className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <h3 className="font-display text-lg font-bold text-gray-900">Najlepiej pasujemy, jeśli:</h3>
               <ul className="mt-5 space-y-4">
@@ -345,7 +326,7 @@ export const HomePage: React.FC = () => {
                 ))}
               </ol>
             </div>
-          </div>
+          </Reveal>
 
           <p className="mt-12 pt-6 border-t border-gray-300 text-sm leading-relaxed text-gray-600 max-w-2xl">
             Dopiero zbierasz informacje? Zajrzyj do{' '}
@@ -373,7 +354,8 @@ export const HomePage: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <dl className="lg:col-span-8 border-y border-gray-300 divide-y divide-gray-300">
+          <Reveal className="lg:col-span-8">
+          <dl className="border-y border-gray-300 divide-y divide-gray-300">
             {FAQ_ITEMS.slice(0, 3).map((item) => (
               <div key={item.question} className="py-6">
                 <dt className="font-display text-lg font-bold text-gray-900">{item.question}</dt>
@@ -381,6 +363,7 @@ export const HomePage: React.FC = () => {
               </div>
             ))}
           </dl>
+          </Reveal>
         </div>
       </section>
 
