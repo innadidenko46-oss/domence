@@ -61,7 +61,7 @@ const AREA_OPTIONS: { value: AreaRange; short: string }[] = [
 
 const MODULE_GROUPS: { label: string; categories: string[] }[] = [
   { label: 'Bezpieczeństwo domu', categories: ['safety'] },
-  { label: 'Kamery, alarm i sieć', categories: ['teletechnics'] },
+  { label: 'Kamery i sieć', categories: ['teletechnics'] },
   { label: 'Wejście i brama', categories: ['access'] },
   { label: 'Komfort na co dzień', categories: ['comfort'] },
   { label: 'Prąd i energia', categories: ['power', 'energy'] },

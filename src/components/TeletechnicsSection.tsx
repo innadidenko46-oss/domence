@@ -163,10 +163,10 @@ export const TeletechnicsSection: React.FC = () => {
               </div>
               <div>
                 <div className="font-bold text-base text-gray-900">
-                  Szafka na sprzęt z dokumentacją i schematami
+                  Szafka na sprzęt z uporządkowanymi kablami
                 </div>
                 <div className="text-sm mt-1 leading-relaxed text-gray-500">
-                  Wszystkie kable opisujemy i sprawdzamy miernikiem. Dostajesz schematy.
+                  Wszystkie kable opisujemy i sprawdzamy miernikiem.
                 </div>
               </div>
             </div>

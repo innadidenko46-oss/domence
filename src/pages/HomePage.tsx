@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone } from 'lucide-react';
+import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone, MapPin } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
 import { FAQ_ITEMS } from '../data/content.ts';
@@ -120,8 +120,8 @@ export const HomePage: React.FC = () => {
                 <span>Bez abonamentu</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0" />
-                <span>Bezpieczna instalacja</span>
+                <MapPin className="w-4 h-4 text-copper-600 shrink-0" aria-hidden="true" />
+                <span>Warszawa i okolice</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0" />
@@ -259,8 +259,8 @@ export const HomePage: React.FC = () => {
                 },
                 {
                   icon: Cpu,
-                  title: 'Porządna rozdzielnica i ochrona sprzętu',
-                  text: 'Każdy bezpiecznik ma jasny opis i schemat. Ograniczniki przepięć chronią pompę ciepła, sprzęt kuchenny, telewizory i komputery przed burzą.',
+                  title: 'Porządek w rozdzielnicy',
+                  text: 'Moduły montujemy w rozdzielnicy starannie, a każdy obwód ma czytelny opis. Po latach każdy elektryk od razu wie, co jest czym.',
                 },
                 {
                   icon: Wrench,
@@ -297,8 +297,68 @@ export const HomePage: React.FC = () => {
       {/* 5-Step Process */}
       <ProcessSection />
 
-      {/* FAQ teaser: the three questions people ask first */}
+      {/* Who we work with and what you get: sets expectations so decided buyers self-select */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <div className="eyebrow mb-3">Czy to dla Ciebie?</div>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+              Najlepiej pomożemy, gdy wiesz, że chcesz mądry dom
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            <div>
+              <h3 className="font-display text-lg font-bold text-gray-900">Najlepiej pasujemy, jeśli:</h3>
+              <ul className="mt-5 space-y-4">
+                {[
+                  'Budujesz dom albo remontujesz mieszkanie w Warszawie i okolicach.',
+                  'Chcesz, żeby światło, rolety, ogrzewanie i kamery działały razem — i bez internetu.',
+                  'Planujesz montaż w najbliższych miesiącach.',
+                  'Wolisz jedną firmę od całości niż kilku wykonawców.',
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-base leading-relaxed text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-copper-600 shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:border-l lg:border-gray-300 lg:pl-16">
+              <h3 className="font-display text-lg font-bold text-gray-900">Co dostajesz:</h3>
+              <ol className="mt-5 space-y-4">
+                {[
+                  ['Bezpłatna rozmowa i sprawdzenie domu', 'Przyjeżdżamy, oglądamy instalację i słuchamy, czego potrzebujesz.'],
+                  ['Plan i cena na piśmie', 'Wiesz, co i za ile montujemy, zanim zaczniemy.'],
+                  ['Czysty montaż', 'Bez kurzu, z zabezpieczeniem podłóg i sprzątaniem po sobie.'],
+                  ['Nauka obsługi dla domowników', 'Każdy w domu wie, jak zapalić światło, otworzyć furtkę i podejrzeć kamery.'],
+                  ['Bezpłatna konfiguracja', 'Ustawiamy sceny i aplikacje pod Twój dom.'],
+                ].map(([title, text], i) => (
+                  <li key={title} className="grid grid-cols-[auto_1fr] gap-x-4">
+                    <span className="font-display text-sm font-semibold tabular-nums text-copper-700 pt-0.5">0{i + 1}</span>
+                    <div>
+                      <div className="text-base font-bold text-gray-900">{title}</div>
+                      <p className="mt-1 text-sm leading-relaxed text-gray-600">{text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <p className="mt-12 pt-6 border-t border-gray-300 text-sm leading-relaxed text-gray-600 max-w-2xl">
+            Dopiero zbierasz informacje? Zajrzyj do{' '}
+            <Link to="/faq" className="font-semibold text-copper-700 underline underline-offset-2 hover:text-copper-800">
+              pytań i odpowiedzi
+            </Link>
+            {' '}— odezwij się, gdy będziesz gotowy na rozmowę o swoim domu.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ teaser: the three questions people ask first */}
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-3">Najczęstsze pytania</div>

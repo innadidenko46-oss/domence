@@ -6,7 +6,7 @@ export const SITE = {
   // Displayed as written, dialled as digits only, e.g. '+48 601 234 567'
   phone: '',
   engineer: {
-    name: '',
+    name: 'Yevhen Mukha',
     role: 'Inżynier prowadzący',
     // Path under public/, e.g. 'images/inzynier.jpg'
     photo: '',

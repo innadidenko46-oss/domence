@@ -44,10 +44,10 @@ export const PackagesPage: React.FC = () => {
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold mb-2 text-gray-900">
-                  Projekt wykonawczy
+                  Plan na piśmie
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Rysunek instalacji i schemat rozdzielnicy.
+                  Lista urządzeń i zakres prac, zanim zaczniemy.
                 </p>
               </div>
 
@@ -68,10 +68,10 @@ export const PackagesPage: React.FC = () => {
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold mb-2 text-gray-900">
-                  Pomiary odbiorowe
+                  Nauka obsługi i konfiguracja
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Sprawdzamy instalację miernikami i dajemy protokół podpisany przez inżyniera.
+                  Po montażu uczymy domowników obsługi i bezpłatnie konfigurujemy system.
                 </p>
               </div>
 

@@ -8,7 +8,7 @@ const OUR_WAY: string[] = [
   'Brak abonamentu za zapis i podgląd — nagrania zostają w domu',
   'Montaż z odciągiem pyłu, bez kucia na gotowo',
   'Pisemna wycena przed startem — wiesz, za co płacisz',
-  'Dokumentacja i protokoły pomiarów po montażu',
+  'Po montażu: nauka obsługi dla domowników i bezpłatna konfiguracja',
   'Gwarancja 24 miesiące + opieka po montażu',
   'Jeden kontakt do człowieka, nie infolinia',
 ];
@@ -18,7 +18,7 @@ const ELSEWHERE: string[] = [
   'Podgląd i zapis często wymagają płatnej subskrypcji',
   'Montaż bywa z kuciem i kurzem w gotowym mieszkaniu',
   'Cena dopisywana w trakcie, bez pełnej wyceny na piśmie',
-  'Po montażu brak schematów i protokołów pomiarów',
+  'Po montażu zostajesz sam z aplikacją',
   'Krótka gwarancja i brak stałej opieki po montażu',
   'Kontakt przez infolinię, za każdym razem inna osoba',
 ];
@@ -37,7 +37,7 @@ export const SystemsComparisonSection: React.FC = () => {
             <span>Porównanie</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-gray-900">
-            Nasze realizacje, a typowe tańsze rozwiązania
+            Jak pracujemy, a typowe tańsze rozwiązania
           </h2>
           <p className="mt-3 text-sm sm:text-base max-w-prose leading-relaxed text-gray-600">
             Porównaj, co dostajesz. Bez nazw marek — liczy się to, jak dom działa na co dzień.

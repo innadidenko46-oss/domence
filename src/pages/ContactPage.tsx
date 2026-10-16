@@ -88,7 +88,7 @@ export const ContactPage: React.FC = () => {
                   Nasi ludzie i gdzie działamy
                 </h2>
                 <p className="text-sm leading-relaxed max-w-prose text-gray-600">
-                  Robimy domy w Warszawie, Konstancinie, Wilanowie i Podkowie Leśnej. Większe domy — w całej Polsce, po sprawdzeniu rysunków.
+                  Działamy w Warszawie i okolicach. Przyjeżdżamy na miejsce, sprawdzamy dom i dopiero wtedy proponujemy zakres.
                 </p>
               </div>
 
@@ -157,7 +157,7 @@ export const ContactPage: React.FC = () => {
                       Gdzie działamy
                     </div>
                     <div className="text-sm font-bold text-gray-900">
-                      Warszawa i okolice; większe domy — cała Polska
+                      Warszawa i okolice
                     </div>
                     <div className="text-sm text-gray-600 mt-0.5">
                       Przyjeżdżamy na miejsce albo pracujemy na podstawie rysunków.
@@ -183,7 +183,7 @@ export const ContactPage: React.FC = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
-                    <span>Po odbiorze dostajesz schematy i protokoły pomiarów</span>
+                    <span>Po montażu uczymy domowników obsługi i bezpłatnie konfigurujemy system</span>
                   </li>
                 </ul>
               </div>

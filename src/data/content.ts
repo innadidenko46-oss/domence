@@ -270,27 +270,6 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
       'Pełna izolacja kamer i automatyki od domowych komputerów (VLAN IoT)',
     ],
   },
-  {
-    id: 'alarm_sswin',
-    title: 'Alarm i ochrona wokół domu',
-    subtitle: 'Czujniki w oknach i drzwiach, powiadomienia na telefon i współpraca z automatyką',
-    icon: 'ShieldAlert',
-    description:
-      'Wdrożenia oparte na centralach alarmowych ze zintegrowanymi kontaktronami okiennymi, czujkami kurtynowymi zewnętrznymi i czujkami dualnymi PIR+MW. Współpraca z kamerami Hikvision AcuSense.',
-    humanExplanation:
-      'Czujniki okienne pracują podwójnie: w nocy pilnują domu przed włamaniem, a w dzień wyłączają grzejnik przy wietrzeniu. Kiedy uzbrajasz alarm kodem przy wyjściu, system gasi światła i zamyka rolety.',
-    equipment: [
-      'Centrala alarmowa ze zintegrowanym powiadomieniem GSM LTE i łącznością IP',
-      'Czujki kurtynowe zewnętrzne (ochrona posesji zanim ktoś dotknie okna)',
-      'Szklane dotykowe manipulatory ścienne z czytnikiem breloków zbliżeniowych',
-      'Syreny zewnętrzne z własnym zasilaniem akumulatorowym',
-    ],
-    specs: [
-      'Atesty ubezpieczeniowe EN 50131 Grade 2 / Grade 3',
-      'Podział na niezależne strefy (np. parter, piętro, garaż, piwnica)',
-      'Opcjonalne powiadomienie wybranej agencji ochrony',
-    ],
-  },
 ];
 
 export const SCENARIOS: LifeScenario[] = [
@@ -354,7 +333,7 @@ export const SCENARIOS: LifeScenario[] = [
     title: 'Wyjście z domu („wyłącz wszystko”)',
     tag: 'Bezpieczeństwo i wygoda',
     tagColor: '#EF4444',
-    trigger: 'Jeden przycisk przy drzwiach albo pilot do alarmu',
+    trigger: 'Jeden przycisk przy drzwiach albo w telefonie',
     description:
       'Jeden przycisk przy drzwiach odcina zasilanie gniazd żelazka, ekspresu i płyty indukcyjnej, gasi światła, opuszcza żaluzje fasadowe, przełącza ogrzewanie w tryb oszczędny i uzbraja monitoring.',
     humanNote:
@@ -368,7 +347,7 @@ export const SCENARIOS: LifeScenario[] = [
     actionSteps: [
       { icon: 'Power', label: 'Obwody ryzyka', detail: 'Mechaniczne odcięcie zasilania gniazd żelazka i płyty' },
       { icon: 'LightbulbOff', label: 'Wszystkie światła', detail: 'Automatyczne wygaszenie oświetlenia we wszystkich pokojach' },
-      { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Alarm się uzbraja, a kamery pilnują wejścia' },
+      { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Kamery zaczynają pilnować wejścia i podjazdu' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
@@ -552,8 +531,8 @@ export const WORKFLOW_STEPS = [
   },
   {
     number: '05',
-    title: 'Start, sprawdzenie awarii i nauka obsługi',
-    desc: 'Pokazujemy, jak wszystko działa, ustawiamy aplikacje i dajemy proste instrukcje.',
+    title: 'Start, konfiguracja i nauka obsługi',
+    desc: 'Bezpłatnie konfigurujemy system pod Twój dom i uczymy domowników obsługi.',
     humanNote: 'Sprawdzamy, czy każdy domownik umie zapalić światło, otworzyć furtkę i podejrzeć kamery.',
   },
 ];
@@ -595,7 +574,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'bezpieczenstwo',
     question: 'Czy w rozdzielnicy nie powstanie pożar i czy montaż jest zgodny z warunkami polisy domu?',
     simpleAnswer:
-      'Ryzyko ograniczamy do minimum: stosujemy wyłącznie atestowane moduły i protokoły pomiarowe. Stosujemy wyłącznie atestowane moduły Shelly Pro z certyfikatem niepalności obudowy V-0 i wbudowanym zabezpieczeniem termicznym OTP. Na koniec prac wykonujemy pomiary odbiorcze i wystawiamy oficjalny protokół do polisy ubezpieczeniowej.',
+      'Ryzyko ograniczamy do minimum: stosujemy wyłącznie atestowane moduły. Stosujemy wyłącznie atestowane moduły Shelly Pro z certyfikatem niepalności obudowy V-0 i wbudowanym zabezpieczeniem termicznym OTP. Na koniec prac wykonujemy pomiary odbiorcze i wystawiamy oficjalny protokół do polisy ubezpieczeniowej.',
     technicalDetails:
       'Wszystkie moduły na szynie DIN posiadają wewnętrzny czujnik temperatury – w przypadku przekroczenia 95°C obwód wyłącza się automatycznie. Instalacja wykonywana jest zgodnie z normą PN-HD 60364, a każdy obwód chroniony jest dedykowanym wyłącznikiem nadprądowym i ogranicznikiem przepięć T1+T2.',
   },
@@ -614,6 +593,22 @@ export const FAQ_ITEMS: FaqItem[] = [
       'Realne oszczędności pochodzą z dwóch źródeł: strefowego ogrzewania (obniżanie temperatury o 2-3°C w nieużywanych pokojach i w nocy) oraz automatyki rolet (latem zatrzymują upał przed szybą, zmniejszając potrzebę pracy klimatyzatorów).',
     technicalDetails:
       'Korzystamy z algorytmów predykcyjnych opartych na bezwładności cieplnej budynku i czujnikach nasłonecznienia. System opuszcza żaluzje fasadowe od strony południowej, zanim wnętrze się przegrzeje.',
+  },
+  {
+    category: 'remont',
+    question: 'Czy mogę zacząć od kilku rzeczy, a resztę dodać później?',
+    simpleAnswer:
+      'Tak. Możesz zacząć na przykład od świateł i rolet, a kamery, wideodomofon czy kolejne pokoje dodać później. Planujemy instalację tak, żeby dało się ją rozbudować bez kucia od nowa.',
+    technicalDetails:
+      'Nowe urządzenia łączą się z tymi, które już masz, i działają w tych samych scenach i w tej samej aplikacji. Przy pierwszym montażu zostawiamy miejsce w rozdzielnicy i w szafce na sprzęt na rozbudowę.',
+  },
+  {
+    category: 'remont',
+    question: 'Ile trwa montaż?',
+    simpleAnswer:
+      'To zależy od zakresu prac. Termin podajemy na piśmie razem z planem i ceną, zanim zaczniemy.',
+    technicalDetails:
+      'Na czas montażu wpływa wielkość domu, liczba pomieszczeń i to, czy dom jest w budowie, czy już wykończony i umeblowany.',
   },
 ];
 
@@ -647,16 +642,6 @@ export const SMART_MODULES: SmartModule[] = [
     price: 3400,
     category: 'teletechnics',
     icon: 'Camera',
-  },
-  {
-    id: 'alarm_satel_pack',
-    name: 'Alarm z czujnikami w oknach i drzwiach',
-    badge: 'Bezpieczeństwo',
-    description: 'Centrala hybrydowa, klawiatura szklana, 4 czujki ruchu PIR+MW i powiadomienie LTE.',
-    humanExplanation: 'Alarm z atestem. Te same czujki w dzień sterują oświetleniem, a po wyjściu z domu strzegą posesji.',
-    price: 3900,
-    category: 'teletechnics',
-    icon: 'ShieldAlert',
   },
   {
     id: 'blinds_control',
@@ -695,16 +680,6 @@ export const SMART_MODULES: SmartModule[] = [
     price: 3200,
     category: 'teletechnics',
     icon: 'Network',
-  },
-  {
-    id: 'switchboard_protection_pack',
-    name: 'Ochrona sprzętu przed przepięciami i burzą',
-    badge: 'Ochrona AGD',
-    description: 'Ograniczniki przepięć chroniące elektronikę, pompę ciepła i sprzęt przed burzą.',
-    humanExplanation: 'Ochrona przed wyładowaniami atmosferycznymi. Każdy obwód oznaczony etykietą i schematem.',
-    price: 950,
-    category: 'power',
-    icon: 'Cpu',
   },
   {
     id: 'dimming_scenes',
@@ -826,7 +801,7 @@ export const PACKAGES: PackageOffer[] = [
     badgeType: 'premium',
     timeframe: '3–5 dni roboczych',
     description: 'Moduły w rozdzielnicy, sterowanie roletami i oświetleniem oraz szafka na sprzęt sieciowy.',
-    humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i schematy na końcu.',
+    humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i nauka obsługi na końcu.',
     priceNetto: 13900,
     priceBrutto: 17097,
     recommendedFor: 'deweloperski',
@@ -836,7 +811,7 @@ export const PACKAGES: PackageOffer[] = [
       'Sterownik strefowego ogrzewania podłogowego dla 6-8 niezależnych obwodów',
       '2x zawory ze stali nierdzewnej 230V z samoczynnym zamknięciem bez prądu',
       'Szafka na sprzęt sieciowy z uporządkowanymi kablami',
-      'Czytelnie opisana rozdzielnica z ochroną przed przepięciami',
+      'Czytelnie opisana rozdzielnica',
       'Pełne ustawienie przykładów: joga, pobudka, wyjście z domu, kino',
     ],
   },
@@ -869,12 +844,12 @@ export const HOME_MULTIMEDIA = {
   },
   garden: {
     title: 'Taras i ogród wieczorem',
-    desc: 'Światło na ścieżkach i tarasie włącza się o zmierzchu, ogród podlewa się według harmonogramu, a kamera pilnuje ogrodu w nocy.',
+    desc: 'Światło na ścieżkach i tarasie włącza się o zmierzchu, a kamera pilnuje ogrodu w nocy.',
     humanNote:
-      'Wychodzisz na taras — światło już jest. Wyjeżdżasz na urlop — ogród jest podlany, a Ty widzisz, co dzieje się przy domu.',
+      'Wychodzisz na taras — światło już jest. Wyjeżdżasz na urlop — widzisz w telefonie, co dzieje się przy domu.',
     features: [
       'Światło w ogrodzie zapala się o zmierzchu i gaśnie o ustalonej porze',
-      'Podlewanie ogrodu według harmonogramu',
+      'Światło przy furtce zapala się, gdy ktoś się zbliża',
       'Kamera nad tarasem z kolorowym obrazem w nocy',
       'Scena „Wieczór na tarasie”: światło w ogrodzie jednym przyciskiem',
     ],
@@ -997,7 +972,7 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
       'Otwieranie twarzą, kartą lub kodem',
       'Jednorazowy kod dla gościa lub ekipy remontowej',
       'Historia wejść widoczna w telefonie',
-      'Otwarcie drzwi wyłącza alarm i zapala światło w korytarzu',
+      'Otwarcie drzwi zapala światło w korytarzu',
     ],
     icon: 'Lock',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
@@ -1087,7 +1062,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
       { step: 'Wykrycie wycieku', icon: 'Droplets', detail: 'Sensory Shelly Flood / Gas wykrywają zagrożenie w kilka sekund' },
       { step: 'Zamknięcie zaworu', icon: 'ShieldCheck', detail: 'Siłownik odcina główny dopływ wody/gazu w kilka sekund' },
       { step: 'Zrzut zasilania', icon: 'Power', detail: 'Przekaźniki Shelly natychmiast odcinają prąd w strefie awarii' },
-      { step: 'Alarm na telefon', icon: 'Bell', detail: 'Syrena akustyczna oraz powiadomienie alarmowe PUSH na smartfon' },
+      { step: 'Wiadomość na telefon', icon: 'Bell', detail: 'Sygnał dźwiękowy czujnika i wiadomość na telefon' },
     ],
     image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80',
   },
@@ -1130,7 +1105,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
       { step: 'Odczyt tablicy LPR', icon: 'Camera', detail: 'Kamera Hikvision identyfikuje numer rejestracyjny' },
       { step: 'Otwarcie bramy', icon: 'DoorClosed', detail: 'Moduł Shelly Plus 1 podaje impuls na sterownik bramy wjazdowej' },
       { step: 'Ścieżka świetlna', icon: 'Sun', detail: 'Rozświetlenie korytarza ciepłym światłem 2700K' },
-      { step: 'Rozbrojenie strefy', icon: 'ShieldCheck', detail: 'Automatyczne wyłączenie czuwania alarmu na parterze budynku' },
+      { step: 'Światło w domu', icon: 'Lightbulb', detail: 'W korytarzu zapala się światło' },
     ],
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
   },

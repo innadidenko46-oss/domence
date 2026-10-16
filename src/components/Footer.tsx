@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
               </Link>
               <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-sm">
                 Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
-                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, i dajemy schematy po zakończeniu prac.
+                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, a po montażu uczymy domowników obsługi.
               </p>
             </div>
 
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-start gap-2.5 text-xs text-gray-400">
               <MapPin className="w-4 h-4 text-copper-400 shrink-0 mt-0.5" />
-              <span>Warszawa i okolice; większe domy — cała Polska</span>
+              <span>Warszawa i okolice</span>
             </div>
 
             <div className="pt-2">
@@ -270,17 +270,11 @@ export const Footer: React.FC = () => {
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
                   <Award className="w-5 h-5 text-copper-600" />
-                  <span>Standardy i Dokumentacja Wykonawcza</span>
+                  <span>Standardy montażu</span>
                 </h3>
                 <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     • <strong>Norma PN-HD 60364:</strong> Instalacje niskonapięciowe projektowane i wykonywane zgodnie z europejskimi standardami bezpieczeństwa, w tym ochroną przeciwprzepięciową.
-                  </p>
-                  <p>
-                    • <strong>Pomiary i odbiory:</strong> Tor transmisyjny sieci LAN weryfikowany certyfikowanym miernikiem okablowania, protokoły pomiarowe przekazywane inwestorowi.
-                  </p>
-                  <p>
-                    • <strong>Dokumentacja powykonawcza:</strong> Po zakończeniu prac przekazujemy schematy, listę urządzeń, konfiguracje oraz instrukcję obsługi systemu.
                   </p>
                   <p>
                     • <strong>Uprawnienia:</strong> Prace elektryczne wykonuje osoba z aktualnymi uprawnieniami SEP; numery i zakres uprawnień przedstawiamy na życzenie wraz z ofertą.

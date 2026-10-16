@@ -22,12 +22,37 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 
 ## What the site may promise
 
-- **Only automations and features Shelly and Hikvision products can deliver.** That covers lighting, blinds, heating, leak and gas detection with valve shut-off, energy metering, presence sensors, cameras, video intercoms, alarm, gate and garage control, and network equipment for these devices.
-- **Out of scope:** anything those products cannot guarantee. This includes:
-  - audio and music streaming, multiroom sound;
-  - third-party locks or voice assistants;
-  - EV chargers.
+- **Only automations and features Shelly and Hikvision products can deliver, and only ones the company actually installs.** That covers:
+  - lighting, blinds and heating;
+  - leak and gas detection with valve shut-off;
+  - energy metering;
+  - motion sensors;
+  - cameras, video intercoms and access by face, card or code;
+  - gate and garage control;
+  - network equipment for these devices.
+- **Not offered, never mention:**
+  - garden watering;
+  - alarm systems;
+  - surge protection as a service;
+  - audio and music, multiroom sound;
+  - voice assistants and voice commands;
+  - third-party locks;
+  - EV chargers;
+  - air conditioning.
 - **Never state that we work only with these two brands.** Describe features and benefits. Brand names may appear as product facts in secondary detail, but not as a limitation.
+
+## Company facts (2026-10)
+
+- **New company.** No finished projects yet, so no "nasze realizacje", case studies, reviews or "gotowe domy" wording. Use stock photos only for rooms and devices, never as people or projects presented as ours.
+- **Region:** Warszawa i okolice. Not the whole of Poland.
+- **Before installation:** a free call and a free check of the house, then the plan and price in writing.
+- **After installation the client gets only two things:**
+  - training for the household;
+  - free configuration.
+
+  Do not promise schematics, measurement reports, documentation or service after the warranty.
+- **Installation time** depends on the scope. The date is given in writing with the plan.
+- **Lead engineer:** Yevhen Mukha, "Inżynier prowadzący". No photo yet, and don't use a stock portrait. The phone number is not shown for now.
 
 ## Content honesty
 

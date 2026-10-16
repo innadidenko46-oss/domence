@@ -30,7 +30,7 @@ export const TopSellingScenariosSection: React.FC = () => {
             4 rzeczy, które dom robi za Ciebie.
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-prose text-gray-600">
-            Cztery przykłady z gotowych domów. Każdy działa u Ciebie, także bez internetu.
+            Cztery przykłady, jak to działa na co dzień. Każdy działa u Ciebie, także bez internetu.
           </p>
         </div>
 
