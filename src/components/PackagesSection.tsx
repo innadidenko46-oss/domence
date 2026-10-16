@@ -16,7 +16,7 @@ const PACKAGE_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   developer_din: {
     src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Szafa teletechniczna RACK z okablowaniem i rejestratorem',
+    alt: 'Szafa ze sprzętem sieciowym i rejestratorem nagrań',
   },
 };
 

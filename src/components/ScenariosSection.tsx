@@ -20,6 +20,7 @@ import {
   Flame,
   Radio,
   Bell,
+  BellOff,
   Film,
   Zap,
   Mic,
@@ -69,6 +70,8 @@ export const ScenariosSection: React.FC = () => {
         return <Radio className="w-4 h-4" />;
       case 'Bell':
         return <Bell className="w-4 h-4" />;
+      case 'BellOff':
+        return <BellOff className="w-4 h-4" />;
       case 'Film':
         return <Film className="w-4 h-4" />;
       case 'Tv':

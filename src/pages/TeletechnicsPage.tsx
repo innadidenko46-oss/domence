@@ -13,7 +13,7 @@ export const TeletechnicsPage: React.FC = () => {
       <PageHeader
         badge="Kamery i domofony"
         title="Kamery, domofon z kamerą i szybki internet"
-        description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator nagrań (NVR) w metalowej szafce na sprzęt (RACK) — u Ciebie w domu, bez abonamentu."
+        description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt — u Ciebie w domu, bez abonamentu."
         icon={<Network className="w-4 h-4 text-copper-600" />}
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
       />
@@ -49,7 +49,7 @@ export const TeletechnicsPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Szafa RACK i bezpieczny rejestrator danych"
+                  alt="Szafa ze sprzętem sieciowym i rejestratorem nagrań"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />

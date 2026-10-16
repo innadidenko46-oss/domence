@@ -96,7 +96,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <div className="text-xs font-bold uppercase tracking-wider text-copper-700">
               Kamery i domofon
             </div>
-            <h3 className="mt-1 text-xl font-bold text-gray-900">Hik-Connect</h3>
+            <h3 className="mt-1 text-xl font-bold text-gray-900">Furtka i kamery w telefonie</h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-600">
               Podgląd posesji i rozmowy z furtki. Odbierasz gościa z pracy
               albo z wakacji. Otwierasz furtkę jednym dotknięciem.

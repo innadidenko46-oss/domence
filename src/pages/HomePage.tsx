@@ -39,7 +39,7 @@ export const HomePage: React.FC = () => {
       title: 'Kino w salonie — jeden przycisk',
       subtitle: 'Rolety • Światło • Dzwonek z furtki',
       description:
-        'Do filmu rolety same się zamykają, a światło gaśnie. Dzwonek z furtki słyszysz od razu. Masz już głośniki? Podepniemy je do scen.',
+        'Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
       cta: 'Zobacz kino w salonie',

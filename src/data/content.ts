@@ -71,22 +71,22 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
   },
   {
     id: 'cap-sensors',
-    title: 'Sensoryka obecności True Presence i radary mmWave',
+    title: 'Czujniki ruchu: światło zapala się, gdy wchodzisz',
     category: 'sensors',
-    badge: 'Czujniki obecności',
+    badge: 'Czujniki ruchu i okien',
     description:
-      'Nowoczesne czujniki radarowe fal milimetrowych wykrywają mikroruchy (oddychanie człowieka). Światło nie gaśnie, gdy siedzisz nieruchomo, czytasz książkę lub medytujesz na macie.',
+      'Małe czujniki ruchu zapalają światło, gdy wchodzisz do korytarza, łazienki czy garderoby, i gaszą je, gdy wychodzisz. Mierzą też jasność, więc w dzień światło się nie włącza.',
     proAdvantage:
-      'Sufitowe sensory obecności zasilane ze stałych linii zasilających lub PoE z szafy RACK, pracujące w lokalnej pętli bez opóźnień radiowych.',
+      'Czujniki działają w domu, bez internetu, i reagują od razu.',
     shellyAdvantage:
-      'Integracja radarów mmWave z mikromodułami Shelly pozwala przekształcić zwykłą lampę w inteligentne źródło światła reagujące natychmiast.',
+      'Bezprzewodowe czujniki montujemy w kilka minut, bez kucia ścian. Bateria wystarcza na długo.',
     scenariosExample:
-      'Czujnik wie, że jesteś w pokoju, nawet gdy leżysz nieruchomo podczas odpoczynku po jodze – światło nie zgaśnie i nie musisz machać ręką.',
+      'Wstajesz w nocy do łazienki — światło przy podłodze zapala się samo, a po chwili gaśnie.',
     features: [
-      'Detekcja mikroruchów (oddychanie, czytanie, medytacja)',
-      'Podział pomieszczenia na strefy (np. sofa, biurko, łóżko)',
-      'Pomiar natężenia światła dziennego (regulacja stałego oświetlenia)',
-      'Kontaktrony ukryte w ramach okien i drzwi wejściowych',
+      'Światło zapala się, gdy wchodzisz, i gaśnie, gdy wychodzisz',
+      'Pomiar jasności: w dzień czujnik nie włącza światła',
+      'Czujniki w oknach i drzwiach: wiesz, co jest otwarte',
+      'Montaż bez kucia ścian',
     ],
   },
   {
@@ -97,7 +97,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     description:
       'Jeden panel ścienny zamiast rzędu 6 włączników: zastępuje wszystkie klawisze, termostat i sterownik rolet.',
     proAdvantage:
-      'Szklane panele dotykowe Shelly Wall Display zintegrowane bezpośrednio z siecią domową, wyświetlające temperaturę, sterowanie muzyką i podgląd z kamer.',
+      'Szklane panele dotykowe Shelly Wall Display zintegrowane bezpośrednio z siecią domową, wyświetlające temperaturę, światło i rolety.',
     shellyAdvantage:
       'Mikromoduły Shelly współpracują z dowolnym wybranym przez architekta tradycyjnym osprzętem klawiszowym (np. Jung LS990, Schneider Sedna, Berker Q.7).',
     scenariosExample:
@@ -114,9 +114,9 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
 export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   {
     id: 'hik-colorvu',
-    series: 'Hikvision ColorVu & Smart Hybrid Light',
+    series: 'Kamera z kolorowym obrazem w nocy',
     category: 'cctv_colorvu',
-    tagline: 'Kolor 24/7 w nocy z przetwornikiem F1.0',
+    tagline: 'Kolorowy, ostry obraz przez całą noc',
     keyTech: 'Obiektyw o super-aperturze F1.0 + matryca 4K Ultra HD 1/1.2" CMOS',
     bestUse: 'Elewacja budynku, drzwi wejściowe, strefa wjazdu, ciągi komunikacyjne',
     highlights: [
@@ -129,9 +129,9 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   },
   {
     id: 'hik-acusense',
-    series: 'Hikvision AcuSense & Live Guard',
+    series: 'Kamera, która odstrasza światłem i dźwiękiem',
     category: 'cctv_acusense',
-    tagline: 'Analityka AI Deep Learning: filtracja fałszywych alarmów + aktywna syrena',
+    tagline: 'Odróżnia ludzi i auta od zwierząt, a intruza odstrasza syreną',
     keyTech: 'Klasyfikacja celów Człowiek / Pojazd + zintegrowany stroboskop i głośnik audio',
     bestUse: 'Wejście do budynku, brama wjazdowa, strefa garażu, ochrona przed intruzami',
     highlights: [
@@ -144,9 +144,9 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   },
   {
     id: 'hik-tandemvu',
-    series: 'Hikvision TandemVu Dual-Lens PTZ',
+    series: 'Kamera z szerokim widokiem i zoomem',
     category: 'cctv_tandemvu',
-    tagline: 'Dwa obiektywy w jednej kamerze: stały podgląd 180° + obrotowy zoom 32x ze śledzeniem celu',
+    tagline: 'Widzisz całe podwórko, a zoom sam podąża za osobą',
     keyTech: 'Kanał panoramiczny do ogólnego widoku + moduł obrotowy PTZ z auto-trackingiem',
     bestUse: 'Teren wokół domu, wejście główne, brama wjazdowa i podjazd',
     highlights: [
@@ -159,7 +159,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   },
   {
     id: 'hik-intercom-modular',
-    series: 'Hikvision IP Modular Intercom 2nd Gen (KD8 / KD9 Series)',
+    series: 'Panel przy furtce z kamerą',
     category: 'intercom_modular',
     tagline: 'Elegancka stacja bramowa ze stali nierdzewnej lub aluminium anodowanego',
     keyTech: 'Kamera 2MP Fisheye 180° WDR + moduły zbliżeniowe Mifare/NFC/Bluetooth + zamek szyfrowy',
@@ -174,7 +174,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   },
   {
     id: 'hik-minmoe-face',
-    series: 'Hikvision MinMoe Face Recognition Terminals',
+    series: 'Otwieranie drzwi twarzą',
     category: 'intercom_face',
     tagline: 'Otwieranie furtki i drzwi za pomocą biometrii twarzy bez kluczy',
     keyTech: 'Algorytm Deep Learning Face Recognition z podwójną kamerą antyspoofing 3D',
@@ -189,9 +189,9 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
   },
   {
     id: 'hik-android-screen',
-    series: 'Hikvision Android Touch Station (DS-KH9510 / KH9310)',
+    series: 'Ekran w domu do domofonu i kamer',
     category: 'intercom_android',
-    tagline: 'Dotykowy ekran 10" IPS ze szkłem 2.5D z wbudowaną obsługą Smart Home',
+    tagline: 'Dotykowy ekran do rozmów z furtką, podglądu kamer i sterowania domem',
     keyTech: 'System Android + aplikacja do domu + podgląd kamer na żywo',
     bestUse: 'Ściana w holu, kuchnia, salon, gabinet – centralny punkt sterowania domem',
     highlights: [
@@ -207,7 +207,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
 export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   {
     id: 'cctv_ai',
-    title: 'Monitoring wizyjny Hikvision ColorVu i AcuSense AI',
+    title: 'Kamery wokół domu z kolorowym obrazem w nocy',
     subtitle: 'Kamery 4K / 8MP, pełen kolor w nocy F1.0, rozpoznawanie ludzi i aut, eliminacja fałszywych alarmów',
     icon: 'Camera',
     description:
@@ -246,13 +246,13 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
       'Rozpoznanie twarzy z ochroną przed zdjęciami (antyspoofing)',
       'Darmowa aplikacja Hik-Connect na nielimitowaną liczbę telefonów domowników',
       'Czasowe kody PIN i kody QR dla kurierów i serwisantów',
-      'Integracja z automatyką: dzwonek włącza światło przed furtką, a Twoją muzykę — jeśli masz głośniki — przyciszamy',
+      'Współpraca z automatyką: dzwonek po zmroku zapala światło przed furtką',
     ],
   },
   {
     id: 'structured_lan',
-    title: 'Sieci strukturalne LAN, światłowody i szafy RACK 19"',
-    subtitle: 'Szybki internet w całym domu: okablowanie kat. 6A/7, switche PoE+ i Wi-Fi 6/7 Mesh',
+    title: 'Szybki internet w całym domu i szafka na sprzęt',
+    subtitle: 'Kable do pokoi, Wi-Fi na każdym piętrze i porządek w szafce',
     icon: 'Network',
     description:
       'Projekt i wykonanie okablowania teleinformatycznego. Centralna szafa serwerowa RACK 19", organizery kabli, patchpanele krosowe, zasilacze awaryjne UPS oraz punkty dostępowe Wi-Fi montowane podtynkowo i podsufitowo.',
@@ -272,13 +272,13 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   },
   {
     id: 'alarm_sswin',
-    title: 'Systemy alarmowe SSWiN i ochrona obwodowa',
-    subtitle: 'Certyfikowane centrale alarmowe Grade 2 / Grade 3 zintegrowane z automatyką Shelly',
+    title: 'Alarm i ochrona wokół domu',
+    subtitle: 'Czujniki w oknach i drzwiach, powiadomienia na telefon i współpraca z automatyką',
     icon: 'ShieldAlert',
     description:
       'Wdrożenia oparte na centralach alarmowych ze zintegrowanymi kontaktronami okiennymi, czujkami kurtynowymi zewnętrznymi i czujkami dualnymi PIR+MW. Współpraca z kamerami Hikvision AcuSense.',
     humanExplanation:
-      'Czujniki okienne pracują podwójnie: w nocy pilnują domu przed włamaniem, a w dzień wyłączają klimatyzację i grzejnik przy wietrzeniu. Kiedy uzbrajasz alarm kodem przy wyjściu, system gasi światła i zamyka rolety.',
+      'Czujniki okienne pracują podwójnie: w nocy pilnują domu przed włamaniem, a w dzień wyłączają grzejnik przy wietrzeniu. Kiedy uzbrajasz alarm kodem przy wyjściu, system gasi światła i zamyka rolety.',
     equipment: [
       'Centrala alarmowa ze zintegrowanym powiadomieniem GSM LTE i łącznością IP',
       'Czujki kurtynowe zewnętrzne (ochrona posesji zanim ktoś dotknie okna)',
@@ -297,26 +297,26 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-yoga',
     number: '01',
-    title: '„Chcę poćwiczyć jogę” (joga i medytacja)',
+    title: '„Joga” — spokojny pokój jednym przyciskiem',
     tag: 'Relaks i prywatność',
     tagColor: '#8B5CF6',
-    trigger: 'Komenda głosowa: „Chcę poćwiczyć jogę” lub dedykowany przycisk sceny na ścianie',
+    trigger: 'Przycisk sceny na ścianie albo w telefonie',
     description:
-      'Powiedz „Chcę poćwiczyć jogę” lub naciśnij jeden przycisk. Światło przygasa, rolety się zamykają, a z głośników płynie spokojna muzyka. Zwykle wszystko ustawia się w 1–2 sekundy.',
+      'Naciskasz jeden przycisk. Światło przygasa, rolety się zamykają, a ogrzewanie utrzymuje przyjemne ciepło. Zwykle wszystko ustawia się w 1–2 sekundy.',
     humanNote:
-      'Nie musisz chodzić po pokoju, zaciągać rolet, szukać pilota od klimatyzacji ani włączać głośnika w telefonie. Wypowiadasz jedno zdanie, rozkładasz matę i przechodzisz do ćwiczeń.',
+      'Nie musisz chodzić po pokoju i zaciągać rolet. Naciskasz przycisk, rozkładasz matę i przechodzisz do ćwiczeń.',
     detailPoints: [
       'Główne światło wygasza się w ciągu 2 sekund, zapalają się ciepłe cokoły LED 2200K na 15% jasności',
       'Rolety lub żaluzje fasadowe bezszelestnie opuszczają się, zapewniając prywatność',
-      'W strefie ćwiczeń — jeśli masz głośniki — włącza się spokojny ambient',
-      'Wentylacja mechaniczna/rekuperacja bezgłośnie zwiększa dopływ świeżego tlenu',
-      'Dzwonek domofonu i powiadomienia w tym pokoju zostają wyciszone (tryb Zen)',
+      'Ogrzewanie podłogowe w tym pokoju utrzymuje stałą temperaturę',
+      'Czujnik okna przypomina, jeśli zostało otwarte',
+      'Dzwonek domofonu w tym pokoju milknie na czas ćwiczeń',
     ],
     actionSteps: [
       { icon: 'Sun', label: 'Światło nastrojowe', detail: 'Ciepły bursztyn 2200K na 15% (linie cokołowe i podsufitowe)' },
       { icon: 'SlidersHorizontal', label: 'Rolety i żaluzje', detail: 'Zamknięcie dla pełnej dyskrecji przed okiem sąsiadów' },
-      { icon: 'Volume2', label: 'Dźwięk z Twoich głośników', detail: 'Spokojny ambient z Twoich głośników (jeśli je masz)' },
-      { icon: 'Wind', label: 'Mikroklimat', detail: 'Cichy napływ natlenionego powietrza, temperatura 21.5°C' },
+      { icon: 'Thermometer', label: 'Ciepło', detail: 'Stała, przyjemna temperatura w pokoju' },
+      { icon: 'BellOff', label: 'Cisza', detail: 'Dzwonek domofonu w tym pokoju milknie' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
@@ -324,26 +324,26 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-sunrise',
     number: '02',
-    title: 'Łagodne budzenie (Sunrise Wake-Up)',
+    title: 'Łagodne budzenie',
     tag: 'Zdrowy sen i energia',
     tagColor: '#F59E0B',
     trigger: 'Harmonogram biologiczny lub godzina budzika w telefonie',
     description:
-      '20 minut przed planowanym wstaniem rolety unoszą się wpuszczając światło, oświetlenie w sypialni symuluje świt, podłoga w łazience staje się ciepła, a z głośników płynie podcast.',
+      '20 minut przed planowanym wstaniem rolety unoszą się wpuszczając światło, oświetlenie w sypialni symuluje świt, a podłoga w łazience staje się ciepła.',
     humanNote:
       'Wstajesz wypoczęty, bo ciało reaguje na narastające światło. Wchodzisz bosymi stopami na ciepłe płytki w łazience.',
     detailPoints: [
       'Stopniowe unoszenie rolet i lameli o 10-20% wpuszczające naturalne słońce',
       'Światło w sypialni naśladuje świt, przechodząc z 2000K do rześkiego 3500K',
       'Klimat: podgrzanie podłogi w łazience do 23.5°C przed wejściem pod prysznic',
-      'Cicha poranna playlista lub wiadomości w głośnikach sufitowych',
-      'Uruchomienie ekspresu do kawy w kuchni dokładnie o ustalonej porze',
+      'W kuchni zapala się światło nad blatem',
+      'Ogrzewanie wraca z trybu nocnego do dziennego',
     ],
     actionSteps: [
       { icon: 'SunMedium', label: 'Światło świtu', detail: 'Stopniowe rozjaśnianie od ciepłego bursztynu do światła dziennego' },
       { icon: 'SlidersHorizontal', label: 'Rolety', detail: 'Stopniowe uchylenie wpuszczające pierwsze promienie poranka' },
       { icon: 'Flame', label: 'Ciepła podłoga', detail: 'Automatyczne dogrzanie łazienki do komfortowych 23.5°C' },
-      { icon: 'Coffee', label: 'Ekspres', detail: 'Świeża kawa gotowa w momencie zejścia do kuchni' },
+      { icon: 'Lightbulb', label: 'Światło w kuchni', detail: 'Delikatne światło nad blatem, gdy schodzisz rano' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sun',
@@ -354,7 +354,7 @@ export const SCENARIOS: LifeScenario[] = [
     title: 'Wyjście z domu („wyłącz wszystko”)',
     tag: 'Bezpieczeństwo i wygoda',
     tagColor: '#EF4444',
-    trigger: 'Pojedynczy klawisz przy drzwiach wejściowych lub zbliżenie breloka',
+    trigger: 'Jeden przycisk przy drzwiach albo pilot do alarmu',
     description:
       'Jeden przycisk przy drzwiach odcina zasilanie gniazd żelazka, ekspresu i płyty indukcyjnej, gasi światła, opuszcza żaluzje fasadowe, przełącza ogrzewanie w tryb oszczędny i uzbraja monitoring.',
     humanNote:
@@ -363,12 +363,12 @@ export const SCENARIOS: LifeScenario[] = [
       'Koniec z zastanawianiem się "czy na pewno wyłączyłam / wyłączyłem żelazko"',
       'Automatyczne obniżenie temperatury do trybu Eco',
       'Dioda LED przy drzwiach potwierdza, że wszystkie okna są zamknięte',
-      'Kamery Hikvision AcuSense przechodzą w aktywny tryb obrony obwodowej',
+      'Kamery zaczynają pilnować wejścia i podjazdu',
     ],
     actionSteps: [
       { icon: 'Power', label: 'Obwody ryzyka', detail: 'Mechaniczne odcięcie zasilania gniazd żelazka i płyty' },
       { icon: 'LightbulbOff', label: 'Wszystkie światła', detail: 'Automatyczne wygaszenie oświetlenia we wszystkich pokojach' },
-      { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Uzbrojenie stref alarmu i aktywacja analityki sylwetek AI' },
+      { icon: 'ShieldCheck', label: 'Bezpieczeństwo', detail: 'Alarm się uzbraja, a kamery pilnują wejścia' },
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Opuszczenie rolet chroniące wnętrza przed spojrzeniami' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
@@ -377,24 +377,24 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-cinema',
     number: '04',
-    title: 'Kino domowe (movie night)',
+    title: 'Wieczór filmowy',
     tag: 'Multimedia i atmosfera',
     tagColor: '#3B82F6',
-    trigger: 'Komenda „Włącz kino”, przycisk w salonie lub włączenie telewizora/projektora',
+    trigger: 'Przycisk „Kino” przy kanapie albo w telefonie',
     description:
-      'Gdy włączasz film, żaluzje zjeżdżają tworząc zaciemnienie blackout, oświetlenie gaśnie zostawiając akcent 5%, opuszcza się ekran projektora, a nagłośnienie wypełnia przestrzeń.',
+      'Gdy włączasz film, żaluzje zjeżdżają tworząc zaciemnienie blackout, oświetlenie gaśnie zostawiając akcent 5%, a ekran projekcyjny sam zjeżdża.',
     humanNote:
       'Klimat kinowy bez wstawania z kanapy. Jeden dotyk przycisku przygaśnia światło.',
     detailPoints: [
       '100% zaciemnienia roletami lub zasłonami z tkaniną blackout',
       'Dyskretne oświetlenie przypodłogowe 5% w barwie kinowej indygo/ciepłej',
-      'Włączenie Twojego projektora, ekranu i sprzętu grającego',
-      'Wyciszenie zbędnych powiadomień w strefie salonu',
+      'Ekran projekcyjny zjeżdża i po filmie sam się chowa',
+      'Dzwonek z furtki widać na panelu w salonie — bez wstawania',
     ],
     actionSteps: [
       { icon: 'SlidersHorizontal', label: 'Zacienienie', detail: 'Całkowite zaryglowanie rolet i zasłon blackout' },
       { icon: 'Sun', label: 'Światło kinowe', detail: 'Automatyczne przygaśnięcie do 5% pod kanapą i szafką RTV' },
-      { icon: 'Tv', label: 'Projekcja', detail: 'Opuszczenie windy projektora i włączenie nagłośnienia kinowego' },
+      { icon: 'Tv', label: 'Ekran', detail: 'Ekran projekcyjny zjeżdża jednym przyciskiem' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
     icon: 'Tv',
@@ -402,24 +402,24 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-courier',
     number: '05',
-    title: 'Kurier i furtka pod kontrolą (Hikvision IP)',
+    title: 'Kurier i furtka pod kontrolą',
     tag: 'Wideodomofon i dostęp',
     tagColor: '#F97316',
-    trigger: 'Naciśnięcie dzwonka na stacji bramowej Hikvision KD8003 / KD9613',
+    trigger: 'Ktoś dzwoni do furtki',
     description:
-      'Dzwonek przekierowuje wideorozmowę na smartfon w aplikacji Hik-Connect. Rozmawiasz z kurierem, uchylasz furtkę i widzisz na żywo, jak kładzie paczkę.',
+      'Dzwonek przychodzi jako rozmowa wideo na Twój telefon. Rozmawiasz z kurierem, uchylasz furtkę i widzisz na żywo, jak kładzie paczkę.',
     humanNote:
-      'Nie musisz prosić sąsiada o odbiór przesyłki. Otwierasz furtkę na odległość, a nagranie zapisuje się na dysku NVR.',
+      'Nie musisz prosić sąsiada o odbiór przesyłki. Otwierasz furtkę na odległość, a nagranie zapisuje się na rejestratorze w domu.',
     detailPoints: [
       'Dźwięk dwukierunkowy z redukcją szumów wiatru i ulicy',
       'Możliwość generowania tymczasowych kodów PIN/QR dla kurierów i ekip',
       'Zapis obrazu na lokalnym dysku w domu',
-      'Przyciszenie Twojej muzyki na czas dzwonienia furtki',
+      'Światło przed furtką zapala się samo po zmroku',
     ],
     actionSteps: [
-      { icon: 'Video', label: 'Połączenie HD', detail: 'Wideo 180° w telefonie w aplikacji Hik-Connect' },
+      { icon: 'Video', label: 'Połączenie HD', detail: 'Obraz z furtki na żywo w telefonie' },
       { icon: 'KeyRound', label: 'Zdalne otwarcie', detail: 'Jedno dotknięcie zwalnia elektrozaczep furtki' },
-      { icon: 'HardDrive', label: 'Zapis NVR', detail: 'Zdarzenie zapisane na dysku bez opłat abonamentowych' },
+      { icon: 'HardDrive', label: 'Nagranie w domu', detail: 'Wizyta zapisana na dysku w domu, bez abonamentu' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     icon: 'Video',
@@ -427,7 +427,7 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-water',
     number: '06',
-    title: 'Jak zabezpieczamy dom przed zalaniem (zawór + czujniki)',
+    title: 'Jak chronimy dom przed zalaniem',
     tag: 'Ochrona majątku',
     tagColor: '#0284C7',
     trigger: 'Wykrycie wilgoci przez czujnik pod pralką, zmywarką lub w kotłowni',
@@ -438,13 +438,13 @@ export const SCENARIOS: LifeScenario[] = [
     detailPoints: [
       'Działa w domu, także bez internetu i bez prądu (zawór sam się zamyka)',
       'Zawory kulowe ze sprężyną powrotną odcinające wodę nawet przy braku zasilania',
-      'Powiadomienie PUSH na telefon z lokalizacją wycieku',
-      'Cykliczne auto-odkamienianie zaworów raz w tygodniu w nocy',
+      'Wiadomość na telefon z informacją, gdzie jest wyciek',
+      'Raz w tygodniu zawór sam się porusza, żeby nie zarósł kamieniem',
     ],
     actionSteps: [
       { icon: 'Droplets', label: 'Detekcja wycieku', detail: 'zamknięcie zaworu zwykle w kilka sekund' },
       { icon: 'ShieldAlert', label: 'Mechaniczne odcięcie', detail: 'Zamknięcie głównego zaworu wody' },
-      { icon: 'Phone', label: 'Alarm PUSH', detail: 'Powiadomienie na telefony domowników z mapą wycieku' },
+      { icon: 'Phone', label: 'Wiadomość na telefon', detail: 'Powiadomienie, w którym miejscu jest wyciek' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
     icon: 'Droplets',
@@ -452,19 +452,19 @@ export const SCENARIOS: LifeScenario[] = [
   {
     id: 'sc-sleep',
     number: '07',
-    title: 'Biorytmiczny sen (Bio-Sleep)',
+    title: 'Spokojny sen',
     tag: 'Zdrowie i biorytm',
     tagColor: '#10B981',
     trigger: 'Wykrycie ruchu stopą przy łóżku w godzinach 23:00 - 06:00',
     description:
-      'Gdy wstajesz w nocy do łazienki, radar pod łóżkiem zapala podświetlenie cokołowe na 5% w barwie ciepłego bursztynu 1800K. Światło prowadzi Cię bez oślepiania.',
+      'Gdy wstajesz w nocy do łazienki, czujnik ruchu przy łóżku zapala podświetlenie cokołowe na 5% w barwie ciepłego bursztynu 1800K. Światło prowadzi Cię bez oślepiania.',
     humanNote:
       'Nie musisz szukać po omacku włącznika ani mrużyć oczu przed ostrym światłem. Idziesz oświetloną ścieżką, a po powrocie do łóżka zasypiasz z powrotem.',
     detailPoints: [
       'Barwa 1800 K (bursztynowa), o ograniczonej emisji światła niebieskiego',
       'Temperatura w sypialni automatycznie obniżana do 18.5°C na czas snu',
       'Cicha praca siłowników ogrzewania i bezgłośne wygaszanie',
-      'Brak dźwięków powiadomień i pukania domofonu w strefie sypialnej',
+      'Dzwonek domofonu w sypialni w nocy milczy',
     ],
     actionSteps: [
       { icon: 'Moon', label: 'Cokoły bursztynowe', detail: 'Światło 1800K na 5% prowadzi do celu bez oślepiania' },
@@ -479,21 +479,21 @@ export const SCENARIOS: LifeScenario[] = [
     title: '„Przytulna kolacja”',
     tag: 'Komfort i atmosfera',
     tagColor: '#F59E0B',
-    trigger: 'Komenda głosowa: „Włącz kolację” lub przycisk sceny w jadalni',
+    trigger: 'Przycisk sceny w jadalni albo w telefonie',
     description:
-      'W porze wieczornej oświetlenie sufitowe wygasza się, stół jadalniany oświetla ciepłe światło 2400K, rolety i zasłony zamykają się, a z Twoich głośników może płynąć jazz.',
+      'W porze wieczornej oświetlenie sufitowe wygasza się, stół jadalniany oświetla ciepłe światło 2400K, a rolety i zasłony zamykają się.',
     humanNote:
-      'Jeden dotyk przycisku lub komenda zmienia przestrzeń dzienną w restaurację. Zero biegania po włącznikach i pilotach.',
+      'Jeden przycisk zmienia salon w miejsce na spokojną kolację. Bez biegania po włącznikach.',
     detailPoints: [
       'Ściemnienie światła nad stołem do 35% o barwie ciepłego bursztynu 2400K',
       'Automatyczne zamknięcie rolet i żaluzji we wszystkich oknach salonu i kuchni',
       'Uruchomienie subtelnego podświetlenia blatów kuchennych i witryn szklanych',
-      'Cicha, elegancka playlista z głośników sufitowych w strefie jadalni',
+      'Ogrzewanie w jadalni utrzymuje przyjemne ciepło',
     ],
     actionSteps: [
       { icon: 'Sun', label: 'Światło kolacji', detail: 'Ciepły blask 2400K nad stołem jadalnym i wyspą' },
       { icon: 'SlidersHorizontal', label: 'Rolety i zasłony', detail: 'Zamknięcie przed zmierzchem chroniące prywatność' },
-      { icon: 'Volume2', label: 'Akustyka tła', detail: 'Cichy jazz lub chillout z głośników w salonie i jadalni' },
+      { icon: 'Lightbulb', label: 'Podświetlenie blatów', detail: 'Ciepłe światło pod szafkami i w witrynach' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
     icon: 'Sparkles',
@@ -512,13 +512,13 @@ export const SCENARIOS: LifeScenario[] = [
     detailPoints: [
       'Inteligentna symulacja obecności – realistyczne zapalanie świateł w różnych pokojach wieczorami',
       'Mechaniczne odcięcie głównego dopływu wody w celu ochrony przed zalaniem',
-      'Przełączenie klimatyzacji i ogrzewania w oszczędny tryb ochrony przed wychłodzeniem/przegrzaniem',
-      'Kamery Hikvision AcuSense na wejściu aktywnie wykrywają obecność intruza i natychmiast wysyłają powiadomienie',
+      'Ogrzewanie przechodzi w tryb oszczędny, ale dom się nie wychładza',
+      'Kamery przy wejściu wykrywają obcą osobę i od razu wysyłają powiadomienie',
     ],
     actionSteps: [
       { icon: 'Lightbulb', label: 'Symulacja ruchu', detail: 'Realistyczne sceny świetlne wieczorem w różnych pokojach' },
       { icon: 'Droplets', label: 'Zawór wody', detail: 'Pełne fizyczne odcięcie dopływu wody do budynku' },
-      { icon: 'ShieldCheck', label: 'Strażnik Hikvision', detail: 'Analityka AI sylwetek ludzkich przy wejściu do domu' },
+      { icon: 'ShieldCheck', label: 'Kamery na straży', detail: 'Kamera odróżnia człowieka od kota i wysyła powiadomienie' },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
     icon: 'ShieldCheck',
@@ -571,7 +571,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'bezpieczenstwo',
     question: 'Czy kamery Hikvision i nagrania z wideodomofonu są zabezpieczone przed hakerami?',
     simpleAnswer:
-      'Tak. Nagrania nie trafiają na serwery chmurowe. Obraz z kamer ColorVu, AcuSense i wideodomofonu zapisuje się na dysku w rejestratorze NVR w szafie RACK.',
+      'Tak. Nagrania nie trafiają na serwery chmurowe. Obraz z kamer i wideodomofonu zapisuje się na dysku w rejestratorze w szafce na sprzęt.',
     technicalDetails:
       'Instalacje DOMENCE izolują urządzenia wizyjne w dedykowanej podsieci VLAN bez bezpośredniego dostępu do publicznego internetu. Zdalny dostęp w aplikacji Hik-Connect odbywa się przez szyfrowany strumień z uwierzytelnianiem dwuskładnikowym (2FA) i lokalnym kodem weryfikacyjnym.',
   },
@@ -587,7 +587,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'dzialanie',
     question: 'Czy obsługa systemu nie będzie za trudna dla dzieci lub starszych rodziców?',
     simpleAnswer:
-      'Wszystkie tradycyjne włączniki na ścianach działają tak samo jak w zwykłym domu. Dziecko lub senior po prostu wciska klawisz na ścianie, a światło się zapala. Aplikacja czy asystent głosowy to tylko wygodny dodatek dla chętnych.',
+      'Wszystkie tradycyjne włączniki na ścianach działają tak samo jak w zwykłym domu. Dziecko lub senior po prostu wciska klawisz na ścianie, a światło się zapala. Aplikacja to tylko wygodny dodatek dla chętnych.',
     technicalDetails:
       'Projektujemy automatykę z zachowaniem zasady Fail-Safe. Każdy obwód posiada fizyczny interfejs manualny. W przypadku awarii sterownika, obwody powracają do stanu bezpiecznego i można nimi sterować ręcznie za pomocą tradycyjnego klawisza.',
   },
@@ -620,7 +620,7 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const SMART_MODULES: SmartModule[] = [
   {
     id: 'water_shield',
-    name: 'Zawór odcinający wodę + czujniki (bezpieczny przy awarii)',
+    name: 'Zawór, który sam zakręca wodę przy wycieku',
     badge: 'Kluczowe',
     description: 'Mechaniczne odcięcie głównego zaworu wody po wykryciu wycieku. Działa bez internetu.',
     humanExplanation: 'Czujnik pod pralką po wykryciu wycieku zakręca główny zawór wody. Ogranicza to ryzyko zalania podłogi.',
@@ -640,9 +640,9 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'cctv_starter',
-    name: 'Monitoring Hikvision 4K z analityką AcuSense AI',
-    badge: 'Nowość ColorVu',
-    description: 'Kamery 4K ColorVu z detekcją ludzi/pojazdów, obraz w nocy, dysk serwerowy 2TB, zapis w domu bez abonamentu.',
+    name: 'Kamery wokół domu, kolorowe także w nocy',
+    badge: 'Kamery i wideodomofon',
+    description: 'Kamery 4K z kolorowym obrazem w nocy, które rozpoznają ludzi i auta. Dysk 2 TB i zapis w domu, bez abonamentu.',
     humanExplanation: 'Kamery odróżniają psa od intruza. Obraz nagrywa się na dysk w szafie w nocy w kolorze. Podgląd w telefonie bez opłat abonamentowych.',
     price: 3400,
     category: 'teletechnics',
@@ -650,7 +650,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'alarm_satel_pack',
-    name: 'Certyfikowany alarm SSWiN Grade 2',
+    name: 'Alarm z czujnikami w oknach i drzwiach',
     badge: 'Bezpieczeństwo',
     description: 'Centrala hybrydowa, klawiatura szklana, 4 czujki ruchu PIR+MW i powiadomienie LTE.',
     humanExplanation: 'Alarm z atestem. Te same czujki w dzień sterują oświetleniem, a po wyjściu z domu strzegą posesji.',
@@ -660,7 +660,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'blinds_control',
-    name: 'Automatyka rolet i żaluzji fasadowych',
+    name: 'Rolety i żaluzje, które same się zamykają',
     description: 'Regulacja kąta lameli, automatyczne zamykanie o zmierzchu, wietrze lub komendzie.',
     humanExplanation: 'Rano słońce budzi Cię, do jogi rolety tworzą prywatność, a latem żaluzje blokują upał.',
     price: 1400,
@@ -669,7 +669,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'hvac_control',
-    name: 'Strefowa regulacja ogrzewania podłogowego',
+    name: 'Osobna temperatura w każdym pokoju',
     description: 'Niezależna temperatura w każdym pokoju, algorytmy histerezy i oszczędność energii.',
     humanExplanation: 'W sypialni masz 18.5°C do snu, w łazience 23°C. Grzejniki nie pracują, gdy wietrzysz pokój.',
     price: 1800,
@@ -678,7 +678,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'intercom_poe',
-    name: 'Wideodomofon IP Hikvision Modular',
+    name: 'Wideodomofon: rozmowa z furtki w telefonie',
     badge: 'Standard DOMENCE',
     description: 'Wideo rozmowy na smartfonie, sterowanie elektrozaczepem furtki i podgląd kuriera bez abonamentu.',
     humanExplanation: 'Kurier dzwoni do furtki? Odbierasz na telefonie, otwierasz furtkę i widzisz, jak kładzie paczkę pod drzwiami.',
@@ -688,7 +688,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'rack_network_pack',
-    name: 'Szafa teletechniczna RACK 19" + switch PoE + Wi-Fi 6',
+    name: 'Szafka na sprzęt i szybki internet w całym domu',
     badge: 'Infrastruktura',
     description: 'Okablowanie, szafa serwerowa z patchpanelem i roaming Wi-Fi w całym domu.',
     humanExplanation: 'Koniec z zawieszającym się internetem i martwymi strefami w sypialni czy gabinecie. Wszystkie kable uporządkowane w szafce.',
@@ -698,7 +698,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'switchboard_protection_pack',
-    name: 'Ochrona przeciwprzepięciowa T1+T2',
+    name: 'Ochrona sprzętu przed przepięciami i burzą',
     badge: 'Ochrona AGD',
     description: 'Ograniczniki przepięć chroniące elektronikę, pompę ciepła i sprzęt przed burzą.',
     humanExplanation: 'Ochrona przed wyładowaniami atmosferycznymi. Każdy obwód oznaczony etykietą i schematem.',
@@ -708,7 +708,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'dimming_scenes',
-    name: 'Ściemnianie LED DALI-2 i sceny nastrojowe',
+    name: 'Ściemnianie światła i nastrojowe sceny',
     description: 'Rozjaśnianie rano, nocne podświetlenie cokołowe 1800K na 5% i kinowe sceny.',
     humanExplanation: 'W nocy światło w korytarzu nie razi po oczach, zapala się na 5%. Scena jogi tworzy relaksujący klimat.',
     price: 1100,
@@ -717,7 +717,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'gate_control',
-    name: 'Integracja bramy wjazdowej i garażu',
+    name: 'Brama wjazdowa i garaż z telefonu',
     description: 'Otwieranie geolokalizacją, kontrola stanu zamknięcia i powiadomienia o niedomknięciu.',
     humanExplanation: 'Zbliżasz się do posesji – brama sama się otwiera. Wyjeżdżasz i nie pamiętasz, czy zamknąłeś garaż? Sprawdzasz w aplikacji lub dom sam zamknie go za Tobą.',
     price: 750,
@@ -726,17 +726,17 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'cinema_multimedia_pack',
-    name: 'Kino domowe i Twoje głośniki (salon + sypialnia)',
+    name: 'Scena „Kino”: rolety, światło i ekran',
     badge: 'Rozrywka w domu',
-    description: 'Scena kinowa: rolety blackout i światło. Twoje głośniki — jeśli pasują do Shelly albo Hikvision — podepniemy do scen. Montażu audio nie robimy.',
-    humanExplanation: 'Włączasz film: światła gasną do 5%, rolety zamykają się. Masz już głośniki? Podłączymy je, żeby grały razem ze sceną.',
+    description: 'Jeden przycisk zamyka rolety, przygasza światło i opuszcza ekran projekcyjny.',
+    humanExplanation: 'Włączasz film: światło przygasa, rolety się zamykają, ekran zjeżdża. Po filmie jeden przycisk wszystko przywraca.',
     price: 1950,
     category: 'comfort',
     icon: 'Tv',
   },
   {
     id: 'loqed_smart_lock',
-    name: 'LOQED Touch Smart Lock 2s (Powered by Shelly) – Dostęp bezkluczykowy',
+    name: 'Wejście bez kluczy: twarz, karta lub telefon',
     badge: 'Touch-to-Open 2s',
     description: 'Otwieranie drzwi w 2 sekundy od lekkiego dotknięcia klamki (telefon w kieszeni), smartfonem lub kodem PIN. Certyfikat SKG***.',
     humanExplanation: 'Wracasz z zakupami w obu rękach – dotykasz klamki łokciem i drzwi same się otwierają. Koniec z szukaniem kluczy po kieszeniach.',
@@ -746,7 +746,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'shelly_trv_airing_pack',
-    name: 'Pakiet "wietrzenie bez strat ciepła": Shelly BLU Door/Window + Shelly BLU TRV',
+    name: 'Wietrzenie bez strat ciepła',
     badge: 'Komfort wietrzenia',
     description: 'Odcięcie zaworu grzejnika po otwarciu okna na wietrzenie i automatyczny powrót do komfortowej temperatury po zamknięciu.',
     humanExplanation: 'Otwierasz okno, by wpuścić świeże powietrze – grzejnik natychmiast wyłącza się, by nie ogrzewać ulicy. Zamykasz okno – ciepło natychmiast wraca.',
@@ -756,9 +756,9 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'shelly_3em_solar_pack',
-    name: 'Licznik 3-fazowy Shelly 3EM-63T Gen3 i optymalizacja autokonsumpcji PV',
+    name: 'Licznik prądu i lepsze wykorzystanie fotowoltaiki',
     badge: 'Energia z PV',
-    description: 'Pomiar w czasie rzeczywistym zużycia i produkcji z fotowoltaiki, automatyczne uruchamianie pompy ciepła, bojlera i ładowarki EV.',
+    description: 'Widzisz, ile prądu zużywasz i produkujesz. Nadwyżkę z paneli dom sam kieruje do bojlera i pompy ciepła.',
     humanExplanation: 'Maksymalizujesz zysk z własnego prądu ze słońca: dom sam ładuje samochód i grzeje wodę dokładnie wtedy, gdy panele produkują darmową energię.',
     price: 1350,
     category: 'power',
@@ -766,7 +766,7 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'shelly_hazard_leak_pack',
-    name: 'Wykrywanie gazu i zalania: Shelly Gas + Shelly Flood S Gen4 — zamknięcie zaworu zwykle w kilka sekund',
+    name: 'Czujniki gazu i zalania z zakręceniem zaworu',
     badge: 'Bezpieczeństwo',
     description: 'Wykrywanie ulatniającego się gazu i wycieków wody z natychmiastowym mechanicznym odcięciem zaworu i zrzuceniem zasilania gniazd.',
     humanExplanation: 'Gdy pęknie rura lub zawór kuchenki, dom sam odcina dopływ — zamknięcie zaworu zwykle w kilka sekund i wyłącza prąd w strefie zagrożenia, chroniąc przed zalaniem i wybuchem.',
@@ -783,7 +783,7 @@ export const PACKAGES: PackageOffer[] = [
     categoryBadge: 'Teletechnika i kontrola wejścia',
     badgeType: 'standard',
     timeframe: '1–2 dni robocze',
-    description: 'Całościowa kontrola bramy i furtki, eliminacja fałszywych alarmów z AcuSense AI, bezpłatny podgląd wideo 4K bez abonamentu.',
+    description: 'Całościowa kontrola bramy i furtki, mniej fałszywych alarmów, bezpłatny podgląd wideo 4K bez abonamentu.',
     humanSummary: 'Wiesz, kto dzwoni do furtki, otwierasz ją telefonem, a kamery zapisują obraz w domu.',
     priceNetto: 5300,
     priceBrutto: 6519,
@@ -791,10 +791,10 @@ export const PACKAGES: PackageOffer[] = [
     features: [
       'Stacja bramowa IP Hikvision ze stali nierdzewnej z kamerą 180° i stykami do furtki',
       'Dotykowy monitor wewnętrzny 7" Android ze szkłem 2.5D i podglądem kamer',
-      '2x kamery fasadowe 4K Hikvision ColorVu z analityką ludzi i aut AcuSense AI',
-      'Rejestrator NVR z dyskiem serwerowym 2TB bez opłat chmurowych',
+      '2 kamery na elewacji z kolorowym obrazem w nocy, które odróżniają ludzi i auta od zwierząt',
+      'Rejestrator w domu z dyskiem 2 TB — bez opłat za chmurę',
       'Czysty montaż z minimalną ingerencją w tynki, z odciągiem pyłu w wykończonych wnętrzach',
-      'Brak ukrytych abonamentów – darmowa aplikacja Hik-Connect',
+      'Bez ukrytych abonamentów — darmowa aplikacja na telefon',
       'Możliwość otwierania furtki z poziomu smartfona z dowolnego miejsca z dostępem do internetu',
     ],
   },
@@ -825,7 +825,7 @@ export const PACKAGES: PackageOffer[] = [
     categoryBadge: 'Pełny standard inżynieryjny',
     badgeType: 'premium',
     timeframe: '3–5 dni roboczych',
-    description: 'Przewodowe moduły Shelly Pro DIN w rozdzielnicy elektrycznej, serwer automatyki, sterowanie roletami i oświetlenia oraz szafa teletechniczna RACK.',
+    description: 'Moduły w rozdzielnicy, sterowanie roletami i oświetleniem oraz szafka na sprzęt sieciowy.',
     humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i schematy na końcu.',
     priceNetto: 13900,
     priceBrutto: 17097,
@@ -835,8 +835,8 @@ export const PACKAGES: PackageOffer[] = [
       'Bezpośrednia łączność sieciowa Ethernet LAN RJ45 dla każdego modułu automatyki',
       'Sterownik strefowego ogrzewania podłogowego dla 6-8 niezależnych obwodów',
       '2x zawory ze stali nierdzewnej 230V z samoczynnym zamknięciem bez prądu',
-      'Kompletna szafka teletechniczna RACK 19" z panelem krosowym i switchem PoE',
-      'Prefabrykacja i czytelne znakowanie rozdzielnicy z ochroną przeciwprzepięciową T1+T2',
+      'Szafka na sprzęt sieciowy z uporządkowanymi kablami',
+      'Czytelnie opisana rozdzielnica z ochroną przed przepięciami',
       'Pełne ustawienie przykładów: joga, pobudka, wyjście z domu, kino',
     ],
   },
@@ -844,39 +844,39 @@ export const PACKAGES: PackageOffer[] = [
 
 export const HOME_MULTIMEDIA = {
   audio: {
-    title: 'Masz już głośniki? Podłączymy je do scen',
-    desc: 'Nie montujemy systemów audio. Jeśli masz w domu głośniki, które pasują do Shelly albo Hikvision, podłączymy je do scen: przycisk „Kino” zgasi światło i opuści rolety, a dzwonek z furtki przyciszy dźwięk.',
+    title: 'Kto dzwoni do furtki — widzisz w salonie',
+    desc: 'Gdy oglądasz film, dzwonek z furtki pojawia się na panelu w domu i w telefonie. Widzisz gościa, rozmawiasz z nim i otwierasz furtkę bez wstawania z kanapy.',
     humanNote:
-      'Powiedz nam, jaki masz sprzęt, a sprawdzimy, czy da się go połączyć z resztą domu. Samych głośników ani amplitunerów nie sprzedajemy i nie montujemy.',
+      'Nie musisz zatrzymywać filmu i biec do drzwi, żeby sprawdzić, kto przyszedł.',
     features: [
-      'Sprawdzenie, czy Twoje głośniki połączą się z Shelly lub Hikvision',
-      'Scena „Kino”: rolety, światło i Twój dźwięk jednym przyciskiem',
-      'Przyciszanie Twojej muzyki, gdy dzwoni furtka',
-      'Zero montażu audio z naszej strony — tylko podłączenie tego, co już masz',
+      'Obraz z furtki na panelu w domu i w telefonie',
+      'Rozmowa z gościem i otwarcie furtki jednym dotknięciem',
+      'Światło przed furtką zapala się samo po zmroku',
+      'Nagranie wizyty zostaje w domu, nie w chmurze',
     ],
   },
   cinema: {
-    title: 'Sala kinowa i akustyka wnętrz',
-    desc: 'Połączenie inteligentnego zaciemnienia roletami blackout, wielostrefowego ściemniania oświetlenia nastrojowego oraz integracji projektora i nagłośnienia kinowego w jednym scenariuszu.',
+    title: 'Scena „Kino” jednym przyciskiem',
+    desc: 'Rolety zamykają się do pełnego zaciemnienia, światło przygasa do delikatnego podświetlenia, a ekran projekcyjny sam zjeżdża.',
     humanNote:
-      'Nie musisz oddzielnie gasić lamp, szukać pilotów do projektora ani opuszczać zasłon. Jeden klawisz „Kino” lub polecenie głosowe natychmiast przenosi Cię w atmosferę prawdziwej sali filmowej.',
+      'Nie musisz osobno gasić lamp i opuszczać rolet. Jeden przycisk przy kanapie albo w telefonie przygotowuje salon do filmu.',
     features: [
-      'Automatyczne zamykanie rolet i żaluzji blackout po włączeniu projektora lub TV',
-      'Światło cokołowe i podszafkowe 5% w barwie kinowej – bezpieczne poruszanie się po napoje bez oślepiania',
-      'Integracja zasilania sprzętu audio-wideo (brak poboru prądu w trybie czuwania)',
-      'Sterowanie głosem lub jednym panelem ściennym bez potrzeby używania kilku pilotów',
+      'Rolety i żaluzje zamykają się do pełnego zaciemnienia',
+      'Delikatne światło przy podłodze, żeby bezpiecznie przejść po napój',
+      'Ekran projekcyjny zjeżdża i po filmie sam się chowa',
+      'Po filmie jeden przycisk przywraca zwykłe światło',
     ],
   },
   garden: {
-    title: 'Multimedia i nagłośnienie ogrodu',
-    desc: 'Wodoodporne głośniki ogrodowe i oświetlenie ścieżek zsynchronizowane z muzyką. Taras jako osobna strefa audio z automatycznym harmonogramem wieczornym i integracją ze strefą wejścia.',
+    title: 'Taras i ogród wieczorem',
+    desc: 'Światło na ścieżkach i tarasie włącza się o zmierzchu, ogród podlewa się według harmonogramu, a kamera pilnuje ogrodu w nocy.',
     humanNote:
-      'Wieczorem na tarasie włącza się subtelne oświetlenie ogrodowe i cicha muzyka. Wystarczy jeden klawisz "Wieczór na tarasie" lub komenda głosowa.',
+      'Wychodzisz na taras — światło już jest. Wyjeżdżasz na urlop — ogród jest podlany, a Ty widzisz, co dzieje się przy domu.',
     features: [
-      'Osobna strefa audio dla tarasu i ogrodu (głośniki wodoodporne IP65)',
-      'Scena "Wieczór na tarasie": oświetlenie ogrodowe, muzyka i ciepło podłogi',
-      'Automatyczne wyciszanie audio w domu przy otwarciu drzwi tarasowych',
-      'Sterowanie głosem lub jednym panelem ściennym',
+      'Światło w ogrodzie zapala się o zmierzchu i gaśnie o ustalonej porze',
+      'Podlewanie ogrodu według harmonogramu',
+      'Kamera nad tarasem z kolorowym obrazem w nocy',
+      'Scena „Wieczór na tarasie”: światło w ogrodzie jednym przyciskiem',
     ],
   },
 };
@@ -901,17 +901,17 @@ export interface AiTechFeature {
 export const AI_FUTURE_TECH: AiTechFeature[] = [
   {
     id: 'ai-acuseek',
-    name: 'Wyszukiwanie zdarzeń w nagraniach opisem słownym',
+    name: 'Szukanie w nagraniach zwykłym zdaniem',
     subtitle: 'Wpisz opis i znajdź klip bez przewijania osi czasu',
     badge: 'Wyszukiwanie naturalnym językiem',
     techStack: 'Lokalny rejestrator NVR • Wyszukiwanie semantyczne bez opłat',
     summary:
-      'Zamiast przewijać godziny nagrań, wpisz w wyszukiwarce zdanie zwykłym językiem: "kurier z paczką przy bramie" albo "auto podjeżdżające pod bramę o 20:00". System odnajduje odpowiedni fragment w lokalnym archiwum NVR — wideo nie opuszcza Twojego domu.',
+      'Zamiast przewijać godziny nagrań, wpisz w wyszukiwarce zdanie zwykłym językiem: "kurier z paczką przy bramie" albo "auto podjeżdżające pod bramę o 20:00". Rejestrator w domu sam odnajduje właściwy fragment — wideo nie opuszcza Twojego domu.',
     humanBenefit:
       'Oszczędzasz czas, który wcześniej spędzałeś na przeglądaniu archiwum. Znaleziony klip możesz od razu wyeksportować na telefon lub e-mail.',
     keyPoints: [
-      'Zapytania w języku naturalnym: kolor ubioru, typ pojazdu, kierunek ruchu',
-      'Przeszukiwanie archiwum na lokalnym NVR — wideo nie opuszcza posesji (RODO)',
+      'Szukasz po kolorze ubrania, rodzaju auta albo kierunku ruchu',
+      'Szukanie w nagraniach na rejestratorze w domu — wideo nie opuszcza posesji',
       'Eksport znalezionego klipu jednym kliknięciem',
       'Przykłady poniżej.',
     ],
@@ -928,18 +928,18 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
   },
   {
     id: 'ai-colorvu-acusense',
-    name: 'Nocne widzenie w kolorze (ColorVu) z analityką AcuSense',
+    name: 'Kolorowy obraz także w nocy',
     subtitle: 'Kolor przy bardzo słabym świetle + dźwięk dwukierunkowy',
     badge: 'Obiektyw F1.0 • Filtracja fałszywych alarmów',
     techStack: 'ColorVu CMOS 1/1.2" / AcuSense / Audio dwukierunkowe',
     summary:
-      'Kamery przekazują kolorowy obraz 4K przy minimalnym oświetleniu (Parametr producenta dla serii ColorVu (wartość lux zależy od warunków otoczenia)). Analityka AcuSense odróżnia ludzi i pojazdy od zwierząt, liści czy opadów, więc telefon nie wibruje bez powodu. Audio dwukierunkowe pozwala porozmawiać z gościem przy furtce.',
+      'Kamery pokazują kolorowy, ostry obraz nawet przy bardzo słabym świetle. Odróżniają ludzi i auta od zwierząt, liści czy deszczu, więc telefon nie wibruje bez powodu. Przez kamerę możesz też porozmawiać z gościem przy furtce.',
     humanBenefit:
       'W nocy widzisz kolor kurtki i markę samochodu zamiast szarego ziarna. Kamera podświetla scenę miękkim światłem dopiero wtedy, gdy wykryje człowieka.',
     keyPoints: [
-      'Jasny obiektyw F1.0 + przetwornik 4K (seria ColorVu)',
-      'AcuSense: filtrowanie fałszywych alarmów od zwierząt, liści, opadów',
-      'Audio dwukierunkowe z redukcją szumu wiatru',
+      'Ostry, kolorowy obraz w nocy',
+      'Mniej fałszywych alarmów: kot ani liście nie budzą Cię w nocy',
+      'Rozmowa przez kamerę, bez szumu wiatru',
       'Smart Hybrid Light: podświetlenie aktywuje się przy podejściu człowieka',
     ],
     icon: 'Eye',
@@ -947,18 +947,18 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
   },
   {
     id: 'ai-deepinviewx',
-    name: 'Analityka DeepinViewX z modelami AI na krawędzi',
+    name: 'Kamera, która rozumie, co widzi',
     subtitle: 'Modele AI działają w procesorze kamery, nie w chmurze',
     badge: 'On-device AI • Bez chmury',
     techStack: 'Hikvision DeepinViewX / modele Edge AI',
     summary:
-      'Zaawansowane modele sztucznej inteligencji pracują bezpośrednio w procesorze kamery. Analizują zachowanie i trajektorię ruchu wokół wejścia do domu — bez połączenia z internetem i bez wysyłania obrazu na zewnętrzne serwery.',
+      'Kamera sama ocenia, co dzieje się przy wejściu do domu — bez internetu i bez wysyłania obrazu na obce serwery.',
     humanBenefit:
-      'Kamera rozumie kontekst: odróżnia domownika wracającego z pracy od osoby kręcącej się pod drzwiami (loitering), co pomaga chronić prywatność rodziny.',
+      'Kamera odróżnia domownika wracającego z pracy od kogoś, kto długo kręci się pod drzwiami.',
     keyPoints: [
-      'Obliczenia AI na urządzeniu — dane nie trafiają do chmury',
-      'Wykrywanie podejrzego przebywania (loitering) przy wejściu i garażu',
-      'Wykrywanie upadku osoby — przydatne przy starszych domownikach',
+      'Obraz analizuje sama kamera — nic nie trafia do chmury',
+      'Powiadomienie, gdy ktoś długo stoi przy wejściu lub garażu',
+      'Reakcja od razu, bez opóźnień z internetu',
       'Reakcja na zdarzenia z reakcją lokalną, bez opóźnień chmury',
     ],
     icon: 'Cpu',
@@ -966,56 +966,56 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
   },
   {
     id: 'ai-mmwave-radar',
-    name: 'Ochrona radarem milimetrowym (mmWave)',
+    name: 'Ochrona podjazdu także we mgle i w deszczu',
     subtitle: 'Radar obwodowy 60–77 GHz, odporny na pogodę',
     badge: 'Odporność na pogodę • Detekcja mikroruchów',
     techStack: 'mmWave Radar 60/77 GHz / sensory Shelly BLU Radar',
     summary:
-      'Radar milimetrowy pilnuje strefy wejścia i podjazdu. W przeciwieństwie do tradycyjnych czujek PIR działa rzetelnie w gęstej mgle, śnieżnicy i ulewnym deszczu, a czujniki obecności rejestrują nawet spokojne oddychanie osoby w pokoju.',
+      'Radar pilnuje wejścia i podjazdu. W przeciwieństwie do zwykłych czujników ruchu działa pewnie w gęstej mgle, śnieżycy i ulewnym deszczu.',
     humanBenefit:
-      'Gdy zwykłe czujniki zawodzą we mgle lub zamieci, radar nadal śledzi cel i nie gasi światła, gdy odpoczywasz w pokoju bez ruchu.',
+      'Gdy zwykłe czujniki zawodzą we mgle lub zamieci, radar dalej widzi, kto zbliża się do domu.',
     keyPoints: [
-      'Praca w trudnych warunkach: mgła, śnieżyca, ulewny deszcz',
-      'Detekcja mikroruchów: obecność i oddech bez machania rękami',
-      'Współpraca z kamerami obrotowymi PTZ do automatycznego zoomu',
-      'Czujniki obecności Shelly BLU do automatyki oświetlenia',
+      'Działa we mgle, w śnieżycy i w ulewie',
+      'Kamera sama obraca się w stronę wykrytej osoby',
+      'Mniej fałszywych alarmów niż przy zwykłych czujnikach',
+      'Światło na podjeździe zapala się, gdy ktoś się zbliża',
     ],
     icon: 'Radio',
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85',
   },
   {
     id: 'ai-loqed-lock',
-    name: 'Dostęp bezkluczykowy LOQED Touch Smart Lock 2s',
-    subtitle: 'Powered by Shelly — otwarcie dotknięciem klamki',
-    badge: 'Touch-to-Open • Atest SKG***',
-    techStack: 'LOQED Touch Smart Lock 2s / Shelly BLE Mesh / Bluetooth 5.3',
+    name: 'Wejście bez kluczy: twarz, karta lub telefon',
+    subtitle: 'Drzwi i furtka otwierają się bez szukania kluczy',
+    badge: 'Twarz • Karta • Kod • Telefon',
+    techStack: 'Czytnik przy drzwiach + elektrozaczep',
     summary:
-      'Drzwi otwierasz dotykiem klamki, gdy telefon masz w kieszeni, albo ze smartfona i kodem PIN na zamku. Zamek współpracuje z modułami Shelly, a europejski certyfikat SKG*** potwierdza wysoką odporność na włamania.',
+      'Drzwi lub furtkę otwierasz twarzą, kartą, kodem albo z telefonu. Czytnik przy wejściu współpracuje z wideodomofonem i resztą domu.',
     humanBenefit:
-      'Wracasz z zakupami w obu rękach — dotykasz klamki łokciem i drzwi się otwierają. Możesz też nadać jednorazowy kod PIN gościom lub ekipie remontowej.',
+      'Wracasz z zakupami w obu rękach — patrzysz w czytnik i drzwi się otwierają. Gościom lub ekipie remontowej dajesz jednorazowy kod.',
     keyPoints: [
-      'Touch to Open: otwarcie bez wyjmowania telefonu z kieszeni',
-      'Klawiatura PIN z zabezpieczeniem przed podglądaniem kodu',
-      'Certyfikat antywłamaniowy SKG*** (najwyższy poziom)',
-      'Integracja ze scenami Shelly: otwarcie zamka rozbraja alarm i zapala światło',
+      'Otwieranie twarzą, kartą lub kodem',
+      'Jednorazowy kod dla gościa lub ekipy remontowej',
+      'Historia wejść widoczna w telefonie',
+      'Otwarcie drzwi wyłącza alarm i zapala światło w korytarzu',
     ],
     icon: 'Lock',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
   },
   {
     id: 'ai-shelly-assistant',
-    name: 'Asystent głosowy Shelly AI Assistant',
-    subtitle: 'Sterowanie domem prostymi zdaniami w aplikacji Shelly',
-    badge: 'Generative AI • Rozumienie intencji',
-    techStack: 'Shelly AI Core / Shelly Smart Control App / lokalne sceny',
+    name: 'Powiadomienia, które mają znaczenie',
+    subtitle: 'Telefon informuje tylko o ważnych sprawach',
+    badge: 'Woda • Furtka • Okna',
+    techStack: 'Powiadomienia z czujników i kamer',
     summary:
-      'Sterujesz domem naturalnymi zdaniami w aplikacji Shelly — nie musisz uczyć się sztywnych komend. Asystent rozumie intencje: "ustaw przyjemne światło na kolację", "oglądamy film", "wyłącz zbędne obwody".',
+      'Dom wysyła Ci wiadomość wtedy, gdy coś naprawdę się dzieje: wyciek wody, gość przy furtce, otwarte okno przy włączonym ogrzewaniu.',
     humanBenefit:
-      'Rozmawiasz z domem zwykłym językiem, a sam dobiera temperaturę, kąt żaluzji i nastrojowe oświetlenie. Podpowiada też, które urządzenia warto wyłączyć w szczycie taryfy.',
+      'Nie przeglądasz aplikacji co chwilę. Telefon odzywa się tylko wtedy, gdy powinieneś zareagować.',
     keyPoints: [
-      'Obsługa głosowa i tekstowa w aplikacji Shelly Smart Control',
-      'Optymalizacja kosztów: podpowiedzi w szczycie taryfy energetycznej',
-      'Tworzenie złożonych scenariuszy jednym zapytaniem',
+      'Wiadomość, gdy czujnik wykryje wodę lub gaz',
+      'Zdjęcie osoby przy furtce prosto na telefon',
+      'Przypomnienie o otwartym oknie przy włączonym ogrzewaniu',
       'Lokalne reguły automatyki — bez przekazywania danych profilowych',
     ],
     simulationData: {
@@ -1023,10 +1023,10 @@ export const AI_FUTURE_TECH: AiTechFeature[] = [
         'Ustaw nastrojowe światło na kolację i opuść żaluzje',
         'Przygotuj gabinet do pracy na temperaturę 22°C',
         'Czy wszystkie okna są zamknięte i czy wyłączono żelazko?',
-        'Zoptymalizuj ładowanie auta energią z fotowoltaiki',
+        'Czy brama garażowa jest zamknięta?',
       ],
     },
-    icon: 'Bot',
+    icon: 'Bell',
     image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
   },
 ];
@@ -1098,17 +1098,17 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     title: 'Kontrola energii i paneli PV',
     subtitle: 'Licznik prądu i panele fotowoltaiczne',
     trigger: 'Ciągły pomiar prądu, napięcia oraz nadwyżki produkcji z falownika PV',
-    devicesUsed: ['Analizator sieci Shelly 3EM-63T Gen3', 'Przekaźniki DIN Shelly Pro 4PM', 'Sterowanie pompą ciepła i ładowarką EV'],
+    devicesUsed: ['Licznik prądu w rozdzielnicy', 'Przekaźniki w rozdzielnicy', 'Sterowanie pompą ciepła i bojlerem'],
     reactionTime: 'W czasie rzeczywistym',
     economicBenefit: 'Wyższa autokonsumpcja darmowej energii ze słońca — mniej oddawania do sieci',
     description:
       'Licznik 3-fazowy Shelly 3EM-63T Gen3 mierzy w czasie rzeczywistym zużycie i oddawanie energii do sieci. Gdy pojawia się nadwyżka darmowego prądu z fotowoltaiki, dom sam uruchamia grzałkę bojlera, podbija zadaną temperaturę pompy ciepła lub włącza ładowanie samochodu elektrycznego.',
     humanNote:
-      'Twoja fotowoltaika zwraca się szybciej. Zamiast oddawać prąd do sieci za ułamek ceny, dom sam wykorzystuje go na naładowanie auta i podgrzanie wody do wieczornej kąpieli.',
+      'Twoja fotowoltaika zwraca się szybciej. Zamiast oddawać prąd do sieci za ułamek ceny, dom sam wykorzystuje go na podgrzanie wody i ogrzewanie.',
     actionSequence: [
       { step: 'Pomiar 3-fazowy', icon: 'Gauge', detail: 'Precyzyjny odczyt poboru i oddawania energii na każdej z 3 faz' },
       { step: 'Wykrycie nadwyżki PV', icon: 'Sun', detail: 'Automatyczne wykrycie nadwyżki produkcji powyżej 2.5 kW' },
-      { step: 'Załączenie odbiorników', icon: 'BatteryCharging', detail: 'Uruchomienie bojlera, pompy ciepła lub ładowarki samochodu EV' },
+      { step: 'Załączenie odbiorników', icon: 'BatteryCharging', detail: 'Uruchomienie bojlera lub pompy ciepła' },
     ],
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
   },

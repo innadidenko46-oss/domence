@@ -21,21 +21,20 @@ export const MultiroomGardenSection: React.FC = () => {
             <span>Kino w salonie</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
-            Kino w salonie. Swoje głośniki też podłączymy.
+            Kino w salonie i gość przy furtce bez wstawania.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Film jednym przyciskiem: rolety, światło i scena. A jeśli masz już głośniki, które pasują do Shelly albo Hikvision, podepniemy je do scen — montażu audio nie robimy.
-          </p>
+            Film jednym przyciskiem: rolety, światło i ekran. A gdy ktoś dzwoni do furtki, widzisz go na panelu w domu i w telefonie.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
-          {/* Card 1: Twoje głośniki */}
+          {/* Card 1: who is at the gate */}
           <div className="rounded-[2px] border overflow-hidden flex flex-col justify-between bg-gray-50 border-gray-200">
             <div className="relative h-40 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
-                alt="Jasny salon — tu podepniemy Twoje głośniki do scen"
+                alt="Jasny salon z kanapą i lampą"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
@@ -51,7 +50,7 @@ export const MultiroomGardenSection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.audio.title}
                   </h3>
-                  <div className="text-xs text-copper-700 font-mono mt-0.5">Twoje głośniki • Sceny • Dzwonek</div>
+                  <div className="text-xs text-copper-700 font-mono mt-0.5">Furtka • Panel w domu • Telefon</div>
                 </div>
               </div>
 
@@ -75,7 +74,7 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-              <span className="text-xs text-gray-600 font-mono">Bez montażu audio</span>
+              <span className="text-xs text-gray-600 font-mono">Gość przy furtce</span>
               <Link
                 to="/zapytanie"
                 className="text-xs font-mono font-bold text-copper-700 hover:text-copper-800 transition-colors"
@@ -107,7 +106,7 @@ export const MultiroomGardenSection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className="text-xs font-mono mt-0.5 text-copper-700">Dolby Atmos • Rolety Blackout • HDMI eARC</div>
+                  <div className="text-xs font-mono mt-0.5 text-copper-700">Rolety • Światło • Ekran</div>
                 </div>
               </div>
 

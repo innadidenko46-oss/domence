@@ -1,0 +1,49 @@
+# DOMENCE website: project rules
+
+A marketing site in Polish for an installer of smart home systems, IP cameras and video intercoms. It is built with React, Vite, Tailwind v4 and HashRouter, and deployed to GitHub Pages from `main`.
+
+## Who the site is for
+
+- **Decided buyers only.** The site is for people who definitely want a smart home and won't waste the team's time. Its job is to bring in qualified enquiries, not a high number of them.
+- **Keep the qualifying question.** Both forms ask when the installation is planned (`INSTALL_TIMELINES` in `src/config/site.ts`). Don't remove it to make the form shorter.
+- **No exact prices on the site for now.** Scope and price come after a call. Package prices stay in the data (`content.ts`) but are not displayed.
+- **Not a calculator.** The `/zapytanie` page is a short enquiry before the contact details. Never call it a "kalkulator" or an "ankieta".
+
+## Language
+
+- **Words a non-technical client knows.** Write for clients who are not deep into the subject. Describe what the house does for them, e.g. "zakręca wodę, gdy czujnik wykryje wyciek", not the hardware behind it.
+- **No model numbers, protocols or jargon in headings and card copy.** For example: 3EM-63T, BLU TRV, ANPR, DeepinViewX, mmWave, NVR, PoE, DALI-2, Gen3/Gen4.
+  - If a technical term is truly needed, put it in a secondary "Więcej szczegółów" spot and explain it in plain words next to it.
+- **Polish typography.**
+  - Sentence case in headings and labels.
+  - "i" instead of "&".
+  - A non-breaking space after one-letter words (a, i, o, u, w, z).
+- **Watch out for non-breaking spaces when editing copy.** Text replacements must match them: use the `[\s ]` regex, not a plain space.
+
+## What the site may promise
+
+- **Only automations and features Shelly and Hikvision products can deliver.** That covers lighting, blinds, heating, leak and gas detection with valve shut-off, energy metering, presence sensors, cameras, video intercoms, alarm, gate and garage control, and network equipment for these devices.
+- **Out of scope:** anything those products cannot guarantee. This includes:
+  - audio and music streaming, multiroom sound;
+  - third-party locks or voice assistants;
+  - EV chargers.
+- **Never state that we work only with these two brands.** Describe features and benefits. Brand names may appear as product facts in secondary detail, but not as a limitation.
+
+## Content honesty
+
+- **No invented facts.** Don't make up phone numbers, names, reviews, project counts or certifications.
+- **Company details live in `src/config/site.ts`.** Blocks that use empty fields stay hidden.
+- **Photos must match the text next to them.** No duplicate photos within one page.
+
+## Design system (short)
+
+- **Colours and shape:** a copper accent (`copper-600` for fills, `copper-700` for small text) on gray-50/white, with navy (`navy-900`) for dark bands. 2px radius.
+- **Type:** Outfit for display, Plus Jakarta Sans for body.
+- **Classes to reuse:**
+  - `.eyebrow` for section labels;
+  - `.btn-engineering-primary` and `.btn-secondary` for buttons (44px minimum height).
+- **Text contrast:** at least 4.5:1. Don't use `gray-400` text on light backgrounds.
+
+## Checks before committing
+
+- `npx tsc --noEmit` and `npm run build` pass.

@@ -56,7 +56,7 @@ export const HikvisionShowcase: React.FC = () => {
               Kamery, które widzą w nocy w kolorze, i domofon z kamerą
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Dostajesz podgląd domu w telefonie i nagrania u siebie. Kamery ColorVu dają kolorowy obraz w nocy, a system AcuSense rozpoznaje ludzi i auta, więc nie dostajesz fałszywych alarmów.
+              Dostajesz podgląd domu w telefonie i nagrania u siebie. Kamery dają kolorowy obraz w nocy i rozpoznają ludzi oraz auta, więc nie dostajesz fałszywych alarmów.
             </p>
           </div>
 

@@ -73,7 +73,7 @@ export const SystemsPage: React.FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Szafa serwerowa RACK z okablowaniem sieciowym"
+                  alt="Szafa ze sprzętem sieciowym i uporządkowanymi kablami"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />

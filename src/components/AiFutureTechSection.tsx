@@ -1,6 +1,6 @@
 import React from 'react';
 import { AI_FUTURE_TECH } from '../data/content.ts';
-import { Search, Eye, Cpu, Radio, Lock, Bot, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Search, Eye, Cpu, Radio, Lock, Bell, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const getTechIcon = (iconName: string) => {
   switch (iconName) {
@@ -14,8 +14,8 @@ const getTechIcon = (iconName: string) => {
       return <Radio className="w-5 h-5 text-copper-600" />;
     case 'Lock':
       return <Lock className="w-5 h-5 text-copper-600" />;
-    case 'Bot':
-      return <Bot className="w-5 h-5 text-copper-600" />;
+    case 'Bell':
+      return <Bell className="w-5 h-5 text-copper-600" />;
     default:
       return <Sparkles className="w-5 h-5 text-copper-600" />;
   }
@@ -27,7 +27,7 @@ export const AiFutureTechSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
           <div className="eyebrow mb-3">
-            Technologie • Hikvision i Shelly
+            Nowe możliwości
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
             Co potrafią nowe kamery i sterowniki.

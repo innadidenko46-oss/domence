@@ -11,20 +11,20 @@ export const MultiroomGardenPage: React.FC = () => {
       <PageHeader
         badge="Kino w salonie"
         title="Kino w salonie — jeden przycisk"
-        description="Rolety same się zamykają, światło gaśnie, a dzwonek z furtki słyszysz od razu. Głośników nie montujemy — ale Twoje podepniemy do scen."
+        description="Rolety same się zamykają, światło przygasa, a gościa przy furtce widzisz na panelu w domu i w telefonie."
         icon={<Film className="w-4 h-4 text-copper-600" />}
         image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
       />
 
-      {/* Visual Atmosphere Showcase for Audio & Cinema */}
+      {/* Two everyday moments: film night and a visitor at the gate */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-                  alt="Ciepły salon wieczorem przygotowany na seans filmowy"
+                  src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=80"
+                  alt="Salon z kanapą i kominkiem, okna zasłonięte roletami"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
@@ -38,7 +38,7 @@ export const MultiroomGardenPage: React.FC = () => {
                   Wieczór filmowy bez szukania pilotów
                 </h3>
                 <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                  Rolety same się zamykają, światło gaśnie do 5%, a dźwięk wypełnia pokój.
+                  Rolety same się zamykają, światło gaśnie do 5%, a ekran projekcyjny sam zjeżdża.
                 </p>
               </div>
             </div>
@@ -46,8 +46,8 @@ export const MultiroomGardenPage: React.FC = () => {
             <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Jasny salon z panelem ściennym i podglądem furtki"
+                  src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
+                  alt="Telefon pokazujący obraz z kamery przy furtce"
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
@@ -69,10 +69,10 @@ export const MultiroomGardenPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Multiroom Section Component */}
+      {/* Gate visitor, film scene and garden */}
       <MultiroomGardenSection />
 
-      {/* Deep-dive into Cinema & Multiroom Logic */}
+      {/* How the film scene works step by step */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
@@ -107,11 +107,11 @@ export const MultiroomGardenPage: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
-                  <span>Główne oświetlenie wygasza się, a subtelne taśmy LED COB przy podłodze ściemniają się do 5%.</span>
+                  <span>Główne oświetlenie wygasza się, a subtelne taśmy LED przy podłodze ściemniają się do 5%.</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
-                  <span>Rekuperacja przechodzi w bezszelestny tryb nocny, aby szum nie zakłócał dialogów.</span>
+                  <span>Gdy ktoś dzwoni do furtki, obraz pojawia się na panelu w salonie.</span>
                 </li>
               </ul>
             </div>

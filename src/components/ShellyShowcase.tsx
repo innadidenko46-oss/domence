@@ -218,7 +218,7 @@ export const ShellyShowcase: React.FC = () => {
                       Shelly Plus i BLU (pod włącznik, bez kucia)
                     </h4>
                     <span className="text-xs text-copper-700 font-mono font-semibold uppercase tracking-wider">
-                      Bez kucia tynków • Puszki 60 mm i BLE Mesh
+                      Bez kucia tynków • Moduły mieszczą się w puszkach
                     </span>
                   </div>
                 </div>
