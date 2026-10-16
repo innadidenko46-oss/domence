@@ -19,7 +19,7 @@ const ELSEWHERE: string[] = [
   'Montaż bywa z kuciem i kurzem w gotowym mieszkaniu',
   'Cena dopisywana w trakcie, bez pełnej wyceny na piśmie',
   'Po montażu zostajesz sam z aplikacją',
-  'Krótka gwarancja i brak stałej opieki po montażu',
+  'Brak nauki obsługi po montażu',
   'Kontakt przez infolinię, za każdym razem inna osoba',
 ];
 

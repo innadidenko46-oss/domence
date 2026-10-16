@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo.tsx';
-import { Mail, MapPin, Cookie, FileText, Award, X, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Cookie, FileText, X, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'rodo' | 'regulamin' | 'certyfikaty' | null>(null);
@@ -48,18 +48,6 @@ export const Footer: React.FC = () => {
                 Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, a po montażu uczymy domowników obsługi.
               </p>
             </div>
-
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-mono text-copper-400">
-              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
-                Norma PN-HD 60364
-              </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
-                Działa bez internetu
-              </span>
-              <span className="px-2.5 py-1 rounded-[2px] bg-white/5 border border-white/10">
-                Nagrania w domu, bez abonamentu
-              </span>
-            </div>
           </div>
 
           {/* Chapters & Services */}
@@ -88,15 +76,6 @@ export const Footer: React.FC = () => {
                   <Link to="/scenariusze" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Przykłady z życia
                   </Link>
-                </li>
-                <li>
-                  <button
-                    onClick={() => setActiveModal('certyfikaty')}
-                    className="hover:text-copper-400 transition-colors text-left flex items-center gap-1.5 text-gray-300 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
-                  >
-                    <Award className="w-3.5 h-3.5 text-copper-400" />
-                    <span>Normy i dokumenty</span>
-                  </button>
                 </li>
               </ul>
             </div>
@@ -254,30 +233,10 @@ export const Footer: React.FC = () => {
                     1. <strong>Zakres usług:</strong> DOMENCE wykonuje projekty okablowania, prefabrykację rozdzielnic elektrycznych, konfigurację modułów Shelly Pro na szynę DIN oraz instalację kamer i wideodomofonów IP Hikvision.
                   </p>
                   <p>
-                    2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonujemy z minimalną ingerencją w tynki, z odciągiem pyłu (odciągi przemysłowe HEPA) i zgodnie z normą PN-HD 60364.
+                    2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonujemy z minimalną ingerencją w tynki, z odciągiem pyłu (odciągi przemysłowe HEPA).
                   </p>
                   <p>
-                    3. <strong>Gwarancja:</strong> Na wykonane okablowanie i prace montażowe udzielamy 24 miesięcy gwarancji. Szczegóły oraz ewentualne wydłużenia określa umowa zawierana z klientem.
-                  </p>
-                  <p>
-                    4. <strong>Wycena:</strong> Zapytanie wysłane przez stronę nie jest wyceną ani ofertą w rozumieniu art. 66 Kodeksu cywilnego. Zakres i cenę potwierdzamy na piśmie po rozmowie i sprawdzeniu rysunków.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {activeModal === 'certyfikaty' && (
-              <div>
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-copper-600" />
-                  <span>Standardy montażu</span>
-                </h3>
-                <div className="space-y-3 leading-relaxed text-gray-300">
-                  <p>
-                    • <strong>Norma PN-HD 60364:</strong> Instalacje niskonapięciowe projektowane i wykonywane zgodnie z europejskimi standardami bezpieczeństwa, w tym ochroną przeciwprzepięciową.
-                  </p>
-                  <p>
-                    • <strong>Uprawnienia:</strong> Prace elektryczne wykonuje osoba z aktualnymi uprawnieniami SEP; numery i zakres uprawnień przedstawiamy na życzenie wraz z ofertą.
+                    3. <strong>Wycena:</strong> Zapytanie wysłane przez stronę nie jest wyceną ani ofertą w rozumieniu art. 66 Kodeksu cywilnego. Zakres i cenę potwierdzamy na piśmie po rozmowie i sprawdzeniu rysunków.
                   </p>
                 </div>
               </div>

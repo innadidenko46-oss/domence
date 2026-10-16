@@ -80,10 +80,10 @@ export const PackagesPage: React.FC = () => {
                   <Clock className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold mb-2 text-gray-900">
-                  24 miesiące gwarancji
+                  Cena na piśmie
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  Umowa na piśmie, kontakt do kierownika i bezpłatna poprawka ustawień po 30 dniach.
+                  Zakres i cenę potwierdzamy na piśmie, zanim zaczniemy.
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export const PackagesPage: React.FC = () => {
             <div className="relative rounded-[2px] overflow-hidden border border-gray-200 shadow-sm min-h-[280px]">
               <img
                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-                alt="Ciepłe wnętrze domu po czystym montażu z gwarancją"
+                alt="Ciepłe wnętrze domu po czystym montażu"
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />

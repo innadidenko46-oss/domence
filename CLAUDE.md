@@ -51,6 +51,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
   - free configuration.
 
   Do not promise schematics, measurement reports, documentation or service after the warranty.
+- **Not on the site for now:** no warranty period, no PN-HD norm, no SEP qualifications. Checking drawings is possible but not a target offer, so don't advertise it.
 - **Installation time** depends on the scope. The date is given in writing with the plan.
 - **Lead engineer:** Yevhen Mukha, "Inżynier prowadzący". No photo yet, and don't use a stock portrait. The phone number is not shown for now.
 

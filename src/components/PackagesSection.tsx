@@ -34,13 +34,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="eyebrow inline-flex items-center gap-2 mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
-            <span>Zakres i gwarancja</span>
+            <span>Zakres prac</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-            Gotowe zestawy z montażem i gwarancją
+            Gotowe zestawy z montażem
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed max-w-prose mx-auto text-gray-600">
-            Sprzęt, montaż i ustawienie plus 24 miesiące gwarancji. Cenę dostajesz na piśmie.
+            Sprzęt, montaż i ustawienie. Cenę dostajesz na piśmie.
           </p>
         </div>
 

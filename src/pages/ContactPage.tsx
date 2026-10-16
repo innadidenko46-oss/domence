@@ -72,7 +72,7 @@ export const ContactPage: React.FC = () => {
       <PageHeader
         badge="Kontakt"
         title="Porozmawiaj z inżynierem o swoim domu"
-        description="Masz rysunek instalacji albo budujesz dom? Wyślij nam dokumenty do bezpłatnego sprawdzenia — odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
+        description="Budujesz dom albo remontujesz mieszkanie? Napisz, czego potrzebujesz — odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
         icon={<Phone className="w-4 h-4 text-copper-600" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
@@ -137,7 +137,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
-                      Sprawdzenie rysunków budowlanych
+                      Napisz do nas
                     </div>
                     <div className="text-base font-bold group-hover:text-copper-700 transition-colors mt-0.5 text-gray-900">
                       kontakt@domence.pl
@@ -160,7 +160,7 @@ export const ContactPage: React.FC = () => {
                       Warszawa i okolice
                     </div>
                     <div className="text-sm text-gray-600 mt-0.5">
-                      Przyjeżdżamy na miejsce albo pracujemy na podstawie rysunków.
+                      Przyjeżdżamy na miejsce i sprawdzamy dom.
                     </div>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export const ContactPage: React.FC = () => {
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
-                    <span>Za darmo sprawdzamy przesłane rysunki</span>
+                    <span>Za darmo sprawdzamy dom przed wyceną</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
