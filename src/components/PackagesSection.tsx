@@ -156,9 +156,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
 
         {/* Custom Solution Note */}
         <div className="mt-12 text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-sm text-gray-600">
             Masz pompę ciepła, panele albo nietypową bramę?{' '}
-            <Link to="/kalkulator" className="text-copper-600 underline hover:text-copper-800">
+            <Link to="/kalkulator" className="text-copper-700 underline hover:text-copper-800">
               Dobierz zestaw (2 min)
             </Link>
           </p>

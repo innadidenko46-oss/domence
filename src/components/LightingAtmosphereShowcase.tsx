@@ -20,7 +20,7 @@ const SCENES: AtmosphereScene[] = [
     description:
       'Czujniki nasłonecznienia na dachu sterują kątem lameli żaluzji fasadowych. Wnętrze zostaje jasne, a słońce nie nagrzewa salonu.',
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
     features: [
       'Ochrona przed upałem bez zasłaniania widoku',
       'Neutralne światło do pracy i czytania',
@@ -29,7 +29,7 @@ const SCENES: AtmosphereScene[] = [
   },
   {
     id: 'dusk',
-    time: '19:45 • Złota Godzina',
+    time: '19:45 • Złota godzina',
     name: 'Ciepły zmierzch',
     title: 'Spokojne przejście w tryb wypoczynku i prywatności',
     description:
@@ -44,13 +44,13 @@ const SCENES: AtmosphereScene[] = [
   },
   {
     id: 'night',
-    time: '23:30 • Cisza Nocna',
+    time: '23:30 • Cisza nocna',
     name: 'Spokojna noc',
     title: 'Orientacja w nocy bez oślepiania domowników',
     description:
       'Wstajesz w nocy do kuchni lub pokoju dziecka? Czujniki włączają tylko ciche światło przy podłodze. Bez ostrego błysku.',
     image:
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85',
+      'https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1200&q=80',
     features: [
       'Miękkie światło przy podłodze do łazienki i schodów',
       'Czuwanie czujników okien i drzwi',
@@ -72,8 +72,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
             Jak Twój dom żyje za dnia, o zmierzchu i w nocy.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Światło, które samo dopasowuje się do pory dnia.
-            Dom dopasowuje je sam, bez klikania w telefon.
+            Światło samo dopasowuje się do pory dnia — bez klikania w telefon.
           </p>
         </div>
 

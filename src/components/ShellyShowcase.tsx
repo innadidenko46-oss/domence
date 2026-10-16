@@ -91,7 +91,7 @@ export const ShellyShowcase: React.FC = () => {
                   <div className={`text-xs font-mono font-semibold uppercase tracking-wider line-clamp-1 ${
                     isSelected
                       ? 'text-copper-700'
-                      : 'text-gray-500'}`}>
+                      : 'text-gray-600'}`}>
                     {cap.badge}
                   </div>
                   <div className="text-xs font-bold mt-0.5 leading-snug line-clamp-2 text-gray-900">

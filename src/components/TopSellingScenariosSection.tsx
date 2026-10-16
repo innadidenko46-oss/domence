@@ -24,7 +24,7 @@ export const TopSellingScenariosSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <div className="eyebrow mb-3">
-            Scenariusze • Shelly i Hikvision
+            Scenariusze
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
             4 rzeczy, które dom robi za Ciebie.
@@ -54,30 +54,24 @@ export const TopSellingScenariosSection: React.FC = () => {
                 <span className="mt-1 shrink-0" aria-hidden="true">{getScenarioIcon(sc.icon)}</span>
                 {sc.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                {sc.description}
+              <p className="mt-1 text-sm font-medium text-copper-700">
+                {sc.subtitle}
               </p>
-              <p className="mt-3 text-sm text-gray-600">
-                <span className="font-semibold text-gray-900">Kiedy to działa: </span>
-                {sc.trigger}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                <span className="font-semibold text-gray-900">Po co Ci to: </span>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600">
                 {sc.humanNote}
               </p>
-              <div className="mt-5 pt-4 border-t border-gray-200">
-                <Link
-                  to="/kontakt"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
-                >
-                  <span>Zapytaj inżyniera</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
               </div>
             </article>
           ))}
         </div>
+
+        <Link
+          to="/scenariusze"
+          className="mt-8 inline-flex items-center gap-2 min-h-11 text-sm font-semibold text-copper-700 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
+        >
+          <span>Zobacz wszystkie scenariusze</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </section>
   );

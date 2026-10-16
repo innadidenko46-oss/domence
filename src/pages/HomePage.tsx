@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu } from 'lucide-react';
+import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
-import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
-import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
-import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
+import { FAQ_ITEMS } from '../data/content.ts';
+import { SITE, telHref } from '../config/site.ts';
 
 export const HomePage: React.FC = () => {
 
@@ -18,8 +17,9 @@ export const HomePage: React.FC = () => {
       description:
         'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
       image:
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Minimalistyczne wnętrze z ciepłym światłem smart home',
+        'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80',
+      imageAlt: 'Salon z białymi roletami na oknach i kominkiem',
+      cta: 'Zobacz automatykę',
     },
     {
       id: 'teletechnika',
@@ -29,8 +29,9 @@ export const HomePage: React.FC = () => {
       description:
         'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, furtkę otworzysz z telefonu, a internet działa w każdym pokoju.',
       image:
-        'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Dyskretna kamera zewnętrzna na nowoczesnej elewacji o zmierzchu',
+        'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
+      imageAlt: 'Nowoczesna elewacja domu wieczorem z oświetlonym wejściem',
+      cta: 'Zobacz kamery i domofony',
     },
     {
       id: 'multimedia-kino',
@@ -41,6 +42,7 @@ export const HomePage: React.FC = () => {
         'Do filmu rolety same się zamykają, a światło gaśnie. Dzwonek z furtki słyszysz od razu. Masz już głośniki? Podepniemy je do scen.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
       imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
+      cta: 'Zobacz kino w salonie',
     },
     {
       id: 'scenariusze',
@@ -50,8 +52,9 @@ export const HomePage: React.FC = () => {
       description:
         'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
       image:
-        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Ciepłe, przytulne wnętrze o poranku ze zautomatyzowanym oświetleniem',
+        'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+      imageAlt: 'Dłoń z telefonem obok elektronicznego zamka w drzwiach',
+      cta: 'Zobacz scenariusze',
     },
     {
       id: 'pakiety',
@@ -61,30 +64,9 @@ export const HomePage: React.FC = () => {
       description:
         'Sprawdzone zestawy: do gotowego mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
       image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Zbliżenie układów elektronicznych na płytce drukowanej',
-    },
-    {
-      id: 'faq',
-      path: '/faq',
-      title: 'Pytania i odpowiedzi',
-      subtitle: 'Czy działa bez internetu • Ile to kosztuje • Czy obsłuży to babcia',
-      description:
-        'Sprawdź, co dzieje się bez internetu i bez prądu, czy trzeba kuć ściany i czy każdy domownik da sobie radę z obsługą.',
-      image:
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Czyste biuro projektowe z planami architektonicznymi i tabletem',
-    },
-    {
-      id: 'kalkulator',
-      path: '/kalkulator',
-      title: 'Krótka ankieta o Twoim domu',
-      subtitle: 'Wybierz metraż i potrzeby • Oddzwonimy z propozycją',
-      description:
-        'Trzy pytania i kontakt. Zajmie Ci to około 2 minut.',
-      image:
-        'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Jasny salon z nowoczesnym oświetleniem i sterowaniem domem',
+        'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+      imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',
+      cta: 'Zobacz pakiety i ceny',
     },
   ];
 
@@ -176,10 +158,10 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          {/* Bento rhythm on desktop: 2 wide, 3 narrow, 2 wide */}
+          {/* Bento rhythm on desktop: 2 wide, then 3 narrow */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
             {chapters.map((ch, i) => {
-              const wide = i < 2 || i > 4;
+              const wide = i < 2;
               return (
                 <Link
                   key={ch.id}
@@ -216,7 +198,7 @@ export const HomePage: React.FC = () => {
 
                   <div className="px-6 pb-6 pt-2">
                     <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-copper-700 group-hover:text-copper-800">
-                      <span>Zobacz szczegóły</span>
+                      <span>{ch.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -309,32 +291,64 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* TOP SELLING SCENARIOS (TRV AIRING, HAZARD LEAK CUT, SOLAR 3EM, CAR WELCOME) */}
+      {/* Four everyday scenarios */}
       <TopSellingScenariosSection />
-
-      {/* INTERACTIVE 24H LIGHTING & ATMOSPHERE SHOWCASE (DAY VS NIGHT) */}
-      <LightingAtmosphereShowcase />
-
-
-      {/* Mobile Apps & Control Showcase (Dom, Wideodomofony) */}
-      <AppsShowcaseSection />
 
       {/* 5-Step Process */}
       <ProcessSection />
 
-      {/* Technical deep-dive: Hikvision and Shelly features */}
-      <AiFutureTechSection />
+      {/* FAQ teaser: the three questions people ask first */}
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-3">Najczęstsze pytania</div>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+              Zanim zadzwonisz
+            </h2>
+            <Link
+              to="/faq"
+              className="mt-6 inline-flex items-center gap-2 min-h-11 text-sm font-semibold text-copper-700 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
+            >
+              <span>Wszystkie pytania i odpowiedzi</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <dl className="lg:col-span-8 border-y border-gray-300 divide-y divide-gray-300">
+            {FAQ_ITEMS.slice(0, 3).map((item) => (
+              <div key={item.question} className="py-6">
+                <dt className="font-display text-lg font-bold text-gray-900">{item.question}</dt>
+                <dd className="mt-2 text-base leading-relaxed text-gray-700 max-w-[34rem]">{item.simpleAnswer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
 
       {/* Direct Contact Banner */}
       <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 border-t overflow-hidden bg-navy-900 text-white border-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-          <div>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
-              Planujesz budowę albo remont?
-            </h2>
-            <p className="text-sm text-gray-300 mt-2 max-w-xl">
-              Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00).
-            </p>
+          <div className="flex items-start gap-5">
+            {SITE.engineer.name && SITE.engineer.photo && (
+              <img
+                src={`${import.meta.env.BASE_URL}${SITE.engineer.photo}`}
+                alt={SITE.engineer.name}
+                className="w-20 h-20 rounded-[2px] object-cover shrink-0 border border-white/20"
+                loading="lazy"
+              />
+            )}
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                Planujesz budowę albo remont?
+              </h2>
+              <p className="text-base text-gray-300 mt-2 max-w-xl">
+                Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym audycie.
+              </p>
+              {SITE.engineer.name && (
+                <p className="mt-3 text-sm text-gray-300">
+                  Rozmawiasz z: <span className="font-semibold text-white">{SITE.engineer.name}</span>, {SITE.engineer.role.toLowerCase()}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
@@ -346,6 +360,15 @@ export const HomePage: React.FC = () => {
                 <span>Dobierz zestaw (2 min)</span>
               </Link>
 
+              {SITE.phone && (
+                <a
+                  href={telHref(SITE.phone)}
+                  className="min-h-11 inline-flex items-center gap-2 px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                >
+                  <Phone className="w-4 h-4" aria-hidden="true" />
+                  {SITE.phone}
+                </a>
+              )}
               <Link
                 to="/kontakt"
                 className="min-h-11 inline-flex items-center px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
+import { SITE, telHref } from '../config/site.ts';
 import {
   Phone,
+  MessageSquare,
   Mail,
   MapPin,
   CheckCircle2,
@@ -102,7 +104,7 @@ export const ContactPage: React.FC = () => {
                   className="flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200"
                 >
                   <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                    <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
@@ -114,6 +116,12 @@ export const ContactPage: React.FC = () => {
                     <div className="text-xs text-copper-700 font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
                     </div>
+                    {SITE.phone && (
+                      <a href={telHref(SITE.phone)} className="mt-2 inline-flex items-center gap-2 min-h-11 text-base font-bold text-gray-900 hover:text-copper-700 focus-visible:ring-2 focus-visible:ring-copper-500">
+                        <Phone className="w-4 h-4 text-copper-600" aria-hidden="true" />
+                        {SITE.phone}
+                      </a>
+                    )}
                   </div>
                 </div>
 

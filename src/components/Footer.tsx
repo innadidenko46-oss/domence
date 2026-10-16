@@ -294,7 +294,7 @@ export const Footer: React.FC = () => {
                 onClick={() => setActiveModal(null)}
                 className="px-5 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
-                Rozumiem i Zamykam
+                Zamknij
               </button>
             </div>
           </div>

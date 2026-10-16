@@ -27,7 +27,7 @@ export const AppsShowcaseSection: React.FC = () => {
             Aplikacje • Telefon
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Światło, rolety i ogrzewanie z telefonu.
+            Dom i kamery w jednym telefonie.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
             Dwie aplikacje do dwóch zadań. Zwykłe przyciski działają jak zawsze, a telefon to dodatek. Poniżej, do czego służy każda.
@@ -38,8 +38,8 @@ export const AppsShowcaseSection: React.FC = () => {
           <article className="rounded-[2px] bg-gray-50 border border-gray-200 overflow-hidden flex flex-col shadow-sm">
             <div className="relative h-40 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
-                alt="Jasne wnętrze ze sterowaniem światłem i roletami z telefonu"
+                src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1000&q=80"
+                alt="Telefon z aplikacją leżący na jasnym stole"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
@@ -82,8 +82,8 @@ export const AppsShowcaseSection: React.FC = () => {
           <article className="rounded-[2px] bg-gray-50 border border-gray-200 overflow-hidden flex flex-col shadow-sm">
             <div className="relative h-40 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85"
-                alt="Kamera monitoringu na elewacji z podglądem w telefonie"
+                src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
+                alt="Telefon pokazujący obraz z kamery przy furtce"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />

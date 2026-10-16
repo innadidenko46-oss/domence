@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
 import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
+import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
 import { Network, ShieldCheck, ArrowRight, Video, HardDrive, X } from 'lucide-react';
 
 export const TeletechnicsPage: React.FC = () => {
@@ -99,6 +100,9 @@ export const TeletechnicsPage: React.FC = () => {
       {/* Latest Hikvision Series Showcase */}
       <HikvisionShowcase />
 
+      {/* What the newer cameras and controllers can do */}
+      <AiFutureTechSection />
+
       {/* Deep-dive into Local Security vs Cloud Cameras */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,7 +157,7 @@ export const TeletechnicsPage: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900">
                     Kamery na Wi-Fi z obcą chmurą
                   </h3>
-                  <span className="text-xs text-rose-600 font-mono font-semibold">Zależność od dostawcy</span>
+                  <span className="text-xs text-rose-700 font-mono font-semibold">Zależność od dostawcy</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-600">

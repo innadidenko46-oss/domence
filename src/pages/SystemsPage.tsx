@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { SystemsComparisonSection } from '../components/SystemsComparisonSection.tsx';
 import { ShellyShowcase } from '../components/ShellyShowcase.tsx';
+import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
+import { AppsShowcaseSection } from '../components/AppsShowcaseSection.tsx';
 import { Layers, CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export const SystemsPage: React.FC = () => {
@@ -98,6 +100,10 @@ export const SystemsPage: React.FC = () => {
 
       {/* Deep Dive: Full Capabilities of Shelly System */}
       <ShellyShowcase />
+
+      {/* How the light changes through the day, and the two phone apps */}
+      <LightingAtmosphereShowcase />
+      <AppsShowcaseSection />
 
       {/* Detailed Architectural Comparison Guidance */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
@@ -234,7 +240,7 @@ export const SystemsPage: React.FC = () => {
             to="/teletechnika"
             className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
           >
-            <span>Zobacz szczegóły</span>
+            <span>Przejdź do kamer i domofonów</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
