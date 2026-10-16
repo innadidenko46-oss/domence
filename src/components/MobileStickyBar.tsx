@@ -16,7 +16,7 @@ export const MobileStickyBar: React.FC = () => {
         {SITE.phone ? (
           <a
             href={telHref(SITE.phone)}
-            className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex-1 py-3 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-2 transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
+            className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex-1 min-w-0 min-h-11 py-3 px-2 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
           >
             <Phone className="w-4 h-4 text-petrol-700" />
             <span>Zadzwoń</span>
@@ -24,16 +24,16 @@ export const MobileStickyBar: React.FC = () => {
         ) : (
           <Link
             to="/kontakt"
-            className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex-1 py-3 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-2 transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
+            className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex-1 min-w-0 min-h-11 py-3 px-2 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
           >
             <MessageSquare className="w-4 h-4 text-petrol-700" />
-            <span>Kontakt</span>
+            <span>Zapytaj inżyniera</span>
           </Link>
         )}
 
         <Link
           to="/zapytanie"
-          className="flex-[1.5] py-3 px-4 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+          className="flex-1 min-w-0 whitespace-nowrap py-3 px-2 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
         >
           <ClipboardList className="w-4 h-4" />
           <span>Dobierz zestaw</span>

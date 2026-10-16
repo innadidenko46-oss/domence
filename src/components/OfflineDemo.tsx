@@ -19,7 +19,7 @@ export const OfflineDemo: React.FC = () => {
 
   return (
     <div className="rounded-[2px] bg-petrol-900 text-white p-6 sm:p-8 shadow-xl">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="font-display text-lg font-bold">Internet w domu</div>
           <p className="text-sm text-gray-300 mt-0.5">Sprawdź, co się stanie, gdy zniknie.</p>
@@ -37,7 +37,7 @@ export const OfflineDemo: React.FC = () => {
               className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform duration-200 ${online ? 'translate-x-5' : ''}`}
             />
           </span>
-          <span className="text-sm font-semibold w-20 text-left">{online ? 'Włączony' : 'Wyłączony'}</span>
+          <span className="text-sm font-semibold min-w-20 text-left">{online ? 'Włączony' : 'Wyłączony'}</span>
         </button>
       </div>
 

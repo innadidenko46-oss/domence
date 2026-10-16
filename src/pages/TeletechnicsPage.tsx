@@ -15,7 +15,7 @@ export const TeletechnicsPage: React.FC = () => {
         title="Kamery, domofon z kamerą i szybki internet"
         description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt — u Ciebie w domu, bez abonamentu."
         icon={<Network className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
       {/* Visual Atmosphere Showcase for Security & Networks */}
@@ -196,7 +196,7 @@ export const TeletechnicsPage: React.FC = () => {
             to="/multimedia"
             className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
-            <span>Zobacz multimedia</span>
+            <span>Zobacz kino w salonie</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

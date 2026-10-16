@@ -50,7 +50,7 @@ export const HikvisionShowcase: React.FC = () => {
           <div className="max-w-3xl">
             <div className="eyebrow inline-flex items-center gap-2 mb-3">
               <Video className="w-3.5 h-3.5" />
-              <span>Najnowsze kamery i domofony Hikvision</span>
+              <span>Kamery i domofony</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-950">
               Kamery, które widzą w nocy w kolorze, i domofon z kamerą
@@ -91,11 +91,6 @@ export const HikvisionShowcase: React.FC = () => {
                       ? 'bg-petrol-700 text-white': 'bg-gray-100 text-gray-600'}`}>
                     {getSeriesIcon(prod.category)}
                   </div>
-                  <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                    isSelected
-                      ? 'bg-amber-500/15 text-amber-800': 'bg-gray-200 text-gray-600'}`}>
-                    Hikvision
-                  </span>
                 </div>
                 <div className={`font-bold text-xs sm:text-sm leading-snug line-clamp-2 ${
                   isSelected

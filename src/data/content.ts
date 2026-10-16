@@ -125,7 +125,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Rozdzielczość 4K (8 Megapikseli) z kompresją H.265+ oszczędzającą miejsce na dysku',
       'Metalowa obudowa IK10 (wandaloodporna) i IP67 (odporność na mróz i ulewy)',
     ],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80',
   },
   {
     id: 'hik-acusense',
@@ -140,7 +140,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Dwukierunkowe audio: możliwość rozmowy przez kamerę bezpośrednio z poziomu telefonu',
       'Natychmiastowe powiadomienia PUSH ze zdjęciem zdarzenia na smartfon',
     ],
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
   },
   {
     id: 'hik-tandemvu',
@@ -155,7 +155,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Odczytywanie tablic rejestracyjnych pojazdów wjeżdżających na posesję',
       'Zastępuje kilka tradycyjnych kamer statycznych w jednym punkcie montażowym',
     ],
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80',
   },
   {
     id: 'hik-intercom-modular',
@@ -170,7 +170,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Bezpośrednie sterowanie elektrozaczepem furtki i automatyką bramy wjazdowej z dwóch niezależnych przekaźników',
       'Wandaloodporna obudowa IK08/IK09 odporna na trudne warunki atmosferyczne od -40°C do +60°C',
     ],
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85',
+    image: `${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`,
   },
   {
     id: 'hik-minmoe-face',
@@ -185,7 +185,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Kamera z doświetleniem IR działa niezawodnie w kompletnych ciemnościach i w pełnym słońcu',
       'Możliwość generowania tymczasowych kodów QR na smartfon dla gości i kurierów',
     ],
-    image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80',
   },
   {
     id: 'hik-android-screen',
@@ -200,7 +200,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
       'Interkom domowy: rozmowy głosowe między pokojami (np. kuchnia z piętrem)',
       'Zasilanie PoE (jeden cienki przewód sieciowy dostarcza prąd i dane)',
     ],
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80',
   },
 ];
 

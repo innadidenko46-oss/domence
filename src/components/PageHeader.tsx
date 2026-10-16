@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, ChevronRight } from 'lucide-react';
 
@@ -17,6 +17,14 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   icon,
   image,
 }) => {
+  // Each page gets its own browser tab title (helps search results and open tabs)
+  useEffect(() => {
+    const previous = document.title;
+    document.title = `${title.replace(/\u00a0/g, ' ')} | DOMENCE`;
+    return () => {
+      document.title = previous;
+    };
+  }, [title]);
 
   return (
     <header
