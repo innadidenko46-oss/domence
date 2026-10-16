@@ -84,11 +84,18 @@ export const KnowledgeBaseSection: React.FC = () => {
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 aria-pressed={selectedCategory === cat.id}
-                className={`min-h-11 px-4 rounded-[2px] text-xs font-semibold transition-colors cursor-pointer active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
+                className={`relative isolate min-h-11 px-4 rounded-[2px] text-xs font-semibold transition-colors cursor-pointer active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 border ${
                   selectedCategory === cat.id
-                    ? 'bg-petrol-700 text-white'
-                    : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 hover:bg-gray-50'}`}
+                    ? 'text-white border-transparent'
+                    : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-50'}`}
               >
+                {selectedCategory === cat.id && (
+                  <motion.span
+                    layoutId="faq-filter-active"
+                    className="absolute inset-0 -z-10 rounded-[2px] bg-petrol-700"
+                    transition={{ type: 'spring', stiffness: 400, damping: 32 }}
+                  />
+                )}
                 {cat.label}
               </button>
             ))}
@@ -142,7 +149,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
+                          exit={{ opacity: 0, height: 0, transition: { duration: 0.18, ease: [0.55, 0.085, 0.68, 0.53] } }}
                           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                           id={`faq-panel-${index}`}
                           role="region"

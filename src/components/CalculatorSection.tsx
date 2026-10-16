@@ -1,5 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
@@ -59,6 +59,12 @@ const AREA_OPTIONS: { value: AreaRange; short: string }[] = [
   { value: 'ponad_180', short: 'powyżej 180 m²' },
 ];
 
+const stepVariants: Variants = {
+  enter: (dir: number) => ({ opacity: 0, x: 24 * dir }),
+  center: { opacity: 1, x: 0, transition: { duration: 0.26, ease: [0.23, 1, 0.32, 1] as const } },
+  exit: (dir: number) => ({ opacity: 0, x: -24 * dir, transition: { duration: 0.18, ease: [0.55, 0.085, 0.68, 0.53] as const } }),
+};
+
 const MODULE_GROUPS: { label: string; categories: string[] }[] = [
   { label: 'Bezpieczeństwo domu', categories: ['safety'] },
   { label: 'Kamery i sieć', categories: ['teletechnics'] },
@@ -72,6 +78,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   onStateChange,
 }) => {
   const [step, setStep] = useState<number>(1);
+  const [dir, setDir] = useState(1);
+  const goTo = (next: number) => {
+    setDir(next >= step ? 1 : -1);
+    setStep(next);
+  };
   const [propertyState, setPropertyState] = useState<PropertyState>(selectedPropertyState);
   const [areaRange, setAreaRange] = useState<AreaRange>(() => {
     try {
@@ -153,13 +164,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     setAnswered((a) => ({ ...a, property: true }));
     setPropertyState(val);
     onStateChange?.(val);
-    setStep(2);
+    goTo(2);
   };
 
   const handleSelectStep2 = (val: AreaRange) => {
     setAnswered((a) => ({ ...a, area: true }));
     setAreaRange(val);
-    setStep(3);
+    goTo(3);
   };
 
   const toggleModule = (id: string) => {
@@ -297,15 +308,16 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             </div>
           )}
 
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" custom={dir} initial={false}>
 
             {step === 1 && !isSubmitted && (
               <motion.div
                 key="step-1"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                custom={dir}
+                variants={stepVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
               >
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
                   Co najlepiej opisuje Twoją nieruchomość?
@@ -349,10 +361,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {step === 2 && !isSubmitted && (
               <motion.div
                 key="step-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                custom={dir}
+                variants={stepVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
               >
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
                   Jaki metraż?
@@ -382,7 +395,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="mt-8 flex items-center justify-between">
                   <button
                     type="button"
-                    onClick={() => setStep(1)}
+                    onClick={() => goTo(1)}
                     className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                   >
                     <ArrowLeft className="w-4 h-4" />
@@ -395,10 +408,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {step === 3 && !isSubmitted && (
               <motion.div
                 key="step-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                custom={dir}
+                variants={stepVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
               >
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
                   Co Cię interesuje? (wybierz dowolną liczbę)
@@ -467,7 +481,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <div className="flex items-center gap-3 w-full sm:w-auto">
                     <button
                       type="button"
-                      onClick={() => setStep(2)}
+                      onClick={() => goTo(2)}
                       className="w-1/2 sm:w-auto px-4 min-h-11 text-xs font-semibold text-gray-600 transition-colors flex items-center justify-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
@@ -476,7 +490,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                     <button
                       type="button"
-                      onClick={() => setStep(4)}
+                      onClick={() => goTo(4)}
                       className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       <span>Dalej</span>
@@ -490,10 +504,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {step === 4 && !isSubmitted && (
               <motion.div
                 key="step-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                custom={dir}
+                variants={stepVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
               >
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
                   Kiedy planujesz montaż?
@@ -509,7 +524,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       type="button"
                       onClick={() => {
                         setTimeline(opt);
-                        setStep(5);
+                        goTo(5);
                       }}
                       aria-pressed={timeline === opt}
                       className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
@@ -526,7 +541,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="mt-8 flex items-center justify-between">
                   <button
                     type="button"
-                    onClick={() => setStep(3)}
+                    onClick={() => goTo(3)}
                     className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                   >
                     <ArrowLeft className="w-4 h-4" />
@@ -539,10 +554,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {step === 5 && !isSubmitted && (
               <motion.div
                 key="step-5"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                custom={dir}
+                variants={stepVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
               >
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/15 text-amber-800 border border-amber-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
@@ -691,7 +707,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <div className="flex flex-col sm:flex-row gap-3 pt-3">
                     <button
                       type="button"
-                      onClick={() => setStep(4)}
+                      onClick={() => goTo(4)}
                       className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
                     >
                       <ArrowLeft className="w-4 h-4" />
@@ -773,7 +789,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
-                      setStep(1);
+                      goTo(1);
                     }}
                     className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  /* Shared motion curves: enter with ease-out, leave with ease-in */
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -206,4 +210,18 @@ svg.lucide {
 /* Mobile CTA bar hides while the cookie banner is open */
 html[data-cookie-open] .mobile-sticky {
   display: none;
+}
+
+/* Reduced motion: CSS transitions and animations become instant, scrolling stops gliding */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -126,8 +126,8 @@ export const Navbar: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.2 }}
+            exit={{ opacity: 0, y: -10, transition: { duration: 0.15, ease: [0.55, 0.085, 0.68, 0.53] } }}
+            transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
             id="mobile-menu"
             role="dialog"
             aria-label="Menu mobilne"

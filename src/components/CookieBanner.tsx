@@ -109,8 +109,8 @@ export const CookieBanner: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 40, scale: 0.96 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: 24, transition: { duration: 0.2, ease: [0.55, 0.085, 0.68, 0.53] } }}
+            transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             role="region"
             aria-label="Zgoda na pliki cookies"
             className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-2xl z-50"
