@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
+import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import {
   Hammer,
   Home,
@@ -55,6 +56,14 @@ const AREA_OPTIONS: { value: AreaRange; short: string }[] = [
   { value: '61_110', short: '61 – 110 m²' },
   { value: '111_180', short: '111 – 180 m²' },
   { value: 'ponad_180', short: 'powyżej 180 m²' },
+];
+
+const MODULE_GROUPS: { label: string; categories: string[] }[] = [
+  { label: 'Bezpieczeństwo domu', categories: ['safety'] },
+  { label: 'Kamery, alarm i sieć', categories: ['teletechnics'] },
+  { label: 'Wejście i brama', categories: ['access'] },
+  { label: 'Komfort na co dzień', categories: ['comfort'] },
+  { label: 'Prąd i energia', categories: ['power', 'energy'] },
 ];
 
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
@@ -115,6 +124,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const clearError = (field: keyof FieldErrors) =>
     setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [delivery, setDelivery] = useState<LeadResult>('sent');
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
+  const [mailSubject, setMailSubject] = useState('');
 
   useEffect(() => {
     if (selectedPropertyState) {
@@ -131,13 +144,18 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     } catch { /* blocked storage: skip persistence */ }
   }, [propertyState, areaRange, selectedModuleIds]);
 
+  // Nothing is shown as chosen until the visitor picks it, so no default slips through unread
+  const [answered, setAnswered] = useState({ property: false, area: false });
+
   const handleSelectStep1 = (val: PropertyState) => {
+    setAnswered((a) => ({ ...a, property: true }));
     setPropertyState(val);
     onStateChange?.(val);
     setStep(2);
   };
 
   const handleSelectStep2 = (val: AreaRange) => {
+    setAnswered((a) => ({ ...a, area: true }));
     setAreaRange(val);
     setStep(3);
   };
@@ -174,7 +192,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
+    if (sending) return;
     e.preventDefault();
     const found = validate();
     setErrors(found);
@@ -203,14 +222,31 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       '',
       'Ankieta nie jest wyceną — oddzwonimy z propozycją.',
     ].join('\n');
-    let finalBody = body;
-    if (finalBody.length > 1800) {
-      finalBody = finalBody.slice(0, 1800);
-    }
-    setMailBody(finalBody);
+    setMailBody(body);
+    setMailSubject(subject);
     setCopied(false);
-    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(finalBody)}`;
-    setIsSubmitted(true);
+    setSendError(false);
+    setSending(true);
+    try {
+      const result = await sendLead({
+        subject,
+        body,
+        fields: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          property: getPropertyLabel(propertyState),
+          area: getAreaLabel(areaRange),
+        },
+      });
+      setDelivery(result);
+      setIsSubmitted(true);
+    } catch {
+      // Keep everything the visitor typed; they can retry or use e-mail
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleCopyBody = async () => {
@@ -223,10 +259,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   return (
-    <section id="kalkulator" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
+    <section id="kalkulator" className="pt-6 pb-16 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
-        <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-40">
+        <div className="hidden sm:block rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-40">
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
             alt="Jasne wnętrze domu z planowaną automatyką smart home"
@@ -244,7 +280,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <ClipboardList className="w-4 h-4" />
                   <span>Krótka ankieta DOMENCE</span>
                 </span>
-                <span className="font-mono text-gray-400">Krok {step} z 4</span>
+                <span className="font-mono text-gray-600">Krok {step} z 4</span>
               </div>
 
               <div className="w-full h-1 rounded-[2px] overflow-hidden bg-gray-200">
@@ -277,25 +313,26 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {PROPERTY_OPTIONS.map((opt) => {
                     const Icon = opt.icon;
-                    const active = propertyState === opt.value;
+                    const active = answered.property && propertyState === opt.value;
                     return (
                       <button
                         key={opt.value}
                         type="button"
                         onClick={() => handleSelectStep1(opt.value)}
+                        aria-pressed={active}
                         className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
                           active
                             ? 'bg-copper-500/15 border-copper-500 ring-1 ring-copper-500'
                             : 'bg-white border-gray-200 hover:border-gray-300'
                         }`}
                       >
-                        <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-600 flex items-center justify-center mb-4">
+                        <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center mb-4">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div className="text-base font-bold text-gray-900">
                           {opt.title}
                         </div>
-                        <div className="text-xs text-gray-400 mt-1.5 leading-relaxed">
+                        <div className="text-xs text-gray-600 mt-1.5 leading-relaxed">
                           {opt.sub}
                         </div>
                       </button>
@@ -326,8 +363,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       key={opt.value}
                       type="button"
                       onClick={() => handleSelectStep2(opt.value)}
+                      aria-pressed={answered.area && areaRange === opt.value}
                       className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
-                        areaRange === opt.value
+                        answered.area && areaRange === opt.value
                           ? 'bg-copper-600 text-white border-copper-500 shadow-md'
                           : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
                       }`}
@@ -365,48 +403,59 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu oddzwonimy i wszystko wyjaśnimy.
                 </p>
 
-                <div className="space-y-3 max-h-[460px] overflow-y-auto pr-1">
-                  {SMART_MODULES.map((mod) => {
-                    const isChecked = selectedModuleIds.includes(mod.id);
+                <div className="space-y-7">
+                  {MODULE_GROUPS.map((group) => {
+                    const mods = SMART_MODULES.filter((m) => group.categories.includes(m.category));
+                    if (mods.length === 0) return null;
                     return (
-                      <button
-                        type="button"
-                        key={mod.id}
-                        onClick={() => toggleModule(mod.id)}
-                        aria-pressed={isChecked}
-                        className={`p-4 rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 w-full text-left ${
-                          isChecked
-                            ? 'bg-copper-500/15 border-copper-500'
-                            : 'bg-white border-gray-200 hover:border-gray-300'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3.5">
-                          <div
-                            className={`w-5 h-5 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                              isChecked
-                                ? 'bg-copper-600 text-white'
-                                : 'border border-gray-300 bg-white'
-                            }`}
-                          >
-                            {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                          </div>
+                      <fieldset key={group.label}>
+                        <legend className="eyebrow mb-3">{group.label}</legend>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {mods.map((mod) => {
+                            const isChecked = selectedModuleIds.includes(mod.id);
+                            return (
+                              <button
+                                type="button"
+                                key={mod.id}
+                                onClick={() => toggleModule(mod.id)}
+                                aria-pressed={isChecked}
+                                className={`p-4 h-full rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 w-full text-left ${
+                                  isChecked
+                                    ? 'bg-copper-500/15 border-copper-500'
+                                    : 'bg-white border-gray-200 hover:border-gray-300'
+                                }`}
+                              >
+                                <div className="flex items-start gap-3.5">
+                                  <div
+                                    className={`w-5 h-5 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                                      isChecked
+                                        ? 'bg-copper-600 text-white'
+                                        : 'border border-gray-300 bg-white'
+                                    }`}
+                                  >
+                                    {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                                  </div>
 
-                          <div>
-                            <div className="text-xs sm:text-sm font-bold text-gray-900">
-                              {mod.name}
-                            </div>
-                            <div className="text-xs text-gray-400 mt-1 leading-relaxed">
-                              {mod.humanExplanation}
-                            </div>
-                          </div>
+                                  <div>
+                                    <div className="text-xs sm:text-sm font-bold text-gray-900">
+                                      {mod.name}
+                                    </div>
+                                    <div className="text-xs text-gray-600 mt-1 leading-relaxed">
+                                      {mod.humanExplanation}
+                                    </div>
+                                  </div>
+                                </div>
+                              </button>
+                            );
+                          })}
                         </div>
-                      </button>
+                      </fieldset>
                     );
                   })}
                 </div>
 
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-gray-600">
                     {selectedModuleIds.length === 0
                       ? 'Nic nie wybrano — możesz też przejść dalej, a my dobierzemy zestaw.'
                       : `Wybrano: ${selectedModuleIds.length}`}
@@ -415,7 +464,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="w-1/2 sm:w-auto px-4 py-3 text-xs text-gray-400 transition-colors flex items-center justify-center gap-1 font-mono cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                      className="w-1/2 sm:w-auto px-4 min-h-11 text-xs font-semibold text-gray-600 transition-colors flex items-center justify-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
                       <span>Wstecz</span>
@@ -443,7 +492,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 transition={{ duration: 0.2 }}
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-copper-500/15 text-copper-600 border border-copper-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-copper-500/15 text-copper-800 border border-copper-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Twoje odpowiedzi</span>
                   </div>
@@ -452,7 +501,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     Gdzie mamy oddzwonić?
                   </h3>
 
-                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-400">
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600">
                     <span>Nieruchomość: <strong>{getPropertyLabel(propertyState)}</strong></span>
                     <span>•</span>
                     <span>Metraż: <strong>{getAreaLabel(areaRange)}</strong></span>
@@ -596,11 +645,22 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                     <button
                       type="submit"
-                      className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      disabled={sending}
+                      aria-busy={sending}
+                      className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer disabled:cursor-wait disabled:opacity-80 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     >
-                      Wyślij ankietę
+                      {sending ? 'Wysyłanie…' : 'Wyślij ankietę'}
                     </button>
                   </div>
+                  {sendError && (
+                    <p role="alert" className="text-sm text-red-700 border-l-2 border-red-600 pl-3">
+                      Nie udało się wysłać ankiety. Twoje odpowiedzi są zapisane — spróbuj ponownie za chwilę albo{' '}
+                      <a href={mailtoHref(mailSubject, mailBody)} className="font-semibold underline underline-offset-2">
+                        wyślij je e-mailem na {CONTACT_EMAIL}
+                      </a>
+                      .
+                    </p>
+                  )}
                   <p className="text-xs text-center text-gray-500 pt-1">
                     * Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Bez spamu.
                   </p>
@@ -611,31 +671,41 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {isSubmitted && (
               <motion.div
                 key="step-success"
+                role="status"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
                 className="text-center py-8"
               >
-                <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                  <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
+                <div className="w-14 h-14 rounded-full bg-emerald-600/10 text-emerald-700 flex items-center justify-center mx-auto mb-4 border border-emerald-600/30">
+                  <CheckCircle2 className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">
-                  Dziękujemy, {formData.name || 'Inwestorze'}!
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-400 max-w-md mx-auto mb-6 leading-relaxed">
-                  Otworzyliśmy Twój program pocztowy z gotową wiadomością na kontakt@domence.pl. Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
-                </p>
-
-                <div className="p-5 rounded-[2px] border max-w-md mx-auto mb-6 text-left bg-gray-50 border-gray-200">
-                  <div className="text-xs font-bold text-copper-600 mb-2 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Dalsze kroki:</span>
-                  </div>
-                  <p className="text-xs text-gray-400 leading-relaxed">
-                    Oddzwonimy z propozycją dobraną do Twoich odpowiedzi. Ankieta nie jest wyceną.
-                  </p>
-                </div>
+                {delivery === 'sent' ? (
+                  <>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900" tabIndex={-1}>
+                      Dziękujemy{formData.name ? `, ${formData.name.split(' ')[0]}` : ''}. Ankieta dotarła.
+                    </h3>
+                    <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
+                      Oddzwonimy z propozycją dobraną do Twoich odpowiedzi — zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Ankieta nie jest wyceną.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900" tabIndex={-1}>
+                      Jeszcze jeden krok: wyślij wiadomość
+                    </h3>
+                    <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
+                      Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Ankieta dotrze do nas dopiero po kliknięciu „Wyślij”. Jeśli okno się nie otworzyło, skopiuj treść i wyślij ją z dowolnej poczty.
+                    </p>
+                    <a
+                      href={mailtoHref(mailSubject, mailBody)}
+                      className="btn-engineering-primary mb-3 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    >
+                      Otwórz wiadomość ponownie
+                    </a>
+                  </>
+                )}
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <button
@@ -643,7 +713,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     onClick={handleCopyBody}
                     className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
-                    {copied ? 'Skopiowano treść' : 'Kopiuj treść wiadomości'}
+                    {copied ? 'Skopiowano treść' : 'Kopiuj treść ankiety'}
                   </button>
                   <button
                     onClick={() => {

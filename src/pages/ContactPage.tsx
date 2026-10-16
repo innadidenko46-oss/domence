@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader.tsx';
+import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import {
   Phone,
   Mail,
@@ -19,9 +20,14 @@ export const ContactPage: React.FC = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [delivery, setDelivery] = useState<LeadResult>('sent');
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
+  const [lastMail, setLastMail] = useState({ subject: '', body: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
     const subject = `Zapytanie o projekt instalacji — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
@@ -32,8 +38,28 @@ export const ContactPage: React.FC = () => {
       'Opis założeń:',
       formData.message,
     ].join('\n');
-    window.location.href = `mailto:kontakt@domence.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    setLastMail({ subject, body });
+    setSendError(false);
+    setSending(true);
+    try {
+      const result = await sendLead({
+        subject,
+        body,
+        fields: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          location: formData.location,
+        },
+      });
+      setDelivery(result);
+      setSubmitted(true);
+    } catch {
+      // Keep the form filled in so the visitor can retry
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -75,17 +101,17 @@ export const ContactPage: React.FC = () => {
                 <div
                   className="flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200"
                 >
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">
+                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
                       Jak się skontaktować
                     </div>
                     <div className="text-base font-bold font-mono transition-colors mt-0.5 text-gray-900 group-hover:text-copper-700">
                       Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
                     </div>
-                    <div className="text-xs text-copper-600 font-mono mt-0.5">
+                    <div className="text-xs text-copper-700 font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
                     </div>
                   </div>
@@ -95,34 +121,34 @@ export const ContactPage: React.FC = () => {
                   href="mailto:kontakt@domence.pl"
                   className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200 hover:border-copper-500"
                 >
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">
+                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
                       Sprawdzenie rysunków budowlanych
                     </div>
                     <div className="text-base font-bold group-hover:text-copper-700 transition-colors mt-0.5 text-gray-900">
                       kontakt@domence.pl
                     </div>
-                    <div className="text-xs text-gray-400 mt-0.5 font-mono">
+                    <div className="text-xs text-gray-600 mt-0.5 font-mono">
                       Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00)
                     </div>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-4 p-5 rounded-[2px] border bg-white border-gray-200">
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">
+                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
                       Gdzie działamy
                     </div>
                     <div className="text-sm font-bold text-gray-900">
                       Warszawa i okolice; większe domy — cała Polska
                     </div>
-                    <div className="text-sm text-gray-400 mt-0.5">
+                    <div className="text-sm text-gray-600 mt-0.5">
                       Przyjeżdżamy na miejsce albo pracujemy na podstawie rysunków.
                     </div>
                   </div>
@@ -131,7 +157,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Authority and Trust Guarantee Box */}
               <div className="p-6 rounded-[2px] border bg-white border-gray-200">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-copper-600 mb-3 flex items-center gap-2">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Jak działamy</span>
                 </h4>
@@ -157,23 +183,43 @@ export const ContactPage: React.FC = () => {
             <div className="lg:col-span-7">
               <div className="p-8 sm:p-10 rounded-[2px] border shadow-xl bg-white border-gray-200">
                 {submitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+                  <div className="text-center py-12" role="status">
+                    <div className="w-14 h-14 rounded-full bg-emerald-600/10 text-emerald-700 flex items-center justify-center mx-auto mb-4 border border-emerald-600/30">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                      Dziękujemy. Wiadomość jest prawie gotowa.
-                    </h3>
-                    <p className="text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
-                      Otworzyliśmy Twój program pocztowy z przygotowaną wiadomością do wysłania na kontakt@domence.pl.
-                      Jeśli okno się nie otworzyło, napisz do nas bezpośrednio. Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
-                    >
-                      Wyślij kolejne zapytanie
-                    </button>
+                    {delivery === 'sent' ? (
+                      <>
+                        <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                          Dziękujemy. Wiadomość dotarła.
+                        </h3>
+                        <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
+                          Odpowiemy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                          Jeszcze jeden krok: wyślij wiadomość
+                        </h3>
+                        <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
+                          Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Dotrze do nas dopiero po kliknięciu „Wyślij”.
+                        </p>
+                        <a
+                          href={mailtoHref(lastMail.subject, lastMail.body)}
+                          className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                        >
+                          Otwórz wiadomość ponownie
+                        </a>
+                      </>
+                    )}
+                    <div>
+                      <button
+                        onClick={() => setSubmitted(false)}
+                        className="btn-secondary mt-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      >
+                        Wyślij kolejne zapytanie
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -181,7 +227,7 @@ export const ContactPage: React.FC = () => {
                       <h3 className="text-xl font-bold mb-1 text-gray-900">
                         Zapytaj o swój dom
                       </h3>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-600">
                         Wypełnij pola — za darmo sprawdzimy, co da się zrobić.
                       </p>
                     </div>
@@ -278,11 +324,22 @@ export const ContactPage: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="btn-engineering-primary w-full gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      disabled={sending}
+                      aria-busy={sending}
+                      className="btn-engineering-primary w-full gap-2 cursor-pointer disabled:cursor-wait disabled:opacity-80 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Zapytaj inżyniera</span>
+                      <span>{sending ? 'Wysyłanie…' : 'Zapytaj inżyniera'}</span>
                     </button>
+                    {sendError && (
+                      <p role="alert" className="text-sm text-red-700 border-l-2 border-red-600 pl-3">
+                        Nie udało się wysłać wiadomości. Wpisane dane zostały w formularzu — spróbuj ponownie za chwilę albo{' '}
+                        <a href={mailtoHref(lastMail.subject, lastMail.body)} className="font-semibold underline underline-offset-2">
+                          napisz na {CONTACT_EMAIL}
+                        </a>
+                        .
+                      </p>
+                    )}
                     <p className="text-xs text-center text-gray-500">
                       * Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Dane nie są przekazywane firmom marketingowym.
                     </p>
