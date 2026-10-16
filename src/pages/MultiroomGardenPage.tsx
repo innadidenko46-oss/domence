@@ -12,7 +12,7 @@ export const MultiroomGardenPage: React.FC = () => {
         badge="Kino w salonie"
         title="Kino w salonie — jeden przycisk"
         description="Rolety same się zamykają, światło przygasa, a gościa przy furtce widzisz na panelu w domu i w telefonie."
-        icon={<Film className="w-4 h-4 text-copper-600" />}
+        icon={<Film className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -28,8 +28,8 @@ export const MultiroomGardenPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Kino jednym przyciskiem
                 </span>
               </div>
@@ -51,8 +51,8 @@ export const MultiroomGardenPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Dzwonek z furtki
                 </span>
               </div>
@@ -87,14 +87,14 @@ export const MultiroomGardenPage: React.FC = () => {
           <div className="grid grid-cols-1 gap-8 max-w-3xl">
             <div className="p-7 rounded-[2px] border shadow-sm bg-white border-gray-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center">
                   <Film className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
                     „Seans” — jeden przycisk
                   </h3>
-                  <span className="text-xs text-copper-700 font-mono font-semibold">Pełna koordynacja salonu</span>
+                  <span className="text-xs text-amber-700 font-mono font-semibold">Pełna koordynacja salonu</span>
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-4 text-gray-600">
@@ -102,15 +102,15 @@ export const MultiroomGardenPage: React.FC = () => {
               </p>
               <ul className="space-y-2.5 text-sm text-gray-700">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
                   <span>Rolety i żaluzje zjeżdżają w 100%, eliminując wszelkie odblaski światła dziennego.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
                   <span>Główne oświetlenie wygasza się, a subtelne taśmy LED przy podłodze ściemniają się do 5%.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
                   <span>Gdy ktoś dzwoni do furtki, obraz pojawia się na panelu w salonie.</span>
                 </li>
               </ul>
@@ -121,21 +121,21 @@ export const MultiroomGardenPage: React.FC = () => {
           <div className="mt-8 p-8 rounded-[2px] border shadow-sm bg-white border-gray-200">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-gray-200">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
                   <Tv className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
                     Sceny kinowe — ustawiamy od początku do końca
                   </h3>
-                  <div className="text-xs text-copper-700 font-mono mt-0.5">
+                  <div className="text-xs text-amber-700 font-mono mt-0.5">
                     Automatyka rolet blackout • Sceny nastrojowe • Jeden przycisk
                   </div>
                 </div>
               </div>
               <Link
                 to="/zapytanie"
-                className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Dobierz zestaw (2 min)
               </Link>
@@ -145,17 +145,17 @@ export const MultiroomGardenPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
               Przykłady z życia wzięte
             </div>
           </div>
           <Link
             to="/scenariusze"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
             <span>Zobacz scenariusze</span>
             <ArrowRight className="w-4 h-4" />

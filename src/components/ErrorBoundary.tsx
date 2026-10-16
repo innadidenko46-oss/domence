@@ -38,7 +38,7 @@ export class ErrorBoundary extends React.Component<
             </button>
             <Link
               to="/"
-              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white text-sm font-semibold"
+              className="px-6 py-3 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white text-sm font-semibold"
             >
               Strona główna
             </Link>

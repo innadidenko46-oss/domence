@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo - acts as Home Icon / Button */}
           <Link
             to="/"
-            className="flex items-center group shrink-0 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+            className="flex items-center group shrink-0 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             title="DOMENCE - Strona Główna"
             aria-label="DOMENCE - Strona Główna"
           >
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
                 className={({ isActive }) =>
                   `px-2.5 xl:px-3 py-3 rounded-[2px] whitespace-nowrap transition-all duration-150 ${
                     isActive
-                      ? 'text-copper-700 bg-copper-500/10 font-semibold border border-copper-500/25': 'hover:text-gray-900 hover:bg-gray-100'}`
+                      ? 'text-amber-700 bg-amber-500/10 font-semibold border border-amber-500/25': 'hover:text-gray-900 hover:bg-gray-100'}`
                 }
               >
                 {link.label}
@@ -90,15 +90,15 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto xl:ml-0">
             <Link
               to="/kontakt"
-              className={`${hideHeaderCta ? 'flex' : 'flex xl:hidden 2xl:flex'} focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 items-center gap-2 min-h-11 text-sm font-semibold transition-colors px-4 rounded-[2px] border whitespace-nowrap bg-white hover:bg-gray-100 border-gray-300 text-gray-800`}
+              className={`${hideHeaderCta ? 'flex' : 'flex xl:hidden 2xl:flex'} focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 items-center gap-2 min-h-11 text-sm font-semibold transition-colors px-4 rounded-[2px] border whitespace-nowrap bg-white hover:bg-gray-100 border-gray-300 text-gray-800`}
             >
-              <MessageSquare className="w-3.5 h-3.5 text-copper-600" />
+              <MessageSquare className="w-3.5 h-3.5 text-petrol-700" />
               <span>Zapytaj inżyniera</span>
             </Link>
 
             <Link
               to="/zapytanie"
-              className={`${hideHeaderCta ? 'hidden' : 'flex animate-[rise-in_0.3s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none'} transition-colors min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm border border-copper-400/40 active:scale-[0.98] items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2`}
+              className={`${hideHeaderCta ? 'hidden' : 'flex animate-[rise-in_0.3s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none'} transition-colors min-h-11 px-4 py-2 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm border border-amber-400/40 active:scale-[0.98] items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2`}
             >
               <ClipboardList className="w-4 h-4" />
               <span>Dobierz zestaw (2 min)</span>
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
           <div className="flex xl:hidden items-center gap-1.5">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 w-11 h-11 flex items-center justify-center rounded-[2px] border bg-gray-100 border-gray-300 text-gray-900"
+              className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 w-11 h-11 flex items-center justify-center rounded-[2px] border bg-gray-100 border-gray-300 text-gray-900"
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
                   className={({ isActive }) =>
                     `text-sm font-medium py-3.5 px-3 rounded-[2px] flex items-center justify-between transition-colors ${
                       isActive
-                        ? 'bg-copper-500/15 text-copper-600 font-bold border border-copper-500/30'
+                        ? 'bg-amber-500/15 text-petrol-700 font-bold border border-amber-500/30'
                         : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`
                   }
                 >
@@ -155,7 +155,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/zapytanie"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-copper-400/40 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                  className="w-full py-3 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-amber-400/40 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                 >
                   <ClipboardList className="w-4 h-4" />
                   <span>Dobierz zestaw (2 min)</span>
@@ -164,9 +164,9 @@ export const Navbar: React.FC = () => {
                 <Link
                   to="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-sm font-semibold bg-gray-100 border-gray-300 text-gray-700"
+                  className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex items-center justify-center gap-2 py-3 rounded-[2px] border text-sm font-semibold bg-gray-100 border-gray-300 text-gray-700"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-copper-600" />
+                  <MessageSquare className="w-3.5 h-3.5 text-petrol-700" />
                   <span>Zapytaj inżyniera</span>
                 </Link>
               </div>

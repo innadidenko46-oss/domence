@@ -5,19 +5,19 @@ import { Search, Eye, Cpu, Radio, Lock, Bell, Sparkles, CheckCircle2 } from 'luc
 const getTechIcon = (iconName: string) => {
   switch (iconName) {
     case 'Search':
-      return <Search className="w-5 h-5 text-copper-600" />;
+      return <Search className="w-5 h-5 text-petrol-700" />;
     case 'Eye':
-      return <Eye className="w-5 h-5 text-copper-600" />;
+      return <Eye className="w-5 h-5 text-petrol-700" />;
     case 'Cpu':
-      return <Cpu className="w-5 h-5 text-copper-600" />;
+      return <Cpu className="w-5 h-5 text-petrol-700" />;
     case 'Radio':
-      return <Radio className="w-5 h-5 text-copper-600" />;
+      return <Radio className="w-5 h-5 text-petrol-700" />;
     case 'Lock':
-      return <Lock className="w-5 h-5 text-copper-600" />;
+      return <Lock className="w-5 h-5 text-petrol-700" />;
     case 'Bell':
-      return <Bell className="w-5 h-5 text-copper-600" />;
+      return <Bell className="w-5 h-5 text-petrol-700" />;
     default:
-      return <Sparkles className="w-5 h-5 text-copper-600" />;
+      return <Sparkles className="w-5 h-5 text-petrol-700" />;
   }
 };
 
@@ -53,7 +53,7 @@ export const AiFutureTechSection: React.FC = () => {
               <ul className="mt-4 space-y-2">
                 {tech.keyPoints.slice(0, 3).map((point, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm leading-relaxed text-gray-700">
-                    <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                     <span>{point}</span>
                   </li>
                 ))}

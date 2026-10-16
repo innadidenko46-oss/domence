@@ -280,7 +280,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
           {!isSubmitted && (
             <div className="mb-8">
               <div className="flex items-center justify-between text-xs font-semibold mb-3">
-                <span className="flex items-center gap-1.5 text-copper-600 font-mono uppercase tracking-wider font-bold">
+                <span className="flex items-center gap-1.5 text-petrol-700 font-mono uppercase tracking-wider font-bold">
                   <ClipboardList className="w-4 h-4" />
                   <span>Twoje zapytanie</span>
                 </span>
@@ -289,7 +289,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
               <div className="w-full h-1 rounded-[2px] overflow-hidden bg-gray-200">
                 <motion.div
-                  className="h-full bg-copper-600"
+                  className="h-full bg-petrol-700"
                   animate={{ width: `${step * 20}%` }}
                   transition={{ duration: 0.3 }}
                 />
@@ -324,13 +324,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         type="button"
                         onClick={() => handleSelectStep1(opt.value)}
                         aria-pressed={active}
-                        className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                        className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                           active
-                            ? 'bg-copper-500/15 border-copper-500 ring-1 ring-copper-500'
+                            ? 'bg-amber-500/15 border-amber-500 ring-1 ring-petrol-600'
                             : 'bg-white border-gray-200 hover:border-gray-300'
                         }`}
                       >
-                        <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center mb-4">
+                        <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div className="text-base font-bold text-gray-900">
@@ -368,9 +368,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       type="button"
                       onClick={() => handleSelectStep2(opt.value)}
                       aria-pressed={answered.area && areaRange === opt.value}
-                      className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                      className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                         answered.area && areaRange === opt.value
-                          ? 'bg-copper-600 text-white border-copper-500 shadow-md'
+                          ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
                           : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
                       }`}
                     >
@@ -383,7 +383,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
@@ -423,9 +423,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                                 key={mod.id}
                                 onClick={() => toggleModule(mod.id)}
                                 aria-pressed={isChecked}
-                                className={`p-4 h-full rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 w-full text-left ${
+                                className={`p-4 h-full rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 w-full text-left ${
                                   isChecked
-                                    ? 'bg-copper-500/15 border-copper-500'
+                                    ? 'bg-amber-500/15 border-amber-500'
                                     : 'bg-white border-gray-200 hover:border-gray-300'
                                 }`}
                               >
@@ -433,7 +433,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                                   <div
                                     className={`w-5 h-5 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                                       isChecked
-                                        ? 'bg-copper-600 text-white'
+                                        ? 'bg-petrol-700 text-white'
                                         : 'border border-gray-300 bg-white'
                                     }`}
                                   >
@@ -468,7 +468,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="w-1/2 sm:w-auto px-4 min-h-11 text-xs font-semibold text-gray-600 transition-colors flex items-center justify-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                      className="w-1/2 sm:w-auto px-4 min-h-11 text-xs font-semibold text-gray-600 transition-colors flex items-center justify-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
                       <span>Wstecz</span>
@@ -477,7 +477,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(4)}
-                      className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       <span>Dalej</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -512,9 +512,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         setStep(5);
                       }}
                       aria-pressed={timeline === opt}
-                      className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                      className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                         timeline === opt
-                          ? 'bg-copper-600 text-white border-copper-500 shadow-md'
+                          ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
                           : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
                       }`}
                     >
@@ -527,7 +527,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(3)}
-                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
@@ -545,7 +545,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 transition={{ duration: 0.2 }}
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-copper-500/15 text-copper-800 border border-copper-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/15 text-amber-800 border border-amber-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Twoje odpowiedzi</span>
                   </div>
@@ -584,7 +584,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         placeholder="np. Marek Wiśniewski"
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? 'calc-name-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.name ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.name ? 'border-red-600' : 'border-gray-300'}`}
                       />
                       <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                     </div>
@@ -613,7 +613,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           placeholder="+48 601 234 567"
                           aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? 'calc-phone-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Phone className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
@@ -639,7 +639,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           placeholder="inwestor@dom.pl"
                           aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? 'calc-email-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 text-gray-900 focus:border-copper-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
@@ -661,12 +661,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Np. kiedy najlepiej oddzwonić?"
-                      className="w-full px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                      className="w-full px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                     />
                   </div>
 
                   <div className="pt-2 text-xs text-gray-600">
-                    <label className="flex items-start gap-2.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                    <label className="flex items-start gap-2.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                       <input
                         id="calc-agreement"
                         type="checkbox"
@@ -677,7 +677,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           setFormData({ ...formData, agreement: e.target.checked });
                           clearError('agreement');
                         }}
-                        className="mt-0.5 accent-copper-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                        className="mt-0.5 accent-amber-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
                         Wyrażam zgodę na kontakt w sprawie zapytania i propozycji zestawu.
@@ -692,7 +692,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(4)}
-                      className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
+                      className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
                     >
                       <ArrowLeft className="w-4 h-4" />
                       <span>Wstecz</span>
@@ -702,7 +702,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       type="submit"
                       disabled={sending}
                       aria-busy={sending}
-                      className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer disabled:cursor-wait disabled:opacity-80 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer disabled:cursor-wait disabled:opacity-80 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       {sending ? 'Wysyłanie…' : 'Wyślij zapytanie'}
                     </button>
@@ -755,7 +755,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     </p>
                     <a
                       href={mailtoHref(mailSubject, mailBody)}
-                      className="btn-engineering-primary mb-3 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      className="btn-engineering-primary mb-3 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       Otwórz wiadomość ponownie
                     </a>
@@ -766,7 +766,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <button
                     type="button"
                     onClick={handleCopyBody}
-                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
                     {copied ? 'Skopiowano treść' : 'Kopiuj treść zapytania'}
                   </button>
@@ -775,7 +775,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       setIsSubmitted(false);
                       setStep(1);
                     }}
-                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+                    className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
                     Wyślij kolejne zapytanie
                   </button>

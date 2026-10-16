@@ -10,7 +10,7 @@ export const NotFoundPage: React.FC = () => {
         badge="Błąd 404"
         title="Nie znaleziono strony"
         description="Adres, którego szukasz, nie istnieje lub został przeniesiony."
-        icon={<FileQuestion className="w-4 h-4 text-copper-600" />}
+        icon={<FileQuestion className="w-4 h-4 text-petrol-700" />}
       />
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -20,7 +20,7 @@ export const NotFoundPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/"
-              className="px-6 py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
+              className="px-6 py-3 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm transition-colors"
             >
               Wróć na stronę główną
             </Link>

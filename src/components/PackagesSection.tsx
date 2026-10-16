@@ -33,7 +33,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="eyebrow inline-flex items-center gap-2 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
+            <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
             <span>Zakres prac</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
@@ -55,7 +55,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 transition={{ duration: 0.15 }}
                 className={`relative rounded-[2px] overflow-hidden flex flex-col justify-between transition-all ${
                   isBestseller
-                    ? 'bg-white border-2 border-copper-500 shadow-md': 'bg-white border border-gray-200 hover:border-gray-300 shadow-sm'}`}
+                    ? 'bg-white border-2 border-amber-500 shadow-md': 'bg-white border border-gray-200 hover:border-gray-300 shadow-sm'}`}
               >
                 {/* Photo top */}
                 {PACKAGE_IMAGES[pkg.id] && (
@@ -66,13 +66,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                       loading="lazy"
                       className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
                   </div>
                 )}
                 <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
                 {/* Top Bestseller Badge */}
                 {isBestseller && (
-                  <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-copper-600 text-white font-mono font-semibold text-sm shadow-sm">
+                  <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-petrol-700 text-white font-mono font-semibold text-sm shadow-sm">
                     Bestseller: Bez Kucia Ścian
                   </div>
                 )}
@@ -83,13 +83,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                     <span
                       className={`text-xs font-mono font-semibold uppercase px-2.5 py-0.5 rounded-[2px] border ${
                         isBestseller
-                          ? 'bg-copper-500/15 text-copper-800 border-copper-500/30'
+                          ? 'bg-amber-500/15 text-amber-800 border-amber-500/30'
                           : 'bg-gray-100 text-gray-600 border-gray-200'}`}
                     >
                       {pkg.categoryBadge}
                     </span>
                     <div className="flex items-center gap-1.5 text-xs font-mono text-gray-500">
-                      <Clock className="w-3.5 h-3.5 text-copper-600" />
+                      <Clock className="w-3.5 h-3.5 text-petrol-700" />
                       <span>{pkg.timeframe}</span>
                     </div>
                   </div>
@@ -102,8 +102,8 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   </p>
 
                   {/* Summary Box */}
-                  <div className="mt-3 p-3 pl-4 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-gray-50 border-gray-200 text-gray-700">
-                    <span className="font-bold text-copper-600 block mb-0.5">Co robimy:</span>
+                  <div className="mt-3 p-3 pl-4 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed bg-gray-50 border-gray-200 text-gray-700">
+                    <span className="font-bold text-petrol-700 block mb-0.5">Co robimy:</span>
                     {pkg.humanSummary}
                   </div>
 
@@ -114,7 +114,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                     </div>
                     {pkg.features.map((feat, i) => (
                       <div key={i} className="flex items-start gap-2.5 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                         <span className="leading-relaxed text-gray-700">
                           {feat}
                         </span>
@@ -128,7 +128,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   onClick={() => onSelectPackage(pkg.recommendedFor)}
                   className={`mt-8 w-full py-3.5 rounded-[2px] font-semibold text-sm text-center transition-colors flex items-center justify-center gap-2 cursor-pointer border ${
                     isBestseller
-                      ? 'bg-copper-600 hover:bg-copper-700 text-white border-copper-400/40'
+                      ? 'bg-petrol-700 hover:bg-petrol-800 text-white border-amber-400/40'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-300'}`}
                 >
                   <span>Wybierz pakiet</span>
@@ -144,7 +144,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-600">
             Masz pompę ciepła, panele albo nietypową bramę?{' '}
-            <Link to="/zapytanie" className="text-copper-700 underline hover:text-copper-800">
+            <Link to="/zapytanie" className="text-amber-700 underline hover:text-amber-800">
               Dobierz zestaw (2 min)
             </Link>
           </p>

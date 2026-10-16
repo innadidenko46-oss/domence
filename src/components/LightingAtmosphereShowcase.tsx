@@ -89,7 +89,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 loading="lazy"
               />
               <div className="p-6 flex flex-col flex-1">
-                <div className="text-xs font-mono text-copper-700 font-semibold mb-1">
+                <div className="text-xs font-mono text-amber-700 font-semibold mb-1">
                   {scene.time}
                 </div>
                 <div className="text-sm font-bold text-gray-900">{scene.name}</div>
@@ -102,7 +102,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 <ul className="mt-4 space-y-2">
                   {scene.features.map((feat, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5" />
                       </span>
                       <span>{feat}</span>

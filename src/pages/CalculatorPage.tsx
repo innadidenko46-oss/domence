@@ -32,7 +32,7 @@ export const CalculatorPage: React.FC = () => {
         badge="Zapytanie"
         title="Opowiedz nam o swoim domu"
         description="Zaznacz, co Cię interesuje, i zostaw kontakt — około 2 minut. Oddzwonimy z propozycją dopasowaną do Twojego domu, zwykle w 24 godziny robocze (pon–pt, 8:00–18:00)."
-        icon={<ClipboardList className="w-4 h-4 text-copper-600" />}
+        icon={<ClipboardList className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 

@@ -12,7 +12,7 @@ export const FaqPage: React.FC = () => {
         badge="Pytania i odpowiedzi"
         title="Pytania i odpowiedzi — prosto i konkretnie"
         description="Jak dom działa bez internetu, czy trzeba kuć ściany i czy nagrania z kamer zostają w domu. Zwykłymi słowami."
-        icon={<BookOpen className="w-4 h-4 text-copper-600" />}
+        icon={<BookOpen className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -20,11 +20,11 @@ export const FaqPage: React.FC = () => {
       <KnowledgeBaseSection />
 
       {/* Direct Engineer Contact Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-[2px] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-copper-500/20 text-copper-200 border border-copper-500/40 text-xs font-mono font-semibold mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-mono font-semibold mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Dziwny układ mieszkania albo domu?</span>
               </div>
@@ -39,7 +39,7 @@ export const FaqPage: React.FC = () => {
             <div className="flex items-center gap-4 shrink-0">
               <Link
                 to="/kontakt"
-                className="inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>
@@ -59,7 +59,7 @@ export const FaqPage: React.FC = () => {
           </div>
           <Link
             to="/zapytanie"
-            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+            className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
           >
             <span>Dobierz zestaw (2 min)</span>
             <ArrowRight className="w-4 h-4" />

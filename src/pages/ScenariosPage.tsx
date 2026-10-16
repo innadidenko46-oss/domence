@@ -12,7 +12,7 @@ export const ScenariosPage: React.FC = () => {
         badge="Przykłady z życia"
         title="Dom, który robi część rzeczy za Ciebie"
         description="Światło, rolety i ogrzewanie działają same. Sterujesz telefonem, przyciskiem albo głosem. Gdy pęknie wężyk, zawór sam zakręca wodę w kilka sekund."
-        icon={<SlidersHorizontal className="w-4 h-4 text-copper-600" />}
+        icon={<SlidersHorizontal className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -28,8 +28,8 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Budzenie światłem
                 </span>
               </div>
@@ -51,8 +51,8 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Przycisk przy drzwiach
                 </span>
               </div>
@@ -74,8 +74,8 @@ export const ScenariosPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Woda odcięta w kilka sekund
                 </span>
               </div>
@@ -117,8 +117,8 @@ export const ScenariosPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="pt-6 border-t-2 border-copper-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center mb-4">
+            <div className="pt-6 border-t-2 border-amber-500/50">
+              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
                 <Droplets className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900">
@@ -129,8 +129,8 @@ export const ScenariosPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="pt-6 border-t-2 border-copper-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center mb-4">
+            <div className="pt-6 border-t-2 border-amber-500/50">
+              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
                 <LogOut className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900">
@@ -141,8 +141,8 @@ export const ScenariosPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="pt-6 border-t-2 border-copper-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center mb-4">
+            <div className="pt-6 border-t-2 border-amber-500/50">
+              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
                 <Moon className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900">
@@ -157,17 +157,17 @@ export const ScenariosPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-copper-200 font-mono">Następny krok:</div>
+            <div className="text-xs text-amber-200 font-mono">Następny krok:</div>
             <div className="text-base font-bold text-white">
               Gotowe zestawy z ceną na piśmie
             </div>
           </div>
           <Link
             to="/pakiety"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
             <span>Zobacz pakiety</span>
             <ArrowRight className="w-4 h-4" />

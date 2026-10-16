@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
   }, [activeModal]);
 
   return (
-    <footer className="bg-navy-950 border-t border-white/10 pt-16 pb-24 md:pb-16 text-gray-400 text-xs">
+    <footer className="bg-petrol-950 border-t border-white/10 pt-16 pb-24 md:pb-16 text-gray-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
@@ -58,22 +58,22 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/systemy" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/systemy" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Automatyka domu
                   </Link>
                 </li>
                 <li>
-                  <Link to="/teletechnika" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/teletechnika" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Kamery i domofon z kamerą
                   </Link>
                 </li>
                 <li>
-                  <Link to="/multimedia" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/multimedia" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Kino w salonie
                   </Link>
                 </li>
                 <li>
-                  <Link to="/scenariusze" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/scenariusze" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Przykłady z życia
                   </Link>
                 </li>
@@ -86,31 +86,31 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/pakiety" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/pakiety" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Gotowe zestawy z montażem
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/faq" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Pytania i odpowiedzi
                   </Link>
                 </li>
                 <li>
-                  <Link to="/zapytanie" className="hover:text-copper-400 transition-colors font-semibold text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/zapytanie" className="hover:text-amber-400 transition-colors font-semibold text-amber-400 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Dobierz zestaw (2 min)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kontakt" className="hover:text-copper-400 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/kontakt" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Zapytaj inżyniera
                   </Link>
                 </li>
                 <li>
                   <button
                     onClick={openCookiePreferences}
-                    className="hover:text-copper-400 transition-colors flex items-center gap-1.5 text-gray-400 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-gray-400 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
-                    <Cookie className="w-3.5 h-3.5 text-copper-400" />
+                    <Cookie className="w-3.5 h-3.5 text-amber-400" />
                     <span>Ustawienia plików cookies</span>
                   </button>
                 </li>
@@ -126,21 +126,21 @@ export const Footer: React.FC = () => {
 
             <a
               href="mailto:kontakt@domence.pl"
-              className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-copper-400 transition-colors font-mono focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-amber-400 transition-colors font-mono focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
-              <Mail className="w-4 h-4 text-copper-400 shrink-0" />
+              <Mail className="w-4 h-4 text-amber-400 shrink-0" />
               <span>kontakt@domence.pl</span>
             </a>
 
             <div className="flex items-start gap-2.5 text-xs text-gray-400">
-              <MapPin className="w-4 h-4 text-copper-400 shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
               <span>Warszawa i okolice</span>
             </div>
 
             <div className="pt-2">
               <Link
                 to="/kontakt"
-                className="inline-block px-4 py-2.5 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs transition-colors shadow-md shadow-copper-500/10 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="inline-block px-4 py-2.5 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-bold text-xs transition-colors shadow-md shadow-amber-500/10 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>
@@ -161,21 +161,21 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => setActiveModal('rodo')}
-              className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="hover:text-amber-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               Polityka prywatności i RODO
             </button>
             <button
               onClick={() => setActiveModal('regulamin')}
-              className="hover:text-copper-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="hover:text-amber-400 transition-colors cursor-pointer text-gray-300 underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               Regulamin świadczenia usług
             </button>
             <button
               onClick={openCookiePreferences}
-              className="hover:text-copper-400 transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
-              <Cookie className="w-3 h-3 text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2" />
+              <Cookie className="w-3 h-3 text-amber-400 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2" />
               <span>Cookies</span>
             </button>
           </div>
@@ -185,13 +185,13 @@ export const Footer: React.FC = () => {
 
       {/* Legal Modals */}
       {activeModal && (
-        <div className="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
-          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-navy-950 border border-white/15 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
+        <div className="fixed inset-0 z-50 bg-petrol-950/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setActiveModal(null)}>
+          <div role="dialog" aria-modal="true" aria-label="Informacje prawne" onClick={(e) => e.stopPropagation()} className="bg-petrol-950 border border-white/15 rounded-[2px] max-w-2xl w-full p-6 text-gray-300 text-xs max-h-[85vh] overflow-y-auto relative shadow-2xl">
             <button
               onClick={() => setActiveModal(null)}
               aria-label="Zamknij"
               autoFocus
-              className="absolute top-4 right-4 text-gray-400 hover:text-white p-1 rounded-[2px] bg-white/5 border border-white/10 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white p-1 rounded-[2px] bg-white/5 border border-white/10 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               <X className="w-5 h-5" />
             </button>
@@ -199,7 +199,7 @@ export const Footer: React.FC = () => {
             {activeModal === 'rodo' && (
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-copper-600" />
+                  <ShieldCheck className="w-5 h-5 text-petrol-700" />
                   <span>Polityka Prywatności i Informacja o Danych Osobowych (RODO)</span>
                 </h3>
                 <div className="space-y-3 leading-relaxed text-gray-300">
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
             {activeModal === 'regulamin' && (
               <div>
                 <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-copper-600" />
+                  <FileText className="w-5 h-5 text-petrol-700" />
                   <span>Regulamin świadczenia usług montażowych i projektowych</span>
                 </h3>
                 <div className="space-y-3 leading-relaxed text-gray-300">
@@ -245,7 +245,7 @@ export const Footer: React.FC = () => {
             <div className="mt-6 pt-4 border-t border-white/10 text-right">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="px-5 py-2 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-bold text-xs focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Zamknij
               </button>

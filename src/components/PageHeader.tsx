@@ -29,7 +29,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           <nav aria-label="Nawigacja" className="flex items-center gap-2 text-xs mb-6 text-gray-600">
             <Link
               to="/"
-              className="flex items-center gap-1.5 min-h-11 hover:text-copper-700 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500"
+              className="flex items-center gap-1.5 min-h-11 hover:text-amber-700 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600"
             >
               <Home className="w-4 h-4" />
               <span>Strona główna</span>

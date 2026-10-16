@@ -45,13 +45,13 @@ export const SystemsComparisonSection: React.FC = () => {
 
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-stretch">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-[2px] border-2 border-copper-500 bg-gray-50 p-6 sm:p-8 shadow-sm">
+              <div className="rounded-[2px] border-2 border-amber-500 bg-gray-50 p-6 sm:p-8 shadow-sm">
                 <h3 className="text-base font-bold text-gray-900">Tak robimy my</h3>
                 <ul className="mt-5 space-y-3">
                   {OUR_WAY.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-700">
-                      <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-copper-500/15 border border-copper-500/30 flex items-center justify-center shrink-0">
-                        <Check className="w-3.5 h-3.5 text-copper-600" />
+                      <span className="mt-0.5 w-5 h-5 rounded-[2px] bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-petrol-700" />
                       </span>
                       <span>{item}</span>
                     </li>
@@ -81,7 +81,7 @@ export const SystemsComparisonSection: React.FC = () => {
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
             </div>
           </div>
 
@@ -91,7 +91,7 @@ export const SystemsComparisonSection: React.FC = () => {
             </p>
             <Link
               to="/zapytanie"
-              className="btn-engineering-primary gap-2 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="btn-engineering-primary gap-2 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <span>Dobierz zestaw (2 min)</span>
               <ArrowRight className="w-3.5 h-3.5" />

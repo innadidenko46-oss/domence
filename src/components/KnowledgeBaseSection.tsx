@@ -64,14 +64,14 @@ export const KnowledgeBaseSection: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="np. burza, abonament, kucie"
-              className="w-full min-h-11 pl-10 pr-10 rounded-[2px] text-sm border bg-white border-gray-300 text-gray-900 focus:outline-none focus:border-copper-500 focus-visible:ring-2 focus-visible:ring-copper-500/60"
+              className="w-full min-h-11 pl-10 pr-10 rounded-[2px] text-sm border bg-white border-gray-300 text-gray-900 focus:outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-petrol-600/60"
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
                 aria-label="Wyczyść wyszukiwanie"
-                className="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-[2px] text-gray-500 hover:text-gray-900 hover:bg-gray-100 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500"
+                className="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-[2px] text-gray-500 hover:text-gray-900 hover:bg-gray-100 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -84,9 +84,9 @@ export const KnowledgeBaseSection: React.FC = () => {
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 aria-pressed={selectedCategory === cat.id}
-                className={`min-h-11 px-4 rounded-[2px] text-xs font-semibold transition-colors cursor-pointer active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                className={`min-h-11 px-4 rounded-[2px] text-xs font-semibold transition-colors cursor-pointer active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                   selectedCategory === cat.id
-                    ? 'bg-copper-600 text-white'
+                    ? 'bg-petrol-700 text-white'
                     : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 hover:bg-gray-50'}`}
               >
                 {cat.label}
@@ -110,7 +110,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               <button
                 type="button"
                 onClick={resetFilters}
-                className="mt-5 text-sm font-semibold text-copper-600 hover:text-copper-800 underline underline-offset-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500"
+                className="mt-5 text-sm font-semibold text-petrol-700 hover:text-amber-800 underline underline-offset-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600"
               >
                 Pokaż wszystkie pytania
               </button>
@@ -126,9 +126,9 @@ export const KnowledgeBaseSection: React.FC = () => {
                       onClick={() => toggleId(item.question)}
                       aria-expanded={isOpen}
                       aria-controls={`faq-panel-${index}`}
-                      className="group w-full text-left py-6 flex items-start justify-between gap-6 cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      className="group w-full text-left py-6 flex items-start justify-between gap-6 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
-                      <h3 className={`font-display text-base sm:text-lg font-bold transition-colors ${isOpen ? 'text-copper-700' : 'text-gray-900 group-hover:text-copper-700'}`}>
+                      <h3 className={`font-display text-base sm:text-lg font-bold transition-colors ${isOpen ? 'text-amber-700' : 'text-gray-900 group-hover:text-amber-700'}`}>
                         {item.question}
                       </h3>
                       <ChevronDown
@@ -152,7 +152,7 @@ export const KnowledgeBaseSection: React.FC = () => {
                             <p className="text-base leading-relaxed text-gray-800">
                               {item.simpleAnswer}
                             </p>
-                            <div className="pl-4 border-l-2 border-copper-500/50">
+                            <div className="pl-4 border-l-2 border-amber-500/50">
                               <div className="text-xs font-semibold text-gray-600 mb-1">Więcej szczegółów</div>
                               <p className="text-sm leading-relaxed text-gray-600">
                                 {item.technicalDetails}

@@ -14,7 +14,7 @@ export const TeletechnicsPage: React.FC = () => {
         badge="Kamery i domofony"
         title="Kamery, domofon z kamerą i szybki internet"
         description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt — u Ciebie w domu, bez abonamentu."
-        icon={<Network className="w-4 h-4 text-copper-600" />}
+        icon={<Network className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -30,8 +30,8 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Dyskrecja na elewacji
                 </span>
               </div>
@@ -53,8 +53,8 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Szafka ze sprzętem
                 </span>
               </div>
@@ -76,8 +76,8 @@ export const TeletechnicsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Szybki internet bez zrywania
                 </span>
               </div>
@@ -118,31 +118,31 @@ export const TeletechnicsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center">
                   <HardDrive className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">
                     Nasz standard: rejestrator nagrań w domu
                   </h3>
-                  <span className="text-xs text-copper-700 font-mono font-semibold">Twoje dane u Ciebie</span>
+                  <span className="text-xs text-amber-700 font-mono font-semibold">Twoje dane u Ciebie</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span><strong>Bez abonamentu:</strong> nie płacisz co miesiąc za przechowywanie nagrań.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span><strong>Prywatność:</strong> obraz z kamer nie wychodzi z Twojej szafki. Nikt obcy nie ma do niego dostępu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span><strong>Jeden kabel do kamery:</strong> prąd i obraz idą jednym kablem.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span><strong>Dyski do pracy ciągłej:</strong> zapisują 24 godziny na dobę. Ile dni wstecz zobaczysz, zależy od liczby kamer.</span>
                 </li>
               </ul>
@@ -184,17 +184,17 @@ export const TeletechnicsPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
               Kino w salonie
             </div>
           </div>
           <Link
             to="/multimedia"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
             <span>Zobacz multimedia</span>
             <ArrowRight className="w-4 h-4" />

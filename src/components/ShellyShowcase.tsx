@@ -45,7 +45,7 @@ export const ShellyShowcase: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
             <div className="eyebrow inline-flex items-center gap-2 mb-3">
-              <Layers className="w-3.5 h-3.5 text-copper-600" />
+              <Layers className="w-3.5 h-3.5 text-petrol-700" />
               <span>Co potrafi • Shelly Pro i Plus</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-gray-900">
@@ -79,18 +79,18 @@ export const ShellyShowcase: React.FC = () => {
                 onClick={() => setActiveCapId(cap.id)}
                 className={`p-3 rounded-[2px] text-left transition-all border flex flex-col justify-between cursor-pointer ${
                   isSelected
-                    ? 'bg-white border-2 border-copper-500 shadow-sm': 'bg-gray-100 border-gray-200 hover:border-gray-300'}`}
+                    ? 'bg-white border-2 border-amber-500 shadow-sm': 'bg-gray-100 border-gray-200 hover:border-gray-300'}`}
               >
                 <div className={`w-7 h-7 rounded-[2px] flex items-center justify-center mb-2.5 ${
                   isSelected
-                    ? 'bg-copper-600 text-white'
+                    ? 'bg-petrol-700 text-white'
                     : 'bg-white text-gray-600 border border-gray-200'}`}>
                   {getCapIcon(cap.id)}
                 </div>
                 <div>
                   <div className={`text-xs font-mono font-semibold uppercase tracking-wider line-clamp-1 ${
                     isSelected
-                      ? 'text-copper-700'
+                      ? 'text-amber-700'
                       : 'text-gray-600'}`}>
                     {cap.badge}
                   </div>
@@ -116,7 +116,7 @@ export const ShellyShowcase: React.FC = () => {
             {/* Header of Active Feature */}
             <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b gap-4 mb-8 border-gray-200">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700">
                   {activeCap.badge}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold mt-1 text-gray-900">
@@ -139,7 +139,7 @@ export const ShellyShowcase: React.FC = () => {
                   </div>
                   {activeCap.features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-2.5 text-sm">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                       <span className="text-gray-700">{feat}</span>
                     </div>
                   ))}
@@ -155,12 +155,12 @@ export const ShellyShowcase: React.FC = () => {
                     loading="lazy"
                     className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
                 </div>
                 <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700">
                       Tak to wygląda u Ciebie w domu:
                     </span>
                   </div>
@@ -175,7 +175,7 @@ export const ShellyShowcase: React.FC = () => {
                   </span>
                   <Link
                     to="/scenariusze"
-                    className="font-bold text-copper-600 hover:text-copper-800 flex items-center gap-1.5 transition-colors"
+                    className="font-bold text-petrol-700 hover:text-amber-800 flex items-center gap-1.5 transition-colors"
                   >
                     <span>Wszystkie scenariusze</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -190,14 +190,14 @@ export const ShellyShowcase: React.FC = () => {
               {/* Shelly Pro DIN Role */}
               <div className="p-5 rounded-[2px] border bg-gray-50 border-gray-200">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-6 h-6 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center font-mono font-bold text-xs">
                     DIN
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-900">
                       Shelly Pro do rozdzielnicy
                     </h4>
-                    <span className="text-xs text-copper-700 font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
                       Kabel • Szyna DIN • Pomiar prądu
                     </span>
                   </div>
@@ -210,14 +210,14 @@ export const ShellyShowcase: React.FC = () => {
               {/* Shelly Plus Role */}
               <div className="p-5 rounded-[2px] border bg-gray-50 border-gray-200">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-6 h-6 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center font-mono font-bold text-xs">
                     BOX
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-900">
                       Shelly Plus i BLU (pod włącznik, bez kucia)
                     </h4>
-                    <span className="text-xs text-copper-700 font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
                       Bez kucia tynków • Moduły mieszczą się w puszkach
                     </span>
                   </div>

@@ -63,11 +63,16 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 
 ## Design system (short)
 
-- **Colours and shape:** a copper accent (`copper-600` for fills, `copper-700` for small text) on gray-50/white, with navy (`navy-900`) for dark bands. 2px radius.
+- **Colours from the logo:**
+  - petrol for buttons, icons and dark bands: `petrol-700` fills, `petrol-900` bands;
+  - amber (the logo's orange) as the warm accent: `amber-700` for small text on light backgrounds, `amber-600` for large emphasis, `amber-400` buttons (`.btn-accent`) only on dark bands;
+  - logo blue only inside the logo;
+  - gray-50/white backgrounds, 2px radius.
 - **Type:** Outfit for display, Plus Jakarta Sans for body.
 - **Classes to reuse:**
   - `.eyebrow` for section labels;
-  - `.btn-engineering-primary` and `.btn-secondary` for buttons (44px minimum height).
+  - `.btn-engineering-primary` (petrol) and `.btn-secondary` on light backgrounds, `.btn-accent` on dark bands (all 44px minimum height).
+  - At most one `.eyebrow` per three sections.
 - **Text contrast:** at least 4.5:1. Don't use `gray-400` text on light backgrounds.
 
 ## Checks before committing

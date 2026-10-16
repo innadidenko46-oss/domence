@@ -20,7 +20,7 @@ import { ContactPage } from './pages/ContactPage.tsx';
 
 function AppContent() {
   return (
-    <div className="min-h-screen font-sans selection:bg-copper-500 selection:text-white flex flex-col transition-colors duration-300 bg-gray-50 text-gray-900">
+    <div className="min-h-screen font-sans selection:bg-amber-500 selection:text-white flex flex-col transition-colors duration-300 bg-gray-50 text-gray-900">
       <a
         href="#main"
         className="skip-link"

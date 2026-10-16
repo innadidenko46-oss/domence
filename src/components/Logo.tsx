@@ -24,35 +24,35 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       <defs>
         {/* Amber - Orange Brand Gradient */}
         <linearGradient id={amberId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#C27A4E" />
-          <stop offset="50%" stopColor="#B87333" />
-          <stop offset="100%" stopColor="#A36034" />
+          <stop offset="0%" stopColor="#F7B23B" />
+          <stop offset="50%" stopColor="#F29A1F" />
+          <stop offset="100%" stopColor="#E3810C" />
         </linearGradient>
 
         {/* Petrol Blue / Navy Gradient */}
         <linearGradient id={petrolId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0284C7" />
-          <stop offset="60%" stopColor="#0B374D" />
-          <stop offset="100%" stopColor="#071E2B" />
+          <stop offset="0%" stopColor="#2A9DCB" />
+          <stop offset="60%" stopColor="#0F4352" />
+          <stop offset="100%" stopColor="#0B3340" />
         </linearGradient>
       </defs>
 
       {/* Chimney on the left */}
       <path
         d="M34 42V60L28 64.5V42H34Z"
-        fill="#0D3B51"
+        fill="#0F4352"
       />
 
       {/* Main Roof left slope */}
       <path
         d="M22 68L78 26L88 33.5L34 74H22V68Z"
-        fill="#0E384D"
+        fill="#0F4352"
       />
 
       {/* House Left Column Base */}
       <path
         d="M32 72V124H44V72H32Z"
-        fill="#0B2D3E"
+        fill="#0B3340"
       />
 
       {/* Outer Amber Wave 1 (Upper Right Roof to Arch) */}
@@ -91,13 +91,13 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Base Foundation Bar */}
       <path
         d="M32 120H96"
-        stroke="#0E384D"
+        stroke="#0F4352"
         strokeWidth="8"
         strokeLinecap="round"
       />
 
       {/* Central Smart Camera / Sensor Aperture Dot */}
-      <circle cx="80" cy="80" r="4.5" fill="#0284C7" />
+      <circle cx="80" cy="80" r="4.5" fill="#2A9DCB" />
     </svg>
   );
 };
@@ -137,7 +137,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className="flex flex-col justify-center">
         {/* Brand Name "DOMENCE" with curved smart beacon over O */}
         <div className="flex items-baseline leading-none font-display font-black tracking-wider">
-          <span className={isLight ? 'text-white' : 'text-navy-950'}>D</span>
+          <span className={isLight ? 'text-white' : 'text-petrol-900'}>D</span>
           
           {/* Letter O with WiFi / Smart Signal Arch */}
           <span className="relative inline-flex flex-col items-center mx-[0.5px]">
@@ -150,23 +150,23 @@ export const Logo: React.FC<LogoProps> = ({
             >
               <path
                 d="M3 6.5C5.5 3 14.5 3 17 6.5"
-                stroke="#B87333"
+                stroke="#F29A1F"
                 strokeWidth="2.4"
                 strokeLinecap="round"
               />
-              <circle cx="10" cy="6" r="1.2" fill="#B87333" />
+              <circle cx="10" cy="6" r="1.4" fill="#2A9DCB" />
             </svg>
-            <span className={isLight ? 'text-white' : 'text-navy-950'}>O</span>
+            <span className={isLight ? 'text-white' : 'text-petrol-900'}>O</span>
           </span>
 
-          <span className={isLight ? 'text-white' : 'text-navy-950'}>MENCE</span>
+          <span className={isLight ? 'text-white' : 'text-petrol-900'}>MENCE</span>
         </div>
 
         {/* Subtitle: AUTOMATYKA DOMU I TELETECHNIKA */}
         {showSubtitle && (
           <span
             className={`font-sans font-semibold uppercase mt-1 leading-none whitespace-nowrap ${
-              isLight ? 'text-copper-200' : 'text-navy-900'
+              isLight ? 'text-amber-300' : 'text-petrol-700'
             } ${subtitleClasses[size]}`}
           >
             AUTOMATYKA DOMU I TELETECHNIKA

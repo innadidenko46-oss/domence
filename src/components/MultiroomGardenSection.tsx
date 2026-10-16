@@ -38,19 +38,19 @@ export const MultiroomGardenSection: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
                   <Music2 className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.audio.title}
                   </h3>
-                  <div className="text-xs text-copper-700 font-mono mt-0.5">Furtka • Panel w domu • Telefon</div>
+                  <div className="text-xs text-amber-700 font-mono mt-0.5">Furtka • Panel w domu • Telefon</div>
                 </div>
               </div>
 
@@ -58,15 +58,15 @@ export const MultiroomGardenSection: React.FC = () => {
                 {HOME_MULTIMEDIA.audio.desc}
               </p>
 
-              <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold text-copper-700 font-mono text-xs uppercase block mb-1">W praktyce:</span>
+              <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
+                <span className="font-bold text-amber-700 font-mono text-xs uppercase block mb-1">W praktyce:</span>
                 {HOME_MULTIMEDIA.audio.humanNote}
               </div>
 
               <div className="space-y-2.5">
                 {HOME_MULTIMEDIA.audio.features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <CheckCircle2 className="w-4 h-4 text-copper-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-petrol-700 mt-0.5 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -77,7 +77,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <span className="text-xs text-gray-600 font-mono">Gość przy furtce</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-mono font-bold text-copper-700 hover:text-copper-800 transition-colors"
+                className="text-xs font-mono font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
                 Dobierz zestaw (2 min)
               </Link>
@@ -94,19 +94,19 @@ export const MultiroomGardenSection: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 bg-copper-500/20 text-copper-800">
+                <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 bg-amber-500/20 text-amber-800">
                   <Film className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className="text-xs font-mono mt-0.5 text-copper-700">Rolety • Światło • Ekran</div>
+                  <div className="text-xs font-mono mt-0.5 text-amber-700">Rolety • Światło • Ekran</div>
                 </div>
               </div>
 
@@ -114,15 +114,15 @@ export const MultiroomGardenSection: React.FC = () => {
                 {HOME_MULTIMEDIA.cinema.desc}
               </p>
 
-              <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold font-mono text-xs uppercase block mb-1 text-copper-700">W praktyce:</span>
+              <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
+                <span className="font-bold font-mono text-xs uppercase block mb-1 text-amber-700">W praktyce:</span>
                 {HOME_MULTIMEDIA.cinema.humanNote}
               </div>
 
               <div className="space-y-2.5">
                 {HOME_MULTIMEDIA.cinema.features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-copper-600" />
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-petrol-700" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -133,7 +133,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <span className="text-xs text-gray-600 font-mono">Sceny do filmu</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-mono font-bold transition-colors text-copper-700 hover:text-copper-800"
+                className="text-xs font-mono font-bold transition-colors text-amber-700 hover:text-amber-800"
               >
                 Dobierz zestaw (2 min)
               </Link>

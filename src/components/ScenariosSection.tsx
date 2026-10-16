@@ -133,14 +133,14 @@ export const ScenariosSection: React.FC = () => {
               <button
                 key={sc.id}
                 onClick={() => setActiveScenarioId(sc.id)}
-                className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                className={`p-3.5 rounded-[2px] text-left transition-all relative border flex flex-col justify-between min-h-[110px] cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                   isActive
-                    ? 'bg-copper-500/10 border-copper-400/80 shadow-md shadow-copper-500/10': 'bg-gray-50 border-gray-200 hover:border-copper-500/30 hover:bg-gray-100'}`}
+                    ? 'bg-amber-500/10 border-amber-400/80 shadow-md shadow-amber-500/10': 'bg-gray-50 border-gray-200 hover:border-amber-500/30 hover:bg-gray-100'}`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={`text-xs font-mono font-bold ${
-                      isActive ? ('text-copper-800') : 'text-gray-600'
+                      isActive ? ('text-amber-800') : 'text-gray-600'
                     }`}
                   >
                     {sc.number}
@@ -148,7 +148,7 @@ export const ScenariosSection: React.FC = () => {
                   <div
                     className={`w-7 h-7 rounded-[2px] flex items-center justify-center ${
                       isActive
-                        ? 'bg-copper-600 text-white font-bold'
+                        ? 'bg-petrol-700 text-white font-bold'
                         : 'bg-gray-200 text-gray-600'}`}
                   >
                     {getIcon(sc.icon)}
@@ -157,7 +157,7 @@ export const ScenariosSection: React.FC = () => {
 
                 <div className="mt-2.5">
                   <div className={`text-sm font-semibold line-clamp-1 ${
-                    isActive ? ('text-copper-800') : ('text-gray-500')
+                    isActive ? ('text-amber-800') : ('text-gray-500')
                   }`}>
                     {sc.tag}
                   </div>
@@ -169,7 +169,7 @@ export const ScenariosSection: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeScenarioIndicator"
-                    className="absolute bottom-0 inset-x-3 h-[2px] bg-copper-600 rounded-[2px]"
+                    className="absolute bottom-0 inset-x-3 h-[2px] bg-petrol-700 rounded-[2px]"
                   />
                 )}
               </button>
@@ -197,17 +197,17 @@ export const ScenariosSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-gray-900/50 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border bg-white/95 text-copper-800 border-copper-500/30">
+                  <span className="px-3 py-1 rounded-[2px] backdrop-blur-md text-xs font-bold uppercase tracking-wider border bg-white/95 text-amber-800 border-amber-500/30">
                     {activeScenario.tag}
                   </span>
                 </div>
 
                 {/* Activation Trigger Pill on bottom of image */}
                 {activeScenario.trigger && (
-                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-navy-950/90 backdrop-blur-md border border-white/10 text-xs text-gray-200 flex items-start gap-2.5">
-                    <Mic className="w-4 h-4 text-copper-400 shrink-0 mt-0.5" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-petrol-950/90 backdrop-blur-md border border-white/10 text-xs text-gray-200 flex items-start gap-2.5">
+                    <Mic className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-xs uppercase font-bold text-copper-400 block mb-0.5">
+                      <span className="text-xs uppercase font-bold text-amber-400 block mb-0.5">
                         Wyzwalacz scenariusza:
                       </span>
                       {activeScenario.trigger}
@@ -220,7 +220,7 @@ export const ScenariosSection: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-copper-800">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">
                       Scenariusz {activeScenario.number}
                     </span>
                   </div>
@@ -243,7 +243,7 @@ export const ScenariosSection: React.FC = () => {
                             key={sIdx}
                             className="p-3 rounded-[2px] border flex items-start gap-2.5 text-sm bg-gray-50 border-gray-200 text-gray-700"
                           >
-                            <div className="w-7 h-7 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
+                            <div className="w-7 h-7 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
                               {getIcon(step.icon)}
                             </div>
                             <div>
@@ -261,8 +261,8 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed bg-copper-500/10 border-copper-500/30 text-gray-800">
-                    <span className="font-bold block mb-1 text-copper-800">
+                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed bg-amber-500/10 border-amber-500/30 text-gray-800">
+                    <span className="font-bold block mb-1 text-amber-800">
                       Tak to działa u Ciebie:
                     </span>
                     {activeScenario.humanNote}
@@ -272,7 +272,7 @@ export const ScenariosSection: React.FC = () => {
                   <div className="mt-5 space-y-2">
                     {activeScenario.detailPoints.map((point, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3" />
                         </div>
                         <span className="text-xs sm:text-sm font-medium text-gray-700">
@@ -289,7 +289,7 @@ export const ScenariosSection: React.FC = () => {
                   </span>
                   <Link
                     to="/zapytanie"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
                     <span>Dobierz zestaw (2 min)</span>
                     <ChevronRight className="w-4 h-4" />

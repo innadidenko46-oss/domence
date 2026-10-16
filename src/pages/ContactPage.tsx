@@ -73,7 +73,7 @@ export const ContactPage: React.FC = () => {
         badge="Kontakt"
         title="Porozmawiaj z inżynierem o swoim domu"
         description="Budujesz dom albo remontujesz mieszkanie? Napisz, czego potrzebujesz — odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
-        icon={<Phone className="w-4 h-4 text-copper-600" />}
+        icon={<Phone className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -106,22 +106,22 @@ export const ContactPage: React.FC = () => {
                 <div
                   className="flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200"
                 >
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
                       Jak się skontaktować
                     </div>
-                    <div className="text-base font-bold font-mono transition-colors mt-0.5 text-gray-900 group-hover:text-copper-700">
+                    <div className="text-base font-bold font-mono transition-colors mt-0.5 text-gray-900 group-hover:text-amber-700">
                       Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
                     </div>
-                    <div className="text-xs text-copper-700 font-mono mt-0.5">
+                    <div className="text-xs text-amber-700 font-mono mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
                     </div>
                     {SITE.phone && (
-                      <a href={telHref(SITE.phone)} className="mt-2 inline-flex items-center gap-2 min-h-11 text-base font-bold text-gray-900 hover:text-copper-700 focus-visible:ring-2 focus-visible:ring-copper-500">
-                        <Phone className="w-4 h-4 text-copper-600" aria-hidden="true" />
+                      <a href={telHref(SITE.phone)} className="mt-2 inline-flex items-center gap-2 min-h-11 text-base font-bold text-gray-900 hover:text-amber-700 focus-visible:ring-2 focus-visible:ring-petrol-600">
+                        <Phone className="w-4 h-4 text-petrol-700" aria-hidden="true" />
                         {SITE.phone}
                       </a>
                     )}
@@ -130,16 +130,16 @@ export const ContactPage: React.FC = () => {
 
                 <a
                   href="mailto:kontakt@domence.pl"
-                  className="focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200 hover:border-copper-500"
+                  className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200 hover:border-amber-500"
                 >
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
                       Napisz do nas
                     </div>
-                    <div className="text-base font-bold group-hover:text-copper-700 transition-colors mt-0.5 text-gray-900">
+                    <div className="text-base font-bold group-hover:text-amber-700 transition-colors mt-0.5 text-gray-900">
                       kontakt@domence.pl
                     </div>
                     <div className="text-xs text-gray-600 mt-0.5 font-mono">
@@ -149,7 +149,7 @@ export const ContactPage: React.FC = () => {
                 </a>
 
                 <div className="flex items-start gap-4 p-5 rounded-[2px] border bg-white border-gray-200">
-                  <div className="w-10 h-10 rounded-[2px] bg-copper-500/15 text-copper-800 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -168,21 +168,21 @@ export const ContactPage: React.FC = () => {
 
               {/* Authority and Trust Guarantee Box */}
               <div className="p-6 rounded-[2px] border bg-white border-gray-200">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-3 flex items-center gap-2">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Jak działamy</span>
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Za darmo sprawdzamy dom przed wyceną</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Zakres i cenę potwierdzamy na piśmie przed startem</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Po montażu uczymy domowników obsługi i bezpłatnie konfigurujemy system</span>
                   </li>
                 </ul>
@@ -217,7 +217,7 @@ export const ContactPage: React.FC = () => {
                         </p>
                         <a
                           href={mailtoHref(lastMail.subject, lastMail.body)}
-                          className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                          className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                         >
                           Otwórz wiadomość ponownie
                         </a>
@@ -226,7 +226,7 @@ export const ContactPage: React.FC = () => {
                     <div>
                       <button
                         onClick={() => setSubmitted(false)}
-                        className="btn-secondary mt-4 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                        className="btn-secondary mt-4 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                       >
                         Wyślij kolejne zapytanie
                       </button>
@@ -259,7 +259,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
                           placeholder="np. Jan Kowalski"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
 
@@ -279,7 +279,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
                           placeholder="np. 500 600 700"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
                     </div>
@@ -299,7 +299,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="inwestor@dom.pl"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
 
@@ -315,7 +315,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.location}
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                           placeholder="np. Warszawa / Konstancin"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
                     </div>
@@ -330,7 +330,7 @@ export const ContactPage: React.FC = () => {
                         required
                         value={formData.timeline}
                         onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                       >
                         <option value="" disabled>Wybierz termin</option>
                         {INSTALL_TIMELINES.map((t) => (
@@ -348,7 +348,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Napisz, jaki jest metraż domu, czy posiadasz już projekt elektryczny i na czym najbardziej Ci zależy (oświetlenie, kamery, kino, rolety)..."
-                        className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 leading-relaxed bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                        className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 leading-relaxed bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                       />
                     </div>
 
@@ -356,7 +356,7 @@ export const ContactPage: React.FC = () => {
                       type="submit"
                       disabled={sending}
                       aria-busy={sending}
-                      className="btn-engineering-primary w-full gap-2 cursor-pointer disabled:cursor-wait disabled:opacity-80 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                      className="btn-engineering-primary w-full gap-2 cursor-pointer disabled:cursor-wait disabled:opacity-80 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       <Send className="w-4 h-4" />
                       <span>{sending ? 'Wysyłanie…' : 'Zapytaj inżyniera'}</span>

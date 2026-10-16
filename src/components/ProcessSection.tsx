@@ -9,9 +9,6 @@ export const ProcessSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-3xl mb-12">
-          <div className="eyebrow mb-3">
-            <span>Jak działamy krok po kroku</span>
-          </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
             Od pierwszej rozmowy do gotowego domu
           </h2>
@@ -30,7 +27,7 @@ export const ProcessSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="font-display text-3xl font-extrabold tabular-nums text-copper-600" aria-hidden="true">
+              <span className="font-display text-3xl font-extrabold tabular-nums text-petrol-700" aria-hidden="true">
                 {step.number}
               </span>
               <h3 className="mt-3 text-base font-bold leading-snug text-gray-900">

@@ -43,13 +43,13 @@ export const AppsShowcaseSection: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 flex flex-col flex-1">
-            <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
-              <Zap className="w-5 h-5 text-copper-600" />
+            <div className="w-10 h-10 rounded-[2px] bg-amber-500/10 flex items-center justify-center mb-4">
+              <Zap className="w-5 h-5 text-petrol-700" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-copper-700">
+            <div className="text-xs font-bold uppercase tracking-wider text-amber-700">
               Automatyka domu
             </div>
             <h3 className="mt-1 text-xl font-bold text-gray-900">
@@ -62,7 +62,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <ul className="mt-5 space-y-2.5 flex-1">
               {SHELLY_FEATURES.map((feat, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-gray-700">
-                  <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
@@ -70,7 +70,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <div className="mt-6 pt-4 border-t border-gray-200">
               <Link
                 to="/zapytanie"
-                className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
+                className="inline-flex items-center gap-2 text-sm font-bold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 rounded-[2px]"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
@@ -87,13 +87,13 @@ export const AppsShowcaseSection: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
             </div>
             <div className="p-7 flex flex-col flex-1">
-            <div className="w-10 h-10 rounded-[2px] bg-copper-500/10 flex items-center justify-center mb-4">
-              <Video className="w-5 h-5 text-copper-600" />
+            <div className="w-10 h-10 rounded-[2px] bg-amber-500/10 flex items-center justify-center mb-4">
+              <Video className="w-5 h-5 text-petrol-700" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-copper-700">
+            <div className="text-xs font-bold uppercase tracking-wider text-amber-700">
               Kamery i domofon
             </div>
             <h3 className="mt-1 text-xl font-bold text-gray-900">Furtka i kamery w telefonie</h3>
@@ -104,7 +104,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <ul className="mt-5 space-y-2.5 flex-1">
               {HIK_FEATURES.map((feat, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-gray-700">
-                  <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
@@ -112,7 +112,7 @@ export const AppsShowcaseSection: React.FC = () => {
             <div className="mt-6 pt-4 border-t border-gray-200">
               <Link
                 to="/teletechnika"
-                className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
+                className="inline-flex items-center gap-2 text-sm font-bold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 rounded-[2px]"
               >
                 <span>Zobacz monitoring i wideodomofony</span>
                 <ArrowRight className="w-4 h-4" />

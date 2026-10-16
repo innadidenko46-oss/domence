@@ -15,7 +15,7 @@ export const SystemsPage: React.FC = () => {
         badge="Automatyka i sterowanie"
         title="Światło, rolety i ogrzewanie — co pasuje do Twojego domu"
         description="Pokażemy Ci zwykłymi słowami, co wybrać do nowego domu, a co do gotowego mieszkania. Bez kucia, jeśli nie trzeba."
-        icon={<Layers className="w-4 h-4 text-copper-600" />}
+        icon={<Layers className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
       />
 
@@ -31,8 +31,8 @@ export const SystemsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Ciepłe światło jak przy świecach
                 </span>
               </div>
@@ -54,8 +54,8 @@ export const SystemsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Jeden przycisk na ścianie
                 </span>
               </div>
@@ -77,8 +77,8 @@ export const SystemsPage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover duration-500 filter brightness-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-navy-950/80 backdrop-blur-md text-xs font-mono font-semibold text-copper-200 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
                   Szafka ze sprzętem
                 </span>
               </div>
@@ -120,7 +120,7 @@ export const SystemsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Stan surowy / nowa rozdzielnica
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -131,18 +131,18 @@ export const SystemsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Pewne połączenie po kablu</span>
                   </li>
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Ochrona termiczna, przeciążeniowa i przepięciowa</span>
                   </li>
                 </ul>
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -151,7 +151,7 @@ export const SystemsPage: React.FC = () => {
 
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   System przewodowy
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -162,18 +162,18 @@ export const SystemsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Stabilne połączenie po kablu, bez baterii</span>
                   </li>
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Światło, rolety i zamek działają też bez internetu</span>
                   </li>
                 </ul>
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -182,7 +182,7 @@ export const SystemsPage: React.FC = () => {
 
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-gray-50 border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-copper-700 mb-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Gotowe mieszkanie / bez kucia
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -193,18 +193,18 @@ export const SystemsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Montaż bez kucia, z odsysaniem pyłu</span>
                   </li>
                   <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-copper-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Działa w domu, bez obcych serwerów</span>
                   </li>
                 </ul>
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -213,8 +213,8 @@ export const SystemsPage: React.FC = () => {
           </div>
 
           {/* Local-First Principle Banner */}
-          <div className="mt-12 p-6 pl-7 rounded-[2px] border border-l-4 border-l-copper-500 flex items-start gap-4 bg-copper-500/10 border-copper-500/30">
-            <AlertTriangle className="w-6 h-6 text-copper-600 shrink-0 mt-0.5" />
+          <div className="mt-12 p-6 pl-7 rounded-[2px] border border-l-4 border-l-amber-500 flex items-start gap-4 bg-amber-500/10 border-amber-500/30">
+            <AlertTriangle className="w-6 h-6 text-petrol-700 shrink-0 mt-0.5" />
             <div>
               <h4 className="text-sm font-bold text-gray-900">
                 Dlaczego dom działa też bez internetu?
@@ -228,17 +228,17 @@ export const SystemsPage: React.FC = () => {
       </section>
 
       {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-navy-900 text-white border-navy-900">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-copper-200 font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
               Kamery, internet i szafka ze sprzętem
             </div>
           </div>
           <Link
             to="/teletechnika"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-colors"
+            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
             <span>Przejdź do kamer i domofonów</span>
             <ArrowRight className="w-4 h-4" />

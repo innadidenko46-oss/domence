@@ -81,7 +81,7 @@ export const HomePage: React.FC = () => {
             {/* Main Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.015em] leading-[1.05] text-gray-950">
               Nowoczesny dom, którym sterujesz telefonem.{' '}
-              <span className="text-copper-600">
+              <span className="text-amber-600">
                 Działa też bez internetu.
               </span>
             </h1>
@@ -95,7 +95,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 to="/zapytanie"
-                className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
@@ -103,7 +103,7 @@ export const HomePage: React.FC = () => {
 
               <Link
                 to="/systemy"
-                className="btn-secondary shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-secondary shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Zobacz, jak to działa</span>
               </Link>
@@ -112,19 +112,19 @@ export const HomePage: React.FC = () => {
             {/* Key Trust Badges */}
             <div className="mt-10 pt-6 border-t grid grid-cols-2 gap-4 text-sm border-gray-200 text-gray-700">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
                 <span>Praca w domu, bez obcych serwerów</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
                 <span>Bez abonamentu</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-copper-600 shrink-0" aria-hidden="true" />
+                <MapPin className="w-4 h-4 text-petrol-700 shrink-0" aria-hidden="true" />
                 <span>Warszawa i okolice</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-copper-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
                 <span>Czysty montaż</span>
               </div>
             </div>
@@ -166,7 +166,7 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className={`focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-copper-400 ${
+                  className={`focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-amber-400 ${
                     wide ? 'lg:col-span-3' : 'lg:col-span-2'
                   } ${i === chapters.length - 1 ? 'md:col-span-2 lg:col-span-3' : ''}`}
                 >
@@ -183,10 +183,10 @@ export const HomePage: React.FC = () => {
                     </div>
 
                     <div className="p-6">
-                      <h3 className="font-display text-xl font-bold transition-colors text-gray-900 group-hover:text-copper-800">
+                      <h3 className="font-display text-xl font-bold transition-colors text-gray-900 group-hover:text-amber-800">
                         {ch.title}
                       </h3>
-                      <div className="text-xs font-semibold mt-1 text-copper-700">
+                      <div className="text-xs font-semibold mt-1 text-amber-700">
                         {ch.subtitle}
                       </div>
 
@@ -197,7 +197,7 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   <div className="px-6 pb-6 pt-2">
-                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-copper-700 group-hover:text-copper-800">
+                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-amber-700 group-hover:text-amber-800">
                       <span>{ch.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -271,12 +271,12 @@ export const HomePage: React.FC = () => {
                 const Icon = pillar.icon;
                 return (
                   <li key={pillar.title} className="py-7 grid grid-cols-[auto_1fr] gap-x-5">
-                    <span className="font-display text-sm font-semibold tabular-nums text-copper-600 pt-1">
+                    <span className="font-display text-sm font-semibold tabular-nums text-petrol-700 pt-1">
                       0{i + 1}
                     </span>
                     <div>
                       <h3 className="flex items-center gap-2.5 text-lg font-bold text-gray-900">
-                        <Icon className="w-5 h-5 text-copper-500 shrink-0" aria-hidden="true" />
+                        <Icon className="w-5 h-5 text-amber-600 shrink-0" aria-hidden="true" />
                         {pillar.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-gray-600 max-w-prose">
@@ -318,7 +318,7 @@ export const HomePage: React.FC = () => {
                   'Wolisz jedną firmę od całości niż kilku wykonawców.',
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-base leading-relaxed text-gray-700">
-                    <CheckCircle2 className="w-5 h-5 text-copper-600 shrink-0 mt-0.5" aria-hidden="true" />
+                    <CheckCircle2 className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
                     <span>{t}</span>
                   </li>
                 ))}
@@ -336,7 +336,7 @@ export const HomePage: React.FC = () => {
                   ['Bezpłatna konfiguracja', 'Ustawiamy sceny i aplikacje pod Twój dom.'],
                 ].map(([title, text], i) => (
                   <li key={title} className="grid grid-cols-[auto_1fr] gap-x-4">
-                    <span className="font-display text-sm font-semibold tabular-nums text-copper-700 pt-0.5">0{i + 1}</span>
+                    <span className="font-display text-sm font-semibold tabular-nums text-amber-700 pt-0.5">0{i + 1}</span>
                     <div>
                       <div className="text-base font-bold text-gray-900">{title}</div>
                       <p className="mt-1 text-sm leading-relaxed text-gray-600">{text}</p>
@@ -349,7 +349,7 @@ export const HomePage: React.FC = () => {
 
           <p className="mt-12 pt-6 border-t border-gray-300 text-sm leading-relaxed text-gray-600 max-w-2xl">
             Dopiero zbierasz informacje? Zajrzyj do{' '}
-            <Link to="/faq" className="font-semibold text-copper-700 underline underline-offset-2 hover:text-copper-800">
+            <Link to="/faq" className="font-semibold text-amber-700 underline underline-offset-2 hover:text-amber-800">
               pytań i odpowiedzi
             </Link>
             {' '}— odezwij się, gdy będziesz gotowy na rozmowę o swoim domu.
@@ -367,7 +367,7 @@ export const HomePage: React.FC = () => {
             </h2>
             <Link
               to="/faq"
-              className="mt-6 inline-flex items-center gap-2 min-h-11 text-sm font-semibold text-copper-700 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
+              className="mt-6 inline-flex items-center gap-2 min-h-11 text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 rounded-[2px]"
             >
               <span>Wszystkie pytania i odpowiedzi</span>
               <ArrowRight className="w-4 h-4" />
@@ -385,7 +385,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Direct Contact Banner */}
-      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 border-t overflow-hidden bg-navy-900 text-white border-navy-900">
+      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 border-t overflow-hidden bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div className="flex items-start gap-5">
             {SITE.engineer.name && SITE.engineer.photo && (
@@ -415,7 +415,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/zapytanie"
-                className="btn-engineering-primary shadow-lg shadow-copper-500/20 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="btn-accent shadow-lg shadow-amber-500/20 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
               </Link>
@@ -423,7 +423,7 @@ export const HomePage: React.FC = () => {
               {SITE.phone && (
                 <a
                   href={telHref(SITE.phone)}
-                  className="min-h-11 inline-flex items-center gap-2 px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                  className="min-h-11 inline-flex items-center gap-2 px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
                   {SITE.phone}
@@ -431,7 +431,7 @@ export const HomePage: React.FC = () => {
               )}
               <Link
                 to="/kontakt"
-                className="min-h-11 inline-flex items-center px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                className="min-h-11 inline-flex items-center px-6 py-3.5 rounded-[2px] bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Zapytaj inżyniera
               </Link>

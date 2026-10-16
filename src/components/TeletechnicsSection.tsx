@@ -21,17 +21,17 @@ export const TeletechnicsSection: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Video':
-        return <Video className="w-6 h-6 text-copper-600" />;
+        return <Video className="w-6 h-6 text-petrol-700" />;
       case 'Server':
-        return <Server className="w-6 h-6 text-copper-600" />;
+        return <Server className="w-6 h-6 text-petrol-700" />;
       case 'Camera':
-        return <Video className="w-6 h-6 text-copper-600" />;
+        return <Video className="w-6 h-6 text-petrol-700" />;
       case 'Network':
-        return <Network className="w-6 h-6 text-copper-600" />;
+        return <Network className="w-6 h-6 text-petrol-700" />;
       case 'ShieldAlert':
-        return <ShieldAlert className="w-6 h-6 text-copper-600" />;
+        return <ShieldAlert className="w-6 h-6 text-petrol-700" />;
       default:
-        return <KeyRound className="w-6 h-6 text-copper-600" />;
+        return <KeyRound className="w-6 h-6 text-petrol-700" />;
     }
   };
 
@@ -63,7 +63,7 @@ export const TeletechnicsSection: React.FC = () => {
                 key={service.id}
                 className={`rounded-[2px] p-6 sm:p-7 transition-all duration-200 border ${
                   isExpanded
-                    ? 'bg-white border-copper-500 shadow-md ring-1 ring-copper-500': 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
+                    ? 'bg-white border-amber-500 shadow-md ring-1 ring-petrol-600': 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
               >
                 {/* Header of the card */}
                 <button
@@ -71,17 +71,17 @@ export const TeletechnicsSection: React.FC = () => {
                   onClick={() => setExpandedServiceId(isExpanded ? '' : service.id)}
                   aria-expanded={isExpanded}
                   aria-label={isExpanded ? 'Zwiń szczegóły' : 'Rozwiń szczegóły'}
-                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border bg-copper-500/10 border-copper-500/25">
+                    <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border bg-amber-500/10 border-amber-500/25">
                       {getIcon(service.icon)}
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold leading-snug text-gray-900">
                         {service.title}
                       </h3>
-                      <p className="text-xs font-mono font-medium mt-1 text-copper-700">
+                      <p className="text-xs font-mono font-medium mt-1 text-amber-700">
                         {service.subtitle}
                       </p>
                     </div>
@@ -95,10 +95,10 @@ export const TeletechnicsSection: React.FC = () => {
                 </button>
 
                 {/* Practical insight box */}
-                <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-copper-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-copper-600 mt-1.5 shrink-0" />
+                <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
+                  <div className="w-2 h-2 rounded-full bg-petrol-700 mt-1.5 shrink-0" />
                   <div>
-                    <span className="font-bold block mb-1 text-copper-700 font-mono text-xs uppercase">
+                    <span className="font-bold block mb-1 text-amber-700 font-mono text-xs uppercase">
                       W praktyce:
                     </span>
                     <span className="leading-[1.65]">{service.humanExplanation}</span>
@@ -122,13 +122,13 @@ export const TeletechnicsSection: React.FC = () => {
                       {/* Equipment List */}
                       <div>
                         <div className="text-xs font-mono font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-gray-500">
-                          <HardDrive className="w-4 h-4 text-copper-600" />
+                          <HardDrive className="w-4 h-4 text-petrol-700" />
                           <span>Co montujemy:</span>
                         </div>
                         <ul className="space-y-2">
                           {service.equipment.map((item, idx) => (
                             <li key={idx} className="text-sm flex items-start gap-2.5 text-gray-700">
-                              <CheckCircle2 className="w-4 h-4 text-copper-600 mt-0.5 shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-petrol-700 mt-0.5 shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -140,7 +140,7 @@ export const TeletechnicsSection: React.FC = () => {
                         {service.specs.map((spec, idx) => (
                           <span
                             key={idx}
-                            className="text-xs font-mono px-2.5 py-1 rounded-[2px] border bg-copper-500/10 border-copper-500/30 text-copper-800"
+                            className="text-xs font-mono px-2.5 py-1 rounded-[2px] border bg-amber-500/10 border-amber-500/30 text-amber-800"
                           >
                             {spec}
                           </span>
@@ -158,7 +158,7 @@ export const TeletechnicsSection: React.FC = () => {
         <div className="mt-12 rounded-[2px] border overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_240px] bg-white border-gray-200 shadow-sm">
           <div className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-[2px] bg-copper-500/20 text-copper-800 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
                 <Server className="w-6 h-6" />
               </div>
               <div>
@@ -173,7 +173,7 @@ export const TeletechnicsSection: React.FC = () => {
 
             <Link
               to="/zapytanie"
-              className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+              className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               Dobierz zestaw (2 min)
             </Link>
