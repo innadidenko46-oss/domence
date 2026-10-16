@@ -141,7 +141,7 @@ export const SystemsPage: React.FC = () => {
                 </ul>
               </div>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
@@ -172,7 +172,7 @@ export const SystemsPage: React.FC = () => {
                 </ul>
               </div>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>
@@ -203,7 +203,7 @@ export const SystemsPage: React.FC = () => {
                 </ul>
               </div>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-copper-700 hover:text-copper-800"
               >
                 <span>Dobierz zestaw (2 min)</span>

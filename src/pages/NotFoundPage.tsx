@@ -25,7 +25,7 @@ export const NotFoundPage: React.FC = () => {
               Wróć na stronę główną
             </Link>
             <Link
-              to="/kalkulator"
+              to="/zapytanie"
               className="px-6 py-3 rounded-[2px] border text-sm font-semibold transition-colors bg-white border-gray-300 text-gray-900 hover:bg-gray-100"
             >
               Dobierz zestaw

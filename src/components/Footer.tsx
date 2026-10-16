@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kalkulator" className="hover:text-copper-400 transition-colors font-semibold text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
+                  <Link to="/zapytanie" className="hover:text-copper-400 transition-colors font-semibold text-copper-400 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2">
                     Dobierz zestaw (2 min)
                   </Link>
                 </li>
@@ -260,7 +260,7 @@ export const Footer: React.FC = () => {
                     3. <strong>Gwarancja:</strong> Na wykonane okablowanie i prace montażowe udzielamy 24 miesięcy gwarancji. Szczegóły oraz ewentualne wydłużenia określa umowa zawierana z klientem.
                   </p>
                   <p>
-                    4. <strong>Wycena:</strong> Kosztorys wstępny generowany przez kalkulator ma charakter informacyjny i nie stanowi oferty w rozumieniu art. 66 Kodeksu Cywilnego do czasu weryfikacji rzutów architektonicznych przez inżyniera.
+                    4. <strong>Wycena:</strong> Zapytanie wysłane przez stronę nie jest wyceną ani ofertą w rozumieniu art. 66 Kodeksu cywilnego. Zakres i cenę potwierdzamy na piśmie po rozmowie i sprawdzeniu rysunków.
                   </p>
                 </div>
               </div>

@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
             </Link>
 
             <Link
-              to="/kalkulator"
+              to="/zapytanie"
               className={`${hideHeaderCta ? 'hidden' : 'flex animate-[rise-in_0.3s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none'} transition-colors min-h-11 px-4 py-2 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm border border-copper-400/40 active:scale-[0.98] items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2`}
             >
               <ClipboardList className="w-4 h-4" />
@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
 
               <div className="pt-3 flex flex-col gap-2 border-t mt-2 border-gray-200">
                 <Link
-                  to="/kalkulator"
+                  to="/zapytanie"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full py-3 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm flex items-center justify-center gap-2 border border-copper-400/40 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                 >

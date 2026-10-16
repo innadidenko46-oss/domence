@@ -4,7 +4,7 @@ import { MessageSquare, ClipboardList, Phone } from 'lucide-react';
 import { SITE, telHref } from '../config/site.ts';
 
 // Pages that already are the form the bar points to
-const FORM_PAGES = ['/kalkulator', '/kontakt'];
+const FORM_PAGES = ['/zapytanie', '/kontakt'];
 
 export const MobileStickyBar: React.FC = () => {
   const { pathname } = useLocation();
@@ -32,7 +32,7 @@ export const MobileStickyBar: React.FC = () => {
         )}
 
         <Link
-          to="/kalkulator"
+          to="/zapytanie"
           className="flex-[1.5] py-3 px-4 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
         >
           <ClipboardList className="w-4 h-4" />

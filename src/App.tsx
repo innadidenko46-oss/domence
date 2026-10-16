@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -47,7 +47,9 @@ function AppContent() {
           <Route path="/scenariusze" element={<ScenariosPage />} />
           <Route path="/pakiety" element={<PackagesPage />} />
           <Route path="/faq" element={<FaqPage />} />
-          <Route path="/kalkulator" element={<CalculatorPage />} />
+          <Route path="/zapytanie" element={<CalculatorPage />} />
+          {/* Old address kept working for links already shared */}
+          <Route path="/kalkulator" element={<Navigate to="/zapytanie" replace />} />
           <Route path="/kontakt" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -66,7 +66,7 @@ export const HomePage: React.FC = () => {
       image:
         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',
-      cta: 'Zobacz pakiety i ceny',
+      cta: 'Zobacz pakiety',
     },
   ];
 
@@ -94,7 +94,7 @@ export const HomePage: React.FC = () => {
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
@@ -354,7 +354,7 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
             <div className="flex flex-wrap items-center gap-3">
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="btn-engineering-primary shadow-lg shadow-copper-500/20 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>

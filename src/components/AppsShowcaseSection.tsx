@@ -69,7 +69,7 @@ export const AppsShowcaseSection: React.FC = () => {
             </ul>
             <div className="mt-6 pt-4 border-t border-gray-200">
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="inline-flex items-center gap-2 text-sm font-bold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 rounded-[2px]"
               >
                 <span>Dobierz zestaw (2 min)</span>

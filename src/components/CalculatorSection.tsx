@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
+import { INSTALL_TIMELINES } from '../config/site.ts';
 import {
   Hammer,
   Home,
@@ -146,6 +147,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
   // Nothing is shown as chosen until the visitor picks it, so no default slips through unread
   const [answered, setAnswered] = useState({ property: false, area: false });
+  const [timeline, setTimeline] = useState('');
 
   const handleSelectStep1 = (val: PropertyState) => {
     setAnswered((a) => ({ ...a, property: true }));
@@ -206,7 +208,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
         .map((m) => `• ${m.name}`)
         .join('\n') || '• nie wybrano — proszę o dobór zestawu';
-    const subject = `Wstępne zapytanie z ankiety — ${formData.name}`;
+    const subject = `Zapytanie ze strony — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
       `Telefon: ${formData.phone}`,
@@ -214,13 +216,14 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       '',
       `Nieruchomość: ${getPropertyLabel(propertyState)}`,
       `Metraż: ${getAreaLabel(areaRange)}`,
+      `Planowany montaż: ${timeline}`,
       '',
       'Zainteresowanie:',
       selectedNames,
       '',
       formData.message ? `Wiadomość: ${formData.message}` : 'Wiadomość: —',
       '',
-      'Ankieta nie jest wyceną — oddzwonimy z propozycją.',
+      'To nie jest wycena — oddzwonimy z propozycją.',
     ].join('\n');
     setMailBody(body);
     setMailSubject(subject);
@@ -237,6 +240,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
           email: formData.email,
           property: getPropertyLabel(propertyState),
           area: getAreaLabel(areaRange),
+          timeline,
         },
       });
       setDelivery(result);
@@ -259,7 +263,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   return (
-    <section id="kalkulator" className="pt-6 pb-16 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
+    <section id="zapytanie" className="pt-6 pb-16 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
         <div className="hidden sm:block rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-40">
@@ -278,15 +282,15 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
               <div className="flex items-center justify-between text-xs font-semibold mb-3">
                 <span className="flex items-center gap-1.5 text-copper-600 font-mono uppercase tracking-wider font-bold">
                   <ClipboardList className="w-4 h-4" />
-                  <span>Krótka ankieta DOMENCE</span>
+                  <span>Twoje zapytanie</span>
                 </span>
-                <span className="font-mono text-gray-600">Krok {step} z 4</span>
+                <span className="font-mono text-gray-600">Krok {step} z 5</span>
               </div>
 
               <div className="w-full h-1 rounded-[2px] overflow-hidden bg-gray-200">
                 <motion.div
                   className="h-full bg-copper-600"
-                  animate={{ width: `${step * 25}%` }}
+                  animate={{ width: `${step * 20}%` }}
                   transition={{ duration: 0.3 }}
                 />
               </div>
@@ -475,7 +479,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       onClick={() => setStep(4)}
                       className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     >
-                      <span>Dalej — kontakt</span>
+                      <span>Dalej</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -486,6 +490,55 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             {step === 4 && !isSubmitted && (
               <motion.div
                 key="step-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
+                  Kiedy planujesz montaż?
+                </h3>
+                <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
+                  Dzięki temu wiemy, kiedy się odezwać i czy zdążymy przed Twoim terminem.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {INSTALL_TIMELINES.map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => {
+                        setTimeline(opt);
+                        setStep(5);
+                      }}
+                      aria-pressed={timeline === opt}
+                      className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
+                        timeline === opt
+                          ? 'bg-copper-600 text-white border-copper-500 shadow-md'
+                          : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={() => setStep(3)}
+                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 hover:text-gray-900"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    <span>Wstecz</span>
+                  </button>
+                </div>
+              </motion.div>
+            )}
+
+            {step === 5 && !isSubmitted && (
+              <motion.div
+                key="step-5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -505,6 +558,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Nieruchomość: <strong>{getPropertyLabel(propertyState)}</strong></span>
                     <span>•</span>
                     <span>Metraż: <strong>{getAreaLabel(areaRange)}</strong></span>
+                    <span>•</span>
+                    <span>Termin: <strong>{timeline}</strong></span>
                     <span>•</span>
                     <span>Zainteresowania: <strong>{selectedModuleIds.length === 0 ? 'dobór przez nas' : `${selectedModuleIds.length}`}</strong></span>
                   </div>
@@ -625,7 +680,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         className="mt-0.5 accent-copper-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie ankiety i propozycji zestawu.
+                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji zestawu.
                       </span>
                     </label>
                     {errors.agreement && (
@@ -636,7 +691,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <div className="flex flex-col sm:flex-row gap-3 pt-3">
                     <button
                       type="button"
-                      onClick={() => setStep(3)}
+                      onClick={() => setStep(4)}
                       className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
                     >
                       <ArrowLeft className="w-4 h-4" />
@@ -649,12 +704,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       aria-busy={sending}
                       className="btn-engineering-primary sm:w-2/3 shadow-sm cursor-pointer disabled:cursor-wait disabled:opacity-80 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                     >
-                      {sending ? 'Wysyłanie…' : 'Wyślij ankietę'}
+                      {sending ? 'Wysyłanie…' : 'Wyślij zapytanie'}
                     </button>
                   </div>
                   {sendError && (
                     <p role="alert" className="text-sm text-red-700 border-l-2 border-red-600 pl-3">
-                      Nie udało się wysłać ankiety. Twoje odpowiedzi są zapisane — spróbuj ponownie za chwilę albo{' '}
+                      Nie udało się wysłać zapytania. Twoje odpowiedzi są zapisane — spróbuj ponownie za chwilę albo{' '}
                       <a href={mailtoHref(mailSubject, mailBody)} className="font-semibold underline underline-offset-2">
                         wyślij je e-mailem na {CONTACT_EMAIL}
                       </a>
@@ -684,10 +739,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 {delivery === 'sent' ? (
                   <>
                     <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900" tabIndex={-1}>
-                      Dziękujemy{formData.name ? `, ${formData.name.split(' ')[0]}` : ''}. Ankieta dotarła.
+                      Dziękujemy{formData.name ? `, ${formData.name.split(' ')[0]}` : ''}. Zapytanie dotarło.
                     </h3>
                     <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
-                      Oddzwonimy z propozycją dobraną do Twoich odpowiedzi — zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Ankieta nie jest wyceną.
+                      Oddzwonimy z propozycją dobraną do Twoich odpowiedzi — zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). To nie jest wycena.
                     </p>
                   </>
                 ) : (
@@ -696,7 +751,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       Jeszcze jeden krok: wyślij wiadomość
                     </h3>
                     <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
-                      Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Ankieta dotrze do nas dopiero po kliknięciu „Wyślij”. Jeśli okno się nie otworzyło, skopiuj treść i wyślij ją z dowolnej poczty.
+                      Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Zapytanie dotrze do nas dopiero po kliknięciu „Wyślij”. Jeśli okno się nie otworzyło, skopiuj treść i wyślij ją z dowolnej poczty.
                     </p>
                     <a
                       href={mailtoHref(mailSubject, mailBody)}
@@ -713,7 +768,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     onClick={handleCopyBody}
                     className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
-                    {copied ? 'Skopiowano treść' : 'Kopiuj treść ankiety'}
+                    {copied ? 'Skopiowano treść' : 'Kopiuj treść zapytania'}
                   </button>
                   <button
                     onClick={() => {
@@ -722,7 +777,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     }}
                     className="px-6 py-2.5 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   >
-                    Wypełnij kolejną ankietę
+                    Wyślij kolejne zapytanie
                   </button>
                 </div>
               </motion.div>

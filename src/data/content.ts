@@ -528,8 +528,8 @@ export const SCENARIOS: LifeScenario[] = [
 export const WORKFLOW_STEPS = [
   {
     number: '01',
-    title: 'Krótka ankieta o domu',
-    desc: 'Odpowiadasz na 3 pytania i zostawiasz kontakt — oddzwaniamy z propozycją.',
+    title: 'Zapytanie o Twój dom',
+    desc: 'Zaznaczasz, co Cię interesuje i kiedy planujesz montaż, i zostawiasz kontakt — oddzwaniamy z propozycją.',
     humanNote: 'Zajmie Ci to około 2 minut. Nic nie płacisz i do niczego się nie zobowiązujesz.',
   },
   {

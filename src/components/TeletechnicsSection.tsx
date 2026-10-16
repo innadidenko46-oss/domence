@@ -172,7 +172,7 @@ export const TeletechnicsSection: React.FC = () => {
             </div>
 
             <Link
-              to="/kalkulator"
+              to="/zapytanie"
               className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
             >
               Dobierz zestaw (2 min)

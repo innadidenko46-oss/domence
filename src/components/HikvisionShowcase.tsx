@@ -184,7 +184,7 @@ export const HikvisionShowcase: React.FC = () => {
                     Działa z rejestratorem nagrań w domu (zapis bez abonamentu)
                   </div>
                   <Link
-                    to="/kalkulator"
+                    to="/zapytanie"
                     className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-copper-600 hover:bg-copper-700 text-white font-semibold text-sm transition-all focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     <span>Dobierz zestaw (2 min)</span>

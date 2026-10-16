@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CalculatorSection } from '../components/CalculatorSection.tsx';
-import { Calculator } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 import { PropertyState } from '../types.ts';
 
 export const CalculatorPage: React.FC = () => {
@@ -29,14 +29,14 @@ export const CalculatorPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
       <PageHeader
-        badge="Krótka ankieta"
-        title="Krótka ankieta: dobierzemy zestaw pod Twój dom"
-        description="3 pytania + kontakt (ok. 2 minuty). Bez cen na stronie — po ankiecie oddzwonimy z konkretną propozycją. Odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
-        icon={<Calculator className="w-4 h-4 text-copper-600" />}
+        badge="Zapytanie"
+        title="Opowiedz nam o swoim domu"
+        description="Zaznacz, co Cię interesuje, i zostaw kontakt — około 2 minut. Oddzwonimy z propozycją dopasowaną do Twojego domu, zwykle w 24 godziny robocze (pon–pt, 8:00–18:00)."
+        icon={<ClipboardList className="w-4 h-4 text-copper-600" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
       />
 
-      {/* Main Calculator Component */}
+      {/* Enquiry: a few choices, then contact details */}
       <CalculatorSection
         selectedPropertyState={propertyState}
         onStateChange={handleStateChange}

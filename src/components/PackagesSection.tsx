@@ -34,7 +34,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="eyebrow inline-flex items-center gap-2 mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-copper-600" />
-            <span>Ceny i gwarancja</span>
+            <span>Zakres i gwarancja</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
             Gotowe zestawy z montażem i gwarancją
@@ -107,20 +107,6 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                     {pkg.humanSummary}
                   </div>
 
-                  {/* Price Box */}
-                  <div className="mt-6 pb-6 border-b border-gray-200">
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-xs text-gray-500">od</span>
-                      <span className="font-display text-3xl sm:text-4xl font-extrabold tabular-nums text-gray-900">
-                        {pkg.priceNetto.toLocaleString('pl-PL')}
-                      </span>
-                      <span className="text-xs font-semibold text-gray-500">PLN netto</span>
-                    </div>
-                    <div className="text-xs mt-1 font-mono text-gray-500">
-                      {pkg.priceBrutto.toLocaleString('pl-PL')} PLN brutto (z VAT 23%)
-                    </div>
-                  </div>
-
                   {/* Features List */}
                   <div className="mt-6 space-y-2.5">
                     <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
@@ -158,7 +144,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-600">
             Masz pompę ciepła, panele albo nietypową bramę?{' '}
-            <Link to="/kalkulator" className="text-copper-700 underline hover:text-copper-800">
+            <Link to="/zapytanie" className="text-copper-700 underline hover:text-copper-800">
               Dobierz zestaw (2 min)
             </Link>
           </p>

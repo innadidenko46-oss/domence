@@ -9,7 +9,7 @@ export const PackagesPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSelectPackage = (propertyState: PropertyState) => {
-    navigate(`/kalkulator?state=${propertyState}`);
+    navigate(`/zapytanie?state=${propertyState}`);
   };
 
   return (

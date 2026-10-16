@@ -77,7 +77,7 @@ export const MultiroomGardenSection: React.FC = () => {
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
               <span className="text-xs text-gray-600 font-mono">Bez montażu audio</span>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="text-xs font-mono font-bold text-copper-700 hover:text-copper-800 transition-colors"
               >
                 Dobierz zestaw (2 min)
@@ -133,7 +133,7 @@ export const MultiroomGardenSection: React.FC = () => {
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
               <span className="text-xs text-gray-600 font-mono">Sceny do filmu</span>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="text-xs font-mono font-bold transition-colors text-copper-700 hover:text-copper-800"
               >
                 Dobierz zestaw (2 min)

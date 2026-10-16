@@ -58,7 +58,7 @@ export const FaqPage: React.FC = () => {
             </div>
           </div>
           <Link
-            to="/kalkulator"
+            to="/zapytanie"
             className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
           >
             <span>Dobierz zestaw (2 min)</span>

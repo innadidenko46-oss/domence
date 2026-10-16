@@ -285,7 +285,7 @@ export const ScenariosSection: React.FC = () => {
                     Działa w domu, bez obcych serwerów
                   </span>
                   <Link
-                    to="/kalkulator"
+                    to="/zapytanie"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-copper-600 hover:text-copper-800 transition-colors focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
                   >
                     <span>Dobierz zestaw (2 min)</span>

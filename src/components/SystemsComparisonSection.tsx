@@ -90,7 +90,7 @@ export const SystemsComparisonSection: React.FC = () => {
               Chcesz wiedzieć, co pasuje do Twojego domu? Opisz dom w krótkiej ankiecie.
             </p>
             <Link
-              to="/kalkulator"
+              to="/zapytanie"
               className="btn-engineering-primary gap-2 focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <span>Dobierz zestaw (2 min)</span>

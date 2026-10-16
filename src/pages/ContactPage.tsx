@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
-import { SITE, telHref } from '../config/site.ts';
+import { SITE, telHref, INSTALL_TIMELINES } from '../config/site.ts';
 import {
   Phone,
   MessageSquare,
@@ -19,6 +19,7 @@ export const ContactPage: React.FC = () => {
     phone: '',
     email: '',
     location: '',
+    timeline: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -36,6 +37,7 @@ export const ContactPage: React.FC = () => {
       `Telefon: ${formData.phone}`,
       `E-mail: ${formData.email}`,
       `Lokalizacja inwestycji: ${formData.location}`,
+      `Planowany montaż: ${formData.timeline}`,
       '',
       'Opis założeń:',
       formData.message,
@@ -52,6 +54,7 @@ export const ContactPage: React.FC = () => {
           phone: formData.phone,
           email: formData.email,
           location: formData.location,
+          timeline: formData.timeline,
         },
       });
       setDelivery(result);
@@ -315,6 +318,25 @@ export const ContactPage: React.FC = () => {
                           className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
                         />
                       </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-timeline" className="block text-xs font-semibold mb-1 text-gray-700">
+                        Kiedy planujesz montaż? *
+                      </label>
+                      <select
+                        id="contact-timeline"
+                        name="timeline"
+                        required
+                        value={formData.timeline}
+                        onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-copper-500/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-copper-500"
+                      >
+                        <option value="" disabled>Wybierz termin</option>
+                        {INSTALL_TIMELINES.map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
                     </div>
 
                     <div>

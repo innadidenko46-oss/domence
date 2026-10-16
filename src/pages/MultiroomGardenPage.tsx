@@ -134,7 +134,7 @@ export const MultiroomGardenPage: React.FC = () => {
                 </div>
               </div>
               <Link
-                to="/kalkulator"
+                to="/zapytanie"
                 className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
               >
                 Dobierz zestaw (2 min)
