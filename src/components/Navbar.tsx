@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
               className={`${hideHeaderCta ? 'hidden' : 'flex animate-[rise-in_0.3s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none'} transition-colors min-h-11 px-4 py-2 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm border border-amber-400/40 active:scale-[0.98] items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2`}
             >
               <ClipboardList className="w-4 h-4" />
-              <span>Opisz swój dom (2 min)</span>
+              <span>Отримай план свого дому</span>
             </Link>
           </div>
 

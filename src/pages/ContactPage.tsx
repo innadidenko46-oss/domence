@@ -389,7 +389,7 @@ export const ContactPage: React.FC = () => {
                       className="btn-engineering-primary w-full gap-2 cursor-pointer disabled:cursor-wait disabled:opacity-80 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{sending ? 'Wysyłanie…' : 'Zapytaj inżyniera'}</span>
+                      <span>{sending ? 'Wysyłanie…' : 'Отримай план свого дому'}</span>
                     </button>
                     {sendError && (
                       <p role="alert" className="text-sm text-red-700 border-l-2 border-red-600 pl-3">

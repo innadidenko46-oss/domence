@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
-import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange, Interest } from '../types.ts';
 import { INTEREST_OPTIONS } from '../data/interests.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
@@ -23,17 +22,12 @@ import {
 } from 'lucide-react';
 
 interface CalculatorSectionProps {
-  /** Chosen on another page (home, /jak-zaczac, a landing page): start at step 2 */
+  /** Chosen on another page (home, a landing page): start at step 2 */
   initialInterest?: Interest;
   /** Stage already known from the link, e.g. the no-chiselling page */
   initialStage?: PropertyState;
   onInterestChange?: (interest: Interest) => void;
 }
-
-// Modules for entrance and cameras; the gate fits both
-const CAMERA_MODULES = ['cctv_starter', 'rack_network_pack', 'intercom_poe', 'loqed_smart_lock', 'gate_control'];
-const fitsInterest = (id: string, interest: Interest) =>
-  interest === 'oba' || (interest === 'kamery' ? CAMERA_MODULES.includes(id) : id !== 'cctv_starter' && id !== 'rack_network_pack' && id !== 'intercom_poe' && id !== 'loqed_smart_lock');
 
 const STAGE_OPTIONS: { value: PropertyState; title: string; sub: string; icon: typeof Home }[] = [
   {
@@ -63,14 +57,6 @@ const stepVariants: Variants = {
   exit: (dir: number) => ({ opacity: 0, x: -24 * dir, transition: { duration: 0.18, ease: [0.55, 0.085, 0.68, 0.53] as const } }),
 };
 
-const MODULE_GROUPS: { label: string; categories: string[] }[] = [
-  { label: 'Bezpieczeństwo domu', categories: ['safety'] },
-  { label: 'Kamery i sieć', categories: ['teletechnics'] },
-  { label: 'Wejście i brama', categories: ['access'] },
-  { label: 'Komfort na co dzień', categories: ['comfort'] },
-  { label: 'Prąd i energia', categories: ['power', 'energy'] },
-];
-
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   initialInterest,
   initialStage,
@@ -99,21 +85,6 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     } catch { /* blocked storage: defaults */ }
     return '61_110';
   });
-  const [selectedModuleIds, setSelectedModuleIds] = useState<string[]>(() => {
-    try {
-      const raw = canRemember() ? localStorage.getItem(ENQUIRY_KEY) : null;
-      if (raw) {
-        const parsed = JSON.parse(raw) as { selectedModuleIds?: string[] };
-        if (Array.isArray(parsed.selectedModuleIds)) {
-          const valid = parsed.selectedModuleIds.filter((id) =>
-            SMART_MODULES.some((m) => m.id === id)
-          );
-          return valid;
-        }
-      }
-    } catch { /* blocked storage: empty */ }
-    return [];
-  });
   const [mailBody, setMailBody] = useState('');
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
@@ -131,7 +102,6 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const validate = (): FieldErrors => {
     const next: FieldErrors = {};
     if (formData.name.trim().length < 2) next.name = 'Podaj imię (min. 2 litery).';
-    // E-mail only: the phone becomes optional and the e-mail required
     if ((contactBy === 'phone' || formData.phone) && !/^[+\d][\d\s\-/.]{5,19}$/.test(formData.phone)) next.phone = 'Wpisz numer w formacie +48 601 234 567.';
     if (contactBy === 'email' && !formData.email.trim()) next.email = 'Podaj e-mail, na który mamy odpisać.';
     else if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
@@ -149,27 +119,22 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
 
   useEffect(() => {
-    // Answers are kept only if the visitor chose "Zapamiętuj" in the banner
     if (!canRemember()) return;
     try {
       localStorage.setItem(
         ENQUIRY_KEY,
-        JSON.stringify({ interest, propertyState, areaRange, selectedModuleIds })
+        JSON.stringify({ interest, propertyState, areaRange })
       );
     } catch { /* blocked storage: skip persistence */ }
-  }, [interest, propertyState, areaRange, selectedModuleIds]);
+  }, [interest, propertyState, areaRange]);
 
-  // Nothing is shown as chosen until the visitor picks it, so no default slips through unread
   const [answered, setAnswered] = useState({ interest: Boolean(initialInterest), stage: Boolean(initialStage), area: false });
   const [timeline, setTimeline] = useState('');
 
   const handleSelectInterest = (val: Interest) => {
     setAnswered((a) => ({ ...a, interest: true }));
     setInterest(val);
-    // Drop picks that no longer fit the new choice
-    setSelectedModuleIds((prev) => prev.filter((id) => fitsInterest(id, val)));
     onInterestChange?.(val);
-    goTo(2);
   };
 
   const handleSelectStage = (val: PropertyState) => {
@@ -183,12 +148,6 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   const getInterestLabel = (i: Interest) => INTEREST_OPTIONS.find((o) => o.value === i)!.title.replace(/\u00a0/g, ' ');
-
-  const toggleModule = (id: string) => {
-    setSelectedModuleIds((prev) =>
-      prev.includes(id) ? prev.filter((m) => m !== id) : [...prev, id]
-    );
-  };
 
   const getAreaLabel = (range: AreaRange) => {
     switch (range) {
@@ -216,10 +175,6 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       document.getElementById(`calc-${firstInvalid}`)?.focus();
       return;
     }
-    const selectedNames =
-      SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
-        .map((m) => `• ${m.name}`)
-        .join('\n') || '• nie wybrano — proszę o propozycję';
     const subject = `Zapytanie ze strony — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
@@ -230,10 +185,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       `Interesuje: ${getInterestLabel(interest)}`,
       `Etap: ${getPropertyLabel(propertyState)}`,
       `Metraż: ${getAreaLabel(areaRange)}`,
-      `Planowany montaż: ${timeline}`,
-      '',
-      'Zainteresowanie:',
-      selectedNames,
+      `Planowany montaż: ${timeline || '—'}`,
       '',
       formData.message ? `Wiadomość: ${formData.message}` : 'Wiadomość: —',
       '',
@@ -262,15 +214,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       setDelivery(result);
       setIsSubmitted(true);
     } catch {
-      // Keep everything the visitor typed; they can retry or use e-mail
       setSendError(true);
     } finally {
       setSending(false);
     }
   };
 
-  // After the step (or the success screen) changes, move keyboard and screen-reader
-  // focus to its heading; wait for the exit transition to finish first.
   useEffect(() => {
     if (!movedRef.current && !isSubmitted) return;
     const t = window.setTimeout(() => {
@@ -301,13 +250,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <ClipboardList className="w-4 h-4" />
                   <span>Twoje zapytanie</span>
                 </span>
-                <span className="text-gray-600">Krok {step} z 5</span>
+                <span className="text-gray-600">Krok {step} z 3</span>
               </div>
 
               <div className="w-full h-1 rounded-[2px] overflow-hidden bg-gray-200">
                 <motion.div
                   className="h-full bg-petrol-700"
-                  animate={{ width: `${step * 20}%` }}
+                  animate={{ width: `${step * 33.33}%` }}
                   transition={{ duration: 0.3 }}
                 />
               </div>
@@ -355,6 +304,18 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     );
                   })}
                 </div>
+
+                <div className="mt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+                  <button
+                    type="button"
+                    onClick={() => goTo(2)}
+                    disabled={!answered.interest}
+                    className="btn-engineering-primary gap-1 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                  >
+                    <span>Dalej</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </motion.div>
             )}
 
@@ -371,7 +332,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Twój dom
                 </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Od tego zależy, jak montujemy: z{'\u00a0'}nowymi kablami czy bez kucia ścian.
+                  Od tego zależy, jak montujemy: z nowymi kablami czy bez kucia ścian.
                 </p>
 
                 <fieldset>
@@ -424,6 +385,27 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </div>
                 </fieldset>
 
+                <fieldset className="mt-8">
+                  <legend className="text-sm font-semibold mb-3 text-gray-900">Kiedy planujesz montaż?</legend>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {INSTALL_TIMELINES.map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setTimeline(opt)}
+                        aria-pressed={timeline === opt}
+                        className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
+                          timeline === opt
+                            ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
+                            : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </fieldset>
+
                 <div className="mt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
                   <button
                     type="button"
@@ -434,12 +416,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Wstecz</span>
                   </button>
                   <div className="flex items-center gap-4">
-                    {!(answered.stage && answered.area) && (
-                      <span className="text-xs text-gray-600" aria-live="polite">Zaznacz etap i{'\u00a0'}metraż</span>
+                    {!(answered.stage && answered.area && timeline) && (
+                      <span className="text-xs text-gray-600" aria-live="polite">Zaznacz etap, metraż i termin</span>
                     )}
                     <button
                       type="button"
-                      disabled={!(answered.stage && answered.area)}
+                      disabled={!(answered.stage && answered.area && timeline)}
                       onClick={() => goTo(3)}
                       className="btn-engineering-primary gap-1 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
@@ -460,161 +442,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 animate="center"
                 exit="exit"
               >
-                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
-                  Co dokładnie ma robić dom? (wybierz dowolnie)
-                </h2>
-                <p className="text-xs sm:text-sm mb-5 leading-relaxed text-gray-600">
-                  Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu odezwiemy się i wszystko wyjaśnimy.
-                </p>
-
-                <div className="space-y-7">
-                  {MODULE_GROUPS.map((group) => {
-                    const mods = SMART_MODULES.filter((m) => group.categories.includes(m.category) && fitsInterest(m.id, interest));
-                    if (mods.length === 0) return null;
-                    return (
-                      <fieldset key={group.label}>
-                        <legend className="eyebrow mb-3">{group.label}</legend>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {mods.map((mod) => {
-                            const isChecked = selectedModuleIds.includes(mod.id);
-                            return (
-                              <button
-                                type="button"
-                                key={mod.id}
-                                onClick={() => toggleModule(mod.id)}
-                                aria-pressed={isChecked}
-                                className={`p-4 h-full rounded-[2px] transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 w-full text-left ${
-                                  isChecked
-                                    ? 'bg-amber-500/15 border-amber-500'
-                                    : 'bg-white border-gray-200 hover:border-gray-300'
-                                }`}
-                              >
-                                <div className="flex items-start gap-3.5">
-                                  <div
-                                    className={`w-5 h-5 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                                      isChecked
-                                        ? 'bg-petrol-700 text-white'
-                                        : 'border border-gray-300 bg-white'
-                                    }`}
-                                  >
-                                    {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                                  </div>
-
-                                  <div>
-                                    <div className="text-xs sm:text-sm font-bold text-gray-900">
-                                      {mod.name}
-                                    </div>
-                                    <div className="text-xs text-gray-600 mt-1 leading-relaxed">
-                                      {mod.humanExplanation}
-                                    </div>
-                                  </div>
-                                </div>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </fieldset>
-                    );
-                  })}
-                </div>
-
-                <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-xs text-gray-600">
-                    {selectedModuleIds.length === 0
-                      ? 'Nic nie wybrano. Możesz przejść dalej, a inżynier podpowie, od czego zacząć.'
-                      : `Wybrano: ${selectedModuleIds.length}`}
-                  </div>
-                  <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <button
-                      type="button"
-                      onClick={() => goTo(2)}
-                      className="w-1/2 sm:w-auto px-4 min-h-11 text-xs font-semibold text-gray-600 transition-colors flex items-center justify-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
-                    >
-                      <ArrowLeft className="w-3.5 h-3.5" />
-                      <span>Wstecz</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => goTo(4)}
-                      className="btn-engineering-primary w-1/2 sm:w-auto gap-1 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                    >
-                      <span>Dalej</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {step === 4 && !isSubmitted && (
-              <motion.div
-                key="step-4"
-                custom={dir}
-                variants={stepVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-              >
-                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
-                  Kiedy planujesz montaż?
-                </h2>
-                <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Dzięki temu wiemy, kiedy się odezwać i czy zdążymy przed Twoim terminem.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {INSTALL_TIMELINES.map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      onClick={() => {
-                        setTimeline(opt);
-                        goTo(5);
-                      }}
-                      aria-pressed={timeline === opt}
-                      className={`p-5 min-h-11 rounded-[2px] text-left font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
-                        timeline === opt
-                          ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
-                          : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-8 flex items-center justify-between">
-                  <button
-                    type="button"
-                    onClick={() => goTo(3)}
-                    className="inline-flex items-center gap-2 min-h-11 text-xs font-semibold text-gray-600 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 hover:text-gray-900"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    <span>Wstecz</span>
-                  </button>
-                </div>
-              </motion.div>
-            )}
-
-            {step === 5 && !isSubmitted && (
-              <motion.div
-                key="step-5"
-                custom={dir}
-                variants={stepVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-              >
                 <div className="text-center mb-8">
                   <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 focus:outline-none">
                     Jak mamy się z Tobą skontaktować?
                   </h2>
 
-                  {/* Plain recap of the answers, with a way back to change them */}
                   <p className="mt-3 text-sm text-gray-600 max-w-lg mx-auto">
-                    Twoje odpowiedzi: {getInterestLabel(interest).toLowerCase()}, {getPropertyLabel(propertyState).toLowerCase()}, {getAreaLabel(areaRange)}, {timeline.toLowerCase()}
-                    {selectedModuleIds.length > 0 ? `, zaznaczone: ${selectedModuleIds.length}` : ''}.{' '}
+                    Twoje odpowiedzi: {getInterestLabel(interest).toLowerCase()}, {getPropertyLabel(propertyState).toLowerCase()}, {getAreaLabel(areaRange)}, {timeline.toLowerCase()}.{' '}
                     <button
                       type="button"
                       onClick={() => goTo(1)}
@@ -625,10 +459,26 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </p>
                 </div>
 
+                {/* Trust badges */}
+                <div className="flex flex-wrap items-center justify-center gap-6 mb-8 py-4 border-y border-gray-200">
+                  <div className="flex items-center gap-2 text-xs text-gray-600">
+                    <ShieldCheck className="w-4 h-4 text-petrol-700" />
+                    <span>Bezkoшłatна консультація</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-600">
+                    <CheckCircle2 className="w-4 h-4 text-petrol-700" />
+                    <span>Відповідь за 24 год</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-600">
+                    <ShieldCheck className="w-4 h-4 text-petrol-700" />
+                    <span>Без спаму</span>
+                  </div>
+                </div>
+
                 <form onSubmit={handleSubmit} noValidate className="space-y-4 max-w-lg mx-auto">
                   <div>
                     <label htmlFor="calc-name" className="block text-xs font-semibold mb-2 text-gray-700">
-                      Imię i nazwisko
+                      Imię i nazwisko
                     </label>
                     <div className="relative">
                       <input
@@ -637,7 +487,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         autoComplete="name"
                         type="text"
                         required
-                        minLength={3}
+                        minLength={2}
                         maxLength={60}
                         value={formData.name}
                         onChange={(e) => { setFormData({ ...formData, name: e.target.value.trimStart() }); clearError('name'); }}
@@ -678,14 +528,14 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           onChange={(e) => { setFormData({ ...formData, phone: e.target.value.trim() }); clearError('phone'); }}
                           placeholder="+48 601 234 567"
                           aria-invalid={!!errors.phone}
-                        aria-describedby={errors.phone ? 'calc-phone-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
+                          aria-describedby={errors.phone ? 'calc-phone-error' : undefined}
+                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Phone className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
-                    {errors.phone && (
-                      <p id="calc-phone-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.phone}</p>
-                    )}
+                      {errors.phone && (
+                        <p id="calc-phone-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.phone}</p>
+                      )}
                     </div>
 
                     <div>
@@ -704,14 +554,14 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearError('email'); }}
                           placeholder="twoj@email.pl"
                           aria-invalid={!!errors.email}
-                        aria-describedby={errors.email ? 'calc-email-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
+                          aria-describedby={errors.email ? 'calc-email-error' : undefined}
+                          className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
-                    {errors.email && (
-                      <p id="calc-email-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.email}</p>
-                    )}
+                      {errors.email && (
+                        <p id="calc-email-error" className="mt-1.5 text-xs font-medium text-red-700">{errors.email}</p>
+                      )}
                     </div>
                   </div>
 
@@ -746,7 +596,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         className="mt-0.5 accent-petrol-700 w-5 h-5 shrink-0 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji. <button type="button" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' })); }} className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer">Polityka prywatności</button>
+                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji. <button type="button" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' })); }} className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer">Polityka prywatności</button>
                       </span>
                     </label>
                     {errors.agreement && (
@@ -757,7 +607,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   <div className="flex flex-col sm:flex-row gap-3 pt-3">
                     <button
                       type="button"
-                      onClick={() => goTo(4)}
+                      onClick={() => goTo(2)}
                       className="sm:w-1/3 py-4 rounded-[2px] border text-xs font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
                     >
                       <ArrowLeft className="w-4 h-4" />
