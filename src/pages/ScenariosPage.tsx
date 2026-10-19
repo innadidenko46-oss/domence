@@ -87,7 +87,7 @@ export const ScenariosPage: React.FC = () => {
                     to="/zapytanie"
                     className="inline-flex items-center min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
-                    Otrzymaj propozycję dla swojego domu
+                    Odbierz propozycję dla swojego domu
                   </Link>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export const ScenariosPage: React.FC = () => {
                     to="/zapytanie"
                     className="inline-flex items-center min-h-11 text-xs font-bold transition-colors text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
-                    Otrzymaj propozycję dla swojego domu
+                    Odbierz propozycję dla swojego domu
                   </Link>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export const ScenariosPage: React.FC = () => {
             to="/zapytanie"
             className="btn-accent self-start md:self-auto focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
           >
-            <span>Otrzymaj propozycję dla swojego domu</span>
+            <span>Odbierz propozycję dla swojego domu</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>

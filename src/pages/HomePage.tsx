@@ -86,7 +86,7 @@ export const HomePage: React.FC = () => {
                 to="/zapytanie"
                 className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Otrzymaj propozycję dla swojego domu</span>
+                <span>Odbierz propozycję dla swojego domu</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -409,7 +409,7 @@ export const HomePage: React.FC = () => {
                 to="/zapytanie"
                 className="btn-accent active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Otrzymaj propozycję dla swojego domu</span>
+                <span>Odbierz propozycję dla swojego domu</span>
               </Link>
 
               {SITE.phone && (
