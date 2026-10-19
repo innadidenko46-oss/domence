@@ -85,8 +85,8 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/multimedia" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
-                    Kino w salonie
+                  <Link to="/scenariusze" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                    Multimedia w domu
                   </Link>
                 </li>
                 <li>

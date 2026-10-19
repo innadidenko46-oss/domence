@@ -123,10 +123,10 @@ export const TeletechnicsPage: React.FC = () => {
             </div>
           </div>
           <Link
-            to="/multimedia"
+            to="/scenariusze"
             className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
           >
-            <span>Zobacz kino w salonie</span>
+            <span>Zobacz scenariusze</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -40,26 +40,15 @@ export const HomePage: React.FC = () => {
       cta: 'Zobacz kamery i domofony',
     },
     {
-      id: 'multimedia-kino',
-      path: '/multimedia',
-      title: 'Kino w salonie jednym przyciskiem',
-      subtitle: 'Rolety • Światło • Dzwonek z furtki',
-      description:
-        'Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
-      cta: 'Zobacz kino w salonie',
-    },
-    {
       id: 'scenariusze',
       path: '/scenariusze',
       title: 'Dom, który sam gasi światło i pilnuje wody',
-      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
+      subtitle: 'Wyjście z domu • Woda • Światło w nocy • Multimedia',
       description:
-        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
+        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę. Kino w salonie jednym przyciskiem.',
       image:
         'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
-      imageAlt: 'Jasny salon z dużymi oknami i roślinami',
+      imageAlt: 'Jasny salon z dużymi oknami i roślinami',
       cta: 'Zobacz scenariusze',
     },
   ];

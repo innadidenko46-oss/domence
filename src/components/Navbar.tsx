@@ -70,7 +70,6 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { label: 'Automatyka', path: '/systemy' },
     { label: 'Kamery i domofony', path: '/teletechnika' },
-    { label: 'Kino w salonie', path: '/multimedia' },
     { label: 'Scenariusze', path: '/scenariusze' },
     { label: 'FAQ', path: '/faq' },
   ];

@@ -13,7 +13,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage.tsx').then((m) => (
 const HomePage = lazy(() => import('./pages/HomePage.tsx').then((m) => ({ default: m.HomePage })));
 const SystemsPage = lazy(() => import('./pages/SystemsPage.tsx').then((m) => ({ default: m.SystemsPage })));
 const TeletechnicsPage = lazy(() => import('./pages/TeletechnicsPage.tsx').then((m) => ({ default: m.TeletechnicsPage })));
-const MultiroomGardenPage = lazy(() => import('./pages/MultiroomGardenPage.tsx').then((m) => ({ default: m.MultiroomGardenPage })));
+// Multimedia page removed — content merged into /scenariusze
 const ScenariosPage = lazy(() => import('./pages/ScenariosPage.tsx').then((m) => ({ default: m.ScenariosPage })));
 const StartPage = lazy(() => import('./pages/StartPage.tsx').then((m) => ({ default: m.StartPage })));
 const LandingPage = lazy(() => import('./pages/LandingPage.tsx').then((m) => ({ default: m.LandingPage })));
@@ -62,7 +62,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/systemy" element={<SystemsPage />} />
           <Route path="/teletechnika" element={<TeletechnicsPage />} />
-          <Route path="/multimedia" element={<MultiroomGardenPage />} />
+          <Route path="/multimedia" element={<Navigate to="/scenariusze" replace />} />
           <Route path="/scenariusze" element={<ScenariosPage />} />
           <Route path="/jak-zaczac" element={<StartPage />} />
           <Route path="/pakiety" element={<Navigate to="/jak-zaczac" replace />} />
