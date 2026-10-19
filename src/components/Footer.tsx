@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/zapytanie" className="hover:text-amber-400 transition-colors font-semibold text-amber-400 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
-                    Отримай пропозицію для свого дому
+                    Otrzymaj propozycję dla swojego domu
                   </Link>
                 </li>
                 <li>

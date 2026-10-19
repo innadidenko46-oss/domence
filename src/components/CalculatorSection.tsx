@@ -463,15 +463,15 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="flex flex-wrap items-center justify-center gap-6 mb-8 py-4 border-y border-gray-200">
                   <div className="flex items-center gap-2 text-xs text-gray-600">
                     <ShieldCheck className="w-4 h-4 text-petrol-700" />
-                    <span>Bezkoшłatна консультація</span>
+                    <span>Bezpłatna konsultacja</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-600">
                     <CheckCircle2 className="w-4 h-4 text-petrol-700" />
-                    <span>Відповідь за 24 год</span>
+                    <span>Odpowiedź w 24 godziny</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-600">
                     <ShieldCheck className="w-4 h-4 text-petrol-700" />
-                    <span>Без спаму</span>
+                    <span>Bez spamu</span>
                   </div>
                 </div>
 

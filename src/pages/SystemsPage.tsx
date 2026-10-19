@@ -63,7 +63,7 @@ export const SystemsPage: React.FC = () => {
                 to="/zapytanie"
                 className="mt-6 inline-flex items-center gap-1.5 min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Отримай пропозицію для свого дому</span>
+                <span>Otrzymaj propozycję dla swojego domu</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -94,7 +94,7 @@ export const SystemsPage: React.FC = () => {
                 to="/zapytanie"
                 className="mt-6 inline-flex items-center gap-1.5 min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Отримай пропозицію для свого дому</span>
+                <span>Otrzymaj propozycję dla swojego domu</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
