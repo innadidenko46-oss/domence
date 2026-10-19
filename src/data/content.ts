@@ -1,6 +1,5 @@
 import {
   SmartModule,
-  PackageOffer,
   LifeScenario,
   TeletechnicService,
   FaqItem,
@@ -751,71 +750,6 @@ export const SMART_MODULES: SmartModule[] = [
   },
 ];
 
-export const PACKAGES: PackageOffer[] = [
-  {
-    id: 'security_intercom',
-    title: 'Wideodomofon IP Hikvision i monitoring posesji',
-    categoryBadge: 'Teletechnika i kontrola wejścia',
-    badgeType: 'standard',
-    timeframe: '1–2 dni robocze',
-    description: 'Całościowa kontrola bramy i furtki, mniej fałszywych alarmów, bezpłatny podgląd wideo 4K bez abonamentu.',
-    humanSummary: 'Wiesz, kto dzwoni do furtki, otwierasz ją telefonem, a kamery zapisują obraz w domu.',
-    priceNetto: 5300,
-    priceBrutto: 6519,
-    recommendedFor: 'security',
-    features: [
-      'Stacja bramowa IP Hikvision ze stali nierdzewnej z kamerą 180° i stykami do furtki',
-      'Dotykowy monitor wewnętrzny 7" Android ze szkłem 2.5D i podglądem kamer',
-      '2 kamery na elewacji z kolorowym obrazem w nocy, które odróżniają ludzi i auta od zwierząt',
-      'Rejestrator w domu z dyskiem 2 TB — bez opłat za chmurę',
-      'Czysty montaż z minimalną ingerencją w tynki, z odciągiem pyłu w wykończonych wnętrzach',
-      'Bez ukrytych abonamentów — darmowa aplikacja na telefon',
-      'Możliwość otwierania furtki z poziomu smartfona z dowolnego miejsca z dostępem do internetu',
-    ],
-  },
-  {
-    id: 'retrofit_smart',
-    title: 'Smart retrofit Shelly (wykończone wnętrze bez kucia)',
-    categoryBadge: 'Bez ingerencji w tynki',
-    badgeType: 'recommended',
-    timeframe: '1–2 dni robocze',
-    description: 'Kompletna automatyka Shelly Plus bez kurzu i bez niszczenia gładzi. Zabezpieczenie przed zalaniem, oświetlenie, rolety i sceny jogi.',
-    humanSummary: 'Z gotowego mieszkania robimy dom sterowany telefonem w 1–2 dni. Ściany i płytki zostają całe.',
-    priceNetto: 6900,
-    priceBrutto: 8487,
-    recommendedFor: 'retro',
-    features: [
-      '6x mikromodułów dopuszkowych Shelly Plus z pomiarem zużycia prądu',
-      '2x cyfrowe ściemniacze oświetlenia LED bez efektu migotania z trybem nocnym',
-      'Ochrona przed zalaniem (bezpieczna przy awarii): 3 czujniki zalania + siłownik zaworu (zamknięcie zaworu zwykle w kilka sekund)',
-      'Sterowanie roletami ze sceną „Chcę poćwiczyć jogę” i „Budzenie słońcem”',
-      'Lokalna centrala sterująca (przetwarzanie w domu, bez chmury)',
-      'Przycisk „Wyjdź z domu” przy drzwiach wejściowych',
-      'Czysty montaż z jak najmniejszą ingerencją w tynki i odsysaniem pyłu',
-    ],
-  },
-  {
-    id: 'developer_din',
-    title: 'Shelly Pro do nowego domu (moduły w rozdzielnicy)',
-    categoryBadge: 'Pełny standard inżynieryjny',
-    badgeType: 'premium',
-    timeframe: '3–5 dni roboczych',
-    description: 'Moduły w rozdzielnicy, sterowanie roletami i oświetleniem oraz szafka na sprzęt sieciowy.',
-    humanSummary: 'Dobre rozwiązanie do nowego domu: połączenia po kablu, czytelna rozdzielnica i nauka obsługi na końcu.',
-    priceNetto: 13900,
-    priceBrutto: 17097,
-    recommendedFor: 'deweloperski',
-    features: [
-      'Moduły przekaźnikowe i ściemniacze Shelly Pro na szynę DIN w rozdzielnicy',
-      'Bezpośrednia łączność sieciowa Ethernet LAN RJ45 dla każdego modułu automatyki',
-      'Sterownik strefowego ogrzewania podłogowego dla 6-8 niezależnych obwodów',
-      '2x zawory ze stali nierdzewnej 230V z samoczynnym zamknięciem bez prądu',
-      'Szafka na sprzęt sieciowy z uporządkowanymi kablami',
-      'Czytelnie opisana rozdzielnica',
-      'Pełne ustawienie przykładów: joga, pobudka, wyjście z domu, kino',
-    ],
-  },
-];
 
 export const HOME_MULTIMEDIA = {
   audio: {

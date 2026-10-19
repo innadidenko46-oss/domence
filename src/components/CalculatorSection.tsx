@@ -23,6 +23,8 @@ import {
 interface CalculatorSectionProps {
   selectedPropertyState?: PropertyState;
   onStateChange?: (state: PropertyState) => void;
+  /** Situation already picked on another page: start at step 2 */
+  presetFromLink?: boolean;
 }
 
 const PROPERTY_OPTIONS: { value: PropertyState; title: string; sub: string; icon: typeof Home }[] = [
@@ -70,8 +72,9 @@ const MODULE_GROUPS: { label: string; categories: string[] }[] = [
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   selectedPropertyState = 'retro',
   onStateChange,
+  presetFromLink = false,
 }) => {
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(presetFromLink ? 2 : 1);
   const [dir, setDir] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
   const movedRef = useRef(false);
@@ -154,7 +157,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   }, [propertyState, areaRange, selectedModuleIds]);
 
   // Nothing is shown as chosen until the visitor picks it, so no default slips through unread
-  const [answered, setAnswered] = useState({ property: false, area: false });
+  const [answered, setAnswered] = useState({ property: presetFromLink, area: false });
   const [timeline, setTimeline] = useState('');
 
   const handleSelectStep1 = (val: PropertyState) => {

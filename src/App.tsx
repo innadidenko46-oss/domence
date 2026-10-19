@@ -15,7 +15,7 @@ const SystemsPage = lazy(() => import('./pages/SystemsPage.tsx').then((m) => ({ 
 const TeletechnicsPage = lazy(() => import('./pages/TeletechnicsPage.tsx').then((m) => ({ default: m.TeletechnicsPage })));
 const MultiroomGardenPage = lazy(() => import('./pages/MultiroomGardenPage.tsx').then((m) => ({ default: m.MultiroomGardenPage })));
 const ScenariosPage = lazy(() => import('./pages/ScenariosPage.tsx').then((m) => ({ default: m.ScenariosPage })));
-const PackagesPage = lazy(() => import('./pages/PackagesPage.tsx').then((m) => ({ default: m.PackagesPage })));
+const StartPage = lazy(() => import('./pages/StartPage.tsx').then((m) => ({ default: m.StartPage })));
 const FaqPage = lazy(() => import('./pages/FaqPage.tsx').then((m) => ({ default: m.FaqPage })));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage.tsx').then((m) => ({ default: m.CalculatorPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage.tsx').then((m) => ({ default: m.ContactPage })));
@@ -63,7 +63,8 @@ function AppContent() {
           <Route path="/teletechnika" element={<TeletechnicsPage />} />
           <Route path="/multimedia" element={<MultiroomGardenPage />} />
           <Route path="/scenariusze" element={<ScenariosPage />} />
-          <Route path="/pakiety" element={<PackagesPage />} />
+          <Route path="/jak-zaczac" element={<StartPage />} />
+          <Route path="/pakiety" element={<Navigate to="/jak-zaczac" replace />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/zapytanie" element={<CalculatorPage />} />
           {/* Old address kept working for links already shared */}

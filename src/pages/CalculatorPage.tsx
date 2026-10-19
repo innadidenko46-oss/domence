@@ -40,6 +40,7 @@ export const CalculatorPage: React.FC = () => {
       {/* Enquiry: a few choices, then contact details */}
       <CalculatorSection
         selectedPropertyState={propertyState}
+        presetFromLink={Boolean(stateParam)}
         onStateChange={handleStateChange}
       />
     </div>

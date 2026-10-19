@@ -13,19 +13,6 @@ export interface SmartModule {
   icon: string;
 }
 
-export interface PackageOffer {
-  id: string;
-  title: string;
-  categoryBadge: string;
-  badgeType: 'recommended' | 'standard' | 'premium' | 'enterprise';
-  timeframe: string;
-  description: string;
-  humanSummary: string;
-  priceNetto: number;
-  priceBrutto: number;
-  features: string[];
-  recommendedFor: PropertyState;
-}
 
 export interface LifeScenario {
   id: string;

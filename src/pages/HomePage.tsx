@@ -60,16 +60,16 @@ export const HomePage: React.FC = () => {
       cta: 'Zobacz scenariusze',
     },
     {
-      id: 'pakiety',
-      path: '/pakiety',
-      title: 'Gotowe zestawy z montażem',
-      subtitle: 'Sprzęt i montaż • Cena na piśmie • Nauka obsługi',
+      id: 'jak-zaczac',
+      path: '/jak-zaczac',
+      title: 'Od czego zacząć w Twoim domu',
+      subtitle: 'Nowy dom • Gotowe mieszkanie • Wejście i kamery',
       description:
-        'Gotowe zestawy: do mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
+        'Trzy typowe sytuacje i to, od czego zależy cena. Bez zgadywania, który zestaw wybrać.',
       image:
         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',
-      cta: 'Zobacz pakiety',
+      cta: 'Zobacz, jak zacząć',
     },
   ];
 
