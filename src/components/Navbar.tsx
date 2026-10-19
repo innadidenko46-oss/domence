@@ -72,7 +72,6 @@ export const Navbar: React.FC = () => {
     { label: 'Kamery i domofony', path: '/teletechnika' },
     { label: 'Kino w salonie', path: '/multimedia' },
     { label: 'Scenariusze', path: '/scenariusze' },
-    { label: 'Jak zacząć', path: '/jak-zaczac' },
     { label: 'FAQ', path: '/faq' },
   ];
 

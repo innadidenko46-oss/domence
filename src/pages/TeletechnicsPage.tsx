@@ -4,12 +4,18 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
 import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
 import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { Network, ShieldCheck, ArrowRight, Video, HardDrive, X } from 'lucide-react';
 
 export const TeletechnicsPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Kamery i wideodomofon — DOMENCE"
+        description="Kamery z kolorowym obrazem w nocy, wideodomofon z rozmową z furtki w telefonie. Nagrania na dysku w domu, bez abonamentu."
+        canonical="https://domence-o9s1.vercel.app/teletechnika"
+      />
       <PageHeader
         badge="Kamery i domofony"
         title="Kamery i domofon z kamerą"

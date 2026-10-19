@@ -41,7 +41,7 @@ export const LANDINGS: Record<string, Landing> = {
       ["Ile to kosztuje?", "To zależy od wielkości domu i tego, ile rzeczy ma działać samo. Cenę dostajesz na piśmie po bezpłatnej rozmowie i sprawdzeniu domu."],
       ["Gdzie montujecie?", "W Warszawie i miejscowościach wokół niej. Napisz, gdzie jest dom, a potwierdzimy, czy dojedziemy."],
     ],
-    related: ['/ochrona-przed-zalaniem', '/automatyka-bez-kucia', '/jak-zaczac'],
+    related: ['/ochrona-przed-zalaniem', '/automatyka-bez-kucia', '/scenariusze'],
   },
   'wideodomofon-i-kamery-warszawa': {
     slug: 'wideodomofon-i-kamery-warszawa',
@@ -66,7 +66,7 @@ export const LANDINGS: Record<string, Landing> = {
       ["Czy mogę dołożyć automatykę później?", "Tak. Możesz zacząć od wejścia i kamer, a światło czy rolety dołożyć później, bez wymiany tego, co już masz."],
       ["Ile to kosztuje?", "Zależy od liczby kamer, długości kabli i tego, co ma się dziać przy wejściu. Cenę dostajesz na piśmie po bezpłatnym sprawdzeniu domu."],
     ],
-    related: ['/teletechnika', '/inteligentny-dom-warszawa', '/jak-zaczac'],
+    related: ['/teletechnika', '/inteligentny-dom-warszawa', '/systemy'],
   },
   'ochrona-przed-zalaniem': {
     slug: 'ochrona-przed-zalaniem',
@@ -91,7 +91,7 @@ export const LANDINGS: Record<string, Landing> = {
       ["Czy mogę zamówić tylko to?", "Tak. Ochronę przed zalaniem można zamówić osobno, bez reszty automatyki, a inne rzeczy dołożyć później."],
       ["Gdzie montujecie?", "W Warszawie i okolicach. Cenę dostajesz na piśmie po bezpłatnej rozmowie."],
     ],
-    related: ['/inteligentny-dom-warszawa', '/automatyka-bez-kucia', '/scenariusze'],
+    related: ['/inteligentny-dom-warszawa', '/automatyka-bez-kucia', '/faq'],
   },
   'automatyka-bez-kucia': {
     slug: 'automatyka-bez-kucia',
@@ -116,7 +116,7 @@ export const LANDINGS: Record<string, Landing> = {
       ["Czy to działa bez internetu?", "Tak. Włączniki, harmonogramy i czujniki działają w domu. Bez internetu nie sterujesz tylko z daleka."],
       ["Ile trwa montaż?", "Zależy od liczby pokoi i urządzeń. Termin dostajesz na piśmie razem z planem i ceną."],
     ],
-    related: ['/systemy', '/ochrona-przed-zalaniem', '/jak-zaczac'],
+    related: ['/systemy', '/ochrona-przed-zalaniem', '/faq'],
   },
 };
 
@@ -125,7 +125,7 @@ export const PAGE_LABELS: Record<string, string> = {
   '/systemy': "Światło, rolety i ogrzewanie",
   '/teletechnika': "Kamery i wideodomofon",
   '/scenariusze': "Co dom robi za Ciebie",
-  '/jak-zaczac': "Od czego zacząć",
+  '/faq': "Pytania i odpowiedzi",
   '/inteligentny-dom-warszawa': "Inteligentny dom w Warszawie i okolicach",
   '/wideodomofon-i-kamery-warszawa': "Wideodomofon i kamery w Warszawie i okolicach",
   '/ochrona-przed-zalaniem': "Ochrona przed zalaniem: czujnik sam zakręca wodę",

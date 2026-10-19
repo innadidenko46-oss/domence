@@ -4,6 +4,7 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { Reveal } from '../components/Reveal.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { LANDINGS, PAGE_LABELS } from '../data/landings.ts';
 
 // One template for the search landing pages in src/data/landings.ts
@@ -13,6 +14,12 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
 
   return (
     <div className="bg-gray-50 text-gray-900">
+      <Seo
+        title={`${page.title} — DOMENCE`}
+        description={page.description}
+        canonical={`https://domence-o9s1.vercel.app/${page.slug}`}
+        ogImage={page.image}
+      />
       <PageHeader
         badge={page.badge}
         title={page.title}

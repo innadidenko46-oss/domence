@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { MultiroomGardenSection } from '../components/MultiroomGardenSection.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { ArrowRight, Film } from 'lucide-react';
 
 export const MultiroomGardenPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Kino w salonie — DOMENCE"
+        description="Jeden przycisk: rolety zamykają się, światło gaśnie, ekran zjeżdża. Dzwonek z furtki widzisz na panelu w salonie i w telefonie."
+        canonical="https://domence-o9s1.vercel.app/multimedia"
+      />
       <PageHeader
         badge="Kino w salonie"
         title="Kino w salonie jednym przyciskiem"

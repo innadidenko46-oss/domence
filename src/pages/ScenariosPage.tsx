@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ScenariosSection } from '../components/ScenariosSection.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { SlidersHorizontal, ArrowRight } from 'lucide-react';
 
 export const ScenariosPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Scenariusze — co dom robi za Ciebie — DOMENCE"
+        description="Wyjście z domu gasi światło, czujnik pod pralką zakręca wodę, wieczorem dom zapala światła. Przykłady na co dzień."
+        canonical="https://domence-o9s1.vercel.app/scenariusze"
+      />
       <PageHeader
         badge="Przykłady z życia"
         title="Dom, który robi część rzeczy za Ciebie"

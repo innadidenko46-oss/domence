@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { KnowledgeBaseSection } from '../components/KnowledgeBaseSection.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { BookOpen, ArrowRight } from 'lucide-react';
 
 export const FaqPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Pytania i odpowiedzi — DOMENCE"
+        description="Jak dom działa bez internetu, czy trzeba kuć ściany, czy nagrania z kamer zostają w domu. Odpowiedzi zwykłymi słowami."
+        canonical="https://domence-o9s1.vercel.app/faq"
+      />
       <PageHeader
         badge="Pytania i odpowiedzi"
         title="Pytania i odpowiedzi — prosto i konkretnie"

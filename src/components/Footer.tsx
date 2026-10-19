@@ -103,8 +103,8 @@ export const Footer: React.FC = () => {
               </h2>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/jak-zaczac" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
-                    Jak zacząć
+                  <Link to="/scenariusze" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                    Co dom robi za Ciebie
                   </Link>
                 </li>
                 <li>

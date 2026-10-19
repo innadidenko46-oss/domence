@@ -2,6 +2,7 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CalculatorSection } from '../components/CalculatorSection.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { ClipboardList } from 'lucide-react';
 import { PropertyState, Interest } from '../types.ts';
 
@@ -26,6 +27,11 @@ export const CalculatorPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Opisz swój dom — DOMENCE"
+        description="Kilka pytań o Twoim domu i zostaw kontakt. Inżynier oddzwoni z propozycją dopasowaną do Ciebie, zwykle w 24 godziny robocze."
+        canonical="https://domence-o9s1.vercel.app/zapytanie"
+      />
       <PageHeader
         compact
         badge="Zapytanie"

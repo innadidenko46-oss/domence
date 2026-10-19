@@ -4,12 +4,18 @@ import { PageHeader } from '../components/PageHeader.tsx';
 import { SystemsComparisonSection } from '../components/SystemsComparisonSection.tsx';
 import { ShellyShowcase } from '../components/ShellyShowcase.tsx';
 import { LightingAtmosphereShowcase } from '../components/LightingAtmosphereShowcase.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { Layers, CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export const SystemsPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Automatyka domu — światło, rolety, ogrzewanie — DOMENCE"
+        description="Moduły w rozdzielnicy lub bez kucia. Światło, rolety i ogrzewanie, które działają razem i bez internetu. Dobieramy do nowego domu i gotowego mieszkania."
+        canonical="https://domence-o9s1.vercel.app/systemy"
+      />
       <PageHeader
         badge="Automatyka i sterowanie"
         title="Światło, rolety i ogrzewanie — co pasuje do Twojego domu"

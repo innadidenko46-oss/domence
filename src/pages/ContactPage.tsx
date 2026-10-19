@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import { ContactChoice, ContactBy, contactByLine } from '../components/ContactChoice.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { SITE, telHref, INSTALL_TIMELINES } from '../config/site.ts';
 import {
   Phone,
@@ -74,6 +75,11 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Kontakt — zapytaj inżyniera — DOMENCE"
+        description="Zadzwoń, napisz e-mail lub wypełnij formularz. Inżynier oddzwoni z propozycją, zwykle w 24 godziny robocze (pon–pt, 8:00–18:00)."
+        canonical="https://domence-o9s1.vercel.app/kontakt"
+      />
       <PageHeader
         badge="Kontakt"
         title="Porozmawiaj z inżynierem o swoim domu"

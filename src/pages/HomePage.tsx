@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone, MapPin } from 'lucide-react';
+import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone, MapPin, BookOpen } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { ProofSection } from '../components/ProofSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
@@ -9,6 +9,7 @@ import { INTEREST_OPTIONS } from '../data/interests.ts';
 import { OfflineDemo } from '../components/OfflineDemo.tsx';
 import { BrandArcs } from '../components/BrandArcs.tsx';
 import { Reveal } from '../components/Reveal.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { SITE, telHref } from '../config/site.ts';
 
 export const HomePage: React.FC = () => {
@@ -18,9 +19,9 @@ export const HomePage: React.FC = () => {
       id: 'systemy',
       path: '/systemy',
       title: 'Sterowanie domem: światło, rolety, ogrzewanie',
-      subtitle: 'Włączniki i telefon • Z kablami albo bez kucia',
+      subtitle: 'Włączniki i telefon • Z kablami albo bez kucia',
       description:
-        'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
+        'Światło, rolety i ogrzewanie sterowane z włączników na ścianie i z telefonu. Do nowego domu i do gotowego mieszkania.',
       image:
         'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Salon z białymi roletami na oknach i kominkiem',
@@ -29,10 +30,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'teletechnika',
       path: '/teletechnika',
-      title: 'Kamery i domofon z kamerą',
-      subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
+      title: 'Kamery i domofon z kamerą',
+      subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
       description:
-        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, a furtkę otworzysz z telefonu.',
+        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, a furtkę otworzysz z telefonu.',
       image:
         'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Nowoczesna elewacja domu wieczorem z oświetlonym wejściem',
@@ -41,24 +42,24 @@ export const HomePage: React.FC = () => {
     {
       id: 'multimedia-kino',
       path: '/multimedia',
-      title: 'Kino w salonie jednym przyciskiem',
-      subtitle: 'Rolety • Światło • Dzwonek z furtki',
+      title: 'Kino w salonie jednym przyciskiem',
+      subtitle: 'Rolety • Światło • Dzwonek z furtki',
       description:
-        'Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie.',
+        'Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
+      imageAlt: 'Salon wieczorem przygotowany na seans: opuszczone rolety i ciepłe światło',
       cta: 'Zobacz kino w salonie',
     },
     {
       id: 'scenariusze',
       path: '/scenariusze',
-      title: 'Dom, który sam gasi światło i pilnuje wody',
-      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
+      title: 'Dom, który sam gasi światło i pilnuje wody',
+      subtitle: 'Wyjście z domu • Woda • Światło w nocy',
       description:
-        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
+        'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
       image:
         'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
-      imageAlt: 'Jasny salon z dużymi oknami i roślinami',
+      imageAlt: 'Jasny salon z dużymi oknami i roślinami',
       cta: 'Zobacz scenariusze',
     },
   ];
@@ -66,7 +67,13 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="transition-colors duration-500 bg-white text-gray-800">
-      
+      <Seo
+        title="DOMENCE — inteligentny dom, kamery i wideodomofony, Warszawa"
+        description="Inteligentny dom, kamery i wideodomofony w Warszawie i okolicach. Montaż także bez kucia, dom działa bez internetu, a domowników uczymy obsługi."
+        canonical="https://domence-o9s1.vercel.app/"
+        ogImage="https://domence-o9s1.vercel.app/images/og-domence.jpg"
+      />
+
       {/* Hero */}
       <section className="relative flex items-center pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -81,7 +88,7 @@ export const HomePage: React.FC = () => {
 
             {/* Subtitle */}
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-gray-600">
-              Światło, rolety, ogrzewanie i kamery — montujemy, ustawiamy i pokazujemy, jak z tego korzystać.
+              Światło, rolety, ogrzewanie i kamery — montujemy, ustawiamy i pokazujemy, jak z tego korzystać.
             </p>
 
             {/* CTA Buttons */}
@@ -106,7 +113,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-10 pt-6 border-t grid grid-cols-2 gap-4 text-sm border-gray-200 text-gray-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
-                <span>Działa w domu, bez obcych serwerów</span>
+                <span>Działa w domu, bez obcych serwerów</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
@@ -142,56 +149,56 @@ export const HomePage: React.FC = () => {
       {/* Visual Solutions Grid with High-Res Photography */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
               Co montujemy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Urządzenia dobieramy do Twojego domu, np. do wejścia: wideodomofon i kamery, które nagrywają na dysk w domu.
+              Urządzenia dobieramy do Twojego domu, np. do wejścia: wideodomofon i kamery, które nagrywają na dysk w domu.
             </p>
           </div>
 
           {/* Two by two on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
             {chapters.map((ch) => (
-                <Link
-                  key={ch.id}
-                  to={ch.path}
-                  className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-amber-400 lg:col-span-3"
-                >
-                  {/* Photography Header */}
-                  <div>
-                    <div className="relative overflow-hidden bg-gray-900 h-52 lg:h-64">
-                      <img
-                        src={ch.image}
-                        alt={ch.imageAlt}
-                        className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                        loading="lazy"
-                      />
-                    </div>
-
-                    <div className="p-6">
-                      <h3 className="font-display text-xl font-bold transition-colors text-gray-900 group-hover:text-amber-800">
-                        {ch.title}
-                      </h3>
-                      <div className="text-xs font-semibold mt-1 text-amber-700">
-                        {ch.subtitle}
-                      </div>
-
-                      <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                        {ch.description}
-                      </p>
-                    </div>
+              <Link
+                key={ch.id}
+                to={ch.path}
+                className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-amber-400 lg:col-span-3"
+              >
+                {/* Photography Header */}
+                <div>
+                  <div className="relative overflow-hidden bg-gray-900 h-52 lg:h-64">
+                    <img
+                      src={ch.image}
+                      alt={ch.imageAlt}
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                      loading="lazy"
+                    />
                   </div>
 
-                  <div className="px-6 pb-6 pt-2">
-                    <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-amber-700 group-hover:text-amber-800">
-                      <span>{ch.cta}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" />
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold transition-colors text-gray-900 group-hover:text-amber-800">
+                      {ch.title}
+                    </h3>
+                    <div className="text-xs font-semibold mt-1 text-amber-700">
+                      {ch.subtitle}
                     </div>
+
+                    <p className="text-sm mt-3 leading-relaxed text-gray-600">
+                      {ch.description}
+                    </p>
                   </div>
-                </Link>
+                </div>
+
+                <div className="px-6 pb-6 pt-2">
+                  <div className="pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors border-gray-200 text-amber-700 group-hover:text-amber-800">
+                    <span>{ch.cta}</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
 
@@ -235,7 +242,7 @@ export const HomePage: React.FC = () => {
 
           <div className="order-1 lg:order-2 lg:col-span-6">
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-              Jak montujemy i dlaczego to bezpieczne
+              Jak montujemy i dlaczego to bezpieczne
             </h2>
             <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
               Trzy rzeczy, które robimy inaczej niż zestawy ze sklepu.
@@ -245,18 +252,18 @@ export const HomePage: React.FC = () => {
               {[
                 {
                   icon: Lock,
-                  title: 'Prywatność i działanie bez internetu',
-                  text: 'Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.',
+                  title: 'Prywatność i działanie bez internetu',
+                  text: 'Obraz z kamer i dane zostają w Twoim domu. Nic nie wysyłamy na obce serwery i nie płacisz miesięcznego abonamentu.',
                 },
                 {
                   icon: Cpu,
-                  title: 'Porządek w rozdzielnicy',
-                  text: 'Moduły montujemy w rozdzielnicy starannie, a każdy obwód ma czytelny opis. Po latach każdy elektryk od razu wie, co jest czym.',
+                  title: 'Porządek w rozdzielnicy',
+                  text: 'Moduły montujemy w rozdzielnicy starannie, a każdy obwód ma czytelny opis. Po latach każdy elektryk od razu wie, co jest czym.',
                 },
                 {
                   icon: Wrench,
                   title: 'Czysty montaż bez kurzu',
-                  text: 'Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i sprzątamy po sobie.',
+                  text: 'Pracujemy też w gotowych, umeblowanych domach. Wiercimy z odsysaniem pyłu, zabezpieczamy podłogi i sprzątamy po sobie.',
                 },
               ].map((pillar, i) => {
                 const Icon = pillar.icon;
@@ -306,9 +313,9 @@ export const HomePage: React.FC = () => {
               <h3 className="font-display text-lg font-bold text-gray-900">Najlepiej pasujemy, jeśli:</h3>
               <ul className="mt-5 space-y-4">
                 {[
-                  'Budujesz dom albo remontujesz mieszkanie w Warszawie i okolicach.',
-                  'Chcesz, żeby światło, rolety, ogrzewanie i kamery działały razem — i bez internetu.',
-                  'Planujesz montaż w najbliższych miesiącach.',
+                  'Budujesz dom albo remontujesz mieszkanie w Warszawie i okolicach.',
+                  'Chcesz, żeby światło, rolety, ogrzewanie i kamery działały razem — i bez internetu.',
+                  'Planujesz montaż w najbliższych miesiącach.',
                   'Wolisz jedną firmę od wszystkiego zamiast kilku wykonawców.',
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-base leading-relaxed text-gray-700">
@@ -323,11 +330,11 @@ export const HomePage: React.FC = () => {
               <h3 className="font-display text-lg font-bold text-gray-900">Co dostajesz:</h3>
               <ol className="mt-5 space-y-4">
                 {[
-                  ['Bezpłatna rozmowa i sprawdzenie domu', 'Przyjeżdżamy, oglądamy instalację i słuchamy, czego potrzebujesz.'],
-                  ['Plan i cena na piśmie', 'Wiesz, co i za ile montujemy, zanim zaczniemy.'],
-                  ['Czysty montaż', 'Bez kurzu, z zabezpieczeniem podłóg i sprzątaniem po sobie.'],
-                  ['Nauka obsługi dla domowników', 'Każdy w domu wie, jak zapalić światło, otworzyć furtkę i podejrzeć kamery.'],
-                  ['Bezpłatna konfiguracja', 'Ustawiamy sceny i aplikacje pod Twój dom.'],
+                  ['Bezpłatna rozmowa i sprawdzenie domu', 'Przyjeżdżamy, oglądamy instalację i słuchamy, czego potrzebujesu.'],
+                  ['Plan i cena na piśmie', 'Wiesz, co i za ile montujemy, zanim zaczniemy.'],
+                  ['Czysty montaż', 'Bez kurzu, z zabezpieczeniem podłóg i sprzątaniem po sobie.'],
+                  ['Nauka obsługi dla domowników', 'Każdy w domu wie, jak zapalić światło, otworzyć furtkę i podejrzeć kamery.'],
+                  ['Bezpłatna konfiguracja', 'Ustawiamy sceny i aplikacje pod Twój dom.'],
                 ].map(([title, text], i) => (
                   <li key={title} className="grid grid-cols-[auto_1fr] gap-x-4">
                     <span className="font-display text-sm font-semibold tabular-nums text-amber-700 pt-0.5">0{i + 1}</span>
@@ -344,9 +351,9 @@ export const HomePage: React.FC = () => {
           <p className="mt-12 pt-6 border-t border-gray-300 text-sm leading-relaxed text-gray-600 max-w-2xl">
             Dopiero zbierasz informacje? Zajrzyj do{' '}
             <Link to="/faq" className="font-semibold text-amber-700 underline underline-offset-2 hover:text-amber-800">
-              pytań i odpowiedzi
+              pytań i odpowiedzi
             </Link>
-            {' '}— odezwij się, gdy będziesz gotowy na rozmowę o swoim domu.
+            {' '}— odezwij się, gdy będziesz gotowy na rozmowę o swoim domu.
           </p>
         </div>
       </section>
@@ -397,7 +404,7 @@ export const HomePage: React.FC = () => {
                 Planujesz budowę albo remont?
               </h2>
               <p className="text-base text-gray-300 mt-2 max-w-xl">
-                Napisz, co chcesz mieć w domu. Odezwiemy się z konkretną propozycją, telefonicznie albo tylko e-mailem — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym sprawdzeniu domu.
+                Napisz, co chcesz mieć w domu. Odezwiemy się z konkretną propozycją, telefonicznie albo tylko e-mailem — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym sprawdzeniu domu.
               </p>
               {SITE.engineer.name && (
                 <p className="mt-3 text-sm text-gray-300">

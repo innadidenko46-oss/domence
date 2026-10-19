@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
+import { Seo } from '../components/Seo.tsx';
 import { FileQuestion } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
+      <Seo
+        title="Strona nie znaleziona — DOMENCE"
+        description="Ta strona nie istnieje. Wróć na stronę główną DOMENCE."
+        noindex
+      />
       <PageHeader
         badge="Błąd 404"
         title="Nie znaleziono strony"

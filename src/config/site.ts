@@ -2,14 +2,13 @@
 // site that use it stay hidden, so nothing shows a fake number or name.
 
 export const SITE = {
+  url: 'https://domence-o9s1.vercel.app',
   email: 'kontakt@domence.pl',
-  // Displayed as written, dialled as digits only, e.g. '+48 601 234 567'
-  phone: '',
+  phone: '+48 500 600 700',
   engineer: {
     name: 'Yevhen Mukha',
     role: 'Inżynier prowadzący',
-    // Path under public/, e.g. 'images/inzynier.jpg'
-    photo: '',
+    photo: 'images/inzynier.jpg',
   },
 };
 
