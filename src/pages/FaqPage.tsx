@@ -63,7 +63,7 @@ export const FaqPage: React.FC = () => {
             to="/zapytanie"
             className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
           >
-            <span>Отримай план свого дому</span>
+            <span>Отримай пропозицію для свого дому</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

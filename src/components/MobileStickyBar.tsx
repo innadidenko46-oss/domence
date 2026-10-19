@@ -52,7 +52,7 @@ export const MobileStickyBar: React.FC = () => {
           className="flex-1 min-w-0 whitespace-nowrap py-3 px-2 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
         >
           <ClipboardList className="w-4 h-4" />
-          <span>Отримай план</span>
+          <span>Отримай пропозицію</span>
         </Link>
       </div>
     </div>
