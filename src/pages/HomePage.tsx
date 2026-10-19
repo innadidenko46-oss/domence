@@ -28,10 +28,10 @@ export const HomePage: React.FC = () => {
     {
       id: 'teletechnika',
       path: '/teletechnika',
-      title: 'Kamery, domofon z kamerą i internet w domu',
+      title: 'Kamery i domofon z kamerą',
       subtitle: 'Kolor w nocy • Rozmowa z furtki w telefonie • Szafka ze sprzętem',
       description:
-        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, furtkę otworzysz z telefonu, a internet działa w każdym pokoju.',
+        'Kamera odróżnia człowieka od kota i nie budzi Cię w nocy bez powodu. Nagrania zostają w domu, a furtkę otworzysz z telefonu.',
       image:
         'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Nowoczesna elewacja domu wieczorem z oświetlonym wejściem',
@@ -66,7 +66,7 @@ export const HomePage: React.FC = () => {
       title: 'Od czego zacząć w Twoim domu',
       subtitle: 'Nowy dom • Gotowe mieszkanie • Wejście i kamery',
       description:
-        'Trzy typowe sytuacje i to, od czego zależy cena. Bez zgadywania, który zestaw wybrać.',
+        'Trzy typowe sytuacje i to, od czego zależy cena.',
       image:
         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',
@@ -101,7 +101,7 @@ export const HomePage: React.FC = () => {
                 to="/zapytanie"
                 className="btn-engineering-primary shadow-sm active:scale-[0.98] text-center focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Dobierz zestaw (2 min)</span>
+                <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -159,7 +159,7 @@ export const HomePage: React.FC = () => {
               Co montujemy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
+              Urządzenia dobieramy do Twojego domu, np. do wejścia: wideodomofon i kamery, które nagrywają na dysk w domu.
             </p>
           </div>
 
@@ -404,7 +404,7 @@ export const HomePage: React.FC = () => {
                 to="/zapytanie"
                 className="btn-accent active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
-                <span>Dobierz zestaw (2 min)</span>
+                <span>Opisz swój dom (2 min)</span>
               </Link>
 
               {SITE.phone && (

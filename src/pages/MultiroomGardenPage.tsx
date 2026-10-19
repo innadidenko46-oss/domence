@@ -33,7 +33,7 @@ export const MultiroomGardenPage: React.FC = () => {
               to="/zapytanie"
               className="btn-engineering-primary mt-8 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
-              <span>Dobierz zestaw (2 min)</span>
+              <span>Opisz swój dom (2 min)</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>

@@ -24,7 +24,7 @@ export const FaqPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-[2px] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-mono font-semibold mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-semibold mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Dziwny układ mieszkania albo domu?</span>
               </div>
@@ -52,16 +52,16 @@ export const FaqPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-gray-600 font-mono">Następny krok:</div>
+            <div className="text-xs text-gray-600">Następny krok:</div>
             <div className="text-base font-bold text-gray-900">
-              Sprawdź, ile mniej więcej kosztuje zestaw do Twojego metrażu
+              Opisz swój dom, a inżynier oddzwoni z propozycją
             </div>
           </div>
           <Link
             to="/zapytanie"
             className="btn-engineering-primary gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
           >
-            <span>Dobierz zestaw (2 min)</span>
+            <span>Opisz swój dom (2 min)</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -102,13 +102,13 @@ export const ContactPage: React.FC = () => {
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
+                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
                       Jak się skontaktować
                     </div>
-                    <div className="text-base font-bold font-mono transition-colors mt-0.5 text-gray-900 group-hover:text-amber-700">
+                    <div className="text-base font-bold transition-colors mt-0.5 text-gray-900 group-hover:text-amber-700">
                       Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
                     </div>
-                    <div className="text-xs text-amber-700 font-mono mt-0.5">
+                    <div className="text-xs text-amber-700 mt-0.5">
                       Poniedziałek – Piątek: 08:00 – 18:00
                     </div>
                     {SITE.phone && (
@@ -128,13 +128,13 @@ export const ContactPage: React.FC = () => {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
+                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
                       Napisz do nas
                     </div>
                     <div className="text-base font-bold group-hover:text-amber-700 transition-colors mt-0.5 text-gray-900">
                       kontakt@domence.pl
                     </div>
-                    <div className="text-xs text-gray-600 mt-0.5 font-mono">
+                    <div className="text-xs text-gray-600 mt-0.5">
                       Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00)
                     </div>
                   </div>
@@ -145,7 +145,7 @@ export const ContactPage: React.FC = () => {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-600">
+                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
                       Gdzie działamy
                     </div>
                     <div className="text-sm font-bold text-gray-900">
@@ -160,7 +160,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Authority and Trust Guarantee Box */}
               <div className="p-6 rounded-[2px] border bg-white border-gray-200">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Jak działamy</span>
                 </h4>

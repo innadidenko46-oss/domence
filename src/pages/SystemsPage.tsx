@@ -33,7 +33,7 @@ export const SystemsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Stan surowy / nowa rozdzielnica
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -55,16 +55,16 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800"
               >
-                <span>Dobierz zestaw (2 min)</span>
+                <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">
                   Gotowe mieszkanie / bez kucia
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
@@ -86,9 +86,9 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800"
               >
-                <span>Dobierz zestaw (2 min)</span>
+                <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -123,9 +123,9 @@ export const SystemsPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-xs text-amber-200">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
-              Kamery, internet i szafka ze sprzętem
+              Kamery, wideodomofon i szafka ze sprzętem
             </div>
           </div>
           <Link

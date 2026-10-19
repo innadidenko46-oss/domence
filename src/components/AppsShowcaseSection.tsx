@@ -72,7 +72,7 @@ export const AppsShowcaseSection: React.FC = () => {
                 to="/zapytanie"
                 className="inline-flex items-center gap-2 text-sm font-bold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 rounded-[2px]"
               >
-                <span>Dobierz zestaw (2 min)</span>
+                <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

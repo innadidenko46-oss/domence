@@ -13,6 +13,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 - **No exact prices on the site for now.** Scope and price come after a call.
 - **No fixed packages.** `/jak-zaczac` shows three starting situations (new house, finished flat, entrance and cameras) and what the price depends on, with no quantities, dates or prices. Each situation opens `/zapytanie?state=…` at step 2. `/pakiety` redirects there.
 - **Not a calculator.** The `/zapytanie` page is a short enquiry before the contact details. Never call it a "kalkulator" or an "ankieta".
+- **No kits to pick.** The enquiry button says "Opisz swój dom (2 min)", never "Dobierz zestaw": the engineer proposes the scope after the call.
 
 ## Language
 
@@ -34,7 +35,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
   - motion sensors;
   - cameras, video intercoms and access by face, card or code;
   - gate and garage control;
-  - network equipment for these devices.
+  - network equipment for these devices (cables to cameras, a cabinet, a separate network for the devices). We do not provide the internet connection or Wi-Fi for the household, so never promise "szybki internet" or "Wi-Fi w całym domu".
 - **Not offered, never mention:**
   - garden watering;
   - alarm systems;
@@ -44,6 +45,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
   - third-party locks;
   - EV chargers;
   - air conditioning.
+  - internet connection or household Wi-Fi.
 - **Never state that we work only with these two brands.** Describe features and benefits. Brand names may appear as product facts in secondary detail, but not as a limitation.
 
 ## Company facts (2026-10)
@@ -80,7 +82,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
   - amber (the logo's orange) as the warm accent: `amber-700` for small text on light backgrounds, `amber-600` for large emphasis, `amber-400` buttons (`.btn-accent`) only on dark bands;
   - logo blue only inside the logo;
   - gray-50/white backgrounds, 2px radius.
-- **Type:** Outfit for display, Plus Jakarta Sans for body.
+- **Type:** Outfit for display, Plus Jakarta Sans for body. No monospace font anywhere (labels and eyebrows use the body font).
 - **Classes to reuse:**
   - `.eyebrow` for section labels;
   - `.btn-engineering-primary` (petrol) and `.btn-secondary` on light backgrounds, `.btn-accent` on dark bands (all 44px minimum height).

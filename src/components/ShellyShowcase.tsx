@@ -57,13 +57,13 @@ export const ShellyShowcase: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
+            <span className="px-2.5 py-1 rounded-[2px] border font-medium bg-white border-gray-200 text-gray-700">
               Kabel do rozdzielnicy
             </span>
-            <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
+            <span className="px-2.5 py-1 rounded-[2px] border font-medium bg-white border-gray-200 text-gray-700">
               W rozdzielnicy
             </span>
-            <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
+            <span className="px-2.5 py-1 rounded-[2px] border font-medium bg-white border-gray-200 text-gray-700">
               Działa w domu, bez obcych serwerów
             </span>
           </div>
@@ -88,7 +88,7 @@ export const ShellyShowcase: React.FC = () => {
                   {getCapIcon(cap.id)}
                 </div>
                 <div>
-                  <div className={`text-xs font-mono font-semibold uppercase tracking-wider line-clamp-1 ${
+                  <div className={`text-xs font-semibold uppercase tracking-wider line-clamp-1 ${
                     isSelected
                       ? 'text-amber-700'
                       : 'text-gray-600'}`}>
@@ -116,7 +116,7 @@ export const ShellyShowcase: React.FC = () => {
             {/* Header of Active Feature */}
             <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b gap-4 mb-8 border-gray-200">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
                   {activeCap.badge}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold mt-1 text-gray-900">
@@ -134,7 +134,7 @@ export const ShellyShowcase: React.FC = () => {
                 </p>
 
                 <div className="pt-2 space-y-2">
-                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-gray-500">
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-500">
                     Kluczowe parametry:
                   </div>
                   {activeCap.features.map((feat, idx) => (
@@ -151,7 +151,7 @@ export const ShellyShowcase: React.FC = () => {
                 <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
                       Tak to wygląda u Ciebie w domu:
                     </span>
                   </div>
@@ -185,7 +185,7 @@ export const ShellyShowcase: React.FC = () => {
                     <h4 className="text-sm font-bold text-gray-900">
                       W rozdzielnicy (nowy dom)
                     </h4>
-                    <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-xs text-amber-700 font-semibold uppercase tracking-wider">
                       Po kablu • Pomiar prądu
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export const ShellyShowcase: React.FC = () => {
                     <h4 className="text-sm font-bold text-gray-900">
                       Za włącznikiem (bez kucia)
                     </h4>
-                    <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
+                    <span className="text-xs text-amber-700 font-semibold uppercase tracking-wider">
                       Bez kucia tynków • Moduły mieszczą się w puszkach
                     </span>
                   </div>

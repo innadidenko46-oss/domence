@@ -43,10 +43,10 @@ export const TeletechnicsSection: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="eyebrow inline-flex items-center gap-2 mb-3">
             <Network className="w-4 h-4" />
-            <span>Kamery i internet w domu</span>
+            <span>Kamery i wideodomofon</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
-            Szybki internet, kamery i domofon — wszystko działa u Ciebie w domu.
+            Kamery, wideodomofon i sieć dla nich: wszystko działa u Ciebie w domu.
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
             Zaczynamy od podstaw: metalowa szafka na sprzęt, dobre kable, zasilanie awaryjne i domofon z kamerą. Nagrania zostają u Ciebie, bez abonamentu.
@@ -81,7 +81,7 @@ export const TeletechnicsSection: React.FC = () => {
                       <h3 className="text-lg sm:text-xl font-bold leading-snug text-gray-900">
                         {service.title}
                       </h3>
-                      <p className="text-xs font-mono font-medium mt-1 text-amber-700">
+                      <p className="text-xs font-medium mt-1 text-amber-700">
                         {service.subtitle}
                       </p>
                     </div>
@@ -98,7 +98,7 @@ export const TeletechnicsSection: React.FC = () => {
                 <div className="mt-5 pl-4 border-l-4 border-l-amber-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
                   <div className="w-2 h-2 rounded-full bg-petrol-700 mt-1.5 shrink-0" />
                   <div>
-                    <span className="font-bold block mb-1 text-amber-700 font-mono text-xs uppercase">
+                    <span className="font-bold block mb-1 text-amber-700 text-xs uppercase">
                       W praktyce:
                     </span>
                     <span className="leading-[1.65]">{service.humanExplanation}</span>
@@ -121,7 +121,7 @@ export const TeletechnicsSection: React.FC = () => {
 
                       {/* Equipment List */}
                       <div>
-                        <div className="text-xs font-mono font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-gray-500">
+                        <div className="text-xs font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-gray-500">
                           <HardDrive className="w-4 h-4 text-petrol-700" />
                           <span>Co montujemy:</span>
                         </div>
@@ -140,7 +140,7 @@ export const TeletechnicsSection: React.FC = () => {
                         {service.specs.map((spec, idx) => (
                           <span
                             key={idx}
-                            className="text-xs font-mono px-2.5 py-1 rounded-[2px] border bg-amber-500/10 border-amber-500/30 text-amber-800"
+                            className="text-xs px-2.5 py-1 rounded-[2px] border bg-amber-500/10 border-amber-500/30 text-amber-800"
                           >
                             {spec}
                           </span>
@@ -175,7 +175,7 @@ export const TeletechnicsSection: React.FC = () => {
               to="/zapytanie"
               className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
-              Dobierz zestaw (2 min)
+              Opisz swój dom (2 min)
             </Link>
           </div>
           <div className="relative min-h-[160px]">

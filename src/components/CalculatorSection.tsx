@@ -221,7 +221,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     const selectedNames =
       SMART_MODULES.filter((m) => selectedModuleIds.includes(m.id))
         .map((m) => `• ${m.name}`)
-        .join('\n') || '• nie wybrano — proszę o dobór zestawu';
+        .join('\n') || '• nie wybrano — proszę o propozycję';
     const subject = `Zapytanie ze strony — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
@@ -295,11 +295,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
           {!isSubmitted && (
             <div className="mb-8">
               <div className="flex items-center justify-between text-xs font-semibold mb-3">
-                <span className="flex items-center gap-1.5 text-petrol-700 font-mono uppercase tracking-wider font-bold">
+                <span className="flex items-center gap-1.5 text-petrol-700 uppercase tracking-wider font-bold">
                   <ClipboardList className="w-4 h-4" />
                   <span>Twoje zapytanie</span>
                 </span>
-                <span className="font-mono text-gray-600">Krok {step} z 5</span>
+                <span className="text-gray-600">Krok {step} z 5</span>
               </div>
 
               <div className="w-full h-1 rounded-[2px] overflow-hidden bg-gray-200">
@@ -327,7 +327,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Co najlepiej opisuje Twoją nieruchomość?
                 </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Wybierz jedną odpowiedź — dopasujemy zestaw do Twojej sytuacji.
+                  Wybierz jedną odpowiedź, a propozycję dopasujemy do Twojej sytuacji.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -375,7 +375,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Jaki metraż?
                 </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Przybliżona powierzchnia pomoże nam dobrać odpowiedni zestaw.
+                  Przybliżona powierzchnia pomoże nam przygotować propozycję.
                 </p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -479,7 +479,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-gray-600">
                     {selectedModuleIds.length === 0
-                      ? 'Nic nie wybrano — możesz też przejść dalej, a my dobierzemy zestaw.'
+                      ? 'Nic nie wybrano. Możesz przejść dalej, a inżynier podpowie, od czego zacząć.'
                       : `Wybrano: ${selectedModuleIds.length}`}
                   </div>
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -565,7 +565,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 exit="exit"
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/15 text-amber-800 border border-amber-500/30 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/15 text-amber-800 border border-amber-500/30 text-xs font-bold uppercase tracking-wider mb-2">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Twoje odpowiedzi</span>
                   </div>
@@ -699,7 +699,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         className="mt-0.5 accent-petrol-700 w-5 h-5 shrink-0 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji zestawu. <button type="button" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' })); }} className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer">Polityka prywatności</button>
+                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji. <button type="button" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' })); }} className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer">Polityka prywatności</button>
                       </span>
                     </label>
                     {errors.agreement && (

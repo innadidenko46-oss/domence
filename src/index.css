@@ -7,6 +7,8 @@
 
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* No monospace on the site: font-mono falls back to the body font */
+  --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Architectural Graphite & Anthracite Scale (Never Pure Pitch Black) */
   --color-anthracite-950: #121214;
@@ -108,7 +110,7 @@ body::after {
 
 /* One label style above section headings, sitewide */
 .eyebrow {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;

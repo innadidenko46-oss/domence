@@ -89,7 +89,7 @@ export const LightingAtmosphereShowcase: React.FC = () => {
                 loading="lazy"
               />
               <div className="p-6 flex flex-col flex-1">
-                <div className="text-xs font-mono text-amber-700 font-semibold mb-1">
+                <div className="text-xs text-amber-700 font-semibold mb-1">
                   {scene.time}
                 </div>
                 <div className="text-sm font-bold text-gray-900">{scene.name}</div>

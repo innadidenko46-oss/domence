@@ -24,7 +24,7 @@ const SITUATIONS: {
     usually: [
       'Moduły w rozdzielnicy, połączone kablem',
       'Osobna temperatura w każdym pokoju',
-      'Kamery, wideodomofon i internet w jednym planie',
+      'Kamery, wideodomofon i kable do nich w jednym planie',
     ],
     tip: 'Odezwij się, zanim elektryk zamknie ściany.',
   },

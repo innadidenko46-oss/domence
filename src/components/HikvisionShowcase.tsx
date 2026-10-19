@@ -61,13 +61,13 @@ export const HikvisionShowcase: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
+            <span className="px-3 py-1.5 rounded-[2px] border font-medium bg-gray-50 border-gray-300 text-gray-700">
               Kolor w nocy
             </span>
-            <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
+            <span className="px-3 py-1.5 rounded-[2px] border font-medium bg-gray-50 border-gray-300 text-gray-700">
               Rozpoznawanie ludzi i aut
             </span>
-            <span className="px-3 py-1.5 rounded-[2px] border font-mono font-medium bg-gray-50 border-gray-300 text-gray-700">
+            <span className="px-3 py-1.5 rounded-[2px] border font-medium bg-gray-50 border-gray-300 text-gray-700">
               Otwarcie twarzą
             </span>
           </div>
@@ -182,7 +182,7 @@ export const HikvisionShowcase: React.FC = () => {
                     to="/zapytanie"
                     className="inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm transition-all focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
-                    <span>Dobierz zestaw (2 min)</span>
+                    <span>Opisz swój dom (2 min)</span>
                   </Link>
                 </div>
               </div>

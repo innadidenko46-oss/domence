@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/zapytanie" className="hover:text-amber-400 transition-colors font-semibold text-amber-400 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
-                    Dobierz zestaw (2 min)
+                    Opisz swój dom (2 min)
                   </Link>
                 </li>
                 <li>
@@ -143,7 +143,7 @@ export const Footer: React.FC = () => {
 
             <a
               href="mailto:kontakt@domence.pl"
-              className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-amber-400 transition-colors font-mono focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+              className="flex items-center gap-2.5 text-xs text-gray-200 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               <Mail className="w-4 h-4 text-amber-400 shrink-0" />
               <span>kontakt@domence.pl</span>

@@ -12,7 +12,7 @@ export const TeletechnicsPage: React.FC = () => {
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
       <PageHeader
         badge="Kamery i domofony"
-        title="Kamery, domofon z kamerą i szybki internet"
+        title="Kamery i domofon z kamerą"
         description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt — u Ciebie w domu, bez abonamentu."
         icon={<Network className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
@@ -49,7 +49,7 @@ export const TeletechnicsPage: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900">
                     Nasz standard: rejestrator nagrań w domu
                   </h3>
-                  <span className="text-xs text-amber-700 font-mono font-semibold">Twoje dane u Ciebie</span>
+                  <span className="text-xs text-amber-700 font-semibold">Twoje dane u Ciebie</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-700">
@@ -81,7 +81,7 @@ export const TeletechnicsPage: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900">
                     Kamery na Wi-Fi z obcą chmurą
                   </h3>
-                  <span className="text-xs text-gray-700 font-mono font-semibold">Zależność od dostawcy</span>
+                  <span className="text-xs text-gray-700 font-semibold">Zależność od dostawcy</span>
                 </div>
               </div>
               <ul className="space-y-3 text-sm text-gray-600">
@@ -111,7 +111,7 @@ export const TeletechnicsPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
+            <div className="text-xs text-amber-200">Kolejny obszar instalacji:</div>
             <div className="text-base font-bold text-white">
               Kino w salonie
             </div>

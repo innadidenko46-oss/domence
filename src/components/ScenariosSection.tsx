@@ -135,7 +135,7 @@ export const ScenariosSection: React.FC = () => {
               >
                 <div className="flex items-center justify-between w-full">
                   <span
-                    className={`text-xs font-mono font-bold ${
+                    className={`text-xs font-bold ${
                       isActive ? ('text-amber-800') : 'text-gray-600'
                     }`}
                   >
@@ -216,7 +216,7 @@ export const ScenariosSection: React.FC = () => {
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">
+                    <span className="text-xs font-bold uppercase tracking-widest text-amber-800">
                       Scenariusz {activeScenario.number}
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export const ScenariosSection: React.FC = () => {
                     to="/zapytanie"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
-                    <span>Dobierz zestaw (2 min)</span>
+                    <span>Opisz swój dom (2 min)</span>
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>

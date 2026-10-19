@@ -93,7 +93,7 @@ export const SystemsComparisonSection: React.FC = () => {
               to="/zapytanie"
               className="btn-engineering-primary gap-2 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
-              <span>Dobierz zestaw (2 min)</span>
+              <span>Opisz swój dom (2 min)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

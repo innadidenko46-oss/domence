@@ -250,23 +250,23 @@ export const TELETECHNIC_SERVICES: TeletechnicService[] = [
   },
   {
     id: 'structured_lan',
-    title: 'Szybki internet w całym domu i szafka na sprzęt',
-    subtitle: 'Kable do pokoi, Wi-Fi na każdym piętrze i porządek w szafce',
+    title: 'Sieć dla kamer i automatyki',
+    subtitle: 'Kable do kamer, szafka na sprzęt i pewne połączenie dla modułów',
     icon: 'Network',
     description:
-      'Kable do biurek i telewizorów, punkty Wi-Fi na suficie na każdym piętrze i jedna uporządkowana szafka na sprzęt sieciowy i rejestrator kamer.',
+      'Do kamer i wideodomofonu prowadzimy kable, a moduły automatyki łączymy z Twoją domową siecią. Rejestrator nagrań i sprzęt sieciowy stoją w jednej uporządkowanej szafce. Łącze internetowe zostaje u Twojego operatora.',
     humanExplanation:
-      'Internet nie przerywa rozmów wideo ani filmów. Kable dochodzą do biurek i telewizorów, a punkty Wi-Fi na suficie przełączają telefon między piętrami i pokojami.',
+      'Kamery i moduły mają pewne połączenie, więc obraz się nie zacina, a światło reaguje od razu. Wszystkie kable są opisane i schowane w szafce.',
     equipment: [
       'Szafka na sprzęt z wentylacją, w której każdy kabel jest opisany',
-      'Kable do pokoi i telewizorów, szybsze i pewniejsze niż Wi-Fi',
-      'Sprzęt, który tym samym kablem zasila kamery i punkty Wi-Fi',
-      'Punkty Wi-Fi na suficie: telefon przechodzi między nimi bez zrywania rozmowy',
+      'Osobny kabel do każdej kamery i panelu przy furtce',
+      'Sprzęt, który tym samym kablem zasila kamery',
+      'Rejestrator nagrań w szafce, w domu',
     ],
     specs: [
       'Osobna sieć dla kamer i automatyki',
-      'Osobne Wi-Fi dla gości',
-      'Wi-Fi na każdym piętrze',
+      'Kabel do każdej kamery',
+      'Nagrania w domu',
     ],
   },
 ];
@@ -669,10 +669,10 @@ export const SMART_MODULES: SmartModule[] = [
   },
   {
     id: 'rack_network_pack',
-    name: 'Szafka na sprzęt i szybki internet w całym domu',
+    name: 'Szafka na sprzęt i sieć dla kamer',
     badge: 'Infrastruktura',
-    description: 'Kable do pokoi, szafka na sprzęt i Wi-Fi w całym domu.',
-    humanExplanation: 'Koniec z zawieszającym się internetem i martwymi strefami w sypialni czy gabinecie. Wszystkie kable uporządkowane w szafce.',
+    description: 'Kable do kamer, szafka na sprzęt i osobna sieć dla urządzeń.',
+    humanExplanation: 'Kamery i moduły mają pewne połączenie, a kable są uporządkowane w szafce. Łącze internetowe zostaje u Twojego operatora.',
     price: 3200,
     category: 'teletechnics',
     icon: 'Network',

@@ -59,7 +59,7 @@ export const LANDINGS: Record<string, Landing> = {
       ["Obraz w nocy", "Kamery pokazują kolory także po zmroku, więc widać, kto stoi przy bramie."],
       ["Powiadomienia z sensem", "Kamera odróżnia człowieka i samochód od kota czy liści, więc telefon nie dzwoni bez powodu."],
       ["Nagrania w domu", "Obraz zapisuje się na dysku w domu. Bez abonamentu i bez opłat co miesiąc."],
-      ["Internet w całym domu", "Dobra sieć to podstawa kamer. Zakładamy ją tak, żeby działała w każdym pokoju."],
+      ["Kabel do każdej kamery", "Kamery łączymy kablem, który daje im też zasilanie. Obraz się nie zacina, a sprzęt stoi w jednej szafce."],
     ],
     faq: [
       ["Czy potrzebny jest abonament?", "Nie. Nagrania zapisują się na dysku w domu, a podgląd w telefonie nie wymaga opłat co miesiąc."],
@@ -123,7 +123,7 @@ export const LANDINGS: Record<string, Landing> = {
 // Labels for links to other pages from a landing
 export const PAGE_LABELS: Record<string, string> = {
   '/systemy': "Światło, rolety i ogrzewanie",
-  '/teletechnika': "Kamery, wideodomofon i internet",
+  '/teletechnika': "Kamery i wideodomofon",
   '/scenariusze': "Co dom robi za Ciebie",
   '/jak-zaczac': "Od czego zacząć",
   '/inteligentny-dom-warszawa': "Inteligentny dom w Warszawie i okolicach",

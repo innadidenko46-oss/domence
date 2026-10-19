@@ -45,7 +45,7 @@ export const MultiroomGardenSection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.audio.title}
                   </h3>
-                  <div className="text-xs text-amber-700 font-mono mt-0.5">Furtka • Panel w domu • Telefon</div>
+                  <div className="text-xs text-amber-700 mt-0.5">Furtka • Panel w domu • Telefon</div>
                 </div>
               </div>
 
@@ -54,7 +54,7 @@ export const MultiroomGardenSection: React.FC = () => {
               </p>
 
               <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold text-amber-700 font-mono text-xs uppercase block mb-1">W praktyce:</span>
+                <span className="font-bold text-amber-700 text-xs uppercase block mb-1">W praktyce:</span>
                 {HOME_MULTIMEDIA.audio.humanNote}
               </div>
 
@@ -69,12 +69,12 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-              <span className="text-xs text-gray-600 font-mono">Gość przy furtce</span>
+              <span className="text-xs text-gray-600">Gość przy furtce</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-mono font-bold text-amber-700 hover:text-amber-800 transition-colors"
+                className="text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
-                Dobierz zestaw (2 min)
+                Opisz swój dom (2 min)
               </Link>
             </div>
             </div>
@@ -101,7 +101,7 @@ export const MultiroomGardenSection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {HOME_MULTIMEDIA.cinema.title}
                   </h3>
-                  <div className="text-xs font-mono mt-0.5 text-amber-700">Rolety • Światło • Ekran</div>
+                  <div className="text-xs mt-0.5 text-amber-700">Rolety • Światło • Ekran</div>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ export const MultiroomGardenSection: React.FC = () => {
               </p>
 
               <div className="p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed mb-6 bg-white border-gray-200 text-gray-700">
-                <span className="font-bold font-mono text-xs uppercase block mb-1 text-amber-700">W praktyce:</span>
+                <span className="font-bold text-xs uppercase block mb-1 text-amber-700">W praktyce:</span>
                 {HOME_MULTIMEDIA.cinema.humanNote}
               </div>
 
@@ -125,12 +125,12 @@ export const MultiroomGardenSection: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-              <span className="text-xs text-gray-600 font-mono">Sceny do filmu</span>
+              <span className="text-xs text-gray-600">Sceny do filmu</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-mono font-bold transition-colors text-amber-700 hover:text-amber-800"
+                className="text-xs font-bold transition-colors text-amber-700 hover:text-amber-800"
               >
-                Dobierz zestaw (2 min)
+                Opisz swój dom (2 min)
               </Link>
             </div>
             </div>
