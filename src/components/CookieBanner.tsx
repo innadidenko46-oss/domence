@@ -200,7 +200,7 @@ export const CookieBanner: React.FC = () => {
                     />
                   </div>
                   <p className="text-gray-400 text-xs leading-relaxed">
-                    Umożliwiają zapamiętanie wpisanych w ankiecie odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
+                    Umożliwiają zapamiętanie wpisanych w zapytaniu odpowiedzi, aby nie tracić ich przy przechodzeniu między stronami.
                   </p>
                 </div>
 

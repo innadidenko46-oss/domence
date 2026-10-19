@@ -105,7 +105,7 @@ export const SHELLY_PRO_CAPABILITIES: ShellyProCapability[] = [
     features: [
       'Dotykowe panele ścienne 4" z podglądem kamer i klimatu',
       'Współpraca z dowolnymi włącznikami klawiszowymi na rynku',
-      'Sterowanie głosowe przez lokalnego asystenta głosowego; asystenci chmurowi wymagają internetu',
+      'Sterowanie z panelu na ścianie, zwykłego włącznika albo telefonu',
       'Nowoczesna aplikacja na smartfony i tablety domowników',
     ],
   },
@@ -132,7 +132,7 @@ export const HIKVISION_PRODUCTS: HikvisionProductLine[] = [
     series: 'Kamera, która odstrasza światłem i dźwiękiem',
     category: 'cctv_acusense',
     tagline: 'Odróżnia ludzi i auta od zwierząt, a intruza odstrasza syreną',
-    keyTech: 'Klasyfikacja celów Człowiek / Pojazd + zintegrowany stroboskop i głośnik audio',
+    keyTech: 'Rozpoznaje ludzi i auta, a w nocy sama włącza światło i komunikat dźwiękowy',
     bestUse: 'Wejście do budynku, brama wjazdowa, strefa garażu, ochrona przed intruzami',
     highlights: [
       'Precyzyjne odróżnianie ludzi i samochodów od zwierząt, kołyszących się gałęzi czy ulewnego deszczu',
@@ -572,19 +572,19 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     category: 'bezpieczenstwo',
-    question: 'Czy w rozdzielnicy nie powstanie pożar i czy montaż jest zgodny z warunkami polisy domu?',
+    question: 'Czy w rozdzielnicy nie powstanie pożar?',
     simpleAnswer:
-      'Ryzyko ograniczamy do minimum: stosujemy wyłącznie atestowane moduły. Stosujemy wyłącznie atestowane moduły Shelly Pro z certyfikatem niepalności obudowy V-0 i wbudowanym zabezpieczeniem termicznym OTP. Na koniec prac wykonujemy pomiary odbiorcze i wystawiamy oficjalny protokół do polisy ubezpieczeniowej.',
+      'Ryzyko ograniczamy do minimum. Montujemy atestowane moduły, które same wyłączają obwód przy przegrzaniu lub przeciążeniu, a każdy obwód ma osobny bezpiecznik.',
     technicalDetails:
-      'Wszystkie moduły na szynie DIN posiadają wewnętrzny czujnik temperatury – w przypadku przekroczenia 95°C obwód wyłącza się automatycznie. Instalacja wykonywana jest zgodnie z normą PN-HD 60364, a każdy obwód chroniony jest dedykowanym wyłącznikiem nadprądowym i ogranicznikiem przepięć T1+T2.',
+      'Moduły na szynie DIN mają wbudowany czujnik temperatury: po przekroczeniu 95°C obwód sam się wyłącza. Każdy obwód chroni osobny wyłącznik nadprądowy.',
   },
   {
     category: 'dzialanie',
     question: 'Co się stanie, gdy w całej okolicy zabraknie prądu?',
     simpleAnswer:
-      'Główny monitoring posesji, rejestrator NVR w szafie RACK oraz zasilanie wideodomofonu podtrzymywane są przez zasilacz awaryjny UPS przez co najmniej 3–4 godziny. Po powrocie prądu cały system wznawia pracę w ciągu 1–2 sekund w sieci lokalnej, zwykle bez ingerencji domowników.',
+      'Bez prądu nie działa nic, co jest zasilane z sieci, także automatyka. Gdy prąd wraca, system sam startuje w kilka sekund, bez udziału domowników.',
     technicalDetails:
-      'Zasilacz UPS on-line z czystą sinusoidą zabezpiecza urządzenia sieciowe przed przepięciami i skokami napięcia przy ponownym włączeniu faz przez zakład energetyczny. Stan przekaźników Shelly po zaniku prądu jest w pełni konfigurowalny (domyślnie wyłączony lub przywrócenie ostatniego stanu).',
+      'Dla każdego modułu ustawiamy, co ma się stać po powrocie prądu: zostać wyłączony albo wrócić do ostatniego stanu. Dzięki temu po nocnej awarii światła nie zapalą się same.',
   },
   {
     category: 'koszty',
@@ -734,7 +734,7 @@ export const SMART_MODULES: SmartModule[] = [
     name: 'Licznik prądu i lepsze wykorzystanie fotowoltaiki',
     badge: 'Energia z PV',
     description: 'Widzisz, ile prądu zużywasz i produkujesz. Nadwyżkę z paneli dom sam kieruje do bojlera i pompy ciepła.',
-    humanExplanation: 'Maksymalizujesz zysk z własnego prądu ze słońca: dom sam ładuje samochód i grzeje wodę dokładnie wtedy, gdy panele produkują darmową energię.',
+    humanExplanation: 'Lepiej wykorzystujesz własny prąd ze słońca: dom sam grzeje wodę i dogrzewa wnętrze wtedy, gdy panele produkują najwięcej.',
     price: 1350,
     category: 'power',
     icon: 'Zap',
@@ -791,7 +791,7 @@ export const PACKAGES: PackageOffer[] = [
       'Sterowanie roletami ze sceną „Chcę poćwiczyć jogę” i „Budzenie słońcem”',
       'Lokalna centrala sterująca (przetwarzanie w domu, bez chmury)',
       'Przycisk „Wyjdź z domu” przy drzwiach wejściowych',
-      'Czysty montaż z minimalną ingerencją w tynki, z odciągiem z filtrem HEPA H13 w 1–2 dni robocze',
+      'Czysty montaż z jak najmniejszą ingerencją w tynki i odsysaniem pyłu',
     ],
   },
   {

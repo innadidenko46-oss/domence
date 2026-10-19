@@ -4,12 +4,12 @@ import { Layers, Check, Minus, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const OUR_WAY: string[] = [
-  'Światło, rolety i zamek działają też bez internetu',
+  'Światło, rolety i furtka działają też bez internetu',
   'Brak abonamentu za zapis i podgląd — nagrania zostają w domu',
   'Montaż z odciągiem pyłu, bez kucia na gotowo',
   'Pisemna wycena przed startem — wiesz, za co płacisz',
   'Po montażu: nauka obsługi dla domowników i bezpłatna konfiguracja',
-  'Gwarancja 24 miesiące + opieka po montażu',
+  'Plan i cena na piśmie, zanim zaczniemy',
   'Jeden kontakt do człowieka, nie infolinia',
 ];
 
@@ -87,7 +87,7 @@ export const SystemsComparisonSection: React.FC = () => {
 
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-[2px] border bg-gray-50 border-gray-200 p-6">
             <p className="text-sm text-gray-600 leading-relaxed">
-              Chcesz wiedzieć, co pasuje do Twojego domu? Opisz dom w krótkiej ankiecie.
+              Chcesz wiedzieć, co pasuje do Twojego domu? Opisz go w krótkim zapytaniu.
             </p>
             <Link
               to="/zapytanie"

@@ -55,17 +55,17 @@ export const HomePage: React.FC = () => {
       description:
         'Jeden przycisk przy drzwiach gasi światła i odcina żelazko. Czujnik pod pralką sam zakręca wodę, zanim zaleje podłogę.',
       image:
-        'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-      imageAlt: 'Dłoń z telefonem obok elektronicznego zamka w drzwiach',
+        'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+      imageAlt: 'Jasny salon z dużymi oknami i roślinami',
       cta: 'Zobacz scenariusze',
     },
     {
       id: 'pakiety',
       path: '/pakiety',
       title: 'Gotowe zestawy z montażem',
-      subtitle: 'Sprzęt i montaż • Cena na piśmie • Gwarancja',
+      subtitle: 'Sprzęt i montaż • Cena na piśmie • Nauka obsługi',
       description:
-        'Sprawdzone zestawy: do gotowego mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
+        'Gotowe zestawy: do mieszkania bez kucia ścian i do nowego domu z pełną rozdzielnicą. Z wyceną na piśmie.',
       image:
         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',

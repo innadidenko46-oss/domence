@@ -80,4 +80,4 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 
 ## Checks before committing
 
-- `npx tsc --noEmit` and `npm run build` pass.
+- `npx tsc --noEmit` and `npm run build` pass. The build runs `scripts/check-copy.mjs` first: it fails on copy that breaks the rules above (warranty, alarms, audio, EV, "ankieta"/"kalkulator", track-record claims and similar). Fix the copy, don't loosen the rule.

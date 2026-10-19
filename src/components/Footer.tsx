@@ -230,13 +230,13 @@ export const Footer: React.FC = () => {
                 </h3>
                 <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
-                    1. <strong>Zakres usług:</strong> DOMENCE wykonuje projekty okablowania, prefabrykację rozdzielnic elektrycznych, konfigurację modułów Shelly Pro na szynę DIN oraz instalację kamer i wideodomofonów IP Hikvision.
+                    1. <strong>Zakres usług:</strong> DOMENCE projektuje i montuje automatykę domu (światło, rolety, ogrzewanie, czujniki), kamery, wideodomofony i sieć w domu.
                   </p>
                   <p>
-                    2. <strong>Standard montażu:</strong> Wszelkie prace instalacyjne wykonujemy z minimalną ingerencją w tynki, z odciągiem pyłu (odciągi przemysłowe HEPA).
+                    2. <strong>Standard montażu:</strong> Prace wykonujemy z jak najmniejszą ingerencją w tynki, z odsysaniem pyłu i zabezpieczeniem podłóg.
                   </p>
                   <p>
-                    3. <strong>Wycena:</strong> Zapytanie wysłane przez stronę nie jest wyceną ani ofertą w rozumieniu art. 66 Kodeksu cywilnego. Zakres i cenę potwierdzamy na piśmie po rozmowie i sprawdzeniu rysunków.
+                    3. <strong>Wycena:</strong> Zapytanie wysłane przez stronę nie jest wyceną ani ofertą w rozumieniu art. 66 Kodeksu cywilnego. Zakres i cenę potwierdzamy na piśmie po rozmowie i sprawdzeniu domu.
                   </p>
                 </div>
               </div>

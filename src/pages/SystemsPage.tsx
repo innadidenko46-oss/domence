@@ -49,7 +49,7 @@ export const SystemsPage: React.FC = () => {
                   </li>
                   <li className="flex items-center gap-2 text-gray-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Ochrona termiczna, przeciążeniowa i przepięciowa</span>
+                    <span>Moduły same się wyłączają przy przegrzaniu i przeciążeniu</span>
                   </li>
                 </ul>
               </div>
@@ -80,7 +80,7 @@ export const SystemsPage: React.FC = () => {
                   </li>
                   <li className="flex items-center gap-2 text-gray-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Światło, rolety i zamek działają też bez internetu</span>
+                    <span>Światło, rolety i furtka działają też bez internetu</span>
                   </li>
                 </ul>
               </div>
