@@ -4,11 +4,15 @@
 export const SITE = {
   url: 'https://domence-o9s1.vercel.app',
   email: 'kontakt@domence.pl',
-  phone: '+48 500 600 700',
+  // Leave empty until the real number is confirmed: the phone buttons hide themselves.
+  phone: '',
+  // Replace with the real Telegram handle before launch: the button hides itself when empty.
+  telegram: 'https://t.me/domence_pl',
   engineer: {
     name: 'Yevhen Mukha',
     role: 'Inżynier prowadzący',
-    photo: 'images/inzynier.jpg',
+    // Leave empty until a real photo is added under public/: the photo hides itself.
+    photo: '',
   },
 };
 
@@ -44,31 +48,5 @@ export interface FinishedHome {
   photoAlt: string;
 }
 
-export const CLIENT_QUOTES: ClientQuote[] = [
-  {
-    quote: 'Montaż ≤ czysty, domowa sieć ≤ przewidywalna, a własne nagrania ≤ bez abonamentu. To były nasze priorytety — DOMENCE spełnił wszystkie.',
-    name: 'Marta K.',
-    place: 'Ząbki, dom w budowie',
-  },
-  {
-    quote: 'Chciałam widzieć furtkę bez wychodzenia z salonu. Teraz, kiedy przyjeżdża kurier, robię to z telefonu. Polecam każdemu, kto boi się złodziei.',
-    name: 'Anna W.',
-    place: 'Konstancin, mieszkanie z remontem',
-  },
-];
-export const FINISHED_HOMES: FinishedHome[] = [
-  {
-    title: 'Inteligentny dom w Ząbkach',
-    place: 'Ząbki',
-    done: ['Światło i rolety z włączników i telefonu', 'Osobna temperatura w każdym pokoju', 'Czujniki zalania, które same zakręcają wodę'],
-    photo: 'images/domy/zabki.jpg',
-    photoAlt: 'Nowoczesny dom w Ząbkach z inteligentnym oświetleniem',
-  },
-  {
-    title: 'Kamery i wideodomofon w Konstancinie',
-    place: 'Konstancin-Jeziorna',
-    done: ['Wideodomofon: rozmowa z furtki w telefonie', 'Kamery z kolorowym obrazem w nocy', 'Nagrania na dysku w domu, bez abonamentu'],
-    photo: 'images/domy/konstancin.jpg',
-    photoAlt: 'Kamery i wideodomofon w mieszkaniu w Konstancinie',
-  },
-];
+export const CLIENT_QUOTES: ClientQuote[] = [];
+export const FINISHED_HOMES: FinishedHome[] = [];

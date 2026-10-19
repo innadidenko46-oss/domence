@@ -319,7 +319,7 @@ export const HomePage: React.FC = () => {
               <h3 className="font-display text-lg font-bold text-gray-900">Co dostajesz:</h3>
               <ol className="mt-5 space-y-4">
                 {[
-                  ['Bezpłatna rozmowa i sprawdzenie domu', 'Przyjeżdżamy, oglądamy instalację i słuchamy, czego potrzebujesu.'],
+                  ['Bezpłatna rozmowa i sprawdzenie domu', 'Przyjeżdżamy, oglądamy instalację i słuchamy, czego potrzebujesz.'],
                   ['Plan i cena na piśmie', 'Wiesz, co i za ile montujemy, zanim zaczniemy.'],
                   ['Czysty montaż', 'Bez kurzu, z zabezpieczeniem podłóg i sprzątaniem po sobie.'],
                   ['Nauka obsługi dla domowników', 'Każdy w domu wie, jak zapalić światło, otworzyć furtkę i podejrzeć kamery.'],

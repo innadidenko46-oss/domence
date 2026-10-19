@@ -3,12 +3,11 @@
 // title, description and canonical URL. Unknown paths fall back to 404.html.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
-const SITE = 'https://innadidenko46-oss.github.io/domence/';
+const SITE = 'https://domence-o9s1.vercel.app/';
 const ROUTES = {
   systemy: ['Światło, rolety i ogrzewanie z telefonu', 'Sterowanie światłem, roletami i ogrzewaniem z włączników i telefonu. Do nowego domu i gotowego mieszkania, także bez kucia.'],
-  teletechnika: ['Kamery i wideodomofon', 'Kamery z kolorowym obrazem w nocy i wideodomofon w telefonie. Nagrania zostają w domu, bez abonamentu.'],
-  multimedia: ['Kino w salonie i gość przy furtce', 'Scena „Kino” jednym przyciskiem: rolety, światło i ekran. Gościa przy furtce widzisz na panelu w domu i w telefonie.'],
-  scenariusze: ['Scenariusze: co dom robi za Ciebie', 'Przykłady automatyki na co dzień: wyjście z domu, ochrona przed zalaniem, wieczór filmowy, spokojny sen.'],
+  teletechnika: ['Kamery i wideodomofon', 'Kamery z kolorowym obrazem w nocy i wideodomofon w telefonie. Nagrania zostają w domu, bez abonamentu.'],
+  scenariusze: ['Scenariusze: co dom robi za Ciebie', 'Przykłady automatyki na co dzień: wyjście z domu, ochrona przed zalaniem, wieczór filmowy, spokojny sen. Multimedia i kino w salonie.'],
   'jak-zaczac': ['Od czego zacząć w Twoim domu', 'Mądry dom, kamery z wideodomofonem albo jedno i drugie: co zwykle robimy i od czego zależy cena.'],
   faq: ['Pytania i odpowiedzi', 'Czy dom działa bez internetu, czy trzeba kuć ściany, ile trwa montaż. Odpowiedzi prostym językiem.'],
   zapytanie: ['Zapytanie o Twój dom', 'Zaznacz, co Cię interesuje, i zostaw kontakt. Odezwiemy się z propozycją, telefonicznie albo tylko e-mailem, zwykle w 24 godziny robocze.'],
@@ -36,7 +35,7 @@ for (const [route, [title, desc]] of Object.entries(ROUTES)) {
   writeFileSync(`dist/${route}/index.html`, withMeta(title, desc, `${SITE}${route}/`));
 }
 // Old addresses keep working: a static page that forwards to the new one
-const REDIRECTS = { pakiety: 'jak-zaczac' };
+const REDIRECTS = { pakiety: 'jak-zaczac', multimedia: 'scenariusze' };
 for (const [from, to] of Object.entries(REDIRECTS)) {
   mkdirSync(`dist/${from}`, { recursive: true });
   writeFileSync(`dist/${from}/index.html`, `<!doctype html><meta charset="utf-8"><title>DOMENCE</title><link rel="canonical" href="${SITE}${to}/"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=${SITE}${to}/"><a href="${SITE}${to}/">${SITE}${to}/</a>\n`);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ScenariosSection } from '../components/ScenariosSection.tsx';
 import { Seo } from '../components/Seo.tsx';
-import { SlidersHorizontal, ArrowRight, Film, Music2, CheckCircle2 } from 'lucide-react';
+import { SlidersHorizontal, ArrowRight, Film, BellRing, CheckCircle2 } from 'lucide-react';
 
 export const ScenariosPage: React.FC = () => {
 
@@ -52,7 +52,7 @@ export const ScenariosPage: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
-                      <Music2 className="w-6 h-6" />
+                      <BellRing className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
@@ -82,7 +82,7 @@ export const ScenariosPage: React.FC = () => {
                 </div>
 
                 <div className="mt-8 pt-4 border-t flex items-center justify-between border-gray-200">
-                  <span className="text-xs text-gray-600">Sceny do filmu</span>
+                  <span className="text-xs text-gray-600">Furtka i brama z telefonu</span>
                   <Link
                     to="/zapytanie"
                     className="inline-flex items-center min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
@@ -183,10 +183,10 @@ export const ScenariosPage: React.FC = () => {
             <p className="mt-2 text-base text-gray-300 max-w-xl">Nowy dom, gotowe mieszkanie albo najpierw wejście i kamery: zobacz, co zwykle robimy.</p>
           </div>
           <Link
-            to="/jak-zaczac"
+            to="/zapytanie"
             className="btn-accent self-start md:self-auto focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
           >
-            <span>Zobacz, jak zacząć</span>
+            <span>Otrzymaj propozycję dla swojego domu</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>

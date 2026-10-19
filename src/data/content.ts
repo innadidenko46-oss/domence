@@ -748,46 +748,6 @@ export const SMART_MODULES: SmartModule[] = [
 ];
 
 
-export const HOME_MULTIMEDIA = {
-  audio: {
-    title: 'Kto dzwoni do furtki — widzisz w salonie',
-    desc: 'Gdy oglądasz film, dzwonek z furtki pojawia się na panelu w domu i w telefonie. Widzisz gościa, rozmawiasz z nim i otwierasz furtkę bez wstawania z kanapy.',
-    humanNote:
-      'Nie musisz zatrzymywać filmu i biec do drzwi, żeby sprawdzić, kto przyszedł.',
-    features: [
-      'Obraz z furtki na panelu w domu i w telefonie',
-      'Rozmowa z gościem i otwarcie furtki jednym dotknięciem',
-      'Światło przed furtką zapala się samo po zmroku',
-      'Nagranie wizyty zostaje w domu, nie w chmurze',
-    ],
-  },
-  cinema: {
-    title: 'Scena „Kino” jednym przyciskiem',
-    desc: 'Rolety zamykają się do pełnego zaciemnienia, światło przygasa do delikatnego podświetlenia, a ekran projekcyjny sam zjeżdża.',
-    humanNote:
-      'Nie musisz osobno gasić lamp i opuszczać rolet. Jeden przycisk przy kanapie albo w telefonie przygotowuje salon do filmu.',
-    features: [
-      'Rolety i żaluzje zamykają się do pełnego zaciemnienia',
-      'Delikatne światło przy podłodze, żeby bezpiecznie przejść po napój',
-      'Ekran projekcyjny zjeżdża i po filmie sam się chowa',
-      'Po filmie jeden przycisk przywraca zwykłe światło',
-    ],
-  },
-  garden: {
-    title: 'Taras i ogród wieczorem',
-    desc: 'Światło na ścieżkach i tarasie włącza się o zmierzchu, a kamera pilnuje ogrodu w nocy.',
-    humanNote:
-      'Wychodzisz na taras — światło już jest. Wyjeżdżasz na urlop — widzisz w telefonie, co dzieje się przy domu.',
-    features: [
-      'Światło w ogrodzie zapala się o zmierzchu i gaśnie o ustalonej porze',
-      'Światło przy furtce zapala się, gdy ktoś się zbliża',
-      'Kamera nad tarasem z kolorowym obrazem w nocy',
-      'Scena „Wieczór na tarasie”: światło w ogrodzie jednym przyciskiem',
-    ],
-  },
-};
-
-
 export interface AiTechFeature {
   id: string;
   name: string;

@@ -19,15 +19,17 @@ export const MobileStickyBar: React.FC = () => {
   return (
     <div className="mobile-sticky fixed bottom-0 inset-x-0 z-40 md:hidden backdrop-blur-xl border-t p-3 shadow-2xl transition-colors duration-200 bg-gray-50/95 border-gray-200">
       <div className="flex items-center gap-2">
-        <a
-          href="https://t.me/domence_pl"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 min-h-11 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
-        >
-          <Send className="w-4 h-4 text-petrol-700" />
-          <span>Telegram</span>
-        </a>
+        {SITE.telegram && (
+          <a
+            href={SITE.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 min-h-11 px-3 rounded-[2px] border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors bg-white border-gray-300 text-gray-900 active:bg-gray-100"
+          >
+            <Send className="w-4 h-4 text-petrol-700" />
+            <span>Telegram</span>
+          </a>
+        )}
 
         {SITE.phone ? (
           <a
