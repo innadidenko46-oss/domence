@@ -65,6 +65,12 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 - **Company details live in `src/config/site.ts`.** Blocks that use empty fields stay hidden.
 - **Photos must match the text next to them.** No duplicate photos within one page.
 
+## Privacy and statistics
+
+- **Browser storage:** the site keeps only the enquiry answers, and only after the visitor picks "Zapamiętuj" in the banner (`src/lib/storage.ts`). Don't add other storage or tracking cookies.
+- **Statistics:** Plausible without cookies, on only when `VITE_PLAUSIBLE_DOMAIN` is set (`src/lib/analytics.ts`). A sent enquiry is the goal "Zapytanie".
+- **Deploy variables:** `VITE_FORM_ENDPOINT`, `VITE_PLAUSIBLE_DOMAIN` (repo variables) and `VITE_FORM_ACCESS_KEY` (secret) are passed to the build in `.github/workflows/deploy.yml`.
+
 ## Design system (short)
 
 - **Colours from the logo:**

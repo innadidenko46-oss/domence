@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo.tsx';
+import { analyticsEnabled } from '../lib/analytics.ts';
 import { Mail, MapPin, Cookie, FileText, X, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'rodo' | 'regulamin' | 'certyfikaty' | null>(null);
 
   const openCookiePreferences = () => {
-    try {
-      localStorage.removeItem('domence_cookie_consent');
-    } catch {
-      // blocked storage: just reopen the banner
-    }
     window.dispatchEvent(new Event('domence:open-cookie-prefs'));
   };
 
@@ -118,7 +114,7 @@ export const Footer: React.FC = () => {
                     className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-gray-400 text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
                     <Cookie className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Ustawienia plików cookies</span>
+                    <span>Pamięć przeglądarki</span>
                   </button>
                 </li>
               </ul>
@@ -183,7 +179,7 @@ export const Footer: React.FC = () => {
               className="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
             >
               <Cookie className="w-3 h-3 text-amber-400 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2" />
-              <span>Cookies</span>
+              <span>Pamięć przeglądarki</span>
             </button>
           </div>
         </div>
@@ -214,16 +210,24 @@ export const Footer: React.FC = () => {
                     1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest właściciel serwisu DOMENCE. Kontakt w sprawie danych osobowych: kontakt@domence.pl.
                   </p>
                   <p>
-                    2. <strong>Cel przetwarzania:</strong> Dane wprowadzone w konfiguratorze i formularzu kontaktowym (imię, telefon, e-mail, metraż nieruchomości) przetwarzane są wyłącznie w celu sporządzenia kosztorysu technicznego i kontaktu inżyniera z klientem (art. 6 ust. 1 lit. b RODO).
+                    2. <strong>Cel przetwarzania:</strong> Dane z zapytania i formularza kontaktowego (imię, telefon, e-mail, wielkość domu) wykorzystujemy tylko po to, żeby oddzwonić i przygotować propozycję (art. 6 ust. 1 lit. b RODO).
                   </p>
                   <p>
                     3. <strong>Brak handlu danymi:</strong> Twoje dane nie są odsprzedawane firmom telemarketingowym, bankom ani zewnętrznym podmiotom reklamowym.
                   </p>
                   <p>
-                    4. <strong>Lokalność danych wideo:</strong> Systemy kamer i rejestratorów montowane przez DOMENCE pracują w architekturze Local-First. Wideo z Twojego domu nie trafia do chmury zagranicznych korporacji.
+                    4. <strong>Lokalność danych wideo:</strong> Kamery, które montujemy, nagrywają na dysk w Twoim domu. Obraz nie trafia na nasze ani obce serwery.
                   </p>
                   <p>
-                    5. <strong>Prawa klienta:</strong> Masz prawo wglądu, sprostowania oraz żądania usunięcia swoich danych w dowolnym momencie przez e-mail: kontakt@domence.pl.
+                    5. <strong>Pamięć przeglądarki:</strong> Nie używamy plików cookies do śledzenia ani reklam. Jeśli wybierzesz „Zapamiętuj”, przeglądarka zachowa odpowiedzi z zapytania, żeby nie zginęły przy zmianie strony. Zmienisz to linkiem „Pamięć przeglądarki” w stopce.
+                  </p>
+                  {analyticsEnabled && (
+                    <p>
+                      6. <strong>Statystyki odwiedzin:</strong> Liczymy odwiedziny narzędziem Plausible, które nie zapisuje niczego w przeglądarce i nie zbiera danych osobowych.
+                    </p>
+                  )}
+                  <p>
+                    {analyticsEnabled ? 7 : 6}. <strong>Prawa klienta:</strong> Masz prawo wglądu, sprostowania oraz żądania usunięcia swoich danych w dowolnym momencie przez e-mail: kontakt@domence.pl.
                   </p>
                 </div>
               </div>

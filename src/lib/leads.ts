@@ -4,6 +4,8 @@
 // opening the visitor's mail client. Set VITE_FORM_ENDPOINT (and, for services
 // that need it, VITE_FORM_ACCESS_KEY) in .env to send leads directly.
 
+import { track } from './analytics.ts';
+
 export const CONTACT_EMAIL = 'kontakt@domence.pl';
 
 const ENDPOINT = (import.meta.env.VITE_FORM_ENDPOINT as string | undefined)?.trim() || '';
@@ -29,6 +31,7 @@ export const mailtoHref = (subject: string, body: string) =>
 
 export async function sendLead(lead: Lead): Promise<LeadResult> {
   if (!hasFormBackend) {
+    track('Zapytanie', { sposob: 'e-mail' });
     window.location.href = mailtoHref(lead.subject, lead.body);
     return 'mailto';
   }
@@ -48,6 +51,7 @@ export async function sendLead(lead: Lead): Promise<LeadResult> {
       signal: controller.signal,
     });
     if (!res.ok) throw new Error(`Form service responded ${res.status}`);
+    track('Zapytanie', { sposob: 'formularz' });
     return 'sent';
   } finally {
     window.clearTimeout(timeout);

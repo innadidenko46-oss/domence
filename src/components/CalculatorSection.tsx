@@ -4,6 +4,7 @@ import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import { INSTALL_TIMELINES } from '../config/site.ts';
+import { canRemember, ENQUIRY_KEY } from '../lib/storage.ts';
 import {
   Hammer,
   Home,
@@ -86,7 +87,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const [propertyState, setPropertyState] = useState<PropertyState>(selectedPropertyState);
   const [areaRange, setAreaRange] = useState<AreaRange>(() => {
     try {
-      const raw = localStorage.getItem('domence_calc_v1');
+      const raw = canRemember() ? localStorage.getItem(ENQUIRY_KEY) : null;
       if (raw) {
         const parsed = JSON.parse(raw) as { areaRange?: AreaRange };
         if (parsed.areaRange && ['do_60', '61_110', '111_180', 'ponad_180'].includes(parsed.areaRange)) {
@@ -98,7 +99,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   });
   const [selectedModuleIds, setSelectedModuleIds] = useState<string[]>(() => {
     try {
-      const raw = localStorage.getItem('domence_calc_v1');
+      const raw = canRemember() ? localStorage.getItem(ENQUIRY_KEY) : null;
       if (raw) {
         const parsed = JSON.parse(raw) as { selectedModuleIds?: string[] };
         if (Array.isArray(parsed.selectedModuleIds)) {
@@ -148,9 +149,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   }, [selectedPropertyState]);
 
   useEffect(() => {
+    // Answers are kept only if the visitor chose "Zapamiętuj" in the banner
+    if (!canRemember()) return;
     try {
       localStorage.setItem(
-        'domence_calc_v1',
+        ENQUIRY_KEY,
         JSON.stringify({ propertyState, areaRange, selectedModuleIds })
       );
     } catch { /* blocked storage: skip persistence */ }
