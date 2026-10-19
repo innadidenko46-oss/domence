@@ -103,7 +103,7 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
           <div>
             <h2 className="font-display text-2xl sm:text-3xl font-bold">Opowiedz o{' '}swoim domu</h2>
             <p className="mt-2 text-base text-gray-300 max-w-xl">
-              Kilka pytań i{' '}kontakt. Oddzwonimy z{' '}propozycją, zwykle w{' '}24 godziny robocze.
+              Kilka pytań i{' '}kontakt. Odezwiemy się z{' '}propozycją telefonicznie albo tylko e-mailem, jak wolisz.
             </p>
           </div>
           <Link

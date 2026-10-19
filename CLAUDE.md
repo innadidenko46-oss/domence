@@ -10,6 +10,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 
 - **Decided buyers only.** The site is for people who definitely want a smart home and won't waste the team's time. Its job is to bring in qualified enquiries, not a high number of them.
 - **Keep the qualifying question.** Both forms ask when the installation is planned (`INSTALL_TIMELINES` in `src/config/site.ts`). Don't remove it to make the form shorter.
+- **E-mail only is a choice.** Both forms let the visitor pick "Zadzwońcie" or "Tylko e-mail" (`src/components/ContactChoice.tsx`). With e-mail only, the phone is optional, the e-mail required, and the lead says "proszę nie dzwonić". Copy promising contact says "odezwiemy się", not only "oddzwonimy".
 - **No exact prices on the site for now.** Scope and price come after a call.
 - **No fixed packages.** `/jak-zaczac` shows three starting situations (new house, finished flat, entrance and cameras) and what the price depends on, with no quantities, dates or prices. Each situation opens `/zapytanie?state=…` at step 2. `/pakiety` redirects there.
 - **Not a calculator.** The `/zapytanie` page is a short enquiry before the contact details. Never call it a "kalkulator" or an "ankieta".

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
+import { ContactChoice, ContactBy, contactByLine } from '../components/ContactChoice.tsx';
 import { SITE, telHref, INSTALL_TIMELINES } from '../config/site.ts';
 import {
   Phone,
@@ -23,6 +24,7 @@ export const ContactPage: React.FC = () => {
     agreement: false,
     message: '',
   });
+  const [contactBy, setContactBy] = useState<ContactBy>('phone');
   const [submitted, setSubmitted] = useState(false);
   const [delivery, setDelivery] = useState<LeadResult>('sent');
   const [sending, setSending] = useState(false);
@@ -35,7 +37,8 @@ export const ContactPage: React.FC = () => {
     const subject = `Zapytanie o projekt instalacji — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
-      `Telefon: ${formData.phone}`,
+      `Preferowany kontakt: ${contactByLine(contactBy)}`,
+      `Telefon: ${formData.phone || '—'}`,
       `E-mail: ${formData.email}`,
       `Lokalizacja inwestycji: ${formData.location}`,
       `Planowany montaż: ${formData.timeline}`,
@@ -52,6 +55,7 @@ export const ContactPage: React.FC = () => {
         body,
         fields: {
           name: formData.name,
+          contact_preference: contactByLine(contactBy),
           phone: formData.phone,
           email: formData.email,
           location: formData.location,
@@ -196,7 +200,9 @@ export const ContactPage: React.FC = () => {
                           Dziękujemy. Wiadomość dotarła.
                         </h3>
                         <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
-                          Odpowiemy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).
+                          {contactBy === 'email'
+                            ? 'Odpiszemy na e-mail w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Nie będziemy dzwonić.'
+                            : 'Odpowiemy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).'}
                         </p>
                       </>
                     ) : (
@@ -235,6 +241,8 @@ export const ContactPage: React.FC = () => {
                       </p>
                     </div>
 
+                    <ContactChoice idPrefix="contact" value={contactBy} onChange={setContactBy} />
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-name" className="block text-xs font-semibold mb-1 text-gray-700">
@@ -257,7 +265,7 @@ export const ContactPage: React.FC = () => {
 
                       <div>
                         <label htmlFor="contact-phone" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Numer telefonu *
+                          {contactBy === 'email' ? 'Numer telefonu (opcjonalnie)' : 'Numer telefonu *'}
                         </label>
                         <input
                           id="contact-phone"
@@ -265,7 +273,7 @@ export const ContactPage: React.FC = () => {
                           autoComplete="tel"
                           inputMode="tel"
                           type="tel"
-                          required
+                          required={contactBy === 'phone'}
                           pattern="^[+\d][\d\s\-/.]{5,19}$"
                           maxLength={25}
                           value={formData.phone}
@@ -279,13 +287,14 @@ export const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-email" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Adres e-mail (opcjonalnie)
+                          {contactBy === 'email' ? 'Adres e-mail *' : 'Adres e-mail (opcjonalnie)'}
                         </label>
                         <input
                           id="contact-email"
                           name="email"
                           autoComplete="email"
                           type="email"
+                          required={contactBy === 'email'}
                           maxLength={254}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}

@@ -4,6 +4,7 @@ import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import { INSTALL_TIMELINES } from '../config/site.ts';
+import { ContactChoice, ContactBy, contactByLine } from './ContactChoice.tsx';
 import { canRemember, ENQUIRY_KEY } from '../lib/storage.ts';
 import {
   Hammer,
@@ -122,15 +123,18 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     agreement: false,
   });
 
+  const [contactBy, setContactBy] = useState<ContactBy>('phone');
   type FieldErrors = Partial<Record<'name' | 'phone' | 'email' | 'agreement', string>>;
   const [errors, setErrors] = useState<FieldErrors>({});
 
   const validate = (): FieldErrors => {
     const next: FieldErrors = {};
     if (formData.name.trim().length < 2) next.name = 'Podaj imię (min. 2 litery).';
-    if (!/^[+\d][\d\s\-/.]{5,19}$/.test(formData.phone)) next.phone = 'Wpisz numer w formacie +48 601 234 567.';
-    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
-    if (!formData.agreement) next.agreement = 'Zaznacz zgodę, żebyśmy mogli oddzwonić.';
+    // E-mail only: the phone becomes optional and the e-mail required
+    if ((contactBy === 'phone' || formData.phone) && !/^[+\d][\d\s\-/.]{5,19}$/.test(formData.phone)) next.phone = 'Wpisz numer w formacie +48 601 234 567.';
+    if (contactBy === 'email' && !formData.email.trim()) next.email = 'Podaj e-mail, na który mamy odpisać.';
+    else if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
+    if (!formData.agreement) next.agreement = 'Zaznacz zgodę, żebyśmy mogli się odezwać.';
     return next;
   };
 
@@ -225,7 +229,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     const subject = `Zapytanie ze strony — ${formData.name}`;
     const body = [
       `Imię i nazwisko: ${formData.name}`,
-      `Telefon: ${formData.phone}`,
+      `Preferowany kontakt: ${contactByLine(contactBy)}`,
+      `Telefon: ${formData.phone || '—'}`,
       `E-mail: ${formData.email}`,
       '',
       `Nieruchomość: ${getPropertyLabel(propertyState)}`,
@@ -237,7 +242,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       '',
       formData.message ? `Wiadomość: ${formData.message}` : 'Wiadomość: —',
       '',
-      'To nie jest wycena — oddzwonimy z propozycją.',
+      contactBy === 'email' ? 'To nie jest wycena — odpiszemy z propozycją na e-mail.' : 'To nie jest wycena — oddzwonimy z propozycją.',
     ].join('\n');
     setMailBody(body);
     setMailSubject(subject);
@@ -250,6 +255,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
         body,
         fields: {
           name: formData.name,
+          contact_preference: contactByLine(contactBy),
           phone: formData.phone,
           email: formData.email,
           property: getPropertyLabel(propertyState),
@@ -422,7 +428,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   Co Cię interesuje? (wybierz dowolną liczbę)
                 </h2>
                 <p className="text-xs sm:text-sm mb-5 leading-relaxed text-gray-600">
-                  Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu oddzwonimy i wszystko wyjaśnimy.
+                  Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu odezwiemy się i wszystko wyjaśnimy.
                 </p>
 
                 <div className="space-y-7">
@@ -571,7 +577,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                   </div>
 
                   <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 focus:outline-none">
-                    Gdzie mamy oddzwonić?
+                    Jak mamy się z Tobą skontaktować?
                   </h2>
 
                   <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600">
@@ -613,10 +619,16 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     )}
                   </div>
 
+                  <ContactChoice
+                    idPrefix="calc"
+                    value={contactBy}
+                    onChange={(v) => { setContactBy(v); clearError('phone'); clearError('email'); }}
+                  />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="calc-phone" className="block text-xs font-semibold mb-2 text-gray-700">
-                        Telefon kontaktowy
+                        {contactBy === 'email' ? 'Telefon (opcjonalnie)' : 'Telefon kontaktowy'}
                       </label>
                       <div className="relative">
                         <input
@@ -625,7 +637,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           autoComplete="tel"
                           inputMode="tel"
                           type="tel"
-                          required
+                          required={contactBy === 'phone'}
                           pattern="^[+\d][\d\s\-/.]{5,19}$"
                           maxLength={25}
                           value={formData.phone}
@@ -644,7 +656,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                     <div>
                       <label htmlFor="calc-email" className="block text-xs font-semibold mb-2 text-gray-700">
-                        Adres e-mail (opcjonalnie)
+                        {contactBy === 'email' ? 'Adres e-mail' : 'Adres e-mail (opcjonalnie)'}
                       </label>
                       <div className="relative">
                         <input
@@ -652,6 +664,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           name="email"
                           autoComplete="email"
                           type="email"
+                          required={contactBy === 'email'}
                           maxLength={254}
                           value={formData.email}
                           onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearError('email'); }}
@@ -679,7 +692,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       maxLength={500}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Np. kiedy najlepiej oddzwonić?"
+                      placeholder={contactBy === 'email' ? 'Np. o co chcesz zapytać?' : 'Np. kiedy najlepiej oddzwonić?'}
                       className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                     />
                   </div>
@@ -761,7 +774,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       Dziękujemy{formData.name ? `, ${formData.name.split(' ')[0]}` : ''}. Zapytanie dotarło.
                     </h2>
                     <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
-                      Oddzwonimy z propozycją dobraną do Twoich odpowiedzi — zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). To nie jest wycena.
+                      {contactBy === 'email'
+                        ? 'Odpiszemy na e-mail z propozycją dobraną do Twoich odpowiedzi, zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Nie będziemy dzwonić. To nie jest wycena.'
+                        : 'Oddzwonimy z propozycją dobraną do Twoich odpowiedzi, zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). To nie jest wycena.'}
                     </p>
                   </>
                 ) : (

@@ -11,12 +11,12 @@ const ROUTES = {
   scenariusze: ['Scenariusze: co dom robi za Ciebie', 'Przykłady automatyki na co dzień: wyjście z domu, ochrona przed zalaniem, wieczór filmowy, spokojny sen.'],
   'jak-zaczac': ['Od czego zacząć w Twoim domu', 'Nowy dom, gotowe mieszkanie albo najpierw wejście i kamery: co zwykle robimy i od czego zależy cena.'],
   faq: ['Pytania i odpowiedzi', 'Czy dom działa bez internetu, czy trzeba kuć ściany, ile trwa montaż. Odpowiedzi prostym językiem.'],
-  zapytanie: ['Zapytanie o Twój dom', 'Zaznacz, co Cię interesuje, i zostaw kontakt. Oddzwonimy z propozycją, zwykle w 24 godziny robocze.'],
+  zapytanie: ['Zapytanie o Twój dom', 'Zaznacz, co Cię interesuje, i zostaw kontakt. Odezwiemy się z propozycją, telefonicznie albo tylko e-mailem, zwykle w 24 godziny robocze.'],
   'inteligentny-dom-warszawa': ['Inteligentny dom w Warszawie i okolicach', 'Światło, rolety, ogrzewanie i ochrona przed zalaniem, które działają same i z telefonu. Także w gotowym mieszkaniu, bez kucia ścian.'],
   'wideodomofon-i-kamery-warszawa': ['Wideodomofon i kamery w Warszawie i okolicach', 'Rozmowa z gościem przy furtce z telefonu, kamery z kolorowym obrazem w nocy i nagrania na dysku w domu, bez abonamentu.'],
   'ochrona-przed-zalaniem': ['Ochrona przed zalaniem: czujnik sam zakręca wodę', 'Czujnik pod pralką czy zmywarką wykrywa wyciek, a woda od razu się zakręca. Powiadomienie w telefonie, działa bez internetu.'],
   'automatyka-bez-kucia': ['Inteligentne mieszkanie bez kucia ścian', 'Małe moduły za zwykłymi włącznikami, głowice na grzejnikach i czujniki na baterie. Ściany, płytki i gładzie zostają całe.'],
-  kontakt: ['Kontakt z inżynierem', 'Warszawa i okolice. Napisz, czego potrzebujesz, a oddzwonimy z propozycją.'],
+  kontakt: ['Kontakt z inżynierem', 'Warszawa i okolice. Napisz, czego potrzebujesz, a odezwiemy się z propozycją, telefonicznie albo tylko e-mailem.'],
 };
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');

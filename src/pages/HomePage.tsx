@@ -388,7 +388,7 @@ export const HomePage: React.FC = () => {
                 Planujesz budowę albo remont?
               </h2>
               <p className="text-base text-gray-300 mt-2 max-w-xl">
-                Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym sprawdzeniu domu.
+                Napisz, co chcesz mieć w domu. Odezwiemy się z konkretną propozycją, telefonicznie albo tylko e-mailem — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym sprawdzeniu domu.
               </p>
               {SITE.engineer.name && (
                 <p className="mt-3 text-sm text-gray-300">
