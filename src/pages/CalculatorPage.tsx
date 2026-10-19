@@ -23,12 +23,13 @@ export const CalculatorPage: React.FC = () => {
 
   const handleStateChange = (newState: PropertyState) => {
     setPropertyState(newState);
-    setSearchParams({ state: newState });
+    setSearchParams({ state: newState }, { replace: true });
   };
 
   return (
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
       <PageHeader
+        compact
         badge="Zapytanie"
         title="Opowiedz nam o swoim domu"
         description="Zaznacz, co Cię interesuje, i zostaw kontakt — około 2 minut. Oddzwonimy z propozycją dopasowaną do Twojego domu, zwykle w 24 godziny robocze (pon–pt, 8:00–18:00)."

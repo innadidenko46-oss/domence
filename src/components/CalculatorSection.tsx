@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect, useRef, FormEvent } from 'react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
 import { PropertyState, AreaRange } from '../types.ts';
@@ -44,12 +44,6 @@ const PROPERTY_OPTIONS: { value: PropertyState; title: string; sub: string; icon
     sub: 'Wideodomofon, kamery i kontrola wejścia na posesję.',
     icon: Video,
   },
-  {
-    value: 'commercial',
-    title: 'Biuro / lokal',
-    sub: 'Biuro, gabinet albo lokal usługowy.',
-    icon: Building2,
-  },
 ];
 
 const AREA_OPTIONS: { value: AreaRange; short: string }[] = [
@@ -79,7 +73,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 }) => {
   const [step, setStep] = useState<number>(1);
   const [dir, setDir] = useState(1);
+  const sectionRef = useRef<HTMLElement>(null);
+  const movedRef = useRef(false);
   const goTo = (next: number) => {
+    movedRef.current = true;
     setDir(next >= step ? 1 : -1);
     setStep(next);
   };
@@ -126,9 +123,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
   const validate = (): FieldErrors => {
     const next: FieldErrors = {};
-    if (formData.name.trim().length < 3) next.name = 'Podaj imię i nazwisko (min. 3 znaki).';
+    if (formData.name.trim().length < 2) next.name = 'Podaj imię (min. 2 litery).';
     if (!/^[+\d][\d\s\-/.]{5,19}$/.test(formData.phone)) next.phone = 'Wpisz numer w formacie +48 601 234 567.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) next.email = 'Wpisz poprawny adres e-mail.';
     if (!formData.agreement) next.agreement = 'Zaznacz zgodę, żebyśmy mogli oddzwonić.';
     return next;
   };
@@ -264,6 +261,16 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     }
   };
 
+  // After the step (or the success screen) changes, move keyboard and screen-reader
+  // focus to its heading; wait for the exit transition to finish first.
+  useEffect(() => {
+    if (!movedRef.current && !isSubmitted) return;
+    const t = window.setTimeout(() => {
+      sectionRef.current?.querySelector<HTMLElement>('[data-step-heading]')?.focus();
+    }, 260);
+    return () => window.clearTimeout(t);
+  }, [step, isSubmitted]);
+
   const handleCopyBody = async () => {
     try {
       await navigator.clipboard.writeText(mailBody);
@@ -274,17 +281,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   };
 
   return (
-    <section id="zapytanie" className="pt-6 pb-16 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
+    <section ref={sectionRef} id="zapytanie" className="pt-6 pb-16 sm:pt-10 sm:pb-20 lg:pt-10 lg:pb-28 relative overflow-hidden border-t bg-gray-100 border-gray-200 text-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-
-        <div className="hidden sm:block rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-40">
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
-            alt="Jasne wnętrze domu z planowaną automatyką smart home"
-            loading="lazy"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
 
         <div className="rounded-[2px] border p-6 sm:p-10 lg:p-12 shadow-xl bg-white border-gray-200">
 
@@ -319,9 +317,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 animate="center"
                 exit="exit"
               >
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
+                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
                   Co najlepiej opisuje Twoją nieruchomość?
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
                   Wybierz jedną odpowiedź — dopasujemy zestaw do Twojej sytuacji.
                 </p>
@@ -367,9 +365,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 animate="center"
                 exit="exit"
               >
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
+                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
                   Jaki metraż?
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
                   Przybliżona powierzchnia pomoże nam dobrać odpowiedni zestaw.
                 </p>
@@ -414,9 +412,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 animate="center"
                 exit="exit"
               >
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
+                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
                   Co Cię interesuje? (wybierz dowolną liczbę)
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm mb-5 leading-relaxed text-gray-600">
                   Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu oddzwonimy i wszystko wyjaśnimy.
                 </p>
@@ -510,9 +508,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 animate="center"
                 exit="exit"
               >
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900">
+                <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
                   Kiedy planujesz montaż?
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
                   Dzięki temu wiemy, kiedy się odezwać i czy zdążymy przed Twoim terminem.
                 </p>
@@ -566,9 +564,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <span>Twoje odpowiedzi</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+                  <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 focus:outline-none">
                     Gdzie mamy oddzwonić?
-                  </h3>
+                  </h2>
 
                   <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600">
                     <span>Nieruchomość: <strong>{getPropertyLabel(propertyState)}</strong></span>
@@ -600,7 +598,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                         placeholder="np. Marek Wiśniewski"
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? 'calc-name-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.name ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.name ? 'border-red-600' : 'border-gray-300'}`}
                       />
                       <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                     </div>
@@ -629,7 +627,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           placeholder="+48 601 234 567"
                           aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? 'calc-phone-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.phone ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Phone className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
@@ -640,7 +638,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                     <div>
                       <label htmlFor="calc-email" className="block text-xs font-semibold mb-2 text-gray-700">
-                        Adres e-mail
+                        Adres e-mail (opcjonalnie)
                       </label>
                       <div className="relative">
                         <input
@@ -648,14 +646,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           name="email"
                           autoComplete="email"
                           type="email"
-                          required
                           maxLength={254}
                           value={formData.email}
                           onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearError('email'); }}
-                          placeholder="inwestor@dom.pl"
+                          placeholder="twoj@email.pl"
                           aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? 'calc-email-error' : undefined}
-                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 text-gray-900 focus:border-amber-500 ${errors.email ? 'border-red-600' : 'border-gray-300'}`}
                         />
                         <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
                       </div>
@@ -677,7 +674,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Np. kiedy najlepiej oddzwonić?"
-                      className="w-full px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                      className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                     />
                   </div>
 
@@ -693,10 +690,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                           setFormData({ ...formData, agreement: e.target.checked });
                           clearError('agreement');
                         }}
-                        className="mt-0.5 accent-amber-500 w-4 h-4 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                        className="mt-0.5 accent-petrol-700 w-5 h-5 shrink-0 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                       />
                       <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji zestawu.
+                        Wyrażam zgodę na kontakt w sprawie zapytania i propozycji zestawu. <button type="button" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' })); }} className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer">Polityka prywatności</button>
                       </span>
                     </label>
                     {errors.agreement && (
@@ -754,18 +751,18 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                 {delivery === 'sent' ? (
                   <>
-                    <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900" tabIndex={-1}>
+                    <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold mb-2 text-gray-900 focus:outline-none">
                       Dziękujemy{formData.name ? `, ${formData.name.split(' ')[0]}` : ''}. Zapytanie dotarło.
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
                       Oddzwonimy z propozycją dobraną do Twoich odpowiedzi — zwykle w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). To nie jest wycena.
                     </p>
                   </>
                 ) : (
                   <>
-                    <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900" tabIndex={-1}>
+                    <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold mb-2 text-gray-900 focus:outline-none">
                       Jeszcze jeden krok: wyślij wiadomość
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
                       Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Zapytanie dotrze do nas dopiero po kliknięciu „Wyślij”. Jeśli okno się nie otworzyło, skopiuj treść i wyślij ją z dowolnej poczty.
                     </p>

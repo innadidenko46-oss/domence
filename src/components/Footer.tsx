@@ -16,6 +16,13 @@ export const Footer: React.FC = () => {
   };
 
   // ESC closes legal modal + body scroll lock
+  // Other parts of the page (e.g. the enquiry consent) can open a legal modal
+  useEffect(() => {
+    const open = (e: Event) => setActiveModal((e as CustomEvent).detail);
+    window.addEventListener('domence:legal', open);
+    return () => window.removeEventListener('domence:legal', open);
+  }, []);
+
   useEffect(() => {
     if (!activeModal) return;
     const onKey = (e: KeyboardEvent) => {
