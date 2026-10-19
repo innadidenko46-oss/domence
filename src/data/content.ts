@@ -327,7 +327,7 @@ export const SCENARIOS: LifeScenario[] = [
     id: 'sc-masteroff',
     number: '03',
     title: 'Wyjście z domu („wyłącz wszystko”)',
-    tag: 'Wyjście z domu',
+    tag: 'Codziennie',
     tagColor: '#EF4444',
     trigger: 'Przycisk przy drzwiach albo w telefonie',
     description:
@@ -510,7 +510,7 @@ export const WORKFLOW_STEPS = [
   {
     number: '02',
     title: 'Sprawdzenie domu — za darmo',
-    desc: 'Inżynier sprawdza rozdzielnicę, puszki i kable oraz to, czy jest przewód neutralny.',
+    desc: 'Inżynier sprawdza rozdzielnicę, puszki i kable i to, czy w puszkach są potrzebne przewody.',
     humanNote: 'Nie zgadujemy — sprawdzamy instalację miernikami, żeby nie było niespodzianek.',
   },
   {
@@ -967,7 +967,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'W momencie otwarcia okna bezprzewodowy czujnik Shelly BLU wysyła komendę Bluetooth do głowicy termostatycznej na grzejniku. Zawór domyka się, żeby nie ogrzewać ulicy, a po zamknięciu okna grzejnik wznawia dogrzewanie pokoju.',
     humanNote:
-      'Wpuszczasz rześkie powietrze do sypialni bez marnowania energii i pieniędzy. Grzejnik nie rozgrzewa się bez sensu do maksymalnej mocy, gdy wietrzysz pomieszczenie.',
+      'Otwierasz okno w sypialni, a grzejnik sam się zakręca. Zamykasz okno i ciepło wraca. Nie grzejesz ulicy.',
     actionSequence: [
       { step: 'Otwarcie okna', icon: 'SlidersHorizontal', detail: 'Czujnik Shelly BLU rejestruje rozszczelnienie ramy' },
       { step: 'Odcięcie grzania', icon: 'Flame', detail: 'Głowica Shelly BLU TRV domyka zawór na 0%' },
@@ -988,7 +988,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'W przypadku wykrycia nieszczelności gazu przez Shelly Gas lub pierwszych kropel wody przez sensory Shelly Flood S, system w ciągu kilku sekund mechanicznie zamyka główny zawór odcinający i odłącza zasilanie z gniazd pralki, zmywarki czy pieca.',
     humanNote:
-      'Pełen spokój, gdy jesteś w pracy lub na wakacjach. Pęknięty wężyk pralki nie zaleje parkietu ani sąsiada, a ewentualny wyciek gazu zostaje odcięty w zarodku bez udziału człowieka.',
+      'Pęknięty wężyk pralki nie zaleje parkietu ani sąsiada, także gdy jesteś w pracy albo na wakacjach. Gdy czujnik wyczuje gaz, zawór może sam go zakręcić.',
     actionSequence: [
       { step: 'Wykrycie wycieku', icon: 'Droplets', detail: 'Sensory Shelly Flood / Gas wykrywają zagrożenie w kilka sekund' },
       { step: 'Zamknięcie zaworu', icon: 'ShieldCheck', detail: 'Siłownik odcina główny dopływ wody/gazu w kilka sekund' },
@@ -1010,7 +1010,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'Licznik 3-fazowy Shelly 3EM-63T Gen3 mierzy w czasie rzeczywistym zużycie i oddawanie energii do sieci. Gdy pojawia się nadwyżka darmowego prądu z fotowoltaiki, dom sam uruchamia grzałkę bojlera, podbija zadaną temperaturę pompy ciepła lub włącza ładowanie samochodu elektrycznego.',
     humanNote:
-      'Twoja fotowoltaika zwraca się szybciej. Zamiast oddawać prąd do sieci za ułamek ceny, dom sam wykorzystuje go na podgrzanie wody i ogrzewanie.',
+      'Gdy panele dają więcej prądu, niż zużywasz, dom sam grzeje nim wodę. Mniej prądu oddajesz do sieci po niskiej cenie.',
     actionSequence: [
       { step: 'Pomiar 3-fazowy', icon: 'Gauge', detail: 'Precyzyjny odczyt poboru i oddawania energii na każdej z 3 faz' },
       { step: 'Wykrycie nadwyżki PV', icon: 'Sun', detail: 'Automatyczne wykrycie nadwyżki produkcji powyżej 2.5 kW' },
@@ -1022,7 +1022,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     id: 'top-sc-welcome-car',
     icon: 'Car',
     badge: 'Bezdotykowe powitanie gospodarza',
-    title: 'Inteligentne powitanie gospodarza',
+    title: 'Brama otwiera się przed Twoim autem',
     subtitle: 'Kamera przy bramie, brama i światło na podjeździe',
     trigger: 'Rozpoznanie tablicy rejestracyjnej auta domownika',
     devicesUsed: ['Kamera Hikvision ANPR (odczyt tablic LPR)', 'Moduł bramowy Shelly Plus 1', 'Ściemniacze oświetlenia korytarza Shelly Pro Dimmer'],
@@ -1031,7 +1031,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     description:
       'Kamera Hikvision z funkcją ANPR odczytuje tablicę rejestracyjną samochodu podczas dojazdu do posesji. Brama wjazdowa otwiera się automatycznie, w korytarzu rozjaśnia się światło 2700K, a parter domu rozbraja strefę alarmową.',
     humanNote:
-      'Nie musisz szukać pilota po ciemku w schowku ani klikać w aplikację podczas manewrowania autem. System rozpoznaje tablicę Twojego auta przy podjeździe (dystans zależy od obiektywu i montażu) i otwiera bramę.',
+      'Nie szukasz pilota po ciemku ani telefonu w trakcie parkowania. Kamera przy bramie rozpoznaje tablicę Twojego auta, brama sama się otwiera, a na podjeździe zapala się światło.',
     actionSequence: [
       { step: 'Odczyt tablicy LPR', icon: 'Camera', detail: 'Kamera Hikvision identyfikuje numer rejestracyjny' },
       { step: 'Otwarcie bramy', icon: 'DoorClosed', detail: 'Moduł Shelly Plus 1 podaje impuls na sterownik bramy wjazdowej' },

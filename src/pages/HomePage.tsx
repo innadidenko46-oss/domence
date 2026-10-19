@@ -40,7 +40,7 @@ export const HomePage: React.FC = () => {
     {
       id: 'multimedia-kino',
       path: '/multimedia',
-      title: 'Kino w salonie — jeden przycisk',
+      title: 'Kino w salonie jednym przyciskiem',
       subtitle: 'Rolety • Światło • Dzwonek z furtki',
       description:
         'Do filmu rolety same się zamykają, a światło gaśnie. Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie.',
@@ -117,7 +117,7 @@ export const HomePage: React.FC = () => {
             <div className="mt-10 pt-6 border-t grid grid-cols-2 gap-4 text-sm border-gray-200 text-gray-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
-                <span>Praca w domu, bez obcych serwerów</span>
+                <span>Działa w domu, bez obcych serwerów</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-petrol-700 shrink-0" />
@@ -156,7 +156,7 @@ export const HomePage: React.FC = () => {
           
           <div className="max-w-3xl mb-14">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
-              Obszary instalacji — co montujemy
+              Co montujemy
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
               Do każdego miejsca w domu dobieramy konkretny zestaw: na przykład do wejścia — domofon z kamerą i 2 kamery z zapisem w domu.
@@ -300,7 +300,7 @@ export const HomePage: React.FC = () => {
                   'Budujesz dom albo remontujesz mieszkanie w Warszawie i okolicach.',
                   'Chcesz, żeby światło, rolety, ogrzewanie i kamery działały razem — i bez internetu.',
                   'Planujesz montaż w najbliższych miesiącach.',
-                  'Wolisz jedną firmę od całości niż kilku wykonawców.',
+                  'Wolisz jedną firmę od wszystkiego zamiast kilku wykonawców.',
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-base leading-relaxed text-gray-700">
                     <CheckCircle2 className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
@@ -388,7 +388,7 @@ export const HomePage: React.FC = () => {
                 Planujesz budowę albo remont?
               </h2>
               <p className="text-base text-gray-300 mt-2 max-w-xl">
-                Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym audycie.
+                Napisz, co chcesz mieć w domu. Oddzwonimy z konkretną propozycją — zwykle w 24 godziny robocze (pon–pt, 8:00–18:00). Dokładny dobór robimy po bezpłatnym sprawdzeniu domu.
               </p>
               {SITE.engineer.name && (
                 <p className="mt-3 text-sm text-gray-300">

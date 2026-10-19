@@ -24,10 +24,10 @@ export const TopSellingScenariosSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            4 rzeczy, które dom robi za Ciebie
+            Cztery rzeczy, które dom robi za Ciebie
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-prose text-gray-600">
-            Cztery przykłady, jak to działa na co dzień. Każdy działa u Ciebie, także bez internetu.
+            Tak to wygląda na co dzień. Wszystko działa w domu, także bez internetu.
           </p>
         </div>
 
