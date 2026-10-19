@@ -123,7 +123,7 @@ export const HikvisionShowcase: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-gray-900/60 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-[2px] bg-petrol-950/85 backdrop-blur-md text-xs font-bold text-amber-200 border border-amber-500/40">
-                    Hikvision — oryginalne urządzenia
+                    Oryginalne urządzenia producenta
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-[2px] bg-petrol-950/90 backdrop-blur-md border border-white/10 text-xs text-gray-200">

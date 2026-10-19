@@ -37,7 +37,7 @@ export const SystemsPage: React.FC = () => {
                   Stan surowy / nowa rozdzielnica
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-gray-900">
-                  Shelly Pro do rozdzielnicy
+                  Moduły w rozdzielnicy
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 text-gray-600">
                   Jeśli budujesz dom od zera. Moduły siedzą w rozdzielnicy, łączą się kablem i mierzą zużycie prądu.

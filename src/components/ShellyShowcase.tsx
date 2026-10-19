@@ -46,10 +46,10 @@ export const ShellyShowcase: React.FC = () => {
           <div className="max-w-3xl">
             <div className="eyebrow inline-flex items-center gap-2 mb-3">
               <Layers className="w-3.5 h-3.5 text-petrol-700" />
-              <span>Co potrafi • Shelly Pro i Plus</span>
+              <span>Co potrafi</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-gray-900">
-              Shelly Pro i Plus: światło i rolety bez kucia i z rozdzielnicy
+              Światło, rolety i ogrzewanie: z rozdzielnicy albo bez kucia
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
               Dostajesz światło, rolety i ogrzewanie sterowane z telefonu i zwykłych włączników. Do nowego domu wkładamy moduły do rozdzielnicy, do gotowego mieszkania — małe moduły pod włączniki.
@@ -61,7 +61,7 @@ export const ShellyShowcase: React.FC = () => {
               Kabel do rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
-              Szyna DIN w rozdzielnicy
+              W rozdzielnicy
             </span>
             <span className="px-2.5 py-1 rounded-[2px] border font-mono font-medium bg-white border-gray-200 text-gray-700">
               Działa w domu, bez obcych serwerów
@@ -185,20 +185,17 @@ export const ShellyShowcase: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Comparison: Shelly Pro DIN vs Shelly Plus */}
+            {/* Bottom comparison: modules in the switchboard vs behind switches */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {/* Shelly Pro DIN Role */}
+              {/* In the switchboard */}
               <div className="p-5 rounded-[2px] border bg-gray-50 border-gray-200">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center font-mono font-bold text-xs">
-                    DIN
-                  </div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-900">
-                      Shelly Pro do rozdzielnicy
+                      W rozdzielnicy (nowy dom)
                     </h4>
                     <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
-                      Kabel • Szyna DIN • Pomiar prądu
+                      Po kablu • Pomiar prądu
                     </span>
                   </div>
                 </div>
@@ -207,15 +204,12 @@ export const ShellyShowcase: React.FC = () => {
                 </p>
               </div>
 
-              {/* Shelly Plus Role */}
+              {/* Behind switches */}
               <div className="p-5 rounded-[2px] border bg-gray-50 border-gray-200">
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <div className="w-6 h-6 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center font-mono font-bold text-xs">
-                    BOX
-                  </div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-900">
-                      Shelly Plus i BLU (pod włącznik, bez kucia)
+                      Za włącznikiem (bez kucia)
                     </h4>
                     <span className="text-xs text-amber-700 font-mono font-semibold uppercase tracking-wider">
                       Bez kucia tynków • Moduły mieszczą się w puszkach
