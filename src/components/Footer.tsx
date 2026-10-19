@@ -47,9 +47,23 @@ export const Footer: React.FC = () => {
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
               <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-sm">
-                Wdrożenia Shelly Pro, domofonów z kamerą oraz kamer 4K.
-                Wszystko działa w domu, bez miesięcznego abonamentu. Montujemy bez kucia, gdzie się da, a po montażu uczymy domowników obsługi.
+                Inteligentny dom, kamery i wideodomofony w Warszawie i okolicach.
+                Wszystko działa w domu, bez abonamentu. Montujemy bez kucia, gdzie się da, a po montażu uczymy domowników obsługi.
               </p>
+              <ul className="mt-5 space-y-2 text-xs text-gray-400">
+                {[
+                  ['/inteligentny-dom-warszawa', 'Inteligentny dom w Warszawie'],
+                  ['/wideodomofon-i-kamery-warszawa', 'Wideodomofon i kamery w Warszawie'],
+                  ['/ochrona-przed-zalaniem', 'Ochrona przed zalaniem'],
+                  ['/automatyka-bez-kucia', 'Mieszkanie bez kucia ścian'],
+                ].map(([to, label]) => (
+                  <li key={to}>
+                    <Link to={to} className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 

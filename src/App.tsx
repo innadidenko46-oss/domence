@@ -16,6 +16,7 @@ const TeletechnicsPage = lazy(() => import('./pages/TeletechnicsPage.tsx').then(
 const MultiroomGardenPage = lazy(() => import('./pages/MultiroomGardenPage.tsx').then((m) => ({ default: m.MultiroomGardenPage })));
 const ScenariosPage = lazy(() => import('./pages/ScenariosPage.tsx').then((m) => ({ default: m.ScenariosPage })));
 const StartPage = lazy(() => import('./pages/StartPage.tsx').then((m) => ({ default: m.StartPage })));
+const LandingPage = lazy(() => import('./pages/LandingPage.tsx').then((m) => ({ default: m.LandingPage })));
 const FaqPage = lazy(() => import('./pages/FaqPage.tsx').then((m) => ({ default: m.FaqPage })));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage.tsx').then((m) => ({ default: m.CalculatorPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage.tsx').then((m) => ({ default: m.ContactPage })));
@@ -66,6 +67,10 @@ function AppContent() {
           <Route path="/jak-zaczac" element={<StartPage />} />
           <Route path="/pakiety" element={<Navigate to="/jak-zaczac" replace />} />
           <Route path="/faq" element={<FaqPage />} />
+          <Route path="/inteligentny-dom-warszawa" element={<LandingPage slug="inteligentny-dom-warszawa" />} />
+          <Route path="/wideodomofon-i-kamery-warszawa" element={<LandingPage slug="wideodomofon-i-kamery-warszawa" />} />
+          <Route path="/ochrona-przed-zalaniem" element={<LandingPage slug="ochrona-przed-zalaniem" />} />
+          <Route path="/automatyka-bez-kucia" element={<LandingPage slug="automatyka-bez-kucia" />} />
           <Route path="/zapytanie" element={<CalculatorPage />} />
           {/* Old address kept working for links already shared */}
           <Route path="/kalkulator" element={<Navigate to="/zapytanie" replace />} />
