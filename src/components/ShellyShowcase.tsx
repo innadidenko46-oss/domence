@@ -148,15 +148,6 @@ export const ShellyShowcase: React.FC = () => {
 
               {/* Right: Real-Life Automation Scenario */}
               <div className="lg:col-span-6 rounded-[2px] border flex flex-col justify-between overflow-hidden bg-gray-50 border-gray-200">
-                <div className="relative h-40 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
-                    alt="Moduły elektroniki automatyki domowej z bliska"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/40 via-transparent to-transparent" />
-                </div>
                 <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-center gap-2 mb-3">

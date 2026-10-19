@@ -14,7 +14,7 @@ const HIK_FEATURES = [
   'Podgląd z kamer i wideodomofonu na żywo',
   'Rozmowa wideo z gościem przy furtce',
   'Otwieranie furtki i bramy z poziomu telefonu',
-  'Kolorowy obraz w nocy i mniej fałszywych alarmów',
+  'Kolorowy obraz w nocy i mniej zbędnych powiadomień',
   'Nagrania na dysku w domu, bez abonamentu',
 ];
 

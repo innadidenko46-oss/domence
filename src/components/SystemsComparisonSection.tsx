@@ -76,8 +76,8 @@ export const SystemsComparisonSection: React.FC = () => {
 
             <div className="relative rounded-[2px] overflow-hidden border border-gray-200 shadow-sm min-h-[280px]">
               <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-                alt="Ciepłe wnętrze domu z dobrze wykonaną instalacją elektryczną"
+                src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+                alt="Jasny salon z kanapą i lampą"
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />

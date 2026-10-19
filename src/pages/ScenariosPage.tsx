@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ScenariosSection } from '../components/ScenariosSection.tsx';
-import { SlidersHorizontal, ArrowRight, Droplets, LogOut, Moon } from 'lucide-react';
+import { SlidersHorizontal, ArrowRight } from 'lucide-react';
 
 export const ScenariosPage: React.FC = () => {
 
@@ -11,166 +11,49 @@ export const ScenariosPage: React.FC = () => {
       <PageHeader
         badge="Przykłady z życia"
         title="Dom, który robi część rzeczy za Ciebie"
-        description="Światło, rolety i ogrzewanie działają same. Sterujesz telefonem, przyciskiem albo głosem. Gdy pęknie wężyk, zawór sam zakręca wodę w kilka sekund."
+        description="Światło, rolety i ogrzewanie działają same. Sterujesz zwykłym włącznikiem albo telefonem. Gdy pęknie wężyk, woda sama się zakręca."
         icon={<SlidersHorizontal className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+        image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
       />
-
-      {/* Visual Atmosphere Showcase for Scenarios */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr] gap-6">
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
-                  alt="Spokojny poranek i automatyczne światło"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Budzenie światłem
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Spokojny poranek
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Rolety same podnoszą się o ustawionej godzinie, a światło powoli się rozjaśnia.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Jasne wnętrze domu z automatycznym oświetleniem i sterowaniem przy wyjściu"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Przycisk przy drzwiach
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Spokój przy wyjściu
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Nie sprawdzasz żelazka ani okien w pośpiechu. Jeden przycisk przy drzwiach gasi światła i uzbraja czujniki.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
-                  alt="Łazienka z armaturą narażoną na zalanie — strefa ochrony przed wodą"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Woda odcięta w kilka sekund
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-base text-gray-900">
-                  Ochrona przed zalaniem
-                </h3>
-                <p className="text-sm mt-1.5 leading-relaxed text-gray-600">
-                  Zawór sam zakręca wodę w kilka sekund, gdy czujnik pod pralką wykryje wilgoć.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Main Scenarios Section Component */}
       <ScenariosSection />
 
-      {/* Fail-Safe Engineering */}
+      {/* What happens when something stops working */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Bezpieczny przy awarii — także bez prądu
-            </h2>
-            <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Fail-safe znaczy: bezpieczny przy awarii. Dom sam przechodzi w bezpieczny stan, nawet gdy zabraknie prądu.
-            </p>
-          </div>
-
-          <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-48">
-            <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
-              alt="Sterownik automatyki w rozdzielnicy — dom działa bez internetu"
-              loading="lazy"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="pt-6 border-t-2 border-amber-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
-                <Droplets className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Zawór ze sprężyną powrotną
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Stosujemy zawory ze sprężyną. Gdy zabraknie prądu, zawór sam się zamyka i woda nie leci dalej.
-              </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <h2 className="lg:col-span-4 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+            Co, jeśli coś przestanie działać?
+          </h2>
+          <dl className="lg:col-span-8 grid sm:grid-cols-3 gap-x-8 gap-y-8">
+            <div className="border-t-2 border-petrol-700 pt-4">
+              <dt className="font-display text-lg font-bold text-gray-900">Włączniki działają zawsze</dt>
+              <dd className="mt-2 text-base leading-relaxed text-gray-600">Światło i rolety obsłużysz zwykłym włącznikiem, także gdy telefon się rozładuje albo zniknie internet.</dd>
             </div>
-
-            <div className="pt-6 border-t-2 border-amber-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
-                <LogOut className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Fizyczny przycisk ścienny
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Przycisk przy drzwiach łączy się kablem prosto z rozdzielnicą. Działa od razu, bez telefonu.
-              </p>
+            <div className="border-t-2 border-petrol-700 pt-4">
+              <dt className="font-display text-lg font-bold text-gray-900">Bez internetu dom robi swoje</dt>
+              <dd className="mt-2 text-base leading-relaxed text-gray-600">Harmonogramy, sceny i czujniki działają w domu. Internet jest potrzebny tylko do sterowania z daleka.</dd>
             </div>
-
-            <div className="pt-6 border-t-2 border-amber-500/50">
-              <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
-                <Moon className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900">
-                Autonomia lokalna
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Zasady działania siedzą w sterowniku w rozdzielnicy. Bez internetu dom dalej robi swoje.
-              </p>
+            <div className="border-t-2 border-petrol-700 pt-4">
+              <dt className="font-display text-lg font-bold text-gray-900">Po przerwie w prądzie</dt>
+              <dd className="mt-2 text-base leading-relaxed text-gray-600">Gdy prąd wraca, wszystko samo startuje, a światła nie zapalają się w środku nocy.</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 
-      {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="pt-16 pb-20 lg:pt-20 lg:pb-24 bg-petrol-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="text-xs text-amber-200 font-mono">Następny krok:</div>
-            <div className="text-base font-bold text-white">
-              Gotowe zestawy z ceną na piśmie
-            </div>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold">Od czego zacząć w Twoim domu?</h2>
+            <p className="mt-2 text-base text-gray-300 max-w-xl">Nowy dom, gotowe mieszkanie albo najpierw wejście i kamery: zobacz, co zwykle robimy.</p>
           </div>
           <Link
             to="/jak-zaczac"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
+            className="btn-accent self-start md:self-auto focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
           >
             <span>Zobacz, jak zacząć</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
       </section>

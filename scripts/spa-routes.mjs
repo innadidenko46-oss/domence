@@ -14,7 +14,7 @@ const ROUTES = {
   zapytanie: ['Zapytanie o Twój dom', 'Zaznacz, co Cię interesuje, i zostaw kontakt. Oddzwonimy z propozycją, zwykle w 24 godziny robocze.'],
   'inteligentny-dom-warszawa': ['Inteligentny dom w Warszawie i okolicach', 'Światło, rolety, ogrzewanie i ochrona przed zalaniem, które działają same i z telefonu. Także w gotowym mieszkaniu, bez kucia ścian.'],
   'wideodomofon-i-kamery-warszawa': ['Wideodomofon i kamery w Warszawie i okolicach', 'Rozmowa z gościem przy furtce z telefonu, kamery z kolorowym obrazem w nocy i nagrania na dysku w domu, bez abonamentu.'],
-  'ochrona-przed-zalaniem': ['Ochrona przed zalaniem: czujnik sam zakręca wodę', 'Czujnik pod pralką czy zmywarką wykrywa wyciek, a zawór od razu zakręca wodę. Powiadomienie w telefonie, działa bez internetu.'],
+  'ochrona-przed-zalaniem': ['Ochrona przed zalaniem: czujnik sam zakręca wodę', 'Czujnik pod pralką czy zmywarką wykrywa wyciek, a woda od razu się zakręca. Powiadomienie w telefonie, działa bez internetu.'],
   'automatyka-bez-kucia': ['Inteligentne mieszkanie bez kucia ścian', 'Małe moduły za zwykłymi włącznikami, głowice na grzejnikach i czujniki na baterie. Ściany, płytki i gładzie zostają całe.'],
   kontakt: ['Kontakt z inżynierem', 'Warszawa i okolice. Napisz, czego potrzebujesz, a oddzwonimy z propozycją.'],
 };

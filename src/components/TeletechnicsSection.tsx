@@ -166,7 +166,7 @@ export const TeletechnicsSection: React.FC = () => {
                   Szafka na sprzęt z uporządkowanymi kablami
                 </div>
                 <div className="text-sm mt-1 leading-relaxed text-gray-500">
-                  Wszystkie kable opisujemy i sprawdzamy miernikiem.
+                  Każdy kabel jest opisany, więc łatwo coś później dołożyć.
                 </div>
               </div>
             </div>
@@ -180,8 +180,8 @@ export const TeletechnicsSection: React.FC = () => {
           </div>
           <div className="relative min-h-[160px]">
             <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
-              alt="Osprzęt sieciowy i moduły sterujące w szafce teletechnicznej"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+              alt="Szafka ze sprzętem sieciowym i uporządkowanymi kablami"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"
             />

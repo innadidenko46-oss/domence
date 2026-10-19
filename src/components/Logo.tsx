@@ -7,10 +7,22 @@ interface LogoProps {
   showSubtitle?: boolean;
 }
 
-export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = ({ size = 48, className = '' }) => {
+// 'dark' draws the house in petrol for light backgrounds,
+// 'light' draws it in white for dark petrol bands (e.g. the footer).
+const MARK_INK = {
+  dark: { house: '#0F4352', houseBase: '#0B3340', loop: ['#2A9DCB', '#0F4352', '#0B3340'] },
+  light: { house: '#FFFFFF', houseBase: '#FFFFFF', loop: ['#2A9DCB', '#BFE3F2', '#FFFFFF'] },
+} as const;
+
+export const DomenceLogoMark: React.FC<{ size?: number; className?: string; variant?: 'light' | 'dark' }> = ({
+  size = 48,
+  className = '',
+  variant = 'dark',
+}) => {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '');
   const amberId = `domenceAmberGrad-${uid}`;
   const petrolId = `domencePetrolGrad-${uid}`;
+  const ink = MARK_INK[variant];
   return (
     <svg role="img"
       width={size}
@@ -31,28 +43,28 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
 
         {/* Petrol Blue / Navy Gradient */}
         <linearGradient id={petrolId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#2A9DCB" />
-          <stop offset="60%" stopColor="#0F4352" />
-          <stop offset="100%" stopColor="#0B3340" />
+          <stop offset="0%" stopColor={ink.loop[0]} />
+          <stop offset="60%" stopColor={ink.loop[1]} />
+          <stop offset="100%" stopColor={ink.loop[2]} />
         </linearGradient>
       </defs>
 
       {/* Chimney on the left */}
       <path
         d="M34 42V60L28 64.5V42H34Z"
-        fill="#0F4352"
+        fill={ink.house}
       />
 
       {/* Main Roof left slope */}
       <path
         d="M22 68L78 26L88 33.5L34 74H22V68Z"
-        fill="#0F4352"
+        fill={ink.house}
       />
 
       {/* House Left Column Base */}
       <path
         d="M32 72V124H44V72H32Z"
-        fill="#0B3340"
+        fill={ink.houseBase}
       />
 
       {/* Outer Amber Wave 1 (Upper Right Roof to Arch) */}
@@ -91,7 +103,7 @@ export const DomenceLogoMark: React.FC<{ size?: number; className?: string }> = 
       {/* Base Foundation Bar */}
       <path
         d="M32 120H96"
-        stroke="#0F4352"
+        stroke={ink.house}
         strokeWidth="8"
         strokeLinecap="round"
       />
@@ -131,7 +143,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
       <div className="shrink-0">
-        <DomenceLogoMark size={iconSizes[size]} />
+        <DomenceLogoMark size={iconSizes[size]} variant={variant} />
       </div>
 
       <div className="flex flex-col justify-center">

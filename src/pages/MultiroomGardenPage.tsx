@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { MultiroomGardenSection } from '../components/MultiroomGardenSection.tsx';
-import { ArrowRight, Film, Tv } from 'lucide-react';
+import { ArrowRight, Film } from 'lucide-react';
 
 export const MultiroomGardenPage: React.FC = () => {
 
@@ -10,155 +10,70 @@ export const MultiroomGardenPage: React.FC = () => {
     <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
       <PageHeader
         badge="Kino w salonie"
-        title="Kino w salonie — jeden przycisk"
+        title="Kino w salonie jednym przyciskiem"
         description="Rolety same się zamykają, światło przygasa, a gościa przy furtce widzisz na panelu w domu i w telefonie."
         icon={<Film className="w-4 h-4 text-petrol-700" />}
         image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
       />
 
-      {/* Two everyday moments: film night and a visitor at the gate */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-b bg-gray-100 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=80"
-                  alt="Salon z kanapą i kominkiem, okna zasłonięte roletami"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Kino jednym przyciskiem
-                </span>
-              </div>
-              <div className="p-7">
-                <h3 className="font-bold text-lg text-gray-900">
-                  Wieczór filmowy bez szukania pilotów
-                </h3>
-                <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                  Rolety same się zamykają, światło gaśnie do 5%, a ekran projekcyjny sam zjeżdża.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2px] overflow-hidden border shadow-sm group bg-white border-gray-200">
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/hero-wideodomofon.jpg`}
-                  alt="Telefon pokazujący obraz z kamery przy furtce"
-                  loading="lazy"
-                  className="w-full h-full object-cover duration-500 filter brightness-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent" />
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-[2px] bg-petrol-950/80 backdrop-blur-md text-xs font-mono font-semibold text-amber-200 border border-white/10">
-                  Dzwonek z furtki
-                </span>
-              </div>
-              <div className="p-7">
-                <h3 className="font-bold text-lg text-gray-900">
-                  Dzwonek słyszysz od razu — i widzisz, kto przyszedł
-                </h3>
-                <p className="text-sm mt-3 leading-relaxed text-gray-600">
-                  Gdy kurier dzwoni do furtki, na panelu na ścianie i w telefonie widzisz, kto przyszedł, i otwierasz jednym dotknięciem.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gate visitor, film scene and garden */}
+      {/* Film scene and a visitor at the gate */}
       <MultiroomGardenSection />
 
-      {/* How the film scene works step by step */}
+      {/* How the film scene works, step by step */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Jeden przycisk do filmu: rolety i światło
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-4">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+              Jak działa scena „Kino”
             </h2>
-            <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Koniec z kilkoma pilotami. Rolety i światło ustawiają się same.
+            <p className="mt-4 text-base leading-relaxed text-gray-600 max-w-prose">
+              Naciskasz jeden przycisk na ścianie, pilocie albo w telefonie. Resztę dom robi sam.
             </p>
+            <Link
+              to="/zapytanie"
+              className="btn-engineering-primary mt-8 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+            >
+              <span>Dobierz zestaw (2 min)</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
-
-          <div className="grid grid-cols-1 gap-8 max-w-3xl">
-            <div className="p-7 rounded-[2px] border shadow-sm bg-white border-gray-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center">
-                  <Film className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    „Seans” — jeden przycisk
-                  </h3>
-                  <span className="text-xs text-amber-700 font-mono font-semibold">Pełna koordynacja salonu</span>
-                </div>
-              </div>
-              <p className="text-sm leading-relaxed mb-4 text-gray-600">
-                Po wybraniu sceny kinowej (przyciskiem na ścianie, pilotem lub ze smartfona):
-              </p>
-              <ul className="space-y-2.5 text-sm text-gray-700">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
-                  <span>Rolety i żaluzje zjeżdżają w 100%, eliminując wszelkie odblaski światła dziennego.</span>
+          <ol className="lg:col-span-8 divide-y divide-gray-300 border-y border-gray-300">
+                <li className="flex gap-4 py-4">
+                  <span className="font-display text-sm font-bold tabular-nums text-amber-700 pt-0.5">01</span>
+                  <span className="text-base leading-relaxed text-gray-700">Rolety zjeżdżają do końca, więc na ekranie nie ma odblasków.</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
-                  <span>Główne oświetlenie wygasza się, a subtelne taśmy LED przy podłodze ściemniają się do 5%.</span>
+                <li className="flex gap-4 py-4">
+                  <span className="font-display text-sm font-bold tabular-nums text-amber-700 pt-0.5">02</span>
+                  <span className="text-base leading-relaxed text-gray-700">Lampy gasną, zostaje tylko delikatne światło przy podłodze, żeby bezpiecznie przejść po napój.</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-petrol-700" />
-                  <span>Gdy ktoś dzwoni do furtki, obraz pojawia się na panelu w salonie.</span>
+                <li className="flex gap-4 py-4">
+                  <span className="font-display text-sm font-bold tabular-nums text-amber-700 pt-0.5">03</span>
+                  <span className="text-base leading-relaxed text-gray-700">Ekran projekcyjny sam zjeżdża, jeśli masz go w salonie.</span>
                 </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Dedicated Home Multimedia Feature Card */}
-          <div className="mt-8 p-8 rounded-[2px] border shadow-sm bg-white border-gray-200">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-gray-200">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
-                  <Tv className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">
-                    Sceny kinowe — ustawiamy od początku do końca
-                  </h3>
-                  <div className="text-xs text-amber-700 font-mono mt-0.5">
-                    Automatyka rolet blackout • Sceny nastrojowe • Jeden przycisk
-                  </div>
-                </div>
-              </div>
-              <Link
-                to="/zapytanie"
-                className="btn-engineering-primary text-center shrink-0 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-              >
-                Dobierz zestaw (2 min)
-              </Link>
-            </div>
-          </div>
+                <li className="flex gap-4 py-4">
+                  <span className="font-display text-sm font-bold tabular-nums text-amber-700 pt-0.5">04</span>
+                  <span className="text-base leading-relaxed text-gray-700">Gdy ktoś dzwoni do furtki, widzisz go na panelu w salonie i w telefonie.</span>
+                </li>
+                <li className="flex gap-4 py-4">
+                  <span className="font-display text-sm font-bold tabular-nums text-amber-700 pt-0.5">05</span>
+                  <span className="text-base leading-relaxed text-gray-700">Po filmie ten sam przycisk przywraca zwykłe światło.</span>
+                </li>
+          </ol>
         </div>
       </section>
 
-      {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="pt-16 pb-20 lg:pt-20 lg:pb-24 bg-petrol-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="text-xs text-amber-200 font-mono">Kolejny obszar instalacji:</div>
-            <div className="text-base font-bold text-white">
-              Przykłady z życia wzięte
-            </div>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold">Co jeszcze dom może robić sam?</h2>
+            <p className="mt-2 text-base text-gray-300 max-w-xl">Wyjście z domu, ochrona przed zalaniem, spokojny sen: przykłady na co dzień.</p>
           </div>
           <Link
             to="/scenariusze"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
+            className="btn-accent self-start md:self-auto focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
           >
             <span>Zobacz scenariusze</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
       </section>

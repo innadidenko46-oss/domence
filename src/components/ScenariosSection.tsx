@@ -23,7 +23,7 @@ import {
   BellOff,
   Film,
   Zap,
-  Mic,
+  Hand,
   Coffee,
   Tv,
   KeyRound,
@@ -113,12 +113,8 @@ export const ScenariosSection: React.FC = () => {
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-14">
-          <div className="eyebrow inline-flex items-center gap-2 mb-3">
-            <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>Przykłady z życia</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight text-gray-950">
-            Przykłady: co dom robi za Ciebie
+            Co dom robi za Ciebie
           </h2>
           <p className="mt-4 text-sm sm:text-base max-w-prose leading-relaxed text-gray-600">
             Dom robi część rzeczy sam: zakręca wodę, gasi światła i otwiera bramę Twojemu autu. Bez skomplikowanych instrukcji.
@@ -205,10 +201,10 @@ export const ScenariosSection: React.FC = () => {
                 {/* Activation Trigger Pill on bottom of image */}
                 {activeScenario.trigger && (
                   <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-[2px] bg-petrol-950/90 backdrop-blur-md border border-white/10 text-xs text-gray-200 flex items-start gap-2.5">
-                    <Mic className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <Hand className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" aria-hidden="true" />
                     <div>
                       <span className="text-xs uppercase font-bold text-amber-400 block mb-0.5">
-                        Wyzwalacz scenariusza:
+                        Jak włączasz:
                       </span>
                       {activeScenario.trigger}
                     </div>
@@ -235,7 +231,7 @@ export const ScenariosSection: React.FC = () => {
                   {activeScenario.actionSteps && activeScenario.actionSteps.length > 0 && (
                     <div className="mt-5">
                       <div className="text-xs font-bold uppercase tracking-wider mb-2.5 text-gray-700">
-                        Co robi dom, zwykle w 1–2 sekundy:
+                        Co robi dom:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {activeScenario.actionSteps.map((step, sIdx) => (

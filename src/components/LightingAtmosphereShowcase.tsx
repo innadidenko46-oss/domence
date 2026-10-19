@@ -35,7 +35,7 @@ const SCENES: AtmosphereScene[] = [
     description:
       'Gdy słońce zachodzi, sufitowe światło ustępuje miejsca liniom LED i lampom stołowym. Rolety opuszczają się i dają pełną prywatność.',
     image:
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85',
+      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85',
     features: [
       'Delikatne podświetlenie wejścia i korytarzy',
       'Ciepła barwa światła, która mniej męczy wzrok',

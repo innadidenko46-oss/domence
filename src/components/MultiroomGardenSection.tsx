@@ -1,7 +1,6 @@
 import React from 'react';
 import { HOME_MULTIMEDIA } from '../data/content.ts';
 import {
-  Volume2,
   Film,
   Music2,
   CheckCircle2,
@@ -16,10 +15,6 @@ export const MultiroomGardenSection: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <div className="eyebrow inline-flex items-center gap-2 mb-3">
-            <Volume2 className="w-4 h-4" />
-            <span>Kino w salonie</span>
-          </div>
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
             Kino w salonie i gość przy furtce bez wstawania.
           </h2>
@@ -89,8 +84,8 @@ export const MultiroomGardenSection: React.FC = () => {
           <div className="rounded-[2px] border overflow-hidden flex flex-col justify-between bg-gray-50 border-gray-200">
             <div className="relative h-40 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85"
-                alt="Dom o zmierzchu — wieczór filmowy w ciepłym świetle salonu"
+                src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=85"
+                alt="Salon wieczorem, okna zasłonięte roletami"
                 loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
