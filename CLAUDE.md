@@ -63,6 +63,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 
 - **No invented facts.** Don't make up phone numbers, names, reviews, project counts or certifications.
 - **Company details live in `src/config/site.ts`.** Blocks that use empty fields stay hidden.
+- **Finished homes and client quotes** go in `FINISHED_HOMES` and `CLIENT_QUOTES` in `src/config/site.ts`. The home-page block stays hidden while both are empty. Add only real homes with their own photos, and quotes the client agreed in writing to publish.
 - **Photos must match the text next to them.** No duplicate photos within one page.
 
 ## Privacy and statistics

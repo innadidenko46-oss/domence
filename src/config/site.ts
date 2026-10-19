@@ -23,3 +23,27 @@ export const INSTALL_TIMELINES = [
   'Za ponad 6 miesięcy',
   'Na razie zbieram informacje',
 ] as const;
+
+// Real finished homes and real client words. Both lists start empty and their block
+// on the home page stays hidden until something is added. Add only homes we actually
+// finished and words the client agreed in writing to publish, with their own photos.
+export interface ClientQuote {
+  quote: string;
+  /** First name and initial, e.g. 'Marta K.' */
+  name: string;
+  /** Town and kind of home, e.g. 'Ząbki, dom w budowie' */
+  place: string;
+}
+
+export interface FinishedHome {
+  title: string;
+  place: string;
+  /** What we did, in plain words: 'Światło i rolety z telefonu', 'Wideodomofon przy furtce' */
+  done: string[];
+  /** Path under public/, e.g. 'images/domy/zabki.jpg'. A photo of this home only. */
+  photo: string;
+  photoAlt: string;
+}
+
+export const CLIENT_QUOTES: ClientQuote[] = [];
+export const FINISHED_HOMES: FinishedHome[] = [];

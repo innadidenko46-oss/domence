@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wrench, ArrowRight, CheckCircle2, Lock, Cpu, Phone, MapPin } from 'lucide-react';
 import { ProcessSection } from '../components/ProcessSection.tsx';
+import { ProofSection } from '../components/ProofSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
 import { FAQ_ITEMS } from '../data/content.ts';
 import { OfflineDemo } from '../components/OfflineDemo.tsx';
@@ -277,6 +278,9 @@ export const HomePage: React.FC = () => {
 
       {/* 5-Step Process */}
       <ProcessSection />
+
+      {/* Finished homes and client words: hidden until real ones are added in site.ts */}
+      <ProofSection />
 
       {/* Who we work with and what you get: sets expectations so decided buyers self-select */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-gray-100 border-gray-200">
