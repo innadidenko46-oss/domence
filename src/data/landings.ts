@@ -1,5 +1,3 @@
-import { PropertyState } from '../types.ts';
-
 // Landing pages for what people search in Warsaw. Plain words, no prices or model names:
 // the same rules as the rest of the site (CLAUDE.md). Each one is also listed in
 // scripts/spa-routes.mjs (title, description) and routed in src/App.tsx.
@@ -10,8 +8,8 @@ export interface Landing {
   title: string;
   description: string;
   image: string;
-  /** Opens the enquiry with this situation already chosen */
-  state?: PropertyState;
+  /** Query that opens the enquiry with answers already chosen, e.g. 'chce=dom&etap=gotowy' */
+  query: string;
   benefitsTitle: string;
   intro: string;
   benefits: [title: string, text: string][];
@@ -22,6 +20,7 @@ export interface Landing {
 export const LANDINGS: Record<string, Landing> = {
   'inteligentny-dom-warszawa': {
     slug: 'inteligentny-dom-warszawa',
+    query: 'chce=dom',
     badge: "Warszawa i okolice",
     title: "Inteligentny dom w Warszawie i okolicach",
     description: "Światło, rolety, ogrzewanie i bezpieczeństwo, które działają same i z telefonu. Do nowego domu i do gotowego mieszkania, także bez kucia ścian.",
@@ -46,11 +45,11 @@ export const LANDINGS: Record<string, Landing> = {
   },
   'wideodomofon-i-kamery-warszawa': {
     slug: 'wideodomofon-i-kamery-warszawa',
+    query: 'chce=kamery',
     badge: "Warszawa i okolice",
     title: "Wideodomofon i kamery w Warszawie i okolicach",
     description: "Widzisz, kto stoi przy furtce, i rozmawiasz z nim z telefonu. Kamery pokazują kolorowy obraz także w nocy, a nagrania zostają na dysku w domu.",
     image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
-    state: 'security',
     benefitsTitle: "Co dostajesz",
     intro: "Dobieramy kamery i wideodomofon do Twojego domu: ile ich potrzeba, gdzie je powiesić i jak poprowadzić kable.",
     benefits: [
@@ -71,6 +70,7 @@ export const LANDINGS: Record<string, Landing> = {
   },
   'ochrona-przed-zalaniem': {
     slug: 'ochrona-przed-zalaniem',
+    query: 'chce=dom',
     badge: "Woda i gaz",
     title: "Ochrona przed zalaniem: czujnik sam zakręca wodę",
     description: "Gdy czujnik wykryje wodę, woda od razu się zakręca, nawet gdy nikogo nie ma w domu. Ty dostajesz powiadomienie w telefonie.",
@@ -95,11 +95,11 @@ export const LANDINGS: Record<string, Landing> = {
   },
   'automatyka-bez-kucia': {
     slug: 'automatyka-bez-kucia',
+    query: 'chce=dom&etap=gotowy',
     badge: "Gotowe mieszkanie",
     title: "Inteligentne mieszkanie bez kucia ścian",
     description: "Masz gotowe wnętrze i nie chcesz remontu? Małe moduły chowamy za zwykłymi włącznikami, a ściany, płytki i gładzie zostają całe.",
     image: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80',
-    state: 'retro',
     benefitsTitle: "Co da się zrobić bez kucia",
     intro: "Większość rzeczy montujemy w miejscach, które już są: w puszkach za włącznikami, przy grzejnikach i w skrzynce z bezpiecznikami.",
     benefits: [

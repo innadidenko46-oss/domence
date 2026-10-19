@@ -1,5 +1,8 @@
 export type PropertyState = 'deweloperski' | 'retro' | 'security' | 'commercial';
 
+/** What the visitor wants: the first question of the enquiry */
+export type Interest = 'dom' | 'kamery' | 'oba';
+
 export type AreaRange = 'do_60' | '61_110' | '111_180' | 'ponad_180';
 
 export interface SmartModule {

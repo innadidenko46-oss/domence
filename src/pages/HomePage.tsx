@@ -5,6 +5,7 @@ import { ProcessSection } from '../components/ProcessSection.tsx';
 import { ProofSection } from '../components/ProofSection.tsx';
 import { TopSellingScenariosSection } from '../components/TopSellingScenariosSection.tsx';
 import { FAQ_ITEMS } from '../data/content.ts';
+import { INTEREST_OPTIONS } from '../data/interests.ts';
 import { OfflineDemo } from '../components/OfflineDemo.tsx';
 import { BrandArcs } from '../components/BrandArcs.tsx';
 import { Reveal } from '../components/Reveal.tsx';
@@ -59,18 +60,6 @@ export const HomePage: React.FC = () => {
         'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
       imageAlt: 'Jasny salon z dużymi oknami i roślinami',
       cta: 'Zobacz scenariusze',
-    },
-    {
-      id: 'jak-zaczac',
-      path: '/jak-zaczac',
-      title: 'Od czego zacząć w Twoim domu',
-      subtitle: 'Nowy dom • Gotowe mieszkanie • Wejście i kamery',
-      description:
-        'Trzy typowe sytuacje i to, od czego zależy cena.',
-      image:
-        'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
-      imageAlt: 'Elektryk w kasku montuje osprzęt w skrzynce',
-      cta: 'Zobacz, jak zacząć',
     },
   ];
 
@@ -163,28 +152,23 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          {/* Bento rhythm on desktop: 2 wide, then 3 narrow */}
+          {/* Two by two on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-            {chapters.map((ch, i) => {
-              const wide = i < 2;
-              return (
+            {chapters.map((ch) => (
                 <Link
                   key={ch.id}
                   to={ch.path}
-                  className={`focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-amber-400 ${
-                    wide ? 'lg:col-span-3' : 'lg:col-span-2'
-                  } ${i === chapters.length - 1 ? 'md:col-span-2 lg:col-span-3' : ''}`}
+                  className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 group rounded-[2px] border overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 active:scale-[0.99] bg-white border-gray-200 hover:border-amber-400 lg:col-span-3"
                 >
                   {/* Photography Header */}
                   <div>
-                    <div className={`relative overflow-hidden bg-gray-900 ${wide ? 'h-52 lg:h-64' : 'h-44 lg:h-48'}`}>
+                    <div className="relative overflow-hidden bg-gray-900 h-52 lg:h-64">
                       <img
                         src={ch.image}
                         alt={ch.imageAlt}
                         className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                         loading="lazy"
                       />
-                      
                     </div>
 
                     <div className="p-6">
@@ -208,8 +192,33 @@ export const HomePage: React.FC = () => {
                     </div>
                   </div>
                 </Link>
-              );
-            })}
+            ))}
+          </div>
+
+          {/* Three ways in: what the visitor wants opens the enquiry at step 2 */}
+          <div className="mt-14 border-t-2 border-petrol-700 pt-8 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-4">
+              <h3 className="font-display text-2xl font-bold text-gray-900">Od czego zaczynasz?</h3>
+              <p className="mt-2 text-base leading-relaxed text-gray-600">
+                Wybierz, co Cię interesuje, a{'\u00a0'}zapytanie otworzy się z{'\u00a0'}tą odpowiedzią.
+              </p>
+            </div>
+            <div className="lg:col-span-8 grid sm:grid-cols-3 gap-3">
+              {INTEREST_OPTIONS.map(({ value, title, sub, icon: Icon }) => (
+                <Link
+                  key={value}
+                  to={`/zapytanie?chce=${value}`}
+                  className="group flex flex-col justify-between gap-5 p-5 rounded-[2px] border border-gray-300 bg-white hover:border-petrol-700 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                >
+                  <span>
+                    <Icon className="w-6 h-6 text-petrol-700" aria-hidden="true" />
+                    <span className="block mt-3 font-display text-lg font-bold text-gray-900">{title}</span>
+                    <span className="block mt-1 text-sm leading-relaxed text-gray-600">{sub}</span>
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-petrol-700 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
           </div>
 
         </div>

@@ -1,29 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { CalculatorSection } from '../components/CalculatorSection.tsx';
 import { ClipboardList } from 'lucide-react';
-import { PropertyState } from '../types.ts';
+import { PropertyState, Interest } from '../types.ts';
 
 export const CalculatorPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const stateParam = searchParams.get('state') as PropertyState | null;
+  // ?chce=dom|kamery|oba opens the enquiry at step 2; ?etap=budowa|gotowy presets the stage.
+  // Old links with ?state=… still work: "security" meant cameras, the rest was the stage.
+  const legacy = searchParams.get('state');
+  const chce = searchParams.get('chce');
+  const etap = searchParams.get('etap');
+  const initialInterest: Interest | undefined =
+    chce === 'dom' || chce === 'kamery' || chce === 'oba' ? chce : legacy === 'security' ? 'kamery' : undefined;
+  const initialStage: PropertyState | undefined =
+    etap === 'budowa' || legacy === 'deweloperski' ? 'deweloperski' : etap === 'gotowy' || legacy === 'retro' ? 'retro' : undefined;
 
-  const [propertyState, setPropertyState] = useState<PropertyState>(
-    stateParam && ['deweloperski', 'retro', 'security', 'commercial'].includes(stateParam)
-      ? stateParam
-      : 'retro'
-  );
-
-  useEffect(() => {
-    if (stateParam && ['deweloperski', 'retro', 'security', 'commercial'].includes(stateParam)) {
-      setPropertyState(stateParam);
-    }
-  }, [stateParam]);
-
-  const handleStateChange = (newState: PropertyState) => {
-    setPropertyState(newState);
-    setSearchParams({ state: newState }, { replace: true });
+  const handleInterestChange = (i: Interest) => {
+    const next = new URLSearchParams(searchParams);
+    next.delete('state');
+    next.set('chce', i);
+    setSearchParams(next, { replace: true });
   };
 
   return (
@@ -39,9 +37,9 @@ export const CalculatorPage: React.FC = () => {
 
       {/* Enquiry: a few choices, then contact details */}
       <CalculatorSection
-        selectedPropertyState={propertyState}
-        presetFromLink={Boolean(stateParam)}
-        onStateChange={handleStateChange}
+        initialInterest={initialInterest}
+        initialStage={initialStage}
+        onInterestChange={handleInterestChange}
       />
     </div>
   );

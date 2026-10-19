@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { SMART_MODULES } from '../data/content.ts';
-import { PropertyState, AreaRange } from '../types.ts';
+import { PropertyState, AreaRange, Interest } from '../types.ts';
+import { INTEREST_OPTIONS } from '../data/interests.ts';
 import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
 import { INSTALL_TIMELINES } from '../config/site.ts';
 import { ContactChoice, ContactBy, contactByLine } from './ContactChoice.tsx';
@@ -10,7 +11,6 @@ import {
   Hammer,
   Home,
   Video,
-  Building2,
   ArrowLeft,
   ArrowRight,
   Check,
@@ -23,30 +23,30 @@ import {
 } from 'lucide-react';
 
 interface CalculatorSectionProps {
-  selectedPropertyState?: PropertyState;
-  onStateChange?: (state: PropertyState) => void;
-  /** Situation already picked on another page: start at step 2 */
-  presetFromLink?: boolean;
+  /** Chosen on another page (home, /jak-zaczac, a landing page): start at step 2 */
+  initialInterest?: Interest;
+  /** Stage already known from the link, e.g. the no-chiselling page */
+  initialStage?: PropertyState;
+  onInterestChange?: (interest: Interest) => void;
 }
 
-const PROPERTY_OPTIONS: { value: PropertyState; title: string; sub: string; icon: typeof Home }[] = [
+// Modules for entrance and cameras; the gate fits both
+const CAMERA_MODULES = ['cctv_starter', 'rack_network_pack', 'intercom_poe', 'loqed_smart_lock', 'gate_control'];
+const fitsInterest = (id: string, interest: Interest) =>
+  interest === 'oba' || (interest === 'kamery' ? CAMERA_MODULES.includes(id) : id !== 'cctv_starter' && id !== 'rack_network_pack' && id !== 'intercom_poe' && id !== 'loqed_smart_lock');
+
+const STAGE_OPTIONS: { value: PropertyState; title: string; sub: string; icon: typeof Home }[] = [
   {
     value: 'deweloperski',
-    title: 'Nowy dom / remont',
-    sub: 'Budowa albo remont — instalację zaplanujemy od zera.',
+    title: 'W\u00a0budowie albo remoncie',
+    sub: 'Kable poprowadzimy, zanim zamkniesz ściany.',
     icon: Hammer,
   },
   {
     value: 'retro',
-    title: 'Gotowe wnętrze bez kucia',
-    sub: 'Mieszkasz już w domu — wszystko bez kucia ścian i bez kurzu.',
+    title: 'Gotowy i\u00a0wykończony',
+    sub: 'Montujemy bez kucia ścian i\u00a0bez kurzu.',
     icon: Home,
-  },
-  {
-    value: 'security',
-    title: 'Bezpieczeństwo i furtka',
-    sub: 'Wideodomofon, kamery i kontrola wejścia na posesję.',
-    icon: Video,
   },
 ];
 
@@ -72,11 +72,12 @@ const MODULE_GROUPS: { label: string; categories: string[] }[] = [
 ];
 
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
-  selectedPropertyState = 'retro',
-  onStateChange,
-  presetFromLink = false,
+  initialInterest,
+  initialStage,
+  onInterestChange,
 }) => {
-  const [step, setStep] = useState<number>(presetFromLink ? 2 : 1);
+  const [step, setStep] = useState<number>(initialInterest ? 2 : 1);
+  const [interest, setInterest] = useState<Interest>(initialInterest ?? 'oba');
   const [dir, setDir] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
   const movedRef = useRef(false);
@@ -85,7 +86,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     setDir(next >= step ? 1 : -1);
     setStep(next);
   };
-  const [propertyState, setPropertyState] = useState<PropertyState>(selectedPropertyState);
+  const [propertyState, setPropertyState] = useState<PropertyState>(initialStage ?? 'retro');
   const [areaRange, setAreaRange] = useState<AreaRange>(() => {
     try {
       const raw = canRemember() ? localStorage.getItem(ENQUIRY_KEY) : null;
@@ -146,11 +147,6 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   const [sendError, setSendError] = useState(false);
   const [mailSubject, setMailSubject] = useState('');
 
-  useEffect(() => {
-    if (selectedPropertyState) {
-      setPropertyState(selectedPropertyState);
-    }
-  }, [selectedPropertyState]);
 
   useEffect(() => {
     // Answers are kept only if the visitor chose "Zapamiętuj" in the banner
@@ -158,27 +154,35 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     try {
       localStorage.setItem(
         ENQUIRY_KEY,
-        JSON.stringify({ propertyState, areaRange, selectedModuleIds })
+        JSON.stringify({ interest, propertyState, areaRange, selectedModuleIds })
       );
     } catch { /* blocked storage: skip persistence */ }
-  }, [propertyState, areaRange, selectedModuleIds]);
+  }, [interest, propertyState, areaRange, selectedModuleIds]);
 
   // Nothing is shown as chosen until the visitor picks it, so no default slips through unread
-  const [answered, setAnswered] = useState({ property: presetFromLink, area: false });
+  const [answered, setAnswered] = useState({ interest: Boolean(initialInterest), stage: Boolean(initialStage), area: false });
   const [timeline, setTimeline] = useState('');
 
-  const handleSelectStep1 = (val: PropertyState) => {
-    setAnswered((a) => ({ ...a, property: true }));
-    setPropertyState(val);
-    onStateChange?.(val);
+  const handleSelectInterest = (val: Interest) => {
+    setAnswered((a) => ({ ...a, interest: true }));
+    setInterest(val);
+    // Drop picks that no longer fit the new choice
+    setSelectedModuleIds((prev) => prev.filter((id) => fitsInterest(id, val)));
+    onInterestChange?.(val);
     goTo(2);
   };
 
-  const handleSelectStep2 = (val: AreaRange) => {
+  const handleSelectStage = (val: PropertyState) => {
+    setAnswered((a) => ({ ...a, stage: true }));
+    setPropertyState(val);
+  };
+
+  const handleSelectArea = (val: AreaRange) => {
     setAnswered((a) => ({ ...a, area: true }));
     setAreaRange(val);
-    goTo(3);
   };
+
+  const getInterestLabel = (i: Interest) => INTEREST_OPTIONS.find((o) => o.value === i)!.title.replace(/\u00a0/g, ' ');
 
   const toggleModule = (id: string) => {
     setSelectedModuleIds((prev) =>
@@ -199,18 +203,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
     }
   };
 
-  const getPropertyLabel = (state: PropertyState) => {
-    switch (state) {
-      case 'deweloperski':
-        return 'Nowy dom / remont';
-      case 'retro':
-        return 'Gotowe wnętrze bez kucia';
-      case 'security':
-        return 'Bezpieczeństwo i furtka';
-      case 'commercial':
-        return 'Biuro / lokal';
-    }
-  };
+  const getPropertyLabel = (state: PropertyState) =>
+    state === 'deweloperski' ? 'Dom w budowie albo remoncie' : 'Gotowy, wykończony dom';
 
   const handleSubmit = async (e: FormEvent) => {
     if (sending) return;
@@ -233,7 +227,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
       `Telefon: ${formData.phone || '—'}`,
       `E-mail: ${formData.email}`,
       '',
-      `Nieruchomość: ${getPropertyLabel(propertyState)}`,
+      `Interesuje: ${getInterestLabel(interest)}`,
+      `Etap: ${getPropertyLabel(propertyState)}`,
       `Metraż: ${getAreaLabel(areaRange)}`,
       `Planowany montaż: ${timeline}`,
       '',
@@ -258,6 +253,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
           contact_preference: contactByLine(contactBy),
           phone: formData.phone,
           email: formData.email,
+          interest: getInterestLabel(interest),
           property: getPropertyLabel(propertyState),
           area: getAreaLabel(areaRange),
           timeline,
@@ -330,21 +326,21 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 exit="exit"
               >
                 <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
-                  Co najlepiej opisuje Twoją nieruchomość?
+                  Co Cię interesuje?
                 </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Wybierz jedną odpowiedź, a propozycję dopasujemy do Twojej sytuacji.
+                  Wybierz jedną odpowiedź. Szczegóły zaznaczysz za chwilę.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {PROPERTY_OPTIONS.map((opt) => {
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {INTEREST_OPTIONS.map((opt) => {
                     const Icon = opt.icon;
-                    const active = answered.property && propertyState === opt.value;
+                    const active = answered.interest && interest === opt.value;
                     return (
                       <button
                         key={opt.value}
                         type="button"
-                        onClick={() => handleSelectStep1(opt.value)}
+                        onClick={() => handleSelectInterest(opt.value)}
                         aria-pressed={active}
                         className={`p-6 rounded-[2px] text-left transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
                           active
@@ -352,15 +348,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                             : 'bg-white border-gray-200 hover:border-gray-300'
                         }`}
                       >
-                        <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center mb-4">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div className="text-base font-bold text-gray-900">
-                          {opt.title}
-                        </div>
-                        <div className="text-xs text-gray-600 mt-1.5 leading-relaxed">
-                          {opt.sub}
-                        </div>
+                        <Icon className="w-6 h-6 text-petrol-700 mb-4" aria-hidden="true" />
+                        <div className="text-base font-bold text-gray-900">{opt.title}</div>
+                        <div className="text-xs text-gray-600 mt-1.5 leading-relaxed">{opt.sub}</div>
                       </button>
                     );
                   })}
@@ -378,31 +368,63 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 exit="exit"
               >
                 <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
-                  Jaki metraż?
+                  Twój dom
                 </h2>
                 <p className="text-xs sm:text-sm mb-8 leading-relaxed text-gray-600">
-                  Przybliżona powierzchnia pomoże nam przygotować propozycję.
+                  Od tego zależy, jak montujemy: z{'\u00a0'}nowymi kablami czy bez kucia ścian.
                 </p>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {AREA_OPTIONS.map((opt) => (
-                    <button
-                      key={opt.value}
-                      type="button"
-                      onClick={() => handleSelectStep2(opt.value)}
-                      aria-pressed={answered.area && areaRange === opt.value}
-                      className={`p-5 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
-                        answered.area && areaRange === opt.value
-                          ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
-                          : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
-                      }`}
-                    >
-                      {opt.short}
-                    </button>
-                  ))}
-                </div>
+                <fieldset>
+                  <legend className="text-sm font-semibold mb-3 text-gray-900">Na jakim etapie jest dom?</legend>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {STAGE_OPTIONS.map((opt) => {
+                      const Icon = opt.icon;
+                      const active = answered.stage && propertyState === opt.value;
+                      return (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          onClick={() => handleSelectStage(opt.value)}
+                          aria-pressed={active}
+                          className={`p-5 rounded-[2px] text-left transition-all border cursor-pointer flex items-start gap-3.5 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
+                            active
+                              ? 'bg-amber-500/15 border-amber-500 ring-1 ring-petrol-600'
+                              : 'bg-white border-gray-200 hover:border-gray-300'
+                          }`}
+                        >
+                          <Icon className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
+                          <span>
+                            <span className="block text-sm font-bold text-gray-900">{opt.title}</span>
+                            <span className="block text-xs text-gray-600 mt-1 leading-relaxed">{opt.sub}</span>
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </fieldset>
 
-                <div className="mt-8 flex items-center justify-between">
+                <fieldset className="mt-8">
+                  <legend className="text-sm font-semibold mb-3 text-gray-900">Jaki metraż, mniej więcej?</legend>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {AREA_OPTIONS.map((opt) => (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        onClick={() => handleSelectArea(opt.value)}
+                        aria-pressed={answered.area && areaRange === opt.value}
+                        className={`p-4 min-h-11 rounded-[2px] text-center font-bold text-sm transition-all border cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 ${
+                          answered.area && areaRange === opt.value
+                            ? 'bg-petrol-700 text-white border-amber-500 shadow-md'
+                            : 'bg-white border-gray-200 hover:border-gray-300 text-gray-900'
+                        }`}
+                      >
+                        {opt.short}
+                      </button>
+                    ))}
+                  </div>
+                </fieldset>
+
+                <div className="mt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
                   <button
                     type="button"
                     onClick={() => goTo(1)}
@@ -411,6 +433,20 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                     <ArrowLeft className="w-4 h-4" />
                     <span>Wstecz</span>
                   </button>
+                  <div className="flex items-center gap-4">
+                    {!(answered.stage && answered.area) && (
+                      <span className="text-xs text-gray-600" aria-live="polite">Zaznacz etap i{'\u00a0'}metraż</span>
+                    )}
+                    <button
+                      type="button"
+                      disabled={!(answered.stage && answered.area)}
+                      onClick={() => goTo(3)}
+                      className="btn-engineering-primary gap-1 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                    >
+                      <span>Dalej</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -425,7 +461,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 exit="exit"
               >
                 <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-gray-900 focus:outline-none">
-                  Co Cię interesuje? (wybierz dowolną liczbę)
+                  Co dokładnie ma robić dom? (wybierz dowolnie)
                 </h2>
                 <p className="text-xs sm:text-sm mb-5 leading-relaxed text-gray-600">
                   Zaznacz wszystko, co brzmi ciekawie. Nie musisz się znać — na końcu odezwiemy się i wszystko wyjaśnimy.
@@ -433,7 +469,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                 <div className="space-y-7">
                   {MODULE_GROUPS.map((group) => {
-                    const mods = SMART_MODULES.filter((m) => group.categories.includes(m.category));
+                    const mods = SMART_MODULES.filter((m) => group.categories.includes(m.category) && fitsInterest(m.id, interest));
                     if (mods.length === 0) return null;
                     return (
                       <fieldset key={group.label}>
@@ -577,7 +613,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
                   {/* Plain recap of the answers, with a way back to change them */}
                   <p className="mt-3 text-sm text-gray-600 max-w-lg mx-auto">
-                    Twoje odpowiedzi: {getPropertyLabel(propertyState).toLowerCase()}, {getAreaLabel(areaRange)}, {timeline.toLowerCase()}
+                    Twoje odpowiedzi: {getInterestLabel(interest).toLowerCase()}, {getPropertyLabel(propertyState).toLowerCase()}, {getAreaLabel(areaRange)}, {timeline.toLowerCase()}
                     {selectedModuleIds.length > 0 ? `, zaznaczone: ${selectedModuleIds.length}` : ''}.{' '}
                     <button
                       type="button"

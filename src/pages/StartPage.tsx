@@ -1,58 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, Hammer, Home, Video, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Compass, CheckCircle2 } from 'lucide-react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { Reveal } from '../components/Reveal.tsx';
-import { PropertyState } from '../types.ts';
+import { Interest } from '../types.ts';
+import { INTEREST_OPTIONS } from '../data/interests.ts';
 
-// Three starting situations instead of fixed packages: no quantities, dates or prices.
-// Each one opens the enquiry with the situation already chosen.
-const SITUATIONS: {
-  state: PropertyState;
-  icon: typeof Home;
-  title: string;
-  lead: string;
-  usually: string[];
-  tip: string;
-}[] = [
-  {
-    state: 'deweloperski',
-    icon: Hammer,
-    title: 'Budujesz dom',
-    lead: 'Najlepszy moment, bo wszystko planujemy razem z elektryką.',
-    usually: [
-      'Moduły w rozdzielnicy, połączone kablem',
-      'Osobna temperatura w każdym pokoju',
-      'Kamery, wideodomofon i kable do nich w jednym planie',
-    ],
-    tip: 'Odezwij się, zanim elektryk zamknie ściany.',
+// What the visitor wants, the same three answers as the first step of the enquiry.
+// Each one opens the enquiry with that answer already chosen. No quantities, dates or prices.
+const DETAILS: Record<Interest, { usually: string[]; tip: string }> = {
+  dom: {
+    usually: ["Światło i rolety z włączników i telefonu", "Osobna temperatura w każdym pokoju", "Czujniki zalania, które same zakręcają wodę"],
+    tip: "W budowie prowadzimy kable, w gotowym domu montujemy bez kucia.",
   },
-  {
-    state: 'retro',
-    icon: Home,
-    title: 'Masz gotowe mieszkanie',
-    lead: 'Ściany, płytki i gładzie zostają całe.',
-    usually: [
-      'Małe moduły chowamy za zwykłymi włącznikami',
-      'Światło, rolety i grzejniki z telefonu',
-      'Czujniki zalania, które same zakręcają wodę',
-    ],
-    tip: 'Możesz zacząć od kilku pokoi i dokładać kolejne.',
+  kamery: {
+    usually: ["Wideodomofon: rozmowa z furtki w telefonie", "Kamery z kolorowym obrazem w nocy", "Nagrania na dysku w domu, bez abonamentu"],
+    tip: "Później dołożysz światło czy rolety, bez wymiany tego, co już masz.",
   },
-  {
-    state: 'security',
-    icon: Video,
-    title: 'Zaczynasz od wejścia i kamer',
-    lead: 'Najpierw bezpieczeństwo, automatyka może przyjść później.',
-    usually: [
-      'Wideodomofon: rozmowa z furtki w telefonie',
-      'Kamery z kolorowym obrazem w nocy',
-      'Nagrania na dysku w domu, bez abonamentu',
-    ],
-    tip: 'Później dołożysz światło czy rolety, bez wymiany tego, co już masz.',
+  oba: {
+    usually: ["Dzwonek po zmroku zapala światło przed furtką", "Na wyjazd światła zapalają się wieczorem, a obraz z kamer masz w telefonie", "Jedna szafka na sprzęt dla kamer i automatyki"],
+    tip: "Planujemy wszystko razem, więc później nic nie trzeba przerabiać.",
   },
-];
+};
 
 const PRICE_FACTORS = [
   ['Wielkość domu', 'Liczba pomieszczeń i pięter, w których coś sterujemy.'],
@@ -67,34 +37,34 @@ export const StartPage: React.FC = () => {
       <PageHeader
         badge="Jak zacząć"
         title="Od czego zacząć w Twoim domu"
-        description="Trzy typowe sytuacje i to, od czego zależy cena. Wybierz swoją, a zapytanie otworzy się z tą odpowiedzią."
+        description="Mądry dom, kamery z wideodomofonem albo jedno i drugie. Wybierz, co Cię interesuje, a zapytanie otworzy się z tą odpowiedzią."
         icon={<Compass className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
+        image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
       />
 
-      {/* Three situations as ruled rows: situation, what we usually do, the next step */}
+      {/* Three interests as ruled rows: what it is, what we usually do, the next step */}
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 max-w-3xl">
-            Która sytuacja jest Twoja?
+            Co Cię interesuje?
           </h2>
 
           <ol className="mt-10 border-t border-gray-300">
-            {SITUATIONS.map(({ state, icon: Icon, title, lead, usually, tip }, i) => (
-              <li key={state} className="border-b border-gray-300">
+            {INTEREST_OPTIONS.map(({ value, icon: Icon, title, sub }, i) => (
+              <li key={value} className="border-b border-gray-300">
                 <Reveal delay={i * 0.06} className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 lg:py-10">
                   <div className="md:col-span-4">
                     <div className="flex items-center gap-3">
                       <Icon className="w-6 h-6 text-amber-600 shrink-0" aria-hidden="true" />
                       <h3 className="font-display text-2xl font-bold text-gray-900">{title}</h3>
                     </div>
-                    <p className="mt-3 text-base leading-relaxed text-gray-600 max-w-[34ch]">{lead}</p>
+                    <p className="mt-3 text-base leading-relaxed text-gray-600 max-w-[34ch]">{sub}</p>
                   </div>
 
                   <div className="md:col-span-5">
                     <div className="text-sm font-semibold text-gray-900">Zwykle robimy:</div>
                     <ul className="mt-3 space-y-2.5">
-                      {usually.map((u) => (
+                      {DETAILS[value].usually.map((u) => (
                         <li key={u} className="flex items-start gap-2.5 text-base leading-relaxed text-gray-700">
                           <CheckCircle2 className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
                           <span>{u}</span>
@@ -104,12 +74,12 @@ export const StartPage: React.FC = () => {
                   </div>
 
                   <div className="md:col-span-3 flex flex-col justify-between gap-5">
-                    <p className="text-sm leading-relaxed text-gray-600 border-l-2 border-amber-500 pl-3">{tip}</p>
+                    <p className="text-sm leading-relaxed text-gray-600 border-l-2 border-amber-500 pl-3">{DETAILS[value].tip}</p>
                     <Link
-                      to={`/zapytanie?state=${state}`}
+                      to={`/zapytanie?chce=${value}`}
                       className="btn-engineering-primary self-start focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                     >
-                      <span>To moja sytuacja</span>
+                      <span>To mnie interesuje</span>
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </Link>
                   </div>
@@ -152,7 +122,7 @@ export const StartPage: React.FC = () => {
       <section className="pt-16 pb-20 lg:pt-20 lg:pb-24 bg-petrol-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold">Nie wiesz, która sytuacja pasuje?</h2>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold">Nie wiesz, co wybrać?</h2>
             <p className="mt-2 text-base text-gray-300 max-w-xl">Opisz krótko swój dom, a inżynier podpowie, od czego zacząć.</p>
           </div>
           <Link

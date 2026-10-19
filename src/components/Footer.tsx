@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
 
             <div>
               <h2 className="font-display text-sm font-semibold text-white mb-4">
-                Wdrożenia i narzędzia
+                Zanim zaczniemy
               </h2>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>

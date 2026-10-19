@@ -9,7 +9,7 @@ const ROUTES = {
   teletechnika: ['Kamery i wideodomofon', 'Kamery z kolorowym obrazem w nocy i wideodomofon w telefonie. Nagrania zostają w domu, bez abonamentu.'],
   multimedia: ['Kino w salonie i gość przy furtce', 'Scena „Kino” jednym przyciskiem: rolety, światło i ekran. Gościa przy furtce widzisz na panelu w domu i w telefonie.'],
   scenariusze: ['Scenariusze: co dom robi za Ciebie', 'Przykłady automatyki na co dzień: wyjście z domu, ochrona przed zalaniem, wieczór filmowy, spokojny sen.'],
-  'jak-zaczac': ['Od czego zacząć w Twoim domu', 'Nowy dom, gotowe mieszkanie albo najpierw wejście i kamery: co zwykle robimy i od czego zależy cena.'],
+  'jak-zaczac': ['Od czego zacząć w Twoim domu', 'Mądry dom, kamery z wideodomofonem albo jedno i drugie: co zwykle robimy i od czego zależy cena.'],
   faq: ['Pytania i odpowiedzi', 'Czy dom działa bez internetu, czy trzeba kuć ściany, ile trwa montaż. Odpowiedzi prostym językiem.'],
   zapytanie: ['Zapytanie o Twój dom', 'Zaznacz, co Cię interesuje, i zostaw kontakt. Odezwiemy się z propozycją, telefonicznie albo tylko e-mailem, zwykle w 24 godziny robocze.'],
   'inteligentny-dom-warszawa': ['Inteligentny dom w Warszawie i okolicach', 'Światło, rolety, ogrzewanie i ochrona przed zalaniem, które działają same i z telefonu. Także w gotowym mieszkaniu, bez kucia ścian.'],

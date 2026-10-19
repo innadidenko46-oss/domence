@@ -9,7 +9,7 @@ import { LANDINGS, PAGE_LABELS } from '../data/landings.ts';
 // One template for the search landing pages in src/data/landings.ts
 export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
   const page = LANDINGS[slug];
-  const enquiry = page.state ? `/zapytanie?state=${page.state}` : '/zapytanie';
+  const enquiry = `/zapytanie?${page.query}`;
 
   return (
     <div className="bg-gray-50 text-gray-900">

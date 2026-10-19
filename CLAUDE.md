@@ -12,7 +12,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 - **Keep the qualifying question.** Both forms ask when the installation is planned (`INSTALL_TIMELINES` in `src/config/site.ts`). Don't remove it to make the form shorter.
 - **E-mail only is a choice.** Both forms let the visitor pick "Zadzwońcie" or "Tylko e-mail" (`src/components/ContactChoice.tsx`). With e-mail only, the phone is optional, the e-mail required, and the lead says "proszę nie dzwonić". Copy promising contact says "odezwiemy się", not only "oddzwonimy".
 - **No exact prices on the site for now.** Scope and price come after a call.
-- **No fixed packages.** `/jak-zaczac` shows three starting situations (new house, finished flat, entrance and cameras) and what the price depends on, with no quantities, dates or prices. Each situation opens `/zapytanie?state=…` at step 2. `/pakiety` redirects there.
+- **No fixed packages.** The first question everywhere is what the visitor wants: "Mądry dom", "Kamery i wideodomofon" or "Jedno i drugie" (`src/data/interests.ts`). The house stage (in construction or finished) is asked on step 2 of the enquiry, together with the size. `/jak-zaczac`, the home chooser and landing pages open `/zapytanie?chce=dom|kamery|oba` (optionally `&etap=budowa|gotowy`) at step 2. `/pakiety` redirects to `/jak-zaczac`; old `?state=` links still work.
 - **Not a calculator.** The `/zapytanie` page is a short enquiry before the contact details. Never call it a "kalkulator" or an "ankieta".
 - **No kits to pick.** The enquiry button says "Opisz swój dom (2 min)", never "Dobierz zestaw": the engineer proposes the scope after the call.
 
