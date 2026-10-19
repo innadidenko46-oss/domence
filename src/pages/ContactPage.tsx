@@ -160,10 +160,10 @@ export const ContactPage: React.FC = () => {
 
               {/* Authority and Trust Guarantee Box */}
               <div className="p-6 rounded-[2px] border bg-white border-gray-200">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Jak działamy</span>
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />

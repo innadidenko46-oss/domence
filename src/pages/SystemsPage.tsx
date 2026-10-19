@@ -55,7 +55,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800"
+                className="mt-6 inline-flex items-center gap-1.5 min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -86,7 +86,7 @@ export const SystemsPage: React.FC = () => {
               </div>
               <Link
                 to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800"
+                className="mt-6 inline-flex items-center gap-1.5 min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Opisz swój dom (2 min)</span>
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -285,7 +285,7 @@ export const ScenariosSection: React.FC = () => {
                   </span>
                   <Link
                     to="/zapytanie"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                    className="inline-flex items-center gap-2 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
                   >
                     <span>Opisz swój dom (2 min)</span>
                     <ChevronRight className="w-4 h-4" />

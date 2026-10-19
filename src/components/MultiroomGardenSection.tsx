@@ -72,7 +72,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <span className="text-xs text-gray-600">Gość przy furtce</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
+                className="inline-flex items-center min-h-11 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Opisz swój dom (2 min)
               </Link>
@@ -128,7 +128,7 @@ export const MultiroomGardenSection: React.FC = () => {
               <span className="text-xs text-gray-600">Sceny do filmu</span>
               <Link
                 to="/zapytanie"
-                className="text-xs font-bold transition-colors text-amber-700 hover:text-amber-800"
+                className="inline-flex items-center min-h-11 text-xs font-bold transition-colors text-amber-700 hover:text-amber-800 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 Opisz swój dom (2 min)
               </Link>
