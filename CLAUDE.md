@@ -80,7 +80,7 @@ A marketing site in Polish for an installer of smart home systems, IP cameras an
 - **Colours from the logo:**
   - petrol for buttons, icons and dark bands: `petrol-700` fills, `petrol-900` bands;
   - amber (the logo's orange) as the warm accent: `amber-700` for small text on light backgrounds, `amber-600` for large emphasis, `amber-400` buttons (`.btn-accent`) only on dark bands;
-  - logo blue only inside the logo;
+  - the logo itself is two colours (petrol and amber), no blue and no gradients; its rules and files are in `docs/brand.md`, its geometry in `src/brand/brand.mjs` (regenerate files with `node scripts/build-brand.mjs`);
   - gray-50/white backgrounds, 2px radius.
 - **Type:** Outfit for display, Plus Jakarta Sans for body. No monospace font anywhere (labels and eyebrows use the body font).
 - **Classes to reuse:**

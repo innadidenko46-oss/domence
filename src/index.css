@@ -24,11 +24,10 @@
   --color-offwhite-200: #E5E7EB;
 
   /* Engineering Accent Tones: Copper (Wiring & Luxury) + Steel Blue + Slate */
-  /* Brand palette taken from the DOMENCE logo.
-     Petrol (wordmark) carries buttons, icons and dark bands.
-     Amber (logo arcs) is the warm accent: small text uses amber-700+,
-     brighter amber only on dark backgrounds or as decoration.
-     Logo blue stays inside the logo only. */
+  /* Brand palette taken from the DOMENCE logo (src/brand/brand.mjs).
+     Petrol (letters) carries buttons, icons and dark bands.
+     Amber (the status light) is the warm accent: small text uses amber-700+,
+     brighter amber only on dark backgrounds or as decoration. */
   --color-petrol-50: #EEF6F8;
   --color-petrol-100: #D7E9EE;
   --color-petrol-600: #1B6A7E;
@@ -44,8 +43,6 @@
   --color-amber-600: #CC7408;
   --color-amber-700: #9C5605;
   --color-amber-800: #7A4304;
-
-  --color-logo-blue: #2A9DCB;
 
   --color-forest-600: #234E3E;
 
