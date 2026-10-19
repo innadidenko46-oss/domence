@@ -17,7 +17,7 @@ export interface PackageOffer {
   id: string;
   title: string;
   categoryBadge: string;
-  badgeType: 'bestseller' | 'standard' | 'premium' | 'enterprise';
+  badgeType: 'recommended' | 'standard' | 'premium' | 'enterprise';
   timeframe: string;
   description: string;
   humanSummary: string;

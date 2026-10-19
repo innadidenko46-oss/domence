@@ -7,7 +7,7 @@ const RULES = [
   [/gwarancj/i, 'no warranty period on the site for now'],
   [/ładowar|ładuje samoch|ładowanie aut|wallbox/i, 'EV chargers are not offered'],
   [/\bankiet|kalkulator/i, 'the enquiry is not a survey or a calculator'],
-  [/sprawdzon\w* (zestaw|rzecz|rozwiąza)|realizacj|gotowych dom/i, 'new company: no track-record claims'],
+  [/sprawdzon\w* (zestaw|rzecz|rozwiąza)|realizacj|gotowych dom|bestseller|najczęściej wybier/i, 'new company: no track-record claims'],
   [/HEPA|PN-HD|uprawnie\w* SEP/i, 'unverified standards or certificates'],
   [/przepięci/i, 'surge protection is not a service'],
   [/SSWiN|central\w* alarmow|system\w* alarmow|czujk\w* ruchu PIR/i, 'alarm systems are not offered'],

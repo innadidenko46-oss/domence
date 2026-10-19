@@ -30,7 +30,7 @@ export const SystemsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
             <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
@@ -50,37 +50,6 @@ export const SystemsPage: React.FC = () => {
                   <li className="flex items-center gap-2 text-gray-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
                     <span>Moduły same się wyłączają przy przegrzaniu i przeciążeniu</span>
-                  </li>
-                </ul>
-              </div>
-              <Link
-                to="/zapytanie"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-700 hover:text-amber-800"
-              >
-                <span>Dobierz zestaw (2 min)</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            <div className="p-6 rounded-[2px] border flex flex-col justify-between bg-white border-gray-200">
-              <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 mb-2">
-                  System przewodowy
-                </div>
-                <h3 className="text-lg font-bold mb-3 text-gray-900">
-                  Automatyka po kablu (system przewodowy)
-                </h3>
-                <p className="text-sm leading-relaxed mb-4 text-gray-600">
-                  Sterowanie prowadzi kabel w ścianie, więc działa stabilnie: bez baterii do wymiany i bez zależności od internetu w domu.
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Stabilne połączenie po kablu, bez baterii</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Światło, rolety i furtka działają też bez internetu</span>
                   </li>
                 </ul>
               </div>

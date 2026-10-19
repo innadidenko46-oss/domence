@@ -776,8 +776,8 @@ export const PACKAGES: PackageOffer[] = [
   {
     id: 'retrofit_smart',
     title: 'Smart retrofit Shelly (wykończone wnętrze bez kucia)',
-    categoryBadge: 'Bestseller: Bez ingerencji w tynki',
-    badgeType: 'bestseller',
+    categoryBadge: 'Bez ingerencji w tynki',
+    badgeType: 'recommended',
     timeframe: '1–2 dni robocze',
     description: 'Kompletna automatyka Shelly Plus bez kurzu i bez niszczenia gładzi. Zabezpieczenie przed zalaniem, oświetlenie, rolety i sceny jogi.',
     humanSummary: 'Z gotowego mieszkania robimy dom sterowany telefonem w 1–2 dni. Ściany i płytki zostają całe.',

@@ -47,14 +47,14 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
         {/* 3 Packages Cards - Strictly max 4px radius */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {PACKAGES.map((pkg) => {
-            const isBestseller = pkg.badgeType === 'bestseller';
+            const isRecommended = pkg.badgeType === 'recommended';
             return (
               <motion.div
                 key={pkg.id}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.15 }}
                 className={`relative rounded-[2px] overflow-hidden flex flex-col justify-between transition-all ${
-                  isBestseller
+                  isRecommended
                     ? 'bg-white border-2 border-amber-500 shadow-md': 'bg-white border border-gray-200 hover:border-gray-300 shadow-sm'}`}
               >
                 {/* Photo top */}
@@ -70,10 +70,10 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   </div>
                 )}
                 <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
-                {/* Top Bestseller Badge */}
-                {isBestseller && (
+                {/* Recommended package badge */}
+                {isRecommended && (
                   <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-[2px] bg-petrol-700 text-white font-mono font-semibold text-sm shadow-sm">
-                    Bestseller: Bez Kucia Ścian
+                    Polecamy do gotowych mieszkań
                   </div>
                 )}
 
@@ -82,7 +82,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                   <div className="flex justify-between items-center mb-4 mt-1">
                     <span
                       className={`text-xs font-mono font-semibold uppercase px-2.5 py-0.5 rounded-[2px] border ${
-                        isBestseller
+                        isRecommended
                           ? 'bg-amber-500/15 text-amber-800 border-amber-500/30'
                           : 'bg-gray-100 text-gray-600 border-gray-200'}`}
                     >
@@ -127,7 +127,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ onSelectPackag
                 <button
                   onClick={() => onSelectPackage(pkg.recommendedFor)}
                   className={`mt-8 w-full py-3.5 rounded-[2px] font-semibold text-sm text-center transition-colors flex items-center justify-center gap-2 cursor-pointer border ${
-                    isBestseller
+                    isRecommended
                       ? 'bg-petrol-700 hover:bg-petrol-800 text-white border-amber-400/40'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-300'}`}
                 >

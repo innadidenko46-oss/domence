@@ -20,6 +20,21 @@ const FaqPage = lazy(() => import('./pages/FaqPage.tsx').then((m) => ({ default:
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage.tsx').then((m) => ({ default: m.CalculatorPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage.tsx').then((m) => ({ default: m.ContactPage })));
 
+// Shown for a split second while a page's code loads: the shape of a page header
+function PageSkeleton() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 min-h-[60vh]" aria-busy="true" aria-label="Ładowanie strony">
+      <div className="animate-pulse motion-reduce:animate-none space-y-5 max-w-3xl">
+        <div className="h-3 w-40 rounded-[2px] bg-gray-200" />
+        <div className="h-10 w-4/5 rounded-[2px] bg-gray-200" />
+        <div className="h-10 w-3/5 rounded-[2px] bg-gray-200" />
+        <div className="h-4 w-full rounded-[2px] bg-gray-100" />
+        <div className="h-4 w-2/3 rounded-[2px] bg-gray-100" />
+      </div>
+    </div>
+  );
+}
+
 function AppContent() {
   return (
     <div className="min-h-screen font-sans selection:bg-amber-500 selection:text-white flex flex-col transition-colors duration-300 bg-gray-50 text-gray-900">
@@ -41,7 +56,7 @@ function AppContent() {
       {/* Dynamic Route Content */}
       <ErrorBoundary>
       <main id="main" tabIndex={-1} className="flex-1 pt-[68px] focus:outline-none">
-        <Suspense fallback={<div className="min-h-[60vh]" aria-busy="true" />}>
+        <Suspense fallback={<PageSkeleton />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/systemy" element={<SystemsPage />} />
