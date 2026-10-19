@@ -19,7 +19,7 @@ export const PackagesPage: React.FC = () => {
         title="Gotowe zestawy do domu — ze sprzętem i montażem"
         description="Trzy zakresy: domofon z kamerą i monitoring, gotowe mieszkanie bez kucia oraz pełna rozdzielnica w nowym domu. Każdy z ceną na piśmie."
         icon={<Package className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
       />
 
       {/* Main Packages Section Component */}

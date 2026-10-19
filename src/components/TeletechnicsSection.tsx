@@ -95,7 +95,7 @@ export const TeletechnicsSection: React.FC = () => {
                 </button>
 
                 {/* Practical insight box */}
-                <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
+                <div className="mt-5 pl-4 border-l-4 border-l-amber-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
                   <div className="w-2 h-2 rounded-full bg-petrol-700 mt-1.5 shrink-0" />
                   <div>
                     <span className="font-bold block mb-1 text-amber-700 font-mono text-xs uppercase">

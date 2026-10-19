@@ -261,7 +261,7 @@ export const ScenariosSection: React.FC = () => {
                   )}
 
                   {/* Practical insight Box */}
-                  <div className="mt-5 p-4 pl-5 rounded-[2px] border border-l-4 border-l-amber-500 text-sm leading-relaxed bg-amber-500/10 border-amber-500/30 text-gray-800">
+                  <div className="mt-5 pl-4 border-l-4 border-l-amber-500 text-sm leading-relaxed  text-gray-800">
                     <span className="font-bold block mb-1 text-amber-800">
                       Tak to działa u Ciebie:
                     </span>

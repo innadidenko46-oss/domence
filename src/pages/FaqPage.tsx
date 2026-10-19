@@ -13,7 +13,7 @@ export const FaqPage: React.FC = () => {
         title="Pytania i odpowiedzi — prosto i konkretnie"
         description="Jak dom działa bez internetu, czy trzeba kuć ściany i czy nagrania z kamer zostają w domu. Zwykłymi słowami."
         icon={<BookOpen className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85"
       />
 
       {/* Main Knowledge Base & FAQ Section Component */}

@@ -23,14 +23,15 @@ const withMeta = (title, desc, url) =>
     .replace(/(<meta name="description" content=")[^"]*(")/, `$1${esc(desc)}$2`)
     .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${esc(title)} | DOMENCE$2`)
     .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${esc(desc)}$2`)
-    .replace('</head>', `  <link rel="canonical" href="${url}" />\n  </head>`);
+    .replace('</head>', `  <link rel="canonical" href="${url}" />\n  </head>`)
+    .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${url}$2`);
 
 writeFileSync('dist/index.html', html.replace('</head>', `  <link rel="canonical" href="${SITE}" />\n  </head>`));
 for (const [route, [title, desc]] of Object.entries(ROUTES)) {
   mkdirSync(`dist/${route}`, { recursive: true });
   writeFileSync(`dist/${route}/index.html`, withMeta(title, desc, `${SITE}${route}/`));
 }
-writeFileSync('dist/404.html', html);
+writeFileSync('dist/404.html', html.replace('</head>', '  <meta name="robots" content="noindex" />\n  </head>'));
 
 const urls = ['', ...Object.keys(ROUTES).map((r) => `${r}/`)];
 writeFileSync('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}\n</urlset>\n`);

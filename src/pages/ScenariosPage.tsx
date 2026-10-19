@@ -13,7 +13,7 @@ export const ScenariosPage: React.FC = () => {
         title="Dom, który robi część rzeczy za Ciebie"
         description="Światło, rolety i ogrzewanie działają same. Sterujesz telefonem, przyciskiem albo głosem. Gdy pęknie wężyk, zawór sam zakręca wodę w kilka sekund."
         icon={<SlidersHorizontal className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
       />
 
       {/* Visual Atmosphere Showcase for Scenarios */}
@@ -109,7 +109,7 @@ export const ScenariosPage: React.FC = () => {
 
           <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm mb-6 h-48">
             <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
               alt="Sterownik automatyki w rozdzielnicy — dom działa bez internetu"
               loading="lazy"
               className="w-full h-full object-cover object-center"

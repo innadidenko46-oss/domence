@@ -82,7 +82,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 hero-stagger">
             {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.015em] leading-[1.05] text-gray-950">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold tracking-[-0.015em] leading-[1.05] text-gray-950">
               Nowoczesny dom, którym sterujesz telefonem.{' '}
               <span className="text-amber-600">
                 Działa też bez internetu.
@@ -344,7 +344,7 @@ export const HomePage: React.FC = () => {
           <div className="lg:col-span-4">
             <div className="eyebrow mb-3">Najczęstsze pytania</div>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-              Zanim zadzwonisz
+              Zanim napiszesz
             </h2>
             <Link
               to="/faq"
@@ -398,7 +398,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/zapytanie"
-                className="btn-accent shadow-lg shadow-amber-500/20 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                className="btn-accent active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
               >
                 <span>Dobierz zestaw (2 min)</span>
               </Link>
@@ -420,7 +420,6 @@ export const HomePage: React.FC = () => {
               </Link>
             </div>
             <p className="text-xs text-gray-400 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Bez spamu.</span>
             </p>
           </div>

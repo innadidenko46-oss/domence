@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageSquare, Menu, X, ArrowRight, ClipboardList } from 'lucide-react';
@@ -19,6 +19,33 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // While the drawer is open: page doesn't scroll, focus stays inside, and goes back to the toggle on close
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const first = drawerRef.current?.querySelector<HTMLElement>('a, button');
+    first?.focus();
+    const trap = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !drawerRef.current) return;
+      const items = [...drawerRef.current.querySelectorAll<HTMLElement>('a, button')];
+      if (!items.length) return;
+      const firstEl = items[0], lastEl = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); firstEl.focus(); }
+    };
+    document.addEventListener('keydown', trap);
+    const toggle = toggleRef.current;
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener('keydown', trap);
+      toggle?.focus();
+    };
+  }, [mobileMenuOpen]);
 
   // ESC closes mobile drawer
   useEffect(() => {
@@ -108,6 +135,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Right Controls: Menu Button */}
           <div className="flex xl:hidden items-center gap-1.5">
             <button
+              ref={toggleRef}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 w-11 h-11 flex items-center justify-center rounded-[2px] border bg-gray-100 border-gray-300 text-gray-900"
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
@@ -124,14 +152,29 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+            className="fixed inset-0 top-[68px] z-40 bg-petrol-950/40 xl:hidden"
+          />
+        )}
+        {mobileMenuOpen && (
+          <motion.div
+            key="drawer"
+            ref={drawerRef}
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10, transition: { duration: 0.15, ease: [0.55, 0.085, 0.68, 0.53] } }}
             transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
             id="mobile-menu"
             role="dialog"
+            aria-modal="true"
             aria-label="Menu mobilne"
-            className="fixed inset-x-0 top-[68px] z-40 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto bg-gray-50 border-gray-200 text-gray-900"
+            className="fixed inset-x-0 top-[68px] z-50 border-b p-5 xl:hidden shadow-lg max-h-[calc(100vh-68px)] overflow-y-auto bg-gray-50 border-gray-200 text-gray-900"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (

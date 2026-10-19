@@ -13,7 +13,7 @@ export const MultiroomGardenPage: React.FC = () => {
         title="Kino w salonie — jeden przycisk"
         description="Rolety same się zamykają, światło przygasa, a gościa przy furtce widzisz na panelu w domu i w telefonie."
         icon={<Film className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
       />
 
       {/* Two everyday moments: film night and a visitor at the gate */}

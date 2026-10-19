@@ -540,7 +540,7 @@ export const WORKFLOW_STEPS = [
 export const FAQ_ITEMS: FaqItem[] = [
   {
     category: 'dzialanie',
-    question: 'Czy system Shelly i monitoring działają, gdy w domu zabraknie internetu?',
+    question: 'Czy dom działa, gdy zabraknie internetu?',
     simpleAnswer:
       'Tak. Wszystkie funkcje domowe (włączniki, moduły Shelly, zawory wody, rolety, ogrzewanie, podgląd z kamer Hikvision) działają bezpośrednio w sieci domowej, bez połączenia z internetem.',
     technicalDetails:
@@ -548,7 +548,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     category: 'bezpieczenstwo',
-    question: 'Czy kamery Hikvision i nagrania z wideodomofonu są zabezpieczone przed hakerami?',
+    question: 'Czy nagrania z kamer i domofonu są bezpieczne?',
     simpleAnswer:
       'Tak. Nagrania nie trafiają na serwery chmurowe. Obraz z kamer i wideodomofonu zapisuje się na dysku w rejestratorze w szafce na sprzęt.',
     technicalDetails:
@@ -1048,7 +1048,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     id: 'top-sc-hazard-defense',
     icon: 'ShieldAlert',
     badge: 'Reakcja na awarie',
-    title: 'Jak lokalizujemy awarie',
+    title: 'Ochrona przed zalaniem i gazem',
     subtitle: 'Czujniki gazu i zalania, zawór na wodzie',
     trigger: 'Wykrycie ulatniającego się gazu lub wilgoci pod pralką/zmywarką',
     devicesUsed: ['Czujnik Shelly Gas', 'Czujniki zalania Shelly Flood S Gen4', 'Siłownik zaworu kulowego Fail-Safe 230V', 'Moduł Shelly Pro 1PM'],
@@ -1070,7 +1070,7 @@ export const TOP_SELLING_SCENARIOS: TopSellingScenario[] = [
     id: 'top-sc-solar-3em',
     icon: 'Zap',
     badge: 'Inteligentne zarządzanie energią',
-    title: 'Kontrola energii i paneli PV',
+    title: 'Prąd ze słońca zostaje w domu',
     subtitle: 'Licznik prądu i panele fotowoltaiczne',
     trigger: 'Ciągły pomiar prądu, napięcia oraz nadwyżki produkcji z falownika PV',
     devicesUsed: ['Licznik prądu w rozdzielnicy', 'Przekaźniki w rozdzielnicy', 'Sterowanie pompą ciepła i bojlerem'],

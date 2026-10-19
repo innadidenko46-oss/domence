@@ -20,6 +20,7 @@ export const ContactPage: React.FC = () => {
     email: '',
     location: '',
     timeline: '',
+    agreement: false,
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -74,7 +75,7 @@ export const ContactPage: React.FC = () => {
         title="Porozmawiaj z inżynierem o swoim domu"
         description="Budujesz dom albo remontujesz mieszkanie? Napisz, czego potrzebujesz — odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
         icon={<Phone className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
       />
 
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
@@ -90,15 +91,6 @@ export const ContactPage: React.FC = () => {
                 <p className="text-sm leading-relaxed max-w-prose text-gray-600">
                   Działamy w Warszawie i okolicach. Przyjeżdżamy na miejsce, sprawdzamy dom i dopiero wtedy proponujemy zakres.
                 </p>
-              </div>
-
-              <div className="rounded-[2px] overflow-hidden border border-gray-200 shadow-sm h-48">
-                <img
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
-                  alt="Biuro projektowe z planami instalacji i dokumentacją"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-center"
-                />
               </div>
 
               {/* Direct Info Cards with 2px radius */}
@@ -246,7 +238,7 @@ export const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-name" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Imię i Nazwisko *
+                          Imię i nazwisko *
                         </label>
                         <input
                           id="contact-name"
@@ -259,13 +251,13 @@ export const ContactPage: React.FC = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
                           placeholder="np. Jan Kowalski"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
 
                       <div>
                         <label htmlFor="contact-phone" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Numer Telefonu *
+                          Numer telefonu *
                         </label>
                         <input
                           id="contact-phone"
@@ -279,7 +271,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
                           placeholder="np. 500 600 700"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
                     </div>
@@ -287,19 +279,18 @@ export const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-email" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Adres E-mail *
+                          Adres e-mail (opcjonalnie)
                         </label>
                         <input
                           id="contact-email"
                           name="email"
                           autoComplete="email"
                           type="email"
-                          required
                           maxLength={254}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="inwestor@dom.pl"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                          placeholder="twoj@email.pl"
+                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
 
@@ -315,7 +306,7 @@ export const ContactPage: React.FC = () => {
                           value={formData.location}
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                           placeholder="np. Warszawa / Konstancin"
-                          className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                         />
                       </div>
                     </div>
@@ -330,7 +321,7 @@ export const ContactPage: React.FC = () => {
                         required
                         value={formData.timeline}
                         onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-sm border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                       >
                         <option value="" disabled>Wybierz termin</option>
                         {INSTALL_TIMELINES.map((t) => (
@@ -340,17 +331,41 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold mb-1 text-gray-700">
+                      <label htmlFor="contact-message" className="block text-xs font-semibold mb-1 text-gray-700">
                         Opowiedz krótko, co chcesz mieć
                       </label>
                       <textarea
+                        id="contact-message"
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Napisz, jaki jest metraż domu, czy posiadasz już projekt elektryczny i na czym najbardziej Ci zależy (oświetlenie, kamery, kino, rolety)..."
-                        className="w-full px-4 py-3 rounded-[2px] text-xs border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 leading-relaxed bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
+                        className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 leading-relaxed bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
                       />
                     </div>
+
+                    <label className="flex items-start gap-2.5 text-xs text-gray-600 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={formData.agreement}
+                        onChange={(e) => setFormData({ ...formData, agreement: e.target.checked })}
+                        className="mt-0.5 accent-petrol-700 w-5 h-5 shrink-0 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                      />
+                      <span className="leading-snug">
+                        Wyrażam zgodę na kontakt w sprawie mojego zapytania.{' '}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' }));
+                          }}
+                          className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer"
+                        >
+                          Polityka prywatności
+                        </button>
+                      </span>
+                    </label>
 
                     <button
                       type="submit"

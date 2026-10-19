@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useScroll, useMotionValueEvent } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { MessageSquare, ClipboardList, Phone } from 'lucide-react';
 import { SITE, telHref } from '../config/site.ts';
@@ -8,7 +9,12 @@ const FORM_PAGES = ['/zapytanie', '/kontakt'];
 
 export const MobileStickyBar: React.FC = () => {
   const { pathname } = useLocation();
+  // On the home page the hero already has the same CTA: show the bar once it scrolls away
+  const { scrollY } = useScroll();
+  const [pastHero, setPastHero] = useState(false);
+  useMotionValueEvent(scrollY, 'change', (y) => setPastHero(y > 480));
   if (FORM_PAGES.includes(pathname)) return null;
+  if (pathname === '/' && !pastHero) return null;
 
   return (
     <div className="mobile-sticky fixed bottom-0 inset-x-0 z-40 md:hidden backdrop-blur-xl border-t p-3 shadow-2xl transition-colors duration-200 bg-gray-50/95 border-gray-200">

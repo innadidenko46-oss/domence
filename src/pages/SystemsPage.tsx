@@ -15,7 +15,7 @@ export const SystemsPage: React.FC = () => {
         title="Światło, rolety i ogrzewanie — co pasuje do Twojego domu"
         description="Pokażemy Ci zwykłymi słowami, co wybrać do nowego domu, a co do gotowego mieszkania. Bez kucia, jeśli nie trzeba."
         icon={<Layers className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85"
+        image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
       />
 
       {/* The first decision: modules in the switchboard or behind switches */}

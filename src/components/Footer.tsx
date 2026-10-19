@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info & Legal Registry */}
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
-              <Link to="/" aria-label="DOMENCE Strona Główna">
+              <Link to="/" aria-label="DOMENCE, strona główna">
                 <Logo size="md" variant="light" showSubtitle={true} />
               </Link>
               <p className="mt-4 text-gray-400 max-w-sm leading-relaxed text-sm">
@@ -60,27 +60,27 @@ export const Footer: React.FC = () => {
           {/* Chapters & Services */}
           <div className="md:col-span-5 grid grid-cols-2 gap-6">
             <div>
-              <h4 className="font-display text-sm font-semibold text-white mb-4">
+              <h2 className="font-display text-sm font-semibold text-white mb-4">
                 Rozwiązania
-              </h4>
+              </h2>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/systemy" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/systemy" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Automatyka domu
                   </Link>
                 </li>
                 <li>
-                  <Link to="/teletechnika" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/teletechnika" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Kamery i domofon z kamerą
                   </Link>
                 </li>
                 <li>
-                  <Link to="/multimedia" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/multimedia" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Kino w salonie
                   </Link>
                 </li>
                 <li>
-                  <Link to="/scenariusze" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/scenariusze" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Przykłady z życia
                   </Link>
                 </li>
@@ -88,17 +88,17 @@ export const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-display text-sm font-semibold text-white mb-4">
+              <h2 className="font-display text-sm font-semibold text-white mb-4">
                 Wdrożenia i narzędzia
-              </h4>
+              </h2>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li>
-                  <Link to="/pakiety" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/pakiety" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Gotowe zestawy z montażem
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/faq" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Pytania i odpowiedzi
                   </Link>
                 </li>
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kontakt" className="hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+                  <Link to="/kontakt" className="inline-block py-1.5 md:py-0 hover:text-amber-400 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
                     Zapytaj inżyniera
                   </Link>
                 </li>
@@ -127,9 +127,9 @@ export const Footer: React.FC = () => {
 
           {/* Contact Direct */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="font-display text-sm font-semibold text-white mb-4">
+            <h2 className="font-display text-sm font-semibold text-white mb-4">
               Kontakt z inżynierem
-            </h4>
+            </h2>
 
             <a
               href="mailto:kontakt@domence.pl"
@@ -205,10 +205,10 @@ export const Footer: React.FC = () => {
 
             {activeModal === 'rodo' && (
               <div>
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-petrol-700" />
-                  <span>Polityka Prywatności i Informacja o Danych Osobowych (RODO)</span>
-                </h3>
+                <h2 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-amber-400" />
+                  <span>Polityka prywatności i dane osobowe (RODO)</span>
+                </h2>
                 <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     1. <strong>Administrator Danych:</strong> Administratorem Twoich danych osobowych jest właściciel serwisu DOMENCE. Kontakt w sprawie danych osobowych: kontakt@domence.pl.
@@ -231,10 +231,10 @@ export const Footer: React.FC = () => {
 
             {activeModal === 'regulamin' && (
               <div>
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-petrol-700" />
+                <h2 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-amber-400" />
                   <span>Regulamin świadczenia usług montażowych i projektowych</span>
-                </h3>
+                </h2>
                 <div className="space-y-3 leading-relaxed text-gray-300">
                   <p>
                     1. <strong>Zakres usług:</strong> DOMENCE projektuje i montuje automatykę domu (światło, rolety, ogrzewanie, czujniki), kamery, wideodomofony i sieć w domu.

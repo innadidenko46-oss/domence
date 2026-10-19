@@ -64,7 +64,7 @@ export const KnowledgeBaseSection: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="np. burza, abonament, kucie"
-              className="w-full min-h-11 pl-10 pr-10 rounded-[2px] text-sm border bg-white border-gray-300 text-gray-900 focus:outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-petrol-600/60"
+              className="w-full min-h-11 pl-10 pr-10 rounded-[2px] text-sm border bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-petrol-600/60"
             />
             {query && (
               <button
