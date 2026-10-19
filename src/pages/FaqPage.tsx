@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { KnowledgeBaseSection } from '../components/KnowledgeBaseSection.tsx';
-import { BookOpen, ArrowRight, MessageSquare } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 
 export const FaqPage: React.FC = () => {
 
@@ -24,15 +24,11 @@ export const FaqPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 rounded-[2px] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 bg-white/5">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-semibold mb-3">
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>Dziwny układ mieszkania albo domu?</span>
-              </div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
                 Porozmawiaj z inżynierem
               </h3>
               <p className="text-sm mt-2 leading-relaxed text-gray-300">
-                Nie dzwonisz na infolinię. Odpisuje inżynier, który montuje takie instalacje.
+                Masz nietypowy dom albo mieszkanie? Odpisuje inżynier, który montuje takie instalacje, a nie infolinia.
               </p>
             </div>
 

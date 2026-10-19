@@ -571,24 +571,22 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 exit="exit"
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-amber-500/15 text-amber-800 border border-amber-500/30 text-xs font-bold uppercase tracking-wider mb-2">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span>Twoje odpowiedzi</span>
-                  </div>
-
                   <h2 data-step-heading tabIndex={-1} className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 focus:outline-none">
                     Jak mamy się z Tobą skontaktować?
                   </h2>
 
-                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600">
-                    <span>Nieruchomość: <strong>{getPropertyLabel(propertyState)}</strong></span>
-                    <span>•</span>
-                    <span>Metraż: <strong>{getAreaLabel(areaRange)}</strong></span>
-                    <span>•</span>
-                    <span>Termin: <strong>{timeline}</strong></span>
-                    <span>•</span>
-                    <span>Zainteresowania: <strong>{selectedModuleIds.length === 0 ? 'dobór przez nas' : `${selectedModuleIds.length}`}</strong></span>
-                  </div>
+                  {/* Plain recap of the answers, with a way back to change them */}
+                  <p className="mt-3 text-sm text-gray-600 max-w-lg mx-auto">
+                    Twoje odpowiedzi: {getPropertyLabel(propertyState).toLowerCase()}, {getAreaLabel(areaRange)}, {timeline.toLowerCase()}
+                    {selectedModuleIds.length > 0 ? `, zaznaczone: ${selectedModuleIds.length}` : ''}.{' '}
+                    <button
+                      type="button"
+                      onClick={() => goTo(1)}
+                      className="inline-flex items-center min-h-11 font-semibold text-petrol-700 underline underline-offset-4 hover:text-amber-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                    >
+                      Zmień
+                    </button>
+                  </p>
                 </div>
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-4 max-w-lg mx-auto">
