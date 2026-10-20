@@ -1,0 +1,23 @@
+name: Check
+
+# The site is deployed by Vercel. This only checks that every push and pull request
+# type-checks and builds (the build also runs the copy rules and prerenders every page).
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

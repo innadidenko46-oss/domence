@@ -1,29 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Shared motion curves: enter with ease-out, leave with ease-in */
-  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Self-hosted variable fonts (@fontsource-variable, imported in main.tsx): no request to Google */
+  --font-display: 'Outfit Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif;
   /* No monospace on the site: font-mono falls back to the body font */
-  --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Plus Jakarta Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Architectural Graphite & Anthracite Scale (Never Pure Pitch Black) */
-  --color-anthracite-950: #121214;
-  --color-anthracite-900: #18181B;
-  --color-anthracite-850: #1F1F23;
-  --color-anthracite-800: #27272A;
-  --color-anthracite-750: #2E2E33;
-  --color-anthracite-700: #3F3F46;
-
-  /* Architectural Off-White & Concrete Grays */
-  --color-offwhite-50: #F9FAFB;
-  --color-offwhite-100: #F3F4F6;
-  --color-offwhite-200: #E5E7EB;
-
-  /* Engineering Accent Tones: Copper (Wiring & Luxury) + Steel Blue + Slate */
   /* Brand palette taken from the DOMENCE logo (src/brand/brand.mjs).
      Petrol (letters) carries buttons, icons and dark bands.
      Amber (the status light) is the warm accent: small text uses amber-700+,
@@ -44,14 +27,15 @@
   --color-amber-700: #9C5605;
   --color-amber-800: #7A4304;
 
-  --color-forest-600: #234E3E;
-
   /* Shadows tinted with the brand petrol instead of neutral black */
   --shadow-sm: 0 1px 2px 0 rgb(7 38 48 / 0.06);
   --shadow-md: 0 4px 10px -2px rgb(7 38 48 / 0.08), 0 2px 4px -2px rgb(7 38 48 / 0.05);
   --shadow-lg: 0 12px 24px -6px rgb(7 38 48 / 0.10), 0 4px 8px -4px rgb(7 38 48 / 0.05);
   --shadow-xl: 0 20px 40px -10px rgb(7 38 48 / 0.14), 0 8px 12px -6px rgb(7 38 48 / 0.06);
   --shadow-2xl: 0 32px 64px -16px rgb(7 38 48 / 0.20);
+
+  --animate-fade-up: fade-up 0.35s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-fade-in: fade-in 0.25s ease-out both;
 }
 
 @layer base {
@@ -59,7 +43,6 @@
     font-family: var(--font-sans);
     letter-spacing: -0.01em;
     color-scheme: light;
-    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1, h2, h3 {
@@ -105,14 +88,12 @@ body::after {
   top: 0.75rem;
 }
 
-/* One label style above section headings, sitewide */
+/* One label style above section headings, sitewide. Sentence case, no capitals. */
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
   color: var(--color-amber-700);
 }
 
@@ -128,8 +109,17 @@ body::after {
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: -0.005em;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-engineering-primary,
+  .btn-secondary,
+  .btn-accent {
+    padding-inline: 1.5rem;
+  }
 }
 
 .btn-engineering-primary {
@@ -153,7 +143,8 @@ body::after {
   border-radius: 2px;
   font-weight: 600;
   font-size: 0.9375rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
   background-color: var(--color-amber-400);
   color: var(--color-petrol-950);
   transition: background-color 0.2s ease, transform 0.1s ease;
@@ -184,7 +175,7 @@ svg.lucide {
   stroke-width: 1.75;
 }
 
-/* Hero entrance: short staggered rise, transform + opacity only */
+/* Motion: CSS only, transform and opacity, nothing hides content before JavaScript runs */
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -192,23 +183,65 @@ svg.lucide {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .hero-stagger > * {
-    animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  .hero-stagger > :nth-child(2) { animation-delay: 80ms; }
-  .hero-stagger > :nth-child(3) { animation-delay: 160ms; }
-  .hero-stagger > :nth-child(4) { animation-delay: 240ms; }
-  .hero-stagger > :nth-child(5) { animation-delay: 320ms; }
-
-  .hero-media {
-    animation: rise-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
 }
 
-/* Mobile CTA bar hides while the cookie banner is open */
-html[data-cookie-open] .mobile-sticky {
-  display: none;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes draw-arc {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes fill-line {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero entrance: short staggered rise */
+  .hero-stagger > * {
+    animation: rise-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .hero-stagger > :nth-child(2) { animation-delay: 60ms; }
+  .hero-stagger > :nth-child(3) { animation-delay: 120ms; }
+  .hero-stagger > :nth-child(4) { animation-delay: 180ms; }
+
+  .hero-media {
+    animation: rise-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+  }
+
+  /* The logo's O drawn in from the hero photo's corner (BrandArcs) */
+  .arc-draw {
+    stroke-dasharray: 1;
+    animation: draw-arc 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Blocks rise as they scroll into view, only in browsers that drive animations by scroll.
+     Elsewhere they are simply visible. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    .scroll-fill {
+      transform-origin: left;
+      animation: fill-line linear both;
+      animation-timeline: view();
+      animation-range: entry 40% cover 60%;
+    }
+  }
 }
 
 /* Reduced motion: CSS transitions and animations become instant, scrolling stops gliding */

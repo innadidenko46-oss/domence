@@ -1,413 +1,126 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
-import { CONTACT_EMAIL, mailtoHref, sendLead, LeadResult } from '../lib/leads.ts';
-import { ContactChoice, ContactBy, contactByLine } from '../components/ContactChoice.tsx';
-import { Seo } from '../components/Seo.tsx';
-import { SITE, telHref, INSTALL_TIMELINES } from '../config/site.ts';
-import {
-  Phone,
-  MessageSquare,
-  Mail,
-  MapPin,
-  CheckCircle2,
-  ShieldCheck,
-  Send,
-} from 'lucide-react';
+import { SITE, CTA, RESPONSE_LINE, telHref } from '../config/site.ts';
+import { Phone, Mail, MapPin, CheckCircle2, ClipboardList, ArrowRight, Building2 } from 'lucide-react';
+
+const HOW_WE_WORK = [
+  'Za darmo sprawdzamy dom przed wyceną',
+  'Zakres, cenę i termin potwierdzamy na piśmie przed startem',
+  'Po montażu uczymy domowników obsługi i bezpłatnie konfigurujemy system',
+];
+
+const cardClass = 'flex items-start gap-4 p-5 rounded-[2px] border bg-white border-gray-200';
+const iconClass = 'w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0';
 
 export const ContactPage: React.FC = () => {
-
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    location: '',
-    timeline: '',
-    agreement: false,
-    message: '',
-  });
-  const [contactBy, setContactBy] = useState<ContactBy>('phone');
-  const [submitted, setSubmitted] = useState(false);
-  const [delivery, setDelivery] = useState<LeadResult>('sent');
-  const [sending, setSending] = useState(false);
-  const [sendError, setSendError] = useState(false);
-  const [lastMail, setLastMail] = useState({ subject: '', body: '' });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (sending) return;
-    const subject = `Zapytanie o projekt instalacji — ${formData.name}`;
-    const body = [
-      `Imię i nazwisko: ${formData.name}`,
-      `Preferowany kontakt: ${contactByLine(contactBy)}`,
-      `Telefon: ${formData.phone || '—'}`,
-      `E-mail: ${formData.email}`,
-      `Lokalizacja inwestycji: ${formData.location}`,
-      `Planowany montaż: ${formData.timeline}`,
-      '',
-      'Opis założeń:',
-      formData.message,
-    ].join('\n');
-    setLastMail({ subject, body });
-    setSendError(false);
-    setSending(true);
-    try {
-      const result = await sendLead({
-        subject,
-        body,
-        fields: {
-          name: formData.name,
-          contact_preference: contactByLine(contactBy),
-          phone: formData.phone,
-          email: formData.email,
-          location: formData.location,
-          timeline: formData.timeline,
-        },
-      });
-      setDelivery(result);
-      setSubmitted(true);
-    } catch {
-      // Keep the form filled in so the visitor can retry
-      setSendError(true);
-    } finally {
-      setSending(false);
-    }
-  };
+  const { legal } = SITE;
+  const legalLines = [legal.companyName, legal.address, legal.nip && `NIP ${legal.nip}`, legal.regon && `REGON ${legal.regon}`, legal.krs && `KRS ${legal.krs}`].filter(Boolean);
 
   return (
-    <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
-      <Seo
-        title="Kontakt — zapytaj inżyniera — DOMENCE"
-        description="Zadzwoń, napisz e-mail lub wypełnij formularz. Inżynier oddzwoni z propozycją, zwykle w 24 godziny robocze (pon–pt, 8:00–18:00)."
-        canonical="https://domence-o9s1.vercel.app/kontakt"
-      />
+    <div className="bg-gray-50 text-gray-900">
       <PageHeader
         badge="Kontakt"
-        title="Porozmawiaj z inżynierem o swoim domu"
-        description="Budujesz dom albo remontujesz mieszkanie? Napisz, czego potrzebujesz — odpowiadamy w 24 godziny robocze (pon–pt, 8:00–18:00)."
-        icon={<Phone className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+        title="Porozmawiaj z inżynierem o swoim domu"
+        description={`Budujesz dom albo remontujesz mieszkanie w Warszawie i okolicach? Odpowiadamy ${RESPONSE_LINE}.`}
+        image="photo-1600566753190-17f0baa2a6c3"
       />
 
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Contact Details & Office */}
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight mb-2 text-gray-900">
-                  Nasi ludzie i gdzie działamy
-                </h2>
-                <p className="text-sm leading-relaxed max-w-prose text-gray-600">
-                  Działamy w Warszawie i okolicach. Przyjeżdżamy na miejsce, sprawdzamy dom i dopiero wtedy proponujemy zakres.
-                </p>
-              </div>
+      <section className="pt-14 pb-20 lg:pt-20 lg:pb-24 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          {/* The fastest way: the enquiry */}
+          <div className="lg:col-span-7">
+            <div className="p-7 sm:p-10 rounded-[2px] border shadow-xl bg-white border-gray-200">
+              <ClipboardList className="w-8 h-8 text-petrol-700" aria-hidden="true" />
+              <h2 className="mt-4 font-display text-2xl sm:text-3xl font-bold text-gray-900">Najszybciej: krótkie zapytanie</h2>
+              <p className="mt-3 text-base leading-relaxed text-gray-600">
+                Trzy kroki, około 2 minut: co Cię interesuje, jaki to dom i jak się z Tobą skontaktować. Możesz wybrać tylko e-mail, wtedy nie zadzwonimy.
+              </p>
+              <Link
+                to="/zapytanie"
+                className="btn-engineering-primary mt-7 w-full sm:w-auto focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+              >
+                <span>{CTA.label}</span>
+                <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+              </Link>
 
-              {/* Direct Info Cards with 2px radius */}
-              <div className="space-y-3">
-                <div
-                  className="flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200"
-                >
-                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
-                    <MessageSquare className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                      Jak się skontaktować
-                    </div>
-                    <div className="text-base font-bold transition-colors mt-0.5 text-gray-900 group-hover:text-amber-700">
-                      Napisz przez formularz albo e-mail — odpowiadamy w 24 godziny robocze
-                    </div>
-                    <div className="text-xs text-amber-700 mt-0.5">
-                      Poniedziałek – Piątek: 08:00 – 18:00
-                    </div>
-                    {SITE.phone && (
-                      <a href={telHref(SITE.phone)} className="mt-2 inline-flex items-center gap-2 min-h-11 text-base font-bold text-gray-900 hover:text-amber-700 focus-visible:ring-2 focus-visible:ring-petrol-600">
-                        <Phone className="w-4 h-4 text-petrol-700" aria-hidden="true" />
-                        {SITE.phone}
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <a
-                  href="mailto:kontakt@domence.pl"
-                  className="focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 flex items-start gap-4 p-5 rounded-[2px] border transition-colors group bg-white border-gray-200 hover:border-amber-500"
-                >
-                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                      Napisz do nas
-                    </div>
-                    <div className="text-base font-bold group-hover:text-amber-700 transition-colors mt-0.5 text-gray-900">
-                      kontakt@domence.pl
-                    </div>
-                    <div className="text-xs text-gray-600 mt-0.5">
-                      Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00)
-                    </div>
-                  </div>
-                </a>
-
-                <div className="flex items-start gap-4 p-5 rounded-[2px] border bg-white border-gray-200">
-                  <div className="w-10 h-10 rounded-[2px] bg-amber-500/15 text-amber-800 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                      Gdzie działamy
-                    </div>
-                    <div className="text-sm font-bold text-gray-900">
-                      Warszawa i okolice
-                    </div>
-                    <div className="text-sm text-gray-600 mt-0.5">
-                      Przyjeżdżamy na miejsce i sprawdzamy dom.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Authority and Trust Guarantee Box */}
-              <div className="p-6 rounded-[2px] border bg-white border-gray-200">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Jak działamy</span>
-                </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Za darmo sprawdzamy dom przed wyceną</span>
+              <h3 className="mt-10 text-base font-bold text-gray-900">Jak działamy</h3>
+              <ul className="mt-3 space-y-2.5">
+                {HOW_WE_WORK.map((t) => (
+                  <li key={t} className="flex items-start gap-2.5 text-base text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{t}</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Zakres i cenę potwierdzamy na piśmie przed startem</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 shrink-0" />
-                    <span>Po montażu uczymy domowników obsługi i bezpłatnie konfigurujemy system</span>
-                  </li>
-                </ul>
-              </div>
+                ))}
+              </ul>
+            </div>
+          </div>
 
+          {/* Direct contact */}
+          <div className="lg:col-span-5 space-y-3">
+            <h2 className="font-display text-xl font-bold text-gray-900 mb-4">Kontakt bezpośredni</h2>
+            {SITE.phone && (
+              <a href={telHref(SITE.phone)} className={`${cardClass} hover:border-amber-500 focus-visible:ring-2 focus-visible:ring-petrol-600`}>
+                <span className={iconClass}>
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-sm text-gray-600">Telefon</span>
+                  <span className="block text-base font-bold text-gray-900">{SITE.phone}</span>
+                  <span className="block text-sm text-gray-600 mt-0.5">{SITE.hours}</span>
+                </span>
+              </a>
+            )}
+
+            <a href={`mailto:${SITE.email}`} className={`${cardClass} hover:border-amber-500 focus-visible:ring-2 focus-visible:ring-petrol-600`}>
+              <span className={iconClass}>
+                <Mail className="w-5 h-5" aria-hidden="true" />
+              </span>
+              <span>
+                <span className="block text-sm text-gray-600">E-mail</span>
+                <span className="block text-base font-bold text-gray-900 break-all">{SITE.email}</span>
+                <span className="block text-sm text-gray-600 mt-0.5">Odpowiadamy {RESPONSE_LINE}</span>
+              </span>
+            </a>
+
+            <div className={cardClass}>
+              <span className={iconClass}>
+                <MapPin className="w-5 h-5" aria-hidden="true" />
+              </span>
+              <span>
+                <span className="block text-sm text-gray-600">Gdzie działamy</span>
+                <span className="block text-base font-bold text-gray-900">{SITE.region}</span>
+                <span className="block text-sm text-gray-600 mt-0.5">Przyjeżdżamy na miejsce i bezpłatnie sprawdzamy dom.</span>
+              </span>
             </div>
 
-            {/* Direct Form */}
-            <div className="lg:col-span-7">
-              <div className="p-8 sm:p-10 rounded-[2px] border shadow-xl bg-white border-gray-200">
-                {submitted ? (
-                  <div className="text-center py-12" role="status">
-                    <div className="w-14 h-14 rounded-full bg-emerald-600/10 text-emerald-700 flex items-center justify-center mx-auto mb-4 border border-emerald-600/30">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    {delivery === 'sent' ? (
-                      <>
-                        <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                          Dziękujemy. Wiadomość dotarła.
-                        </h3>
-                        <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
-                          {contactBy === 'email'
-                            ? 'Odpiszemy na e-mail w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Nie będziemy dzwonić.'
-                            : 'Odpowiemy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00).'}
-                        </p>
-                      </>
-                    ) : (
-                      <>
-                        <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                          Jeszcze jeden krok: wyślij wiadomość
-                        </h3>
-                        <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
-                          Otworzyliśmy Twój program pocztowy z gotową wiadomością na {CONTACT_EMAIL}. Dotrze do nas dopiero po kliknięciu „Wyślij”.
-                        </p>
-                        <a
-                          href={mailtoHref(lastMail.subject, lastMail.body)}
-                          className="btn-engineering-primary mt-6 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                        >
-                          Otwórz wiadomość ponownie
-                        </a>
-                      </>
-                    )}
-                    <div>
-                      <button
-                        onClick={() => setSubmitted(false)}
-                        className="btn-secondary mt-4 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                      >
-                        Wyślij kolejne zapytanie
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <h3 className="text-xl font-bold mb-1 text-gray-900">
-                        Zapytaj o swój dom
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        Wypełnij pola — za darmo sprawdzimy, co da się zrobić.
-                      </p>
-                    </div>
-
-                    <ContactChoice idPrefix="contact" value={contactBy} onChange={setContactBy} />
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="contact-name" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Imię i nazwisko *
-                        </label>
-                        <input
-                          id="contact-name"
-                          name="name"
-                          autoComplete="name"
-                          type="text"
-                          required
-                          minLength={3}
-                          maxLength={60}
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value.trimStart() })}
-                          placeholder="np. Jan Kowalski"
-                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="contact-phone" className="block text-xs font-semibold mb-1 text-gray-700">
-                          {contactBy === 'email' ? 'Numer telefonu (opcjonalnie)' : 'Numer telefonu *'}
-                        </label>
-                        <input
-                          id="contact-phone"
-                          name="phone"
-                          autoComplete="tel"
-                          inputMode="tel"
-                          type="tel"
-                          required={contactBy === 'phone'}
-                          pattern="^[+\d][\d\s\-/.]{5,19}$"
-                          maxLength={25}
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value.trim() })}
-                          placeholder="np. 500 600 700"
-                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="contact-email" className="block text-xs font-semibold mb-1 text-gray-700">
-                          {contactBy === 'email' ? 'Adres e-mail *' : 'Adres e-mail (opcjonalnie)'}
-                        </label>
-                        <input
-                          id="contact-email"
-                          name="email"
-                          autoComplete="email"
-                          type="email"
-                          required={contactBy === 'email'}
-                          maxLength={254}
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="twoj@email.pl"
-                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="contact-location" className="block text-xs font-semibold mb-1 text-gray-700">
-                          Miejscowość (gdzie jest dom)
-                        </label>
-                        <input
-                          id="contact-location"
-                          name="location"
-                          type="text"
-                          maxLength={120}
-                          value={formData.location}
-                          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                          placeholder="np. Warszawa / Konstancin"
-                          className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="contact-timeline" className="block text-xs font-semibold mb-1 text-gray-700">
-                        Kiedy planujesz montaż? *
-                      </label>
-                      <select
-                        id="contact-timeline"
-                        name="timeline"
-                        required
-                        value={formData.timeline}
-                        onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full min-h-11 px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                      >
-                        <option value="" disabled>Wybierz termin</option>
-                        {INSTALL_TIMELINES.map((t) => (
-                          <option key={t} value={t}>{t}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="contact-message" className="block text-xs font-semibold mb-1 text-gray-700">
-                        Opowiedz krótko, co chcesz mieć
-                      </label>
-                      <textarea
-                        id="contact-message"
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Napisz, jaki jest metraż domu, czy posiadasz już projekt elektryczny i na czym najbardziej Ci zależy (oświetlenie, kamery, kino, rolety)..."
-                        className="w-full px-4 py-3 rounded-[2px] text-base border focus:outline-none focus-visible:ring-2 focus-visible:ring-petrol-600/60 leading-relaxed bg-gray-50 border-gray-300 text-gray-900 focus:border-amber-500"
-                      />
-                    </div>
-
-                    <label className="flex items-start gap-2.5 text-xs text-gray-600 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        required
-                        checked={formData.agreement}
-                        onChange={(e) => setFormData({ ...formData, agreement: e.target.checked })}
-                        className="mt-0.5 accent-petrol-700 w-5 h-5 shrink-0 rounded-[2px] focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                      />
-                      <span className="leading-snug">
-                        Wyrażam zgodę na kontakt w sprawie mojego zapytania.{' '}
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.dispatchEvent(new CustomEvent('domence:legal', { detail: 'rodo' }));
-                          }}
-                          className="underline underline-offset-2 font-semibold text-petrol-700 hover:text-petrol-800 cursor-pointer"
-                        >
-                          Polityka prywatności
-                        </button>
-                      </span>
-                    </label>
-
-                    <button
-                      type="submit"
-                      disabled={sending}
-                      aria-busy={sending}
-                      className="btn-engineering-primary w-full gap-2 cursor-pointer disabled:cursor-wait disabled:opacity-80 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                    >
-                      <Send className="w-4 h-4" />
-                      <span>{sending ? 'Wysyłanie…' : 'Odbierz propozycję dla swojego domu'}</span>
-                    </button>
-                    {sendError && (
-                      <p role="alert" className="text-sm text-red-700 border-l-2 border-red-600 pl-3">
-                        Nie udało się wysłać wiadomości. Wpisane dane zostały w formularzu — spróbuj ponownie za chwilę albo{' '}
-                        <a href={mailtoHref(lastMail.subject, lastMail.body)} className="font-semibold underline underline-offset-2">
-                          napisz na {CONTACT_EMAIL}
-                        </a>
-                        .
-                      </p>
-                    )}
-                    <p className="text-xs text-center text-gray-500">
-                      * Odpowiadamy w ciągu 24 godzin roboczych (pon–pt, 8:00–18:00). Dane nie są przekazywane firmom marketingowym.
-                    </p>
-                  </form>
-                )}
+            {SITE.engineer.name && (
+              <div className={cardClass}>
+                <span className={iconClass}>
+                  <CheckCircle2 className="w-5 h-5" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-sm text-gray-600">{SITE.engineer.role}</span>
+                  <span className="block text-base font-bold text-gray-900">{SITE.engineer.name}</span>
+                  <span className="block text-sm text-gray-600 mt-0.5">Twój kontakt od pierwszej rozmowy do nauki obsługi.</span>
+                </span>
               </div>
-            </div>
+            )}
 
+            {legalLines.length > 0 && (
+              <div className={cardClass}>
+                <span className={iconClass}>
+                  <Building2 className="w-5 h-5" aria-hidden="true" />
+                </span>
+                <address className="not-italic text-sm text-gray-700 leading-relaxed">
+                  {legalLines.map((line) => (
+                    <span key={line as string} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </div>
+            )}
           </div>
         </div>
       </section>

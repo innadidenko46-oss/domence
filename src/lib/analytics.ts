@@ -1,6 +1,11 @@
 // Visit statistics without cookies (Plausible). Off until VITE_PLAUSIBLE_DOMAIN is set,
 // e.g. "domence.pl". Plausible stores nothing in the browser and collects no personal
-// data, so it needs no consent and the cookie banner does not mention it.
+// data, so it needs no consent banner.
+//
+// Events (add them as goals in Plausible to see the funnel):
+//   'Zapytanie: krok'     the visitor reached step 2 or 3 of the enquiry (prop: krok)
+//   'Zapytanie'           an enquiry reached us through the form service (the main goal)
+//   'Zapytanie e-mailem'  without a form service: the visitor opened the prepared e-mail
 
 const DOMAIN = (import.meta.env.VITE_PLAUSIBLE_DOMAIN as string | undefined)?.trim() || '';
 
@@ -30,7 +35,7 @@ export function initAnalytics() {
   document.head.appendChild(s);
 }
 
-/** Records a goal, e.g. a sent enquiry. Does nothing while statistics are off. */
+/** Records an event. Does nothing while statistics are off. */
 export function track(event: string, props?: Record<string, string>) {
   if (!analyticsEnabled) return;
   window.plausible?.(event, props ? { props } : undefined);

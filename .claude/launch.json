@@ -12,13 +12,9 @@
     },
     {
       "name": "build-preview",
-      "runtimeExecutable": "npx",
+      "runtimeExecutable": "node",
       "runtimeArgs": [
-        "vite",
-        "preview",
-        "--port",
-        "4173",
-        "--strictPort"
+        "scripts/serve.mjs"
       ],
       "port": 4173
     },

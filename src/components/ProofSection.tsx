@@ -18,9 +18,9 @@ export const ProofSection: React.FC = () => {
 
         {FINISHED_HOMES.length > 0 && (
           <ol className="mt-10 border-t border-gray-300">
-            {FINISHED_HOMES.map((home, i) => (
+            {FINISHED_HOMES.map((home) => (
               <li key={home.title} className="border-b border-gray-300">
-                <Reveal delay={i * 0.06} className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 lg:py-10">
+                <Reveal className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 lg:py-10">
                   <img
                     src={`${base}${home.photo}`}
                     alt={home.photoAlt}

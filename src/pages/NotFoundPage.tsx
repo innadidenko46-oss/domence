@@ -1,44 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
-import { Seo } from '../components/Seo.tsx';
-import { FileQuestion } from 'lucide-react';
+import { NAV_LINKS } from '../components/Navbar.tsx';
+import { CTA } from '../config/site.ts';
 
-export const NotFoundPage: React.FC = () => {
-  return (
-    <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
-      <Seo
-        title="Strona nie znaleziona — DOMENCE"
-        description="Ta strona nie istnieje. Wróć na stronę główną DOMENCE."
-        noindex
-      />
-      <PageHeader
-        badge="Błąd 404"
-        title="Nie znaleziono strony"
-        description="Adres, którego szukasz, nie istnieje lub został przeniesiony."
-        icon={<FileQuestion className="w-4 h-4 text-petrol-700" />}
-      />
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm mb-8 text-gray-600">
-            Sprawdź poprawność adresu albo skorzystaj z nawigacji.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              to="/"
-              className="px-6 py-3 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white font-semibold text-sm transition-colors"
-            >
-              Wróć na stronę główną
-            </Link>
-            <Link
-              to="/zapytanie"
-              className="px-6 py-3 rounded-[2px] border text-sm font-semibold transition-colors bg-white border-gray-300 text-gray-900 hover:bg-gray-100"
-            >
-              Opisz swój dom
-            </Link>
-          </div>
+// data-not-found lets the build notice a page that renders this by mistake
+export const NotFoundPage: React.FC = () => (
+  <div data-not-found className="bg-gray-50 text-gray-900">
+    <PageHeader compact badge="Błąd 404" title="Nie ma takiej strony" description="Adres jest błędny albo strona została przeniesiona." />
+    <section className="pt-12 pb-20 lg:pt-16 lg:pb-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link to="/" className="btn-engineering-primary focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+            Strona główna
+          </Link>
+          <Link to="/zapytanie" className="btn-secondary focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2">
+            {CTA.label}
+          </Link>
         </div>
-      </section>
-    </div>
-  );
-};
+        <h2 className="mt-12 font-display text-lg font-bold text-gray-900">Może szukasz:</h2>
+        <ul className="mt-3 space-y-1">
+          {NAV_LINKS.map((l) => (
+            <li key={l.path}>
+              <Link to={l.path} className="inline-flex min-h-11 items-center text-base font-semibold text-petrol-700 underline underline-offset-4 hover:text-amber-800">
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+);

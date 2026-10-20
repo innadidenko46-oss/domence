@@ -2,135 +2,103 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { TeletechnicsSection } from '../components/TeletechnicsSection.tsx';
-import { HikvisionShowcase } from '../components/HikvisionShowcase.tsx';
-import { AiFutureTechSection } from '../components/AiFutureTechSection.tsx';
-import { Seo } from '../components/Seo.tsx';
-import { Network, ShieldCheck, ArrowRight, Video, HardDrive, X } from 'lucide-react';
+import { CameraShowcase } from '../components/CameraShowcase.tsx';
+import { ShieldCheck, ArrowRight, HardDrive, Cloud } from 'lucide-react';
+import { CTA } from '../config/site.ts';
 
-export const TeletechnicsPage: React.FC = () => {
+const AT_HOME = [
+  ['Bez abonamentu', 'nie płacisz co miesiąc za przechowywanie nagrań.'],
+  ['Prywatność', 'obraz z kamer nie wychodzi z Twojej szafki na sprzęt.'],
+  ['Jeden kabel do kamery', 'prąd i obraz idą jednym kablem, więc obraz się nie zacina.'],
+  ['Dyski do pracy ciągłej', 'zapisują całą dobę. Ile dni wstecz zobaczysz, zależy od liczby kamer.'],
+];
 
-  return (
-    <div className="transition-colors duration-300 bg-gray-50 text-gray-900">
-      <Seo
-        title="Kamery i wideodomofon — DOMENCE"
-        description="Kamery z kolorowym obrazem w nocy, wideodomofon z rozmową z furtki w telefonie. Nagrania na dysku w domu, bez abonamentu."
-        canonical="https://domence-o9s1.vercel.app/teletechnika"
-      />
-      <PageHeader
-        badge="Kamery i domofony"
-        title="Kamery i domofon z kamerą"
-        description="Kamery z kolorowym obrazem w nocy, domofon z kamerą (wideodomofon), z którym pogadasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt — u Ciebie w domu, bez abonamentu."
-        icon={<Network className="w-4 h-4 text-petrol-700" />}
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-      />
+const IN_CLOUD = [
+  'Historia nagrań często wymaga płatnego abonamentu.',
+  'Kamera na Wi-Fi potrafi tracić zasięg, zwłaszcza za grubymi ścianami.',
+  'Bez internetu nie zapisuje nagrań w chmurze.',
+];
 
-      {/* Main Teletechnics Section Component */}
-      <TeletechnicsSection />
+export const TeletechnicsPage: React.FC = () => (
+  <div className="bg-gray-50 text-gray-900">
+    <PageHeader
+      badge="Kamery i wideodomofon"
+      title="Kamery i wideodomofon, z nagraniami w domu"
+      description="Kamery z kolorowym obrazem w nocy i wideodomofon, z którym porozmawiasz z kurierem przez telefon. Nagrania zapisuje rejestrator w szafce na sprzęt, u Ciebie w domu, bez abonamentu."
+      image="photo-1600585154340-be6161a56a0c"
+    />
 
-      {/* Latest Hikvision Series Showcase */}
-      <HikvisionShowcase />
+    <TeletechnicsSection />
+    <CameraShowcase />
 
-      {/* What the newer cameras and controllers can do */}
-      <AiFutureTechSection />
+    {/* Recordings at home vs. in a cloud */}
+    <section className="pt-16 pb-20 lg:pt-24 lg:pb-24 border-t bg-white border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Nagrania u Ciebie w domu, nie w obcej chmurze</h2>
+          <p className="mt-2 text-base leading-relaxed max-w-prose text-gray-600">
+            Wiele kamer na Wi-Fi wysyła obraz na serwery producenta. Montujemy kamery na kablu z rejestratorem w domu.
+          </p>
+        </div>
 
-      {/* Deep-dive into Local Security vs Cloud Cameras */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-white border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Nagrania u Ciebie w domu, nie u obcej firmy
-            </h2>
-            <p className="mt-2 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-              Niektóre kamery wysyłają obraz na serwery producenta. U nas nagrania zostają w Twoim domu.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-7 rounded-[2px] border-2 border-amber-500 bg-gray-50">
+            <h3 className="flex items-center gap-3 text-lg font-bold text-gray-900">
+              <HardDrive className="w-5 h-5 text-petrol-700" aria-hidden="true" />
+              Rejestrator nagrań w domu
+            </h3>
+            <ul className="mt-5 space-y-3 text-base text-gray-700">
+              {AT_HOME.map(([title, text]) => (
+                <li key={title} className="flex items-start gap-2.5">
+                  <ShieldCheck className="w-5 h-5 text-petrol-700 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <strong className="text-gray-900">{title}:</strong> {text}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center">
-                  <HardDrive className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    Nasz standard: rejestrator nagrań w domu
-                  </h3>
-                  <span className="text-xs text-amber-700 font-semibold">Twoje dane u Ciebie</span>
-                </div>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-700">
-                <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
-                  <span><strong>Bez abonamentu:</strong> nie płacisz co miesiąc za przechowywanie nagrań.</span>
+          <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
+            <h3 className="flex items-center gap-3 text-lg font-bold text-gray-900">
+              <Cloud className="w-5 h-5 text-gray-600" aria-hidden="true" />
+              Kamery na Wi-Fi z nagraniami w chmurze
+            </h3>
+            <ul className="mt-5 space-y-3 text-base text-gray-700">
+              {IN_CLOUD.map((t) => (
+                <li key={t} className="flex items-start gap-2.5">
+                  <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" aria-hidden="true" />
+                  <span>{t}</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
-                  <span><strong>Prywatność:</strong> obraz z kamer nie wychodzi z Twojej szafki. Nikt obcy nie ma do niego dostępu.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
-                  <span><strong>Jeden kabel do kamery:</strong> prąd i obraz idą jednym kablem.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-petrol-700 shrink-0 mt-0.5" />
-                  <span><strong>Dyski do pracy ciągłej:</strong> zapisują 24 godziny na dobę. Ile dni wstecz zobaczysz, zależy od liczby kamer.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-7 rounded-[2px] border bg-gray-50 border-gray-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[2px] bg-gray-200 text-gray-700 flex items-center justify-center">
-                  <Video className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    Kamery na Wi-Fi z obcą chmurą
-                  </h3>
-                  <span className="text-xs text-gray-700 font-semibold">Zależność od dostawcy</span>
-                </div>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-600">
-                <li className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>Historia nagrań zwykle wymaga płatnego abonamentu.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>Pełne archiwum często wymaga dopłaty (sprawdź cennik producenta).</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>Sygnał Wi-Fi potrafi zrywać, zwłaszcza przez grube ściany.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>Bez internetu nie podejrzysz domu z telefonu ani nie dostaniesz powiadomienia.</span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Next Area Banner */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 border-t bg-petrol-900 text-white border-petrol-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <div className="text-xs text-amber-200">Kolejny obszar instalacji:</div>
-            <div className="text-base font-bold text-white">
-              Kino w salonie
-            </div>
-          </div>
+    <section className="py-14 lg:py-16 bg-petrol-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <p className="font-display text-2xl font-bold">Zacznij od wejścia i kamer</p>
+          <p className="mt-1 text-base text-gray-200">Światło czy rolety dołożysz później, bez wymiany tego, co już masz.</p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link
+            to="/zapytanie?chce=kamery"
+            className="btn-accent focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
+          >
+            {CTA.label}
+          </Link>
           <Link
             to="/scenariusze"
-            className="gap-2 shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2 inline-flex items-center justify-center py-3.5 px-8 rounded-[2px] bg-amber-400 hover:bg-amber-300 text-petrol-950 font-semibold text-sm transition-colors"
+            className="min-h-11 inline-flex items-center justify-center gap-2 px-5 rounded-[2px] border border-white/25 text-white font-semibold text-sm hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-amber-400"
           >
-            <span>Zobacz scenariusze</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Scenariusze</span>
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+  </div>
+);

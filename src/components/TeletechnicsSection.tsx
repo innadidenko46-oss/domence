@@ -1,193 +1,66 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Network, Video, KeyRound, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { TELETECHNIC_SERVICES } from '../data/content.ts';
-import { 
-  Network,
-  Camera, 
-  ChevronDown, 
-  ChevronUp, 
-  Video, 
-  Server, 
-  ShieldAlert, 
-  KeyRound, 
-  CheckCircle2, 
-  HardDrive 
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
 
+const ICONS: Record<string, typeof Video> = { Camera: Video, KeyRound, Network };
+
+// Three things we install for the entrance and cameras, each with "what exactly"
 export const TeletechnicsSection: React.FC = () => {
-  const [expandedServiceId, setExpandedServiceId] = useState<string>('cctv');
-
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Video':
-        return <Video className="w-6 h-6 text-petrol-700" />;
-      case 'Server':
-        return <Server className="w-6 h-6 text-petrol-700" />;
-      case 'Camera':
-        return <Video className="w-6 h-6 text-petrol-700" />;
-      case 'Network':
-        return <Network className="w-6 h-6 text-petrol-700" />;
-      case 'ShieldAlert':
-        return <ShieldAlert className="w-6 h-6 text-petrol-700" />;
-      default:
-        return <KeyRound className="w-6 h-6 text-petrol-700" />;
-    }
-  };
+  const [openId, setOpenId] = useState<string>(TELETECHNIC_SERVICES[0].id);
 
   return (
-    <section id="teletechnika" className="pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden transition-colors duration-300 border-t bg-white border-gray-200 text-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Chapter Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="eyebrow inline-flex items-center gap-2 mb-3">
-            <Network className="w-4 h-4" />
-            <span>Kamery i wideodomofon</span>
-          </div>
+    <section className="pt-16 pb-20 lg:pt-24 lg:pb-24 border-t bg-white border-gray-200 text-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-10">
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-[1.2] text-gray-900">
-            Kamery, wideodomofon i sieć dla nich: wszystko działa u Ciebie w domu.
+            Kamery, wideodomofon i kable do nich. Wszystko działa u Ciebie w domu.
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-prose text-gray-600">
-            Zaczynamy od podstaw: metalowa szafka na sprzęt, dobre kable, zasilanie awaryjne i domofon z kamerą. Nagrania zostają u Ciebie, bez abonamentu.
+          <p className="mt-3 text-base leading-relaxed max-w-prose text-gray-600">
+            Zaczynamy od podstaw: dobre kable, metalowa szafka na sprzęt i wideodomofon. Nagrania zostają u Ciebie, bez abonamentu.
           </p>
         </div>
 
-        {/* 4 Interactive Teletechnic Blocks with strict 2px styling */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           {TELETECHNIC_SERVICES.map((service) => {
-            const isExpanded = expandedServiceId === service.id;
-
+            const Icon = ICONS[service.icon] ?? KeyRound;
+            const open = openId === service.id;
             return (
-              <div
-                key={service.id}
-                className={`rounded-[2px] p-6 sm:p-7 transition-all duration-200 border ${
-                  isExpanded
-                    ? 'bg-white border-amber-500 shadow-md ring-1 ring-petrol-600': 'bg-gray-50 border-gray-200 hover:border-gray-300'}`}
-              >
-                {/* Header of the card */}
-                <button
-                  type="button"
-                  onClick={() => setExpandedServiceId(isExpanded ? '' : service.id)}
-                  aria-expanded={isExpanded}
-                  aria-label={isExpanded ? 'Zwiń szczegóły' : 'Rozwiń szczegóły'}
-                  className="cursor-pointer flex items-start justify-between gap-4 w-full text-left focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-[2px] flex items-center justify-center shrink-0 mt-0.5 border bg-amber-500/10 border-amber-500/25">
-                      {getIcon(service.icon)}
-                    </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold leading-snug text-gray-900">
-                        {service.title}
-                      </h3>
-                      <p className="text-xs font-medium mt-1 text-amber-700">
-                        {service.subtitle}
-                      </p>
-                    </div>
-                  </div>
-
-                  <span
-                    className="p-2 rounded-[2px] shrink-0 border bg-gray-100 border-gray-300 text-gray-600"
-                  >
-                    {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+              <article key={service.id} className={`rounded-[2px] p-6 border ${open ? 'bg-white border-amber-600 ring-1 ring-amber-600' : 'bg-gray-50 border-gray-200'}`}>
+                <div className="flex items-start gap-4">
+                  <span className="w-11 h-11 rounded-[2px] flex items-center justify-center shrink-0 border bg-amber-500/10 border-amber-500/25">
+                    <Icon className="w-5 h-5 text-petrol-700" aria-hidden="true" />
                   </span>
-                </button>
-
-                {/* Practical insight box */}
-                <div className="mt-5 pl-4 border-l-4 border-l-amber-500 text-sm leading-relaxed flex items-start gap-3 bg-gray-50 border-gray-200 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-petrol-700 mt-1.5 shrink-0" />
                   <div>
-                    <span className="font-bold block mb-1 text-amber-700 text-xs uppercase">
-                      W praktyce:
-                    </span>
-                    <span className="leading-[1.65]">{service.humanExplanation}</span>
+                    <h3 className="text-lg font-bold leading-snug text-gray-900">{service.title}</h3>
+                    <p className="text-sm mt-1 text-amber-800">{service.subtitle}</p>
                   </div>
                 </div>
-
-                {/* Expanded Technical Details */}
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden mt-6 pt-5 border-t space-y-5 border-gray-200"
-                    >
-                      <p className="text-sm leading-relaxed text-gray-600">
-                        {service.description}
-                      </p>
-
-                      {/* Equipment List */}
-                      <div>
-                        <div className="text-xs font-bold uppercase tracking-wider mb-2.5 flex items-center gap-1.5 text-gray-500">
-                          <HardDrive className="w-4 h-4 text-petrol-700" />
-                          <span>Co montujemy:</span>
-                        </div>
-                        <ul className="space-y-2">
-                          {service.equipment.map((item, idx) => (
-                            <li key={idx} className="text-sm flex items-start gap-2.5 text-gray-700">
-                              <CheckCircle2 className="w-4 h-4 text-petrol-700 mt-0.5 shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Specifications badges */}
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {service.specs.map((spec, idx) => (
-                          <span
-                            key={idx}
-                            className="text-xs px-2.5 py-1 rounded-[2px] border bg-amber-500/10 border-amber-500/30 text-amber-800"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                <p className="mt-4 text-base leading-relaxed text-gray-700">{service.humanExplanation}</p>
+                <button
+                  type="button"
+                  onClick={() => setOpenId(open ? '' : service.id)}
+                  aria-expanded={open}
+                  aria-controls={`tele-${service.id}`}
+                  className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-petrol-600"
+                >
+                  <span>{open ? 'Mniej szczegółów' : 'Co dokładnie montujemy'}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+                <div id={`tele-${service.id}`} hidden={!open} className="animate-fade-in mt-3 pt-4 border-t border-gray-200">
+                    <p className="text-sm leading-relaxed text-gray-600">{service.description}</p>
+                    <ul className="mt-4 space-y-2">
+                      {service.equipment.map((item) => (
+                        <li key={item} className="text-sm flex items-start gap-2.5 text-gray-700">
+                          <CheckCircle2 className="w-4 h-4 text-petrol-700 mt-0.5 shrink-0" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                </div>
+              </article>
             );
           })}
         </div>
-
-        {/* Teletechnic Standard Banner */}
-        <div className="mt-12 rounded-[2px] border overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_240px] bg-white border-gray-200 shadow-sm">
-          <div className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-[2px] bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0">
-                <Server className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="font-bold text-base text-gray-900">
-                  Szafka na sprzęt z uporządkowanymi kablami
-                </div>
-                <div className="text-sm mt-1 leading-relaxed text-gray-500">
-                  Każdy kabel jest opisany, więc łatwo coś później dołożyć.
-                </div>
-              </div>
-            </div>
-
-            <Link
-              to="/zapytanie"
-              className="btn-engineering-primary whitespace-nowrap shadow-sm focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-            >
-              Opisz swój dom (2 min)
-            </Link>
-          </div>
-          <div className="relative min-h-[160px]">
-            <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
-              alt="Szafka ze sprzętem sieciowym i uporządkowanymi kablami"
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
       </div>
     </section>
   );

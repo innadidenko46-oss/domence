@@ -1,28 +1,16 @@
-export type PropertyState = 'deweloperski' | 'retro' | 'security' | 'commercial';
+/** House stage, asked on step 2 of the enquiry: in construction or renovation, or finished */
+export type PropertyState = 'deweloperski' | 'retro';
 
 /** What the visitor wants: the first question of the enquiry */
 export type Interest = 'dom' | 'kamery' | 'oba';
 
 export type AreaRange = 'do_60' | '61_110' | '111_180' | 'ponad_180';
 
-export interface SmartModule {
-  id: string;
-  name: string;
-  badge?: string;
-  description: string;
-  humanExplanation: string;
-  price: number;
-  category: 'safety' | 'comfort' | 'energy' | 'access' | 'teletechnics' | 'power';
-  icon: string;
-}
-
-
 export interface LifeScenario {
   id: string;
   number: string;
   title: string;
   tag: string;
-  tagColor: string;
   trigger?: string;
   description: string;
   humanNote: string;
@@ -32,31 +20,31 @@ export interface LifeScenario {
     label: string;
     detail: string;
   }[];
-  imageUrl: string;
+  /** Unsplash photo id */
+  image: string;
   icon: string;
 }
 
-export interface ShellyProCapability {
+export interface Capability {
   id: string;
   title: string;
-  category: 'lighting' | 'blinds' | 'climate' | 'audio' | 'sensors' | 'interface';
   badge: string;
   description: string;
-  proAdvantage: string;
-  shellyAdvantage: string;
-  scenariosExample: string;
+  /** In the switchboard, for a new house */
+  inSwitchboard: string;
+  /** Behind the switches, for a finished flat */
+  behindSwitches: string;
+  example: string;
   features: string[];
 }
 
-export interface HikvisionProductLine {
+export interface CameraProduct {
   id: string;
-  series: string;
-  category: 'cctv_colorvu' | 'cctv_acusense' | 'cctv_tandemvu' | 'intercom_modular' | 'intercom_face' | 'intercom_android';
+  name: string;
+  category: 'cctv_color' | 'cctv_deter' | 'cctv_wide' | 'intercom_panel' | 'intercom_face' | 'intercom_screen';
   tagline: string;
-  highlights: string[];
-  keyTech: string;
   bestUse: string;
-  image?: string;
+  highlights: string[];
 }
 
 export interface TeletechnicService {
@@ -67,7 +55,6 @@ export interface TeletechnicService {
   description: string;
   humanExplanation: string;
   equipment: string[];
-  specs: string[];
 }
 
 export interface FaqItem {

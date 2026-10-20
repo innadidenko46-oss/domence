@@ -1,11 +1,9 @@
 import React from 'react';
 import { Phone, Mail } from 'lucide-react';
+import type { ContactBy } from '../lib/enquiryDraft.ts';
 
 // Lets the visitor ask for e-mail only: some people would rather not talk on the phone.
-export type ContactBy = 'phone' | 'email';
-
-export const contactByLine = (by: ContactBy) =>
-  by === 'email' ? 'TYLKO E-MAIL (proszę nie dzwonić)' : 'telefon';
+export const contactByLine = (by: ContactBy) => (by === 'email' ? 'TYLKO E-MAIL (proszę nie dzwonić)' : 'telefon');
 
 const OPTIONS: { value: ContactBy; label: string; icon: typeof Phone }[] = [
   { value: 'phone', label: 'Zadzwońcie', icon: Phone },
@@ -18,7 +16,7 @@ export const ContactChoice: React.FC<{
   idPrefix: string;
 }> = ({ value, onChange, idPrefix }) => (
   <fieldset>
-    <legend className="block text-xs font-semibold mb-2 text-gray-700">Jak wolisz się kontaktować?</legend>
+    <legend className="block text-sm font-semibold mb-2 text-gray-800">Jak wolisz się kontaktować?</legend>
     <div className="grid grid-cols-2 gap-2">
       {OPTIONS.map(({ value: v, label, icon: Icon }) => {
         const checked = value === v;
@@ -26,9 +24,7 @@ export const ContactChoice: React.FC<{
           <label
             key={v}
             className={`flex items-center gap-2.5 min-h-11 px-3 py-2 rounded-[2px] border cursor-pointer text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-petrol-600 has-[:focus-visible]:ring-offset-2 ${
-              checked
-                ? 'border-petrol-700 bg-petrol-50 text-gray-900 font-semibold'
-                : 'border-gray-300 bg-gray-50 text-gray-700 hover:border-gray-400'
+              checked ? 'border-petrol-700 bg-petrol-50 text-gray-900 font-semibold' : 'border-gray-300 bg-gray-50 text-gray-700 hover:border-gray-400'
             }`}
           >
             <input
@@ -47,7 +43,7 @@ export const ContactChoice: React.FC<{
       })}
     </div>
     {value === 'email' && (
-      <p className="mt-2 text-xs text-gray-600" aria-live="polite">
+      <p className="mt-2 text-sm text-gray-600" aria-live="polite">
         Nie zadzwonimy. Pytania i{' '}propozycję wyślemy na e-mail.
       </p>
     )}

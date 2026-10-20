@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { PageHeader } from '../components/PageHeader.tsx';
 import { ProcessSection } from '../components/ProcessSection.tsx';
 import { Reveal } from '../components/Reveal.tsx';
-import { Seo } from '../components/Seo.tsx';
 import { LANDINGS, PAGE_LABELS } from '../data/landings.ts';
+import { CTA } from '../config/site.ts';
 
 // One template for the search landing pages in src/data/landings.ts
 export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
@@ -14,35 +14,22 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
 
   return (
     <div className="bg-gray-50 text-gray-900">
-      <Seo
-        title={`${page.title} — DOMENCE`}
-        description={page.description}
-        canonical={`https://domence-o9s1.vercel.app/${page.slug}`}
-        ogImage={page.image}
-      />
-      <PageHeader
-        badge={page.badge}
-        title={page.title}
-        description={page.description}
-        icon={<MapPin className="w-4 h-4 text-petrol-700" />}
-        image={page.image}
-      />
+      <PageHeader badge={page.badge} title={page.title} description={page.description} image={page.image}>
+        <Link
+          to={enquiry}
+          className="btn-engineering-primary mt-7 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+        >
+          <span>{CTA.label}</span>
+          <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+        </Link>
+      </PageHeader>
 
       {/* What it does for you, in plain words */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-b border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-24 bg-gray-100 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-              {page.benefitsTitle}
-            </h2>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">{page.benefitsTitle}</h2>
             <p className="mt-4 text-base leading-relaxed text-gray-600 max-w-prose">{page.intro}</p>
-            <Link
-              to={enquiry}
-              className="btn-engineering-primary mt-8 focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
-            >
-              <span>Zapytaj o swój dom</span>
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </Link>
           </div>
           <Reveal className="lg:col-span-8">
             <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
@@ -60,17 +47,15 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
       <ProcessSection />
 
       {/* Short answers to what people ask before they write */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-gray-100 border-t border-gray-200">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-24 bg-gray-100 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-              Krótkie odpowiedzi
-            </h2>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Krótkie odpowiedzi</h2>
             <Link
               to="/faq"
-              className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+              className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600"
             >
-              <span>Wszystkie pytania i odpowiedzi</span>
+              <span>Wszystkie pytania i odpowiedzi</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
@@ -94,7 +79,7 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
               <li key={to}>
                 <Link
                   to={to}
-                  className="inline-flex items-center gap-1.5 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:ring-offset-2"
+                  className="inline-flex items-center gap-1.5 min-h-11 text-sm font-semibold text-petrol-700 hover:text-amber-800 transition-colors focus-visible:ring-2 focus-visible:ring-petrol-600"
                 >
                   <span>{PAGE_LABELS[to]}</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -105,19 +90,19 @@ export const LandingPage: React.FC<{ slug: string }> = ({ slug }) => {
         </div>
       </nav>
 
-      <section className="pt-16 pb-20 lg:pt-20 lg:pb-24 bg-petrol-900 text-white">
+      <section className="py-14 lg:py-16 bg-petrol-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold">Opowiedz o{' '}swoim domu</h2>
-            <p className="mt-2 text-base text-gray-300 max-w-xl">
-              Kilka pytań i{' '}kontakt. Odezwiemy się z{' '}propozycją telefonicznie albo tylko e-mailem, jak wolisz.
+            <h2 className="font-display text-2xl sm:text-3xl font-bold">Opowiedz o swoim domu</h2>
+            <p className="mt-2 text-base text-gray-200 max-w-xl">
+              Kilka pytań i kontakt. Odezwiemy się z propozycją telefonicznie albo tylko e-mailem, jak wolisz.
             </p>
           </div>
           <Link
             to={enquiry}
             className="btn-accent self-start md:self-auto focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-petrol-900"
           >
-            Zapytaj o{' '}swój dom
+            {CTA.label}
           </Link>
         </div>
       </section>

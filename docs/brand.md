@@ -1,6 +1,6 @@
 # DOMENCE logo
 
-All files: `public/brand/` (on the live site: `/domence/brand/`, a page that shows every version with download links).
+All files: `public/brand/` (on the live site: `/brand/`, a page that shows every version with download links).
 Source: `src/brand/brand.mjs`. After changing it, run `node scripts/build-brand.mjs` to rewrite the files and the favicon. The site logo (`src/components/Logo.tsx`) draws from the same source.
 
 ## What the logo is

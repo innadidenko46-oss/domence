@@ -1,0 +1,54 @@
+{
+  "/": {
+    "title": "Mądry dom, kamery i wideodomofon w Warszawie | DOMENCE",
+    "description": "Światło, rolety, ogrzewanie, kamery i wideodomofon, które działają też bez internetu. Warszawa i okolice, montaż także bez kucia, cena na piśmie."
+  },
+  "/systemy": {
+    "title": "Światło, rolety i ogrzewanie z telefonu",
+    "description": "Sterowanie światłem, roletami i ogrzewaniem z włączników i telefonu. Do nowego domu i gotowego mieszkania, także bez kucia ścian. Działa bez internetu."
+  },
+  "/teletechnika": {
+    "title": "Kamery i wideodomofon",
+    "description": "Kamery z kolorowym obrazem w nocy, rozmowa z furtki w telefonie i wejście twarzą, kartą lub kodem. Nagrania zostają w domu, bez abonamentu."
+  },
+  "/scenariusze": {
+    "title": "Scenariusze: co dom robi za Ciebie",
+    "description": "Wyjście z domu jednym przyciskiem, czujnik pod pralką, który zakręca wodę, łagodne budzenie i wieczór filmowy. Przykłady automatyki na co dzień."
+  },
+  "/jak-zaczac": {
+    "title": "Od czego zacząć w Twoim domu",
+    "description": "Mądry dom, kamery z wideodomofonem albo jedno i drugie: co zwykle robimy, od czego zależy cena i jak wygląda współpraca krok po kroku."
+  },
+  "/faq": {
+    "title": "Pytania i odpowiedzi",
+    "description": "Czy dom działa bez internetu, czy trzeba kuć ściany, czy nagrania z kamer zostają w domu i ile trwa montaż. Odpowiedzi prostym językiem."
+  },
+  "/inteligentny-dom-warszawa": {
+    "title": "Inteligentny dom w Warszawie i okolicach",
+    "description": "Światło, rolety, ogrzewanie i ochrona przed zalaniem, które działają same i z telefonu. Także w gotowym mieszkaniu, bez kucia ścian."
+  },
+  "/wideodomofon-i-kamery-warszawa": {
+    "title": "Wideodomofon i kamery w Warszawie i okolicach",
+    "description": "Rozmowa z gościem przy furtce z telefonu, kamery z kolorowym obrazem w nocy i nagrania na dysku w domu, bez abonamentu."
+  },
+  "/ochrona-przed-zalaniem": {
+    "title": "Ochrona przed zalaniem: czujnik sam zakręca wodę",
+    "description": "Czujnik pod pralką czy zmywarką wykrywa wyciek, a woda od razu się zakręca. Powiadomienie w telefonie, działa bez internetu."
+  },
+  "/automatyka-bez-kucia": {
+    "title": "Inteligentne mieszkanie bez kucia ścian",
+    "description": "Małe moduły za zwykłymi włącznikami, głowice na grzejnikach i czujniki na baterie. Ściany, płytki i gładzie zostają całe."
+  },
+  "/zapytanie": {
+    "title": "Odbierz propozycję dla swojego domu",
+    "description": "Zaznacz, co Cię interesuje, i zostaw kontakt, to około 2 minut. Odezwiemy się z propozycją telefonicznie albo tylko e-mailem, zwykle w 24 godziny robocze."
+  },
+  "/kontakt": {
+    "title": "Kontakt",
+    "description": "Warszawa i okolice. Napisz e-mail albo opisz swój dom w krótkim zapytaniu, a odezwiemy się z propozycją, zwykle w 24 godziny robocze."
+  },
+  "/polityka-prywatnosci": {
+    "title": "Polityka prywatności",
+    "description": "Jakie dane zbieramy przez formularz, po co, jak długo je przechowujemy i jakie masz prawa."
+  }
+}

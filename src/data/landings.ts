@@ -1,12 +1,13 @@
 // Landing pages for what people search in Warsaw. Plain words, no prices or model names:
-// the same rules as the rest of the site (CLAUDE.md). Each one is also listed in
-// scripts/spa-routes.mjs (title, description) and routed in src/App.tsx.
+// the same rules as the rest of the site (CLAUDE.md). Each one also needs a route in
+// src/routes.tsx and a title and description in src/data/pages.json.
 
 export interface Landing {
   slug: string;
   badge: string;
   title: string;
   description: string;
+  /** Unsplash photo id (wide screens only) */
   image: string;
   /** Query that opens the enquiry with answers already chosen, e.g. 'chce=dom&etap=gotowy' */
   query: string;
@@ -24,7 +25,7 @@ export const LANDINGS: Record<string, Landing> = {
     badge: "Warszawa i okolice",
     title: "Inteligentny dom w Warszawie i okolicach",
     description: "Światło, rolety, ogrzewanie i bezpieczeństwo, które działają same i z telefonu. Do nowego domu i do gotowego mieszkania, także bez kucia ścian.",
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+    image: 'photo-1600607687939-ce8a6c25118c',
     benefitsTitle: "Co dom robi za Ciebie",
     intro: "Nie musisz znać się na technice. Mówisz, co ma się dziać w domu, a my dobieramy urządzenia i montujemy je tak, żeby działały razem.",
     benefits: [
@@ -49,7 +50,7 @@ export const LANDINGS: Record<string, Landing> = {
     badge: "Warszawa i okolice",
     title: "Wideodomofon i kamery w Warszawie i okolicach",
     description: "Widzisz, kto stoi przy furtce, i rozmawiasz z nim z telefonu. Kamery pokazują kolorowy obraz także w nocy, a nagrania zostają na dysku w domu.",
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
+    image: 'photo-1600585154526-990dced4db0d',
     benefitsTitle: "Co dostajesz",
     intro: "Dobieramy kamery i wideodomofon do Twojego domu: ile ich potrzeba, gdzie je powiesić i jak poprowadzić kable.",
     benefits: [
@@ -74,7 +75,7 @@ export const LANDINGS: Record<string, Landing> = {
     badge: "Woda i gaz",
     title: "Ochrona przed zalaniem: czujnik sam zakręca wodę",
     description: "Gdy czujnik wykryje wodę, woda od razu się zakręca, nawet gdy nikogo nie ma w domu. Ty dostajesz powiadomienie w telefonie.",
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
+    image: 'photo-1584622650111-993a426fbf0a',
     benefitsTitle: "Jak to działa",
     intro: "Zalanie zwykle zaczyna się po cichu: wąż od pralki, zmywarka, kocioł. Czujnik na podłodze wyczuwa wodę wcześniej, niż Ty ją zauważysz.",
     benefits: [
@@ -99,7 +100,7 @@ export const LANDINGS: Record<string, Landing> = {
     badge: "Gotowe mieszkanie",
     title: "Inteligentne mieszkanie bez kucia ścian",
     description: "Masz gotowe wnętrze i nie chcesz remontu? Małe moduły chowamy za zwykłymi włącznikami, a ściany, płytki i gładzie zostają całe.",
-    image: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80',
+    image: 'photo-1584622781564-1d987f7333c1',
     benefitsTitle: "Co da się zrobić bez kucia",
     intro: "Większość rzeczy montujemy w miejscach, które już są: w puszkach za włącznikami, przy grzejnikach i w skrzynce z bezpiecznikami.",
     benefits: [
@@ -125,7 +126,7 @@ export const PAGE_LABELS: Record<string, string> = {
   '/systemy': "Światło, rolety i ogrzewanie",
   '/teletechnika': "Kamery i wideodomofon",
   '/scenariusze': "Co dom robi za Ciebie",
-  '/faq': "Pytania i odpowiedzi",
+  '/faq': "Pytania i odpowiedzi",
   '/inteligentny-dom-warszawa': "Inteligentny dom w Warszawie i okolicach",
   '/wideodomofon-i-kamery-warszawa': "Wideodomofon i kamery w Warszawie i okolicach",
   '/ochrona-przed-zalaniem': "Ochrona przed zalaniem: czujnik sam zakręca wodę",

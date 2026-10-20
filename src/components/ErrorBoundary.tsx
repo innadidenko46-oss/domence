@@ -19,26 +19,23 @@ export class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       return (
         <div className="max-w-3xl mx-auto px-4 py-24 text-center">
-          <p className="eyebrow mb-3">
-            Błąd renderowania
-          </p>
           <h1 className="text-2xl sm:text-3xl font-bold mb-3">
             Coś poszło nie tak
           </h1>
           <p className="text-sm text-gray-600 mb-8">
-            Spróbuj odświeżyć stronę lub wrócić na stronę główną.
+            Spróbuj odświeżyć stronę albo wróć na stronę główną.
           </p>
           <div className="flex items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => this.setState({ hasError: false })}
-              className="px-6 py-3 rounded-[2px] border border-gray-300 text-sm font-semibold"
+              className="btn-secondary"
             >
               Spróbuj ponownie
             </button>
             <Link
               to="/"
-              className="px-6 py-3 rounded-[2px] bg-petrol-700 hover:bg-petrol-800 text-white text-sm font-semibold"
+              className="btn-engineering-primary"
             >
               Strona główna
             </Link>
